@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="700" viewBox="0 0 1180 700" role="img" aria-labelledby="ttl desc">
+<title id="ttl">Microscopic hydrogenation pathways — source-qualified schematic</title>
+<desc id="desc">Shows dissociative hydrogen adsorption, acetylene adsorption, vinyl intermediate, ethylene desorption versus further surface hydrogenation, and a model-specific alternative ethylidene path to ethane. Evidence comes from Urmès 2019 and Mei 2009, not verified for the BEP catalyst.</desc>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="9" refX="9" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 4.5 L0 9 Z" fill="#24334b"/></marker>
+<marker id="altarrow" markerWidth="10" markerHeight="9" refX="9" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 4.5 L0 9 Z" fill="#98572a"/></marker>
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#183049}
+.title{font-weight:700;font-size:25px}.sub{font-size:14px;fill:#526477}.label{font-size:17px;font-weight:700}.small{font-size:13px;fill:#44576a}.tag{font-size:12px;font-weight:700}
+.box{stroke:#96adc4;stroke-width:1.5;fill:#fff;rx:12}.hl{fill:#eff8f6;stroke:#56a398}.alt{fill:#fff4e8;stroke:#cd9155;stroke-dasharray:6 4}
+.path{stroke:#24334b;stroke-width:2.8;fill:none;marker-end:url(#arrow)}.dash{stroke:#98572a;stroke-width:2.8;stroke-dasharray:7 6;fill:none;marker-end:url(#altarrow)}
+</style>
+</defs>
+<rect x="0" y="0" width="1180" height="700" rx="22" fill="#f5f8fc"/>
+<text x="36" y="48" class="title">Microscopic reaction pathways — what happens on a catalyst surface?</text>
+<text x="36" y="73" class="sub">Tier 4 — Idea • Adsorption = Tier 5 — Idea • * marks a surface site • schematic, not target-catalyst validation</text>
+<rect x="35" y="94" width="1110" height="77" rx="14" fill="#e9f1ff" stroke="#abc4e8"/>
+<text x="53" y="116" class="tag">TIER 5 • ADSORPTION</text>
+<text x="53" y="141" class="label">H₂(g) + 2* ⇌ 2H* </text>
+<text x="315" y="141" class="small">H₂ splits into surface H; an unoccupied site is written *</text>
+<text x="53" y="160" class="small">Single-site assumption shown here comes from Urmès et al. (2019) — not necessarily the BEP catalyst</text>
+<text x="43" y="216" class="tag">U19 • SUPPORTED-Pd MODEL</text>
+<rect class="box" x="40" y="250" width="155" height="86"/>
+<text class="label" x="60" y="283">C₂H₂(g)</text><text class="small" x="60" y="309">acetylene gas</text>
+<rect class="box hl" x="247" y="250" width="155" height="86"/>
+<text class="label" x="267" y="283">C₂H₂*</text><text class="small" x="267" y="309">adsorbed</text>
+<rect class="box hl" x="457" y="250" width="155" height="86"/>
+<text class="label" x="477" y="283">C₂H₃*</text><text class="small" x="477" y="309">vinyl species</text>
+<rect class="box hl" x="664" y="250" width="159" height="86"/>
+<text class="label" x="683" y="283">C₂H₄*</text><text class="small" x="683" y="309">bound ethylene</text>
+<path class="path" d="M195 292 H247"/><text class="small" x="197" y="279">binds</text>
+<path class="path" d="M402 292 H457"/><text class="small" x="409" y="279">+ H*</text>
+<path class="path" d="M612 292 H664"/><text class="small" x="619" y="279">+ H*</text>
+<rect class="box" x="955" y="193" width="180" height="76"/>
+<text class="label" x="975" y="222">C₂H₄(g)</text><text class="small" x="975" y="247">ethylene released</text>
+<path class="path" d="M823 271 L955 232"/><text class="small" x="846" y="231">desorb</text>
+<rect class="box" x="875" y="330" width="125" height="68"/>
+<text class="label" x="893" y="360">C₂H₅*</text><text class="small" x="893" y="380">ethyl</text>
+<rect class="box" x="1032" y="330" width="107" height="68"/>
+<text class="label" x="1043" y="360">C₂H₆(g)</text><text class="small" x="1043" y="380">ethane</text>
+<path class="path" d="M823 315 L875 350"/><text class="small" x="829" y="352">+ H*</text>
+<path class="path" d="M1000 364 H1032"/><text class="small" x="1000" y="344">+ H*</text>
+<text x="664" y="370" class="small">C₂H₄(g) in the feed may also adsorb to C₂H₄*</text>
+<path d="M850 260 L946 256" stroke="#56a398" stroke-width="1.5" stroke-dasharray="3 4"/>
+<rect x="35" y="422" width="1110" height="137" rx="15" fill="#fff7ee" stroke="#e6b981"/>
+<text x="53" y="447" class="tag">M09 • ALTERNATIVE IDEALIZED Pd/Pd–Ag KMC PATH (NOT CONFIRMED FOR BEP)</text>
+<rect class="box alt" x="315" y="471" width="215" height="64"/>
+<text class="label" x="330" y="497">C₂H₃* (vinyl)</text><text class="small" x="330" y="518">branch point</text>
+<rect class="box alt" x="606" y="471" width="218" height="64"/>
+<text class="label" x="620" y="497">ethylidene route</text><text class="small" x="620" y="518">distinct surface geometry</text>
+<rect class="box alt" x="946" y="471" width="170" height="64"/>
+<text class="label" x="959" y="497">C₂H₆(g)</text><text class="small" x="959" y="518">ethane product</text>
+<path class="dash" d="M530 501 H606"/><path class="dash" d="M824 501 H946"/>
+<text x="42" y="599" class="tag">SOURCE NOTES</text>
+<text x="42" y="622" class="small">U19: Urmès et al. (2019), Catalysts 9, 180, DOI 10.3390/catal9020180, Table 3 (supported Pd / tail-end model)</text>
+<text x="42" y="646" class="small">M09: Mei, Neurock &amp; Smith (2009), J. Catal. 268, 181–195, DOI 10.1016/j.jcat.2009.09.004 (model Pd/Pd–Ag)</text>
+<text x="42" y="674" class="small">Do not infer unique BEP pathways, surface coverages, rate constants or a third identifiable rate from this conceptual diagram.</text>
+</svg>

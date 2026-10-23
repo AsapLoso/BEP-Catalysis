@@ -1,0 +1,2319 @@
+{
+  "dataset": {
+    "name": "Unplaced or upcoming concepts in owner-led BEP map",
+    "edition": "2026-10-22",
+    "purpose": "Track gaps between the available/discussed knowledge and what has reached its position in the user's current map; NOT a discrepancy between two AI reference maps.",
+    "policy": "Do not insert a bridge into current_map.yaml until its immediate branch has been reached and the user approves exact placement. Bridge discussion is neither structural approval nor a blue/human-understood state.",
+    "statuses": [
+      "candidate_next_child",
+      "discussed_not_yet_placed",
+      "supporting_detail_parked",
+      "placed"
+    ],
+    "latest_owner_cursor": "2026-10-23: Live personal map currently 50 nodes after parallel session correction; three audiences of reference notes and five separate maturity stages are documented; 33 bridge records, 28 unresolved/partially placed with explicit active action_queue_ids. Current personal map is independent of research AI map source. Current queue has 61 active tasks, completed task history in Git. See latest current_map.yaml and latest top queue banner, not this historical snapshot alone.",
+    "reaction_bridge_sidecar": "owner_working_map/bridges/reaction_topics_pending_2026_10_22.md",
+    "microscopic_source_brief": "owner_working_map/bridges/microscopic_pathways_source_recon_2026_10_22.md",
+    "adsorption_brief_bridge": "owner_working_map/bridges/reaction_topics_pending_2026_10_22.md (B-RXN-ADS concept placed, rate bridge B-RXN-RATE remains pending)",
+    "last_new_bridges": {
+      "date": "2026-10-23",
+      "ids": [
+        "B-LH-ARR-01"
+      ],
+      "scope": "Modeling cross-disciplinary LH-LHHW rate formulation and Arrhenius factor, no personal node. Keep 2024 review as queued AI reading.",
+      "owner_review": "scientific model location explicitly undecided"
+    },
+    "mechanism_review_note": "owner_working_map/pages/bep/physics/reaction_chemistry_pathways/our_reactions/microscopic_reaction_pathways/index.md",
+    "adsorption_writing_note": "owner_working_map/pages/bep/physics/reaction_chemistry_pathways/our_reactions/microscopic_reaction_pathways/adsorption/index.md",
+    "new_idea_bridges": [
+      "B-ER-01",
+      "B-ADS-GEOMETRY"
+    ],
+    "latest_new_saturation_bridge": {
+      "id": "B-SAT-01",
+      "date": "2026-10-22",
+      "queue_item": "Q17",
+      "linked_personal_id": "own_ph_adsorption",
+      "status": "bridge only",
+      "recommended_parent": "B-P2 catalyst structure / active-site properties; owner to approve placement"
+    },
+    "latest_owner_bridges_checkpoint": {
+      "date": "2026-10-22",
+      "new_idea_ids": [
+        "B-POISON-01",
+        "B-AGGLOM-01"
+      ],
+      "expanded_id": "B-SAT-01",
+      "source_status": "AI contextual literature, not owner verified",
+      "queue_items": [
+        "Q25",
+        "Q26"
+      ],
+      "notebook_examined": false
+    },
+    "latest_reader_question_checkpoint": {
+      "date": "2026-10-22",
+      "transport_bridge_id": "B-P3",
+      "question_file": "owner_working_map/bridges/questions/B-P3_gas_penetration_damian.md",
+      "live_node_created": false,
+      "adsorption_question_file": "owner_working_map/pages/bep/physics/reaction_chemistry_pathways/our_reactions/microscopic_reaction_pathways/adsorption/index.md",
+      "separate_micro_vs_pellet": true
+    },
+    "latest_bridge_proposals": {
+      "date": "2026-10-23",
+      "new_ids": [
+        "B-SITE-TYPES-01",
+        "B-ADS-PROPERTIES-01",
+        "B-SURFACE-AVAILABILITY-01"
+      ],
+      "personal_node_insertions": 0,
+      "AI_worked_out_bridge_only": [
+        "B-SITE-TYPES-01"
+      ],
+      "stages_not_inferred": true,
+      "approval_required": "owner selection of exact parent/grouping and individual child when returning to queue"
+    },
+    "latest_placement_checkpoint_2026_10_23": {
+      "physical_parent": "own_ph_catalyst_surface_active_sites",
+      "physical_types": "own_ph_types_of_active_sites",
+      "physical_site_availability": "own_ph_surface_site_availability",
+      "physical_availability_children": [
+        "own_ph_site_competition",
+        "own_ph_surface_saturation",
+        "own_ph_surface_poisoning"
+      ],
+      "math_parent": "own_ma_mathematical_modeling",
+      "math_surface_equations": "own_ma_surface_kinetic_equations",
+      "LR_family": "own_ph_langmuir_rideal_encounter",
+      "adsorption_binding_affinity_sticking": "B-ADS-PROPERTIES-01 remains UNPLACED",
+      "owner_understanding_promotions": 0
+    },
+    "latest_model_boundary_bridge_checkpoint": {
+      "date": "2026-10-23",
+      "new_bridge_ids": [
+        "B-MODEL-BC-01",
+        "B-TP-REDUCTIONS-01",
+        "B-HEAT-LENSES-01"
+      ],
+      "placement_scope": "Owner already placed 11 concrete physical/math concept nodes in live map; bridge retains future mathematical BC requirements and TP theory. No human citation verification."
+    },
+    "owner_review_gate_2026_10_23": {
+      "date": "2026-10-23",
+      "authority": "User corrected A/B/C and revoked approval assumption for unpreviewed energy/reaction heat/model nodes",
+      "archive": "owner_working_map/bridges/REVIEW_REQUIRED_PDE_MODEL_PROPOSALS_2026_10_23.md",
+      "still_placed": [
+        "own_ph_thermodynamics_thermal_dynamics",
+        "own_ph_isothermal_theory",
+        "own_ph_wall_temperature_boundary",
+        "own_ph_radial_temperature_reduction",
+        "own_ph_wall_dirichlet_equation",
+        "own_ph_radial_temperature_average_equation"
+      ],
+      "review_before_replacement": [
+        "own_ph_thermal_energy_balance_theory",
+        "own_ph_reaction_heat_generation",
+        "own_ma_reactor_model",
+        "own_ma_model_approximations",
+        "own_ma_assumption_isothermal",
+        "own_ma_assumption_radial_reduction",
+        "own_ma_assumption_axial_dispersion"
+      ]
+    },
+    "active_queue_mapping": {
+      "date": "2026-10-23",
+      "contract": "Every unresolved/partially placed bridge is mapped to one or more OPEN queue IDs; fully placed bridges are historical references, not active tasks. Queue must remove implemented tasks; bridges can remain provenance.",
+      "current_mapped_unresolved": 27,
+      "pending_bridge_ids": [
+        "B-P2",
+        "B-P3",
+        "B-P4",
+        "B-P5",
+        "B-M1",
+        "B-M2",
+        "B-M3",
+        "B-S1",
+        "B-P1-COND",
+        "B-ALT-01",
+        "B-ALT-02",
+        "B-R1",
+        "B-R2",
+        "B-R3",
+        "B-V-R1",
+        "B-V-R2",
+        "B-V-R3",
+        "B-ADS-GEOMETRY",
+        "B-SAT-01",
+        "B-POISON-01",
+        "B-AGGLOM-01",
+        "B-LH-ARR-01",
+        "B-PRESS-SEL-01",
+        "B-ADS-PROPERTIES-01",
+        "B-MODEL-BC-01",
+        "B-TP-REDUCTIONS-01",
+        "B-HEAT-LENSES-01"
+      ],
+      "completed_bridge_ids": [
+        "B-P1",
+        "B-P1-NET",
+        "B-P1-MICRO",
+        "B-ER-01",
+        "B-SITE-TYPES-01",
+        "B-SURFACE-AVAILABILITY-01"
+      ],
+      "mapping_field": "bridges[].action_queue_ids",
+      "active_count": 61
+    }
+  },
+  "active_frontier": {
+    "node_id": "own_ph_adsorption",
+    "level": "placed_tier5_owner_dictated_informal_writing",
+    "proposed_parent_path": "Physics → Reaction Chemistry & Pathways → Our Reactions → Microscopic Reaction Pathways → Adsorption",
+    "focus": "own_ph_adsorption",
+    "status": "tier5_bounded_informal_writing_technical_source_additions_unreviewed",
+    "detail": "Owner dictated a bounded adsorption explanation for Tier5 and explicitly considered progression to Informal Writing. AI clarified that one molecule per site is a kinetic abstraction, H₂ splits across two effective sites in Urmès 2019, and LH vs ER are mechanism alternatives, not both shown for BEP. Tier4 Microscopic pathways is AI worked out from source-qualified Urmès/Mei explanations but not human; Tier3 short net reaction text was explicitly approved as Informal Writing. No Tier6 R1/R2/R3 personal nodes; mechanism/kinetics topics remain in research/bridges."
+  },
+  "bridges": [
+    {
+      "id": "B-P1",
+      "title": "Reaction chemistry and product pathways",
+      "status": "placed",
+      "suggested_parent_id": "physics",
+      "reference_node_ids": [
+        "u_ph_reaction",
+        "ph_reaction_network"
+      ],
+      "review": "owner_structural_approval_only__science_unread",
+      "notes": "User 2026-10-22 confirmed Physics→Reaction Chemistry & Pathways and three immediate scientific subthemes. No science/citation approval.",
+      "previous_status": "placed",
+      "previous_placed_node_id": "own_ph_reaction_chemistry_pathways",
+      "archived_node_snapshot": {
+        "id": "own_ph_reaction_chemistry_pathways",
+        "parent": "physics",
+        "title": "Reaction Chemistry & Pathways",
+        "kind": "theme",
+        "summary": "Net reaction chemistry, competing microscopic mechanisms and their condition-dependent activity are distinct levels.",
+        "approval": "accepted",
+        "structure_status": "owner_approved_structure_only",
+        "maturity": "ai_worked_out",
+        "understanding_status": "ai_worked_out",
+        "human_understanding_review": "not_assessed",
+        "source_claim_review": "ai_attached_only",
+        "importance": null,
+        "rationale": "Owner-directed first Physics theme; introduces the chemical pathways before kinetics, mass transport and optimization.",
+        "notes": "This branch starts with the hydrogenation net reactions and then distinguishes alternative microscopic paths. A catalyst may support several paths for a given net reaction. Observability, active-site populations, feed and catalyst conditions determine which route matters. Do not infer an elementary path solely from a balanced equation.",
+        "equations": [],
+        "claims": [
+          {
+            "id": "ph-path-class",
+            "statement": "Multiple catalyst- and site-dependent pathways can account for gas-phase hydrogenation chemistry.",
+            "evidence_type": "review_synthesis_and_model_result",
+            "source_ids": [
+              "bos_westerterp_1993",
+              "mei2009"
+            ],
+            "status": "ai_attached",
+            "ai_reference_links": [
+              {
+                "reference_node_id": "u_ph_reaction",
+                "source_id": "mei2009",
+                "reference_commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+                "relation_to_claim": "broad_scope",
+                "ai_interpretation_note": "The reference node frames net chemistry versus idealized Pd/PdAg model paths; it does not prove target-catalyst viability.",
+                "source_record_exists": true,
+                "source_record_status": "abstract_and_preview_only",
+                "owner_review": "unread",
+                "human_verified": false
+              },
+              {
+                "reference_node_id": "c1_parallel_ethane_paths",
+                "source_id": "bos_westerterp_1993",
+                "reference_commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+                "relation_to_claim": "historical_unverified_link",
+                "ai_interpretation_note": "The inherited attachment states the direct-route distinction, but this specific historical claim-to-text link was not verified in the integrated reference.",
+                "source_record_exists": true,
+                "source_record_status": "metadata_verified_and_abstract_found_separately_full_pdf_not_inspected",
+                "owner_review": "unread",
+                "human_verified": false
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "id": "proposal_main",
+            "title": "Dynamic Control of Acetylene Semi-Hydrogenation: A Spatiotemporal Modeling Framework for Intermediary Yield Optimization",
+            "doi": null,
+            "url": null,
+            "locator": "Abstract; Introduction §1; Research Questions; Methodology §§3.1–3.5",
+            "supports": [
+              "BEP project intent and boundaries; not independent mechanistic evidence"
+            ],
+            "source_access": "local_project_document_checked",
+            "review": "ai_attached",
+            "human_verified": false,
+            "scope": "Proposal (hypotheses and planned modelling)",
+            "path": "Academics/BEP/Catalysis/0_Project_Management/main.tex",
+            "owner_read_status": "unread",
+            "owner_citation_approval": "unapproved",
+            "claim_ids": []
+          },
+          {
+            "id": "bos_westerterp_1993",
+            "title": "Mechanism and kinetics of the selective hydrogenation of ethyne and ethene",
+            "doi": "10.1016/0255-2701(93)87001-B",
+            "url": "https://research.utwente.nl/en/publications/mechanism-and-kinetics-of-the-selective-hydrogenation-of-ethyne-a/",
+            "locator": "Institutional abstract; review, 1993",
+            "supports": [
+              "Alternative ethyne-to-ethane route described, judged minor in review context; multiple site types considered"
+            ],
+            "source_access": "institutional_abstract_checked; open_published_pdf_available_not_inspected",
+            "review": "ai_attached",
+            "human_verified": false,
+            "scope": "Pd catalyst literature review; not direct target-PdAg data",
+            "owner_read_status": "unread",
+            "owner_citation_approval": "unapproved",
+            "claim_ids": [
+              "ph-path-class"
+            ]
+          },
+          {
+            "id": "mei2009",
+            "title": "Hydrogenation of Acetylene-Ethylene Mixtures over Pd and Pd-Ag Alloys: First-Principles Based Kinetic Monte Carlo Simulations",
+            "doi": "10.1016/j.jcat.2009.09.004",
+            "url": "https://www.pnnl.gov/publications/hydrogenation-acetylene-ethylene-mixtures-over-pd-and-pd-ag-alloys-first-principles",
+            "locator": "PNNL publication summary; abstract",
+            "supports": [
+              "Vinyl-mediated selective route; ethylidene branch leading toward ethane under model conditions"
+            ],
+            "source_access": "institutional_abstract_checked",
+            "review": "ai_attached",
+            "human_verified": false,
+            "scope": "Model idealized Pd/PdAg surfaces; not target-specific experimental pathway determination",
+            "owner_read_status": "unread",
+            "owner_citation_approval": "unapproved",
+            "claim_ids": [
+              "ph-path-class"
+            ]
+          }
+        ],
+        "assumptions": [],
+        "limitations": [],
+        "related_ids": [],
+        "research_letters": [],
+        "open_questions": [
+          "Which of the reported catalyst pathways exist under our actual PdAg operating conditions?"
+        ],
+        "origin": "owner_structure_plus_ai_research",
+        "decision_receipt": {
+          "structural_decision": "accepted_structure_only_2026_10_22",
+          "human_understanding_approval": "none",
+          "source_verification_approval": "none",
+          "owner_read_status": "unread",
+          "correction": "2026-10-22: owner explicitly specified Unapproved / Unread. Previous label of accepted was premature.",
+          "note": "User corrected: unapproved unread; earlier accepted claim was inaccurate.",
+          "authority": "Owner confirmed three sibling subthemes under Physics reaction theme, and asked to write and zoom deeper.",
+          "exact_scope": "Only node placement/titles; scientific explanation, citations, personal comprehension remain unapproved and unread."
+        },
+        "owner_read_status": "unread",
+        "owner_approval_status": "structure_only",
+        "owner_content_approval": "unapproved",
+        "ai_reference_snapshot": {
+          "repository": "AsapLoso/project-management-agents",
+          "commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+          "nodes_path": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml",
+          "sources_path": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/sources.yaml",
+          "source_maturity_ceiling": "ai_worked_out"
+        },
+        "ai_reference_review_status": "ai_links_reconciled_2026_10_22_not_owner_read_or_verified",
+        "owner_structure_approval_scope": "Parent/title hierarchy only, from 2026-10-22 user request to record Physics → Reaction Chemistry & Pathways with three subthemes."
+      },
+      "owner_stage_after_reset": "idea",
+      "reactivation_requires": "Explain concrete content to owner, then obtain exact placement approval; source/citation verification independent",
+      "reset_reason": "2026-10-22 owner requested start from zero: remove current AI reaction nodes from personal map and park in bridges.",
+      "latest_owner_placement": {
+        "date": "2026-10-22",
+        "placed_node_id": "own_ph_reaction_chemistry_pathways",
+        "scope": "new minimal owner-approved scaffold; historical archived snapshot preserved without wholesale scientific reactivation",
+        "owner_source_verification": "none",
+        "owner_human_understanding": "none"
+      }
+    },
+    {
+      "id": "B-P2",
+      "title": "Catalyst structure, active sites and kinetics",
+      "status": "partially_placed",
+      "suggested_parent_id": "physics",
+      "reference_node_ids": [
+        "u_ph_catalyst",
+        "u_ph_kinetics",
+        "ph_surface_states"
+      ],
+      "review": "Not yet placed or approved.",
+      "related_bridge_ids": [
+        "B-SITE-TYPES-01",
+        "B-SURFACE-AVAILABILITY-01",
+        "B-ADS-PROPERTIES-01"
+      ],
+      "placed_node_ids": [
+        "own_ph_catalyst_surface_active_sites",
+        "own_ph_types_of_active_sites",
+        "own_ph_surface_site_availability"
+      ],
+      "placement_decision_2026_10_23": "Physical catalyst surface/active sites placed; mathematical kinetics separately represented by Mathematics → Mathematical Modeling → Surface Kinetic Equations. Remaining broader catalyst structure/active-site science not finished.",
+      "related_live_node_ids": [
+        "own_ph_catalyst_surface_active_sites",
+        "own_ph_types_of_active_sites",
+        "own_ph_surface_site_availability"
+      ],
+      "action_queue_ids": [
+        "Q21",
+        "Q50"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-P3",
+      "title": "Reactor transport, film, pellet and diffusion",
+      "status": "candidate_next_child",
+      "suggested_parent_id": "physics",
+      "reference_node_ids": [
+        "u_ph_transport",
+        "ph_pellet_transport"
+      ],
+      "review": "Not yet placed or approved.",
+      "reader_file": {
+        "path": "owner_working_map/bridges/questions/B-P3_gas_penetration_damian.md",
+        "kind": "question",
+        "visibility": "only_if_future_node_placed",
+        "status": "bridge_only_not_live_graph"
+      },
+      "transport_note": "The actual internal pore gas penetration/effectiveness depth issue is a reactor transport topic (B-P3), *distinct from* microscopic gas/adsorbed-species encounter (B-ER-01). The owner rejected treating pellet interior as inaccessible without data.",
+      "related_bridge_ids": [
+        "B-ER-01",
+        "B-SAT-01"
+      ],
+      "action_queue_ids": [
+        "Q22",
+        "Q65"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-P4",
+      "title": "Thermodynamics and catalyst evolution",
+      "status": "partly_placed_isothermal_only_other_theory_queued",
+      "suggested_parent_id": "physics",
+      "reference_node_ids": [
+        "u_ph_thermal",
+        "ph_energy_balance"
+      ],
+      "review": "Thermodynamics Tier2 and simple isothermal conceptual branch remain; thermal energy-balance theory was withdrawn to AI references/queue until owner sees it. Old placed node ID now in review archive, not live.",
+      "placed_theory_node_ids": [
+        "own_ph_thermodynamics_thermal_dynamics",
+        "own_ph_isothermal_theory"
+      ],
+      "remaining_bridge_topics": [
+        "catalyst_deactivation_is_separate",
+        "specific_model_energy_balance_eq_not_placed",
+        "thermal_physics_expansion"
+      ],
+      "withdrawn_to_review_archive": [],
+      "action_queue_ids": [
+        "Q89",
+        "Q90"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-P5",
+      "title": "Experimental observables and measurement physics",
+      "status": "candidate_next_child",
+      "suggested_parent_id": "physics",
+      "reference_node_ids": [
+        "u_ph_measurement",
+        "ph_boundary_measurement"
+      ],
+      "review": "Not yet placed or approved.",
+      "action_queue_ids": [
+        "Q22"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-M1",
+      "title": "Spatiotemporal structure: axial space and time",
+      "status": "discussed_not_yet_placed",
+      "suggested_parent_id": null,
+      "candidate_disciplines": [
+        "Physics",
+        "Mathematics"
+      ],
+      "reference_node_ids": [
+        "ma_gas_pde",
+        "ma_pde_ode_coupling"
+      ],
+      "user_note": "Mentioned 1D spatial and temporal behavior as a characteristic of the problem.",
+      "understanding": "Reported familiar; no node or blue approval.",
+      "related_live_node_ids": [
+        "own_ma_mathematical_modeling"
+      ],
+      "review": "Spatiotemporal mathematical theory and exact PDEs remain bridge only. Proposed Reactor Model/Approximations scaffolding was withdrawn from personal graph after owner noted lack of exact node preview.",
+      "local_berger_provenance": "See B-MODEL-BC-01 and owner_working_map/bridges/BERGER2008_EQ1_BEP_LOCAL_PROVENANCE_2026_10_23.md; exact Eq1 source and boundary notation require original-PDF check.",
+      "withdrawn_to_review_archive": [],
+      "action_queue_ids": [
+        "Q22",
+        "Q67"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-M2",
+      "title": "Time-independent, state-dependent derivative / autonomous dynamics",
+      "status": "discussed_not_yet_placed",
+      "suggested_parent_id": null,
+      "candidate_disciplines": [
+        "Mathematics",
+        "Systems & Control"
+      ],
+      "reference_node_ids": [
+        "ma_pde_ode_coupling",
+        "u_sc_plant"
+      ],
+      "user_note": "User described time-independent and state-dependent derivative as familiar. Preserve user terminology without assuming exact formalization of the forced model.",
+      "understanding": "Reported familiar; not assessed or blue.",
+      "open_question": "Distinguish autonomous dX/dt=F(X), nonautonomous forced dX/dt=F(X,u(t)), and any state-augmentation approach when we reach this branch.",
+      "action_queue_ids": [
+        "Q97"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-M3",
+      "title": "Method of lines, space versus temporal integration",
+      "status": "discussed_not_yet_placed",
+      "suggested_parent_id": null,
+      "candidate_disciplines": [
+        "Mathematics"
+      ],
+      "reference_node_ids": [
+        "ma_MOL",
+        "ma_stiff_solver"
+      ],
+      "user_note": "User called spatial discretization via MOL familiar; sees temporal stiffness as potentially more interesting.",
+      "understanding": "Reported familiar; no blue.",
+      "action_queue_ids": [
+        "Q22",
+        "Q67"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-S1",
+      "title": "Interfacial film flux versus volumetric exchange term",
+      "status": "supporting_detail_parked",
+      "suggested_parent_id": null,
+      "candidate_disciplines": [
+        "Physics",
+        "Mathematics"
+      ],
+      "reference_node_ids": [
+        "external_film_transfer",
+        "ph_pellet_transport"
+      ],
+      "user_note": "Discussed and judged elementary; useful AI reference correction but not a mandatory personal-map node.",
+      "understanding": "Not assessed; not blue.",
+      "action_queue_ids": [
+        "Q22"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-P1-COND",
+      "title": "Viable/dominant microscopic pathways under particular catalyst and operating regimes",
+      "status": "discussed_not_yet_placed",
+      "suggested_parent_id": null,
+      "reference_node_ids": [
+        "c1_parallel_ethane_paths",
+        "ph_mechanism_choice",
+        "c1_vinyl_ethylidene_alternative"
+      ],
+      "from": "User proposed this as the next layer after an intermediate level for alternative mechanisms.",
+      "scientific_question": "For which catalyst surface, support, site environment, temperature, partial pressures, coverage and feed conditions can each pathway occur or dominate?",
+      "caution": "Cannot treat simple +2H2 net stoichiometry as independent kinetic path; require source-specific mechanism evidence.",
+      "understanding": "not_assessed",
+      "notes": "Third sibling under Reaction Chemistry & Pathways, not child of alternative mechanisms. Structural approval only; text and sources remain unread/unapproved.",
+      "previous_status": "placed",
+      "previous_placed_node_id": "own_ph_pathway_viability",
+      "archived_node_snapshot": {
+        "id": "own_ph_pathway_viability",
+        "parent": "own_ph_reaction_chemistry_pathways",
+        "title": "Pathway viability across catalysts and operating conditions",
+        "kind": "theme",
+        "approval": "accepted",
+        "structure_status": "owner_approved_structure_only",
+        "owner_structure_approval_scope": "Third sibling under Reaction Chemistry & Pathways, following user's proposed condition/region-dependent viability layer.",
+        "owner_content_approval": "unapproved",
+        "owner_approval_status": "structure_only",
+        "owner_read_status": "unread",
+        "maturity": "ai_worked_out",
+        "understanding_status": "ai_worked_out",
+        "human_understanding_review": "not_assessed",
+        "source_claim_review": "ai_attached_only",
+        "importance": null,
+        "rationale": "Third direct subtheme: assess where a proposed microscopic mechanism is viable or competitive, instead of treating a Pd or PdAg pathway as universal.",
+        "summary": "The importance of alternative surface pathways depends on the specific catalyst and its state, support, composition, feed, temperature and observable operating window.",
+        "notes": "Alternative pathways are not assigned universal dominance. Published Pd and PdAg reaction descriptions differ by studied surface/site families, composition and experimental regime: one 2019 supported-Pd model uses a one-site kinetic closure for its measured tail-end data, while a 2012 PdAg/Al2O3 abstract describes a selected two-site model. A 2009 KMC study varies model surface Pd/PdAg conditions. These support the need for condition-specific model assessment, not proof of which path is active on the target BEP material. 'Viable' (physically possible), 'included in a fitted model', and 'dominant contribution to observed rates' require different evidence.",
+        "equations": [],
+        "assumptions": [
+          "Different catalyst support/composition and fitted-model families cannot be equated without evidence.",
+          "No identified target catalyst or calibrated conditions are assumed."
+        ],
+        "claims": [
+          {
+            "id": "regime_model_varies",
+            "statement": "Published models of supported Pd and PdAg hydrogenation can select different site-family kinetic descriptions under their respective investigated conditions.",
+            "evidence_type": "source_model_result",
+            "source_ids": [
+              "urmes2019",
+              "pachulski2012"
+            ],
+            "status": "ai_attached",
+            "human_verified": false,
+            "ai_reference_links": [
+              {
+                "reference_node_id": "ph_mechanism_choice",
+                "source_id": "urmes2019",
+                "reference_commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+                "relation_to_claim": "full_text_published_source_model",
+                "ai_interpretation_note": "Single site family selected in Urmès 2019 Pd/α-Al₂O₃ tail-end context. Does not prove true unique micro-mechanism or apply to BEP PdAg.",
+                "owner_review": "unread",
+                "human_verified": false
+              },
+              {
+                "reference_node_id": "ph_mechanism_choice",
+                "source_id": "pachulski2012",
+                "reference_commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+                "relation_to_claim": "abstract_level_selected_model",
+                "ai_interpretation_note": "Publisher abstract reports selected two-site PdAg/Al₂O₃ L-H model; full article not inspected.",
+                "owner_review": "unread",
+                "human_verified": false
+              }
+            ]
+          },
+          {
+            "id": "regime_surface_sensitivity",
+            "statement": "The cited Pd/PdAg KMC investigation reports surface- and reaction-condition-dependent model hydrogenation activity/selectivity.",
+            "evidence_type": "source_model_result",
+            "source_ids": [
+              "mei2009"
+            ],
+            "status": "ai_attached",
+            "human_verified": false,
+            "ai_reference_links": [
+              {
+                "reference_node_id": "ph_pd_ag_surface",
+                "source_id": "mei2009",
+                "reference_commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+                "relation_to_claim": "abstract_preview_scope",
+                "ai_interpretation_note": "Model surfaces and abstracts do not establish an experimentally viable BEP-specific mechanism.",
+                "owner_review": "unread",
+                "human_verified": false
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "id": "urmes2019",
+            "title": "Kinetic Study of the Selective Hydrogenation of Acetylene over Supported Palladium under Tail-End Conditions",
+            "authors": "C. Urmès et al.",
+            "year": 2019,
+            "doi": "10.3390/catal9020180",
+            "url": "https://doi.org/10.3390/catal9020180",
+            "locator": "Printed pp. 3–6; selected mechanism and rate-equation discussion",
+            "supports": [
+              "regime_model_varies"
+            ],
+            "source_access": "full_text_read_by_AI_reference_workflow",
+            "review": "ai_attached",
+            "human_verified": false,
+            "owner_read_status": "unread",
+            "owner_citation_approval": "unapproved",
+            "scope": "0.05 wt% Pd/α-Al₂O₃ tail-end experiments only"
+          },
+          {
+            "id": "pachulski2012",
+            "title": "Kinetics and reactor modeling of a Pd-Ag/Al₂O₃ catalyst during selective hydrogenation of ethyne",
+            "authors": "A. Pachulski, S. Schödel, P. Claus",
+            "year": 2012,
+            "doi": "10.1016/j.apcata.2012.08.018",
+            "url": "https://doi.org/10.1016/j.apcata.2012.08.018",
+            "locator": "Publisher abstract",
+            "supports": [
+              "regime_model_varies"
+            ],
+            "source_access": "abstract_only_in_AI_reference",
+            "review": "ai_attached",
+            "human_verified": false,
+            "owner_read_status": "unread",
+            "owner_citation_approval": "unapproved",
+            "scope": "Studied steady PdAg/Al₂O₃ catalyst, not target transient mechanism"
+          },
+          {
+            "id": "mei2009",
+            "title": "Hydrogenation of acetylene–ethylene mixtures over Pd and Pd–Ag alloys: First-principles-based kinetic Monte Carlo simulations",
+            "authors": "D. Mei, M. Neurock, C. M. Smith",
+            "year": 2009,
+            "doi": "10.1016/j.jcat.2009.09.004",
+            "url": "https://doi.org/10.1016/j.jcat.2009.09.004",
+            "locator": "Publisher abstract and article preview",
+            "supports": [
+              "regime_surface_sensitivity"
+            ],
+            "source_access": "abstract_and_preview_in_AI_reference",
+            "review": "ai_attached",
+            "human_verified": false,
+            "owner_read_status": "unread",
+            "owner_citation_approval": "unapproved",
+            "scope": "Idealized Pd/PdAg KMC surfaces, not target reactor"
+          }
+        ],
+        "limitations": [
+          "No actual target-catalyst pathway or dominance pattern established.",
+          "Source-to-claim quotes remain pending the separate passage-level evidence audit."
+        ],
+        "related_ids": [
+          "own_ph_alternative_surface_paths"
+        ],
+        "research_letters": [
+          "C"
+        ],
+        "open_questions": [
+          "Which target catalyst composition/support, gas partial pressures and temperatures define the comparison?",
+          "What evidence separates an enabled route from a dominant rate contribution?"
+        ],
+        "origin": "owner_branch_structure_plus_ai_reference",
+        "decision_receipt": {
+          "structural_decision": "accepted_structure_only_2026_10_22",
+          "authority": "Owner specified a third subtheme covering viability in particular regimes and instructed recording three siblings.",
+          "date": "2026-10-22",
+          "exact_scope": "Title and immediate parent only; AI-written content/citations unread and unapproved.",
+          "human_understanding_approval": "none",
+          "source_verification_approval": "none"
+        },
+        "change_history": [
+          {
+            "date": "2026-10-22",
+            "change": "Initial AI explanation and citations added for approved structural location. No human content review."
+          }
+        ],
+        "ai_reference_related_ids": [
+          "ph_mechanism_choice"
+        ]
+      },
+      "owner_stage_after_reset": "idea",
+      "reactivation_requires": "Explain concrete content to owner, then obtain exact placement approval; source/citation verification independent",
+      "reset_reason": "2026-10-22 owner requested start from zero: remove current AI reaction nodes from personal map and park in bridges.",
+      "proposed_path": "Physics → Reaction Chemistry & Pathways → Our Reactions → Viability & Conditions",
+      "action_queue_ids": [
+        "Q20"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-ALT-01",
+      "title": "Surface-bound hydrogen-addition sequences and intermediate branching",
+      "status": "discussed_not_yet_placed",
+      "suggested_parent_id": null,
+      "reference_node_ids": [
+        "c1_microscopic_surface_path",
+        "c1_vinyl_ethylidene_alternative",
+        "ph_sequential_path"
+      ],
+      "from": "Follow user's wish to zoom into one of three sibling subthemes; assistant selects alternative microscopic pathways because multiple paths for same net reaction was owner's focus.",
+      "understanding": "not_assessed",
+      "review": "proposed_not_owner_read",
+      "scientific_scope": "Trace adsorption, vinyl or ethylidene routes and hydrogen addition on source-specific Pd/PdAg models; no target catalyst mechanism verified.",
+      "historical_parent_id": "own_ph_alternative_surface_paths",
+      "owner_stage_after_reset": "idea",
+      "not_a_personal_node": true,
+      "proposed_path": "Physics → Reaction Chemistry & Pathways → Our Reactions → Microscopic pathways",
+      "related_live_node_ids": [
+        "own_ph_reaction_mechanism_families",
+        "own_ph_stepwise_hydrogenation",
+        "own_ph_vinyl_ethylidene_route"
+      ],
+      "placement_note_2026_10_23": "Family + two broad routes now live with owner-scoped stages. Detailed intermediate branches are still pending; this broad historical bridge remains partially covered, not fully completed.",
+      "action_queue_ids": [
+        "Q18",
+        "Q20"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-ALT-02",
+      "title": "Ethylene desorption versus continued surface hydrogenation",
+      "status": "discussed_not_yet_placed",
+      "suggested_parent_id": null,
+      "reference_node_ids": [
+        "ph_sequential_path",
+        "c1_parallel_ethane_paths"
+      ],
+      "from": "Mechanistic alternative already mentioned; belongs deeper, not inserted until reached.",
+      "understanding": "not_assessed",
+      "review": "proposed_not_owner_read",
+      "historical_parent_id": "own_ph_alternative_surface_paths",
+      "owner_stage_after_reset": "idea",
+      "not_a_personal_node": true,
+      "proposed_path": "Physics → Reaction Chemistry & Pathways → Our Reactions → Microscopic pathways",
+      "action_queue_ids": [
+        "Q19"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-R1",
+      "title": "R1 — C₂H₂ + H₂ → C₂H₄: specific reaction pathways",
+      "status": "discussed_not_yet_placed",
+      "maturity": "idea",
+      "owner_read_status": "unread",
+      "owner_content_approval": "unapproved",
+      "suggested_parent_id": null,
+      "reference_node_ids": [
+        "ph_reaction_network",
+        "ph_sequential_path",
+        "c1_acetylene_semihydrogenation"
+      ],
+      "wayfinder_ticket": "R1",
+      "wayfinder_path": "Academics/BEP/Catalysis/research/wayfinder/bep_reaction_pathway_evidence_2026_10_22.md",
+      "existing_sources": [
+        "urmes2019",
+        "mei2009"
+      ],
+      "research_question": "Which elementary paths and conditions support the desired net reaction, and exactly what passages substantiate them?",
+      "note": "Net equation already in owner working parent; not an approved child or confirmed target-catalyst mechanism.",
+      "historical_parent_id": "own_ph_net_hydrogenation",
+      "owner_stage_after_reset": "idea",
+      "not_a_personal_node": true,
+      "proposed_path": "Physics → Reaction Chemistry & Pathways → Our Reactions → Microscopic pathways → R1",
+      "action_queue_ids": [
+        "Q20"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-R2",
+      "title": "R2 — C₂H₄ + H₂ → C₂H₆: over-hydrogenation paths",
+      "status": "discussed_not_yet_placed",
+      "maturity": "idea",
+      "owner_read_status": "unread",
+      "owner_content_approval": "unapproved",
+      "suggested_parent_id": null,
+      "reference_node_ids": [
+        "ph_sequential_path",
+        "c1_ethylene_overhydrogenation"
+      ],
+      "wayfinder_ticket": "R2",
+      "wayfinder_path": "Academics/BEP/Catalysis/research/wayfinder/bep_reaction_pathway_evidence_2026_10_22.md",
+      "existing_sources": [
+        "urmes2019",
+        "mei2009"
+      ],
+      "research_question": "Which routes convert ethylene to ethane and when is gas-phase ethylene versus surface-bound continuation relevant?",
+      "note": "Only future deep dive, not owner-read or placed as separate node.",
+      "historical_parent_id": "own_ph_net_hydrogenation",
+      "owner_stage_after_reset": "idea",
+      "not_a_personal_node": true,
+      "proposed_path": "Physics → Reaction Chemistry & Pathways → Our Reactions → Microscopic pathways → R2",
+      "action_queue_ids": [
+        "Q20"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-R3",
+      "title": "R3 — C₂H₂ + 2H₂ → C₂H₆: overall net versus independent surface routes",
+      "status": "discussed_not_yet_placed",
+      "maturity": "idea",
+      "owner_read_status": "unread",
+      "owner_content_approval": "unapproved",
+      "suggested_parent_id": null,
+      "reference_node_ids": [
+        "c1_parallel_ethane_paths",
+        "c1_vinyl_ethylidene_alternative",
+        "c1_no_independent_direct_rate"
+      ],
+      "wayfinder_ticket": "R3",
+      "wayfinder_path": "Academics/BEP/Catalysis/research/wayfinder/bep_reaction_pathway_evidence_2026_10_22.md",
+      "existing_sources": [
+        "bos_westerterp_1993",
+        "mei2009"
+      ],
+      "research_question": "What source-specific evidence, if any, establishes an independent mechanism or identifiable rate beyond R1+R2?",
+      "note": "R3=R1+R2 stoichiometrically; independent micro-route remains research hypothesis. No independent BEP reaction rate established.",
+      "historical_parent_id": "own_ph_net_hydrogenation",
+      "owner_stage_after_reset": "idea",
+      "not_a_personal_node": true,
+      "proposed_path": "Physics → Reaction Chemistry & Pathways → Our Reactions → Microscopic pathways → R3",
+      "action_queue_ids": [
+        "Q20"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-P1-NET",
+      "title": "Our Reactions: R1/R2/R3 net equations, historically old net reactions node",
+      "status": "placed",
+      "suggested_parent_id": null,
+      "proposed_path": "Physics → Reaction Chemistry & Pathways → Our Reactions",
+      "archived_node_snapshot": {
+        "id": "own_ph_net_hydrogenation",
+        "parent": "own_ph_reaction_chemistry_pathways",
+        "title": "Acetylene hydrogenation — net reactions",
+        "kind": "concept",
+        "summary": "Sequential ethylene production and over-hydrogenation coexist with a formal overall acetylene-to-ethane conversion.",
+        "approval": "accepted",
+        "structure_status": "owner_approved_structure_only",
+        "maturity": "ai_worked_out",
+        "understanding_status": "ai_worked_out",
+        "human_understanding_review": "not_assessed",
+        "source_claim_review": "ai_attached_only",
+        "importance": null,
+        "rationale": "First child: document what is chemically converted before selecting any surface-level mechanism.",
+        "notes": "R1 is desired partial hydrogenation. R2 is ethylene over-hydrogenation. R3 is acetylene to ethane with net addition of 2H2. Crucially the third stoichiometric vector is R1+R2, so R3 alone does NOT demonstrate an independent elementary reaction or a separate kinetic term. A genuinely independent path to ethane must be supported by catalyst-specific mechanistic evidence. Multiple surface routes may realize each balanced overall equation.",
+        "equations": [
+          {
+            "id": "R1",
+            "expression": "C₂H₂ + H₂ → C₂H₄",
+            "meaning": "Target net semi-hydrogenation, not necessarily a single elementary step.",
+            "assumptions": [
+              "Elements balanced"
+            ],
+            "quantities_and_units": []
+          },
+          {
+            "id": "R2",
+            "expression": "C₂H₄ + H₂ → C₂H₆",
+            "meaning": "Over-hydrogenation of ethylene, not necessarily a single elementary step.",
+            "assumptions": [
+              "Elements balanced"
+            ],
+            "quantities_and_units": []
+          },
+          {
+            "id": "R3",
+            "expression": "C₂H₂ + 2 H₂ → C₂H₆",
+            "meaning": "Overall acetylene-to-ethane conversion; R3=R1+R2 as net stoichiometry, but a direct pathway is not established by this identity.",
+            "assumptions": [
+              "Elements balanced"
+            ],
+            "quantities_and_units": []
+          }
+        ],
+        "claims": [
+          {
+            "id": "net-stoich",
+            "statement": "The overall C2H2-to-C2H6 stoichiometric vector equals the sum of the two C2H2-to-C2H4 and C2H4-to-C2H6 vectors.",
+            "evidence_type": "derived_under_assumptions",
+            "source_ids": [
+              "proposal_main"
+            ],
+            "status": "ai_attached",
+            "ai_reference_links": [
+              {
+                "reference_node_id": "ph_reaction_network",
+                "source_id": "proposal_main",
+                "reference_commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+                "relation_to_claim": "source_context_plus_derivation",
+                "ai_interpretation_note": "Proposal supports R1/R2 minimum network; R3=R1+R2 is direct stoichiometric algebra, not evidence for an independent microscopic third channel.",
+                "source_record_exists": true,
+                "source_record_status": "proposal_text_read_not_empirical",
+                "owner_review": "unread",
+                "human_verified": false
+              },
+              {
+                "reference_node_id": "ma_stoichiometry",
+                "source_id": "proposal_main",
+                "reference_commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+                "relation_to_claim": "mathematical_derivation",
+                "ai_interpretation_note": "The reference explains signed stoichiometric vectors and A nu=0, conditional on a balanced species network.",
+                "source_record_exists": true,
+                "source_record_status": "proposal_text_read_not_empirical",
+                "owner_review": "unread",
+                "human_verified": false
+              }
+            ],
+            "ai_derivation_note": "Stoichiometric identity directly from conservation: R3=R1+R2. Literature supports minimum hydrogenation reaction representation, not existence of a separate direct elementary path."
+          },
+          {
+            "id": "net-direct-context",
+            "statement": "Pd-catalysis literature considers a direct ethyne-to-ethane route, minor within the cited review context.",
+            "evidence_type": "review_synthesis",
+            "source_ids": [
+              "bos_westerterp_1993"
+            ],
+            "status": "ai_attached",
+            "ai_reference_links": [
+              {
+                "reference_node_id": "c1_parallel_ethane_paths",
+                "source_id": "bos_westerterp_1993",
+                "reference_commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+                "relation_to_claim": "historical_unverified_link",
+                "ai_interpretation_note": "The integrated map has a historic Bos reference attachment; independently available Bos & Westerterp abstract discusses a minor direct route only for its Pd literature context.",
+                "source_record_exists": true,
+                "source_record_status": "metadata_verified_and_abstract_found_separately_full_pdf_not_inspected",
+                "owner_review": "unread",
+                "human_verified": false
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "id": "proposal_main",
+            "title": "Dynamic Control of Acetylene Semi-Hydrogenation: A Spatiotemporal Modeling Framework for Intermediary Yield Optimization",
+            "doi": null,
+            "url": null,
+            "locator": "Abstract; Introduction §1; Research Questions; Methodology §§3.1–3.5",
+            "supports": [
+              "BEP project intent and boundaries; not independent mechanistic evidence"
+            ],
+            "source_access": "local_project_document_checked",
+            "review": "ai_attached",
+            "human_verified": false,
+            "scope": "Proposal (hypotheses and planned modelling)",
+            "path": "Academics/BEP/Catalysis/0_Project_Management/main.tex",
+            "owner_read_status": "unread",
+            "owner_citation_approval": "unapproved",
+            "claim_ids": [
+              "net-stoich"
+            ]
+          },
+          {
+            "id": "bos_westerterp_1993",
+            "title": "Mechanism and kinetics of the selective hydrogenation of ethyne and ethene",
+            "doi": "10.1016/0255-2701(93)87001-B",
+            "url": "https://research.utwente.nl/en/publications/mechanism-and-kinetics-of-the-selective-hydrogenation-of-ethyne-a/",
+            "locator": "Institutional abstract; review, 1993",
+            "supports": [
+              "Alternative ethyne-to-ethane route described, judged minor in review context; multiple site types considered"
+            ],
+            "source_access": "institutional_abstract_checked; open_published_pdf_available_not_inspected",
+            "review": "ai_attached",
+            "human_verified": false,
+            "scope": "Pd catalyst literature review; not direct target-PdAg data",
+            "owner_read_status": "unread",
+            "owner_citation_approval": "unapproved",
+            "claim_ids": [
+              "net-direct-context"
+            ]
+          },
+          {
+            "id": "bos_etal_1993_kinetic",
+            "title": "A kinetic study of the hydrogenation of ethyne and ethene on a commercial Pd/Al2O3 catalyst",
+            "doi": "10.1016/0255-2701(93)87006-G",
+            "url": "https://research.utwente.nl/en/publications/a-kinetic-study-of-the-hydrogenation-of-ethyne-and-ethene-on-a-co/",
+            "locator": "Institutional abstract; Chemical Engineering and Processing 32 (1993), 53–63",
+            "supports": [
+              "Eight rate-expression sets tested on commercial Pd/Al2O3; no unique best model; ethane-rate predictions complicated by alternate paths"
+            ],
+            "source_access": "institutional_abstract_checked; published_pdf_not_inspected",
+            "review": "ai_attached",
+            "human_verified": false,
+            "scope": "Measured commercial Pd/Al2O3; catalyst, support, conditions cannot automatically transfer to BEP PdAg",
+            "owner_read_status": "unread",
+            "owner_citation_approval": "unapproved",
+            "claim_ids": []
+          }
+        ],
+        "assumptions": [
+          "Gas stoichiometry is independent from the chosen elementary surface mechanism."
+        ],
+        "limitations": [
+          "Third net reaction is linearly dependent; cannot justify independent rate parameter from stoichiometry alone.",
+          "Real side products such as oligomers/coke not represented in these three net reactions."
+        ],
+        "related_ids": [],
+        "research_letters": [],
+        "open_questions": [
+          "Under which conditions should an independent ethane-formation channel appear as a separate fitted rate?"
+        ],
+        "origin": "owner_structure_plus_ai_research",
+        "decision_receipt": {
+          "structural_decision": "accepted_structure_only_2026_10_22",
+          "human_understanding_approval": "none",
+          "source_verification_approval": "none",
+          "owner_read_status": "unread",
+          "correction": "2026-10-22: owner explicitly specified Unapproved / Unread. Previous label of accepted was premature.",
+          "note": "User corrected: unapproved unread; earlier accepted claim was inaccurate.",
+          "authority": "Owner confirmed three sibling subthemes under Physics reaction theme, and asked to write and zoom deeper.",
+          "exact_scope": "Only node placement/titles; scientific explanation, citations, personal comprehension remain unapproved and unread."
+        },
+        "owner_read_status": "unread",
+        "owner_approval_status": "structure_only",
+        "owner_content_approval": "unapproved",
+        "ai_reference_snapshot": {
+          "repository": "AsapLoso/project-management-agents",
+          "commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+          "nodes_path": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml",
+          "sources_path": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/sources.yaml",
+          "source_maturity_ceiling": "ai_worked_out"
+        },
+        "ai_reference_review_status": "ai_links_reconciled_2026_10_22_not_owner_read_or_verified",
+        "owner_structure_approval_scope": "Parent/title hierarchy only, from 2026-10-22 user request to record Physics → Reaction Chemistry & Pathways with three subthemes."
+      },
+      "owner_stage_after_reset": "idea",
+      "owner_read_status": "unread",
+      "owner_content_approval": "unapproved",
+      "citation_review": "ai_attached_only",
+      "reactivation_requires": "Owner hears explanation and gives scoped approval for exact new content/placement.",
+      "latest_owner_placement": {
+        "date": "2026-10-22",
+        "placed_node_id": "own_ph_net_hydrogenation",
+        "scope": "new minimal owner-approved scaffold; historical archived snapshot preserved without wholesale scientific reactivation",
+        "owner_source_verification": "none",
+        "owner_human_understanding": "none"
+      }
+    },
+    {
+      "id": "B-P1-MICRO",
+      "title": "Microscopic pathways: historical broad AI-written theme",
+      "status": "placed",
+      "suggested_parent_id": null,
+      "proposed_path": "Physics → Reaction Chemistry & Pathways → Our Reactions → Microscopic pathways",
+      "archived_node_snapshot": {
+        "id": "own_ph_alternative_surface_paths",
+        "parent": "own_ph_reaction_chemistry_pathways",
+        "title": "Alternative microscopic pathways for the same net reaction",
+        "kind": "concept",
+        "summary": "Different sequences of adsorbed surface intermediates can lead to ethylene or ethane.",
+        "approval": "accepted",
+        "structure_status": "owner_approved_structure_only",
+        "maturity": "ai_worked_out",
+        "understanding_status": "ai_worked_out",
+        "human_understanding_review": "not_assessed",
+        "source_claim_review": "ai_attached_only",
+        "importance": null,
+        "rationale": "Second direct subtheme under Reaction Chemistry & Pathways. Classifies distinct microscopic sequences that realize the same net stoichiometry. Placement approved; scientific content still unread.",
+        "notes": "Distinguish: (a) gas-phase C2H4 that desorbs and can be readsorbed before becoming ethane; (b) adsorbed carbon-containing intermediates that continue to hydrogenate without ethylene desorbing; and (c) different intermediate branches, e.g. modelled vinyl versus ethylidene pathways. A bypass in the surface sequence does not automatically imply an independent third net reaction rate identifiable from outlet measurements. Published model results concern idealized Pd/PdAg surfaces; target kinetic relevance remains unproven.",
+        "equations": [],
+        "claims": [
+          {
+            "id": "path-mei",
+            "statement": "Mei et al.'s KMC study finds vinyl-mediated acetylene-to-ethylene and a competing ethylidene route towards ethane on its investigated idealized surfaces.",
+            "evidence_type": "source_model_result",
+            "source_ids": [
+              "mei2009"
+            ],
+            "status": "ai_attached",
+            "ai_reference_links": [
+              {
+                "reference_node_id": "ph_sequential_path",
+                "source_id": "mei2009",
+                "reference_commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+                "relation_to_claim": "abstract_level_model_evidence",
+                "ai_interpretation_note": "KMC is for specific idealized Pd/PdAg surfaces, not catalyst-transferrable experimentally demonstrated dynamics.",
+                "source_record_exists": true,
+                "source_record_status": "abstract_and_preview_only",
+                "owner_review": "unread",
+                "human_verified": false
+              },
+              {
+                "reference_node_id": "c1_vinyl_ethylidene_alternative",
+                "source_id": "mei2009",
+                "reference_commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+                "relation_to_claim": "historical_unverified_link",
+                "ai_interpretation_note": "Vinyl/ethylidene interpretation appears in AI map but this legacy claim-source link remains unverified against full paper.",
+                "source_record_exists": true,
+                "source_record_status": "abstract_and_preview_only",
+                "owner_review": "unread",
+                "human_verified": false
+              }
+            ]
+          },
+          {
+            "id": "path-bos",
+            "statement": "Bos & Westerterp discuss multiple site types and a separate direct route in Pd hydrogenation literature.",
+            "evidence_type": "review_synthesis",
+            "source_ids": [
+              "bos_westerterp_1993"
+            ],
+            "status": "ai_attached",
+            "ai_reference_links": [
+              {
+                "reference_node_id": "c1_parallel_ethane_paths",
+                "source_id": "bos_westerterp_1993",
+                "reference_commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+                "relation_to_claim": "historical_unverified_link",
+                "ai_interpretation_note": "Multiple site types and direct channel described in review abstract; no unique target catalyst mechanism follows.",
+                "source_record_exists": true,
+                "source_record_status": "metadata_verified_and_abstract_found_separately_full_pdf_not_inspected",
+                "owner_review": "unread",
+                "human_verified": false
+              }
+            ]
+          },
+          {
+            "id": "path-identifiability",
+            "statement": "In experiments on commercial Pd/Al2O3, multiple kinetic formulations described data similarly and alternative ethane formation routes complicated prediction.",
+            "evidence_type": "source_observation",
+            "source_ids": [
+              "bos_etal_1993_kinetic"
+            ],
+            "status": "ai_attached",
+            "ai_reference_links": [],
+            "reference_gap": {
+              "type": "publication_not_yet_in_143_node_integrated_source_ledger",
+              "manual_source_id": "bos_etal_1993_kinetic",
+              "manual_overlay_id": "source_discovery_Bos_etal1993",
+              "reference_node_id": null,
+              "source_abstract_status": "institutional_abstract_checked",
+              "next_action": "Add bibliographic/source-context record to next AI reference research iteration; do not invent a mapped source ID.",
+              "human_verified": false
+            }
+          }
+        ],
+        "sources": [
+          {
+            "id": "bos_westerterp_1993",
+            "title": "Mechanism and kinetics of the selective hydrogenation of ethyne and ethene",
+            "doi": "10.1016/0255-2701(93)87001-B",
+            "url": "https://research.utwente.nl/en/publications/mechanism-and-kinetics-of-the-selective-hydrogenation-of-ethyne-a/",
+            "locator": "Institutional abstract; review, 1993",
+            "supports": [
+              "Alternative ethyne-to-ethane route described, judged minor in review context; multiple site types considered"
+            ],
+            "source_access": "institutional_abstract_checked; open_published_pdf_available_not_inspected",
+            "review": "ai_attached",
+            "human_verified": false,
+            "scope": "Pd catalyst literature review; not direct target-PdAg data",
+            "owner_read_status": "unread",
+            "owner_citation_approval": "unapproved",
+            "claim_ids": [
+              "path-bos"
+            ]
+          },
+          {
+            "id": "mei2009",
+            "title": "Hydrogenation of Acetylene-Ethylene Mixtures over Pd and Pd-Ag Alloys: First-Principles Based Kinetic Monte Carlo Simulations",
+            "doi": "10.1016/j.jcat.2009.09.004",
+            "url": "https://www.pnnl.gov/publications/hydrogenation-acetylene-ethylene-mixtures-over-pd-and-pd-ag-alloys-first-principles",
+            "locator": "PNNL publication summary; abstract",
+            "supports": [
+              "Vinyl-mediated selective route; ethylidene branch leading toward ethane under model conditions"
+            ],
+            "source_access": "institutional_abstract_checked",
+            "review": "ai_attached",
+            "human_verified": false,
+            "scope": "Model idealized Pd/PdAg surfaces; not target-specific experimental pathway determination",
+            "owner_read_status": "unread",
+            "owner_citation_approval": "unapproved",
+            "claim_ids": [
+              "path-mei"
+            ]
+          },
+          {
+            "id": "bos_etal_1993_kinetic",
+            "title": "A kinetic study of the hydrogenation of ethyne and ethene on a commercial Pd/Al2O3 catalyst",
+            "doi": "10.1016/0255-2701(93)87006-G",
+            "url": "https://research.utwente.nl/en/publications/a-kinetic-study-of-the-hydrogenation-of-ethyne-and-ethene-on-a-co/",
+            "locator": "Institutional abstract; Chemical Engineering and Processing 32 (1993), 53–63",
+            "supports": [
+              "Eight rate-expression sets tested on commercial Pd/Al2O3; no unique best model; ethane-rate predictions complicated by alternate paths"
+            ],
+            "source_access": "institutional_abstract_checked; published_pdf_not_inspected",
+            "review": "ai_attached",
+            "human_verified": false,
+            "scope": "Measured commercial Pd/Al2O3; catalyst, support, conditions cannot automatically transfer to BEP PdAg",
+            "owner_read_status": "unread",
+            "owner_citation_approval": "unapproved",
+            "claim_ids": [
+              "path-identifiability"
+            ]
+          }
+        ],
+        "assumptions": [
+          "Reaction sequence and active-site allocation depend on catalyst and feed conditions."
+        ],
+        "limitations": [
+          "No BEP target microkinetic pathway has been identified.",
+          "PNNL abstract/summary and institutional abstracts were checked; full paper details not inspected in this pass."
+        ],
+        "related_ids": [],
+        "research_letters": [],
+        "open_questions": [
+          "Which different pathway families are physically viable on the BEP catalyst?",
+          "How do partial pressures, surface composition and temperature shift dominant pathways?"
+        ],
+        "origin": "owner_structure_plus_ai_research",
+        "decision_receipt": {
+          "structural_decision": "accepted_structure_only_2026_10_22",
+          "human_understanding_approval": "none",
+          "source_verification_approval": "none",
+          "owner_read_status": "unread",
+          "correction": "2026-10-22: owner explicitly specified Unapproved / Unread. Previous label of accepted was premature.",
+          "note": "User corrected: unapproved unread; earlier accepted claim was inaccurate.",
+          "authority": "Owner confirmed three sibling subthemes under Physics reaction theme, and asked to write and zoom deeper.",
+          "exact_scope": "Only node placement/titles; scientific explanation, citations, personal comprehension remain unapproved and unread."
+        },
+        "owner_read_status": "unread",
+        "owner_approval_status": "structure_only",
+        "owner_content_approval": "unapproved",
+        "ai_reference_snapshot": {
+          "repository": "AsapLoso/project-management-agents",
+          "commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+          "nodes_path": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml",
+          "sources_path": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/sources.yaml",
+          "source_maturity_ceiling": "ai_worked_out"
+        },
+        "ai_reference_review_status": "ai_links_reconciled_2026_10_22_not_owner_read_or_verified",
+        "owner_structure_approval_scope": "Parent/title hierarchy only, from 2026-10-22 user request to record Physics → Reaction Chemistry & Pathways with three subthemes."
+      },
+      "owner_stage_after_reset": "idea",
+      "owner_read_status": "unread",
+      "owner_content_approval": "unapproved",
+      "citation_review": "ai_attached_only",
+      "reactivation_requires": "Owner hears explanation and gives scoped approval for exact new content/placement.",
+      "latest_owner_placement": {
+        "date": "2026-10-22",
+        "placed_node_id": "own_ph_alternative_surface_paths",
+        "placed_parent_id": "own_ph_net_hydrogenation",
+        "new_maturity": "idea",
+        "scope": "Tier4 structure only, not restoration of previous AI-written scientific payload or legacy maturity",
+        "owner_understanding_review": "not_assessed",
+        "source_verification": "none",
+        "source_note_path": "owner_working_map/bridges/microscopic_pathways_source_recon_2026_10_22.md"
+      }
+    },
+    {
+      "id": "B-V-R1",
+      "title": "Viability & Conditions — R1",
+      "status": "discussed_not_yet_placed",
+      "maturity": "idea",
+      "not_a_personal_node": true,
+      "owner_read_status": "unread",
+      "owner_content_approval": "unapproved",
+      "human_understanding_review": "not_assessed",
+      "human_verified": false,
+      "suggested_parent_id": null,
+      "proposed_path": "Physics → Reaction Chemistry & Pathways → Our Reactions → Viability & Conditions → R1",
+      "research_question": "Which conditions allow acetylene to be hydrogenated to ethylene in a specified catalyst/regime?",
+      "existing_source_hints": [
+        "urmes2019"
+      ],
+      "ai_reference_ids": [
+        "ph_sequential_path"
+      ],
+      "reference_note": "Earlier AI reference descriptions are parked background, not user-reviewed content; read explanation first; no target-catalyst claim inferred.",
+      "source_crosswalk": "owner_working_map/VIABILITY_SOURCE_CROSSWALK_2026_10_22.md",
+      "placement_gate": "Only after owner has heard and approved the specific scientific explanation",
+      "action_queue_ids": [
+        "Q20"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-V-R2",
+      "title": "Viability & Conditions — R2",
+      "status": "discussed_not_yet_placed",
+      "maturity": "idea",
+      "not_a_personal_node": true,
+      "owner_read_status": "unread",
+      "owner_content_approval": "unapproved",
+      "human_understanding_review": "not_assessed",
+      "human_verified": false,
+      "suggested_parent_id": null,
+      "proposed_path": "Physics → Reaction Chemistry & Pathways → Our Reactions → Viability & Conditions → R2",
+      "research_question": "Which conditions allow ethylene to continue to ethane, and how significant is that channel?",
+      "existing_source_hints": [
+        "urmes2019"
+      ],
+      "ai_reference_ids": [
+        "ph_mechanism_choice"
+      ],
+      "reference_note": "Earlier AI reference descriptions are parked background, not user-reviewed content; read explanation first; no target-catalyst claim inferred.",
+      "source_crosswalk": "owner_working_map/VIABILITY_SOURCE_CROSSWALK_2026_10_22.md",
+      "placement_gate": "Only after owner has heard and approved the specific scientific explanation",
+      "action_queue_ids": [
+        "Q20"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-V-R3",
+      "title": "Viability & Conditions — R3",
+      "status": "discussed_not_yet_placed",
+      "maturity": "idea",
+      "not_a_personal_node": true,
+      "owner_read_status": "unread",
+      "owner_content_approval": "unapproved",
+      "human_understanding_review": "not_assessed",
+      "human_verified": false,
+      "suggested_parent_id": null,
+      "proposed_path": "Physics → Reaction Chemistry & Pathways → Our Reactions → Viability & Conditions → R3",
+      "research_question": "What conditions, if any, make an independently significant acetylene-to-ethane pathway plausible rather than just net R1+R2?",
+      "existing_source_hints": [
+        "bos_westerterp_1993"
+      ],
+      "ai_reference_ids": [
+        "c1_parallel_ethane_paths"
+      ],
+      "reference_note": "Earlier AI reference descriptions are parked background, not user-reviewed content; read explanation first; no target-catalyst claim inferred.",
+      "source_crosswalk": "owner_working_map/VIABILITY_SOURCE_CROSSWALK_2026_10_22.md",
+      "placement_gate": "Only after owner has heard and approved the specific scientific explanation",
+      "action_queue_ids": [
+        "Q20"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-ER-01",
+      "title": "One adsorbed reactant versus two — encounter mechanism families",
+      "status": "placed",
+      "suggested_parent_id": "own_ph_surface_encounter_mechanisms",
+      "maturity": "idea",
+      "scientific_question": "Is a direct gas-phase encounter with an adsorbed reactant important for this catalyst, or do both relevant reactants adsorb before hydrogenation?",
+      "owner_input": "Owner recalls a master's student's qualitative explanation of adsorption helping reactive encounters; not a cited or experimentally verified BEP mechanism.",
+      "notes": "Langmuir–Hinshelwood-type surface reactions can involve two adsorbed species; Eley–Rideal-type mechanisms involve a gas-phase participant reacting with a bound species. The published Urmès 2019 Pd/α-Al₂O₃ mechanism uses adsorbed hydrocarbon and dissociated H*. Do not assert ER operates on the BEP catalyst or equate 'only one must adsorb' with its selected scheme.",
+      "reference_node_ids": [],
+      "source_ids": [
+        "urmes2019"
+      ],
+      "external_review_sources": [
+        {
+          "doi": "10.1021/acscatal.4c05188",
+          "title": "Practical Considerations for Understanding Surface Reaction Mechanisms Involved in Heterogeneous Catalysis",
+          "access": "publisher_full_text_online",
+          "human_verified": false
+        },
+        {
+          "title": "ANSYS CHEMKIN 4.7 Langmuir–Hinshelwood and Eley–Rideal Reactions",
+          "url": "https://ansyshelp.ansys.com/public/Views/Secured/corp/v251/en/chemkin_th/i19159.html",
+          "access": "documentation_reviewed",
+          "human_verified": false
+        }
+      ],
+      "question_for_damian": "Which adsorption/encounter scheme are we using for our supported PdAg reactor? Can we distinguish it experimentally?",
+      "review_status": "ai_drafted_unread",
+      "human_source_verification": false,
+      "placement_decision": "Owner explicitly chose separate Tier5 sibling of Adsorption and Reaction Mechanism Families, with Tier6 LH and ER as Idea children. Fine-grained 2024 review taxonomy remains unplaced and queued.",
+      "related_bridge_ids": [
+        "B-P3"
+      ],
+      "owner_question_refinement": "Microscopic question to Damian stays on Tier-5 Adsorption page: do both reacting species first adsorb, or can gas-phase reactant react directly with adsorbed acetylene? Gas penetration within porous pellet belongs to separate transport bridge B-P3.",
+      "historical_suggested_parent_id": "own_ph_adsorption",
+      "placed_node_ids": [
+        "own_ph_surface_encounter_mechanisms",
+        "own_ph_langmuir_hinshelwood_encounter",
+        "own_ph_eley_rideal_encounter",
+        "own_ph_langmuir_rideal_encounter",
+        "own_ph_lr_elementary_encounter",
+        "own_ph_lr_illustrative_rate",
+        "own_ph_lr_derivation_assumptions"
+      ],
+      "placed_2026_10_23": {
+        "owner_authority": "Owner directed a Tier5 sibling and separate Tier6 LH and ER",
+        "human_understanding_approval": "not granted, Idea only",
+        "advanced_source_promotion": "none"
+      },
+      "placement_decision_2026_10_23": "Owner approved third LH / strict ER / LR Tier6 sibling and three Tier7 LR Ideas. General ER nomenclature now strictly differentiated; no target catalyst mechanism verified.",
+      "related_live_node_ids": [
+        "own_ph_langmuir_rideal_encounter",
+        "own_ph_lr_elementary_encounter",
+        "own_ph_lr_illustrative_rate",
+        "own_ph_lr_derivation_assumptions"
+      ]
+    },
+    {
+      "id": "B-ADS-GEOMETRY",
+      "title": "Effective adsorption sites, molecular footprint and catalytic orientation",
+      "status": "discussed_not_yet_placed",
+      "suggested_parent_id": "own_ph_adsorption",
+      "maturity": "idea",
+      "scientific_question": "When does one effective site represent one molecule, and when do multi-atom ensembles, adsorbate geometry or transition-state stabilization matter?",
+      "owner_input": "Owner described a fixed number of sites, a one-molecule/one-site picture and a colleague's idea of improved molecular alignment; explicitly invited clarification of apparent tension.",
+      "notes": "Single-site Langmuir occupancy is a kinetic abstraction, not geometric proof of one metal atom per adsorbate. The Urmès 2019 Table 3 requires 2 vacant sites for H₂ splitting, 1 effective site for C₂H₂ adsorption; other adsorbate geometries or multi-site models are possible. A catalyst changes bonding and free-energy barriers, not just orientation. Keep microscopic adsorption and quantitative kinetics separately scoped.",
+      "reference_node_ids": [
+        "c1_surface_sites",
+        "c1_adjacent_site_requirement",
+        "c1_dissociative_h2_adsorption"
+      ],
+      "source_ids": [
+        "urmes2019",
+        "pachulski2012"
+      ],
+      "question_for_damian": "What does our model count as a site? Is one adsorbate per site defensible for this catalyst, and what role do adjacent sites play in H₂ activation?",
+      "review_status": "ai_drafted_unread",
+      "human_source_verification": false,
+      "placement_decision": "bridge_only_no_new_personal_node",
+      "related_bridge_ids": [
+        "B-SITE-TYPES-01",
+        "B-ADS-PROPERTIES-01"
+      ],
+      "action_queue_ids": [
+        "Q50"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-SAT-01",
+      "title": "Catalyst saturation, site capacity and surface coverage",
+      "status": "partially_placed",
+      "maturity": "idea",
+      "suggested_parent_id": null,
+      "proposed_path_options": [
+        "Physics → Catalyst structure, active sites and kinetics (future B-P2) → Catalyst saturation / active-site capacity",
+        "Physics → Reaction Chemistry & Pathways → Microscopic Reaction Pathways → separate sibling of Adsorption (requires owner decision)"
+      ],
+      "linked_personal_ids": [
+        "own_ph_adsorption",
+        "own_ph_alternative_surface_paths"
+      ],
+      "related_bridge_ids": [
+        "B-P2",
+        "B-ADS-GEOMETRY",
+        "B-P1-COND",
+        "B-POISON-01",
+        "B-AGGLOM-01",
+        "B-P4",
+        "B-P3",
+        "B-PRESS-SEL-01",
+        "B-SURFACE-AVAILABILITY-01",
+        "B-SITE-TYPES-01",
+        "B-ADS-PROPERTIES-01"
+      ],
+      "reference_node_ids": [
+        "c1_surface_sites",
+        "c1_full_site_balance",
+        "c1_hydrocarbon_site_competition",
+        "ph_surface_states",
+        "ph_site_ensembles",
+        "ph_deposits",
+        "c1_c4_coke_deactivation",
+        "ph_pellet_transport",
+        "internal_diffusion_thiele"
+      ],
+      "source_ids": [
+        "urmes2019",
+        "pachulski2012",
+        "borodzinski2000"
+      ],
+      "scientific_question": "How is accessible catalytic site capacity/coverage defined, how can sites become occupied/saturated and unavailable to a pathway, and how does this differ from total catalyst mass, pellet geometry and accessible pore surface?",
+      "owner_input": "The owner explicitly proposed catalyst saturation as its own subject, not just a subsection of adsorption, but wants a link to adsorption; questioned equating a simplistic finite set of model sites to a macroscopic count of outside atoms on a porous catalyst.",
+      "scientific_cautions": [
+        "Total possible microscopic sites, effective fitted site density, accessible internal pore surface, occupied-site coverage and pellet mass are different quantities.",
+        "Physical pore diffusion and external transport can limit which sites are accessible during finite time.",
+        "Saturation/coverage is not an observed BEP state merely because the kinetic model contains a site-balance constraint.",
+        "Site coverage can affect adsorption, hydrogen activation, intermediate accumulation and available active-site ensembles."
+      ],
+      "owner_placement_approval": "bridge_only; exact parent pending",
+      "human_understanding_review": "not_assessed",
+      "source_claim_review": "ai_attached_only",
+      "action_queue_id": "Q17",
+      "no_new_personal_node": true,
+      "owner_latest_addition_2026_10_22": {
+        "two_mechanisms_from_colleague": [
+          "Chemical: poisoning or blocking of catalytic sites by adsorbing impurities/surface deposits; poisoning may inhibit kinetics or remove active sites over time (not all inhibitors are irreversible poisons).",
+          "Physical: particles/pellets clumping, potentially reducing gas-accessible area; exact physical mechanism ambiguous between sintering of metal nanoparticles, pellets sticking, pore plugging or bed agglomeration."
+        ],
+        "notebook_capacity_question": "Owner speculates that fitted constants may implicitly cap site occupancy or make impossible oversaturation negligibly probable. Need to inspect actual Jupyter notebook to establish whether it uses finite site balances or algebraic adsorption terms; no inspection performed.",
+        "correction": "Physical occupancy of a finite number of surface sites cannot exceed capacity: theta_free + sum(theta_adsorbed) = 1 for a suitable site basis (plus any poison/deposit occupancy). More inlet pressure can bring coverage towards saturation, not above a hard physical site count. The fitting/functional form may or may not respect this; do not assume it from a small fitted coefficient. Total site count, accessible area and gas penetration must be distinct.",
+        "transport_question": "If reactions occur on pore-internal catalyst surfaces, penetration depth and effectiveness depend on pore network, diffusivity, rates and time; never presume 'deep inside does not work' without comparing relevant transport/reaction timescales.",
+        "source_provenance": [
+          {
+            "doi": "10.1016/S0920-5861(99)00074-7",
+            "title": "Catalyst deactivation",
+            "level": "review abstract, general",
+            "human_verified": false
+          },
+          {
+            "doi": "10.3390/catal5010145",
+            "title": "Heterogeneous Catalyst Deactivation and Regeneration: A Review",
+            "level": "open review, general",
+            "human_verified": false
+          },
+          {
+            "doi": "10.1039/D4CS01237B",
+            "title": "Recent advances in thermocatalytic acetylene selective hydrogenation",
+            "level": "2025 source context for green oil/coke accumulation",
+            "human_verified": false
+          },
+          {
+            "doi": "10.1021/acscatal.4c02813",
+            "title": "The Conundrum of Pair Sites in Langmuir–Hinshelwood Reaction Kinetics in Heterogeneous Catalysis",
+            "level": "site count modeling example, not BEP",
+            "human_verified": false
+          }
+        ],
+        "queue_items": [
+          "Q25",
+          "Q26"
+        ]
+      },
+      "placed_node_ids": [
+        "own_ph_surface_site_availability",
+        "own_ph_surface_saturation"
+      ],
+      "placement_decision_2026_10_23": "Owner chose Site Availability and Surface Saturation nodes; fine-scale catalyst accessible capacity, dynamic adsorption and transport still future.",
+      "related_live_node_ids": [
+        "own_ph_surface_site_availability",
+        "own_ph_surface_saturation"
+      ],
+      "action_queue_ids": [
+        "Q55"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-POISON-01",
+      "title": "Poisoning, inhibitors and carbonaceous site blocking",
+      "status": "partially_placed",
+      "maturity": "idea",
+      "proposed_path": "Physics → Catalyst structure, active sites and kinetics / catalyst evolution (future owner-selected position)",
+      "suggested_parent_id": null,
+      "linked_personal_ids": [
+        "own_ph_adsorption"
+      ],
+      "related_bridge_ids": [
+        "B-SAT-01",
+        "B-P2",
+        "B-P4",
+        "B-P1-COND",
+        "B-PRESS-SEL-01",
+        "B-SURFACE-AVAILABILITY-01"
+      ],
+      "reference_node_ids": [
+        "ph_deposits",
+        "c1_c4_coke_deactivation",
+        "c1_borodzinski_ae_site_hypothesis"
+      ],
+      "source_ids": [
+        "borodzinski2000"
+      ],
+      "research_sources": [
+        {
+          "title": "Heterogeneous Catalyst Deactivation and Regeneration: A Review",
+          "doi": "10.3390/catal5010145",
+          "evidence_status": "AI review, general catalyst categories, not BEP-specific"
+        },
+        {
+          "title": "Recent advances in thermocatalytic acetylene selective hydrogenation",
+          "doi": "10.1039/D4CS01237B",
+          "evidence_status": "review on green oil/coke accumulation under acetylene hydrogenation, not target specimen measurement"
+        }
+      ],
+      "owner_input": "Colleague named poisoning as one way catalyst activity/accessibility declines; owner links this to inhibitors and reaction-rate kinetics.",
+      "explanation": "Species can adsorb strongly and obstruct/modify catalytic sites, reducing active coverage or shifting selectivity. Some inhibitors compete reversibly; poisoning and coke/green oil/pore fouling are often distinct deactivation processes. Do not treat any possible poison or buildup as detected in the BEP system.",
+      "open_questions": [
+        "Which inhibitors/deposits appear under our PdAg reactor feed and temperature conditions?",
+        "What model term represents active-site loss vs reversible site competition, and is it supported by experiments?"
+      ],
+      "owner_approval": "bridge idea only, not personal graph",
+      "human_understanding_review": "not_assessed",
+      "human_verified": false,
+      "queue_item": "Q25",
+      "placed_node_ids": [
+        "own_ph_surface_poisoning"
+      ],
+      "placement_decision_2026_10_23": "Owner chose Catalyst Poisoning as separate Idea sibling; coke, deposits, inhibition and deactivation remain potential finer studies.",
+      "related_live_node_ids": [
+        "own_ph_surface_poisoning"
+      ],
+      "action_queue_ids": [
+        "Q55"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-AGGLOM-01",
+      "title": "Particle sintering, pellet agglomeration and loss of accessible surface area",
+      "status": "discussed_not_yet_placed",
+      "maturity": "idea",
+      "proposed_path": "Physics → Catalyst structure / aging and transport (future owner-selected position)",
+      "suggested_parent_id": null,
+      "linked_personal_ids": [
+        "own_ph_adsorption"
+      ],
+      "related_bridge_ids": [
+        "B-SAT-01",
+        "B-P3",
+        "B-P4",
+        "B-POISON-01"
+      ],
+      "reference_node_ids": [
+        "ph_pellet_transport",
+        "ph_site_ensembles",
+        "internal_diffusion_thiele"
+      ],
+      "research_sources": [
+        {
+          "title": "Heterogeneous Catalyst Deactivation and Regeneration: A Review",
+          "doi": "10.3390/catal5010145",
+          "evidence_status": "general physical/thermal deactivation mechanisms review, not target verified"
+        },
+        {
+          "title": "New Perspectives for Evaluating the Mass Transport in Porous Catalysts and Unfolding Macro- and Microkinetics",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10547662/",
+          "evidence_status": "porosity and transport overview"
+        }
+      ],
+      "owner_input": "Owner's colleague described pellets or particles clumping together and reducing the exposed area.",
+      "explanation": "Ambiguity must be kept explicit: metal crystallites can sinter/coalesce and reduce exposed active metal area; catalyst pellets may physically agglomerate (inter-pellet gaps or flow paths change); deposits can foul/block pores; these are not synonyms and do not all simply reduce an exterior pellet area. Supported catalyst may react on internal pore surfaces accessible to gas.",
+      "open_questions": [
+        "Was colleague describing active-metal nanoparticle sintering, pellet-to-pellet agglomeration, or deposit/pore blocking?",
+        "How would the specific mechanism change accessible site density, effectiveness factor or reactor hydrodynamics?"
+      ],
+      "owner_approval": "bridge idea only, no place/stage approval",
+      "human_understanding_review": "not_assessed",
+      "human_verified": false,
+      "queue_item": "Q25",
+      "action_queue_ids": [
+        "Q55",
+        "Q65"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-LH-ARR-01",
+      "title": "LH surface-reaction kinetics, Arrhenius temperature dependence, and model placement",
+      "status": "discussed_not_yet_placed",
+      "maturity": "idea",
+      "not_a_personal_node": true,
+      "owner_input": "Our model is LH-based, or that is what the owner currently understands. The Arrhenius factor and LH kinetic expression are related, but the owner has not decided whether rate modeling belongs under Mathematics, Physics or a separate Modeling theme.",
+      "suggested_parent_id": null,
+      "candidate_disciplines": [
+        "Mathematics",
+        "Physics",
+        "Systems & Control"
+      ],
+      "placement_decision": "bridge_only_owner_unsure_about_math_modeling_taxonomy",
+      "scientific_question": "How are surface-adsorption and LH/LHHW kinetic factors and temperature-dependent rate/adsorption parameters combined in the actual source term of the BEP reactor equations?",
+      "scientific_scope": "Illustrative rate r = k(T) f(p_i,K_i(T),...). k(T)=A exp(-Ea/RT), but K_i and other parameters may also depend on T; kinetics is not universally a temperature-independent LH formula times a single Arrhenius factor. The exact fitted equations and whether they are one- or multi-site require inspection. No numerical parameters or source-model transfer are asserted.",
+      "related_live_node_ids": [
+        "own_ph_langmuir_hinshelwood_encounter",
+        "own_ph_surface_encounter_mechanisms"
+      ],
+      "reference_node_ids": [
+        "u_ph_kinetics",
+        "ph_lh_rates",
+        "centered_arrhenius",
+        "lhhw_kinetics",
+        "c1_kinetic_closure_boundary"
+      ],
+      "source_review": "AI interpretation of pinned reference nodes; no human verified paper/source",
+      "open_questions": [
+        "Where should a future kinetic-rate-law / thermal-dependence concept live in the owner map?",
+        "What is the actual BEP kinetic law with units and thermal dependence?",
+        "Which Arrhenius form (uncentered/centered) and temperature-dependent K parameters does source code implement?"
+      ],
+      "owner_review": "placement undecided, bridge only",
+      "date": "2026-10-23",
+      "candidate_math_parent_id": "own_ma_surface_kinetic_equations",
+      "owner_math_parent_decision": "Mathematical Modeling now placed as child of Mathematics, but Arrhenius and actual LH/LHHW parameterization are still unplaced cross-link details.",
+      "action_queue_ids": [
+        "Q60",
+        "Q84"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-PRESS-SEL-01",
+      "title": "Hydrogen pressure, adsorption affinity and site occupancy versus ethylene selectivity",
+      "status": "discussed_not_yet_placed",
+      "not_a_personal_node": true,
+      "maturity": "idea",
+      "owner_input": "Owner recognized H₂ pressure changes surface hydrogen availability but does not yet know where its effect on conversion/ethylene selectivity belongs; asked to preserve future bridge rather than place automatically.",
+      "scientific_question": "How do hydrogen pressure, adsorption affinity/constant, free-site availability, H addition and competitive hydrocarbon adsorption together influence conversion and selectivity in our catalyst-specific fitted rate model?",
+      "scope": "Do not infer monotonic pressure–selectivity relation. Coverage ratio θ_H/θ_* = √(K_H p_H₂) is a special ideal dissociative adsorption-equilibrium model, not a full product-selectivity law. More H can affect desired C₂H₂→C₂H₄ and unwanted C₂H₄→C₂H₆. Vacancy competition can change both rates. Distinguish equilibrium adsorption affinity K(T) or adsorption free energy ΔG_ads from kinetic sticking probability/adsorption rate and chemisorption strength; the catalyst and actual model determine which dominates.",
+      "related_live_node_ids": [
+        "own_ph_hydrogen_activation_neighboring_sites",
+        "own_ph_adsorption",
+        "own_ph_stepwise_hydrogenation",
+        "own_ph_langmuir_hinshelwood_encounter",
+        "own_ph_surface_site_availability",
+        "own_ph_site_competition",
+        "own_ph_surface_saturation",
+        "own_ph_surface_poisoning",
+        "own_ma_mathematical_modeling",
+        "own_ma_surface_kinetic_equations"
+      ],
+      "reference_node_ids": [
+        "c1_dissociative_h2_adsorption",
+        "c1_hydrocarbon_site_competition",
+        "ph_lh_rates",
+        "ph_mechanism_choice",
+        "u_ph_kinetics"
+      ],
+      "related_bridge_ids": [
+        "B-SAT-01",
+        "B-POISON-01",
+        "B-LH-ARR-01",
+        "B-P2",
+        "B-ADS-PROPERTIES-01",
+        "B-SITE-TYPES-01",
+        "B-SURFACE-AVAILABILITY-01"
+      ],
+      "candidate_disciplines": [
+        "Physics",
+        "Mathematics",
+        "Systems & Control"
+      ],
+      "suggested_parent_id": null,
+      "placement_decision": "future_bridge_only_user_has_not_selected_immediate_parent",
+      "scientific_maturity": "AI_synthesis_partial_source_scoped_not_owner_worked_out",
+      "sources": [
+        {
+          "id": "urmes2019",
+          "url": "https://doi.org/10.3390/catal9020180",
+          "locator": "Table 3 and effective rate/coverage discussion",
+          "review": "ai_attached",
+          "human_verified": false,
+          "catalyst_scope": "supported Pd/α-Al₂O₃; no transfer claim"
+        }
+      ],
+      "date": "2026-10-23",
+      "provisional_two_view_structure": {
+        "physics_side": {
+          "candidate_parent": "Catalyst Surface and Active Sites / Adsorption behavior",
+          "drivers": [
+            "H₂ partial pressure and gas chemical potential",
+            "Adsorption affinity / equilibrium K(T) and binding free energy",
+            "Incoming sticking probability & adsorption/desorption kinetics",
+            "Available surface pairs and competing hydrocarbon coverage",
+            "Catalyst saturation, inhibition/poisoning and site loss"
+          ],
+          "result": "Coverage of H*, C₂H₂*, C₂H₄* and other surface species under defined mechanism"
+        },
+        "model_side": {
+          "candidate_parent": "Physics → Kinetic-rate models or future cross-linked Mathematical Modeling (owner undecided)",
+          "derived_terms": [
+            "algebraic site balance and competition denominators",
+            "θ_H/θ_* = √(K_H p_H₂) for ideal dissociative adsorption",
+            "rate r_s=k_s θ_A θ_H for ideal LH step",
+            "separate desired ethylene and undesired ethane effective-rate terms",
+            "deactivation/active-site-density factor if evidenced"
+          ],
+          "outputs": [
+            "R1/R2/R3 rates, conversion and ethylene selectivity, experimentally conditional"
+          ],
+          "caveat": "No instantaneous pressure-to-selectivity claim derived by these relationships alone"
+        },
+        "cross_link_policy": "Represent physics once as personal node and mathematical formula separately via typed cross-links/bridges; do not duplicate identical content as two independently understood nodes.",
+        "proposed_linked_physics": [
+          "B-ADS-PROPERTIES-01",
+          "B-SITE-TYPES-01",
+          "B-SURFACE-AVAILABILITY-01"
+        ]
+      },
+      "candidate_parent_for_modeling": "own_ma_surface_kinetic_equations",
+      "model_parent_status": "math_hierarchy_now_placed; exact pressure/selectivity model expressions unplaced",
+      "action_queue_ids": [
+        "Q53"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-SITE-TYPES-01",
+      "title": "Active-site types, site families and neighboring-site ensembles",
+      "status": "placed",
+      "not_a_personal_node": true,
+      "maturity": "ai_worked_out",
+      "owner_input": "Owner explicitly valued the distinction between two neighboring sites versus two different kinds of sites, wants a separate future branch on 'types of sites', and requested that discussion saved AI worked out but bridge-only.",
+      "suggested_parent_id": null,
+      "proposed_path_options": [
+        "Physics → Catalyst structure, active sites and kinetics (B-P2 unplaced) → Active Site Structure → Site Types & Site Ensembles",
+        "Physics → future Catalyst Surface and Active Sites theme → Local Environments, Facets & Metal Ensembles"
+      ],
+      "provisional_taxonomy": {
+        "parent": "Active Sites & Catalyst Surface Structure [FUTURE, unplaced]",
+        "children": [
+          {
+            "title": "Site identity / site families",
+            "maturity": "ai_worked_out bridge reference",
+            "meaning": "Different chemical/local environments: terrace, steps, defects, Pd-rich vs PdAg ensembles, oxide/support boundaries. Whether distinct rate constants are needed is model-specific."
+          },
+          {
+            "title": "Neighboring-site configurations and vacancy pairs",
+            "maturity": "ai_worked_out bridge reference",
+            "meaning": "How many accessible adjacent sites an elementary step needs. Two vacancies are not two different kinds of sites."
+          },
+          {
+            "title": "Site density and accessible inventory",
+            "maturity": "idea future link",
+            "meaning": "Total effective surface capacity differs from catalyst pellet mass, external area and pore accessibility."
+          }
+        ]
+      },
+      "scientific_content": "Heterogeneous describes that the catalyst is in a different phase from gas reactants; homogeneous describes the catalyst and reactants in one phase. Both are independent of how many chemically distinct surface site types a heterogeneous catalyst has. A one-site-family LH model may require two neighboring sites for dissociative H₂ adsorption, e.g. Urmès 2019 Table 3 H₂ + 2* ⇌ 2H*. In Pd/PdAg, local site geometry, metal ensembles, edge/terrace position and support interfaces could affect adsorption and H–H activation, but this statement does not prove those ensembles are resolved in the user's fitted model. Multiple model-site families and adjacent physical sites are different axes. Larger microkinetic/DFT literature required before claiming catalyst-specific families.",
+      "reference_node_ids": [
+        "ph_site_ensembles",
+        "ph_surface_states",
+        "ph_mechanism_choice",
+        "c1_adjacent_site_requirement",
+        "ph_pd_ag_surface"
+      ],
+      "sources": [
+        {
+          "title": "Kiani & Wachs 2024, ACS Catalysis 14(22),16770–16784",
+          "doi": "10.1021/acscatal.4c05188",
+          "locator": "Introduction and Section 2: site density and adjacent pairs vs mobile species",
+          "review": "ai_attached",
+          "human_verified": false
+        },
+        {
+          "title": "Urmès et al. 2019, Catalysts 9(2),180",
+          "doi": "10.3390/catal9020180",
+          "locator": "Table 3 and single-site-family fit discussion",
+          "review": "ai_attached",
+          "human_verified": false
+        }
+      ],
+      "related_bridge_ids": [
+        "B-P2",
+        "B-ADS-GEOMETRY",
+        "B-SAT-01",
+        "B-PRESS-SEL-01"
+      ],
+      "related_live_node_ids": [
+        "own_ph_hydrogen_activation_neighboring_sites",
+        "own_ph_adsorption",
+        "own_ph_types_of_active_sites",
+        "own_ph_catalyst_surface_active_sites"
+      ],
+      "unresolved": "Exact parent and first child split to be owner-approved; bridge may be AI worked out without placing any personal graph node.",
+      "date": "2026-10-23",
+      "placed_node_ids": [
+        "own_ph_types_of_active_sites",
+        "own_ph_catalyst_surface_active_sites"
+      ],
+      "placement_decision_2026_10_23": "Owner approved Physics → Catalyst Surface & Active Sites → Types of Active Sites, with AI worked out maturity for types. Bridge kept as research crosslink/history."
+    },
+    {
+      "id": "B-ADS-PROPERTIES-01",
+      "title": "Adsorbate–surface interaction: binding thermodynamics, adsorption kinetics and coverage",
+      "status": "discussed_not_yet_placed",
+      "not_a_personal_node": true,
+      "maturity": "idea",
+      "owner_input": "Owner prefers the words binding strength, distinguishes adsorption equilibrium constant, pressure/occupancy dependence and sticking coefficient, and asked to propose an umbrella and parallel subnodes rather than immediately inserting them.",
+      "suggested_parent_id": "own_ph_adsorption",
+      "proposed_scientific_umbrella": "Adsorbate–Surface Interactions & Adsorption Behavior (future candidate; may be different from catalyst site structures)",
+      "provisional_taxonomy": {
+        "parent": "Adsorption [existing Tier5], OR future broader Surface Interactions theme [not decided]",
+        "children": [
+          {
+            "title": "Binding Strength & Adsorption Energetics",
+            "meaning": "Energy/free-energy favorability of forming/staying in adsorbed state. Thermodynamic, includes adsorption enthalpy/ΔG_ads and possibly distinct physical vs chemical adsorption.",
+            "stage": "idea"
+          },
+          {
+            "title": "Adsorption Equilibrium / Surface Affinity",
+            "meaning": "Equilibrium constant K(T) and relative occupation for given pressures; kinetic ratios if normalized consistently, not simply sticking probability or energy itself.",
+            "stage": "idea"
+          },
+          {
+            "title": "Adsorption & Desorption Kinetics",
+            "meaning": "Initial sticking coefficient, activation barriers, incoming flux and desorption rates; experimentally distinct from equilibrium.",
+            "stage": "idea"
+          },
+          {
+            "title": "Coverage, Pressure & Site Availability",
+            "meaning": "Pressure p_i and vacancies θ_* affect how much occupies surface. Competitive adsorption and saturation cross-link to independent surface-site availability umbrella.",
+            "stage": "idea"
+          }
+        ],
+        "later_splits": [
+          "Specific H₂/C₂H₂/C₂H₄/C₂H₆ adsorption examples not approved as four live nodes",
+          "Pressure dependence, site-occupation dependence and sticking coefficient may be parallel *rate-law factors* under future mathematical kinetics branch rather than all children of Adsorption Affinity"
+        ]
+      },
+      "scientific_content": "The equilibrium tendency to remain adsorbed is influenced by Gibbs free energy, temperature and chemical potential of gas; the sticking coefficient is a kinetic fraction of incident molecules that adsorb (IUPAC). A strong-binding adsorbate may have a small initial sticking probability if dissociation/entry is barrier-limited. Pressure helps determine impingement, chemical potential and equilibrium coverages; site availability reduces kinetic adsorption opportunities and modifies competition. In a simple reversible adsorption model, K is related to appropriately normalized k_ads/k_des, but interpreting a fitted K as direct binding energy is nontrivial when entropy and site effects matter. Homogeneous vs heterogeneous is a different classification axis.",
+      "sources": [
+        {
+          "title": "IUPAC Gold Book: sticking coefficient",
+          "doi": "10.1351/goldbook.S06012",
+          "url": "https://goldbook.iupac.org/terms/view/S06012",
+          "review": "ai_attached",
+          "human_verified": false
+        },
+        {
+          "title": "IUPAC Gold Book: chemisorption",
+          "doi": "10.1351/goldbook.C01048",
+          "url": "https://goldbook.iupac.org/terms/view/C01048",
+          "review": "ai_attached",
+          "human_verified": false
+        },
+        {
+          "title": "Urmès et al. 2019",
+          "doi": "10.3390/catal9020180",
+          "url": "https://doi.org/10.3390/catal9020180",
+          "locator": "K1 estimate using sticking coefficient and desorption energy, Section 3 / Table 5 (note paper's K1 printed mismatch)",
+          "review": "ai_attached",
+          "human_verified": false
+        }
+      ],
+      "reference_node_ids": [
+        "c1_adsorption_desorption",
+        "ph_lh_rates",
+        "ph_site_ensembles",
+        "u_ph_kinetics",
+        "c1_hydrocarbon_site_competition"
+      ],
+      "related_live_node_ids": [
+        "own_ph_adsorption",
+        "own_ph_hydrogen_activation_neighboring_sites"
+      ],
+      "related_bridge_ids": [
+        "B-SITE-TYPES-01",
+        "B-PRESS-SEL-01",
+        "B-SURFACE-AVAILABILITY-01",
+        "B-LH-ARR-01"
+      ],
+      "owner_approval_scope": "candidate structures to compare; not a personal node or owner-understood theory",
+      "date": "2026-10-23",
+      "placement_pending_reason": "Owner explicitly said binding strength / adsorption equilibrium / sticking / pressure hierarchy must be proposed in chat and not yet placed.",
+      "action_queue_ids": [
+        "Q54",
+        "Q71"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-SURFACE-AVAILABILITY-01",
+      "title": "Surface site inventory, competitive coverage and catalyst activity loss",
+      "status": "placed",
+      "not_a_personal_node": true,
+      "maturity": "idea",
+      "owner_input": "Owner wants a common framework for competitive adsorption, saturation and poisoning but differentiates mechanisms and considers inhibition/poisoning as a separate topic that also enters model physics.",
+      "suggested_parent_id": null,
+      "proposed_path_options": [
+        "Physics → Catalyst Surface and Active Sites (future under B-P2) → Site Inventory, Blocking & Availability",
+        "Physics → Reaction Chemistry & Pathways → surface-coverage effects cross-linked to catalyst active sites; no child placement approved"
+      ],
+      "provisional_taxonomy": {
+        "physical_parent": "Site Inventory & Surface Availability [FUTURE]",
+        "physical_children": [
+          {
+            "title": "Competitive adsorption",
+            "meaning": "Which adsorbates occupy finite sites, reversibly blocking each other; pressure/affinity/temperature-dependent."
+          },
+          {
+            "title": "Surface coverage and saturation",
+            "meaning": "Fractions and maximum accessible site capacity; saturation is a state, not automatically catalyst damage."
+          },
+          {
+            "title": "Catalyst inhibition and poisoning",
+            "meaning": "Inhibition may be reversible, while poisons can strongly block active sites; may involve persistent deactivation."
+          },
+          {
+            "title": "Catalyst deactivation and loss of accessible sites",
+            "meaning": "Longer-term changes such as coke deposition or sintering not reducible to instantaneous coverage alone."
+          }
+        ],
+        "model_cross_links": [
+          {
+            "title": "Competitive adsorption denominator / site balance",
+            "meaning": "Algebraic θ expressions and K_i p_i terms in kinetic model; no duplicate physics node."
+          },
+          {
+            "title": "Active-site fraction and catalyst activity state",
+            "meaning": "Parameter or time-dependent activity a(t), site-density/poison coverage and selectivity changes; distinct from pure equilibrium site competition."
+          },
+          {
+            "title": "Operating-pressure/selectivity response",
+            "meaning": "Evaluate R1/R2/R3 rates and θ response; no monotonic prediction without fitted source."
+          }
+        ]
+      },
+      "scientific_caveats": "Saturation means a finite inventory becomes highly occupied and can be reversible; poisoning is not the same as saturation, although both can reduce available catalytic sites. Some poisons are strongly adsorbed even at low concentrations; reversible inhibitors can compete without lasting deactivation. IUPAC explicitly distinguishes poisons from weakly/reversibly adsorbed temporary poisons. Reduced site count can lower turnover at fixed mechanism, as shown in the 2024 perspective. Sintering, coke and transport restriction may create different observables and require other model terms. Do not infer catalyst poisoning as an observed BEP phenomenon.",
+      "related_bridge_ids": [
+        "B-SAT-01",
+        "B-POISON-01",
+        "B-AGGLOM-01",
+        "B-PRESS-SEL-01",
+        "B-P2",
+        "B-ADS-PROPERTIES-01"
+      ],
+      "reference_node_ids": [
+        "ph_surface_states",
+        "ph_site_ensembles",
+        "c1_hydrocarbon_site_competition",
+        "ph_catalyst_memory",
+        "ph_deposits",
+        "c1_c4_coke_deactivation"
+      ],
+      "sources": [
+        {
+          "title": "IUPAC Gold Book: poison",
+          "doi": "10.1351/goldbook.P04706",
+          "url": "https://goldbook.iupac.org/terms/view/P04706",
+          "review": "ai_attached",
+          "human_verified": false
+        },
+        {
+          "title": "Kiani & Wachs 2024 ACS Catalysis",
+          "doi": "10.1021/acscatal.4c05188",
+          "url": "https://doi.org/10.1021/acscatal.4c05188",
+          "locator": "Section 2 (Figure 2c) site density/poisoning and kinetic fit caveats",
+          "review": "ai_attached",
+          "human_verified": false
+        }
+      ],
+      "owner_approval_scope": "Umbrella candidate only; all child labels are future proposals, not live nodes or maturities",
+      "date": "2026-10-23",
+      "placed_node_ids": [
+        "own_ph_surface_site_availability",
+        "own_ph_site_competition",
+        "own_ph_surface_saturation",
+        "own_ph_surface_poisoning"
+      ],
+      "placement_decision_2026_10_23": "Owner approved common Surface Site Availability umbrella and its three Idea children competitive adsorption/saturation/poisoning as distinct sibling processes. Additional aging/deactivation candidates remain queued.",
+      "related_live_node_ids": [
+        "own_ph_surface_site_availability",
+        "own_ph_site_competition",
+        "own_ph_surface_saturation",
+        "own_ph_surface_poisoning"
+      ]
+    },
+    {
+      "id": "B-MODEL-BC-01",
+      "title": "Mathematical PDE boundary-condition requirements across model reductions",
+      "status": "AI_math_bridge_pending_personal_review",
+      "not_a_personal_node": true,
+      "maturity": "ai_worked_out",
+      "candidate_parent_id": null,
+      "authoritative_model_choice": "pending notebook/code and user review",
+      "question": "Which inlet, outlet, radial-wall and initial conditions are mathematically required for the exact chosen species and thermal PDEs, and how do these requirements change after approximations?",
+      "summary": "With nonzero axial mass dispersion D_ax the species equation is second order in z and typically uses flux-consistent (Danckwerts/Robin-type) inlet matching plus an outlet condition. In ideal downstream advection D_ax→0 it is first order in z and a prescribed inflow Dirichlet C_i(0,t)=C_i,in(t) is natural without an independent downstream z condition. A thermal wall Dirichlet T(R,z,t)=T_w is a radial BC and DOES NOT impose T=T0 globally; radial averaging and isothermality are different model reductions.",
+      "details": "Initial conditions C_i(z,0), surface coverages θ_i(z,0), possibly temperature if dynamic, must be specified in any transient well-posed formulation. Units and definitions of superficial/interstitial velocity, porosity, flux basis and discontinuous inlet interface must remain consistent. Danckwerts 1953 supports flux/RTD boundary considerations but its own steady example is not proof of the BEP dynamic reactor boundary. Heat balance terms/BC depend on whether radial thermal field is present, wall resistance finite and model truly includes a thermal state. Do not force every mathematical BC under the physical Isothermal theory node.",
+      "reference_ai_ids": [
+        "ma_gas_pde",
+        "ph_axial_balance",
+        "ph_danckwerts",
+        "ph_axial_dispersion",
+        "ma_pde_ode_coupling",
+        "ph_energy_balance"
+      ],
+      "reference_local": [
+        "Academics/BEP/Catalysis/0_Project_Management/main.tex §3.1 lines 180–185",
+        "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml ph_axial_balance, ma_gas_pde"
+      ],
+      "related_live_node_ids": [
+        "own_ph_wall_temperature_boundary",
+        "own_ph_isothermal_theory"
+      ],
+      "owner_review": "User explicitly requested mathematical BC requirements kept in a Math bridge; equations remain AI-only or Idea unless human reviewed",
+      "human_verified": false,
+      "date": "2026-10-23",
+      "berger2008_local_equation_audit": {
+        "date": "2026-10-23",
+        "note_path": "owner_working_map/bridges/BERGER2008_EQ1_BEP_LOCAL_PROVENANCE_2026_10_23.md",
+        "original_source_id": "berger2008",
+        "local_dossier": "Academics/BEP/Catalysis/Articles/analyses/dynamic_kinetics_berger2008.md:22-44",
+        "local_audit": "Academics/BEP/Catalysis/3_Model/transient_model_framework_audit.md:52-70",
+        "reference_map_legacy_id": "legacy_ref_159cf51de0",
+        "model_warning": "Eq1 written with axial dispersion and a surface source, Eq4b described as inlet Dirichlet; mathematical PDE/BC basis, velocity/porosity conventions and PDF equation transcription NOT independently verified here.",
+        "verification": "AI/local/GitHub provenance; source not owner verified"
+      },
+      "withdrawn_to_review_archive": [
+        "own_ma_reactor_model"
+      ],
+      "review_required_note": "Reactor Model and model approximation placeholders were withdrawn from personal graph at owner's request; mathematical BC theory remains here and may be reviewed one node at a time. The Berg(er) 2008 source equation will be checked later.",
+      "action_queue_ids": [
+        "Q93"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-TP-REDUCTIONS-01",
+      "title": "Transport Phenomena future theory of radial reduction and axial dispersion",
+      "status": "future_theory_unplaced",
+      "not_a_personal_node": true,
+      "maturity": "idea",
+      "candidate_parent": "Physics → Transport Phenomena (not yet placed)",
+      "user_basis": "Owner's correction: axial z long direction modeled, radial r transverse direction neglected; turbulent mixing/vanishing gradient scenario future out of scope",
+      "summary": "Radial cross-section reduction (remove r spatial coordinate) differs from neglecting axial species dispersion D_ax∂²_z C_i along z. High Pe plug-flow limit requires regime check. The physical intuition is owner understood in own_ph_radial_temperature_reduction; axial mass dispersion physics and transport BC details remain future theory, not inserted in Thermodynamics.",
+      "related_live_node_ids": [
+        "own_ph_radial_temperature_reduction"
+      ],
+      "reference_ai_ids": [
+        "u_ph_transport",
+        "ph_axial_balance",
+        "ph_axial_dispersion",
+        "ma_gas_pde"
+      ],
+      "reader_note_path": "owner_working_map/bridges/TRANSPORT_AXIAL_DISPERSION_RADIAL_REDUCTION_2026_10_23.md",
+      "turbulence_review": "Owner explicitly relegates turbulence and any claim it eliminates gradients to future out-of-scope hypotheses. Do not use turbulence as verified mechanism.",
+      "human_verified": false,
+      "date": "2026-10-23",
+      "withdrawn_to_review_archive": [],
+      "action_queue_ids": [
+        "Q65",
+        "Q67"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-HEAT-LENSES-01",
+      "title": "Thermodynamic balance theory versus reaction heat generation and model energy source",
+      "status": "review_required_not_currently_placed",
+      "not_a_personal_node": true,
+      "maturity": "idea",
+      "summary": "Energy Balance Theory and Reaction Heat Generation remain AI reference candidates and are not live owner nodes. Exact meaning, title and placement must be shown and approved before restoring; original reaction heat title was explicitly criticized. The math model-energy source remains future research. See owner review archive.",
+      "related_live_node_ids": [
+        "own_ph_isothermal_theory"
+      ],
+      "related_ai_reference_ids": [
+        "ph_energy_balance",
+        "reaction_thermodynamics",
+        "ma_gas_pde"
+      ],
+      "source_note_path": "owner_working_map/bridges/THERMAL_REACTION_HEAT_SOURCE_CONCEPT_2026_10_23.md",
+      "human_verified": false,
+      "date": "2026-10-23",
+      "withdrawn_to_review_archive": [
+        "own_ph_thermal_energy_balance_theory",
+        "own_ph_reaction_heat_generation"
+      ],
+      "action_queue_ids": [
+        "Q90",
+        "Q91"
+      ],
+      "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    }
+  ],
+  "placements": [
+    {
+      "bridge_id": "B-P1",
+      "node_id": "own_ph_reaction_chemistry_pathways",
+      "owner_direction": "Reaction Chemistry & Pathways, net reactions stored within a node, alternative microscopic pathways as an intermediate level",
+      "date": "2026-10-22",
+      "status": "withdrawn_misclassified_approval",
+      "correction": "Owner clarified unapproved, unread."
+    },
+    {
+      "date": "2026-10-22",
+      "bridge_id": "B-P1",
+      "node_id": "own_ph_reaction_chemistry_pathways",
+      "authority": "User directed structure, not scientific approval",
+      "status": "structure_approved"
+    },
+    {
+      "date": "2026-10-22",
+      "bridge_id": "B-P1-COND",
+      "node_id": "own_ph_pathway_viability",
+      "authority": "User directed third sibling on regimes",
+      "status": "structure_approved"
+    },
+    {
+      "date": "2026-10-23",
+      "bridge_id": "B-ALT-01",
+      "node_ids": [
+        "own_ph_reaction_mechanism_families",
+        "own_ph_stepwise_hydrogenation",
+        "own_ph_vinyl_ethylidene_route"
+      ],
+      "authority": "Owner Route A human-understood basic sequential H addition; Route B still idea and asks for published figures; owner accepts distinction from Q14.",
+      "status": "partial_scoped_placement",
+      "unplaced_details": [
+        "detailed_surface_intermediates",
+        "reaction_rate_identifiability",
+        "encounter_families_Q14"
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "node_id": "own_ph_vinyl_ethylidene_route",
+      "status": "owner_scoped_maturity_promotion_only",
+      "before": "idea",
+      "after": "human_worked_out",
+      "authority": "Owner explicitly says 'now I understand it well enough; you can mark it as human understood' while noting drawings still required.",
+      "source_verification": "unchanged_no_human_verified_claims",
+      "pending": [
+        "Q40 published structural drawings",
+        "Q41 radical question",
+        "Q14 encounter classification"
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "bridge_id": "B-ER-01",
+      "node_ids": [
+        "own_ph_surface_encounter_mechanisms",
+        "own_ph_langmuir_hinshelwood_encounter",
+        "own_ph_eley_rideal_encounter"
+      ],
+      "authority": "Owner exact structural approval, Tier5 with two Tier6 children.",
+      "status": "placed_ideas_only",
+      "source_verification": "none",
+      "notes": "Advanced 2024 review not inserted as a personal-map science claim."
+    }
+  ],
+  "review_corrections": [
+    {
+      "date": "2026-10-22",
+      "user_message": "Unapproved unread",
+      "affected_bridge_ids": [
+        "B-P1",
+        "B-P1-COND"
+      ],
+      "effect": "No confirmed owner placement or reading; retain candidates only."
+    },
+    {
+      "date": "2026-10-22",
+      "reason": "New owner instruction accepts branch placement only, not contents",
+      "effect": "Reconcile earlier unapproved/unread stage with new structural choice; maintain unread science and owner-unverified sources."
+    }
+  ],
+  "research_ticket_register": [
+    {
+      "map_id": "R1-R3-source-evidence",
+      "path": "Academics/BEP/Catalysis/research/wayfinder/bep_reaction_pathway_evidence_2026_10_22.md",
+      "tickets": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "date": "2026-10-22",
+      "status": "three_open_idea_research_questions_not_executed",
+      "owner_map_mutation": "none",
+      "scientific_citations": "existing AI reference source IDs, specific passage extraction deferred"
+    }
+  ],
+  "reset_receipts": [
+    {
+      "date": "2026-10-22",
+      "user_direction": "Start from literally zero; remove earlier reaction concepts from personal map; park in bridge; explain before restoring any concept.",
+      "retired_personal_node_ids": [
+        "own_ph_reaction_chemistry_pathways",
+        "own_ph_net_hydrogenation",
+        "own_ph_alternative_surface_paths",
+        "own_ph_pathway_viability"
+      ],
+      "surviving_anchor_ids": [
+        "bep",
+        "physics",
+        "mathematics",
+        "systems_control"
+      ],
+      "new_bridge_ids": [
+        "B-P1-NET",
+        "B-P1-MICRO",
+        "B-V-R1",
+        "B-V-R2",
+        "B-V-R3"
+      ],
+      "existing_bridge_records_updated": [
+        "B-P1",
+        "B-P1-COND",
+        "B-ALT-01",
+        "B-ALT-02",
+        "B-R1",
+        "B-R2",
+        "B-R3"
+      ],
+      "owner_content_approval": "none",
+      "source_verification": "none",
+      "scientific_work_stage": "idea_until_scoped_owner_review",
+      "retain_source_as_archived_snapshots": true
+    }
+  ]
+}

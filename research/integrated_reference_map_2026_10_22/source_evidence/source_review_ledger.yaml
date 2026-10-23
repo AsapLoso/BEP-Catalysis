@@ -1,0 +1,1386 @@
+dataset:
+  name: Source review ledger
+  source_count: 66
+  status: 18 of 66 source records reopened in source text; 48 source records remain unopened; source-specific access limits are stated per record
+  human_verification_status: not_verified
+  sources_reopened_this_mission: 18
+  source_records_unopened: 48
+sources:
+- source_id: proposal_main
+  title: 'Dynamic Control of Acetylene Semi-Hydrogenation: A Spatiotemporal Modeling Framework for Intermediary
+    Yield Optimization'
+  bibliographic_metadata:
+    authors: Lucas van Dekken
+    year: 2026
+    path: Academics/BEP/Catalysis/0_Project_Management/main.tex
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Primary source for project intent, chosen model scope and hypotheses. Not experimental
+    evidence.
+  access_level_reopened_this_mission: "github_repository_source_text_lines_95_310_reopened"
+  source_identity_hash: null
+  passage_ids_checked: [BEP-PROP-B12-P01-QUESTION-SCOPE, BEP-PROP-B12-P02-STEADY-YIELD-ASSERTION, BEP-PROP-B12-P03-AXIAL-PDE, BEP-PROP-B12-P04-SURFACE-BALANCE, BEP-PROP-B12-P05-FORCING-TIMESCALE, BEP-PROP-B12-P06-ISOTHERMAL-BASELINE, BEP-PROP-B12-P07-BSPLINE-CHOICE, BEP-PROP-B12-P08-OBJECTIVE-LOCAL-SEARCH, BEP-PROP-B12-P09-VALIDATION-MFC-PLAN, BEP-PROP-B12-P10-HIDDEN-STATE-OBSERVER-SCOPE, BEP-PROP-B13-P01-ZHU-40FOLD-ATTRIBUTION]
+  claim_ids_checked: [CLM-bep-001, CLM-physics-001, CLM-mathematics-001, CLM-ph_reaction_network-001, CLM-ph_metrics-001, CLM-ph_axial_balance-001, CLM-ph_axial_balance-002, CLM-ma_gas_pde-001, CLM-ph_surface_states-001, CLM-ph_adsorbate_balance-001, CLM-ma_surface_balance-001, CLM-ph_dynamic_memory-001, CLM-ma_timescale-001, CLM-ph_energy_balance-001, CLM-ph_isothermal-001, CLM-ma_discontinuous_input-001, CLM-sc_waveform-001, CLM-u_ma_optimization-001, CLM-sc_baseline-001, CLM-sc_objective-001, CLM-sc_local_search-001, CLM-sc_validation-001, CLM-sc_manipulated_input-001, CLM-systems_control-001, CLM-sc_hardware_constraints-001, CLM-sc_unknown_input_reconstructibility-002, CLM-sc_observability-001, CLM-sc_ekf_ukf-001, CLM-sc_co_design-002, CLM-sc_robustness-001, CLM-u_ph_thermal-001]
+  queue_status: "Proposal lines 95–310 and the Zhu attribution at lines 118–120 were reopened. B12's ten passages/30 claims were independently rechecked after commit f5181348339e8287ad8e40cabbdc09fd40f77214; B13 adds and independently rechecks one source-attribution passage. Cumulatively 11 passages cover 31 of 78 links, leaving 47 unreviewed. No proposal statement is treated as experimental proof."
+  ai_reviewer_checkpoint: "SP-B13-20261023-ZHU"
+  human_review_status: not_verified
+- source_id: proposal_bib
+  title: BEP proposal bibliography
+  bibliographic_metadata:
+    path: Academics/BEP/Catalysis/0_Project_Management/references.bib
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Bibliographic locator index. BibTeX abstracts/attachments are leads, not substitutes for
+    original sources.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: proposal_intro
+  title: Standalone proposal introduction draft
+  bibliographic_metadata:
+    path: Academics/BEP/Catalysis/0_Project_Management/section1_intro.tex
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Alternative proposal revision; compared against main.tex, not selected as the model baseline.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: proposal_lit
+  title: Standalone proposal literature review draft
+  bibliographic_metadata:
+    path: Academics/BEP/Catalysis/0_Project_Management/section2_lit.tex
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Alternative revision with PSSA, MES and literature-gap assertions; treated as claims to
+    audit, not evidence.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: proposal_method
+  title: Standalone methodology draft
+  bibliographic_metadata:
+    path: Academics/BEP/Catalysis/0_Project_Management/section3_method.tex
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Alternative methodology revision; main.tex chosen as v1 baseline. Differences recorded
+    in method.md.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: proposal_roadmap
+  title: BEP proposal roadmap
+  bibliographic_metadata:
+    path: Academics/BEP/Catalysis/0_Project_Management/bep_proposal_roadmap.md
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Context and future scope only; not independent scientific evidence.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: urmes2022
+  title: Microkinetic Modeling of Acetylene Hydrogenation Under Periodic Reactor Operation
+  bibliographic_metadata:
+    authors: Caroline Urmès, Cécile Daniel, Jean-Marc Schweitzer, Amandine Cabiac, Carine Julcour, Yves Schuurman
+    year: 2022
+    journal: ChemCatChem
+    volume: '14'
+    issue: '8'
+    article_number: e202101826
+    doi: 10.1002/cctc.202101826
+    url: https://doi.org/10.1002/cctc.202101826
+  recorded_access_status_before_mission: abstract_and_preview
+  recorded_applicability: Direct periodic acetylene-hydrogenation precedent on Pd/α-Al2O3 using small-amplitude
+    flow oscillations for parameter estimation and outlet-composition modeling. Does not establish a performance
+    gain. Whether the transient model resolves axial transport remains unknown from the accessible abstract and
+    preview.
+  access_level_reopened_this_mission: "publisher_abstract_only_reopened"
+  source_identity_hash: null
+  passage_ids_checked: [URM22-B11-P01-DYNAMIC-ESTIMATION, URM22-B11-P02-SINGLE-SITE-PARAMETERS, URM22-B11-P03-OUTLET-TRANSIENT-FIT, URM22-B11-P04-MODEL-CONTROLLING-STEPS]
+  claim_ids_checked: [CLM-ma_identifiability-002, CLM-sc_excitation-001, CLM-sc_identification_vs_performance-001, CLM-sc_persistent_excitation_condition-004, CLM-u_sc_excitation-001, CLM-u_ma_inverse-002, CLM-u_ph_kinetics-004, CLM-ph_surface_states-002, CLM-ph_mechanism_choice-003, CLM-u_sc_observation-004, CLM-ph_dynamic_memory-002, CLM-ma_periodic_orbit-003, CLM-sc_validation-003, CLM-sc_periodic_frequency_response_identification-003]
+  queue_status: "B11 first and separate post-commit passes complete at abstract scope; full-text link timed out on second-pass recheck after redirecting to abstract during first pass; listed SI returned HTTP 403. Full article/SI remain inaccessible."
+  ai_reviewer_checkpoint: "B11-AI-20261023-URMES2022; SP-B11-20261023-URMES2022"
+  notes: "Publisher DOI page re-opened at https://chemistry-europe.onlinelibrary.wiley.com/doi/abs/10.1002/cctc.202101826. Four short excerpts at abstract HTML lines 159–161 rechecked after the first-pass commit; full-text endpoint timed out on second-pass click (first-pass click redirected to the abstract); listed 407 KB SI returned HTTP 403 on both checks. Full text, SI, fit diagnostics and raw data remain unavailable. Second retrieval timestamp 2026-10-22T22:59:52Z."
+  human_review_status: not_verified
+- source_id: urmes2019
+  title: Kinetic Study of the Selective Hydrogenation of Acetylene over Supported Palladium under Tail-End Conditions
+  bibliographic_metadata:
+    authors: Caroline Urmès, Jean-Marc Schweitzer, Amandine Cabiac, Yves Schuurman
+    year: 2019
+    journal: Catalysts
+    volume: '9'
+    issue: '2'
+    article_number: '180'
+    doi: 10.3390/catal9020180
+    url: https://doi.org/10.3390/catal9020180
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Full-text 0.05 wt% Pd/α-Al₂O₃ tail-end steady-kinetics study. Its selected single-site
+    model and exclusion of C4 products are conditional on the catalyst, detection limits and tested conditions;
+    not a PdAg transient model.
+  access_level_reopened_this_mission: full_original_pdf_selected_pages_reopened
+  source_identity_hash: 8ad818fd2cc3c386457855b558c29af737d2b7b12bdaf3f399d551b6f5d10c01
+  passage_ids_checked: [URM19-P01-CATALYST-IDENTITY, URM19-P02-ORDERS-AND-NO-C4, URM19-P03-ELEMENTARY-STEPS, URM19-P04-FULL-REDUCED-SITE-BALANCE, URM19-P04-RATE-CLOSURES, URM19-P05-COVERAGES-FROM-ORDERS, URM19-P05-K1-611-ESTIMATE, URM19-P06-TABLE5-PARAMETERS, URM19-P05-K5-RECIPROCAL-BASIS, URM19-P06-COVERAGES-FROM-FIT, URM19-P06-SINGLE-VS-TWO-SITE, URM19-P10-INTRINSIC-TEST-AND-PFR, URM19-P11-REGRESSION-OBJECTIVE]
+  claim_ids_checked: [CLM-u_ph_reaction-004, CLM-u_ph_catalyst-002, CLM-u_ph_kinetics-001, CLM-u_ma_conservation-004, CLM-ph_site_ensembles-001, CLM-ph_sequential_path-001, CLM-ph_competing_channels-001, CLM-ph_lh_rates-001, CLM-ph_mechanism_choice-002, CLM-c2_urmes_2019_effective_rates-003, CLM-c2_urmes_2019_effective_rates-004, CLM-c2_urmes_2019_adsorption_denominator-003, CLM-c2_urmes_2019_net_rates-003, CLM-c2_urmes_2019_parameter_ledger-001, CLM-c1_borodzinski_ae_effective_rates-003]
+  queue_status: 15 substantive source-linked claims received a separate second pass; 18 generic/historical references remain unopened
+  ai_reviewer_checkpoint: SP-B2-AI-20261022-after-8070e41
+  notes: Full local PDF reopened with fresh raw extraction and visual review of printed/PDF pp. 1–6 and 10–11; a separate post-commit pass confirmed all 13 records and eight quotations. K1 text/Table 5 conflict and intermediate r7/net-rate pressure mismatch remain unresolved. Fifteen substantive current claim links reviewed twice; 18 generic/historical links remain queued. Human review not verified.
+  human_review_status: not_verified
+- source_id: pachulski2012
+  title: Kinetics and reactor modeling of a Pd-Ag/Al₂O₃ catalyst during selective hydrogenation of ethyne
+  bibliographic_metadata:
+    authors: Axel Pachulski, Rainer Schödel, Peter Claus
+    year: 2012
+    journal: 'Applied Catalysis A: General'
+    volume: 445–446
+    doi: 10.1016/j.apcata.2012.08.018
+    url: https://doi.org/10.1016/j.apcata.2012.08.018
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: >-
+    Direct Pd-Ag/Al2O3 kinetic and steady reactor-model precedent. Abstract-level and selected indexed-text evidence only;
+    two site types are a selected rate-model representation and transport checks are source-specific. No periodic operation.
+  access_level_reopened_this_mission: publisher_abstract_and_selected_indexed_excerpts
+  source_identity_hash: null
+  passage_ids_checked: [PACH12-B15-P01-REACTION-NETWORK, PACH12-B15-P02-INTEGRAL-FIXED-BED, PACH12-B15-P03-TWO-SITE-LH-SELECTED, PACH12-B15-P04-KINETIC-MODEL-COMPARISON, PACH12-B15-P05-TRANSPORT-CRITERIA, PACH12-B15-P06-BYPASS-REACTOR-CALCULATION]
+  claim_ids_checked: [CLM-u_ph_reaction-003, CLM-u_ph_catalyst-001, CLM-u_ph_kinetics-002, CLM-u_ma_inverse-005, CLM-u_sc_feasibility-004, CLM-ph_site_ensembles-002, CLM-ph_sequential_path-003, CLM-ph_lh_rates-002, CLM-ph_adsorbate_balance-002, CLM-ph_mechanism_choice-001, CLM-ma_surface_balance-002, CLM-sc_robustness-002, CLM-sc_validation-002]
+  queue_status: reopened_partial
+  ai_reviewer_checkpoint: SP-B15-20261023-PACHULSKI2012
+  human_review_status: not_verified
+- source_id: borodzinski2000
+  title: The Kinetic Model of Hydrogenation of Acetylene–Ethylene Mixtures over Palladium Surface Covered by Carbonaceous
+    Deposits
+  bibliographic_metadata:
+    authors: Andrzej Borodziński and Andrzej Cybulski
+    year: 2000
+    journal: 'Applied Catalysis A: General'
+    volume: '198'
+    issue: '1'
+    doi: 10.1016/S0926-860X(99)00498-6
+    url: https://doi.org/10.1016/S0926-860X(99)00498-6
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Commercial Pd/α-Al₂O₃ acetylene–ethylene-mixture kinetics in a gradientless reactor at
+    343 K; proposes and fits deposit-associated A/E site families and algebraic rate closures. Catalyst- and regime-specific;
+    the paper's site geometry is a kinetic interpretation, and calculated coverages are not direct coverage measurements.
+  access_level_reopened_this_mission: full_original_pdf_selected_pages_reopened
+  source_identity_hash: 1a18bd894485c1e4f457c2db6b54dc37befff703183c20b5b11332abe7e5b3e0
+  pdf_path: Academics/BEP/Catalysis/Articles/acquired_pdfs/borodzinskiKineticModelHydrogenation2000.pdf
+  passage_ids_checked: [BC00-P52-AE-SITE-FAMILIES, BC00-P53-TABLE1-RATE-BASIS, BC00-P54-EXPERIMENTAL-CONDITIONS, BC00-P54-ETHANE-RATE-OBSERVATION, BC00-P55-ACETYLENE-C4-OBSERVATIONS, BC00-P56-AE-MODEL-INTERPRETATION, BC00-P58-QUASI-STEADY-ASSUMPTIONS, BC00-P60-MODEL-COMPARISON, BC00-P63-A-SITE-BALANCE, BC00-P65-R2-RATE, BC00-P65-TOTAL-RATES]
+  claim_ids_checked: [CLM-u_ph_catalyst-005, CLM-u_ph_thermal-004, CLM-ph_catalyst_memory-003, CLM-ph_competing_channels-002, CLM-ph_deposits-001, CLM-c1_borodzinski_ae_site_hypothesis-001, CLM-c1_borodzinski_ae_site_hypothesis-002, CLM-c1_borodzinski_ae_effective_rates-001, CLM-c1_borodzinski_ae_effective_rates-002]
+  queue_status: 9 current claim/source links rechecked in the first pass and again in a separate post-commit second pass; no historical overlay attachments for this source
+  ai_reviewer_checkpoint: B3-AI-20261022-second-pass
+  notes: >-
+    Local 16-page PDF hash-checked; printed pp. 52–65 selectively re-opened with fresh text extraction and page renders. This is a commercial 0.038% Pd/alpha-Al2O3 steady-kinetics case at 343 K, not PdAg or transient operation. Source shows highest F_c for its proposed A/E equation among four comparators on its own data, explicitly not decisive proof; its A/E geometry is a kinetic interpretation. The second pass found a source-internal rate-equation conflict: Table 1 model 5 uses denominator power 2 for the k2-prime ethylene term, while Appendix A Eq. (A.45) prints power 3. Separately, the Table 1 footnote gives k2-prime units kPa^-3 while Table 3 and dimensional analysis give kPa^-2. Both conflicts remain open.
+  human_review_status: not_verified
+- source_id: borodzinski2006
+  title: Selective Hydrogenation of Ethyne in Ethene-Rich Streams on Palladium Catalysts. Part 1. Effect of Changes
+    to the Catalyst During Reaction
+  bibliographic_metadata:
+    authors: Andrzej Borodziński and Geoffrey C. Bond
+    year: 2006
+    journal: Catalysis Reviews
+    volume: '48'
+    issue: '2'
+    doi: 10.1080/01614940500364909
+    url: https://doi.org/10.1080/01614940500364909
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: Review of Pd catalyst evolution during ethyne/ethene hydrogenation, including hydride/carbide/deposit
+    effects; useful context, not a primary experiment for the target BEP system.
+  access_level_reopened_this_mission: full_original_pdf_selected_pages_reopened
+  source_identity_hash: e6f0bb52ac6d41b90f22ddfecb2746c684372a6a6e29d850ad4d6a2d31974853
+  pdf_path: Academics/BEP/Catalysis/Articles/Zotero Backup/Borodziński en Bond - 2006 - Selective Hydrogenation of Ethyne in Ethene‐Rich Streams on Palladium Catalysts. .pdf
+  passage_ids_checked: [BC06-P121-OVERLAYER-REVIEW-SYNTHESIS, BC06-P122-OLIGOMER-C4-COKE, BC06-P124-WEISZ-PRATER-AND-COKE-DIFFUSION, BC06-P127-129-PHASE-EVOLUTION, BC06-P129-REVIEW-LIMITS]
+  claim_ids_checked: [CLM-u_ph_catalyst-006, CLM-u_ph_thermal-003, CLM-ph_deposits-002, CLM-c1_c4_coke_deactivation-002, CLM-c1_multisite_hydride_carbide-002]
+  queue_status: 5 current claim/source links rechecked in the first pass and again in a separate post-commit second pass; 2 historical overlay attachments remain in their original unreviewed queue
+  ai_reviewer_checkpoint: B3-AI-20261022-second-pass
+  notes: Local 55-page review PDF hash-checked; printed pp. 121–129 selectively re-opened with fresh text extraction and page renders. Passage evidence is a secondary review synthesis across different Pd catalysts and cited studies. Underlying primary references, including cited coke/diffusion and hydride measurements, were not reopened in B3.
+  human_review_status: not_verified
+- source_id: urakawa2008
+  title: 'Sensitivity Enhancement and Dynamic Behavior Analysis by Modulation Excitation Spectroscopy: Principle
+    and Application in Heterogeneous Catalysis'
+  bibliographic_metadata:
+    authors: Atsushi Urakawa, Thomas Bürgi, Alfons Baiker
+    year: 2008
+    journal: Chemical Engineering Science
+    volume: '63'
+    issue: '20'
+    doi: 10.1016/j.ces.2007.06.009
+    url: https://doi.org/10.1016/j.ces.2007.06.009
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Primary methods paper for MES on catalytic interfaces; illustrative hydrogenation example
+    is not acetylene/PdAg and does not measure industrial-bed internal coverage.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: danckwerts1953
+  title: 'Continuous Flow Systems: Distribution of Residence Times'
+  bibliographic_metadata:
+    authors: P. V. Danckwerts
+    year: 1953
+    journal: Chemical Engineering Science
+    volume: '2'
+    issue: '1'
+    doi: 10.1016/0009-2509(53)80001-1
+    url: https://doi.org/10.1016/0009-2509(53)80001-1
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: Classical RTD definitions, packed-tube apparent longitudinal dispersion, tracer flow characterization,
+    and conditional first-order steady-reactor calculations. The source gives its own steady axial flux equations
+    under declared assumptions; it is historical transport theory, not a target PdAg kinetic or periodic-operation
+    result.
+  access_level_reopened_this_mission: full_original_pdf_selected_pages_reopened
+  source_identity_hash: 40786c9d5b5cb6c6f00ded4a99363e7895dc4ced18930edffc332519e2ecf67e
+  passage_ids_checked:
+  - DAN53-P01-NONIDEAL-FLOW
+  - DAN53-P02-EXIT-AGE-DISTRIBUTION
+  - DAN53-P03-TRACER-IMPULSE
+  - DAN53-P04-HOLDBACK
+  - DAN53-P05-SEGREGATION
+  - DAN53-P06-PACKED-BED-DISPERSION
+  - DAN53-P07-PACKED-BED-CHECK
+  - DAN53-P09-FIRST-ORDER-RTD
+  - DAN53-P10-STEADY-REACTOR-BOUNDARIES
+  - DAN53-P11-RTD-NONLINEAR-LIMIT
+  - DAN53-P11-BLENDER-CONVOLUTION
+  - DAN53-P12-AUTOCORRELATION-FILTERING
+  claim_ids_checked:
+  - CLM-u_ph_transport-002
+  - CLM-u_ma_conservation-003
+  - CLM-u_sc_plant-003
+  - CLM-ph_residence_time_distribution-001
+  - CLM-ph_axial_dispersion-002
+  - CLM-ph_danckwerts-002
+  - CLM-ma_initial_boundary-002
+  - CLM-ma_Peclet-002
+  queue_status: first_and_second_pass_complete
+  ai_reviewer_checkpoint: SP-B6-20261022-DANCKWERTS
+  human_review_status: not_verified
+- source_id: silveston1995
+  title: Periodic Operation of Catalytic Reactors—Introduction and Overview
+  bibliographic_metadata:
+    authors: P. Silveston, Robert Ross Hudgins, Albert Renken
+    year: 1995
+    journal: Catalysis Today
+    volume: '25'
+    issue: '2'
+    doi: 10.1016/0920-5861(95)00101-K
+    url: https://doi.org/10.1016/0920-5861(95)00101-K
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: General review of composition-forced catalytic operation and laboratory/industrial strategies.
+    Not evidence of acetylene/PdAg benefit.
+  access_level_reopened_this_mission: full_original_pdf_selected_pages_reopened
+  local_path: Academics/BEP/Catalysis/Articles/Zotero Backup/Silveston e.a. - 1995 - Periodic operation of catalytic reactors—introduction and overview.pdf
+  source_identity_hash: c3e72721b84b1f528108b1452450bd964d74e181c9c104613ebb18212e540714
+  doi_verification_scope: Existing bibliographic DOI retained; it is not printed on the checked first page and was not independently re-queried in B5.
+  passage_ids_checked:
+  - SIL95-P01-ABSTRACT-SCOPE
+  - SIL95-P03-RATE-RATIOS
+  - SIL95-P03-CYCLE-VARIABLES
+  - SIL95-P04-SLOW-CYCLING-QSS
+  - SIL95-P04-RESPONSE-TIME-SCALES
+  - SIL95-P04-FAST-CYCLING-LIMITS
+  - SIL95-P05-PULSE-MECHANISTIC-INSIGHT
+  - SIL95-P05-OPERATION-COST
+  - SIL95-P13-INPUT-DISTORTION-HARDWARE
+  - SIL95-P18-COMPARISON-BASES
+  - SIL95-P18-HISTORICAL-EVIDENCE-GAP
+  claim_ids_checked:
+  - CLM-u_ma_periodic-005
+  - CLM-u_sc_excitation-003
+  - CLM-u_sc_feasibility-003
+  - CLM-sc_hardware_constraints-002
+  queue_status: first_and_second_pass_complete
+  ai_reviewer_checkpoint: SP-B5-20261022-SILVESTON
+  human_review_status: not_verified
+- source_id: zhu2021
+  title: Novel Microreactor and Generic Model Catalyst Platform for the Study of Fast Temperature Pulsed Operation
+    – CO Oxidation Rate Enhancement on Pt
+  bibliographic_metadata:
+    authors: Zhenghang Zhu et al.
+    year: 2021
+    journal: Chemical Engineering Journal
+    volume: '425'
+    article_number: '131559'
+    doi: 10.1016/j.cej.2021.131559
+    url: https://doi.org/10.1016/j.cej.2021.131559
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: Fast temperature step-response platform and CO oxidation on Pt. Its microsecond heater
+    response and rate enhancement do not transfer to acetylene feed-composition modulation or PdAg.
+  access_level_reopened_this_mission: author_institution_hosted_abstract_only_reopened; publisher_full_text_returned_403
+  source_identity_hash: null
+  passage_ids_checked: [ZHU21-B13-P01-HEATER-RESPONSE, ZHU21-B13-P02-MODEL-CATALYST-REACTION, ZHU21-B13-P03-RATE-RESPONSE, ZHU21-B13-P04-POWER-COMPARATOR, ZHU21-B13-P05-COVERAGE-MEMORY]
+  claim_ids_checked: [CLM-u_ph_thermal-002, CLM-ph_isothermal-002, CLM-ma_timescale-002]
+  queue_status: Author-institution-hosted article abstract and metadata reopened. Five passages were independently rechecked after commit 917f5a50b06c6ffa14c475e1c19f0eb4650ee572. The author-institution abstract supports a bounded thermal CO-oxidation precedent; full article remains inaccessible. No PdAg transfer or optimized-steady comparison inferred.
+  ai_reviewer_checkpoint: SP-B13-20261023-ZHU
+  human_review_status: not_verified
+- source_id: shi2024
+  title: Insights into reaction–diffusion behaviors of acetylene selective hydrogenation on pellet catalysts
+  bibliographic_metadata:
+    authors: Shi et al.
+    year: 2024
+    journal: AIChE Journal
+    volume: '70'
+    issue: '8'
+    article_number: e18454
+    doi: 10.1002/aic.18454
+    url: https://doi.org/10.1002/aic.18454
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: Numerical particle-resolved reaction–diffusion study for acetylene hydrogenation; useful
+    to motivate pellet/geometry checks, but not evidence for dynamic PdAg operation or measured universal selectivity
+    values.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: lan2025
+  title: Recent Advances in Thermocatalytic Acetylene Selective Hydrogenation
+  bibliographic_metadata:
+    authors: Xiaocheng Lan, Jingguang G. Chen, Tiefeng Wang
+    year: 2025
+    journal: Chemical Society Reviews
+    volume: '54'
+    issue: '16'
+    doi: 10.1039/d4cs01237b
+    url: https://doi.org/10.1039/d4cs01237b
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: Recent catalyst/mechanism review; abstract identifies over-hydrogenation, C–C coupling,
+    C–C cleavage/coke and metric benchmarking. Not a primary experiment.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: froment2011
+  title: Chemical Reactor Analysis and Design
+  bibliographic_metadata:
+    authors: Gilbert F. Froment, Kenneth B. Bischoff, Juray De Wilde
+    year: 2011
+  recorded_access_status_before_mission: citation_only_unverified
+  recorded_applicability: Proposal's general reactor-engineering reference; not used here as an independently read
+    source for a particular equation or acetylene claim.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: larsen2024
+  title: Semihydrogenation of Acetylene to Ethylene with a PdAg Catalyst
+  bibliographic_metadata:
+    authors: Victor Larsen
+    year: null
+  recorded_access_status_before_mission: legacy_bibliographic_claim_not_verified_against_local_pdf
+  recorded_applicability: The earlier bibliography entry claims 2024 and Delft University of Technology. The located
+    local PDF identifies a BEP but its inspected title page does not state year or institution; see larsen_bep_pdf
+    and source lineage.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: poto2022
+  title: 'Kinetic Modelling of the Methanol Synthesis from CO₂ and H₂ over a CuO/CeO₂/ZrO₂ Catalyst: The Role of
+    CO₂ and CO Hydrogenation'
+  bibliographic_metadata:
+    authors: Serena Poto et al.
+    year: 2022
+    journal: Chemical Engineering Journal
+    volume: '435'
+    article_number: '134946'
+    doi: 10.1016/j.cej.2022.134946
+    url: https://doi.org/10.1016/j.cej.2022.134946
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: Different reaction and Cu/CeO₂/ZrO₂ catalyst. It cannot establish acetylene/Pd hydrogenation
+    PSSA practice or its failure under forcing.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: mei2009
+  title: 'Hydrogenation of acetylene–ethylene mixtures over Pd and Pd–Ag alloys: First-principles-based kinetic
+    Monte Carlo simulations'
+  bibliographic_metadata:
+    authors: Dawei Mei, Manos Neurock, Christopher M. Smith
+    year: 2009
+    journal: Journal of Catalysis
+    volume: '268'
+    issue: '2'
+    doi: 10.1016/j.jcat.2009.09.004
+    url: https://doi.org/10.1016/j.jcat.2009.09.004
+  recorded_access_status_before_mission: abstract_and_preview
+  recorded_applicability: Atomistic KMC comparison for model Pd(111) and Pd–Ag/Pd(111) under acetylene/ethylene
+    mixtures; not an experimentally validated dynamic packed-bed model.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: li2021
+  title: In Situ Surface Structures of PdAg Catalyst and Their Influence on Acetylene Semihydrogenation Revealed
+    by Machine Learning and Experiment
+  bibliographic_metadata:
+    authors: Xiao-Tian Li, Lin Chen, Cheng Shang, Zhi-Pan Liu
+    year: 2021
+    journal: Journal of the American Chemical Society
+    volume: '143'
+    issue: '16'
+    doi: 10.1021/jacs.1c02471
+    url: https://doi.org/10.1021/jacs.1c02471
+  recorded_access_status_before_mission: abstract_and_preview
+  recorded_applicability: Direct PdAg acetylene evidence for Pd₁Ag₃/rutile-TiO₂. Support/composition and facet-specific
+    results differ from the BEP target.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: feimer1982
+  title: Modelling forced periodic operation of catalytic reactors
+  bibliographic_metadata:
+    authors: J. L. Feimer, A. K. Jain, R. R. Hudgins, P. L. Silveston
+    year: 1982
+    journal: Chemical Engineering Science
+    volume: '37'
+    issue: '12'
+    doi: 10.1016/0009-2509(82)80051-1
+    url: https://doi.org/10.1016/0009-2509(82)80051-1
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: General model-specific counterexample for forced feed-composition cycling, not acetylene/PdAg.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: horn_bailey1971
+  title: Comparison between two sufficient conditions for improvement of an optimal steady-state process by periodic
+    operation
+  bibliographic_metadata:
+    authors: James E. Bailey, F. J. M. Horn
+    year: 1971
+    journal: Journal of Optimization Theory and Applications
+    volume: '7'
+    issue: '5'
+    doi: 10.1007/BF00934000
+    url: https://doi.org/10.1007/BF00934000
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: Classical optimal-control theory with sufficient conditions for cycling gains; not a ready-made
+    PdAg criterion.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: ziegelhoeffer1972
+  title: 'Cyclic operation of reaction systems: the influence of diffusion on catalyst selectivity'
+  bibliographic_metadata:
+    authors: A. Ziegelhoeffer, J. W. de Jong, R. Ferrari, L. Turi Nagy
+    year: 1972
+    journal: Chemical Engineering Science
+    volume: '27'
+    issue: '1'
+    doi: 10.1016/0009-2509(72)80144-1
+    url: https://doi.org/10.1016/0009-2509(72)80144-1
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: Theoretical pellet example linking internal diffusion and switching frequency; not a PdAg
+    acetylene prediction.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: berger2008
+  title: Dynamic methods for catalytic kinetics
+  bibliographic_metadata:
+    authors: Rob J. Berger, Freek Kapteijn, Jacob A. Moulijn, Guy B. Marin, Juray De Wilde, Maria Olea, De Chen,
+      Anders Holmen, Luca Lietti, Enrico Tronconi, Yves Schuurman
+    year: 2008
+    journal: 'Applied Catalysis A: General'
+    volume: '342'
+    issue: 1–2
+    doi: 10.1016/j.apcata.2008.03.020
+    url: https://doi.org/10.1016/j.apcata.2008.03.020
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Review of transient kinetic identification methods across multiple reactions; not evidence
+    of PdAg gain.
+  access_level_reopened_this_mission: full_original_pdf_selected_pages_reopened
+  source_identity_hash: 70587ffe7d4713a9abe008c3b5b503a19a6f59135f9a81fd46c83b63548bb851
+  passage_ids_checked:
+  - BERGER08-P03-BIBLIOGRAPHIC-IDENTITY
+  - BERGER08-P06-PERIODIC-STIMULI
+  - BERGER08-P06-ANALYSIS-BANDWIDTH
+  - BERGER08-P06-SSITKA-OBSERVABLES
+  - BERGER08-P10-DYNAMIC-VS-ALGEBRAIC-SURFACE
+  - BERGER08-P11-TRANSPORT-CRITERIA
+  - BERGER08-P18-MOL-SO2-NOX-EXAMPLE
+  - BERGER08-P19-SURFACE-COVERAGES
+  - BERGER08-P19-REGRESSION-LIMITS
+  - BERGER08-P19-CENTERED-ARRHENIUS
+  claim_ids_checked:
+  - CLM-u_ph_kinetics-003
+  - CLM-u_ma_inverse-003
+  - CLM-u_sc_excitation-002
+  - CLM-ph_dynamic_memory-003
+  - CLM-ph_dynamic_memory-005
+  - CLM-ma_identifiability-001
+  - CLM-sc_excitation-002
+  - CLM-internal_diffusion_thiele-001
+  - CLM-external_film_transfer-001
+  queue_status: 9 current claim/source links rechecked in first and separate second passes; all 10 passages and 4 Berger historical attachment mappings re-audited; one notation/basis correction recorded; broader cited literature remains unopened
+  ai_reviewer_checkpoint: SP-B4-AI-20261022-after-cf6c0dd
+  notes: >-
+    Local 26-page PDF hash-checked and selected pages reopened by fresh text extraction and visual review in both passes. Correct DOI is 10.1016/j.apcata.2008.03.020; the legacy 10.1016/j.ces.2008.08.012 belongs to an unrelated Chemical Engineering Science article according to the retained Crossref correction record, not a new lookup in this batch. The second pass corrected Table 2's a' (prime) notation and made the Carberry dimensional check conditional on a compatible catalyst-volume/particle-volume basis. Berger is a secondary review: its dynamic surface-balance example is SO2-NOx adsorption on Na/gamma-Al2O3; it contains Carberry and Wheeler-Weisz criteria but no Mears criterion or substantive Thiele calculation. The review explicitly says it makes no mathematical analysis of the different models. No human verification is claimed.
+  human_review_status: not_verified
+- source_id: kaps2026
+  title: Forced Periodic Reactor Operation Applied to Methanol Synthesis
+  bibliographic_metadata:
+    authors: Lukas Kaps, Wieland Kortuz, Johannes Leipold, Carsten Seidel, Matthias Felischak, Tanya Wolff, Menka
+      Petkovska, Dalibor Marinković, Daliborka Nikolić, Achim Kienle, Andreas Seidel-Morgenstern
+    year: 2026
+    journal: ChemCatChem
+    volume: '18'
+    issue: '2'
+    article_number: e01403
+    doi: 10.1002/cctc.202501403
+    url: https://doi.org/10.1002/cctc.202501403
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Recent cross-system FPO analysis/optimization/CSTR experiment for methanol on Cu/ZnO/Al₂O₃;
+    use for method comparison only.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: espinoza2022
+  title: Catalytic Profile Reactor for Multimodal Operando Measurements during Periodic Operation
+  bibliographic_metadata:
+    authors: Diego Espinoza, Birte Wollak, Thomas L. Sheppard, Ann-Christin Dippel, Marina Sturm, Olof Gutowski,
+      Michael Schmidt, Oliver Korup, Raimund Horn
+    year: 2022
+    journal: ChemCatChem
+    volume: '14'
+    issue: '24'
+    article_number: e202200337
+    doi: 10.1002/cctc.202200337
+    url: https://doi.org/10.1002/cctc.202200337
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: 'Cross-system fixed-bed methodology study: automated sinusoidal periodic operation, validated
+    inlet control, spatial/temporal gas and temperature profiles, operando XRD for ethane ODH over MoO₃/γ-Al₂O₃.
+    Its stable average conversion/selectivity and model results are not acetylene/PdAg evidence.'
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: berger_wrong_doi_metadata
+  title: Nanofluidization as affected by vibration and electrostatic fields
+  bibliographic_metadata:
+    authors: Crossref record (author metadata not retained in this correction receipt)
+    year: 2008
+    journal: Chemical Engineering Science
+    doi: 10.1016/j.ces.2008.08.012
+    url: https://doi.org/10.1016/j.ces.2008.08.012
+  recorded_access_status_before_mission: Crossref metadata verified 2026-10-21
+  recorded_applicability: Used only to document and correct the legacy citation mismatch.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: larsen_bep_pdf
+  title: Semihydrogenation of acetylene to ethylene with a PdAg catalyst
+  bibliographic_metadata:
+    authors: Victor Larsen
+    year: null
+    journal: null
+    doi: null
+    url: null
+  recorded_access_status_before_mission: Local PDF available; targeted extraction and visual equation inspection
+    performed 2026-10-21
+  recorded_applicability: Local thesis fit; source metadata, catalyst loading, temperature conflict, steady balance
+    scope, and empirical kinetic equations are checked at selected locators. Target transfer and periodic gain remain
+    unsupported.
+  access_level_reopened_this_mission: full_original_pdf_selected_pages_reopened
+  source_identity_hash: b5aaa2300ff9b64aca70e58cc5e4d8be30b3c12ee264e69af89e01c86f5120c9
+  passage_ids_checked:
+  - LARSEN-BEP-P01-ABSTRACT
+  - LARSEN-BEP-P15-CATALYST-TABLE
+  - LARSEN-BEP-P15-METHOD-TEMPERATURE
+  - LARSEN-BEP-P16-REACTION-ENTHALPY
+  - LARSEN-BEP-P16-STEADY-PFR-BALANCES
+  - LARSEN-BEP-P16-DISSOCIATIVE-H2-DESCRIPTION
+  - LARSEN-BEP-P17-H2-DENOMINATOR-FORM
+  - LARSEN-BEP-P17-RMSE-DE
+  - LARSEN-BEP-P23-RESULTS-CONDITIONS
+  - LARSEN-BEP-P37-EXTENDED-LHHW
+  claim_ids_checked:
+  - CLM-lhhw_kinetics-001
+  - CLM-ma_gas_pde-003
+  - CLM-reaction_thermodynamics-001
+  queue_status: ten passage records, four quotations, three claim links and three historical attachments rechecked in a separate post-commit second pass; no correction needed; Appendix F code and scientific transfer questions remain open
+  ai_reviewer_checkpoint: SP-B8-20261022-LARSEN
+  human_review_status: not_verified
+- source_id: bos_westerterp_1993
+  title: Mechanism and kinetics of the selective hydrogenation of ethyne and ethene
+  bibliographic_metadata:
+    authors: A. N. R. Bos; K. R. Westerterp
+    year: 1993
+    journal: 'Chemical Engineering and Processing: Process Intensification'
+    volume: '32'
+    issue: '1'
+    doi: 10.1016/0255-2701(93)87001-B
+    url: https://doi.org/10.1016/0255-2701(93)87001-B
+  recorded_access_status_before_mission: Crossref bibliographic metadata verified; full text not inspected in this
+    pass
+  recorded_applicability: Correct bibliographic identity for the legacy DOI. The legacy short title was not the
+    published title.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_f10a073a9c
+  title: BEP Catalysis Project Conventions §12.1
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_ee9395ff76
+  title: Model Architecture Decisions §11.5
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_36d88bc20b
+  title: Catalysis Conventions §12.1
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_fd9889c943
+  title: Transport Phenomena Notes
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_f34894d0e5
+  title: Process Dynamics & Control (PDC Course Track)
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_e5a6eed08b
+  title: 'Agent B Reactor Simulation PR #2'
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: legacy_reference_not_resolved_to_local_file
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_ed26241632
+  title: Urakawa Group Modulated Excitation Catalysis Reviews
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_d3c052653b
+  title: 'PR #84 Mind Map Specification §Core Principles'
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_8374a1af33
+  title: PDC Course Reactor Dynamics & State-Space Control
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_4768412947
+  title: Conventions §5 Candidate Methods Framing
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_f989d86407
+  title: PDC course overview (archive analysis)
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_4a6757f9a5
+  title: BEP C mechanism and implementation source audit
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_8f8e730bea
+  title: BEP D kinetic parameter and identifiability audit
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_c18a3997ca
+  title: BEP kinetic and identifiability scientific deep dive (D)
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_5bd9ec7f38
+  title: BEP reaction mechanism and site-state audit (C)
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_3818df05bd
+  title: Transient Model Framework Audit §2
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_4afbb01246
+  title: Conventions §11 Model Architecture Decisions
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_aab581e49f
+  title: Transient Model Framework Audit §3
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_159cf51de0
+  title: Transient Model Framework Audit §1
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_0a6e6d4503
+  title: Model Architecture Decisions §11.7
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_9edbae751c
+  title: Transient PBR Model Prototype
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_9d42116bdc
+  title: Gemini Numerics Transcript 2026-09-29
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_56dd02bda5
+  title: 'Issue #58 Scientific Coordination Dossier'
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: legacy_ref_98b65fe6ba
+  title: BEP presentation deep dive C — reaction mechanism and surface physics
+  bibliographic_metadata:
+    authors: null
+    year: null
+    journal: null
+    doi: null
+  recorded_access_status_before_mission: repository_file_present
+  recorded_applicability: Kept to trace prior map source attachments; not a primary scientific source.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: stytsenko2022
+  title: Kinetic regularities and mechanism of acetylene hydrogenation over PdMn catalyst
+  bibliographic_metadata:
+    authors: Valentine D. Stytsenko, Dmitry P. Melnikov, Aleksandr P. Glotov, Vladimir A. Vinokurov
+    year: 2022
+    journal: Molecular Catalysis
+    volume: '533'
+    article_number: '112750'
+    doi: 10.1016/j.mcat.2022.112750
+    url: https://doi.org/10.1016/j.mcat.2022.112750
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Pd–Mn/Al2O3 source-specific kinetic and adsorption-substitution proposal at atmospheric
+    pressure and 303–323 K. It contrasts with Langmuir adsorption-equilibrium models; its proposed pathways and
+    apparent rates do not transfer to PdAg or the BEP catalyst.
+  access_level_reopened_this_mission: full_original_pdf_selected_pages_reopened
+  source_identity_hash: 69a82035fc75eb7b9c433f264ff7cfc67fe97df57c5d9aba411d74d0b7fca454
+  pdf_path: Academics/BEP/Catalysis/Articles/acquired_pdfs/stytsenkoKineticRegularitiesMechanism2022.pdf
+  passage_ids_checked: [STYT22-B9-P02-CATALYST-FEEDS, STYT22-B9-P02-ZERO-ORDER, STYT22-B9-P02-TPD-BOUNDS, STYT22-B9-P04-DRIFTS-ASSIGNMENT, STYT22-B9-P04-QMS-DISPLACEMENT, STYT22-B9-P04-MECHANISM-ASSUMPTIONS, STYT22-B9-P04-PARALLEL-RATES, STYT22-B9-P05-K2-ARRHENIUS, STYT22-B9-P05-HIGH-CONVERSION-CLOSURE, STYT22-B9-P06-EXTRAPOLATED-SX]
+  claim_ids_checked: [CLM-c1_pd_mn_adsorption_substitution-001, CLM-c1_pd_mn_adsorption_substitution-002, CLM-c1_pd_mn_adsorption_substitution-003, CLM-c1_pd_mn_adsorption_substitution-004]
+  queue_status: All four current claim/source links received first and separate post-commit second passes; no historical attachments for this source.
+  ai_reviewer_checkpoint: SP-B9-20261022-STYTSENKO
+  notes: >-
+    Full local seven-page article identified by its SHA-256 and selectively re-opened at printed pp. 2, 4–6 using
+    fresh text extraction and page rendering. The separate post-commit pass rechecked all ten passages, seven quotes
+    and four claim links; it enriched the Eq. (18) passage with the authors' model-derived recommendation to minimize
+    b^0.5 k6/k2 but found no transcription correction. Coverage retains the earlier inventory flag as historical;
+    whether the PDF existed at that exact inventory moment was not reconstructed. No human review is claimed.
+  human_review_status: not_verified
+- source_id: wang2023_pdag_descriptors
+  title: Rational Design of PdAg Catalysts for Acetylene Selective Hydrogenation via Structural Descriptor-based
+    Screening Strategy
+  bibliographic_metadata:
+    authors: Jiayi Wang, Haoxiang Xu, Chunxia Che, Jiqin Zhu, Daojian Cheng
+    year: 2023
+    journal: ACS Catalysis
+    volume: '13'
+    issue: '1'
+    doi: 10.1021/acscatal.2c05498
+    url: https://doi.org/10.1021/acscatal.2c05498
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: DFT, steady-state L–H microkinetic, descriptor-screening and steady fixed-bed comparison
+    for selected PdAg surface models and synthesized alumina-supported compositions. It demonstrates a source-specific
+    route/model combination, not dynamic coverage kinetics or transferable target performance.
+  access_level_reopened_this_mission: full_original_pdf_selected_pages_reopened
+  source_identity_hash: 7ee1e7c61f17007905fc4243ec4963759bae1affa8c2ae1fc49a1278195019a5
+  pdf_path: Academics/BEP/Catalysis/Articles/acquired_pdfs/ref_17.pdf
+  passage_ids_checked: [WANG23-B10-P02-DFT-SLABS, WANG23-B10-P02-MKM-ADSORPTION, WANG23-B10-P02-MKM-PSSA, WANG23-B10-P02-STEADY-FIXED-BED, WANG23-B10-P03-SURFACE-FAMILIES, WANG23-B10-P05-RXN-BARRIERS, WANG23-B10-P05-COVERAGE-SENSITIVITY, WANG23-B10-P06-DESCRIPTOR-FUNCTIONS, WANG23-B10-P07-PHI-H, WANG23-B10-P08-PHI-CH3, WANG23-B10-P09-EXPERIMENTAL-RANK, WANG23-B10-P06-PRESSURE-CONDITIONS]
+  claim_ids_checked: [CLM-c1_pdag_descriptor_mkm-001, CLM-c1_pdag_descriptor_mkm-002, CLM-c1_pdag_descriptor_mkm-003]
+  queue_status: First and separate post-commit second passes complete for all three current claim/source links; no human review claimed.
+  ai_reviewer_checkpoint: B10-AI-second-pass-2026-10-22
+  notes: >-
+    The local source is a 12-page ACS Catalysis PDF; its SHA-256 matches the identically named
+    Zotero-backup copy. Printed pp. 434–441 were reopened by fresh text extraction and visual inspection of equations
+    and Figure 5c. The main article states a steady L–H coverage sum, equilibrated C2H2/H2 adsorption and dtheta/dt=0;
+    it gives a source-specific supported fixed-bed recipe and qualitative Pd1Ag3 yield ranking. Its descriptor-energy
+    pressure conditions differ from the test total pressure, and the detailed microkinetic/descriptor-fit SI was not
+    found locally. Twelve passage records cover the three current links; nine brief quotations were recorded. No
+    target transient response, matched-pressure absolute-rate validation or periodic-versus-best-steady comparison
+    is established. A post-commit visual recheck confirmed all 12 records, nine quotations and three claim readings
+    without correction; the SI remains unavailable. Human review remains not_verified.
+  human_review_status: not_verified
+- source_id: dehghani2019_pdag_alphaal2o3
+  title: 'An Experimental Approach on Industrial Pd-Ag Supported α-Al2O3 Catalyst Used in Acetylene Hydrogenation
+    Process: Mechanism, Kinetic and Catalyst Decay'
+  bibliographic_metadata:
+    authors: Ourmazd Dehghani, Mohammad Reza Rahimpour, Alireza Shariati
+    year: 2019
+    journal: Processes
+    volume: '7'
+    issue: '3'
+    article_number: '136'
+    doi: 10.3390/pr7030136
+    url: https://doi.org/10.3390/pr7030136
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Laboratory kinetic tests and a campaign-time deactivation model for an industrial OleMax
+    201 Pd–Ag/α-Al2O3 catalyst from a specified petrochemical complex, plus a separate pseudo-steady lead/guard-bed
+    process model fitted to plant data. Not a transient within-cycle surface-coverage model or a target BEP catalyst
+    unless batch/support/operating conditions are confirmed.
+  access_level_reopened_this_mission: full_original_pdf_selected_pages_reopened; local S1 archive reopened
+  source_identity_hash: dae34366635983d506f2a6cdee3cce09805c9363a64c2cf0f827e1b72ee6649e
+  passage_ids_checked:
+  - DGH19-P03-CATALYST
+  - DGH19-P04-PRETREATMENT
+  - DGH19-P05-DESIGN
+  - DGH19-P06-VINYL-DFT-ATTRIBUTION
+  - DGH19-P08-PSEUDOSTEADY-ACTIVITY
+  - DGH19-P08-EQ25-PRESSURE
+  - DGH19-P08-EQ26-AMRE
+  - DGH19-P08-ACTIVITY-DATA-COUNT
+  - DGH19-P17-TABLE5-RATE-LAWS
+  - DGH19-P17-EQ29-ACTIVITY
+  - DGH19-P20-21-NOMENCLATURE-UNITS
+  - DGH19-P11-TEM-SIZE
+  - DGH19-P18-PLANT-COMPARISON
+  - DGH19-P18-ERROR-3PCT
+  - DGH19-S1-SET1-RUNS
+  - DGH19-S1-SET2-ACTIVITY-ROWS
+  - DGH19-S1-SET3-PIONA-SUM
+  claim_ids_checked:
+  - CLM-c1_pdag_industrial_lhhw_decay-001
+  - CLM-c1_pdag_industrial_lhhw_decay-002
+  - CLM-c1_pdag_industrial_lhhw_decay-003
+  - CLM-c1_pdag_industrial_lhhw_decay-004
+  - CLM-sc_fair_steady_periodic_cycle_comparison-002
+  queue_status: all five current graph links passage-reviewed in B1; referenced DFT paper [24], source-run mapping,
+    and unit/sign conventions remain unresolved
+  ai_reviewer_checkpoint: SP-B1-AI-20261022-after-d4da958
+  human_review_status: not_verified
+  notes: Original PDF was independently re-opened after commit d4da958 at printed/PDF pp. 3–8, 11, 17–21; Table 5 row 2
+    was corrected to its literal p_C2H2 numerator and flagged as internally inconsistent with the ethylene reaction label.
+    All three S1 workbooks were independently reopened from the existing local archive; archive endpoint bytes were
+    not re-fetched this mission. AI only; human review not verified.
+- source_id: di_giuliano_pellegrino2019
+  title: 'Numerical integration strategies of PFR dynamic models with axial dispersion and variable superficial
+    velocity: the case of CO2 capture by a solid sorbent'
+  bibliographic_metadata:
+    authors: A. Di Giuliano, E. Pellegrino
+    year: 2019
+    journal: Heliyon
+    volume: '5'
+    issue: '9'
+    article_number: e02040
+    doi: 10.1016/j.heliyon.2019.e02040
+    url: https://doi.org/10.1016/j.heliyon.2019.e02040
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: Primary numerical-model study of a transient axial-dispersion packed bed for CO2 capture
+    by CaO-mayenite sorbent at fixed pressure/temperature. It compares constant and space/time-varying superficial-velocity
+    formulations and a source-specific method-of-lines implementation. It is a numerical-method and balance precedent,
+    not acetylene/Pd kinetics or evidence that the BEP flow varies materially.
+  access_level_reopened_this_mission: "pmc_indexed_open_access_full_text_selected_excerpts; not sequentially read"
+  source_identity_hash: null
+  passage_ids_checked: [DG19-B14-P01-CONSERVATIVE-GAS-FLUX, DG19-B14-P02-MOL-CENTRAL-DIFFERENCES, DG19-B14-P03-EXPLICIT-EULER-CFL, DG19-B14-P04-VELOCITY-COMPARISON-RESULTS]
+  claim_ids_checked: [CLM-ph_variable_superficial_velocity-002, CLM-ph_variable_superficial_velocity-003, CLM-ma_conservative_finite_volume-002, CLM-ma_explicit_transport_step_bound-002]
+  queue_status: "Four passages re-opened and independently re-audited; selected indexed excerpts only, with direct-page access limitation retained."
+  ai_reviewer_checkpoint: SP-B14-20261023-DG19
+  human_review_status: not_verified
+- source_id: mott_green2015
+  title: On Danckwerts’ Boundary Conditions for the Plug-Flow with Dispersion/Reaction Model
+  bibliographic_metadata:
+    authors: Henry V. Mott, Zane A. Green
+    year: 2015
+    journal: Chemical Engineering Communications
+    volume: '202'
+    issue: '6'
+    doi: 10.1080/00986445.2013.871708
+    url: https://doi.org/10.1080/00986445.2013.871708
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: A source proposing revised inlet/outlet boundary conditions for a plug-flow dispersion/reaction
+    model, with hypothetical pseudo-first-order calculations in a serpentine reactor. The abstract establishes a
+    competing interpretation, not a universal replacement for Danckwerts conditions.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: villaverde2016_structural_identifiability
+  title: Structural Identifiability of Dynamic Systems Biology Models
+  bibliographic_metadata:
+    authors: Alejandro F. Villaverde, Antonio Barreiro, Antonis Papachristodoulou
+    year: 2016
+    journal: PLOS Computational Biology
+    volume: '12'
+    issue: '10'
+    article_number: e1005153
+    doi: 10.1371/journal.pcbi.1005153
+    url: https://doi.org/10.1371/journal.pcbi.1005153
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: General differential-geometric method for structural identifiability of analytic nonlinear
+    ODE models, treating unknown constant parameters as additional states. The mathematical framework is relevant
+    to reactor models, but its biological examples are not reactor evidence and do not establish practical identifiability
+    from noisy data.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: villaverde2019_fispo
+  title: Full observability and estimation of unknown inputs, states and parameters of nonlinear biological models
+  bibliographic_metadata:
+    authors: Alejandro F. Villaverde, Nikolaos Tsiantis, Julio R. Banga
+    year: 2019
+    journal: Journal of the Royal Society Interface
+    volume: '16'
+    issue: '156'
+    article_number: '20190043'
+    doi: 10.1098/rsif.2019.0043
+    url: https://doi.org/10.1098/rsif.2019.0043
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: General analytic nonlinear-ODE framework that separates state observability, parameter
+    identifiability and time-varying input reconstructibility, and contrasts structural rank analysis with numerical
+    estimation. The case studies are biological models; application to the BEP requires its own model and sensor/input
+    structure.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+- source_id: urmes2020_ni_periodic_estimation
+  title: Periodic reactor operation for parameter estimation in catalytic heterogeneous kinetics. Case study for
+    ethylene adsorption on Ni/Al2O3
+  bibliographic_metadata:
+    authors: Caroline Urmès, Joanne Obeid, Jean-Marc Schweitzer, Amandine Cabiac, Carine Julcour, Yves Schuurman
+    year: 2020
+    journal: Chemical Engineering Science
+    volume: '214'
+    article_number: '114544'
+    doi: 10.1016/j.ces.2018.10.012
+    url: https://doi.org/10.1016/j.ces.2018.10.012
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: >-
+    Periodic-flow parameter-estimation example for molecular ethylene adsorption over supported Ni/Al2O3,
+    with modeled gain/phase effects and internal/external mass-transfer cases. Not acetylene semi-hydrogenation,
+    target-catalyst evidence, or proof of periodic performance improvement.
+  access_level_reopened_this_mission: selected_indexed_article_excerpts
+  source_identity_hash: null
+  passage_ids_checked:
+  - U20-B17-P01-ESTIMATION-MOTIVE
+  - U20-B17-P02-METHOD-FAMILIES
+  - U20-B17-P03-MASS-TRANSFER-PHASE-GAIN
+  - U20-B17-P04-30HZ-ACQUISITION
+  - U20-B17-P05-EQUILIBRIUM-ADSORPTION-ESTIMATE
+  - U20-B17-P06-BYPASS-INLET-REFERENCE
+  - U20-B17-P07-SMALL-SIGNAL-LINEARIZATION
+  claim_ids_checked:
+  - CLM-sc_unknown_input_reconstructibility-003
+  - CLM-sc_periodic_frequency_response_identification-001
+  - CLM-sc_periodic_frequency_response_identification-002
+  - CLM-sc_persistent_excitation_condition-003
+  queue_status: selected_indexed_excerpts_checked_full_text_and_si_unavailable
+  ai_reviewer_checkpoint: B17-AI-20261023-URMES2020
+  human_review_status: not_verified
+- source_id: waldron2020_transient_flow_mbdoe
+  title: Model-based design of transient flow experiments for the identification of kinetic parameters
+  bibliographic_metadata:
+    authors: Conor Waldron, Arun Pankajakshan, Marco Quaglio, Enhong Cao, Federico Galvanin, Asterios Gavriilidis
+    year: 2020
+    journal: Reaction Chemistry & Engineering
+    volume: '5'
+    issue: '1'
+    doi: 10.1039/C9RE00342H
+    url: https://doi.org/10.1039/C9RE00342H
+  recorded_access_status_before_mission: full_text_read
+  recorded_applicability: >-
+    Primary demonstration of Fisher-information-based design for transient flow experiments in acid-catalyzed
+    benzoic-acid/ethanol esterification, a homogeneous liquid reaction in a PFR. Supports the stated information-design
+    equations and source-specific precision/prediction results; not heterogeneous catalysis, acetylene, packed-bed
+    transfer, or performance gain.
+  access_level_reopened_this_mission: full_original_pdf_reopened
+  source_identity_hash: null
+  passage_ids_checked:
+  - WALD20-B18-P01-LIKELIHOOD-ASSUMPTIONS
+  - WALD20-B18-P02-FIM-LOCAL-COVARIANCE
+  - WALD20-B18-P03-BOUNDED-DOPT-DESIGN
+  - WALD20-B18-P04-NOMINAL-ROBUST-DESIGN
+  - WALD20-B18-P05-IDEAL-PFR-RAMP-REDUCTION
+  - WALD20-B18-P06-TRANSIENT-DESIGN-RESULT
+  - WALD20-B18-P07-TRANSIENT-STEADY-PRECISION-COMPARISON
+  - WALD20-B18-P08-CROSS-PREDICTION-AND-MODEL-DISCREPANCY
+  - WALD20-B18-P09-CATALYST-RESPONSE-LIMIT
+  - WALD20-B18-P10-MODEL-STRUCTURE-AND-SAMPLING
+  - WALD20-B18-P11-SINUSOID-VERSUS-RAMP-SCOPE
+  claim_ids_checked:
+  - CLM-ma_fisher_information_model_based_design-001
+  - CLM-ma_fisher_information_model_based_design-002
+  - CLM-sc_persistent_excitation_condition-002
+  queue_status: full_published_version_pdf_reopened; supplementary information listed by RSC but not inspected
+  ai_reviewer_checkpoint: B18-AI-20261023-WALDRON2020
+  human_review_status: not_verified
+- source_id: schoukens1994_periodic_excitation_identification
+  title: On the advantages of periodic excitation in system identification
+  bibliographic_metadata:
+    authors: Joannes Schoukens, Rik Pintelon, Patrick Guillaume
+    year: 1994
+    volume: '3'
+    url: https://researchportal.vub.be/en/publications/on-the-advantages-of-periodic-excitation-in-system-identification/
+  recorded_access_status_before_mission: abstract_only
+  recorded_applicability: General system-identification method source. The abstract identifies estimation uncertainty,
+    model validation, initial-state estimation and frequency range as issues analyzed for periodic excitation versus
+    noise excitation; no reactor or catalytic evidence.
+  access_level_reopened_this_mission: not_reopened
+  source_identity_hash: null
+  passage_ids_checked: []
+  claim_ids_checked: []
+  queue_status: not_reopened
+  ai_reviewer_checkpoint: null
+  human_review_status: not_verified
+
+- source_id: rosa2025_pdbased_postplasma
+  title: A kinetic model for Pd-based hydrogenation of acetylene-rich streams typical of post-plasma applications
+  bibliographic_metadata:
+    authors: Victor Rosa, Fabio Cameli, Yves Schuurman, Kevin M. Van Geem, Georgios D. Stefanidis
+    year: 2025
+    journal: 'Catalysis Science & Technology'
+    volume: '15'
+    issue: '23'
+    pages: 7014–7029
+    doi: 10.1039/D5CY00529A
+    url: https://doi.org/10.1039/D5CY00529A
+  recorded_access_status_before_mission: not_in_starting_map
+  recorded_applicability: >-
+    Pd/α-Al2O3 steady experiments and model across tail-end and post-plasma-like feeds; not the BEP PdAg catalyst.
+    A conditional single-site closure applies as stated near 1–2 bar without CO. No periodic gain result.
+  mission_access_status: full_text_xml_via_europe_pmc
+  source_identity_hash: b953c19f28a2b1459471c601b3b10b61cf4d6efaeff2e59b94930706d1c933d4
+  source_bytes: 137258
+  source_resource: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12442368/fullTextXML
+  publisher_page_access: RSC full-text HTML/PDF direct open returned HTTP 403 in web access; primary article XML was retrieved via Europe PMC.
+  supplementary_information_status: cited SI Tables S3–S4 and Eqs. S13–S14 were not independently opened.
+  passage_ids_checked: [PDR25-B16-P01-FEED-CATALYST-REGIMES, PDR25-B16-P02-CONDITIONAL-SINGLE-SITE, PDR25-B16-P03-REVERSIBLE-ETHYLENE-ADSORPTION, PDR25-B16-P04-CARBON-BALANCE-CLOSURE, PDR25-B16-P05-PARAMETER-UNCERTAINTY, PDR25-B16-P06-TRANSPORT-SCREENING, PDR25-B16-P07-NUMERICAL-IMPLEMENTATION, PDR25-B16-P08-PREDICTIVE-EFFICACY]
+  claim_ids_checked: [CLM-ph_site_ensembles-004, CLM-ph_mechanism_choice-004, CLM-ph_lh_rates-003, CLM-ph_adsorbate_balance-003, CLM-u_ph_reaction-006, CLM-u_ma_inverse-006, CLM-sc_robustness-003, CLM-ma_numerical_checks-002, CLM-sc_validation-004]
+  queue_status: reopened_partial
+  ai_reviewer_checkpoint: SP-B16-20261023-ROSA2025
+  human_review_status: not_verified

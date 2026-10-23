@@ -1,0 +1,1941 @@
+dataset:
+  name: Historical overlay citation attachment queue
+  source: source_provenance.yaml:original_overlay_attachment_records
+  count: 96
+  status: all attachments inventoried; 7 of 96 have passage checks and the remainder await source passage review
+  human_verification_policy: not_verified for every attachment
+attachments:
+- historical_claim_id: HIST-original_devcontainer_overlay:lhhw_kinetics:1
+  attachment_id: original_devcontainer_overlay:lhhw_kinetics:1
+  source_node_id: lhhw_kinetics
+  source_item_index: 1
+  resolved_source_id: larsen_bep_pdf
+  legacy_attachment:
+    title: Larsen MSc Thesis (2024)
+    doi: null
+    path: Academics/BEP/Catalysis/Articles/2 meeting Damian + Zoë/extracted/Ch6_Results_and_Discussion.txt
+    citation: null
+    section: Equations 6.9–6.11 (Final Extended LHHW Rate Law)
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: local_pdf_identified_bibliographic_metadata_open
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: passage_checked_scope_limited
+  human_verification_status: not_verified
+  passage_ids:
+  - LARSEN-BEP-P01-ABSTRACT
+  - LARSEN-BEP-P37-EXTENDED-LHHW
+  notes: The local PDF is a BEP thesis, but its year and institution remain unconfirmed; the legacy title “MSc Thesis
+    (2024)” is preserved as historical wording, not asserted metadata. Its final fit is source-specific and does not
+    evidence periodic gain or target transfer.
+- historical_claim_id: HIST-original_devcontainer_overlay:lhhw_kinetics:2
+  attachment_id: original_devcontainer_overlay:lhhw_kinetics:2
+  source_node_id: lhhw_kinetics
+  source_item_index: 2
+  resolved_source_id: legacy_ref_f10a073a9c
+  legacy_attachment:
+    title: BEP Catalysis Project Conventions §12.1
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: §12.1 Verified against primary text
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:centered_arrhenius:1
+  attachment_id: original_devcontainer_overlay:centered_arrhenius:1
+  source_node_id: centered_arrhenius
+  source_item_index: 1
+  resolved_source_id: berger2008
+  legacy_attachment:
+    title: Berger et al. (2008) Chemical Engineering Science 63
+    doi: 10.1016/j.ces.2008.08.012
+    path: Academics/BEP/Catalysis/Articles/analyses/dynamic_kinetics_berger2008.md
+    citation: null
+    section: Equation 17 - Centered Arrhenius formulation
+  bibliographic_metadata_source_id: berger_wrong_doi_metadata
+  corrected_catalysis_source_id: berger2008
+  disposition: citation_corrected_to_verified_berger_review
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: passage_checked_scope_limited
+  human_verification_status: not_verified
+  passage_ids:
+  - BERGER08-P19-CENTERED-ARRHENIUS
+  notes: The local PDF confirms the correct catalytic review and Eq. (17) centered parameterization. The old DOI is an unrelated article; centered Arrhenius equivalence is algebraic and does not imply improved identifiability.
+- historical_claim_id: HIST-original_devcontainer_overlay:centered_arrhenius:2
+  attachment_id: original_devcontainer_overlay:centered_arrhenius:2
+  source_node_id: centered_arrhenius
+  source_item_index: 2
+  resolved_source_id: legacy_ref_ee9395ff76
+  legacy_attachment:
+    title: Model Architecture Decisions §11.5
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: '§11 Item 5: Centered Arrhenius for kp(T)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:surface_coverage_dynamics:1
+  attachment_id: original_devcontainer_overlay:surface_coverage_dynamics:1
+  source_node_id: surface_coverage_dynamics
+  source_item_index: 1
+  resolved_source_id: legacy_ref_3818df05bd
+  legacy_attachment:
+    title: Transient Model Framework Audit §2
+    doi: null
+    path: Academics/BEP/Catalysis/3_Model/transient_model_framework_audit.md
+    citation: null
+    section: §2 State Vector [Cb, cp, theta] Architecture
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:surface_coverage_dynamics:2
+  attachment_id: original_devcontainer_overlay:surface_coverage_dynamics:2
+  source_node_id: surface_coverage_dynamics
+  source_item_index: 2
+  resolved_source_id: berger2008
+  legacy_attachment:
+    title: Berger et al. (2008)
+    doi: 10.1016/j.ces.2008.08.012
+    path: Academics/BEP/Catalysis/Articles/analyses/dynamic_kinetics_berger2008.md
+    citation: null
+    section: Section 2.1 Dynamic Surface Balances
+  bibliographic_metadata_source_id: berger_wrong_doi_metadata
+  corrected_catalysis_source_id: berger2008
+  disposition: citation_corrected_to_verified_berger_review
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: passage_checked_locator_corrected_scope_limited
+  human_verification_status: not_verified
+  passage_ids:
+  - BERGER08-P10-DYNAMIC-VS-ALGEBRAIC-SURFACE
+  - BERGER08-P18-MOL-SO2-NOX-EXAMPLE
+  - BERGER08-P19-SURFACE-COVERAGES
+  notes: Historical locator “Section 2.1 Dynamic Surface Balances” is wrong; §2.1 is Stimuli. Dynamic gas/surface balances and coverages occur in §6.4.4 for SO2-NOx capture on Na/gamma-Al2O3. No BEP theta(z,r,t) or pellet radial model is supported.
+- historical_claim_id: HIST-original_devcontainer_overlay:reaction_thermodynamics:1
+  attachment_id: original_devcontainer_overlay:reaction_thermodynamics:1
+  source_node_id: reaction_thermodynamics
+  source_item_index: 1
+  resolved_source_id: larsen_bep_pdf
+  legacy_attachment:
+    title: Larsen Thesis Chapter 4 Materials & Methods
+    doi: null
+    path: Academics/BEP/Catalysis/Articles/2 meeting Damian + Zoë/extracted/Ch4_Materials_and_Methods.txt
+    citation: null
+    section: 'Lines 68–69: Enthalpy values Delta H'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: local_pdf_identified_source_value_unverified
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: passage_checked_scope_limited
+  human_verification_status: not_verified
+  passage_ids:
+  - LARSEN-BEP-P16-REACTION-ENTHALPY
+  notes: The thesis reports ΔH values −172 and −136 kJ mol⁻¹; they are not independently thermochemically validated
+    and do not alone establish a target hotspot or runaway.
+- historical_claim_id: HIST-original_devcontainer_overlay:reaction_thermodynamics:2
+  attachment_id: original_devcontainer_overlay:reaction_thermodynamics:2
+  source_node_id: reaction_thermodynamics
+  source_item_index: 2
+  resolved_source_id: legacy_ref_36d88bc20b
+  legacy_attachment:
+    title: Catalysis Conventions §12.1
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: 'Verified thermodynamic parameters: Delta H = -172 and -136 kJ/mol'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:transport_phenomena:1
+  attachment_id: original_devcontainer_overlay:transport_phenomena:1
+  source_node_id: transport_phenomena
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4afbb01246
+  legacy_attachment:
+    title: Conventions §11 Model Architecture Decisions
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: '§11 Item 1-3: Three coupled levels Cb(z) -> Cs(z) -> cp(z,r)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:transport_phenomena:2
+  attachment_id: original_devcontainer_overlay:transport_phenomena:2
+  source_node_id: transport_phenomena
+  source_item_index: 2
+  resolved_source_id: legacy_ref_aab581e49f
+  legacy_attachment:
+    title: Transient Model Framework Audit §3
+    doi: null
+    path: Academics/BEP/Catalysis/3_Model/transient_model_framework_audit.md
+    citation: null
+    section: 'Defects 1-3: Explicit particle diffusion vs instant film assumption'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:internal_diffusion_thiele:1
+  attachment_id: original_devcontainer_overlay:internal_diffusion_thiele:1
+  source_node_id: internal_diffusion_thiele
+  source_item_index: 1
+  resolved_source_id: berger2008
+  legacy_attachment:
+    title: Berger et al. (2008)
+    doi: 10.1016/j.ces.2008.08.012
+    path: Academics/BEP/Catalysis/Articles/analyses/dynamic_kinetics_berger2008.md
+    citation: null
+    section: 'Section 5: Criteria for internal mass transport limitations'
+  bibliographic_metadata_source_id: berger_wrong_doi_metadata
+  corrected_catalysis_source_id: berger2008
+  disposition: citation_corrected_to_verified_berger_review
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: passage_checked_scope_limited
+  human_verification_status: not_verified
+  passage_ids:
+  - BERGER08-P11-TRANSPORT-CRITERIA
+  notes: Berger supports general pore-diffusion diagnostics through Wheeler-Weisz and transient criteria. It does not derive a Thiele modulus or effectiveness factor; the exact historical claim needs another source.
+- historical_claim_id: HIST-original_devcontainer_overlay:internal_diffusion_thiele:2
+  attachment_id: original_devcontainer_overlay:internal_diffusion_thiele:2
+  source_node_id: internal_diffusion_thiele
+  source_item_index: 2
+  resolved_source_id: legacy_ref_fd9889c943
+  legacy_attachment:
+    title: Transport Phenomena Notes
+    doi: null
+    path: Academics/BEP/Catalysis/1_Transport_Phenomena/
+    citation: null
+    section: Thiele modulus scaling and Weisz-Prater criterion
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:external_film_transfer:1
+  attachment_id: original_devcontainer_overlay:external_film_transfer:1
+  source_node_id: external_film_transfer
+  source_item_index: 1
+  resolved_source_id: berger2008
+  legacy_attachment:
+    title: Berger et al. (2008)
+    doi: 10.1016/j.ces.2008.08.012
+    path: Academics/BEP/Catalysis/Articles/analyses/dynamic_kinetics_berger2008.md
+    citation: null
+    section: Section 5.1 External transport diagnostics
+  bibliographic_metadata_source_id: berger_wrong_doi_metadata
+  corrected_catalysis_source_id: berger2008
+  disposition: citation_corrected_to_verified_berger_review
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: passage_checked_scope_limited
+  human_verification_status: not_verified
+  passage_ids:
+  - BERGER08-P11-TRANSPORT-CRITERIA
+  notes: Berger identifies the Carberry number for external mass transfer. The PDF does not contain the Mears name or derive the attached Mears equation; the exact criterion needs another source.
+- historical_claim_id: HIST-original_devcontainer_overlay:pbr_governing_pdes:1
+  attachment_id: original_devcontainer_overlay:pbr_governing_pdes:1
+  source_node_id: pbr_governing_pdes
+  source_item_index: 1
+  resolved_source_id: larsen_bep_pdf
+  legacy_attachment:
+    title: Larsen Thesis Chapter 4 Materials & Methods
+    doi: null
+    path: Academics/BEP/Catalysis/Articles/2 meeting Damian + Zoë/extracted/Ch4_Materials_and_Methods.txt
+    citation: null
+    section: Equations 4.6–4.9 1D Plug-Flow Differential Equations
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: source_scope_corrected_steady_ode_not_dynamic_pde
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: passage_checked_scope_disputed
+  human_verification_status: not_verified
+  passage_ids:
+  - LARSEN-BEP-P16-STEADY-PFR-BALANCES
+  notes: Equations 4.6–4.9 are steady axial molar-flow ODEs in z, not transient PDEs; the historical attachment does
+    not support the dynamic packed-bed PDE. Preserve the prior linkage as a corrected scope record.
+- historical_claim_id: HIST-original_devcontainer_overlay:pbr_governing_pdes:2
+  attachment_id: original_devcontainer_overlay:pbr_governing_pdes:2
+  source_node_id: pbr_governing_pdes
+  source_item_index: 2
+  resolved_source_id: legacy_ref_159cf51de0
+  legacy_attachment:
+    title: Transient Model Framework Audit §1
+    doi: null
+    path: Academics/BEP/Catalysis/3_Model/transient_model_framework_audit.md
+    citation: null
+    section: Berger Eq. 1 recovery and axial balance formulation
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:method_of_lines_mol:1
+  attachment_id: original_devcontainer_overlay:method_of_lines_mol:1
+  source_node_id: method_of_lines_mol
+  source_item_index: 1
+  resolved_source_id: legacy_ref_0a6e6d4503
+  legacy_attachment:
+    title: Model Architecture Decisions §11.7
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: '§11 Item 7: MOL with upwind difference and central difference'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:method_of_lines_mol:2
+  attachment_id: original_devcontainer_overlay:method_of_lines_mol:2
+  source_node_id: method_of_lines_mol
+  source_item_index: 2
+  resolved_source_id: legacy_ref_9edbae751c
+  legacy_attachment:
+    title: Transient PBR Model Prototype
+    doi: null
+    path: Academics/BEP/Catalysis/3_Model/c2h2_hydrogenation_transient_model.py
+    citation: null
+    section: Spatial discretization and RHS function structure
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:stiff_ode_solvers:1
+  attachment_id: original_devcontainer_overlay:stiff_ode_solvers:1
+  source_node_id: stiff_ode_solvers
+  source_item_index: 1
+  resolved_source_id: legacy_ref_0a6e6d4503
+  legacy_attachment:
+    title: Model Architecture Decisions §11.7
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: '§11 Item 7: solve_ivp(method=''BDF'')'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:stiff_ode_solvers:2
+  attachment_id: original_devcontainer_overlay:stiff_ode_solvers:2
+  source_node_id: stiff_ode_solvers
+  source_item_index: 2
+  resolved_source_id: legacy_ref_9d42116bdc
+  legacy_attachment:
+    title: Gemini Numerics Transcript 2026-09-29
+    doi: null
+    path: Academics/BEP/Catalysis/3_Model/gemini_transcript_2026-09-29.md
+    citation: null
+    section: Stiffness analysis and BDF/Radau solver selection
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:parameter_sensitivity_jacobian:1
+  attachment_id: original_devcontainer_overlay:parameter_sensitivity_jacobian:1
+  source_node_id: parameter_sensitivity_jacobian
+  source_item_index: 1
+  resolved_source_id: legacy_ref_56dd02bda5
+  legacy_attachment:
+    title: 'Issue #58 Scientific Coordination Dossier'
+    doi: null
+    path: Academics/BEP/Catalysis/research/notes/bep_ai_mindmap_spec_2026_10_19.md
+    citation: null
+    section: Mathematical modeling deliverables and parameter identifiability
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:reactor_operating_window:1
+  attachment_id: original_devcontainer_overlay:reactor_operating_window:1
+  source_node_id: reactor_operating_window
+  source_item_index: 1
+  resolved_source_id: legacy_ref_f34894d0e5
+  legacy_attachment:
+    title: Process Dynamics & Control (PDC Course Track)
+    doi: null
+    path: Academics/BEP/Catalysis/2_Courses/PDC/
+    citation: null
+    section: Exothermic CSTR/PBR runaway analysis and van Heerden diagram
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:reactor_operating_window:2
+  attachment_id: original_devcontainer_overlay:reactor_operating_window:2
+  source_node_id: reactor_operating_window
+  source_item_index: 2
+  resolved_source_id: legacy_ref_e5a6eed08b
+  legacy_attachment:
+    title: 'Agent B Reactor Simulation PR #2'
+    doi: null
+    path: Methanol-Catalysis/pbr/
+    citation: null
+    section: Thermal stability and hotspot trajectory modeling
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: legacy_reference_unresolved
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:periodic_feed_forcing:1
+  attachment_id: original_devcontainer_overlay:periodic_feed_forcing:1
+  source_node_id: periodic_feed_forcing
+  source_item_index: 1
+  resolved_source_id: legacy_ref_ed26241632
+  legacy_attachment:
+    title: Urakawa Group Modulated Excitation Catalysis Reviews
+    doi: null
+    path: Academics/BEP/Catalysis/Articles/analyses/literature_categorization_and_action_plan.md
+    citation: null
+    section: Modulated feed excitation and transient kinetic enhancement
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:periodic_feed_forcing:2
+  attachment_id: original_devcontainer_overlay:periodic_feed_forcing:2
+  source_node_id: periodic_feed_forcing
+  source_item_index: 2
+  resolved_source_id: legacy_ref_d3c052653b
+  legacy_attachment:
+    title: 'PR #84 Mind Map Specification §Core Principles'
+    doi: null
+    path: Academics/BEP/Catalysis/research/notes/bep_ai_mindmap_spec_2026_10_19.md
+    citation: null
+    section: 'Systems & Control arm: periodic forcing and reactor dynamics'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:cooling_jacket_control:1
+  attachment_id: original_devcontainer_overlay:cooling_jacket_control:1
+  source_node_id: cooling_jacket_control
+  source_item_index: 1
+  resolved_source_id: legacy_ref_8374a1af33
+  legacy_attachment:
+    title: PDC Course Reactor Dynamics & State-Space Control
+    doi: null
+    path: Academics/BEP/Catalysis/2_Courses/PDC/
+    citation: null
+    section: Jacketed tubular reactor control and feedback stabilization
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:state_observer_mpc:1
+  attachment_id: original_devcontainer_overlay:state_observer_mpc:1
+  source_node_id: state_observer_mpc
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4768412947
+  legacy_attachment:
+    title: Conventions §5 Candidate Methods Framing
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: §5 Always frame advanced control techniques as candidate frameworks to evaluate
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:physics_catalytic_chemistry:1
+  attachment_id: original_devcontainer_overlay:physics_catalytic_chemistry:1
+  source_node_id: physics_catalytic_chemistry
+  source_item_index: 1
+  resolved_source_id: legacy_ref_98b65fe6ba
+  legacy_attachment:
+    title: BEP presentation deep dive C — reaction mechanism and surface physics
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: C.0–C.5 (source/code comparisons and chemistry); AI-attached, owner review pending
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:physics_catalytic_chemistry:2
+  attachment_id: original_devcontainer_overlay:physics_catalytic_chemistry:2
+  source_node_id: physics_catalytic_chemistry
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism and Table 3 as discussed in C deep dive; owner verification pending
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:pdc_process_dynamics_foundations:1
+  attachment_id: original_devcontainer_overlay:pdc_process_dynamics_foundations:1
+  source_node_id: pdc_process_dynamics_foundations
+  source_item_index: 1
+  resolved_source_id: legacy_ref_f989d86407
+  legacy_attachment:
+    title: PDC course overview (archive analysis)
+    doi: null
+    path: Academics/BEP/Catalysis/2_Courses/PDC/course_overview.md
+    citation: null
+    section: Sections 1–4 (course modules, notebooks, BEP relevance)
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_net_reaction_network:1
+  attachment_id: original_devcontainer_overlay:c1_net_reaction_network:1
+  source_node_id: c1_net_reaction_network
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.1: net gas-phase chemistry (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_acetylene_semihydrogenation:1
+  attachment_id: original_devcontainer_overlay:c1_acetylene_semihydrogenation:1
+  source_node_id: c1_acetylene_semihydrogenation
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.1: net gas-phase chemistry (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_ethylene_overhydrogenation:1
+  attachment_id: original_devcontainer_overlay:c1_ethylene_overhydrogenation:1
+  source_node_id: c1_ethylene_overhydrogenation
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.1: net gas-phase chemistry (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_ethylene_rich_inlet:1
+  attachment_id: original_devcontainer_overlay:c1_ethylene_rich_inlet:1
+  source_node_id: c1_ethylene_rich_inlet
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.1: net gas-phase chemistry (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_net_gas_source_vector:1
+  attachment_id: original_devcontainer_overlay:c1_net_gas_source_vector:1
+  source_node_id: c1_net_gas_source_vector
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.1: net gas-phase chemistry (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_net_gas_source_vector:2
+  attachment_id: original_devcontainer_overlay:c1_net_gas_source_vector:2
+  source_node_id: c1_net_gas_source_vector
+  source_item_index: 2
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.4: PSSA vs time-dependent coverage interpretation (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_microscopic_surface_path:1
+  attachment_id: original_devcontainer_overlay:c1_microscopic_surface_path:1
+  source_node_id: c1_microscopic_surface_path
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_microscopic_surface_path:2
+  attachment_id: original_devcontainer_overlay:c1_microscopic_surface_path:2
+  source_node_id: c1_microscopic_surface_path
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_horiuti_polanyi_family:1
+  attachment_id: original_devcontainer_overlay:c1_horiuti_polanyi_family:1
+  source_node_id: c1_horiuti_polanyi_family
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_horiuti_polanyi_family:2
+  attachment_id: original_devcontainer_overlay:c1_horiuti_polanyi_family:2
+  source_node_id: c1_horiuti_polanyi_family
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_vinyl_intermediate:1
+  attachment_id: original_devcontainer_overlay:c1_vinyl_intermediate:1
+  source_node_id: c1_vinyl_intermediate
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_vinyl_intermediate:2
+  attachment_id: original_devcontainer_overlay:c1_vinyl_intermediate:2
+  source_node_id: c1_vinyl_intermediate
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_adsorbed_ethylene_fork:1
+  attachment_id: original_devcontainer_overlay:c1_adsorbed_ethylene_fork:1
+  source_node_id: c1_adsorbed_ethylene_fork
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_adsorbed_ethylene_fork:2
+  attachment_id: original_devcontainer_overlay:c1_adsorbed_ethylene_fork:2
+  source_node_id: c1_adsorbed_ethylene_fork
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_adsorbed_ethylene_desorption:1
+  attachment_id: original_devcontainer_overlay:c1_adsorbed_ethylene_desorption:1
+  source_node_id: c1_adsorbed_ethylene_desorption
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_adsorbed_ethylene_desorption:2
+  attachment_id: original_devcontainer_overlay:c1_adsorbed_ethylene_desorption:2
+  source_node_id: c1_adsorbed_ethylene_desorption
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_ethyl_intermediate:1
+  attachment_id: original_devcontainer_overlay:c1_ethyl_intermediate:1
+  source_node_id: c1_ethyl_intermediate
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_ethyl_intermediate:2
+  attachment_id: original_devcontainer_overlay:c1_ethyl_intermediate:2
+  source_node_id: c1_ethyl_intermediate
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_parallel_ethane_paths:1
+  attachment_id: original_devcontainer_overlay:c1_parallel_ethane_paths:1
+  source_node_id: c1_parallel_ethane_paths
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_parallel_ethane_paths:2
+  attachment_id: original_devcontainer_overlay:c1_parallel_ethane_paths:2
+  source_node_id: c1_parallel_ethane_paths
+  source_item_index: 2
+  resolved_source_id: bos_westerterp_1993
+  legacy_attachment:
+    title: Bos & Westerterp (1993), selective hydrogenation review
+    doi: 10.1016/0255-2701(93)87001-B
+    path: null
+    citation: null
+    section: Abstract on potentially minor direct route, as reviewed in C.5.1; AI-attached
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_no_independent_direct_rate:1
+  attachment_id: original_devcontainer_overlay:c1_no_independent_direct_rate:1
+  source_node_id: c1_no_independent_direct_rate
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_no_independent_direct_rate:2
+  attachment_id: original_devcontainer_overlay:c1_no_independent_direct_rate:2
+  source_node_id: c1_no_independent_direct_rate
+  source_item_index: 2
+  resolved_source_id: bos_westerterp_1993
+  legacy_attachment:
+    title: Bos & Westerterp (1993), selective hydrogenation review
+    doi: 10.1016/0255-2701(93)87001-B
+    path: null
+    citation: null
+    section: Abstract on potentially minor direct route, as reviewed in C.5.1; AI-attached
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_no_independent_direct_rate:3
+  attachment_id: original_devcontainer_overlay:c1_no_independent_direct_rate:3
+  source_node_id: c1_no_independent_direct_rate
+  source_item_index: 3
+  resolved_source_id: mei2009
+  legacy_attachment:
+    title: Mei, Neurock & Smith (2009), Pd and PdAg kinetic Monte Carlo
+    doi: 10.1016/j.jcat.2009.09.004
+    path: null
+    citation: null
+    section: Vinyl/ethylidene branch in abstract summarized in C.5.1; AI-attached
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_vinyl_ethylidene_alternative:1
+  attachment_id: original_devcontainer_overlay:c1_vinyl_ethylidene_alternative:1
+  source_node_id: c1_vinyl_ethylidene_alternative
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_vinyl_ethylidene_alternative:2
+  attachment_id: original_devcontainer_overlay:c1_vinyl_ethylidene_alternative:2
+  source_node_id: c1_vinyl_ethylidene_alternative
+  source_item_index: 2
+  resolved_source_id: mei2009
+  legacy_attachment:
+    title: Mei, Neurock & Smith (2009), Pd and PdAg kinetic Monte Carlo
+    doi: 10.1016/j.jcat.2009.09.004
+    path: null
+    citation: null
+    section: Vinyl/ethylidene branch in abstract summarized in C.5.1; AI-attached
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_c4_coke_deactivation:1
+  attachment_id: original_devcontainer_overlay:c1_c4_coke_deactivation:1
+  source_node_id: c1_c4_coke_deactivation
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_c4_coke_deactivation:2
+  attachment_id: original_devcontainer_overlay:c1_c4_coke_deactivation:2
+  source_node_id: c1_c4_coke_deactivation
+  source_item_index: 2
+  resolved_source_id: borodzinski2006
+  legacy_attachment:
+    title: Borodziński & Bond (2006), Pd selective hydrogenation review
+    doi: 10.1080/01614940500364909
+    path: null
+    citation: null
+    section: Pd site-state changes summarized in C.5; AI-attached
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_catalyst_identity:1
+  attachment_id: original_devcontainer_overlay:c1_catalyst_identity:1
+  source_node_id: c1_catalyst_identity
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_catalyst_identity:2
+  attachment_id: original_devcontainer_overlay:c1_catalyst_identity:2
+  source_node_id: c1_catalyst_identity
+  source_item_index: 2
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_urmes_source_catalyst:1
+  attachment_id: original_devcontainer_overlay:c1_urmes_source_catalyst:1
+  source_node_id: c1_urmes_source_catalyst
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_urmes_source_catalyst:2
+  attachment_id: original_devcontainer_overlay:c1_urmes_source_catalyst:2
+  source_node_id: c1_urmes_source_catalyst
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_pdag_support_transfer:1
+  attachment_id: original_devcontainer_overlay:c1_pdag_support_transfer:1
+  source_node_id: c1_pdag_support_transfer
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_pdag_support_transfer:2
+  attachment_id: original_devcontainer_overlay:c1_pdag_support_transfer:2
+  source_node_id: c1_pdag_support_transfer
+  source_item_index: 2
+  resolved_source_id: mei2009
+  legacy_attachment:
+    title: Mei, Neurock & Smith (2009), Pd and PdAg kinetic Monte Carlo
+    doi: 10.1016/j.jcat.2009.09.004
+    path: null
+    citation: null
+    section: Vinyl/ethylidene branch in abstract summarized in C.5.1; AI-attached
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_multisite_hydride_carbide:1
+  attachment_id: original_devcontainer_overlay:c1_multisite_hydride_carbide:1
+  source_node_id: c1_multisite_hydride_carbide
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_multisite_hydride_carbide:2
+  attachment_id: original_devcontainer_overlay:c1_multisite_hydride_carbide:2
+  source_node_id: c1_multisite_hydride_carbide
+  source_item_index: 2
+  resolved_source_id: borodzinski2006
+  legacy_attachment:
+    title: Borodziński & Bond (2006), Pd selective hydrogenation review
+    doi: 10.1080/01614940500364909
+    path: null
+    citation: null
+    section: Pd site-state changes summarized in C.5; AI-attached
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_surface_sites:1
+  attachment_id: original_devcontainer_overlay:c1_surface_sites:1
+  source_node_id: c1_surface_sites
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_full_site_balance:1
+  attachment_id: original_devcontainer_overlay:c1_full_site_balance:1
+  source_node_id: c1_full_site_balance
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_full_site_balance:2
+  attachment_id: original_devcontainer_overlay:c1_full_site_balance:2
+  source_node_id: c1_full_site_balance
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_reduced_site_balance:1
+  attachment_id: original_devcontainer_overlay:c1_reduced_site_balance:1
+  source_node_id: c1_reduced_site_balance
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_reduced_site_balance:2
+  attachment_id: original_devcontainer_overlay:c1_reduced_site_balance:2
+  source_node_id: c1_reduced_site_balance
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_adsorption_desorption:1
+  attachment_id: original_devcontainer_overlay:c1_adsorption_desorption:1
+  source_node_id: c1_adsorption_desorption
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_adsorption_desorption:2
+  attachment_id: original_devcontainer_overlay:c1_adsorption_desorption:2
+  source_node_id: c1_adsorption_desorption
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_dissociative_h2_adsorption:1
+  attachment_id: original_devcontainer_overlay:c1_dissociative_h2_adsorption:1
+  source_node_id: c1_dissociative_h2_adsorption
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_dissociative_h2_adsorption:2
+  attachment_id: original_devcontainer_overlay:c1_dissociative_h2_adsorption:2
+  source_node_id: c1_dissociative_h2_adsorption
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_adjacent_site_requirement:1
+  attachment_id: original_devcontainer_overlay:c1_adjacent_site_requirement:1
+  source_node_id: c1_adjacent_site_requirement
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_adjacent_site_requirement:2
+  attachment_id: original_devcontainer_overlay:c1_adjacent_site_requirement:2
+  source_node_id: c1_adjacent_site_requirement
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_hydrocarbon_site_competition:1
+  attachment_id: original_devcontainer_overlay:c1_hydrocarbon_site_competition:1
+  source_node_id: c1_hydrocarbon_site_competition
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_hydrocarbon_site_competition:2
+  attachment_id: original_devcontainer_overlay:c1_hydrocarbon_site_competition:2
+  source_node_id: c1_hydrocarbon_site_competition
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_ethylene_readsorption:1
+  attachment_id: original_devcontainer_overlay:c1_ethylene_readsorption:1
+  source_node_id: c1_ethylene_readsorption
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_ethylene_readsorption:2
+  attachment_id: original_devcontainer_overlay:c1_ethylene_readsorption:2
+  source_node_id: c1_ethylene_readsorption
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Reaction mechanism/Table 3 as summarized in C.2; requires owner verification
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c1_kinetic_closure_boundary:1
+  attachment_id: original_devcontainer_overlay:c1_kinetic_closure_boundary:1
+  source_node_id: c1_kinetic_closure_boundary
+  source_item_index: 1
+  resolved_source_id: legacy_ref_4a6757f9a5
+  legacy_attachment:
+    title: BEP C mechanism and implementation source audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: 'C.4: PSSA vs time-dependent coverage interpretation (AI-attached, not owner-verified)'
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_urmes_2019_effective_rates:1
+  attachment_id: original_devcontainer_overlay:c2_urmes_2019_effective_rates:1
+  source_node_id: c2_urmes_2019_effective_rates
+  source_item_index: 1
+  resolved_source_id: legacy_ref_8f8e730bea
+  legacy_attachment:
+    title: BEP D kinetic parameter and identifiability audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md
+    citation: null
+    section: D1, D2, D3 (AI-attached; review primary source)
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_urmes_2019_effective_rates:2
+  attachment_id: original_devcontainer_overlay:c2_urmes_2019_effective_rates:2
+  source_node_id: c2_urmes_2019_effective_rates
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Table 5 and rate-law derivation; source applicability not owner reviewed
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_urmes_2019_adsorption_denominator:1
+  attachment_id: original_devcontainer_overlay:c2_urmes_2019_adsorption_denominator:1
+  source_node_id: c2_urmes_2019_adsorption_denominator
+  source_item_index: 1
+  resolved_source_id: legacy_ref_8f8e730bea
+  legacy_attachment:
+    title: BEP D kinetic parameter and identifiability audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md
+    citation: null
+    section: D1, D5.B (AI-attached; review primary source)
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_urmes_2019_adsorption_denominator:2
+  attachment_id: original_devcontainer_overlay:c2_urmes_2019_adsorption_denominator:2
+  source_node_id: c2_urmes_2019_adsorption_denominator
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Table 5 and rate-law derivation; source applicability not owner reviewed
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_urmes_2019_net_rates:1
+  attachment_id: original_devcontainer_overlay:c2_urmes_2019_net_rates:1
+  source_node_id: c2_urmes_2019_net_rates
+  source_item_index: 1
+  resolved_source_id: legacy_ref_8f8e730bea
+  legacy_attachment:
+    title: BEP D kinetic parameter and identifiability audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md
+    citation: null
+    section: D1, D4 (AI-attached; review primary source)
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_urmes_2019_net_rates:2
+  attachment_id: original_devcontainer_overlay:c2_urmes_2019_net_rates:2
+  source_node_id: c2_urmes_2019_net_rates
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Table 5 and rate-law derivation; source applicability not owner reviewed
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_urmes_2019_parameter_ledger:1
+  attachment_id: original_devcontainer_overlay:c2_urmes_2019_parameter_ledger:1
+  source_node_id: c2_urmes_2019_parameter_ledger
+  source_item_index: 1
+  resolved_source_id: legacy_ref_8f8e730bea
+  legacy_attachment:
+    title: BEP D kinetic parameter and identifiability audit
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md
+    citation: null
+    section: D2; Table 5 transcription (AI-attached; review primary source)
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_urmes_2019_parameter_ledger:2
+  attachment_id: original_devcontainer_overlay:c2_urmes_2019_parameter_ledger:2
+  source_node_id: c2_urmes_2019_parameter_ledger
+  source_item_index: 2
+  resolved_source_id: urmes2019
+  legacy_attachment:
+    title: Urmès et al. (2019), Catalysts 9, 180
+    doi: 10.3390/catal9020180
+    path: null
+    citation: null
+    section: Table 5 and rate-law derivation; source applicability not owner reviewed
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: primary_or_literature_source_mapped
+  local_path_present_at_reconciliation_snapshot: false
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_surface_kinetic_closure_choices:1
+  attachment_id: original_devcontainer_overlay:c2_surface_kinetic_closure_choices:1
+  source_node_id: c2_surface_kinetic_closure_choices
+  source_item_index: 1
+  resolved_source_id: legacy_ref_c18a3997ca
+  legacy_attachment:
+    title: BEP kinetic and identifiability scientific deep dive (D)
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md
+    citation: null
+    section: D1, D3, D4; compare C.3-C.4 — AI-attached; source scope bounded
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_surface_kinetic_closure_choices:2
+  attachment_id: original_devcontainer_overlay:c2_surface_kinetic_closure_choices:2
+  source_node_id: c2_surface_kinetic_closure_choices
+  source_item_index: 2
+  resolved_source_id: legacy_ref_5bd9ec7f38
+  legacy_attachment:
+    title: BEP reaction mechanism and site-state audit (C)
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: C.3-C.4 model comparison; AI attached
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_pssa_not_steady_reactor:1
+  attachment_id: original_devcontainer_overlay:c2_pssa_not_steady_reactor:1
+  source_node_id: c2_pssa_not_steady_reactor
+  source_item_index: 1
+  resolved_source_id: legacy_ref_c18a3997ca
+  legacy_attachment:
+    title: BEP kinetic and identifiability scientific deep dive (D)
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md
+    citation: null
+    section: D1, D3, D5.C; C.4 — AI-attached; source scope bounded
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_pssa_not_steady_reactor:2
+  attachment_id: original_devcontainer_overlay:c2_pssa_not_steady_reactor:2
+  source_node_id: c2_pssa_not_steady_reactor
+  source_item_index: 2
+  resolved_source_id: legacy_ref_5bd9ec7f38
+  legacy_attachment:
+    title: BEP reaction mechanism and site-state audit (C)
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: C.3-C.4 model comparison; AI attached
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_dynamic_theta_model_calibration_gap:1
+  attachment_id: original_devcontainer_overlay:c2_dynamic_theta_model_calibration_gap:1
+  source_node_id: c2_dynamic_theta_model_calibration_gap
+  source_item_index: 1
+  resolved_source_id: legacy_ref_c18a3997ca
+  legacy_attachment:
+    title: BEP kinetic and identifiability scientific deep dive (D)
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md
+    citation: null
+    section: D3, D4; C.3-C.4 — AI-attached; source scope bounded
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_dynamic_theta_model_calibration_gap:2
+  attachment_id: original_devcontainer_overlay:c2_dynamic_theta_model_calibration_gap:2
+  source_node_id: c2_dynamic_theta_model_calibration_gap
+  source_item_index: 2
+  resolved_source_id: legacy_ref_5bd9ec7f38
+  legacy_attachment:
+    title: BEP reaction mechanism and site-state audit (C)
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: C.3-C.4 model comparison; AI attached
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_transient_parameter_identifiability:1
+  attachment_id: original_devcontainer_overlay:c2_transient_parameter_identifiability:1
+  source_node_id: c2_transient_parameter_identifiability
+  source_item_index: 1
+  resolved_source_id: legacy_ref_c18a3997ca
+  legacy_attachment:
+    title: BEP kinetic and identifiability scientific deep dive (D)
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md
+    citation: null
+    section: D4, D8; Urmès 2022 abstract evidence limit — AI-attached; source scope bounded
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''
+- historical_claim_id: HIST-original_devcontainer_overlay:c2_transient_parameter_identifiability:2
+  attachment_id: original_devcontainer_overlay:c2_transient_parameter_identifiability:2
+  source_node_id: c2_transient_parameter_identifiability
+  source_item_index: 2
+  resolved_source_id: legacy_ref_5bd9ec7f38
+  legacy_attachment:
+    title: BEP reaction mechanism and site-state audit (C)
+    doi: null
+    path: Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md
+    citation: null
+    section: C.3-C.4 model comparison; AI attached
+  bibliographic_metadata_source_id: null
+  corrected_catalysis_source_id: null
+  disposition: internal_provenance_only
+  local_path_present_at_reconciliation_snapshot: true
+  historical_claim_status: ai_attached_not_human_verified
+  mission_status: historical_attachment_no_passage_yet
+  human_verification_status: not_verified
+  passage_ids: []
+  notes: ''

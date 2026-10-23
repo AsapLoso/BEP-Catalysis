@@ -1,0 +1,220 @@
+dataset:
+  name: Integrated-map primary-source and derivation second-pass audit
+  edition: integrated-v1-2026-10-22
+  status: partial_second_pass
+  entry_count: 10
+  reviewer_class: same_agent_second_pass; no independent human review claimed
+  purpose: Reinspect a representative spread of integrated scientific claims and derivations against primary source
+    text or explicit algebra, recording outcomes and remaining scope.
+entries:
+- id: A1-CAT-01
+  source_ids:
+  - urmes2019
+  access_basis: Local full-text PDF read directly; printed pp. 4–6
+  node_ids:
+  - c1_full_site_balance
+  - c1_reduced_site_balance
+  - c2_urmes_2019_net_rates
+  - c2_urmes_2019_parameter_ledger
+  checked_claims:
+  - locator: Printed p. 4, full/reduced site balances and rate derivation
+    claim: The six-term single-site occupancy bookkeeping is reduced by neglecting low vinyl/ethyl coverage; the
+      fitted model is not a six-state dynamic coverage ODE.
+    outcome: supported_with_scope
+    evidence_class: source_model_result
+  - locator: Printed p. 5 and Table 5, printed p. 6
+    claim: Text estimates K1=611 Pa−1 from assumed sticking/desorption inputs, while Table 5 reports K1=13 Pa−1
+      fixed; ethylene K5 is tabulated in Pa, not Pa−1.
+    outcome: discrepancy_retained_no_speculative_resolution
+    evidence_class: source_observation
+  notes: The observed parameter correlation and source-reported fixed constants are preserved; no target transfer
+    is inferred.
+- id: A1-CAT-02
+  source_ids:
+  - stytsenko2022
+  access_basis: Local full-text PDF read directly; printed §§3.3–4.3, Figs. 2–5, Eqs. (7)–(18)
+  node_ids:
+  - c1_pd_mn_adsorption_substitution
+  checked_claims:
+  - locator: §3.3 and Fig. 2
+    claim: No C2H2/C2H4 or fragments were detected to 573 K in that TPD protocol, while H2 partly desorbed around
+      523 K.
+    outcome: supported_but_detection_limited
+    evidence_class: source_observation
+  - locator: §3.4 and Fig. 4
+    claim: Gas-phase acetylene feed to an ethylene-precovered sample caused uptake of acetylene and release of ethylene
+      in the QMS experiment.
+    outcome: supported_for_source_protocol
+    evidence_class: source_observation
+  - locator: §4.1 assumptions 1–4; §§4.2–4.3
+    claim: The C2H4Z2 substitution pathway and unknown fast step 5 are model assumptions; the approximate 75% conversion
+      pathway change is source-specific.
+    outcome: supported_as_model_interpretation_not_universal_threshold
+    evidence_class: source_model_result
+  notes: Preserve the distinction between TPD/QMS observations, inferred adsorbate assignment, proposed pathway
+    and fitted piecewise rate equations.
+- id: A1-CHEM-01
+  source_ids:
+  - proposal_main
+  access_basis: Re-derived from the two stated net reactions; checked atom counts and signs manually
+  node_ids:
+  - c1_acetylene_semihydrogenation
+  - c1_ethylene_overhydrogenation
+  - c1_net_gas_source_vector
+  - ma_stoichiometry
+  checked_claims:
+  - locator: Reaction definitions and stoichiometric source equation in the integrated graph
+    claim: C2H2+H2→C2H4 and C2H4+H2→C2H6 are atom-balanced; for nonnegative net rates r1,r2, the gas-source vector
+      in (H2,C2H2,C2H4,C2H6) order is (−r1−r2,−r1,r1−r2,r2).
+    outcome: algebraically_verified_under_two_net_reaction_scope
+    evidence_class: derived_under_assumptions
+  notes: The derivation excludes additional gaseous C4 products, coke/deposit inventory and explicit gas/surface
+    storage; if such states are included, close the corresponding carbon/hydrogen inventory.
+- id: A1-TRANS-01
+  source_ids:
+  - proposal_main
+  access_basis: Dimension and conservative-flux check performed from declared variable bases
+  node_ids:
+  - ma_gas_pde
+  - ph_variable_superficial_velocity
+  checked_claims:
+  - locator: Integrated graph, conservative bed-volume species balance
+    claim: With C_i in mol m−3 gas void, u_s in m s−1, D_ax in m² s−1 and r_j in mol kg_cat−1 s−1, every term in
+      ε_b∂tC_i+∂z(u_sC_i)=∂z(ε_bD_ax∂zC_i)+(1−ε_b)ρ_prate is mol m−3 bed s−1. Variable u_s must remain inside ∂z(u_sC_i).
+    outcome: dimensionally_and_conservatively_verified_under_fixed_porosity_density_basis
+    evidence_class: derived_under_assumptions
+  notes: The check does not select target velocity closure, pressure boundary conditions or gas/solid inventory
+    basis.
+- id: A1-NUM-01
+  source_ids:
+  - proposal_main
+  - di_giuliano_pellegrino2019
+  access_basis: Independent cell integration and scalar update-weight derivation; PMC full text rechecked for external
+    source scope
+  node_ids:
+  - ma_conservative_finite_volume
+  - ma_explicit_transport_step_bound
+  - ma_numerical_checks
+  checked_claims:
+  - locator: Integrated finite-volume cell/global equations
+    claim: A shared rightward numerical face flux yields the cell balance and telescopes internal faces in the global
+      inventory.
+    outcome: algebraically_verified_given_shared_flux_and_fixed_cell_volumes
+    evidence_class: derived_under_assumptions
+  - locator: Integrated scalar forward-Euler/upwind/central-diffusion update
+    claim: Weights sum to one; Co+2Fo≤1 makes all weights nonnegative for scalar constant-coefficient transport
+      on a uniform grid.
+    outcome: algebraically_verified_as_sufficient_scalar_condition_only
+    evidence_class: derived_under_assumptions
+  - locator: Di Giuliano and Pellegrino 2019, Methods and solver comparison
+    claim: The article reports method-of-lines treatment and restrictive explicit integration behavior for its CaO-mayenite
+      CO2-capture model, not this acetylene system.
+    outcome: source_scope_retained_and_not_transferred
+    evidence_class: source_model_result
+  notes: No target solver run, stiffness ratio, mesh convergence or numerical validation is claimed.
+- id: A1-ID-01
+  source_ids:
+  - waldron2020_transient_flow_mbdoe
+  - villaverde2016_structural_identifiability
+  access_basis: Full Waldron PDF and full PMC text for Villaverde 2016 re-read at equation/method locators
+  node_ids:
+  - ma_fisher_information_model_based_design
+  - ma_identifiability
+  - sc_nonlinear_observability_identifiability
+  checked_claims:
+  - locator: Waldron et al. §2, eqs. (16)–(21)
+    claim: Weighted output sensitivities yield an approximate Fisher-information/covariance calculation for a fixed
+      error model; bounded D-optimal transient designs are model-conditioned.
+    outcome: supported; estimates/precision labeled model_design_result
+    evidence_class: source_model_result
+  - locator: Villaverde et al. 2016 Methods and Discussion
+    claim: Ideal structural uniqueness and finite/noisy practical precision are distinct; parameter augmentation
+      as zero-dynamics states gives a local structural rank method under assumptions.
+    outcome: supported_as_general_analytic_ode_method_not_target_result
+    evidence_class: review_synthesis
+  notes: No target sensitivity, rank or practical covariance has been calculated.
+- id: A1-PERF-01
+  source_ids:
+  - kaps2026
+  access_basis: Publisher HTML full text re-read at §§3.2, 4.4, 4.6 and conclusion
+  node_ids:
+  - sc_fair_steady_periodic_cycle_comparison
+  - sc_identification_vs_performance
+  - ma_periodic_orbit
+  checked_claims:
+  - locator: §4.4 EXP1/EXP1SS; §5
+    claim: The paper reports 4.4% productivity and 4.6% yield above a selected steady reference using the same time-average
+      inlet molar flows.
+    outcome: supported_as_source_specific_observation
+    evidence_class: source_observation
+  - locator: §3.2 and §4.3
+    claim: Steady and periodic Pareto fronts are a separate model-based optimization result under the specified
+      source model and constraints.
+    outcome: supported_as_model_result_not_empirical_global_steady_sweep
+    evidence_class: source_model_result
+  - locator: §4.6 and §5
+    claim: Catalyst deactivation across the three-month campaign affected both modes and limited quantitative agreement.
+    outcome: supported_as_source_specific_long_time_observation
+    evidence_class: source_observation
+  notes: Methanol synthesis in a laboratory CSTR is not quantitative or sign evidence for target Pd/PdAg acetylene
+    semi-hydrogenation.
+- id: A1-ACET-01
+  source_ids:
+  - urmes2022
+  access_basis: Publisher abstract and first-page preview only; full article and supporting information inaccessible
+  node_ids:
+  - sc_identification_vs_performance
+  - sc_periodic_frequency_response_identification
+  checked_claims:
+  - locator: Publisher abstract
+    claim: Small flow oscillations were used to estimate source-specific Pd/α-Al2O3 acetylene model parameters;
+      optimized transient predictions reproduce tested outlet time series and authors attribute model control to
+      two steps.
+    outcome: support_scope_split_between_experiment_and_model_result; no_gain_claim
+    evidence_class: source_model_result
+  notes: The waveform experiment can be recorded as an experimental method, but fitted trajectories and inferred
+    control-step attribution are model results. No cycle-integrated performance comparison is supported by the accessible
+    abstract.
+- id: A1-BND-01
+  source_ids:
+  - mott_green2015
+  access_basis: Publisher abstract only; full paper not read
+  node_ids:
+  - ph_danckwerts
+  - ph_boundary_model_interpretations
+  - ma_initial_boundary
+  checked_claims:
+  - locator: Publisher abstract
+    claim: The article proposes an alternative interpretation/revision of Danckwerts boundary conditions for a plug-flow
+      dispersion/reaction model.
+    outcome: retain_as_competing_boundary_proposal; no_equation_adopted
+    evidence_class: source_model_result
+  notes: The actual derivation and apparatus-domain choice are explicitly left open; abstract does not substantiate
+    a universally superior boundary condition.
+- id: A1-EDGE-01
+  source_ids:
+  - proposal_main
+  - waldron2020_transient_flow_mbdoe
+  - kaps2026
+  access_basis: Graph endpoint/source IDs and branch scopes checked against the hierarchy and the full cited equation/claim
+    statements
+  node_ids:
+  - ma_fisher_information_model_based_design
+  - sc_persistent_excitation_condition
+  - ma_periodic_orbit
+  - sc_fair_steady_periodic_cycle_comparison
+  checked_claims:
+  - locator: interdisciplinary_links.yaml ix_054–ix_059
+    claim: New information-design, excitation, periodic-orbit and comparator edges link the correct node endpoints
+      and branch scopes and carry endpoint source context.
+    outcome: validated_by_integrated_graph_validator
+    evidence_class: derived_under_assumptions
+  notes: Structural endpoint validity does not prove that an edge’s scientific interpretation is universally true;
+    the source-context limits remain in each edge.
+  edge_ids:
+  - ix_054
+  - ix_055
+  - ix_056
+  - ix_057
+  - ix_058
+  - ix_059

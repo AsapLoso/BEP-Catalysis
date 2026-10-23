@@ -1,0 +1,3938 @@
+dataset:
+  name: BEP concept disposition and lineage map
+  edition: integrated-v1-2026-10-22
+  record_counts:
+    independent_v2_records: 79
+    original_canonical_records: 4
+    original_overlay_records: 69
+    proposed_reconciliation_records: 19
+    prior_reconciliation_crosswalk_records: 144
+  unique_ids_across_original_maps: 148
+concepts:
+- source_dataset: independent_v2
+  source_node_id: bep
+  source_title: BEP scientific domain
+  source_parent_id: null
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - bep
+  prior_reconciliation_theme_id: null
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+- source_dataset: independent_v2
+  source_node_id: physics
+  source_title: Physics
+  source_parent_id: bep
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - physics
+  prior_reconciliation_theme_id: null
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+- source_dataset: independent_v2
+  source_node_id: ph_reaction_chemistry
+  source_title: Reaction Chemistry & Pathways
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_ph_reaction
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: The product network, elementary surface pathways, side reactions and carbon balance define
+      the selectivity problem.
+    explanation_or_notes: This branch separates overall stoichiometry from elementary surface chemistry and observed
+      products. The sequential C₂H₂→C₂H₄→C₂H₆ backbone is useful for product accounting, but a catalyst-specific
+      mechanism may involve site ensembles, adsorbed intermediates, deposits or unmeasured C₄ products. Product
+      selectivity is a joint outcome of pathway rates, site availability, transport and measurement limits.
+    open_questions:
+    - Which carbon products are present above detection limits over the actual forcing envelope?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_reaction_chemistry
+    proposed_node_id: u_ph_reaction
+- source_dataset: independent_v2
+  source_node_id: ph_catalyst_chemistry
+  source_title: Catalyst Chemistry & Active Sites
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_ph_catalyst
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Catalyst identity includes working surface structure and active-site ensembles, not just
+      nominal bulk Pd:Ag composition.
+    explanation_or_notes: Site families, nearest-neighbor ensembles, facets, support interactions, pretreatment,
+      hydrogen storage and carbonaceous deposits can alter adsorption and elementary rates. Treat single-site, multi-site
+      and changing-surface descriptions as alternative model families. Static working-surface characterization narrows
+      mechanism hypotheses but does not itself supply transient kinetic constants.
+    open_questions:
+    - What composition, support, pretreatment and working surface does the BEP catalyst represent?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_catalyst_chemistry
+    proposed_node_id: u_ph_catalyst
+- source_dataset: independent_v2
+  source_node_id: ph_site_ensembles
+  source_title: Site Families, Ensembles and Occupancy
+  source_parent_id: ph_catalyst_chemistry
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_site_ensembles
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_site_ensembles
+    proposed_node_id: u_ph_catalyst
+- source_dataset: independent_v2
+  source_node_id: ph_pd_ag_surface
+  source_title: Working PdAg Surface Structure
+  source_parent_id: ph_catalyst_chemistry
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_pd_ag_surface
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_pd_ag_surface
+    proposed_node_id: u_ph_catalyst
+- source_dataset: independent_v2
+  source_node_id: ph_catalyst_memory
+  source_title: Catalyst-State Memory Beyond Adsorbate Coverage
+  source_parent_id: ph_catalyst_chemistry
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_catalyst_memory
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_catalyst_memory
+    proposed_node_id: u_ph_catalyst
+- source_dataset: independent_v2
+  source_node_id: ph_reaction_network
+  source_title: Reaction network and product accounting
+  source_parent_id: ph_reaction_chemistry
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_reaction_network
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_reaction_network
+    proposed_node_id: u_ph_reaction
+- source_dataset: independent_v2
+  source_node_id: ph_sequential_path
+  source_title: Sequential hydrogenation path
+  source_parent_id: ph_reaction_network
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_sequential_path
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_sequential_path
+    proposed_node_id: u_ph_reaction
+- source_dataset: independent_v2
+  source_node_id: ph_competing_channels
+  source_title: Competing products and catalyst deposits
+  source_parent_id: ph_reaction_network
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_competing_channels
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_competing_channels
+    proposed_node_id: u_ph_reaction
+- source_dataset: independent_v2
+  source_node_id: ph_metrics
+  source_title: Conversion, selectivity and yield
+  source_parent_id: ph_reaction_network
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_metrics
+  prior_reconciliation_theme_id: u_sc_objective
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_metrics
+    proposed_node_id: u_sc_objective
+- source_dataset: independent_v2
+  source_node_id: ph_surface_states
+  source_title: Surface states and site inventory
+  source_parent_id: ph_catalyst_chemistry
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_surface_states
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_surface_states
+    proposed_node_id: u_ph_catalyst
+- source_dataset: independent_v2
+  source_node_id: ph_lh_rates
+  source_title: Elementary Rates and Langmuir–Hinshelwood Reduction
+  source_parent_id: ph_surface_states
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_lh_rates
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_lh_rates
+    proposed_node_id: u_ph_kinetics
+- source_dataset: independent_v2
+  source_node_id: ph_adsorbate_balance
+  source_title: Coverage balance and site conservation
+  source_parent_id: ph_surface_states
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_adsorbate_balance
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_adsorbate_balance
+    proposed_node_id: u_ph_kinetics
+- source_dataset: independent_v2
+  source_node_id: ph_mechanism_choice
+  source_title: Mechanism choice and catalyst specificity
+  source_parent_id: ph_surface_states
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_mechanism_choice
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_mechanism_choice
+    proposed_node_id: u_ph_kinetics
+- source_dataset: independent_v2
+  source_node_id: ph_dynamic_memory
+  source_title: Dynamic memory and surface timescales
+  source_parent_id: ph_surface_states
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_dynamic_memory
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_dynamic_memory
+    proposed_node_id: u_ph_kinetics
+- source_dataset: independent_v2
+  source_node_id: ph_packed_bed
+  source_title: Gas–solid transport in a packed bed
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_ph_transport
+  prior_reconciliation_theme_id: u_ph_transport
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: The model couples axial gas transport with distributed catalytic consumption and product
+      formation.
+    explanation_or_notes: 'A one-dimensional bed model averages over cross-section and pellet-scale structure. The
+      primary proposal writes advection, axial dispersion and a heterogeneous source term. Its equation should be
+      placed on a clear volumetric basis: gas concentration per void volume, superficial velocity per total bed
+      area, bed void fraction, catalyst mass per pellet volume, and rates per catalyst mass. This accounting exposes
+      where porosity factors belong and avoids mixing interstitial and superficial velocity conventions.'
+    open_questions:
+    - What bed geometry, particle dimensions and measured dispersion justify the 1D closure?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_packed_bed
+    proposed_node_id: u_ph_transport
+- source_dataset: independent_v2
+  source_node_id: ph_residence_time_distribution
+  source_title: Residence-Time Distribution and Input Propagation
+  source_parent_id: ph_packed_bed
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_residence_time_distribution
+  prior_reconciliation_theme_id: u_ph_transport
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_residence_time_distribution
+    proposed_node_id: u_ph_transport
+- source_dataset: independent_v2
+  source_node_id: ph_axial_balance
+  source_title: Axial convection–dispersion and reaction source
+  source_parent_id: ph_packed_bed
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_axial_balance
+  prior_reconciliation_theme_id: u_ph_transport
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_axial_balance
+    proposed_node_id: u_ph_transport
+- source_dataset: independent_v2
+  source_node_id: ph_axial_dispersion
+  source_title: Axial dispersion versus plug-flow limit
+  source_parent_id: ph_axial_balance
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_axial_dispersion
+  prior_reconciliation_theme_id: u_ph_transport
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_axial_dispersion
+    proposed_node_id: u_ph_transport
+- source_dataset: independent_v2
+  source_node_id: ph_pellet_transport
+  source_title: Film and intraparticle transport
+  source_parent_id: ph_packed_bed
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_pellet_transport
+  prior_reconciliation_theme_id: u_ph_transport
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_pellet_transport
+    proposed_node_id: u_ph_transport
+- source_dataset: independent_v2
+  source_node_id: ph_danckwerts
+  source_title: Inlet and outlet flux boundary conditions
+  source_parent_id: ph_packed_bed
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_danckwerts
+  prior_reconciliation_theme_id: u_ph_transport
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_danckwerts
+    proposed_node_id: u_ph_transport
+- source_dataset: independent_v2
+  source_node_id: ph_thermal_evolution
+  source_title: Thermal coupling and catalyst evolution
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_ph_thermal
+  prior_reconciliation_theme_id: u_ph_thermal
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Thermal feedback and catalyst-state evolution are separate physical extensions that may
+      couple to dynamic composition.
+    explanation_or_notes: The proposal’s isothermal baseline removes temperature dynamics by assumption. Hydrogenation
+      heat, wall removal and temperature-dependent rates can create a thermal response with its own lag; restructuring,
+      subsurface hydrogen, deposits and deactivation can create reversible or slow memory. These effects should
+      not be merged into one generic surface-memory state. Measure or bound temperature and time-on-stream changes
+      before treating them as negligible.
+    open_questions:
+    - What temperature deviations or catalyst aging occur at the proposed bed and cycle conditions?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_thermal_evolution
+    proposed_node_id: u_ph_thermal
+- source_dataset: independent_v2
+  source_node_id: ph_energy_balance
+  source_title: Packed-Bed Energy Balance as an Extension
+  source_parent_id: ph_thermal_evolution
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_energy_balance
+  prior_reconciliation_theme_id: u_ph_thermal
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_energy_balance
+    proposed_node_id: u_ph_thermal
+- source_dataset: independent_v2
+  source_node_id: ph_isothermal
+  source_title: Isothermal baseline and energy-balance boundary
+  source_parent_id: ph_thermal_evolution
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_isothermal
+  prior_reconciliation_theme_id: u_ph_thermal
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_isothermal
+    proposed_node_id: u_ph_thermal
+- source_dataset: independent_v2
+  source_node_id: ph_deposits
+  source_title: Carbonaceous deposits and catalyst aging
+  source_parent_id: ph_catalyst_chemistry
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_deposits
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_deposits
+    proposed_node_id: u_ph_catalyst
+- source_dataset: independent_v2
+  source_node_id: ph_measurement
+  source_title: Measurements and physical observability
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_ph_measurement
+  - u_sc_observation
+  prior_reconciliation_theme_id: u_sc_observation
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: The modeled internal surface profiles are inferred states; experimental access depends
+      on explicit sensors and measurement dynamics.
+    explanation_or_notes: The proposal plans to calibrate against gas chromatograph conversion/selectivity and later
+      to modulate feed with mass flow controllers. Boundary gas composition is not a direct observation of all bed-local
+      coverages. Modulation-excitation spectroscopy can resolve dynamic species in suitably instrumented lab systems,
+      but that does not establish operando coverage measurements throughout an industrial packed bed. A model should
+      distinguish physical sensors, their sampling/transport delays and noise from latent states.
+    open_questions:
+    - Which sensors can operate at the planned cycle frequency with known delay and bandwidth?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_measurement
+    proposed_node_id: u_sc_observation
+- source_dataset: independent_v2
+  source_node_id: ph_boundary_measurement
+  source_title: Boundary gas composition and analyzer dynamics
+  source_parent_id: ph_measurement
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_boundary_measurement
+  prior_reconciliation_theme_id: u_sc_observation
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_boundary_measurement
+    proposed_node_id: u_sc_observation
+- source_dataset: independent_v2
+  source_node_id: ph_operando_spectroscopy
+  source_title: Modulation-excitation spectroscopy
+  source_parent_id: ph_measurement
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ph_operando_spectroscopy
+  prior_reconciliation_theme_id: u_sc_observation
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ph_operando_spectroscopy
+    proposed_node_id: u_sc_observation
+- source_dataset: independent_v2
+  source_node_id: mathematics
+  source_title: Mathematics
+  source_parent_id: bep
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - mathematics
+  prior_reconciliation_theme_id: null
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+- source_dataset: independent_v2
+  source_node_id: ma_conservation
+  source_title: Conservation-law formulation
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_ma_conservation
+  prior_reconciliation_theme_id: u_ma_conservation
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Gas and surface balances need explicit state bases, stoichiometry, and rate units.
+    explanation_or_notes: The reactor equations are clearest when each source term is traced from reaction extent
+      to species production and then from catalyst basis to bed-volume basis. The gas PDE and surface coverage ODE
+      are coupled through partial pressures/concentrations, coverage-dependent rates, and consistent signs. Boundary/initial
+      data complete the dynamical problem.
+    open_questions:
+    - Are the kinetic rates supplied on the same catalyst and volume basis as the reactor balance?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_conservation
+    proposed_node_id: u_ma_conservation
+- source_dataset: independent_v2
+  source_node_id: ma_stoichiometry
+  source_title: Stoichiometric matrix and rate basis
+  source_parent_id: ma_conservation
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_stoichiometry
+  prior_reconciliation_theme_id: u_ma_conservation
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_stoichiometry
+    proposed_node_id: u_ma_conservation
+- source_dataset: independent_v2
+  source_node_id: ma_gas_pde
+  source_title: Gas-phase packed-bed PDE
+  source_parent_id: ma_conservation
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_gas_pde
+  prior_reconciliation_theme_id: u_ma_conservation
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_gas_pde
+    proposed_node_id: u_ma_conservation
+- source_dataset: independent_v2
+  source_node_id: ma_surface_balance
+  source_title: Surface-state ODE and algebraic closure
+  source_parent_id: ma_conservation
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_surface_balance
+  prior_reconciliation_theme_id: u_ma_conservation
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_surface_balance
+    proposed_node_id: u_ma_conservation
+- source_dataset: independent_v2
+  source_node_id: ma_initial_boundary
+  source_title: Initial and boundary data
+  source_parent_id: ma_conservation
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_initial_boundary
+  prior_reconciliation_theme_id: u_ma_conservation
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_initial_boundary
+    proposed_node_id: u_ma_conservation
+- source_dataset: independent_v2
+  source_node_id: ma_dimensionless
+  source_title: Dimensionless transport and timescale groups
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_ma_scaling
+  prior_reconciliation_theme_id: u_ma_scaling
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Bed and pellet groups organize distinct regimes; each needs a declared length, velocity,
+      rate and storage basis.
+    explanation_or_notes: Bed axial Pe/Da/St and pellet Thiele/modulation scales answer different questions. Large
+      bed Pe does not imply negligible intrapellet diffusion; a steady Thiele modulus does not establish whether
+      pellet inventory follows a periodic input. Use target geometry, dispersion, effective diffusivity and kinetic
+      uncertainty instead of a threshold borrowed from another catalyst.
+    open_questions:
+    - What experimental values and uncertainty intervals are available for each group?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_dimensionless
+    proposed_node_id: u_ma_scaling
+- source_dataset: independent_v2
+  source_node_id: ma_pellet_scaling
+  source_title: Pellet Diffusion Time and Thiele Scaling
+  source_parent_id: ma_dimensionless
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_pellet_scaling
+  prior_reconciliation_theme_id: u_ma_scaling
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_pellet_scaling
+    proposed_node_id: u_ma_scaling
+- source_dataset: independent_v2
+  source_node_id: ma_Peclet
+  source_title: Axial Péclet number
+  source_parent_id: ma_dimensionless
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_Peclet
+  prior_reconciliation_theme_id: u_ma_scaling
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_Peclet
+    proposed_node_id: u_ma_scaling
+- source_dataset: independent_v2
+  source_node_id: ma_Damkohler
+  source_title: Damköhler numbers and source scaling
+  source_parent_id: ma_dimensionless
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_Damkohler
+  prior_reconciliation_theme_id: u_ma_scaling
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_Damkohler
+    proposed_node_id: u_ma_scaling
+- source_dataset: independent_v2
+  source_node_id: ma_Strouhal
+  source_title: Forcing Strouhal number
+  source_parent_id: ma_dimensionless
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_Strouhal
+  prior_reconciliation_theme_id: u_ma_scaling
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_Strouhal
+    proposed_node_id: u_ma_scaling
+- source_dataset: independent_v2
+  source_node_id: ma_timescale
+  source_title: Timescale hierarchy and stiffness diagnostics
+  source_parent_id: ma_dimensionless
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_timescale
+  prior_reconciliation_theme_id: u_ma_scaling
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_timescale
+    proposed_node_id: u_ma_scaling
+- source_dataset: independent_v2
+  source_node_id: ma_numerics
+  source_title: PDE discretization and numerical solution
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_ma_numerics
+  prior_reconciliation_theme_id: u_ma_numerics
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Spatial approximation, time integration and verification determine whether model predictions
+      are trustworthy.
+    explanation_or_notes: The proposal proposes a method of lines, upwind differencing at high Pe, an orthogonal-collocation
+      alternative, and BDF/Radau time integration. These are candidate methods, not a demonstrated performance result.
+      The discretized system must preserve the coupling and physical constraints well enough for parameter estimation
+      and optimization; convergence and balance checks matter more than a solver label.
+    open_questions:
+    - Which discretization resolves the measured front length at acceptable error?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_numerics
+    proposed_node_id: u_ma_numerics
+- source_dataset: independent_v2
+  source_node_id: ma_MOL
+  source_title: Method of lines
+  source_parent_id: ma_numerics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_MOL
+  prior_reconciliation_theme_id: u_ma_numerics
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_MOL
+    proposed_node_id: u_ma_numerics
+- source_dataset: independent_v2
+  source_node_id: ma_convection_scheme
+  source_title: Convection-dominated spatial schemes
+  source_parent_id: ma_numerics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_convection_scheme
+  prior_reconciliation_theme_id: u_ma_numerics
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_convection_scheme
+    proposed_node_id: u_ma_numerics
+- source_dataset: independent_v2
+  source_node_id: ma_stiff_solver
+  source_title: Stiff ODE integration
+  source_parent_id: ma_numerics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_stiff_solver
+  prior_reconciliation_theme_id: u_ma_numerics
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_stiff_solver
+    proposed_node_id: u_ma_numerics
+- source_dataset: independent_v2
+  source_node_id: ma_discontinuous_input
+  source_title: Discontinuous and smooth forcing representations
+  source_parent_id: ma_numerics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_discontinuous_input
+  prior_reconciliation_theme_id: u_ma_numerics
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_discontinuous_input
+    proposed_node_id: u_ma_numerics
+- source_dataset: independent_v2
+  source_node_id: ma_numerical_checks
+  source_title: Numerical verification and conservation checks
+  source_parent_id: ma_numerics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_numerical_checks
+  prior_reconciliation_theme_id: u_ma_numerics
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_numerical_checks
+    proposed_node_id: u_ma_numerics
+- source_dataset: independent_v2
+  source_node_id: ma_inverse
+  source_title: Inverse problems and uncertainty
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_ma_inverse
+  prior_reconciliation_theme_id: u_ma_inverse
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Macroscopic outputs may not uniquely determine microscopic kinetic parameters or internal
+      states.
+    explanation_or_notes: Parameter calibration fits model predictions to observations. If several parameters trade
+      off while producing similar outlet conversion/selectivity, the inverse problem is poorly identifiable and
+      uncertainty in hidden coverages may be large. Sensitivity, profile likelihood, posterior inference or structural
+      identifiability analysis can reveal this. Adding transient or spectroscopic observations may improve identifiability
+      but must be designed for the catalyst and time scale.
+    open_questions:
+    - Which combinations of adsorption and reaction parameters are practically distinguishable from available outputs?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_inverse
+    proposed_node_id: u_ma_inverse
+- source_dataset: independent_v2
+  source_node_id: ma_identifiability
+  source_title: Parameter identifiability and compensation
+  source_parent_id: ma_inverse
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_identifiability
+  prior_reconciliation_theme_id: u_ma_inverse
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_identifiability
+    proposed_node_id: u_ma_inverse
+- source_dataset: independent_v2
+  source_node_id: ma_sensitivity
+  source_title: Sensitivity and uncertainty propagation
+  source_parent_id: ma_inverse
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_sensitivity
+  prior_reconciliation_theme_id: u_ma_inverse
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_sensitivity
+    proposed_node_id: u_ma_inverse
+- source_dataset: independent_v2
+  source_node_id: ma_periodic_system
+  source_title: Periodic dynamics and stability
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_ma_periodic
+  prior_reconciliation_theme_id: u_ma_periodic
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Cycle-average performance may improve, match or fall below an optimized steady point;
+      analyze settled periodic orbits and explicit no-gain limits.
+    explanation_or_notes: A periodic input can create nonlinear rectification when surface, transport or catalyst
+      states lag the gas forcing. Stable linear dynamics preserve the mean/DC relationship, and a static concave
+      response cannot beat its value at the mean input. Neither special case covers a general nonlinear reactor.
+      Classical periodic-operation theory gives conditional tests, not a universal acetylene gain theorem. Evaluate
+      the actual model, feasible controls, metric and catalyst evidence.
+    open_questions:
+    - How many cycles are needed to reach a stable periodic regime for plausible parameters?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_periodic_system
+    proposed_node_id: u_ma_periodic
+- source_dataset: independent_v2
+  source_node_id: ma_average_gain
+  source_title: Conditions for a Periodic Average Gain
+  source_parent_id: ma_periodic_system
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_average_gain
+  prior_reconciliation_theme_id: u_ma_periodic
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_average_gain
+    proposed_node_id: u_ma_periodic
+- source_dataset: independent_v2
+  source_node_id: ma_lti_no_gain
+  source_title: Stable Linear Systems Preserve the Mean
+  source_parent_id: ma_average_gain
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_lti_no_gain
+  prior_reconciliation_theme_id: u_ma_periodic
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_lti_no_gain
+    proposed_node_id: u_ma_periodic
+- source_dataset: independent_v2
+  source_node_id: ma_concavity_bound
+  source_title: Jensen Bound for a Static Concave Response
+  source_parent_id: ma_average_gain
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_concavity_bound
+  prior_reconciliation_theme_id: u_ma_periodic
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_concavity_bound
+    proposed_node_id: u_ma_periodic
+- source_dataset: independent_v2
+  source_node_id: ma_nonlinear_rectification
+  source_title: Nonlinear Frequency Response and Mean Rectification
+  source_parent_id: ma_average_gain
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_nonlinear_rectification
+  prior_reconciliation_theme_id: u_ma_periodic
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_nonlinear_rectification
+    proposed_node_id: u_ma_periodic
+- source_dataset: independent_v2
+  source_node_id: ma_periodic_orbit
+  source_title: Periodic orbit and Poincaré map
+  source_parent_id: ma_periodic_system
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_periodic_orbit
+  prior_reconciliation_theme_id: u_ma_periodic
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_periodic_orbit
+    proposed_node_id: u_ma_periodic
+- source_dataset: independent_v2
+  source_node_id: ma_stability
+  source_title: Steady-state and periodic stability
+  source_parent_id: ma_periodic_system
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - ma_stability
+  prior_reconciliation_theme_id: u_ma_periodic
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: ma_stability
+    proposed_node_id: u_ma_periodic
+- source_dataset: independent_v2
+  source_node_id: systems_control
+  source_title: Systems & Control
+  source_parent_id: bep
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - systems_control
+  prior_reconciliation_theme_id: null
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+- source_dataset: independent_v2
+  source_node_id: sc_plant
+  source_title: Input–state–output plant model
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_sc_plant
+  prior_reconciliation_theme_id: u_sc_plant
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: A plant description declares manipulated variables, internal states, measured outputs,
+      disturbances and constraints.
+    explanation_or_notes: For this BEP, inlet composition is a candidate manipulated input; gas concentrations and
+      surface coverages are internal dynamic states; outlet composition/flow are measured outputs. Total flow, pressure,
+      temperature, actuator response and analyzer dynamics can all affect the plant. Treating each inlet species
+      concentration as an independently selectable input may violate mole-fraction, flow or equipment constraints.
+    open_questions:
+    - Can the proposed actuator independently vary reactant ratios while holding total flow, pressure and temperature
+      fixed?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_plant
+    proposed_node_id: u_sc_plant
+- source_dataset: independent_v2
+  source_node_id: sc_manipulated_input
+  source_title: Manipulated inlet composition and actuators
+  source_parent_id: sc_plant
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_manipulated_input
+  prior_reconciliation_theme_id: u_sc_plant
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_manipulated_input
+    proposed_node_id: u_sc_plant
+- source_dataset: independent_v2
+  source_node_id: sc_bed_input_realization
+  source_title: Command-to-Bed Input Realization
+  source_parent_id: sc_manipulated_input
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_bed_input_realization
+  prior_reconciliation_theme_id: u_sc_plant
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_bed_input_realization
+    proposed_node_id: u_sc_plant
+- source_dataset: independent_v2
+  source_node_id: sc_output_model
+  source_title: Outputs and measurement model
+  source_parent_id: sc_plant
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_output_model
+  prior_reconciliation_theme_id: u_sc_observation
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_output_model
+    proposed_node_id: u_sc_observation
+- source_dataset: independent_v2
+  source_node_id: sc_periodic_forcing
+  source_title: Periodic forcing and excitation design
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_sc_excitation
+  prior_reconciliation_theme_id: u_sc_excitation
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Periodic operation is a candidate experiment/control strategy whose value must be measured
+      against a matched baseline.
+    explanation_or_notes: Periodic composition forcing can be used to probe catalyst dynamics and may alter conversion
+      or selectivity, but benefit is system-specific. A 1995 review discusses broad objectives for composition-forced
+      catalytic reactors; the 2022 acetylene study directly reports periodic flow modulation and a fitted transient
+      model for Pd/α-Al₂O₃. Neither establishes the proposal's predicted advantage for the intended PdAg bed. Forcing
+      must be designed to identify kinetics and respect operating constraints.
+    open_questions:
+    - What amplitude/frequency domain is both safely feasible and informative for PdAg?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_periodic_forcing
+    proposed_node_id: u_sc_excitation
+- source_dataset: independent_v2
+  source_node_id: sc_excitation
+  source_title: Dynamic excitation and kinetic discrimination
+  source_parent_id: sc_periodic_forcing
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_excitation
+  prior_reconciliation_theme_id: u_sc_excitation
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_excitation
+    proposed_node_id: u_sc_excitation
+- source_dataset: independent_v2
+  source_node_id: sc_waveform
+  source_title: Waveform parameterization
+  source_parent_id: sc_periodic_forcing
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_waveform
+  prior_reconciliation_theme_id: u_sc_excitation
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_waveform
+    proposed_node_id: u_sc_excitation
+- source_dataset: independent_v2
+  source_node_id: sc_hardware_constraints
+  source_title: Hardware and process feasibility constraints
+  source_parent_id: sc_periodic_forcing
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_hardware_constraints
+  prior_reconciliation_theme_id: u_sc_feasibility
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_hardware_constraints
+    proposed_node_id: u_sc_feasibility
+- source_dataset: independent_v2
+  source_node_id: sc_baseline
+  source_title: Matched steady-state comparison
+  source_parent_id: sc_periodic_forcing
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_baseline
+  prior_reconciliation_theme_id: u_sc_objective
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_baseline
+    proposed_node_id: u_sc_objective
+- source_dataset: independent_v2
+  source_node_id: sc_benchmark_nesting
+  source_title: Feasible-Set Nesting and the No-Worse Comparator
+  source_parent_id: sc_baseline
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_benchmark_nesting
+  prior_reconciliation_theme_id: u_sc_objective
+  disposition: unresolved
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_benchmark_nesting
+    proposed_node_id: u_sc_objective
+- source_dataset: independent_v2
+  source_node_id: sc_optimization
+  source_title: Waveform optimization and robustness
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_sc_objective
+  prior_reconciliation_theme_id: u_sc_objective
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Waveform search returns a model- and solver-dependent candidate; convergence does not
+      establish global optimality or experimental benefit.
+    explanation_or_notes: The proposed B-spline and period search should follow model adequacy, periodic-orbit convergence,
+      gradient checks and matched steady optimization. A local maximization method may converge to a local maximum,
+      saddle, boundary point or fail; it does not generically return a local minimum. Multi-start, knot/mesh refinement
+      and uncertainty analysis quantify sensitivity but do not prove a global optimum without bounds or certificates.
+      No optimization is executed in this reference-map pass.
+    open_questions:
+    - Does the predicted dynamic advantage survive independent initializations and parameter uncertainty?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_optimization
+    proposed_node_id: u_sc_objective
+- source_dataset: independent_v2
+  source_node_id: sc_objective
+  source_title: Cycle-integrated objective
+  source_parent_id: sc_optimization
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_objective
+  prior_reconciliation_theme_id: u_sc_objective
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_objective
+    proposed_node_id: u_sc_objective
+- source_dataset: independent_v2
+  source_node_id: sc_local_search
+  source_title: Local optimization and solution claims
+  source_parent_id: sc_optimization
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_local_search
+  prior_reconciliation_theme_id: u_sc_objective
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_local_search
+    proposed_node_id: u_sc_objective
+- source_dataset: independent_v2
+  source_node_id: sc_robustness
+  source_title: Robustness to uncertainty and mismatch
+  source_parent_id: sc_optimization
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_robustness
+  prior_reconciliation_theme_id: u_sc_feasibility
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_robustness
+    proposed_node_id: u_sc_feasibility
+- source_dataset: independent_v2
+  source_node_id: sc_state_estimation
+  source_title: State estimation and observer boundary
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_sc_observation
+  prior_reconciliation_theme_id: u_sc_observation
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Estimating surface coverage from outlet measurements requires an observable model and
+      calibrated sensor map.
+    explanation_or_notes: The proposal's immediate deliverable is open-loop and assumes perfect state knowledge;
+      its EKF/UKF and MPC ideas are future work. A nonlinear observer requires a state-space model, sensor equation,
+      noise model, sufficiently informative inputs and observability/identifiability. Surface states that do not
+      influence measured outputs over the available horizon cannot be reliably reconstructed simply by selecting
+      an EKF or UKF.
+    open_questions:
+    - Can outlet-only signals distinguish individual coverages or only aggregate kinetic effects?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_state_estimation
+    proposed_node_id: u_sc_observation
+- source_dataset: independent_v2
+  source_node_id: sc_observability
+  source_title: Observability of latent bed and surface states
+  source_parent_id: sc_state_estimation
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_observability
+  prior_reconciliation_theme_id: u_sc_observation
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_observability
+    proposed_node_id: u_sc_observation
+- source_dataset: independent_v2
+  source_node_id: sc_ekf_ukf
+  source_title: EKF/UKF as possible future estimators
+  source_parent_id: sc_state_estimation
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_ekf_ukf
+  prior_reconciliation_theme_id: u_sc_observation
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_ekf_ukf
+    proposed_node_id: u_sc_observation
+- source_dataset: independent_v2
+  source_node_id: sc_experiment_design
+  source_title: Experiment design and model discrimination
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - u_sc_excitation
+  prior_reconciliation_theme_id: u_sc_feasibility
+  disposition: merged
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Design separate measurements to identify dynamics, discriminate mechanisms and test performance
+      against the matched benchmark.
+    explanation_or_notes: Steady rate data can leave parameters correlated; transients add time-scale information
+      but may not identify latent coverage states uniquely. Pair periodic forcing with independently characterized
+      actuator/analyzer response, tracer data, product balance and, if feasible, surface-sensitive measurement.
+      Reserve repeats/conditions for validation after fitting. A waveform chosen for information gain is not evidence
+      of a yield gain.
+    open_questions:
+    - Which inputs and measurements make the target PdAg mechanism distinguishable before optimization?
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_experiment_design
+    proposed_node_id: u_sc_feasibility
+- source_dataset: independent_v2
+  source_node_id: sc_identification_vs_performance
+  source_title: Kinetic Identification Is Not Performance Improvement
+  source_parent_id: sc_experiment_design
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_identification_vs_performance
+  prior_reconciliation_theme_id: u_sc_feasibility
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_identification_vs_performance
+    proposed_node_id: u_sc_feasibility
+- source_dataset: independent_v2
+  source_node_id: sc_co_design
+  source_title: Excitation, measurement and control co-design
+  source_parent_id: sc_experiment_design
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_co_design
+  prior_reconciliation_theme_id: u_sc_feasibility
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_co_design
+    proposed_node_id: u_sc_feasibility
+- source_dataset: independent_v2
+  source_node_id: sc_validation
+  source_title: Validation ladder and evidence boundary
+  source_parent_id: sc_experiment_design
+  source_file: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml
+  integrated_node_ids:
+  - sc_validation
+  prior_reconciliation_theme_id: u_sc_feasibility
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+  prior_reconciliation_mapping:
+    dataset: independent_v2
+    source_node_id: sc_validation
+    proposed_node_id: u_sc_feasibility
+- source_dataset: original_devcontainer_canonical
+  source_node_id: bep
+  source_title: 'Dual BEP: Acetylene Semi-Hydrogenation Reactor Modeling'
+  source_parent_id: null
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_map.yaml
+  integrated_node_ids:
+  - bep
+  prior_reconciliation_theme_id: null
+  disposition: retained
+  legacy_tier: 2
+  legacy_is_draft: false
+- source_dataset: original_devcontainer_canonical
+  source_node_id: physics
+  source_title: Physics
+  source_parent_id: bep
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_map.yaml
+  integrated_node_ids:
+  - physics
+  prior_reconciliation_theme_id: null
+  disposition: retained
+  legacy_tier: 0
+  legacy_is_draft: false
+- source_dataset: original_devcontainer_canonical
+  source_node_id: mathematics
+  source_title: Mathematics
+  source_parent_id: bep
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_map.yaml
+  integrated_node_ids:
+  - mathematics
+  prior_reconciliation_theme_id: null
+  disposition: retained
+  legacy_tier: 0
+  legacy_is_draft: false
+- source_dataset: original_devcontainer_canonical
+  source_node_id: systems_control
+  source_title: Systems & Control
+  source_parent_id: bep
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_map.yaml
+  integrated_node_ids:
+  - systems_control
+  prior_reconciliation_theme_id: null
+  disposition: retained
+  legacy_tier: 0
+  legacy_is_draft: false
+- source_dataset: original_devcontainer_overlay
+  source_node_id: lhhw_kinetics
+  source_title: Extended LHHW Reaction Kinetics
+  source_parent_id: physics_reaction_kinetics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - lhhw_kinetics
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: corrected
+  legacy_tier: 1
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Captures competitive adsorption between C2H2, C2H4, and H2 on active catalyst sites with
+      non-ideal inhibition.
+    explanation_or_notes: Extended Langmuir-Hinshelwood-Hougen-Watson formulation. Rate r1 (acetylene to ethylene)
+      features squared denominator; rate r2 features non-integer fitted exponent n_inh.
+    open_questions:
+    - Confirm whether hydrogen adsorption is non-dissociative or dissociative on Ag-promoted Pd surface.
+    - Resolve unmeasured cross-sectional area A and support density rho_support from Appendix F before quantitative
+      conversion calibration.
+  correction: The cited PDF is present and calls the work a BEP; title page date/institution are unverified. It
+    is not established as an MSc thesis or 2024 publication.
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: lhhw_kinetics
+    proposed_node_id: u_ph_kinetics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: centered_arrhenius
+  source_title: Centered Arrhenius Temperature Dependence
+  source_parent_id: lhhw_kinetics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - centered_arrhenius
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: corrected
+  legacy_tier: 1
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Centered Arrhenius parameterization uses k(T_ref) and can improve numerical conditioning
+      of a chosen fit, but does not guarantee eliminating parameter correlations or a universal correlation threshold.
+    explanation_or_notes: 'AI SCIENCE CORRECTION (D5.A): k(T) = k(T_ref)*exp[-Ea/R*(1/T - 1/T_ref)] with T and T_ref
+      in kelvin and Ea in J/mol. This is equivalent to k(T)=k0*exp[-Ea/(R*T)] ONLY if k(T_ref)=k0*exp[-Ea/(R*T_ref)];
+      do not substitute the raw k0 directly into the centered equation. Centering often improves practical parameter
+      scaling/interpretability, but numerical correlation and identifiability still depend on measurement range,
+      model, data and noise; the previous blanket claim ''eliminates correlation below 0.71'' is retracted. This
+      is a mathematical representation, NOT independent validation of a catalyst''s kinetic constants. Source: BEP
+      D_kinetic_parameters_identifiability_2026-10-14.md §D5.A, AI attached; no human source approval.'
+    open_questions:
+    - 'Select optimal reference temperature T0 (candidate: 313 K / 40 °C matching Larsen benchmark).'
+  correction: The original Berger DOI was unrelated; the Arrhenius identity is retained as an algebraic derivation
+    and the incorrect DOI is mapped to a correction record.
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: centered_arrhenius
+    proposed_node_id: u_ph_kinetics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: surface_coverage_dynamics
+  source_title: Dynamic Surface Coverage State θ(z,r)
+  source_parent_id: lhhw_kinetics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - ph_dynamic_memory
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: corrected
+  legacy_tier: 1
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Tracks time-dependent fraction of vacant and occupied catalyst active sites under transient/forcing
+      conditions.
+    explanation_or_notes: 'Conservation: theta_vacant + theta_C2H2 + theta_C2H4 + theta_H = 1. Coupled directly
+      into instantaneous reaction rates rather than pseudo-steady-state assumption.'
+    open_questions:
+    - Validate adsorption/desorption rate constants under non-steady gas feeds.
+  correction: Original θ(z,r) omitted time and implied an unprovided pellet radial model; integrated node uses θ(z,t),
+    with θ(z,r,t) only if a pellet radial field is modeled.
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: surface_coverage_dynamics
+    proposed_node_id: u_ph_kinetics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: reaction_thermodynamics
+  source_title: Reaction Exothermicity & Heats of Hydrogenation
+  source_parent_id: physics_reactor_thermodynamics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - reaction_thermodynamics
+  prior_reconciliation_theme_id: u_ph_thermal
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: reaction_thermodynamics
+    proposed_node_id: u_ph_thermal
+- source_dataset: original_devcontainer_overlay
+  source_node_id: transport_phenomena
+  source_title: Coupled Interphase & Intraparticle Transport
+  source_parent_id: physics_transport_phenomena
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_ph_transport
+  prior_reconciliation_theme_id: u_ph_transport
+  disposition: merged
+  legacy_tier: 1
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Models multi-scale concentration and temperature gradients from bulk gas to pellet interior.
+    explanation_or_notes: 'Three-level coupled transport: Bulk gas Cb(z) -> Film boundary Cs(z) -> Intraparticle
+      pore cp(z,r). Explicit transient intraparticle diffusion rather than instant equilibrium.'
+    open_questions:
+    - Determine catalyst pellet geometry (spherical vs egg-shell impregnated layer).
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: transport_phenomena
+    proposed_node_id: u_ph_transport
+- source_dataset: original_devcontainer_overlay
+  source_node_id: internal_diffusion_thiele
+  source_title: Intraparticle Diffusion & Thiele Modulus
+  source_parent_id: transport_phenomena
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - internal_diffusion_thiele
+  prior_reconciliation_theme_id: u_ph_transport
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: internal_diffusion_thiele
+    proposed_node_id: u_ph_transport
+- source_dataset: original_devcontainer_overlay
+  source_node_id: external_film_transfer
+  source_title: External Fluid-Solid Film Transport (Mears Criterion)
+  source_parent_id: transport_phenomena
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - external_film_transfer
+  prior_reconciliation_theme_id: u_ph_transport
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: external_film_transfer
+    proposed_node_id: u_ph_transport
+- source_dataset: original_devcontainer_overlay
+  source_node_id: pbr_governing_pdes
+  source_title: 1D Dynamic Packed-Bed Reactor PDEs
+  source_parent_id: math_mathematical_modelling
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - ma_gas_pde
+  prior_reconciliation_theme_id: u_ma_conservation
+  disposition: corrected
+  legacy_tier: 1
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Formulates non-linear hyperbolic-parabolic partial differential equations governing axial
+      advection, dispersion, and reaction.
+    explanation_or_notes: 'Mass: dCb_i/dt = -u_s * dCb_i/dz + D_ax * d^2Cb_i/dz^2 - k_g*a_v*(Cb_i - Cs_i). Energy:
+      rho_g*Cp_g * dT/dt = -u_s*rho_g*Cp_g * dT/dz + lambda_ax * d^2T/dz^2 + 4*U/D_t*(T_w - T) + sum(r_j * (-dH_j)).'
+    open_questions:
+    - Confirm whether axial dispersion D_ax can be neglected (Peclet number Pe > 100).
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: pbr_governing_pdes
+    proposed_node_id: u_ma_conservation
+- source_dataset: original_devcontainer_overlay
+  source_node_id: method_of_lines_mol
+  source_title: Method of Lines (MOL) Semi-Discretization
+  source_parent_id: math_numerical_analysis
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - ma_MOL
+  prior_reconciliation_theme_id: u_ma_numerics
+  disposition: merged
+  legacy_tier: 1
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Transforms spatial differential operators into a coupled system of stiff initial-value
+      ordinary differential equations.
+    explanation_or_notes: Spatial axial grid Nz points; radial particle grid Nr points. Convective terms discretised
+      via 1st-order upwind (backward difference) for monotonicity; diffusion discretised via central difference.
+    open_questions:
+    - Evaluate higher-order flux limiters (e.g. Superbee or Minmod) to suppress numerical diffusion during steep
+      concentration fronts.
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: method_of_lines_mol
+    proposed_node_id: u_ma_numerics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: stiff_ode_solvers
+  source_title: Stiff DAE/ODE Time Integrators (BDF & Radau)
+  source_parent_id: math_numerical_analysis
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - ma_stiff_solver
+  prior_reconciliation_theme_id: u_ma_numerics
+  disposition: merged
+  legacy_tier: 1
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Resolves orders-of-magnitude separation between fast chemical surface adsorption and slow
+      thermal/advective bed dynamics.
+    explanation_or_notes: Utilizes variable-order, variable-step Backward Differentiation Formula (BDF via scipy.integrate.solve_ivp)
+      or Radau IIA (5th-order implicit Runge-Kutta) with analytical/banded Jacobian sparsity.
+    open_questions:
+    - Construct banded Jacobian pattern (collocated diagonal blocks) to accelerate LU decomposition in large spatial
+      grids.
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: stiff_ode_solvers
+    proposed_node_id: u_ma_numerics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: parameter_sensitivity_jacobian
+  source_title: Local & Global Sensitivity Analysis
+  source_parent_id: math_inverse_problems
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - ma_sensitivity
+  prior_reconciliation_theme_id: u_ma_inverse
+  disposition: merged
+  legacy_tier: 1
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Identifies which kinetic and transport parameters dictate selectivity towards ethylene
+      vs over-hydrogenation to ethane.
+    explanation_or_notes: Computes first-order sensitivity coefficients s_ij = d(y_i)/d(theta_j). Validates parametric
+      conditioning and reveals non-identifiable parameter combinations.
+    open_questions:
+    - Compare local forward sensitivity equations with global Sobol variance decomposition.
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: parameter_sensitivity_jacobian
+    proposed_node_id: u_ma_inverse
+- source_dataset: original_devcontainer_overlay
+  source_node_id: reactor_operating_window
+  source_title: Operating Window & Thermal Runaway Boundaries
+  source_parent_id: system_control_optimization
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - reactor_operating_window
+  prior_reconciliation_theme_id: u_sc_feasibility
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: reactor_operating_window
+    proposed_node_id: u_sc_feasibility
+- source_dataset: original_devcontainer_overlay
+  source_node_id: periodic_feed_forcing
+  source_title: Periodic Concentration & Flow Modulation
+  source_parent_id: system_input_experiment_design
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - periodic_feed_forcing
+  prior_reconciliation_theme_id: u_sc_excitation
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: periodic_feed_forcing
+    proposed_node_id: u_sc_excitation
+- source_dataset: original_devcontainer_overlay
+  source_node_id: cooling_jacket_control
+  source_title: Multi-Zone Temperature Control & Heat Exchange
+  source_parent_id: system_control_optimization
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - cooling_jacket_control
+  prior_reconciliation_theme_id: u_sc_feasibility
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: cooling_jacket_control
+    proposed_node_id: u_sc_feasibility
+- source_dataset: original_devcontainer_overlay
+  source_node_id: state_observer_mpc
+  source_title: State Estimation & Nonlinear MPC Formulations
+  source_parent_id: system_filtering_estimation
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - state_observer_mpc
+  prior_reconciliation_theme_id: u_sc_observation
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: state_observer_mpc
+    proposed_node_id: u_sc_observation
+- source_dataset: original_devcontainer_overlay
+  source_node_id: physics_catalytic_chemistry
+  source_title: Catalytic Chemistry
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_ph_catalyst
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: merged
+  legacy_tier: 1
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: 'C1 broad chemistry theme: chemical identities, catalyst-site chemistry and competing
+      product pathways; AI interpretation only, proposed parent/boundary still awaiting user approval.'
+    explanation_or_notes: "KNOWLEDGE STATUS: AI worked out (amber), not human reviewed. This is a proposal\nfor\
+      \ the scientific Level-2 taxonomy, NOT an approved placement or an experimental result.\n\nScope within C1:\
+      \ (1) net reaction network, (2) physical catalyst surface and\nactive-site chemistry, (3) desired/undesired\
+      \ products and selectivity, (4) optional\nreaction paths and catalyst-specific alternatives.\n\nNet stoichiometry\
+      \ (C deep dive §C.1):\n  desired: C2H2 + H2 -> C2H4  (r1)\n  competing: C2H4 + H2 -> C2H6  (r2)\nFeed ethylene\
+      \ itself can enter the second reaction, not merely ethylene first\nformed from acetylene. The two-step net\
+      \ scheme does not specify whether the\nethylene intermediate desorbs before further hydrogenation.\n\nCandidate\
+      \ chemical mechanism topics for later Level-3 / letter C review:\n  * adsorption/desorption of hydrogen, acetylene\
+      \ and ethylene\n  * dissociative H2 adsorption, surface site availability and competition\n  * vinyl (C2H3*)\
+      \ and ethyl (C2H5*) intermediates\n  * possible continuous adsorbed path versus gas-ethylene readsorption\n\
+      \  * omitted/alternative chemistry: C4+, coke/deactivation, distinct site\n    families or Pd/PdAg-support\
+      \ effects, candidate minor parallel pathways.\nThese are candidate concepts, not verified universal mechanisms\
+      \ or automatic\nauthorisation to add every descendant now.\n\nBoundary: C2 Reaction Kinetics & Surface Dynamics\
+      \ owns mathematical\nelementary-step rates, fitted LHHW/PSSA laws, rate constants, temporal\ntheta(t) equations\
+      \ and kinetic identifiability (also linked to S&C).\nPhysics Transport/Reactor Physics owns external/intraparticle\
+      \ access,\npressure, temperature, scale and experimental applicability. Experiments\n& Measurements owns how\
+      \ site chemistry and product streams are observed.\n\nEvidence limits: Existing C research compares three\
+      \ different implementations;\nlegacy has three dynamic occupied-site states but zero default source-fit rates;\n\
+      the newer 2019-based reacting path uses algebraic steady/PSSA kinetics;\nthe non-PSSA experiment has illustrative\
+      \ five coverage states without\nverified source parameters. Urmès 2022 full mechanism remains unresolved in\n\
+      that audit. Do NOT claim experimental kinetics, periodic yield gain, or\ndirect catalyst transfer has been\
+      \ demonstrated by this map entry.\n\nSTRUCTURAL DECISION (owner, 2026-10-20): C1 has TWO substantial children:\n\
+      \  (a) Reaction Chemistry & Pathways, and\n  (b) Catalyst Chemistry & Active Sites.\nThe children are concept\
+      \ nodes with their own notes and expandable\ndescendants. User prioritised both, but did NOT verify their\
+      \ scientific\nexplanations. The graph has NO DEPTH CAP: seven, eight or more levels\nare welcome when the\
+      \ concept structure warrants them. Example paths\nbelow the two children remain IDEAS, not approved/verified\
+      \ leaf nodes.\n\nCITATION REVIEW: sources below are AI-attached; none is recorded here as\nspecifically human-verified\
+      \ to support its mapped claim."
+    open_questions:
+    - Review the scope of the two accepted C1 sub-branches and their eventual deeper concept hierarchy; do not infer
+      scientific ownership.
+    - Which alternative pathways/site types deserve concept nodes, and which remain scope ideas?
+    - Which parts of the microscopic adsorption mechanism belong in C1 versus C2 kinetics, without duplication?
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: physics_catalytic_chemistry
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: physics_reaction_kinetics
+  source_title: Reaction Kinetics & Surface Dynamics
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_ph_kinetics
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C2) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: Rate laws, kinetic constants, surface coverages, transient kinetics
+      and pseudo-steady-state closures. This is a taxonomy proposal (Idea), not a completed research finding. Review
+      under checkpoint C2 in the canonical taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: physics_reaction_kinetics
+    proposed_node_id: u_ph_kinetics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: physics_transport_phenomena
+  source_title: Transport Phenomena
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_ph_transport
+  prior_reconciliation_theme_id: u_ph_transport
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C3) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: Axial advection/dispersion, external film exchange, intraparticle
+      diffusion and scale analysis. This is a taxonomy proposal (Idea), not a completed research finding. Review
+      under checkpoint C3 in the canonical taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: physics_transport_phenomena
+    proposed_node_id: u_ph_transport
+- source_dataset: original_devcontainer_overlay
+  source_node_id: physics_reactor_thermodynamics
+  source_title: Reactor Physics & Thermodynamics
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_ph_thermal
+  prior_reconciliation_theme_id: u_ph_thermal
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C4) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: Packed-bed geometry, feed/pressure/temperature conditions, energy
+      balance and physical timescales. This is a taxonomy proposal (Idea), not a completed research finding. Review
+      under checkpoint C4 in the canonical taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: physics_reactor_thermodynamics
+    proposed_node_id: u_ph_thermal
+- source_dataset: original_devcontainer_overlay
+  source_node_id: physics_experiments_measurements
+  source_title: Experiments & Measurements
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_ph_measurement
+  prior_reconciliation_theme_id: u_sc_observation
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C5) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: Experimental apparatus, catalysts, gas chromatography, spectroscopy,
+      instrumentation and measurement uncertainty. This is a taxonomy proposal (Idea), not a completed research
+      finding. Review under checkpoint C5 in the canonical taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: physics_experiments_measurements
+    proposed_node_id: u_sc_observation
+- source_dataset: original_devcontainer_overlay
+  source_node_id: math_mathematical_modelling
+  source_title: Mathematical Modelling
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_ma_conservation
+  prior_reconciliation_theme_id: u_ma_conservation
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C6) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: Governing PDEs/ODEs/DAEs, initial and boundary conditions, state
+      representations and balances. This is a taxonomy proposal (Idea), not a completed research finding. Review
+      under checkpoint C6 in the canonical taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: math_mathematical_modelling
+    proposed_node_id: u_ma_conservation
+- source_dataset: original_devcontainer_overlay
+  source_node_id: math_numerical_analysis
+  source_title: Numerical Analysis & Simulation
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_ma_numerics
+  prior_reconciliation_theme_id: u_ma_numerics
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C7) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: Spatial discretization, stiff integration, solver verification, numerical
+      dispersion and convergence. This is a taxonomy proposal (Idea), not a completed research finding. Review under
+      checkpoint C7 in the canonical taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: math_numerical_analysis
+    proposed_node_id: u_ma_numerics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: math_dynamical_systems
+  source_title: Dynamical Systems & Stability
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_ma_periodic
+  prior_reconciliation_theme_id: u_ma_periodic
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C8) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: Equilibria, linearization, eigenvalues, transient and periodic trajectories.
+      This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C8 in the canonical
+      taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: math_dynamical_systems
+    proposed_node_id: u_ma_periodic
+- source_dataset: original_devcontainer_overlay
+  source_node_id: math_inverse_problems
+  source_title: Inverse Problems & Uncertainty
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_ma_inverse
+  prior_reconciliation_theme_id: u_ma_inverse
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C9) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: Identifiability, sensitivity, statistical error, parameter reconstruction
+      and regularization. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint
+      C9 in the canonical taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: math_inverse_problems
+    proposed_node_id: u_ma_inverse
+- source_dataset: original_devcontainer_overlay
+  source_node_id: math_optimization_theory
+  source_title: Optimization Theory
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_ma_optimization
+  prior_reconciliation_theme_id: u_sc_objective
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C10) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: Objective functions, constraints, numerical optimization and optimality
+      conditions. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint
+      C10 in the canonical taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: math_optimization_theory
+    proposed_node_id: u_sc_objective
+- source_dataset: original_devcontainer_overlay
+  source_node_id: system_modelling_reduction
+  source_title: System Modelling & Reduction
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_sc_plant
+  prior_reconciliation_theme_id: u_sc_plant
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C11) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: State-space, grey-box and control-oriented reactor models, approximation
+      and reduction. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint
+      C11 in the canonical taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: system_modelling_reduction
+    proposed_node_id: u_sc_plant
+- source_dataset: original_devcontainer_overlay
+  source_node_id: system_identification
+  source_title: System Identification
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_sc_excitation
+  prior_reconciliation_theme_id: u_sc_excitation
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C12) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: Input-output response, fitted parameters, parameter identifiability
+      and evidence from measured dynamics. This is a taxonomy proposal (Idea), not a completed research finding.
+      Review under checkpoint C12 in the canonical taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: system_identification
+    proposed_node_id: u_sc_excitation
+- source_dataset: original_devcontainer_overlay
+  source_node_id: system_filtering_estimation
+  source_title: Signal Processing, Filtering & State Estimation
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_sc_observation
+  prior_reconciliation_theme_id: u_sc_observation
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C13) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: Signal noise, filtering, state observers, EKF/UKF and offline smoothers.
+      This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C13 in the canonical
+      taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: system_filtering_estimation
+    proposed_node_id: u_sc_observation
+- source_dataset: original_devcontainer_overlay
+  source_node_id: system_input_experiment_design
+  source_title: Input & Experiment Design
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_sc_excitation
+  prior_reconciliation_theme_id: u_sc_excitation
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C14) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: Dynamic excitation, periodic feed modulation, observability and information-rich
+      experiments. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint
+      C14 in the canonical taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: system_input_experiment_design
+    proposed_node_id: u_sc_excitation
+- source_dataset: original_devcontainer_overlay
+  source_node_id: system_control_optimization
+  source_title: Control & Performance Optimization
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_sc_objective
+  prior_reconciliation_theme_id: u_sc_objective
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Candidate Level-2 scientific theme (C15) for owner review; placement and boundaries remain
+      unapproved.
+    explanation_or_notes: 'AI-suggested scope: Open-loop forcing and optimization, feedback/MPC, conversion/selectivity/yield
+      criteria. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C15
+      in the canonical taxonomy checklist.'
+    open_questions: []
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: system_control_optimization
+    proposed_node_id: u_sc_objective
+- source_dataset: original_devcontainer_overlay
+  source_node_id: pdc_process_dynamics_foundations
+  source_title: PDC — Process Dynamics foundations
+  source_parent_id: system_modelling_reduction
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - pdc_process_dynamics_foundations
+  prior_reconciliation_theme_id: u_sc_plant
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: pdc_process_dynamics_foundations
+    proposed_node_id: u_sc_plant
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_reaction_chemistry_pathways
+  source_title: Reaction Chemistry & Pathways
+  source_parent_id: physics_catalytic_chemistry
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_ph_reaction
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: 'Owner-requested first child of C1: distinguish net reaction chemistry, surface pathways
+      and competing product formation; scientific content remains an idea for detailed review.'
+    explanation_or_notes: 'STRUCTURE: first major C1 branch; user says this is very important.
+
+      Scope to develop: overall acetylene-to-ethylene and ethylene-to-ethane
+
+      reaction networks, adsorbed intermediates, alternative routes, selectivity
+
+      and omitted chemistry. Distinguish net stoichiometry from elementary paths.
+
+      Illustrative possible deeper path (not yet populated or approved):
+
+      Acetylene semi-hydrogenation -> Horiuti-Polanyi mechanism -> sequential
+
+      hydrogen addition -> vinyl/ethyl intermediates.
+
+      Do not conflate this chemical narrative with numerical fitted rates (C2).
+
+      All mechanistic detail requires source/assumption-level review.
+
+      No maximum child depth: descendants can extend to level 7, 8, 9, ...
+
+      Scientific maturity is IDEA (not personally human worked out).'
+    open_questions:
+    - Which overall vs microscopic routes are essential to C1?
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_reaction_chemistry_pathways
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_catalyst_active_site_chemistry
+  source_title: Catalyst Chemistry & Active Sites
+  source_parent_id: physics_catalytic_chemistry
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - u_ph_catalyst
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: merged
+  legacy_tier: 0
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: 'Owner-requested second child of C1: active-site composition and adsorption chemistry
+      as major concept distinct from reaction pathways; scientific detail is an idea.'
+    explanation_or_notes: 'STRUCTURE: second major C1 branch; user says this is very important.
+
+      Scope to develop: palladium-based catalyst surfaces, active sites,
+
+      adsorption/desorption, dissociative hydrogen adsorption, competition for
+
+      sites, catalyst supports and PdAg-specific alternatives when grounded.
+
+      Illustrative possible deeper path (not yet populated or approved):
+
+      Pd-based catalysts -> adsorption mechanisms -> dissociative H2 adsorption
+
+      -> neighboring-site availability -> hydrocarbon/site competition.
+
+      C2 covers quantitative adsorption rates, site dynamics and parameter laws;
+
+      C1 covers chemical interpretation of surface sites and pathways.
+
+      Do not assume all proposed mechanisms apply to the BEP catalyst.
+
+      No maximum child depth: descendants can extend to level 7, 8, 9, ...
+
+      Scientific maturity is IDEA (not personally human worked out).'
+    open_questions:
+    - Which catalyst-specific features have evidence in the BEP sources?
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_catalyst_active_site_chemistry
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_net_reaction_network
+  source_title: Net stoichiometric reaction network
+  source_parent_id: c1_reaction_chemistry_pathways
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - ph_reaction_network
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: merged
+  legacy_tier: 1
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy
+      and user-approved C1 branch split do not imply validation of this node.
+    explanation_or_notes: 'AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. The starting point is TWO
+      net reactions: acetylene + hydrogen produces ethylene (desired), and ethylene + hydrogen produces ethane (competing).
+      This net scheme identifies gas species and stoichiometry but does not specify the detailed sequence of occupied
+      Pd sites.
+
+
+      A net two-rate closure is a conditional first model. It must not be interpreted as proof that all ethane arose
+      from free gas ethylene or that other routes are chemically impossible.
+
+
+      Epistemic status: AI-attached repository/source references; specific claims have not been human-verified.
+      Chemical mechanism is not experimental validation or a calibrated kinetic parameter set.'
+    open_questions:
+    - How much parallel chemistry is relevant under the intended operating conditions?
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_net_reaction_network
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_acetylene_semihydrogenation
+  source_title: Desired acetylene semi-hydrogenation
+  source_parent_id: c1_net_reaction_network
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_acetylene_semihydrogenation
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_acetylene_semihydrogenation
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_ethylene_overhydrogenation
+  source_title: Competing ethylene hydrogenation
+  source_parent_id: c1_net_reaction_network
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_ethylene_overhydrogenation
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_ethylene_overhydrogenation
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_ethylene_rich_inlet
+  source_title: Pre-existing ethylene in tail-end feed
+  source_parent_id: c1_ethylene_overhydrogenation
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_ethylene_rich_inlet
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_ethylene_rich_inlet
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_net_gas_source_vector
+  source_title: Gas-phase net stoichiometric source vector
+  source_parent_id: c1_net_reaction_network
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_net_gas_source_vector
+  prior_reconciliation_theme_id: u_ma_conservation
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_net_gas_source_vector
+    proposed_node_id: u_ma_conservation
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_microscopic_surface_path
+  source_title: Microscopic surface reaction pathways
+  source_parent_id: c1_reaction_chemistry_pathways
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_microscopic_surface_path
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_microscopic_surface_path
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_horiuti_polanyi_family
+  source_title: Horiuti–Polanyi sequential-H mechanism family
+  source_parent_id: c1_microscopic_surface_path
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_horiuti_polanyi_family
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_horiuti_polanyi_family
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_vinyl_intermediate
+  source_title: 'First H addition: adsorbed vinyl (C2H3*)'
+  source_parent_id: c1_horiuti_polanyi_family
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_vinyl_intermediate
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_vinyl_intermediate
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_adsorbed_ethylene_fork
+  source_title: Second H addition and adsorbed-ethylene fork
+  source_parent_id: c1_vinyl_intermediate
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_adsorbed_ethylene_fork
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_adsorbed_ethylene_fork
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_adsorbed_ethylene_desorption
+  source_title: Ethylene desorption from the catalyst surface
+  source_parent_id: c1_adsorbed_ethylene_fork
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_adsorbed_ethylene_desorption
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_adsorbed_ethylene_desorption
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_ethyl_intermediate
+  source_title: 'Continued H addition: adsorbed ethyl (C2H5*)'
+  source_parent_id: c1_adsorbed_ethylene_fork
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_ethyl_intermediate
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_ethyl_intermediate
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_parallel_ethane_paths
+  source_title: Alternative paths to ethane
+  source_parent_id: c1_reaction_chemistry_pathways
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_parallel_ethane_paths
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_parallel_ethane_paths
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_no_independent_direct_rate
+  source_title: Conditional omission of a third fitted ethane rate
+  source_parent_id: c1_parallel_ethane_paths
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_no_independent_direct_rate
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_no_independent_direct_rate
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_vinyl_ethylidene_alternative
+  source_title: Vinyl-to-ethylidene bypass hypothesis
+  source_parent_id: c1_no_independent_direct_rate
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_vinyl_ethylidene_alternative
+  prior_reconciliation_theme_id: u_ph_reaction
+  disposition: unresolved
+  legacy_tier: 0
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_vinyl_ethylidene_alternative
+    proposed_node_id: u_ph_reaction
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_c4_coke_deactivation
+  source_title: C4+ products, coke and catalyst deactivation
+  source_parent_id: c1_reaction_chemistry_pathways
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_c4_coke_deactivation
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: 0
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_c4_coke_deactivation
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_catalyst_identity
+  source_title: Catalyst identity and transferable mechanism limits
+  source_parent_id: c1_catalyst_active_site_chemistry
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_catalyst_identity
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_catalyst_identity
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_urmes_source_catalyst
+  source_title: 2019 single-site Pd/alpha-Al2O3 source catalyst
+  source_parent_id: c1_catalyst_identity
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_urmes_source_catalyst
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_urmes_source_catalyst
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_pdag_support_transfer
+  source_title: Pd–Ag alloy and support transfer questions
+  source_parent_id: c1_catalyst_identity
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_pdag_support_transfer
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_pdag_support_transfer
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_multisite_hydride_carbide
+  source_title: Multiple sites, hydrides and carbonaceous surface states
+  source_parent_id: c1_pdag_support_transfer
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_multisite_hydride_carbide
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: unresolved
+  legacy_tier: 0
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_multisite_hydride_carbide
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_surface_sites
+  source_title: Adsorption sites and fractional occupancy
+  source_parent_id: c1_catalyst_active_site_chemistry
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_surface_sites
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_surface_sites
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_full_site_balance
+  source_title: Full six-term single-site occupancy balance
+  source_parent_id: c1_surface_sites
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_full_site_balance
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_full_site_balance
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_reduced_site_balance
+  source_title: Reduced occupancy approximation in the 2019 fit
+  source_parent_id: c1_surface_sites
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_reduced_site_balance
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_reduced_site_balance
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_adsorption_desorption
+  source_title: Adsorption, desorption and competition for sites
+  source_parent_id: c1_surface_sites
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_adsorption_desorption
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_adsorption_desorption
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_dissociative_h2_adsorption
+  source_title: Dissociative hydrogen adsorption on Pd sites
+  source_parent_id: c1_adsorption_desorption
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_dissociative_h2_adsorption
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_dissociative_h2_adsorption
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_adjacent_site_requirement
+  source_title: Neighboring-vacancy requirement for H2 dissociation
+  source_parent_id: c1_dissociative_h2_adsorption
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_adjacent_site_requirement
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_adjacent_site_requirement
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_hydrocarbon_site_competition
+  source_title: Competitive acetylene/ethylene adsorption
+  source_parent_id: c1_adsorption_desorption
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_hydrocarbon_site_competition
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_hydrocarbon_site_competition
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_ethylene_readsorption
+  source_title: Ethylene readsorption and secondary hydrogenation
+  source_parent_id: c1_hydrocarbon_site_competition
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_ethylene_readsorption
+  prior_reconciliation_theme_id: u_ph_catalyst
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_ethylene_readsorption
+    proposed_node_id: u_ph_catalyst
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c1_kinetic_closure_boundary
+  source_title: Boundary between chemical mechanism and kinetic closure
+  source_parent_id: c1_catalyst_active_site_chemistry
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c1_kinetic_closure_boundary
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c1_kinetic_closure_boundary
+    proposed_node_id: u_ph_kinetics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c2_urmes_2019_effective_rates
+  source_title: Urmès 2019 effective single-site PSSA kinetics
+  source_parent_id: physics_reaction_kinetics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c2_urmes_2019_effective_rates
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c2_urmes_2019_effective_rates
+    proposed_node_id: u_ph_kinetics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c2_urmes_2019_adsorption_denominator
+  source_title: Competitive adsorption denominator and vacant-site closure
+  source_parent_id: c2_urmes_2019_effective_rates
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c2_urmes_2019_adsorption_denominator
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c2_urmes_2019_adsorption_denominator
+    proposed_node_id: u_ph_kinetics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c2_urmes_2019_net_rates
+  source_title: Two hydrogenation rate expressions and gas sources
+  source_parent_id: c2_urmes_2019_effective_rates
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c2_urmes_2019_net_rates
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c2_urmes_2019_net_rates
+    proposed_node_id: u_ph_kinetics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c2_urmes_2019_parameter_ledger
+  source_title: 'Published Table 5 values: fixed versus fitted parameters'
+  source_parent_id: c2_urmes_2019_effective_rates
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c2_urmes_2019_parameter_ledger
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: corrected
+  legacy_tier: 1
+  legacy_is_draft: true
+  source_content_preserved:
+    summary_or_rationale: AI-developed physical kinetic concept supporting the dynamic packed-bed reactor proposal,
+      distinct from human validation or alternate literature-fit models.
+    explanation_or_notes: 'AI WORKED OUT (yellow), NOT human verified. Urmès 2019 Table 5 at source conditions:
+      FIXED K1 = 13 Pa^-1 (not earlier narrative estimate 611 Pa^-1), K5 = 7.4 Pa, and Ns = 2e-3 mol sites/kg catalyst.
+      FITTED K2 = 107 +/- 7 Pa^-1, k4^0 = (1.4 +/- 0.1)e8 mol/(mol Pd_surface*s), k7^0 = (3.6 +/- 0.6)e9 in same
+      units, E4 = 48.5 +/- 4.2 kJ/mol, E7 = 54.8 +/- 11 kJ/mol.
+
+
+      Those +/- ranges reflect reported 95% intervals under the source fitting assumptions, NOT calibration transfer
+      uncertainty. k4^0/k7^0 are apparent/composite temperature prefactors in an effective fitted rate law, not
+      the full set of independent forward/reverse microscopic constants.
+
+
+      R*T in Arrhenius uses T in kelvin, E in J/mol; evaluate raw pre-exponential at temperature before using a
+      centered Arrhenius parametrization. The source receipt 24/24 passes refer to transcription of selected original
+      statements, NOT end-to-end reactor validation.
+
+
+      Sources are AI-attached. The present map does not certify transferable kinetics, experimentally calibrated
+      transient surface coverages or personally verified citation claims.'
+    open_questions:
+    - Which constants would need refitting for a different support or for dynamic non-PSSA site ODEs?
+  scientific_uncertainty: Source text gives K1=611 Pa^-1 on printed p.5 while Table 5 gives K1=13 Pa^-1 on printed
+    p.6; both are preserved as unresolved.
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c2_urmes_2019_parameter_ledger
+    proposed_node_id: u_ph_kinetics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c2_surface_kinetic_closure_choices
+  source_title: 'Surface-kinetic closure: algebraic PSSA or dynamic coverages'
+  source_parent_id: physics_reaction_kinetics
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c2_surface_kinetic_closure_choices
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c2_surface_kinetic_closure_choices
+    proposed_node_id: u_ph_kinetics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c2_pssa_not_steady_reactor
+  source_title: Pseudo-steady surface kinetics can feed a dynamic reactor
+  source_parent_id: c2_surface_kinetic_closure_choices
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c2_pssa_not_steady_reactor
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c2_pssa_not_steady_reactor
+    proposed_node_id: u_ph_kinetics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c2_dynamic_theta_model_calibration_gap
+  source_title: Explicit surface-coverage ODEs need independent elementary parameters
+  source_parent_id: c2_surface_kinetic_closure_choices
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c2_dynamic_theta_model_calibration_gap
+  prior_reconciliation_theme_id: u_ph_kinetics
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c2_dynamic_theta_model_calibration_gap
+    proposed_node_id: u_ph_kinetics
+- source_dataset: original_devcontainer_overlay
+  source_node_id: c2_transient_parameter_identifiability
+  source_title: Transient excitation and kinetic identifiability questions
+  source_parent_id: c2_dynamic_theta_model_calibration_gap
+  source_file: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+  integrated_node_ids:
+  - c2_transient_parameter_identifiability
+  prior_reconciliation_theme_id: u_ma_inverse
+  disposition: retained
+  legacy_tier: 1
+  legacy_is_draft: true
+  prior_reconciliation_mapping:
+    dataset: original_devcontainer_overlay
+    source_node_id: c2_transient_parameter_identifiability
+    proposed_node_id: u_ma_inverse
+- source_dataset: proposed_unified_map
+  source_node_id: bep
+  source_title: BEP scientific domain
+  source_parent_id: null
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - bep
+  prior_reconciliation_theme_id: null
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+- source_dataset: proposed_unified_map
+  source_node_id: physics
+  source_title: Physics
+  source_parent_id: bep
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - physics
+  prior_reconciliation_theme_id: null
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+- source_dataset: proposed_unified_map
+  source_node_id: mathematics
+  source_title: Mathematics
+  source_parent_id: bep
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - mathematics
+  prior_reconciliation_theme_id: null
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+- source_dataset: proposed_unified_map
+  source_node_id: systems_control
+  source_title: Systems & Control
+  source_parent_id: bep
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - systems_control
+  prior_reconciliation_theme_id: null
+  disposition: retained
+  legacy_tier: null
+  legacy_is_draft: null
+- source_dataset: proposed_unified_map
+  source_node_id: u_ph_reaction
+  source_title: Reaction network, pathways and products
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_ph_reaction
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: The sequential C2H2 → C2H4 → C2H6 backbone defines the desired intermediate and principal
+      over-hydrogenation loss; microscopic routes and side products remain catalyst- and condition-dependent.
+    explanation_or_notes: Keep net stoichiometry, elementary pathways and measured product accounting distinct.
+      Pd/PdAg calculations and catalyst-specific fits support alternatives such as vinyl, ethyl, ethylidene and
+      ethylene desorption/readsorption, but do not establish the BEP working surface. Include inlet ethylene, ethane,
+      C4+ products and deposits in the carbon boundary when measurements warrant. A forcing benefit is a hypothesis
+      about joint pathway and transport response, not a consequence of the reaction sequence.
+    open_questions:
+    - Which products and carbon sinks are measurable over the forcing envelope?
+    - Does the target catalyst support any proposed Pd/PdAg route?
+- source_dataset: proposed_unified_map
+  source_node_id: u_ph_catalyst
+  source_title: Catalyst identity, active sites and working-surface state
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_ph_catalyst
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Nominal Pd:Ag composition does not uniquely specify working-surface structure, site ensembles,
+      support interactions, pretreatment, adsorbate inventory or history.
+    explanation_or_notes: Keep single-site, multisite, alloy-ensemble, hydride and changing-surface models as competing
+      families. Dissociative H2 adsorption may require adjacent vacancies in a chosen mechanism; site-count and
+      coverage conventions must follow that mechanism. The 2019 Pd catalyst, modeled Pd/PdAg surfaces, a studied
+      PdAg/TiO2 catalyst and the BEP catalyst are not interchangeable evidence objects. Surface-state and deposit
+      hypotheses should remain explicit and testable.
+    open_questions:
+    - What exact catalyst formulation, support and preparation define the BEP?
+    - Do hydrogen storage, segregation, deposits or deactivation evolve on the forcing timescale?
+- source_dataset: proposed_unified_map
+  source_node_id: u_ph_kinetics
+  source_title: Kinetic law, thermal dependence and surface-memory closures
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_ph_kinetics
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: An algebraic effective rate law and explicit dynamic coverages are alternative closures;
+      a dynamic reactor does not require dynamic surface states.
+    explanation_or_notes: A PSSA/Langmuir–Hinshelwood model can map local gas composition and temperature to rates
+      instantaneously while gas-phase bed states remain transient. Explicit coverage ODEs require an elementary
+      mechanism, site balances, adsorption/desorption constants and identifiable parameters. Preserve the original
+      centered-Arrhenius correction and validity conditions. Parameter estimation under excitation is distinct from
+      evidence of improved production.
+    open_questions:
+    - Which closure is identifiable from target-catalyst transient data?
+    - Are adsorption and surface relaxation times comparable to feasible forcing periods?
+- source_dataset: proposed_unified_map
+  source_node_id: u_ph_transport
+  source_title: Packed-bed, pellet and interphase transport
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_ph_transport
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: The bed-plane forcing seen by catalyst particles can differ from a commanded inlet because
+      of mixing, residence-time distribution, dispersion and gas–solid transport.
+    explanation_or_notes: Represent axial convection and optional dispersion with a declared coordinate and flux
+      convention; assess external-film and intraparticle resistance before choosing an effectiveness-factor or lumped-rate
+      model. Tracer response and pellet transport can filter or phase-shift a waveform. Danckwerts boundary conditions
+      are tied to a flux formulation and should not be copied into an incompatible PDE convention.
+    open_questions:
+    - What is the measured command-to-bed-plane transfer function?
+    - Are axial, film or pellet timescales material at candidate frequencies?
+- source_dataset: proposed_unified_map
+  source_node_id: u_ph_thermal
+  source_title: Energy balance, thermal dynamics and catalyst evolution
+  source_parent_id: physics
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_ph_thermal
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: An isothermal model is a falsifiable baseline; reaction heat, heat exchange and catalyst
+      evolution can add memory and constrain safe operation.
+    explanation_or_notes: Assess an energy balance using measured heat release, bed heat capacity, wall/jacket transfer
+      and spatial temperature evidence before treating temperature as fixed. Thermal runaway limits and jacket dynamics
+      couple physical chemistry to operating constraints. Deposits or aging may be slow states; if they evolve across
+      cycles, a one-cycle objective can hide campaign-scale loss.
+    open_questions:
+    - Are temperature oscillations material to kinetic sensitivity and selectivity margins?
+    - Should productivity include aging and utility costs over repeated cycles?
+- source_dataset: proposed_unified_map
+  source_node_id: u_ma_conservation
+  source_title: Stoichiometric and continuum conservation models
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_ma_conservation
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Gas, surface and product balances need consistent species, rate and volume bases with
+      explicit initial and boundary data.
+    explanation_or_notes: Connect reaction source vectors to axial gas transport and, where selected, surface-state
+      dynamics. State whether concentrations are on gas-void, total-bed-volume or catalyst-mass basis; convert solid
+      rates with matching porosity and density factors. Algebraic PSSA rates may feed transient gas PDEs; dynamic
+      coverage adds states and possibly algebraic constraints.
+    open_questions:
+    - Which conserved quantities and dimensions will be checked?
+    - Which boundary convention represents the inlet/outlet hardware?
+- source_dataset: proposed_unified_map
+  source_node_id: u_ma_scaling
+  source_title: Dimensionless groups and timescale hierarchy
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_ma_scaling
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Dimensionless ratios organize transport and forcing regimes but are not evidence of resonance
+      or gain by themselves.
+    explanation_or_notes: Use axial Péclet, Damköhler, forcing/residence, pellet Thiele and relevant thermal or
+      adsorption timescale ratios to screen regimes and justify reductions. Define every group from the chosen dimensional
+      equations; conventions can invert ratios or change prefactors. Scaling should guide experiment design and
+      numerical resolution, then be checked against measured plant response.
+    open_questions:
+    - Which timescales are measured versus inferred?
+    - Which model reductions survive target-specific screening?
+- source_dataset: proposed_unified_map
+  source_node_id: u_ma_numerics
+  source_title: Discretization, stiff integration and numerical verification
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_ma_numerics
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: A transient discretized model needs spatial, temporal and periodic-orbit convergence evidence
+      before small predicted gains can be interpreted physically.
+    explanation_or_notes: The method of lines converts PDEs to potentially stiff ODE/DAE systems. Convection-dominated
+      transport can cause numerical diffusion or oscillation; switching inputs challenge error control and event
+      handling. Verify grid/time refinement, conservation, physical bounds, periodic residuals, tolerances and suitable
+      alternative discretizations. Verification is not validation against data.
+    open_questions:
+    - What refinement and balance tolerances are small relative to the claimed difference?
+    - Do alternative schemes converge to the same periodic objective?
+- source_dataset: proposed_unified_map
+  source_node_id: u_ma_periodic
+  source_title: Periodic orbits, mean response and no-gain limits
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_ma_periodic
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: The sign of periodic-operation effects is conditional; mathematical limits and contrasting
+      model-specific studies rule out universal benefit claims.
+    explanation_or_notes: At settled periodic response, a stable LTI system has mean output equal to its DC response
+      to mean input. A static concave response obeys Jensen’s no-gain bound at fixed mean. Nonlinear stateful systems
+      may rectify forcing positively, negatively or not at all. A strict advantage is not implied by nonlinearity
+      or a frequency window in one pellet model. Separately, if the periodic feasible set contains all steady controls
+      under identical constraints and objective, its global optimum cannot be worse; this does not prove a strict
+      gain or real-world feasibility.
+    open_questions:
+    - Which nonlinear memory/transport mechanisms survive target-specific tests?
+    - Does periodic operation beat the optimized steady point after uncertainty and actuator limits?
+- source_dataset: proposed_unified_map
+  source_node_id: u_ma_inverse
+  source_title: Identifiability, sensitivity and uncertainty
+  source_parent_id: mathematics
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_ma_inverse
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: A model reproducing one transient need not uniquely identify parameters or predict a robust
+      optimum.
+    explanation_or_notes: Separate structural and practical identifiability, sensitivity and uncertainty propagation.
+      Correlated kinetic parameters, uncertain catalyst state, latent profiles and analyzer filtering can make models
+      observationally similar. Excitation may improve discrimination, but must respect measurement bandwidth, noise
+      and constraints. Propagate parameter and model uncertainty into the periodic-versus-steady difference.
+    open_questions:
+    - Which parameter combinations are practically identifiable?
+    - What uncertainty bound makes a gain distinguishable from zero?
+- source_dataset: proposed_unified_map
+  source_node_id: u_sc_plant
+  source_title: Plant, input realization and model boundary
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_sc_plant
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: The command, realized bed-plane composition, reactor states and measured outputs form
+      an input–state–output boundary.
+    explanation_or_notes: Trace feed commands through controllers, mixer/manifold, total-flow and pressure coupling,
+      inlet volume and bed dispersion to forcing at the particles. Include output sampling and analyzer dynamics.
+      Distinguish plant from equipment and observation dynamics; a reduced model is acceptable only for the question
+      and bandwidth it preserves.
+    open_questions:
+    - Which variables are manipulated, measured and constrained?
+    - Can bed-plane input be measured/reconstructed at relevant frequencies?
+- source_dataset: proposed_unified_map
+  source_node_id: u_sc_excitation
+  source_title: Periodic excitation and kinetic discrimination
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_sc_excitation
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Periodic inputs may reveal dynamic kinetics, but successful parameter identification is
+      distinct from production improvement.
+    explanation_or_notes: Specify waveform, mean, amplitude, frequency, phase, duty cycle and slew behavior at the
+      plant boundary. Design excitation to distinguish kinetic closures while respecting actuators, safety and analyzer
+      sampling. Modulation-excitation spectroscopy and periodic reactor experiments are methodological precedents;
+      their objective and catalyst must remain distinct from this BEP performance question.
+    open_questions:
+    - Which excitation is safe, realizable and informative?
+    - What output bandwidth and phase accuracy are required?
+- source_dataset: proposed_unified_map
+  source_node_id: u_sc_objective
+  source_title: Cycle metric and optimized steady benchmark
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_sc_objective
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: An improvement claim needs a declared cycle metric and fully optimized steady comparator
+      under matched constraints.
+    explanation_or_notes: Separate conversion, selectivity, yield and productivity; state carbon basis, inlet-product
+      subtraction, horizon, catalyst-mass normalization, conversion floor and resource constraints. Compare periodic
+      cycle performance to the best feasible steady point, not an arbitrary nominal point. Feasible-set nesting
+      gives weak no-worse ordering only if objective and constraints match; strict gain still needs evidence and
+      uncertainty separation.
+    open_questions:
+    - Net production, selectivity at conversion floor, productivity or Pareto objective?
+    - Include startup, cycle duration, energy, aging and inlet ethylene?
+- source_dataset: proposed_unified_map
+  source_node_id: u_sc_observation
+  source_title: Measurements, observability and state estimation
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_ph_measurement
+  - u_sc_observation
+  prior_reconciliation_theme_id: null
+  disposition: split
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: Outlet analyzers observe filtered boundary signals; bed concentration and coverage profiles
+      are latent without additional measurements or a validated observer.
+    explanation_or_notes: Model sensor response, sampling, calibration, delay, noise and detection limits before
+      fitting transients or evaluating cycles. Observability depends on model, sensors and trajectory; EKF/UKF is
+      a future method, not proof that latent coverages are recoverable. Modulation spectroscopy may associate periodic
+      signals with surface response but requires catalyst-specific assignments and temporal resolution.
+    open_questions:
+    - Which states can actual measurements distinguish?
+    - What analyzer delay, bandwidth, sampling and detection limits apply?
+- source_dataset: proposed_unified_map
+  source_node_id: u_sc_feasibility
+  source_title: Feasibility, robustness and evidence ladder
+  source_parent_id: systems_control
+  source_file: Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml
+  integrated_node_ids:
+  - u_sc_feasibility
+  prior_reconciliation_theme_id: null
+  disposition: refined
+  legacy_tier: null
+  legacy_is_draft: null
+  source_content_preserved:
+    summary_or_rationale: The periodic feasible set includes hardware, process, safety, uncertainty and campaign
+      constraints; scientific claims need staged numerical and experimental evidence.
+    explanation_or_notes: Bound inlet composition, total flow, pressure, temperature, slew, cycling frequency, runaway,
+      catalyst health and sensor bandwidth from apparatus evidence. Separate numerical verification, parameter estimation,
+      held-out validation and prospective performance comparison. A local optimizer solution is not global unless
+      established. Model predictions are conditional on applicability; robustness across plausible parameters and
+      model alternatives matters when gains are small.
+    open_questions:
+    - Which constraints define the admissible periodic set?
+    - What held-out evidence is needed for a credible gain?
+    - How should degradation and campaign duration enter?
+prior_reconciliation_crosswalk:
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_reaction_chemistry_pathways
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - u_ph_reaction
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_net_reaction_network
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - ph_reaction_network
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_acetylene_semihydrogenation
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - c1_acetylene_semihydrogenation
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_ethylene_overhydrogenation
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - c1_ethylene_overhydrogenation
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_ethylene_rich_inlet
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - c1_ethylene_rich_inlet
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_microscopic_surface_path
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - c1_microscopic_surface_path
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_horiuti_polanyi_family
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - c1_horiuti_polanyi_family
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_vinyl_intermediate
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - c1_vinyl_intermediate
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_adsorbed_ethylene_fork
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - c1_adsorbed_ethylene_fork
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_adsorbed_ethylene_desorption
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - c1_adsorbed_ethylene_desorption
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_ethyl_intermediate
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - c1_ethyl_intermediate
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_parallel_ethane_paths
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - c1_parallel_ethane_paths
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_no_independent_direct_rate
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - c1_no_independent_direct_rate
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_vinyl_ethylidene_alternative
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - c1_vinyl_ethylidene_alternative
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_reaction_chemistry
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - u_ph_reaction
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: ph_reaction_network
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - ph_reaction_network
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_sequential_path
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - ph_sequential_path
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_competing_channels
+  proposed_node_id: u_ph_reaction
+  integrated_node_ids:
+  - ph_competing_channels
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: physics_catalytic_chemistry
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - u_ph_catalyst
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_catalyst_active_site_chemistry
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - u_ph_catalyst
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_catalyst_identity
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - c1_catalyst_identity
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_urmes_source_catalyst
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - c1_urmes_source_catalyst
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_pdag_support_transfer
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - c1_pdag_support_transfer
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_multisite_hydride_carbide
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - c1_multisite_hydride_carbide
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_surface_sites
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - c1_surface_sites
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_full_site_balance
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - c1_full_site_balance
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_reduced_site_balance
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - c1_reduced_site_balance
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_adsorption_desorption
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - c1_adsorption_desorption
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_dissociative_h2_adsorption
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - c1_dissociative_h2_adsorption
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_adjacent_site_requirement
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - c1_adjacent_site_requirement
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_hydrocarbon_site_competition
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - c1_hydrocarbon_site_competition
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_ethylene_readsorption
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - c1_ethylene_readsorption
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_c4_coke_deactivation
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - c1_c4_coke_deactivation
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_catalyst_chemistry
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - u_ph_catalyst
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: ph_site_ensembles
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - ph_site_ensembles
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_pd_ag_surface
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - ph_pd_ag_surface
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_catalyst_memory
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - ph_catalyst_memory
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_surface_states
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - ph_surface_states
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_deposits
+  proposed_node_id: u_ph_catalyst
+  integrated_node_ids:
+  - ph_deposits
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: physics_reaction_kinetics
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - u_ph_kinetics
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: lhhw_kinetics
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - lhhw_kinetics
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: centered_arrhenius
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - centered_arrhenius
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: surface_coverage_dynamics
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - ph_dynamic_memory
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_kinetic_closure_boundary
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - c1_kinetic_closure_boundary
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_urmes_2019_effective_rates
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - c2_urmes_2019_effective_rates
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_urmes_2019_adsorption_denominator
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - c2_urmes_2019_adsorption_denominator
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_urmes_2019_net_rates
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - c2_urmes_2019_net_rates
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_urmes_2019_parameter_ledger
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - c2_urmes_2019_parameter_ledger
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_surface_kinetic_closure_choices
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - c2_surface_kinetic_closure_choices
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_pssa_not_steady_reactor
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - c2_pssa_not_steady_reactor
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_dynamic_theta_model_calibration_gap
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - c2_dynamic_theta_model_calibration_gap
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_lh_rates
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - ph_lh_rates
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_adsorbate_balance
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - ph_adsorbate_balance
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_mechanism_choice
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - ph_mechanism_choice
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_dynamic_memory
+  proposed_node_id: u_ph_kinetics
+  integrated_node_ids:
+  - ph_dynamic_memory
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: physics_transport_phenomena
+  proposed_node_id: u_ph_transport
+  integrated_node_ids:
+  - u_ph_transport
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: transport_phenomena
+  proposed_node_id: u_ph_transport
+  integrated_node_ids:
+  - u_ph_transport
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: internal_diffusion_thiele
+  proposed_node_id: u_ph_transport
+  integrated_node_ids:
+  - internal_diffusion_thiele
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: external_film_transfer
+  proposed_node_id: u_ph_transport
+  integrated_node_ids:
+  - external_film_transfer
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_packed_bed
+  proposed_node_id: u_ph_transport
+  integrated_node_ids:
+  - u_ph_transport
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: ph_residence_time_distribution
+  proposed_node_id: u_ph_transport
+  integrated_node_ids:
+  - ph_residence_time_distribution
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_axial_balance
+  proposed_node_id: u_ph_transport
+  integrated_node_ids:
+  - ph_axial_balance
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_axial_dispersion
+  proposed_node_id: u_ph_transport
+  integrated_node_ids:
+  - ph_axial_dispersion
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_pellet_transport
+  proposed_node_id: u_ph_transport
+  integrated_node_ids:
+  - ph_pellet_transport
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_danckwerts
+  proposed_node_id: u_ph_transport
+  integrated_node_ids:
+  - ph_danckwerts
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: physics_reactor_thermodynamics
+  proposed_node_id: u_ph_thermal
+  integrated_node_ids:
+  - u_ph_thermal
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: reaction_thermodynamics
+  proposed_node_id: u_ph_thermal
+  integrated_node_ids:
+  - reaction_thermodynamics
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_thermal_evolution
+  proposed_node_id: u_ph_thermal
+  integrated_node_ids:
+  - u_ph_thermal
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: ph_energy_balance
+  proposed_node_id: u_ph_thermal
+  integrated_node_ids:
+  - ph_energy_balance
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_isothermal
+  proposed_node_id: u_ph_thermal
+  integrated_node_ids:
+  - ph_isothermal
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: math_mathematical_modelling
+  proposed_node_id: u_ma_conservation
+  integrated_node_ids:
+  - u_ma_conservation
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: pbr_governing_pdes
+  proposed_node_id: u_ma_conservation
+  integrated_node_ids:
+  - ma_gas_pde
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_net_gas_source_vector
+  proposed_node_id: u_ma_conservation
+  integrated_node_ids:
+  - c1_net_gas_source_vector
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_conservation
+  proposed_node_id: u_ma_conservation
+  integrated_node_ids:
+  - u_ma_conservation
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: ma_stoichiometry
+  proposed_node_id: u_ma_conservation
+  integrated_node_ids:
+  - ma_stoichiometry
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_gas_pde
+  proposed_node_id: u_ma_conservation
+  integrated_node_ids:
+  - ma_gas_pde
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_surface_balance
+  proposed_node_id: u_ma_conservation
+  integrated_node_ids:
+  - ma_surface_balance
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_initial_boundary
+  proposed_node_id: u_ma_conservation
+  integrated_node_ids:
+  - ma_initial_boundary
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_dimensionless
+  proposed_node_id: u_ma_scaling
+  integrated_node_ids:
+  - u_ma_scaling
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: ma_pellet_scaling
+  proposed_node_id: u_ma_scaling
+  integrated_node_ids:
+  - ma_pellet_scaling
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_Peclet
+  proposed_node_id: u_ma_scaling
+  integrated_node_ids:
+  - ma_Peclet
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_Damkohler
+  proposed_node_id: u_ma_scaling
+  integrated_node_ids:
+  - ma_Damkohler
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_Strouhal
+  proposed_node_id: u_ma_scaling
+  integrated_node_ids:
+  - ma_Strouhal
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_timescale
+  proposed_node_id: u_ma_scaling
+  integrated_node_ids:
+  - ma_timescale
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: math_numerical_analysis
+  proposed_node_id: u_ma_numerics
+  integrated_node_ids:
+  - u_ma_numerics
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: method_of_lines_mol
+  proposed_node_id: u_ma_numerics
+  integrated_node_ids:
+  - ma_MOL
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: stiff_ode_solvers
+  proposed_node_id: u_ma_numerics
+  integrated_node_ids:
+  - ma_stiff_solver
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_numerics
+  proposed_node_id: u_ma_numerics
+  integrated_node_ids:
+  - u_ma_numerics
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: ma_MOL
+  proposed_node_id: u_ma_numerics
+  integrated_node_ids:
+  - ma_MOL
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_convection_scheme
+  proposed_node_id: u_ma_numerics
+  integrated_node_ids:
+  - ma_convection_scheme
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_stiff_solver
+  proposed_node_id: u_ma_numerics
+  integrated_node_ids:
+  - ma_stiff_solver
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_discontinuous_input
+  proposed_node_id: u_ma_numerics
+  integrated_node_ids:
+  - ma_discontinuous_input
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_numerical_checks
+  proposed_node_id: u_ma_numerics
+  integrated_node_ids:
+  - ma_numerical_checks
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: math_dynamical_systems
+  proposed_node_id: u_ma_periodic
+  integrated_node_ids:
+  - u_ma_periodic
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: ma_periodic_system
+  proposed_node_id: u_ma_periodic
+  integrated_node_ids:
+  - u_ma_periodic
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: ma_average_gain
+  proposed_node_id: u_ma_periodic
+  integrated_node_ids:
+  - ma_average_gain
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_lti_no_gain
+  proposed_node_id: u_ma_periodic
+  integrated_node_ids:
+  - ma_lti_no_gain
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_concavity_bound
+  proposed_node_id: u_ma_periodic
+  integrated_node_ids:
+  - ma_concavity_bound
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_nonlinear_rectification
+  proposed_node_id: u_ma_periodic
+  integrated_node_ids:
+  - ma_nonlinear_rectification
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_periodic_orbit
+  proposed_node_id: u_ma_periodic
+  integrated_node_ids:
+  - ma_periodic_orbit
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_stability
+  proposed_node_id: u_ma_periodic
+  integrated_node_ids:
+  - ma_stability
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: math_inverse_problems
+  proposed_node_id: u_ma_inverse
+  integrated_node_ids:
+  - u_ma_inverse
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: parameter_sensitivity_jacobian
+  proposed_node_id: u_ma_inverse
+  integrated_node_ids:
+  - ma_sensitivity
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_transient_parameter_identifiability
+  proposed_node_id: u_ma_inverse
+  integrated_node_ids:
+  - c2_transient_parameter_identifiability
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_inverse
+  proposed_node_id: u_ma_inverse
+  integrated_node_ids:
+  - u_ma_inverse
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: ma_identifiability
+  proposed_node_id: u_ma_inverse
+  integrated_node_ids:
+  - ma_identifiability
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ma_sensitivity
+  proposed_node_id: u_ma_inverse
+  integrated_node_ids:
+  - ma_sensitivity
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: system_modelling_reduction
+  proposed_node_id: u_sc_plant
+  integrated_node_ids:
+  - u_sc_plant
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: pdc_process_dynamics_foundations
+  proposed_node_id: u_sc_plant
+  integrated_node_ids:
+  - pdc_process_dynamics_foundations
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_plant
+  proposed_node_id: u_sc_plant
+  integrated_node_ids:
+  - u_sc_plant
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: sc_manipulated_input
+  proposed_node_id: u_sc_plant
+  integrated_node_ids:
+  - sc_manipulated_input
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_bed_input_realization
+  proposed_node_id: u_sc_plant
+  integrated_node_ids:
+  - sc_bed_input_realization
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: system_identification
+  proposed_node_id: u_sc_excitation
+  integrated_node_ids:
+  - u_sc_excitation
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: system_input_experiment_design
+  proposed_node_id: u_sc_excitation
+  integrated_node_ids:
+  - u_sc_excitation
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: periodic_feed_forcing
+  proposed_node_id: u_sc_excitation
+  integrated_node_ids:
+  - periodic_feed_forcing
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_periodic_forcing
+  proposed_node_id: u_sc_excitation
+  integrated_node_ids:
+  - u_sc_excitation
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: sc_excitation
+  proposed_node_id: u_sc_excitation
+  integrated_node_ids:
+  - sc_excitation
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_waveform
+  proposed_node_id: u_sc_excitation
+  integrated_node_ids:
+  - sc_waveform
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: math_optimization_theory
+  proposed_node_id: u_sc_objective
+  integrated_node_ids:
+  - u_ma_optimization
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: system_control_optimization
+  proposed_node_id: u_sc_objective
+  integrated_node_ids:
+  - u_sc_objective
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: ph_metrics
+  proposed_node_id: u_sc_objective
+  integrated_node_ids:
+  - ph_metrics
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_baseline
+  proposed_node_id: u_sc_objective
+  integrated_node_ids:
+  - sc_baseline
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_benchmark_nesting
+  proposed_node_id: u_sc_objective
+  integrated_node_ids:
+  - sc_benchmark_nesting
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_optimization
+  proposed_node_id: u_sc_objective
+  integrated_node_ids:
+  - u_sc_objective
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: sc_objective
+  proposed_node_id: u_sc_objective
+  integrated_node_ids:
+  - sc_objective
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_local_search
+  proposed_node_id: u_sc_objective
+  integrated_node_ids:
+  - sc_local_search
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: physics_experiments_measurements
+  proposed_node_id: u_sc_observation
+  integrated_node_ids:
+  - u_ph_measurement
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: system_filtering_estimation
+  proposed_node_id: u_sc_observation
+  integrated_node_ids:
+  - u_sc_observation
+  status: preserved_theme_mapping
+- dataset: original_devcontainer_overlay
+  source_node_id: state_observer_mpc
+  proposed_node_id: u_sc_observation
+  integrated_node_ids:
+  - state_observer_mpc
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_measurement
+  proposed_node_id: u_sc_observation
+  integrated_node_ids:
+  - u_ph_measurement
+  - u_sc_observation
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_boundary_measurement
+  proposed_node_id: u_sc_observation
+  integrated_node_ids:
+  - ph_boundary_measurement
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: ph_operando_spectroscopy
+  proposed_node_id: u_sc_observation
+  integrated_node_ids:
+  - ph_operando_spectroscopy
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_output_model
+  proposed_node_id: u_sc_observation
+  integrated_node_ids:
+  - sc_output_model
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_state_estimation
+  proposed_node_id: u_sc_observation
+  integrated_node_ids:
+  - u_sc_observation
+  status: preserved_theme_mapping
+- dataset: independent_v2
+  source_node_id: sc_observability
+  proposed_node_id: u_sc_observation
+  integrated_node_ids:
+  - sc_observability
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_ekf_ukf
+  proposed_node_id: u_sc_observation
+  integrated_node_ids:
+  - sc_ekf_ukf
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: reactor_operating_window
+  proposed_node_id: u_sc_feasibility
+  integrated_node_ids:
+  - reactor_operating_window
+  status: preserved_and_refined
+- dataset: original_devcontainer_overlay
+  source_node_id: cooling_jacket_control
+  proposed_node_id: u_sc_feasibility
+  integrated_node_ids:
+  - cooling_jacket_control
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_hardware_constraints
+  proposed_node_id: u_sc_feasibility
+  integrated_node_ids:
+  - sc_hardware_constraints
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_robustness
+  proposed_node_id: u_sc_feasibility
+  integrated_node_ids:
+  - sc_robustness
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_experiment_design
+  proposed_node_id: u_sc_feasibility
+  integrated_node_ids:
+  - u_sc_excitation
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_identification_vs_performance
+  proposed_node_id: u_sc_feasibility
+  integrated_node_ids:
+  - sc_identification_vs_performance
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_co_design
+  proposed_node_id: u_sc_feasibility
+  integrated_node_ids:
+  - sc_co_design
+  status: preserved_and_refined
+- dataset: independent_v2
+  source_node_id: sc_validation
+  proposed_node_id: u_sc_feasibility
+  integrated_node_ids:
+  - sc_validation
+  status: preserved_and_refined

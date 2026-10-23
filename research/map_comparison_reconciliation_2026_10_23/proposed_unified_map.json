@@ -1,0 +1,3350 @@
+{
+  "metadata": {
+    "repository": "AsapLoso/project-management-agents",
+    "branch": "work/bep-map-reconciliation-v2-20261023",
+    "base_branch": "work/bep-integrated-reference-map-v1-20261022",
+    "base_commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+    "date": "2026-10-23"
+  },
+  "content": {
+    "format": "JSON; also valid YAML 1.2",
+    "metadata": {
+      "name": "Proposed unified BEP scientific reference map",
+      "edition": "reconciliation-v2-2026-10-23",
+      "status": "proposed_only",
+      "authorship": "AI-authored provisional synthesis",
+      "maturity_ceiling": "ai_worked_out",
+      "personal_understanding": "not_assessed",
+      "human_verification": "not_claimed",
+      "purpose": "A source-linked semantic reconciliation of the preserved original and independent maps, updated with the later integrated research snapshot. It is a proposal and crosswalk; it does not rewrite or merge the input datasets.",
+      "scientific_compass": "Under what physical, kinetic, mathematical, and experimental conditions can periodic inlet forcing improve cycle-averaged ethylene production or selectivity relative to an appropriately optimized feasible steady-state benchmark?",
+      "structural_counts": {
+        "proposed_nodes": 21,
+        "shared_root_and_disciplines": 4,
+        "proposed_depth_two_themes": 17,
+        "prior_source_map_crosswalk_rows": 144,
+        "integrated_snapshot_nodes": 143,
+        "integrated_snapshot_node_crosswalk_rows": 143
+      }
+    },
+    "source_snapshots": [
+      {
+        "dataset": "original_ai_map",
+        "branch": "devcontainer",
+        "commit": "f18682d97153251f23396ca7b82fd9dd38f0edf0",
+        "canonical_records": 4,
+        "overlay_records": 69,
+        "files": [
+          {
+            "path": "Academics/BEP/Catalysis/mindmap/data/bep_map.yaml",
+            "blob": "5669f2481cbb24505f49cc5531069553defd8cbd"
+          },
+          {
+            "path": "Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml",
+            "blob": "5816807c2d3077e367d3a3bb9ce014a76b3112fe"
+          }
+        ]
+      },
+      {
+        "dataset": "independent_reference_v2",
+        "branch": "work/bep-independent-reference-v2-20261021",
+        "commit": "ea391357ad8e4e03cfd27324d4b274513826b254",
+        "node_count": 79,
+        "source_count": 28,
+        "files": [
+          {
+            "path": "Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/nodes.yaml",
+            "blob": "91049e82e0ad6001661aed3265396f523c0198b7"
+          },
+          {
+            "path": "Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/sources.yaml",
+            "blob": "17709a67b2e581a09750fc849922fc563cea2625"
+          }
+        ]
+      },
+      {
+        "dataset": "prior_reconciliation_v1",
+        "branch": "work/bep-map-reconciliation-v1-20261021",
+        "commit": "4afef28be1596f8e9a0f27a9d447b6e7a44f6e31",
+        "proposal_blob": "95f415ef62b4134c88d45a4a519d6a910b327de7",
+        "prior_crosswalk_rows": 144
+      },
+      {
+        "dataset": "integrated_research_snapshot",
+        "branch": "work/bep-integrated-reference-map-v1-20261022",
+        "commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+        "node_count": 143,
+        "source_count": 65,
+        "node_claim_source_refs": 340,
+        "historical_attachments": 96,
+        "typed_relations": 59,
+        "cross_disciplinary_relations": 35,
+        "claim_reconciliations": 21,
+        "uncertainties": 23,
+        "full_text_sources_read": 19,
+        "abstract_and_preview_sources": 3,
+        "abstract_only_sources": 14,
+        "files": [
+          {
+            "path": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml",
+            "blob": "d3969fea87c9abc49c20b0ad28af282c7560a910"
+          },
+          {
+            "path": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/sources.yaml",
+            "blob": "91a74b89be50c48813381876033a3ed48a3114d9"
+          },
+          {
+            "path": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/concept_mapping.yaml",
+            "blob": "f617ed7c48b3b91e2616a7cfa43526aa3f2a5375"
+          },
+          {
+            "path": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/claim_reconciliations.yaml",
+            "blob": "af3d395d7b900f0c91f45d20a1c576bee431bf1d"
+          },
+          {
+            "path": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/uncertainties.yaml",
+            "blob": "3ee127dced62da2df4c326c3a24d36dcad609d1c"
+          },
+          {
+            "path": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/interdisciplinary_links.yaml",
+            "blob": "2fdfc12213e4bcd0619ad4cab31d18887c953a37"
+          }
+        ]
+      }
+    ],
+    "prior_source_map_crosswalk": {
+      "path": "Academics/BEP/Catalysis/research/map_comparison_reconciliation_2026_10_21/proposed_unified_map.yaml",
+      "blob": "95f415ef62b4134c88d45a4a519d6a910b327de7",
+      "source_branch": "work/bep-map-reconciliation-v1-20261021",
+      "source_commit": "4afef28be1596f8e9a0f27a9d447b6e7a44f6e31",
+      "records": {
+        "original_devcontainer_overlay": 69,
+        "independent_v2_content": 75,
+        "total": 144
+      },
+      "use": "Preserved prior semantic crosswalk; rows remain unchanged and are inherited by reference."
+    },
+    "node_contract": {
+      "required_fields": [
+        "id",
+        "parent",
+        "title",
+        "kind",
+        "maturity",
+        "summary",
+        "explanation",
+        "equations",
+        "assumptions",
+        "limitations",
+        "open_questions",
+        "source_ids"
+      ],
+      "id_policy": "Preserve the shared root and discipline IDs. Proposed content themes use stable u_ IDs. Input map IDs and histories remain unchanged.",
+      "evidence_policy": "Separate source observation, source model/design result, mathematical derivation under assumptions, project hypothesis, and unverified source attachment.",
+      "approval_policy": "Structural placement and AI research maturity do not assert human understanding, human source verification, or map approval."
+    },
+    "nodes": [
+      {
+        "id": "bep",
+        "parent": null,
+        "title": "BEP scientific domain",
+        "kind": "root",
+        "maturity": "idea",
+        "summary": "Dynamic acetylene semi-hydrogenation in a packed bed; periodic inlet forcing is evaluated against the best feasible steady operation under the same objective and constraints.",
+        "explanation": "Scientific compass: under what catalyst, kinetic, transport, mathematical, control, and experimental conditions can inlet forcing improve cycle-averaged ethylene production or selectivity? This is a research question. No gain sign or magnitude is established.",
+        "equations": [],
+        "assumptions": [
+          "A proposed taxonomy preserves competing physical and mathematical models until target evidence discriminates them."
+        ],
+        "limitations": [
+          "The target catalyst, feed, objective, actuator envelope, and validated predictive model remain unspecified."
+        ],
+        "open_questions": [
+          "Which target-specific evidence will define a meaningful comparison?"
+        ],
+        "source_ids": [
+          "proposal_main"
+        ]
+      },
+      {
+        "id": "physics",
+        "parent": "bep",
+        "title": "Physics",
+        "kind": "discipline",
+        "maturity": "ai_worked_out",
+        "summary": "Reaction chemistry, catalyst state, kinetics, transport, thermal response, and physical measurement.",
+        "explanation": "Physical causes are organized by the local catalyst and apparatus boundary. Source-specific mechanisms remain alternatives until target composition, support, pretreatment, and operating data are fixed.",
+        "equations": [],
+        "assumptions": [],
+        "limitations": [
+          "The physical model and catalyst applicability remain open."
+        ],
+        "open_questions": [
+          "Which physical states are needed at the first evidence-supported fidelity?"
+        ],
+        "source_ids": [
+          "proposal_main"
+        ]
+      },
+      {
+        "id": "mathematics",
+        "parent": "bep",
+        "title": "Mathematics",
+        "kind": "discipline",
+        "maturity": "ai_worked_out",
+        "summary": "Conservation, scales, numerics, periodic response, inference, uncertainty, and constrained optimization.",
+        "explanation": "Mathematical statements retain their assumptions, units, domain, and status as derivation, approximation, or source-model result. Numerical correctness does not supply empirical validation.",
+        "equations": [],
+        "assumptions": [],
+        "limitations": [
+          "Final balances, rate basis, solver, and uncertainty model depend on target choices."
+        ],
+        "open_questions": [
+          "Which reductions and conditions are supported by target data?"
+        ],
+        "source_ids": [
+          "proposal_main"
+        ]
+      },
+      {
+        "id": "systems_control",
+        "parent": "bep",
+        "title": "Systems & Control",
+        "kind": "discipline",
+        "maturity": "ai_worked_out",
+        "summary": "Plant boundaries, input realization, excitation, measurement, observability, objectives, constraints, and evidence.",
+        "explanation": "The system view connects manipulated commands to bed inputs and outlet observations. Experimental feasibility and performance comparison are separate from kinetic identification.",
+        "equations": [],
+        "assumptions": [],
+        "limitations": [
+          "Hardware, measurement, safety, and success criteria are not specified."
+        ],
+        "open_questions": [
+          "Which signals can be manipulated and measured at the required bandwidth?"
+        ],
+        "source_ids": [
+          "proposal_main"
+        ]
+      },
+      {
+        "id": "u_ph_reaction",
+        "parent": "physics",
+        "title": "Reaction network, pathways, and products",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "The sequential C2H2 → C2H4 → C2H6 network defines an intermediate product and its main gas-phase over-hydrogenation loss; microscopic pathways and side products remain catalyst-specific.",
+        "explanation": "Keep net stoichiometry separate from elementary surface chemistry and measured product accounting. Pd/PdAg surface calculations, Pd/Al2O3 rate fits, deposit-associated site models, and Pd–Mn substitution proposals give different route hypotheses. Include inlet ethylene, ethane, C4+ products, and retained carbon where the chosen system boundary and measurements require them.",
+        "equations": [
+          "C2H2 + H2 → C2H4; C2H4 + H2 → C2H6 (net reactions, not elementary steps).",
+          "For species order (H2,C2H2,C2H4,C2H6), S = (−r1−r2,−r1,r1−r2,r2) under the two-reaction gas-only closure."
+        ],
+        "assumptions": [
+          "Two net reactions form a minimum carbon-balance scaffold.",
+          "Non-detection means below method detection limits, not physical absence."
+        ],
+        "limitations": [
+          "Source catalysts and reaction windows differ; C4+ and deposit inventories may be omitted in reduced models."
+        ],
+        "open_questions": [
+          "Which carbon products and sinks are measurable over the target forcing range?",
+          "Which microscopic pathways are supported by the working catalyst?"
+        ],
+        "source_ids": [
+          "urmes2019",
+          "borodzinski2000",
+          "stytsenko2022",
+          "mei2009",
+          "li2021"
+        ]
+      },
+      {
+        "id": "u_ph_catalyst",
+        "parent": "physics",
+        "title": "Catalyst identity, active sites, and working-surface state",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "Nominal Pd:Ag composition alone does not specify the active surface or site ensembles under reaction conditions.",
+        "explanation": "Support, loading, particle size, pretreatment, carbonaceous deposits, hydrogen, and working-surface composition can change adsorption and pathway rates. A single-site Pd PSSA fit, a deposit-associated A/E model, a Pd–Mn substitution proposal, idealized Pd/PdAg surfaces, and a PdAg/TiO2 in-situ structure study answer different catalyst-specific questions.",
+        "equations": [
+          "Site closure example: Σ_j θ_j = 1 for a stated site inventory and the species assigned to it."
+        ],
+        "assumptions": [
+          "Site families and coverage variables must be defined for each kinetic model."
+        ],
+        "limitations": [
+          "No source model uniquely identifies the BEP catalyst's working surface."
+        ],
+        "open_questions": [
+          "What catalyst batch, support, geometry, preparation, pretreatment, and working-surface state define the target?"
+        ],
+        "source_ids": [
+          "urmes2019",
+          "borodzinski2000",
+          "stytsenko2022",
+          "dehghani2019_pdag_alphaal2o3",
+          "mei2009",
+          "li2021"
+        ]
+      },
+      {
+        "id": "u_ph_kinetics",
+        "parent": "physics",
+        "title": "Kinetic law, thermal dependence, and surface-memory closures",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "A transient reactor can use quasi-steady surface kinetics; explicit coverage dynamics are a separate closure requiring independent evidence and parameters.",
+        "explanation": "Langmuir–Hinshelwood–Hougen–Watson rates and pseudo-steady-state surface balances algebraically eliminate coverages. Dynamic coverage ODEs retain adsorbate storage and require elementary rates, site conservation, and consistent gas/surface inventories. Arrhenius centering, parameter units, and source-level inconsistencies must be preserved. Slow campaign activity decay and fast within-cycle adsorbate memory occupy different state scales.",
+        "equations": [
+          "k(T)=k(Tref) exp[−Ea/R(1/T−1/Tref)] when k(Tref) is the fitted reference rate.",
+          "θ̇ = r_adsorption − r_reaction − r_desorption only after each species/site balance is specified."
+        ],
+        "assumptions": [
+          "Any kinetic closure is local to its catalyst, feed, temperature, pressure, and conversion domain."
+        ],
+        "limitations": [
+          "Urmès 2019 reports conflicting K1 values in text and table; neither is resolved as target truth."
+        ],
+        "open_questions": [
+          "Does the target transient require dynamic coverages, or can an evidence-supported PSSA closure predict outputs?",
+          "Which parameters are independently identifiable?"
+        ],
+        "source_ids": [
+          "urmes2019",
+          "urmes2022",
+          "borodzinski2000",
+          "stytsenko2022",
+          "dehghani2019_pdag_alphaal2o3",
+          "berger2008"
+        ]
+      },
+      {
+        "id": "u_ph_transport",
+        "parent": "physics",
+        "title": "Packed-bed, pellet, and interphase transport",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "Gas residence and dispersion, external films, intrapellet diffusion, and mixing filter the commanded composition before it reaches active sites.",
+        "explanation": "A spatial bed model can include axial dispersion and variable superficial velocity; a pellet model can add radial diffusion and internal storage. Film and pellet omissions require target-specific screening and boundary conventions. Model-domain choices determine which mixer, line, inlet, and outlet dynamics appear as boundary conditions.",
+        "equations": [
+          "J_i = u_s C_i − ε_b D_ax ∂z C_i.",
+          "ε_b ∂t C_i + ∂z J_i = S_i for a 1-D bed-volume balance with declared bases."
+        ],
+        "assumptions": [
+          "C_i is void-gas concentration; u_s is superficial velocity; D_ax has units m²/s; source terms use a declared catalyst-mass basis."
+        ],
+        "limitations": [
+          "The proposal's compact equation does not by itself define all boundary domains or target velocity closure."
+        ],
+        "open_questions": [
+          "Are film, pellet, axial dispersion, and changing total flow material over the target operating envelope?",
+          "Which upstream/downstream volumes belong in the model?"
+        ],
+        "source_ids": [
+          "proposal_main",
+          "di_giuliano_pellegrino2019",
+          "danckwerts1953",
+          "mott_green2015"
+        ]
+      },
+      {
+        "id": "u_ph_thermal",
+        "parent": "physics",
+        "title": "Energy balance, thermal response, and catalyst evolution",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "Exothermic heat release and campaign-time catalyst evolution may alter mean performance and cycle response at distinct timescales.",
+        "explanation": "An isothermal model is an assumption requiring a temperature scale or measurement argument. Temperature forcing changes Arrhenius rates, while thermal inertia and heat removal filter the waveform. Catalyst deactivation during months of operation does not establish fast within-cycle adsorbate memory.",
+        "equations": [
+          "A generic bed energy balance couples ρCp ∂tT, axial heat flux, reaction heat Σ_j(−ΔH_j)r_j, and wall heat exchange; each term needs a declared basis."
+        ],
+        "assumptions": [
+          "Thermal properties and heat-transfer coefficients can be treated as known only after target evidence."
+        ],
+        "limitations": [
+          "No target temperature field, heat-release bound, or deactivation law is calibrated."
+        ],
+        "open_questions": [
+          "Is an isothermal approximation adequate at relevant conversion and forcing amplitude?",
+          "What campaign horizon and catalyst aging costs belong in the metric?"
+        ],
+        "source_ids": [
+          "proposal_main",
+          "dehghani2019_pdag_alphaal2o3",
+          "kaps2026"
+        ]
+      },
+      {
+        "id": "u_ph_measurement",
+        "parent": "physics",
+        "title": "Measurements, instrumentation, and physical observables",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "Analyzer, tubing, detector, and spectroscopy dynamics shape which physical signals are observed and with what delay or bandwidth.",
+        "explanation": "Separate the material signal path from state estimation: MFCs, mixers, bed, outlet lines, chromatographs, and surface-sensitive probes each have transfer and sampling behavior. Modulation-excitation spectroscopy can detect selected surface species in appropriate systems. It does not establish observability of every internal state in the target bed.",
+        "equations": [
+          "A measurement channel can be represented as y_m(t)=H_m(s)y_true(t)+noise only where a linear time-invariant approximation is justified."
+        ],
+        "assumptions": [
+          "Sampling, calibration, and transfer functions are identified over the frequencies used."
+        ],
+        "limitations": [
+          "Actual BEP actuator, analyzer, sampling, and noise models are absent."
+        ],
+        "open_questions": [
+          "What are command-to-bed and bed-to-analyzer transfer functions?",
+          "Which physical observables resolve mechanism alternatives?"
+        ],
+        "source_ids": [
+          "urakawa2008",
+          "urmes2022",
+          "proposal_main"
+        ]
+      },
+      {
+        "id": "u_ma_conservation",
+        "parent": "mathematics",
+        "title": "Stoichiometric and continuum conservation models",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "A stoichiometric matrix, declared volume/mass basis, and conservative fluxes connect reaction rates to spatial gas inventories.",
+        "explanation": "The two-reaction stoichiometric source is a useful reduced accounting basis. For a dispersive packed bed, component inventory and flux must use consistent bed/void and catalyst-mass conventions. If velocity varies, u_s C_i remains inside the spatial flux divergence; summing species equations tests total-flow closure.",
+        "equations": [
+          "d n/dt = N r for a homogeneous inventory.",
+          "ε_b ∂t C_i + ∂z(u_s C_i − ε_b D_ax ∂zC_i) = (1−ε_b)ρ_p Σ_j ν_ij r_j for one stated bed/pellet-density convention."
+        ],
+        "assumptions": [
+          "Cross-section averaging, porosity, density, and reaction-rate bases are explicitly defined."
+        ],
+        "limitations": [
+          "Additional products, adsorbed storage, pressure drop, or temperature variation require additional balances and closures."
+        ],
+        "open_questions": [
+          "Which total-flow, pressure, adsorption-storage, and side-product balances are needed for the target?"
+        ],
+        "source_ids": [
+          "proposal_main",
+          "di_giuliano_pellegrino2019",
+          "danckwerts1953"
+        ]
+      },
+      {
+        "id": "u_ma_scaling",
+        "parent": "mathematics",
+        "title": "Dimensionless groups and timescale hierarchy",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "Dimensionless transport and forcing ratios organize which physical processes can shape the response.",
+        "explanation": "Useful comparisons include axial Péclet number, reaction-to-residence Damköhler number, pellet Thiele modulus, and ωτ for measured bed, actuator, sensor, thermal, and kinetic timescales. Their numerical values must be calculated with the target geometry and properties; a resonance-like window is a hypothesis rather than a universal rule.",
+        "equations": [
+          "Pe_ax = u_s L/(ε_b D_ax) under the stated flux convention.",
+          "Da = τ_res/τ_rxn; ϖ_j = ω τ_j for a named dynamic timescale τ_j."
+        ],
+        "assumptions": [
+          "Each dimensionless group is defined with a fixed geometry, basis, and characteristic time."
+        ],
+        "limitations": [
+          "No target dimensions, transport coefficients, or kinetic relaxation times are established."
+        ],
+        "open_questions": [
+          "Which timescale ratios overlap within feasible actuator and analyzer bandwidth?"
+        ],
+        "source_ids": [
+          "proposal_main",
+          "di_giuliano_pellegrino2019",
+          "ziegelhoeffer1972",
+          "urmes2022"
+        ]
+      },
+      {
+        "id": "u_ma_numerics",
+        "parent": "mathematics",
+        "title": "Discretization, stiff integration, and numerical verification",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "Conservative space discretization, time integration, and convergence checks are required before interpreting computed periodic performance.",
+        "explanation": "A shared finite-volume face flux makes internal fluxes cancel when cell balances are summed. Stiff kinetics and transport may motivate implicit BDF/Radau methods. The integrated reference derives Co+2Fo≤1 as a scalar sufficient positivity condition for a uniform-grid explicit advection–diffusion update; it is not a general nonlinear-reaction stability guarantee.",
+        "equations": [
+          "ε_b Δz dC_{i,k}/dt = J_{i,k−1/2}−J_{i,k+1/2}+Δz S_{i,k}.",
+          "For scalar constant-coefficient upwind advection and central diffusion: Co+2Fo≤1 is a sufficient nonnegative-weight condition."
+        ],
+        "assumptions": [
+          "Uniform cells and fixed cell volumes for the stated flux-telescoping and scalar explicit bound."
+        ],
+        "limitations": [
+          "No target simulator, grid/time-step convergence, stiffness analysis, or solver comparison is validated here."
+        ],
+        "open_questions": [
+          "Which independent conservation, positivity, and refinement checks are required for the target model?"
+        ],
+        "source_ids": [
+          "proposal_main",
+          "di_giuliano_pellegrino2019"
+        ]
+      },
+      {
+        "id": "u_ma_periodic",
+        "parent": "mathematics",
+        "title": "Periodic orbits, mean response, and conditional no-gain limits",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "The sign of a periodic performance change depends on the model class, objective, mean-input condition, and constraints.",
+        "explanation": "For a stable LTI system at settled periodic response, equal-mean input preserves the mean output. For a memoryless concave scalar response, Jensen's inequality gives mean f(u)≤f(mean u). If feasible periodic controls include all steady controls under identical constraints and objectives, optimization gives a weak no-worse bound. Nonlinear distributed reactors with state memory can yield positive, zero, or negative changes; none of the limits supplies a target gain estimate.",
+        "equations": [
+          "Stable LTI: mean(y)=G(0) mean(u) at settled periodic response.",
+          "Static concave f: E[f(u)]≤f(E[u]).",
+          "Nested feasible sets: sup_{u∈U_periodic}J(u)≥sup_{u∈U_steady}J(u) only when U_steady embeds under identical constraints."
+        ],
+        "assumptions": [
+          "The three limits have distinct assumptions and must not be combined into a universal conclusion."
+        ],
+        "limitations": [
+          "No target kinetic/transport parameterization or optimized feasible-set comparison is available."
+        ],
+        "open_questions": [
+          "Which nonlinear state and timescale couplings survive in the target plant?"
+        ],
+        "source_ids": [
+          "feimer1982",
+          "horn_bailey1971",
+          "ziegelhoeffer1972",
+          "kaps2026",
+          "urmes2022"
+        ]
+      },
+      {
+        "id": "u_ma_inverse",
+        "parent": "mathematics",
+        "title": "Identifiability, sensitivity, and uncertainty",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "Parameter identifiability, practical precision, model discrimination, and performance uncertainty are separate questions.",
+        "explanation": "Sensitivity and Fisher information depend on the output model, input design, noise covariance, and prior parameter region. A model can fit measured trajectories while retaining parameter correlations or structural non-identifiability. Kinetic parameter precision is a design outcome and does not itself establish periodic process benefit.",
+        "equations": [
+          "F(θ) ≈ Σ_k J_k(θ)^T R_k^{-1}J_k(θ), for a specified observation model and covariance R_k."
+        ],
+        "assumptions": [
+          "Local covariance approximations require a specified likelihood/error model and informative operating region."
+        ],
+        "limitations": [
+          "No target sensitivity, rank, parameter covariance, or uncertainty propagation has been calculated."
+        ],
+        "open_questions": [
+          "Which target parameters and outputs are identifiable from feasible experiments?",
+          "How does model uncertainty affect gain sign?"
+        ],
+        "source_ids": [
+          "waldron2020_transient_flow_mbdoe",
+          "villaverde2016_structural_identifiability",
+          "urmes2022"
+        ]
+      },
+      {
+        "id": "u_ma_optimization",
+        "parent": "mathematics",
+        "title": "Mathematical optimization and optimal-control formulations",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "Steady and periodic controls require explicit objective functionals, feasible sets, periodic boundary conditions, and numerical optimality evidence.",
+        "explanation": "Optimization theory belongs beside systems and control because waveform variables and physical constraints are jointly optimized, while the comparator remains a mathematical statement. Local algorithms may return stationary candidates whose value depends on initialization, parameterization, and constraints. Numerical Pareto fronts remain model-conditioned until globality or robust bounds are established.",
+        "equations": [
+          "J_per(u,T)=T⁻¹∫₀ᵀ q(x(t),u(t))dt with x(0)=x(T).",
+          "J_SS*=sup_{u∈U_SS}J_SS(u); J_per*=sup_{u∈U_per}J_per(u), under matched objective, resource basis, and constraints."
+        ],
+        "assumptions": [
+          "The periodic trajectory has reached a stable cycle and all actuator and plant constraints are included."
+        ],
+        "limitations": [
+          "This explicit theme was added in the integrated map but currently has no child concepts there; optimal-control transcription, multipliers, Pareto continuation, and robustness need further development."
+        ],
+        "open_questions": [
+          "What control parameterization and optimality evidence are appropriate for the target model?"
+        ],
+        "source_ids": [
+          "proposal_main",
+          "kaps2026",
+          "horn_bailey1971"
+        ]
+      },
+      {
+        "id": "u_sc_plant",
+        "parent": "systems_control",
+        "title": "Plant, input realization, and model boundary",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "The manipulated command, bed-plane input, reactor, outlet line, and analyzer form one coupled physical input/output chain.",
+        "explanation": "A source concentration waveform at a mass-flow controller is not automatically the waveform experienced by the catalyst. Mixing, total-flow coupling, pressure, residence-time distribution, piping, and measurement lines set plant boundaries and delay. Hardware feasibility determines the admissible control set.",
+        "equations": [
+          "u_bed(t)=H_actuator,mixer,line(s) u_cmd(t) only for a justified transfer-function approximation."
+        ],
+        "assumptions": [
+          "Every lumped transfer function corresponds to an identified physical subsystem and operating region."
+        ],
+        "limitations": [
+          "The actual BEP hardware and transfer functions are unavailable in the source maps."
+        ],
+        "open_questions": [
+          "Which controls can vary independently and within what rate/amplitude/safety limits?"
+        ],
+        "source_ids": [
+          "proposal_main",
+          "urakawa2008",
+          "kaps2026"
+        ]
+      },
+      {
+        "id": "u_sc_excitation",
+        "parent": "systems_control",
+        "title": "Periodic excitation and kinetic discrimination",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "Periodic perturbations can improve kinetic information in some systems; information gain and production gain remain distinct outcomes.",
+        "explanation": "Frequency, amplitude, phase, and input channel should be selected against candidate model sensitivities and measured response bandwidth. Urmès et al. demonstrate periodic acetylene-flow experiments and fitted outlet prediction for a source-specific Pd/α-Al2O3 model. That precedent supports periodic kinetic study, with accessible source scope and no productivity-gain claim.",
+        "equations": [
+          "A local sensitivity objective can maximize det(F(θ)) or minimize a declared prediction-variance functional subject to experiment constraints."
+        ],
+        "assumptions": [
+          "The candidate model and uncertainty region are adequate for local design and the actuator realizes the intended perturbation."
+        ],
+        "limitations": [
+          "The target system has no verified kinetic sensitivity design or measured forcing response."
+        ],
+        "open_questions": [
+          "Which waveform components separate competing target models while respecting the plant bandwidth?"
+        ],
+        "source_ids": [
+          "urmes2022",
+          "waldron2020_transient_flow_mbdoe",
+          "schoukens1994_periodic_excitation_identification"
+        ]
+      },
+      {
+        "id": "u_sc_objective",
+        "parent": "systems_control",
+        "title": "Cycle metric and optimized steady benchmark",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "Yield, selectivity, and productivity rank periodic operation differently; a periodic result needs a matched optimized steady comparator.",
+        "explanation": "Define product and feed bases before optimization. For a cycle, integrate molar flows and resource use over the settled period; a ratio of integrated amounts differs from the mean of instantaneous ratios. Include inlet ethylene in net production, impose conversion/selectivity floors when appropriate, and state campaign, energy, hydrogen, and aging costs.",
+        "equations": [
+          "n_E,net = ∫₀ᵀ(F_E,out−F_E,in)dt.",
+          "S_E = n_E,net / n_A,reacted only when this denominator is defined and positive.",
+          "Compare J_per* with J_SS* under identical objective and feasible resource/safety limits."
+        ],
+        "assumptions": [
+          "The plant reaches a repeatable periodic orbit; averaging and analyzer post-processing preserve molar balances."
+        ],
+        "limitations": [
+          "The proposal objective and all matched constraints remain decisions; an arbitrary steady point is not the optimum."
+        ],
+        "open_questions": [
+          "Which metric, feed basis, minimum conversion, and campaign horizon define success?"
+        ],
+        "source_ids": [
+          "proposal_main",
+          "kaps2026",
+          "urmes2022"
+        ]
+      },
+      {
+        "id": "u_sc_observation",
+        "parent": "systems_control",
+        "title": "Observability, state estimation, and evidence classes",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "Outlet signals constrain reactor states through model and sensor dynamics; selected catalyst species can be observed in specific laboratory systems.",
+        "explanation": "Structural observability, practical reconstructibility under noise, and sensor availability are separate. Outlet-only data and finite bandwidth can make internal states difficult to distinguish, while modulation-excitation spectroscopy has detected selected surface species. Classify data as source observation, source-model result, derivation under assumptions, project hypothesis, or unverified attachment.",
+        "equations": [
+          "For a linearized model, observability depends on (A,C); nonlinear state reconstruction depends on model, input, outputs, and operating trajectory."
+        ],
+        "assumptions": [
+          "The sensor transfer model and noise/sampling assumptions are declared."
+        ],
+        "limitations": [
+          "No whole-bed observability or target observer has been established."
+        ],
+        "open_questions": [
+          "Which states are reconstructible from available target measurements?",
+          "Which independent data can discriminate alternative kinetic closures?"
+        ],
+        "source_ids": [
+          "urakawa2008",
+          "villaverde2016_structural_identifiability",
+          "waldron2020_transient_flow_mbdoe"
+        ]
+      },
+      {
+        "id": "u_sc_feasibility",
+        "parent": "systems_control",
+        "title": "Feasibility, robustness, and evidence ladder",
+        "kind": "proposed_theme",
+        "maturity": "ai_worked_out",
+        "summary": "Scientific gain requires physically feasible inputs, uncertainty-aware comparison, independent prediction, and eventually a matched experiment.",
+        "explanation": "A hypothesis should advance through source scope, dimensional and conservation checks, model discrimination, parameter uncertainty, numerical convergence, robust steady/periodic optimization, held-out prediction, and matched experimental comparison. Process limits, safety, pressure, temperature, hydrogen supply, analyzer resolution, and catalyst campaign effects belong in the feasible set.",
+        "equations": [
+          "A robust comparison may use inf_{θ∈Θ} [J_per*(θ)−J_SS*(θ)] under a declared uncertainty set Θ and identical constraints."
+        ],
+        "assumptions": [
+          "Uncertainty sets and safety constraints are evidence-based and not chosen after inspecting the preferred waveform."
+        ],
+        "limitations": [
+          "No simulator, optimizer, fit, or experiment was run in this map comparison."
+        ],
+        "open_questions": [
+          "What evidence threshold and uncertainty criterion would support a target gain claim?"
+        ],
+        "source_ids": [
+          "proposal_main",
+          "kaps2026",
+          "waldron2020_transient_flow_mbdoe"
+        ]
+      }
+    ],
+    "cross_links": [
+      {
+        "id": "x01",
+        "from": "u_ph_reaction",
+        "to": "u_ph_kinetics",
+        "relation": "reaction stoichiometry and pathway hypotheses constrain rate-law choices",
+        "basis": "source-conditioned",
+        "source_ids": [
+          "urmes2019",
+          "borodzinski2000",
+          "stytsenko2022"
+        ]
+      },
+      {
+        "id": "x02",
+        "from": "u_ph_catalyst",
+        "to": "u_ph_kinetics",
+        "relation": "working-surface state changes candidate active sites and fitted kinetic closure",
+        "basis": "source-conditioned alternatives",
+        "source_ids": [
+          "borodzinski2000",
+          "stytsenko2022",
+          "dehghani2019_pdag_alphaal2o3"
+        ]
+      },
+      {
+        "id": "x03",
+        "from": "u_ph_catalyst",
+        "to": "u_ma_inverse",
+        "relation": "alternative site models create model-discrimination and identifiability questions",
+        "basis": "inference problem",
+        "source_ids": [
+          "urmes2019",
+          "borodzinski2000",
+          "stytsenko2022"
+        ]
+      },
+      {
+        "id": "x04",
+        "from": "u_ph_kinetics",
+        "to": "u_ma_scaling",
+        "relation": "surface relaxation and thermal timescales constrain forcing-period ratios",
+        "basis": "conditional scaling",
+        "source_ids": [
+          "urmes2022",
+          "ziegelhoeffer1972"
+        ]
+      },
+      {
+        "id": "x05",
+        "from": "u_ph_transport",
+        "to": "u_sc_plant",
+        "relation": "mixer, line, bed, and analyzer domains determine the realized input and model boundary",
+        "basis": "physical model boundary",
+        "source_ids": [
+          "proposal_main",
+          "danckwerts1953",
+          "mott_green2015"
+        ]
+      },
+      {
+        "id": "x06",
+        "from": "u_ph_transport",
+        "to": "u_ma_conservation",
+        "relation": "bed and pellet transport terms define conservative inventory and flux conventions",
+        "basis": "derived under declared bases",
+        "source_ids": [
+          "proposal_main",
+          "di_giuliano_pellegrino2019"
+        ]
+      },
+      {
+        "id": "x07",
+        "from": "u_ma_conservation",
+        "to": "u_ma_numerics",
+        "relation": "finite-volume face fluxes must preserve the declared global balance",
+        "basis": "mathematical derivation",
+        "source_ids": [
+          "proposal_main"
+        ]
+      },
+      {
+        "id": "x08",
+        "from": "u_ph_measurement",
+        "to": "u_sc_observation",
+        "relation": "instrument transfer and sampling mediate state observability and estimation",
+        "basis": "measurement/control connection",
+        "source_ids": [
+          "urakawa2008",
+          "villaverde2016_structural_identifiability"
+        ]
+      },
+      {
+        "id": "x09",
+        "from": "u_sc_excitation",
+        "to": "u_ma_inverse",
+        "relation": "input design changes information about model parameters",
+        "basis": "model-conditioned design",
+        "source_ids": [
+          "waldron2020_transient_flow_mbdoe",
+          "urmes2022"
+        ]
+      },
+      {
+        "id": "x10",
+        "from": "u_sc_excitation",
+        "to": "u_sc_objective",
+        "relation": "a waveform useful for parameter identification need not improve production",
+        "basis": "objectives distinguished",
+        "source_ids": [
+          "urmes2022",
+          "kaps2026"
+        ]
+      },
+      {
+        "id": "x11",
+        "from": "u_ma_periodic",
+        "to": "u_sc_objective",
+        "relation": "periodic response and no-gain bounds depend on the selected cycle metric and steady comparator",
+        "basis": "conditional mathematical bound",
+        "source_ids": [
+          "feimer1982",
+          "horn_bailey1971",
+          "ziegelhoeffer1972"
+        ]
+      },
+      {
+        "id": "x12",
+        "from": "u_ma_optimization",
+        "to": "u_sc_feasibility",
+        "relation": "physical limits and uncertainty define the optimization feasible set",
+        "basis": "problem formulation",
+        "source_ids": [
+          "proposal_main",
+          "kaps2026"
+        ]
+      },
+      {
+        "id": "x13",
+        "from": "u_ph_thermal",
+        "to": "u_sc_objective",
+        "relation": "campaign aging and thermal cost may change the horizon and resource basis",
+        "basis": "project objective decision",
+        "source_ids": [
+          "dehghani2019_pdag_alphaal2o3",
+          "kaps2026"
+        ]
+      }
+    ],
+    "integrated_node_crosswalk": [
+      {
+        "integrated_node_id": "bep",
+        "title": "BEP scientific domain",
+        "integrated_parent": null,
+        "path": [
+          "bep"
+        ],
+        "proposed_unified_parent": "bep",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#bep",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "physics",
+        "title": "Physics",
+        "integrated_parent": "bep",
+        "path": [
+          "bep",
+          "physics"
+        ],
+        "proposed_unified_parent": "physics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#physics",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "mathematics",
+        "title": "Mathematics",
+        "integrated_parent": "bep",
+        "path": [
+          "bep",
+          "mathematics"
+        ],
+        "proposed_unified_parent": "mathematics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#mathematics",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "systems_control",
+        "title": "Systems & Control",
+        "integrated_parent": "bep",
+        "path": [
+          "bep",
+          "systems_control"
+        ],
+        "proposed_unified_parent": "systems_control",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#systems_control",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_ph_reaction",
+        "title": "Reaction network, pathways and products",
+        "integrated_parent": "physics",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_ph_reaction",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_ph_catalyst",
+        "title": "Catalyst identity, active sites and working-surface state",
+        "integrated_parent": "physics",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_ph_catalyst",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_ph_kinetics",
+        "title": "Kinetic law, thermal dependence and surface-memory closures",
+        "integrated_parent": "physics",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_kinetics"
+        ],
+        "proposed_unified_parent": "u_ph_kinetics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_ph_kinetics",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_ph_transport",
+        "title": "Packed-bed, pellet and interphase transport",
+        "integrated_parent": "physics",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_transport"
+        ],
+        "proposed_unified_parent": "u_ph_transport",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_ph_transport",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_ph_thermal",
+        "title": "Energy balance, thermal dynamics and catalyst evolution",
+        "integrated_parent": "physics",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_thermal"
+        ],
+        "proposed_unified_parent": "u_ph_thermal",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_ph_thermal",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_ma_conservation",
+        "title": "Stoichiometric and continuum conservation models",
+        "integrated_parent": "mathematics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_conservation"
+        ],
+        "proposed_unified_parent": "u_ma_conservation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_ma_conservation",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_ma_scaling",
+        "title": "Dimensionless groups and timescale hierarchy",
+        "integrated_parent": "mathematics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_scaling"
+        ],
+        "proposed_unified_parent": "u_ma_scaling",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_ma_scaling",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_ma_numerics",
+        "title": "Discretization, stiff integration and numerical verification",
+        "integrated_parent": "mathematics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_numerics"
+        ],
+        "proposed_unified_parent": "u_ma_numerics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_ma_numerics",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_ma_periodic",
+        "title": "Periodic orbits, mean response and no-gain limits",
+        "integrated_parent": "mathematics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_periodic"
+        ],
+        "proposed_unified_parent": "u_ma_periodic",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_ma_periodic",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_ma_inverse",
+        "title": "Identifiability, sensitivity and uncertainty",
+        "integrated_parent": "mathematics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_inverse"
+        ],
+        "proposed_unified_parent": "u_ma_inverse",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_ma_inverse",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_sc_plant",
+        "title": "Plant, input realization and model boundary",
+        "integrated_parent": "systems_control",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_plant"
+        ],
+        "proposed_unified_parent": "u_sc_plant",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_sc_plant",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_sc_excitation",
+        "title": "Periodic excitation and kinetic discrimination",
+        "integrated_parent": "systems_control",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_excitation"
+        ],
+        "proposed_unified_parent": "u_sc_excitation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_sc_excitation",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_sc_objective",
+        "title": "Cycle metric and optimized steady benchmark",
+        "integrated_parent": "systems_control",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_objective"
+        ],
+        "proposed_unified_parent": "u_sc_objective",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_sc_objective",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_sc_observation",
+        "title": "Measurements, observability and state estimation",
+        "integrated_parent": "systems_control",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_observation"
+        ],
+        "proposed_unified_parent": "u_sc_observation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_sc_observation",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_sc_feasibility",
+        "title": "Feasibility, robustness and evidence ladder",
+        "integrated_parent": "systems_control",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_feasibility"
+        ],
+        "proposed_unified_parent": "u_sc_feasibility",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_sc_feasibility",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_ph_measurement",
+        "title": "Measurements, instrumentation and physical observables",
+        "integrated_parent": "physics",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_measurement"
+        ],
+        "proposed_unified_parent": "u_ph_measurement",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_ph_measurement",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "u_ma_optimization",
+        "title": "Mathematical optimization and optimal-control formulations",
+        "integrated_parent": "mathematics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_optimization"
+        ],
+        "proposed_unified_parent": "u_ma_optimization",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#u_ma_optimization",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_site_ensembles",
+        "title": "Site Families, Ensembles and Occupancy",
+        "integrated_parent": "u_ph_catalyst",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_site_ensembles"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_site_ensembles",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_pd_ag_surface",
+        "title": "Working PdAg Surface Structure",
+        "integrated_parent": "u_ph_catalyst",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_pd_ag_surface"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_pd_ag_surface",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_catalyst_memory",
+        "title": "Catalyst-State Memory Beyond Adsorbate Coverage",
+        "integrated_parent": "u_ph_catalyst",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_catalyst_memory"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_catalyst_memory",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_reaction_network",
+        "title": "Reaction network and product accounting",
+        "integrated_parent": "u_ph_reaction",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "ph_reaction_network"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_reaction_network",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_sequential_path",
+        "title": "Sequential hydrogenation path",
+        "integrated_parent": "ph_reaction_network",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "ph_reaction_network",
+          "ph_sequential_path"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_sequential_path",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_competing_channels",
+        "title": "Competing products and catalyst deposits",
+        "integrated_parent": "ph_reaction_network",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "ph_reaction_network",
+          "ph_competing_channels"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_competing_channels",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_metrics",
+        "title": "Conversion, selectivity and yield",
+        "integrated_parent": "ph_reaction_network",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "ph_reaction_network",
+          "ph_metrics"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_metrics",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_surface_states",
+        "title": "Surface states and site inventory",
+        "integrated_parent": "u_ph_catalyst",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_surface_states",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_lh_rates",
+        "title": "Elementary Rates and Langmuir–Hinshelwood Reduction",
+        "integrated_parent": "ph_surface_states",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "ph_lh_rates"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_lh_rates",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_adsorbate_balance",
+        "title": "Coverage balance and site conservation",
+        "integrated_parent": "ph_surface_states",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "ph_adsorbate_balance"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_adsorbate_balance",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_mechanism_choice",
+        "title": "Mechanism choice and catalyst specificity",
+        "integrated_parent": "ph_surface_states",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "ph_mechanism_choice"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_mechanism_choice",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_dynamic_memory",
+        "title": "Dynamic surface coverage and catalyst memory",
+        "integrated_parent": "ph_surface_states",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "ph_dynamic_memory"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_dynamic_memory",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_residence_time_distribution",
+        "title": "Residence-Time Distribution and Input Propagation",
+        "integrated_parent": "u_ph_transport",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_transport",
+          "ph_residence_time_distribution"
+        ],
+        "proposed_unified_parent": "u_ph_transport",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_residence_time_distribution",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_axial_balance",
+        "title": "Axial convection–dispersion and reaction source",
+        "integrated_parent": "u_ph_transport",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_transport",
+          "ph_axial_balance"
+        ],
+        "proposed_unified_parent": "u_ph_transport",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_axial_balance",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_axial_dispersion",
+        "title": "Axial dispersion versus plug-flow limit",
+        "integrated_parent": "ph_axial_balance",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_transport",
+          "ph_axial_balance",
+          "ph_axial_dispersion"
+        ],
+        "proposed_unified_parent": "u_ph_transport",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_axial_dispersion",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_pellet_transport",
+        "title": "Film and intraparticle transport",
+        "integrated_parent": "u_ph_transport",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_transport",
+          "ph_pellet_transport"
+        ],
+        "proposed_unified_parent": "u_ph_transport",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_pellet_transport",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_danckwerts",
+        "title": "Inlet and outlet flux boundary conditions",
+        "integrated_parent": "u_ph_transport",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_transport",
+          "ph_danckwerts"
+        ],
+        "proposed_unified_parent": "u_ph_transport",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_danckwerts",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_energy_balance",
+        "title": "Packed-Bed Energy Balance as an Extension",
+        "integrated_parent": "u_ph_thermal",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_thermal",
+          "ph_energy_balance"
+        ],
+        "proposed_unified_parent": "u_ph_thermal",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_energy_balance",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_isothermal",
+        "title": "Isothermal baseline and energy-balance boundary",
+        "integrated_parent": "u_ph_thermal",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_thermal",
+          "ph_isothermal"
+        ],
+        "proposed_unified_parent": "u_ph_thermal",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_isothermal",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_deposits",
+        "title": "Carbonaceous deposits and catalyst aging",
+        "integrated_parent": "u_ph_catalyst",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_deposits"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_deposits",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_boundary_measurement",
+        "title": "Boundary gas composition and analyzer dynamics",
+        "integrated_parent": "u_ph_measurement",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_measurement",
+          "ph_boundary_measurement"
+        ],
+        "proposed_unified_parent": "u_ph_measurement",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_boundary_measurement",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_operando_spectroscopy",
+        "title": "Modulation-excitation spectroscopy",
+        "integrated_parent": "u_ph_measurement",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_measurement",
+          "ph_operando_spectroscopy"
+        ],
+        "proposed_unified_parent": "u_ph_measurement",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_operando_spectroscopy",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_stoichiometry",
+        "title": "Stoichiometric matrix and rate basis",
+        "integrated_parent": "u_ma_conservation",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_conservation",
+          "ma_stoichiometry"
+        ],
+        "proposed_unified_parent": "u_ma_conservation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_stoichiometry",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_gas_pde",
+        "title": "Gas-phase packed-bed PDE",
+        "integrated_parent": "u_ma_conservation",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_conservation",
+          "ma_gas_pde"
+        ],
+        "proposed_unified_parent": "u_ma_conservation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_gas_pde",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_surface_balance",
+        "title": "Surface-state ODE and algebraic closure",
+        "integrated_parent": "u_ma_conservation",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_conservation",
+          "ma_surface_balance"
+        ],
+        "proposed_unified_parent": "u_ma_conservation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_surface_balance",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_initial_boundary",
+        "title": "Initial and boundary data",
+        "integrated_parent": "u_ma_conservation",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_conservation",
+          "ma_initial_boundary"
+        ],
+        "proposed_unified_parent": "u_ma_conservation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_initial_boundary",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_pellet_scaling",
+        "title": "Pellet Diffusion Time and Thiele Scaling",
+        "integrated_parent": "u_ma_scaling",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_scaling",
+          "ma_pellet_scaling"
+        ],
+        "proposed_unified_parent": "u_ma_scaling",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_pellet_scaling",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_Peclet",
+        "title": "Axial Péclet number",
+        "integrated_parent": "u_ma_scaling",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_scaling",
+          "ma_Peclet"
+        ],
+        "proposed_unified_parent": "u_ma_scaling",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_Peclet",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_Damkohler",
+        "title": "Damköhler numbers and source scaling",
+        "integrated_parent": "u_ma_scaling",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_scaling",
+          "ma_Damkohler"
+        ],
+        "proposed_unified_parent": "u_ma_scaling",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_Damkohler",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_Strouhal",
+        "title": "Forcing Strouhal number",
+        "integrated_parent": "u_ma_scaling",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_scaling",
+          "ma_Strouhal"
+        ],
+        "proposed_unified_parent": "u_ma_scaling",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_Strouhal",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_timescale",
+        "title": "Timescale hierarchy and stiffness diagnostics",
+        "integrated_parent": "u_ma_scaling",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_scaling",
+          "ma_timescale"
+        ],
+        "proposed_unified_parent": "u_ma_scaling",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_timescale",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_MOL",
+        "title": "Method of lines",
+        "integrated_parent": "u_ma_numerics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_numerics",
+          "ma_MOL"
+        ],
+        "proposed_unified_parent": "u_ma_numerics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_MOL",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_convection_scheme",
+        "title": "Convection-dominated spatial schemes",
+        "integrated_parent": "u_ma_numerics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_numerics",
+          "ma_convection_scheme"
+        ],
+        "proposed_unified_parent": "u_ma_numerics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_convection_scheme",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_stiff_solver",
+        "title": "Stiff ODE integration",
+        "integrated_parent": "u_ma_numerics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_numerics",
+          "ma_stiff_solver"
+        ],
+        "proposed_unified_parent": "u_ma_numerics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_stiff_solver",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_discontinuous_input",
+        "title": "Discontinuous and smooth forcing representations",
+        "integrated_parent": "u_ma_numerics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_numerics",
+          "ma_discontinuous_input"
+        ],
+        "proposed_unified_parent": "u_ma_numerics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_discontinuous_input",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_numerical_checks",
+        "title": "Numerical verification and conservation checks",
+        "integrated_parent": "u_ma_numerics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_numerics",
+          "ma_numerical_checks"
+        ],
+        "proposed_unified_parent": "u_ma_numerics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_numerical_checks",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_identifiability",
+        "title": "Parameter identifiability and compensation",
+        "integrated_parent": "u_ma_inverse",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_inverse",
+          "ma_identifiability"
+        ],
+        "proposed_unified_parent": "u_ma_inverse",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_identifiability",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_sensitivity",
+        "title": "Sensitivity and uncertainty propagation",
+        "integrated_parent": "u_ma_inverse",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_inverse",
+          "ma_sensitivity"
+        ],
+        "proposed_unified_parent": "u_ma_inverse",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_sensitivity",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_average_gain",
+        "title": "Conditions for a Periodic Average Gain",
+        "integrated_parent": "u_ma_periodic",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_periodic",
+          "ma_average_gain"
+        ],
+        "proposed_unified_parent": "u_ma_periodic",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_average_gain",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_lti_no_gain",
+        "title": "Stable Linear Systems Preserve the Mean",
+        "integrated_parent": "ma_average_gain",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_periodic",
+          "ma_average_gain",
+          "ma_lti_no_gain"
+        ],
+        "proposed_unified_parent": "u_ma_periodic",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_lti_no_gain",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_concavity_bound",
+        "title": "Jensen Bound for a Static Concave Response",
+        "integrated_parent": "ma_average_gain",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_periodic",
+          "ma_average_gain",
+          "ma_concavity_bound"
+        ],
+        "proposed_unified_parent": "u_ma_periodic",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_concavity_bound",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_nonlinear_rectification",
+        "title": "Nonlinear Frequency Response and Mean Rectification",
+        "integrated_parent": "ma_average_gain",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_periodic",
+          "ma_average_gain",
+          "ma_nonlinear_rectification"
+        ],
+        "proposed_unified_parent": "u_ma_periodic",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_nonlinear_rectification",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_periodic_orbit",
+        "title": "Periodic orbit and Poincaré map",
+        "integrated_parent": "u_ma_periodic",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_periodic",
+          "ma_periodic_orbit"
+        ],
+        "proposed_unified_parent": "u_ma_periodic",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_periodic_orbit",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_stability",
+        "title": "Steady-state and periodic stability",
+        "integrated_parent": "u_ma_periodic",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_periodic",
+          "ma_stability"
+        ],
+        "proposed_unified_parent": "u_ma_periodic",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_stability",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_manipulated_input",
+        "title": "Manipulated inlet composition and actuators",
+        "integrated_parent": "u_sc_plant",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_plant",
+          "sc_manipulated_input"
+        ],
+        "proposed_unified_parent": "u_sc_plant",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_manipulated_input",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_bed_input_realization",
+        "title": "Command-to-Bed Input Realization",
+        "integrated_parent": "sc_manipulated_input",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_plant",
+          "sc_manipulated_input",
+          "sc_bed_input_realization"
+        ],
+        "proposed_unified_parent": "u_sc_plant",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_bed_input_realization",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_output_model",
+        "title": "Outputs and measurement model",
+        "integrated_parent": "u_sc_plant",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_plant",
+          "sc_output_model"
+        ],
+        "proposed_unified_parent": "u_sc_plant",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_output_model",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_excitation",
+        "title": "Dynamic excitation and kinetic discrimination",
+        "integrated_parent": "u_sc_excitation",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_excitation",
+          "sc_excitation"
+        ],
+        "proposed_unified_parent": "u_sc_excitation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_excitation",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_waveform",
+        "title": "Waveform parameterization",
+        "integrated_parent": "u_sc_excitation",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_excitation",
+          "sc_waveform"
+        ],
+        "proposed_unified_parent": "u_sc_excitation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_waveform",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_hardware_constraints",
+        "title": "Hardware and process feasibility constraints",
+        "integrated_parent": "u_sc_excitation",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_excitation",
+          "sc_hardware_constraints"
+        ],
+        "proposed_unified_parent": "u_sc_excitation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_hardware_constraints",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_baseline",
+        "title": "Matched steady-state comparison",
+        "integrated_parent": "u_sc_excitation",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_excitation",
+          "sc_baseline"
+        ],
+        "proposed_unified_parent": "u_sc_excitation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_baseline",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_benchmark_nesting",
+        "title": "Feasible-Set Nesting and the No-Worse Comparator",
+        "integrated_parent": "sc_baseline",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_excitation",
+          "sc_baseline",
+          "sc_benchmark_nesting"
+        ],
+        "proposed_unified_parent": "u_sc_excitation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_benchmark_nesting",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_objective",
+        "title": "Cycle-integrated objective",
+        "integrated_parent": "u_sc_objective",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_objective",
+          "sc_objective"
+        ],
+        "proposed_unified_parent": "u_sc_objective",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_objective",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_local_search",
+        "title": "Local optimization and solution claims",
+        "integrated_parent": "u_sc_objective",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_objective",
+          "sc_local_search"
+        ],
+        "proposed_unified_parent": "u_sc_objective",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_local_search",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_robustness",
+        "title": "Robustness to uncertainty and mismatch",
+        "integrated_parent": "u_sc_objective",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_objective",
+          "sc_robustness"
+        ],
+        "proposed_unified_parent": "u_sc_objective",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_robustness",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_observability",
+        "title": "Observability of latent bed and surface states",
+        "integrated_parent": "u_sc_observation",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_observation",
+          "sc_observability"
+        ],
+        "proposed_unified_parent": "u_sc_observation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_observability",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_ekf_ukf",
+        "title": "EKF/UKF as possible future estimators",
+        "integrated_parent": "u_sc_observation",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_observation",
+          "sc_ekf_ukf"
+        ],
+        "proposed_unified_parent": "u_sc_observation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_ekf_ukf",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_identification_vs_performance",
+        "title": "Kinetic Identification Is Not Performance Improvement",
+        "integrated_parent": "u_sc_excitation",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_excitation",
+          "sc_identification_vs_performance"
+        ],
+        "proposed_unified_parent": "u_sc_excitation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_identification_vs_performance",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_co_design",
+        "title": "Excitation, measurement and control co-design",
+        "integrated_parent": "u_sc_excitation",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_excitation",
+          "sc_co_design"
+        ],
+        "proposed_unified_parent": "u_sc_excitation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_co_design",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_validation",
+        "title": "Validation ladder and evidence boundary",
+        "integrated_parent": "u_sc_excitation",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_excitation",
+          "sc_validation"
+        ],
+        "proposed_unified_parent": "u_sc_excitation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_validation",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "lhhw_kinetics",
+        "title": "Larsen BEP thesis: extended empirical LHHW closure",
+        "integrated_parent": "u_ph_kinetics",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_kinetics",
+          "lhhw_kinetics"
+        ],
+        "proposed_unified_parent": "u_ph_kinetics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#lhhw_kinetics",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "centered_arrhenius",
+        "title": "Centered Arrhenius parameterization",
+        "integrated_parent": "lhhw_kinetics",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_kinetics",
+          "lhhw_kinetics",
+          "centered_arrhenius"
+        ],
+        "proposed_unified_parent": "u_ph_kinetics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#centered_arrhenius",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "reaction_thermodynamics",
+        "title": "Reaction Exothermicity & Heats of Hydrogenation",
+        "integrated_parent": "u_ph_thermal",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_thermal",
+          "reaction_thermodynamics"
+        ],
+        "proposed_unified_parent": "u_ph_thermal",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#reaction_thermodynamics",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "internal_diffusion_thiele",
+        "title": "Intraparticle Diffusion & Thiele Modulus",
+        "integrated_parent": "ph_pellet_transport",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_transport",
+          "ph_pellet_transport",
+          "internal_diffusion_thiele"
+        ],
+        "proposed_unified_parent": "u_ph_transport",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#internal_diffusion_thiele",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "external_film_transfer",
+        "title": "External Fluid-Solid Film Transport (Mears Criterion)",
+        "integrated_parent": "ph_pellet_transport",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_transport",
+          "ph_pellet_transport",
+          "external_film_transfer"
+        ],
+        "proposed_unified_parent": "u_ph_transport",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#external_film_transfer",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "reactor_operating_window",
+        "title": "Operating Window & Thermal Runaway Boundaries",
+        "integrated_parent": "u_sc_feasibility",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_feasibility",
+          "reactor_operating_window"
+        ],
+        "proposed_unified_parent": "u_sc_feasibility",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#reactor_operating_window",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "periodic_feed_forcing",
+        "title": "Periodic Concentration & Flow Modulation",
+        "integrated_parent": "u_sc_excitation",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_excitation",
+          "periodic_feed_forcing"
+        ],
+        "proposed_unified_parent": "u_sc_excitation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#periodic_feed_forcing",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "cooling_jacket_control",
+        "title": "Multi-Zone Temperature Control & Heat Exchange",
+        "integrated_parent": "u_sc_feasibility",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_feasibility",
+          "cooling_jacket_control"
+        ],
+        "proposed_unified_parent": "u_sc_feasibility",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#cooling_jacket_control",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "state_observer_mpc",
+        "title": "State Estimation & Nonlinear MPC Formulations",
+        "integrated_parent": "u_sc_observation",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_observation",
+          "state_observer_mpc"
+        ],
+        "proposed_unified_parent": "u_sc_observation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#state_observer_mpc",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "pdc_process_dynamics_foundations",
+        "title": "PDC — Process Dynamics foundations",
+        "integrated_parent": "u_sc_plant",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_plant",
+          "pdc_process_dynamics_foundations"
+        ],
+        "proposed_unified_parent": "u_sc_plant",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#pdc_process_dynamics_foundations",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_acetylene_semihydrogenation",
+        "title": "Desired acetylene semi-hydrogenation",
+        "integrated_parent": "ph_reaction_network",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "ph_reaction_network",
+          "c1_acetylene_semihydrogenation"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_acetylene_semihydrogenation",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_ethylene_overhydrogenation",
+        "title": "Competing ethylene hydrogenation",
+        "integrated_parent": "ph_reaction_network",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "ph_reaction_network",
+          "c1_ethylene_overhydrogenation"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_ethylene_overhydrogenation",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_ethylene_rich_inlet",
+        "title": "Pre-existing ethylene in tail-end feed",
+        "integrated_parent": "c1_ethylene_overhydrogenation",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "ph_reaction_network",
+          "c1_ethylene_overhydrogenation",
+          "c1_ethylene_rich_inlet"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_ethylene_rich_inlet",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_net_gas_source_vector",
+        "title": "Gas-phase net stoichiometric source vector",
+        "integrated_parent": "ma_stoichiometry",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_conservation",
+          "ma_stoichiometry",
+          "c1_net_gas_source_vector"
+        ],
+        "proposed_unified_parent": "u_ma_conservation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_net_gas_source_vector",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_microscopic_surface_path",
+        "title": "Microscopic surface reaction pathways",
+        "integrated_parent": "u_ph_reaction",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "c1_microscopic_surface_path"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_microscopic_surface_path",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_horiuti_polanyi_family",
+        "title": "Horiuti–Polanyi sequential-H mechanism family",
+        "integrated_parent": "c1_microscopic_surface_path",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "c1_microscopic_surface_path",
+          "c1_horiuti_polanyi_family"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_horiuti_polanyi_family",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_vinyl_intermediate",
+        "title": "First H addition: adsorbed vinyl (C2H3*)",
+        "integrated_parent": "c1_horiuti_polanyi_family",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "c1_microscopic_surface_path",
+          "c1_horiuti_polanyi_family",
+          "c1_vinyl_intermediate"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_vinyl_intermediate",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_adsorbed_ethylene_fork",
+        "title": "Second H addition and adsorbed-ethylene fork",
+        "integrated_parent": "c1_vinyl_intermediate",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "c1_microscopic_surface_path",
+          "c1_horiuti_polanyi_family",
+          "c1_vinyl_intermediate",
+          "c1_adsorbed_ethylene_fork"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_adsorbed_ethylene_fork",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_adsorbed_ethylene_desorption",
+        "title": "Ethylene desorption from the catalyst surface",
+        "integrated_parent": "c1_adsorbed_ethylene_fork",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "c1_microscopic_surface_path",
+          "c1_horiuti_polanyi_family",
+          "c1_vinyl_intermediate",
+          "c1_adsorbed_ethylene_fork",
+          "c1_adsorbed_ethylene_desorption"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_adsorbed_ethylene_desorption",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_ethyl_intermediate",
+        "title": "Continued H addition: adsorbed ethyl (C2H5*)",
+        "integrated_parent": "c1_adsorbed_ethylene_fork",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "c1_microscopic_surface_path",
+          "c1_horiuti_polanyi_family",
+          "c1_vinyl_intermediate",
+          "c1_adsorbed_ethylene_fork",
+          "c1_ethyl_intermediate"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_ethyl_intermediate",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_parallel_ethane_paths",
+        "title": "Alternative paths to ethane",
+        "integrated_parent": "u_ph_reaction",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "c1_parallel_ethane_paths"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_parallel_ethane_paths",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_no_independent_direct_rate",
+        "title": "Conditional omission of a third fitted ethane rate",
+        "integrated_parent": "c1_parallel_ethane_paths",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "c1_parallel_ethane_paths",
+          "c1_no_independent_direct_rate"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_no_independent_direct_rate",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_vinyl_ethylidene_alternative",
+        "title": "Vinyl-to-ethylidene bypass hypothesis",
+        "integrated_parent": "c1_no_independent_direct_rate",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "c1_parallel_ethane_paths",
+          "c1_no_independent_direct_rate",
+          "c1_vinyl_ethylidene_alternative"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_vinyl_ethylidene_alternative",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_c4_coke_deactivation",
+        "title": "C4+ products, coke and catalyst deactivation",
+        "integrated_parent": "u_ph_reaction",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_reaction",
+          "c1_c4_coke_deactivation"
+        ],
+        "proposed_unified_parent": "u_ph_reaction",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_c4_coke_deactivation",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_catalyst_identity",
+        "title": "Catalyst identity and transferable mechanism limits",
+        "integrated_parent": "u_ph_catalyst",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "c1_catalyst_identity"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_catalyst_identity",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_urmes_source_catalyst",
+        "title": "2019 single-site Pd/alpha-Al2O3 source catalyst",
+        "integrated_parent": "c1_catalyst_identity",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "c1_catalyst_identity",
+          "c1_urmes_source_catalyst"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_urmes_source_catalyst",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_pdag_support_transfer",
+        "title": "Pd–Ag alloy and support transfer questions",
+        "integrated_parent": "c1_catalyst_identity",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "c1_catalyst_identity",
+          "c1_pdag_support_transfer"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_pdag_support_transfer",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_multisite_hydride_carbide",
+        "title": "Multiple sites, hydrides and carbonaceous surface states",
+        "integrated_parent": "c1_pdag_support_transfer",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "c1_catalyst_identity",
+          "c1_pdag_support_transfer",
+          "c1_multisite_hydride_carbide"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_multisite_hydride_carbide",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_surface_sites",
+        "title": "Adsorption sites and fractional occupancy",
+        "integrated_parent": "ph_surface_states",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "c1_surface_sites"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_surface_sites",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_full_site_balance",
+        "title": "Full six-term single-site occupancy balance",
+        "integrated_parent": "ph_surface_states",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "c1_full_site_balance"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_full_site_balance",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_reduced_site_balance",
+        "title": "Reduced occupancy approximation in the 2019 fit",
+        "integrated_parent": "ph_surface_states",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "c1_reduced_site_balance"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_reduced_site_balance",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_adsorption_desorption",
+        "title": "Adsorption, desorption and competition for sites",
+        "integrated_parent": "ph_surface_states",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "c1_adsorption_desorption"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_adsorption_desorption",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_dissociative_h2_adsorption",
+        "title": "Dissociative hydrogen adsorption on Pd sites",
+        "integrated_parent": "c1_adsorption_desorption",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "c1_adsorption_desorption",
+          "c1_dissociative_h2_adsorption"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_dissociative_h2_adsorption",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_adjacent_site_requirement",
+        "title": "Neighboring-vacancy requirement for H2 dissociation",
+        "integrated_parent": "c1_dissociative_h2_adsorption",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "c1_adsorption_desorption",
+          "c1_dissociative_h2_adsorption",
+          "c1_adjacent_site_requirement"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_adjacent_site_requirement",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_hydrocarbon_site_competition",
+        "title": "Competitive acetylene/ethylene adsorption",
+        "integrated_parent": "c1_adsorption_desorption",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "c1_adsorption_desorption",
+          "c1_hydrocarbon_site_competition"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_hydrocarbon_site_competition",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_ethylene_readsorption",
+        "title": "Ethylene readsorption and secondary hydrogenation",
+        "integrated_parent": "c1_hydrocarbon_site_competition",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "c1_adsorption_desorption",
+          "c1_hydrocarbon_site_competition",
+          "c1_ethylene_readsorption"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_ethylene_readsorption",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_kinetic_closure_boundary",
+        "title": "Boundary between chemical mechanism and kinetic closure",
+        "integrated_parent": "u_ph_kinetics",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_kinetics",
+          "c1_kinetic_closure_boundary"
+        ],
+        "proposed_unified_parent": "u_ph_kinetics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_kinetic_closure_boundary",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c2_urmes_2019_effective_rates",
+        "title": "Urmès 2019 effective single-site PSSA kinetics",
+        "integrated_parent": "u_ph_kinetics",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_kinetics",
+          "c2_urmes_2019_effective_rates"
+        ],
+        "proposed_unified_parent": "u_ph_kinetics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c2_urmes_2019_effective_rates",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c2_urmes_2019_adsorption_denominator",
+        "title": "Competitive adsorption denominator and vacant-site closure",
+        "integrated_parent": "c2_urmes_2019_effective_rates",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_kinetics",
+          "c2_urmes_2019_effective_rates",
+          "c2_urmes_2019_adsorption_denominator"
+        ],
+        "proposed_unified_parent": "u_ph_kinetics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c2_urmes_2019_adsorption_denominator",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c2_urmes_2019_net_rates",
+        "title": "Two hydrogenation rate expressions and gas sources",
+        "integrated_parent": "c2_urmes_2019_effective_rates",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_kinetics",
+          "c2_urmes_2019_effective_rates",
+          "c2_urmes_2019_net_rates"
+        ],
+        "proposed_unified_parent": "u_ph_kinetics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c2_urmes_2019_net_rates",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c2_urmes_2019_parameter_ledger",
+        "title": "Urmès et al. (2019): reported fitted parameters and source-text conflict",
+        "integrated_parent": "c2_urmes_2019_effective_rates",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_kinetics",
+          "c2_urmes_2019_effective_rates",
+          "c2_urmes_2019_parameter_ledger"
+        ],
+        "proposed_unified_parent": "u_ph_kinetics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c2_urmes_2019_parameter_ledger",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c2_surface_kinetic_closure_choices",
+        "title": "Surface-kinetic closure: algebraic PSSA or dynamic coverages",
+        "integrated_parent": "u_ph_kinetics",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_kinetics",
+          "c2_surface_kinetic_closure_choices"
+        ],
+        "proposed_unified_parent": "u_ph_kinetics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c2_surface_kinetic_closure_choices",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c2_pssa_not_steady_reactor",
+        "title": "Pseudo-steady surface kinetics can feed a dynamic reactor",
+        "integrated_parent": "c2_surface_kinetic_closure_choices",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_kinetics",
+          "c2_surface_kinetic_closure_choices",
+          "c2_pssa_not_steady_reactor"
+        ],
+        "proposed_unified_parent": "u_ph_kinetics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c2_pssa_not_steady_reactor",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c2_dynamic_theta_model_calibration_gap",
+        "title": "Explicit surface-coverage ODEs need independent elementary parameters",
+        "integrated_parent": "c2_surface_kinetic_closure_choices",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_kinetics",
+          "c2_surface_kinetic_closure_choices",
+          "c2_dynamic_theta_model_calibration_gap"
+        ],
+        "proposed_unified_parent": "u_ph_kinetics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c2_dynamic_theta_model_calibration_gap",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c2_transient_parameter_identifiability",
+        "title": "Transient excitation and kinetic identifiability questions",
+        "integrated_parent": "ma_identifiability",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_inverse",
+          "ma_identifiability",
+          "c2_transient_parameter_identifiability"
+        ],
+        "proposed_unified_parent": "u_ma_inverse",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c2_transient_parameter_identifiability",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_numerical_stability",
+        "title": "Numerical stability, positivity and invariant constraints",
+        "integrated_parent": "u_ma_numerics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_numerics",
+          "ma_numerical_stability"
+        ],
+        "proposed_unified_parent": "u_ma_numerics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_numerical_stability",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_pde_ode_coupling",
+        "title": "Coupling distributed gas balances to local surface kinetics",
+        "integrated_parent": "u_ma_conservation",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_conservation",
+          "ma_pde_ode_coupling"
+        ],
+        "proposed_unified_parent": "u_ma_conservation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_pde_ode_coupling",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_borodzinski_ae_site_hypothesis",
+        "title": "Deposit-associated A and E site-family hypothesis",
+        "integrated_parent": "ph_mechanism_choice",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "ph_mechanism_choice",
+          "c1_borodzinski_ae_site_hypothesis"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_borodzinski_ae_site_hypothesis",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_borodzinski_ae_effective_rates",
+        "title": "A/E model's quasi-steady rate closure and gas-source boundary",
+        "integrated_parent": "c1_borodzinski_ae_site_hypothesis",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "ph_mechanism_choice",
+          "c1_borodzinski_ae_site_hypothesis",
+          "c1_borodzinski_ae_effective_rates"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_borodzinski_ae_effective_rates",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_pd_mn_adsorption_substitution",
+        "title": "Pd–Mn adsorption substitution as an alternative kinetic model",
+        "integrated_parent": "ph_mechanism_choice",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_surface_states",
+          "ph_mechanism_choice",
+          "c1_pd_mn_adsorption_substitution"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_pd_mn_adsorption_substitution",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_pdag_descriptor_mkm",
+        "title": "PdAg surface descriptors and steady microkinetic screening",
+        "integrated_parent": "ph_pd_ag_surface",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_pd_ag_surface",
+          "c1_pdag_descriptor_mkm"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_pdag_descriptor_mkm",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "c1_pdag_industrial_lhhw_decay",
+        "title": "Industrial Pd–Ag α-alumina: fitted LHHW rates and campaign-time activity decay",
+        "integrated_parent": "ph_catalyst_memory",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_catalyst",
+          "ph_catalyst_memory",
+          "c1_pdag_industrial_lhhw_decay"
+        ],
+        "proposed_unified_parent": "u_ph_catalyst",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#c1_pdag_industrial_lhhw_decay",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_variable_superficial_velocity",
+        "title": "Variable superficial velocity and total-flow closure",
+        "integrated_parent": "ph_axial_balance",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_transport",
+          "ph_axial_balance",
+          "ph_variable_superficial_velocity"
+        ],
+        "proposed_unified_parent": "u_ph_transport",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_variable_superficial_velocity",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ph_boundary_model_interpretations",
+        "title": "Boundary conditions depend on the modeled external domain",
+        "integrated_parent": "ph_danckwerts",
+        "path": [
+          "bep",
+          "physics",
+          "u_ph_transport",
+          "ph_danckwerts",
+          "ph_boundary_model_interpretations"
+        ],
+        "proposed_unified_parent": "u_ph_transport",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ph_boundary_model_interpretations",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_conservative_finite_volume",
+        "title": "Conservative finite-volume balance for a packed-bed cell",
+        "integrated_parent": "u_ma_numerics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_numerics",
+          "ma_conservative_finite_volume"
+        ],
+        "proposed_unified_parent": "u_ma_numerics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_conservative_finite_volume",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_explicit_transport_step_bound",
+        "title": "Explicit transport stability and positivity limits",
+        "integrated_parent": "u_ma_numerics",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_numerics",
+          "ma_explicit_transport_step_bound"
+        ],
+        "proposed_unified_parent": "u_ma_numerics",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_explicit_transport_step_bound",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_nonlinear_observability_identifiability",
+        "title": "Local observability and structural identifiability",
+        "integrated_parent": "sc_observability",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_observation",
+          "sc_observability",
+          "sc_nonlinear_observability_identifiability"
+        ],
+        "proposed_unified_parent": "u_sc_observation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_nonlinear_observability_identifiability",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_unknown_input_reconstructibility",
+        "title": "Reconstructibility of an unmeasured bed-plane input",
+        "integrated_parent": "sc_observability",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_observation",
+          "sc_observability",
+          "sc_unknown_input_reconstructibility"
+        ],
+        "proposed_unified_parent": "u_sc_observation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_unknown_input_reconstructibility",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_periodic_frequency_response_identification",
+        "title": "Periodic gain and phase as identification measurements",
+        "integrated_parent": "u_sc_excitation",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_excitation",
+          "sc_periodic_frequency_response_identification"
+        ],
+        "proposed_unified_parent": "u_sc_excitation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_periodic_frequency_response_identification",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_fair_steady_periodic_cycle_comparison",
+        "title": "Matched cycle-integrated periodic and steady optimum",
+        "integrated_parent": "sc_benchmark_nesting",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_excitation",
+          "sc_baseline",
+          "sc_benchmark_nesting",
+          "sc_fair_steady_periodic_cycle_comparison"
+        ],
+        "proposed_unified_parent": "u_sc_excitation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_fair_steady_periodic_cycle_comparison",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "ma_fisher_information_model_based_design",
+        "title": "Fisher information and model-based experiment design",
+        "integrated_parent": "ma_sensitivity",
+        "path": [
+          "bep",
+          "mathematics",
+          "u_ma_inverse",
+          "ma_sensitivity",
+          "ma_fisher_information_model_based_design"
+        ],
+        "proposed_unified_parent": "u_ma_inverse",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#ma_fisher_information_model_based_design",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      },
+      {
+        "integrated_node_id": "sc_persistent_excitation_condition",
+        "title": "Persistent excitation and information content of a periodic input",
+        "integrated_parent": "u_sc_excitation",
+        "path": [
+          "bep",
+          "systems_control",
+          "u_sc_excitation",
+          "sc_persistent_excitation_condition"
+        ],
+        "proposed_unified_parent": "u_sc_excitation",
+        "content_ref": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/nodes.yaml#sc_persistent_excitation_condition",
+        "mapping_basis": "nearest depth-two Physics, Mathematics, or Systems & Control theme ancestor; provisional semantic placement"
+      }
+    ],
+    "source_evidence": [
+      {
+        "id": "urmes2022",
+        "title": "Microkinetic Modeling of Acetylene Hydrogenation Under Periodic Reactor Operation",
+        "doi": "10.1002/cctc.202101826",
+        "url": "https://doi.org/10.1002/cctc.202101826",
+        "access": "abstract_and_preview",
+        "supports": "Small-amplitude periodic-flow experiments on Pd/α-Al2O3; parameter estimation and fitted outlet-composition histories for a source-specific single-site kinetic model.",
+        "limits": "Accessible abstract/preview does not establish the full axial model scope, PdAg transfer, or productivity/selectivity gain."
+      },
+      {
+        "id": "urmes2019",
+        "title": "Kinetic Study of the Selective Hydrogenation of Acetylene over Supported Palladium under Tail-End Conditions",
+        "doi": "10.3390/catal9020180",
+        "url": "https://doi.org/10.3390/catal9020180",
+        "access": "full_text_read",
+        "supports": "A steady single-site Pd/α-Al2O3 PSSA model for its tested tail-end conditions; text and parameter table preserve K1=611 Pa^-1 vs 13 Pa^-1 conflict.",
+        "limits": "Does not establish target PdAg parameters or transient surface memory; K1 discrepancy remains unresolved in the source."
+      },
+      {
+        "id": "borodzinski2000",
+        "title": "The Kinetic Model of Hydrogenation of Acetylene–Ethylene Mixtures over Palladium Surface Covered by Carbonaceous Deposits",
+        "doi": "10.1016/S0926-860X(99)00498-6",
+        "url": "https://doi.org/10.1016/S0926-860X(99)00498-6",
+        "access": "full_text_read",
+        "supports": "Model comparison and fitted A/E deposit-associated site-family kinetics for commercial Pd/α-Al2O3.",
+        "limits": "Site geometry is a kinetic interpretation and model choice for a specific catalyst/conditions; it does not establish the same active sites for the BEP catalyst."
+      },
+      {
+        "id": "stytsenko2022",
+        "title": "Kinetic regularities and mechanism of acetylene hydrogenation over PdMn catalyst",
+        "doi": "10.1016/j.mcat.2022.112750",
+        "url": "https://doi.org/10.1016/j.mcat.2022.112750",
+        "access": "full_text_read",
+        "supports": "Pd–Mn/Al2O3 TPD/QMS observations and a proposed adsorption-substitution model with an explicitly unknown fast step.",
+        "limits": "The pathway, fitted constants, and conversion regime are catalyst- and protocol-specific; they do not establish a PdAg target mechanism."
+      },
+      {
+        "id": "dehghani2019_pdag_alphaal2o3",
+        "title": "An Experimental Approach on Industrial Pd-Ag Supported α-Al2O3 Catalyst Used in Acetylene Hydrogenation Process: Mechanism, Kinetic and Catalyst Decay",
+        "doi": "10.3390/pr7030136",
+        "url": "https://doi.org/10.3390/pr7030136",
+        "access": "full_text_read",
+        "supports": "Industrial-catalyst-specific kinetic tests, product network, and campaign-time activity/deactivation treatment.",
+        "limits": "Campaign-time activity decay does not supply within-cycle adsorbate coverage dynamics; catalyst batch and operating conditions may differ from the BEP."
+      },
+      {
+        "id": "mei2009",
+        "title": "Hydrogenation of acetylene–ethylene mixtures over Pd and Pd–Ag alloys: First-principles-based kinetic Monte Carlo study",
+        "doi": "10.1016/j.jcat.2009.09.004",
+        "url": "https://doi.org/10.1016/j.jcat.2009.09.004",
+        "access": "abstract_and_preview",
+        "supports": "Idealized Pd/PdAg surface pathway and kinetic alternatives.",
+        "limits": "Model surface calculations do not identify the supported target catalyst’s working surface or transferable rate constants."
+      },
+      {
+        "id": "li2021",
+        "title": "In Situ Surface Structures of PdAg Catalyst and Their Influence on Acetylene Semihydrogenation Revealed by High-Pressure X-ray Photoelectron Spectroscopy",
+        "doi": "10.1021/jacs.1c02471",
+        "url": "https://doi.org/10.1021/jacs.1c02471",
+        "access": "abstract_and_preview",
+        "supports": "Condition-dependent surface structure evidence for a specific Pd1Ag3/TiO2 catalyst.",
+        "limits": "Does not test periodic forcing or establish universal PdAg structure/performance."
+      },
+      {
+        "id": "feimer1982",
+        "title": "Modelling forced periodic operation of catalytic reactors",
+        "doi": "10.1016/0009-2509(82)80051-1",
+        "url": "https://doi.org/10.1016/0009-2509(82)80051-1",
+        "access": "abstract_only",
+        "supports": "A model-specific counterexample: adsorption/desorption models in the paper predict no rate improvement under periodic operation.",
+        "limits": "Does not imply zero gain for every kinetic model or reactor."
+      },
+      {
+        "id": "ziegelhoeffer1972",
+        "title": "Cyclic operation of reaction systems: the influence of diffusion on catalyst selectivity",
+        "doi": "10.1016/0009-2509(72)80144-1",
+        "url": "https://doi.org/10.1016/0009-2509(72)80144-1",
+        "access": "abstract_only",
+        "supports": "A theoretical porous-pellet example where a frequency window improves selectivity under strong diffusion limitation.",
+        "limits": "The result is example-specific and does not establish a target PdAg forcing window."
+      },
+      {
+        "id": "horn_bailey1971",
+        "title": "Comparison between two sufficient conditions for improvement of an optimal steady-state process by periodic operation",
+        "doi": "10.1007/BF00934000",
+        "url": "https://doi.org/10.1007/BF00934000",
+        "access": "abstract_only",
+        "supports": "Classical sufficient conditions for periodic improvement in an optimal process.",
+        "limits": "Sufficient conditions are not necessary conditions and do not prove improvement for the BEP reactor."
+      },
+      {
+        "id": "kaps2026",
+        "title": "Forced Periodic Reactor Operation Applied to Methanol Synthesis",
+        "doi": "10.1002/cctc.202501403",
+        "url": "https://doi.org/10.1002/cctc.202501403",
+        "access": "full_text_read",
+        "supports": "Cross-system methanol study separates same-time-average-feed reference experiments from model-based steady/periodic Pareto optimization; reports measured periodic advantage for a selected experiment.",
+        "limits": "The chemistry, catalyst, and CSTR apparatus differ; neither its gain nor magnitude transfers to acetylene/PdAg."
+      },
+      {
+        "id": "waldron2020_transient_flow_mbdoe",
+        "title": "Model-based design of transient flow experiments for the identification of kinetic parameters",
+        "doi": "10.1039/C9RE00342H",
+        "url": "https://doi.org/10.1039/C9RE00342H",
+        "access": "full_text_read",
+        "supports": "Fisher-information-based experiment design and parameter-precision analysis for transient-flow esterification data.",
+        "limits": "Information-design result is model-conditioned and does not establish BEP identifiability or performance gain."
+      },
+      {
+        "id": "urakawa2008",
+        "title": "Sensitivity Enhancement and Dynamic Behavior Analysis by Modulation Excitation Spectroscopy: Principle and Application in Heterogeneous Catalysis",
+        "doi": "10.1016/j.ces.2007.06.009",
+        "url": "https://doi.org/10.1016/j.ces.2007.06.009",
+        "access": "full_text_read",
+        "supports": "Modulation-excitation spectroscopy and phase-sensitive detection for selected catalytic surface species.",
+        "limits": "Does not prove full distributed packed-bed-state observability."
+      },
+      {
+        "id": "di_giuliano_pellegrino2019",
+        "title": "Numerical integration strategies of PFR dynamic models with axial dispersion and variable superficial velocity",
+        "doi": "10.1016/j.heliyon.2019.e02040",
+        "url": "https://doi.org/10.1016/j.heliyon.2019.e02040",
+        "access": "full_text_read",
+        "supports": "Variable-velocity and constant-velocity model forms and numerical comparison for a CaO-mayenite CO2 capture bed.",
+        "limits": "Methodological example only; no quantitative transfer to acetylene hydrogenation."
+      },
+      {
+        "id": "mott_green2015",
+        "title": "On Danckwerts’ Boundary Conditions for the Plug-Flow with Dispersion/Reaction Model",
+        "doi": "10.1080/00986445.2013.871708",
+        "url": "https://doi.org/10.1080/00986445.2013.871708",
+        "access": "abstract_only",
+        "supports": "A competing boundary-condition interpretation in the accessible abstract.",
+        "limits": "The full derivation is not inspected; no boundary equation is selected for the BEP apparatus."
+      },
+      {
+        "id": "berger2008",
+        "title": "Dynamic methods for catalytic kinetics",
+        "doi": "10.1016/j.apcata.2008.03.020",
+        "url": "https://doi.org/10.1016/j.apcata.2008.03.020",
+        "access": "full_text_read",
+        "supports": "Review of transient kinetic identification methods.",
+        "limits": "Does not establish target-catalyst rates, surface timescales, or periodic gain."
+      },
+      {
+        "id": "berger_wrong_doi_metadata",
+        "title": "Nanofluidization as affected by vibration and electrostatic fields",
+        "doi": "10.1016/j.ces.2008.08.012",
+        "url": "https://doi.org/10.1016/j.ces.2008.08.012",
+        "access": "Crossref metadata verified",
+        "supports": "Identifies the unrelated publication attached to the legacy DOI.",
+        "limits": "Supports no catalytic-kinetics claim."
+      },
+      {
+        "id": "danckwerts1953",
+        "title": "Continuous Flow Systems: Distribution of Residence Times",
+        "doi": "10.1016/0009-2509(53)80001-1",
+        "url": "https://doi.org/10.1016/0009-2509(53)80001-1",
+        "access": "abstract_only",
+        "supports": "Classical RTD framing for continuous-flow reactors.",
+        "limits": "The abstract does not choose the BEP apparatus boundary condition."
+      },
+      {
+        "id": "villaverde2016_structural_identifiability",
+        "title": "Structural Identifiability of Dynamic Systems Biology Models",
+        "doi": "10.1371/journal.pcbi.1005153",
+        "url": "https://doi.org/10.1371/journal.pcbi.1005153",
+        "access": "full_text_read",
+        "supports": "General analytic ODE methods and distinction between structural identifiability and practical precision.",
+        "limits": "No target reactor rank, observability, or parameter value follows."
+      },
+      {
+        "id": "proposal_main",
+        "title": "BEP research proposal",
+        "doi": null,
+        "url": "Academics/BEP/Catalysis/0_Project_Management/main.tex",
+        "access": "repository_file_present/full_text_read",
+        "supports": "Project question and proposed model/experiment scope.",
+        "limits": "A proposal is not evidence that its assumptions, simulation, or gain claim have been validated."
+      }
+    ],
+    "claim_reconciliations": [
+      {
+        "id": "periodic_gain_sign",
+        "position": "conditional_unresolved",
+        "synthesis": "No universal sign follows from periodic forcing. Stable LTI, static concavity, and nested feasible-set results give distinct conditional limits. Nonlinear stateful operation may improve, match, or reduce a selected cycle metric.",
+        "source_ids": [
+          "feimer1982",
+          "horn_bailey1971",
+          "ziegelhoeffer1972",
+          "kaps2026",
+          "urmes2022"
+        ],
+        "do_not_infer": [
+          "A target gain or universal null result.",
+          "That kinetic timescale matching alone is sufficient."
+        ]
+      },
+      {
+        "id": "periodic_acetylene_precedent",
+        "position": "novelty_claim_narrowed",
+        "synthesis": "Urmès et al. 2022 report periodic acetylene-flow experiments on Pd/α-Al2O3 for model-based parameter estimation and outlet-composition prediction. Accessible abstract/preview does not establish a PdAg productivity gain or fully resolve axial model scope.",
+        "source_ids": [
+          "urmes2022"
+        ],
+        "do_not_infer": [
+          "No periodic acetylene study exists.",
+          "The BEP target gain is established."
+        ]
+      },
+      {
+        "id": "kinetic_closure_alternatives",
+        "position": "source_specific_alternatives",
+        "synthesis": "Single-site PSSA, deposit-associated A/E sites, Pd–Mn adsorption substitution, and PdAg LHHW or ideal-surface models describe different catalysts, conditions, and evidence classes. They remain alternatives pending target catalyst and transient data.",
+        "source_ids": [
+          "urmes2019",
+          "borodzinski2000",
+          "stytsenko2022",
+          "dehghani2019_pdag_alphaal2o3",
+          "mei2009",
+          "li2021"
+        ],
+        "do_not_infer": [
+          "One mechanism is universal or already target-validated."
+        ]
+      },
+      {
+        "id": "urmes2019_k1",
+        "position": "unresolved_primary_source_conflict",
+        "synthesis": "The 2019 paper's text reports a calculated K1=611 Pa^-1 while Table 5 lists K1=13 Pa^-1 fixed. Preserve both until erratum, code, data, or author clarification resolves them.",
+        "source_ids": [
+          "urmes2019"
+        ],
+        "do_not_infer": [
+          "Either value is a BEP parameter."
+        ]
+      },
+      {
+        "id": "berger_doi",
+        "position": "bibliographic_error_corrected",
+        "synthesis": "DOI 10.1016/j.ces.2008.08.012 identifies nanofluidization; Berger et al.'s catalytic-kinetics review is DOI 10.1016/j.apcata.2008.03.020. The citation error does not determine whether attached equations are correct.",
+        "source_ids": [
+          "berger_wrong_doi_metadata",
+          "berger2008"
+        ],
+        "do_not_infer": [
+          "DOI correction validates every inherited claim."
+        ]
+      },
+      {
+        "id": "campaign_decay_vs_surface_memory",
+        "position": "timescales_distinguished",
+        "synthesis": "Dehghani et al.'s campaign-time catalyst-activity state does not constitute a within-cycle adsorbate-coverage state. Both may matter at different horizons.",
+        "source_ids": [
+          "dehghani2019_pdag_alphaal2o3",
+          "urmes2022"
+        ],
+        "do_not_infer": [
+          "A slow deactivation law proves fast coverage memory."
+        ]
+      },
+      {
+        "id": "periodic_cross_system_evidence",
+        "position": "cross_system_scope_bounded",
+        "synthesis": "Kaps et al. report a methanol periodic experiment against a selected same-time-average-feed steady reference and separately calculate model-based steady/periodic Pareto fronts. The empirical reference and modeled optimized comparator are different evidence classes.",
+        "source_ids": [
+          "kaps2026"
+        ],
+        "do_not_infer": [
+          "Methanol CSTR gain transfers to acetylene/PdAg."
+        ]
+      },
+      {
+        "id": "fisher_information_evidence",
+        "position": "model_design_result",
+        "synthesis": "Waldron et al.'s precision improvements are based on model-based Fisher-information design and parameter covariance analysis; measurements are observations, while estimated precision is a model/design result.",
+        "source_ids": [
+          "waldron2020_transient_flow_mbdoe"
+        ],
+        "do_not_infer": [
+          "Information gain establishes process-performance gain or target identifiability."
+        ]
+      },
+      {
+        "id": "transport_boundary_scope",
+        "position": "competing_boundary_interpretations_preserved",
+        "synthesis": "Danckwerts-type flux matching and Mott–Green's alternative interpretation depend on which external domains are included. The abstract-only alternative is retained as a question, not selected for the target apparatus.",
+        "source_ids": [
+          "danckwerts1953",
+          "mott_green2015",
+          "proposal_main"
+        ],
+        "do_not_infer": [
+          "A boundary phrase uniquely fixes the target outlet condition."
+        ]
+      },
+      {
+        "id": "measurement_claim",
+        "position": "categorical_claim_corrected",
+        "synthesis": "Selected surface species can be detected in suitable modulation-excitation spectroscopy systems; outlet-only data do not prove full internal state observability or universal impossibility.",
+        "source_ids": [
+          "urakawa2008",
+          "villaverde2016_structural_identifiability"
+        ],
+        "do_not_infer": [
+          "Every internal state is directly measurable."
+        ]
+      },
+      {
+        "id": "objective_comparator",
+        "position": "project_decision_open",
+        "synthesis": "Periodic yield, selectivity, and productivity require explicit cycle-integrated definitions and comparison against an optimized feasible steady value under the same objective, resource basis, and constraints.",
+        "source_ids": [
+          "proposal_main",
+          "kaps2026"
+        ],
+        "do_not_infer": [
+          "Gain against an arbitrary nominal steady point."
+        ]
+      }
+    ],
+    "unresolved_questions": [
+      {
+        "id": "target_catalyst_identity",
+        "status": "open",
+        "question": "Target catalyst/support/preparation/working-surface identity."
+      },
+      {
+        "id": "target_feed_and_operating_window",
+        "status": "open",
+        "question": "Feed composition, pressure, temperature, conversion, and safety window."
+      },
+      {
+        "id": "urmes2019_k1_conflict",
+        "status": "unresolved_primary_source_conflict",
+        "question": "Which K1 value was used in Urmès 2019 final calculations: 611 Pa^-1 in text or 13 Pa^-1 in Table 5?"
+      },
+      {
+        "id": "dynamic_vs_pssa_closure",
+        "status": "open",
+        "question": "Do target transients require dynamic surface states or does a PSSA closure predict the relevant output response?"
+      },
+      {
+        "id": "elementary_pathway_and_site_families",
+        "status": "open_alternatives",
+        "question": "Which site families, intermediates, and pathways are supported on the working catalyst?"
+      },
+      {
+        "id": "product_closure_and_carbon_balance",
+        "status": "open",
+        "question": "Which C4+, retained carbon, and gaseous products must enter the measured carbon balance?"
+      },
+      {
+        "id": "transport_and_residence_time",
+        "status": "open",
+        "question": "Which RTD, film, pellet, dispersion, and variable-flow effects matter over the forcing envelope?"
+      },
+      {
+        "id": "target_boundary_domain_and_flux_closure",
+        "status": "unresolved_apparatus_and_model_choice",
+        "question": "Which mixer, line, bed, exit volume, and analyzer domains define boundary conditions?"
+      },
+      {
+        "id": "target_total_flow_velocity_closure",
+        "status": "target_feed_and_pressure_data_missing",
+        "question": "Does reaction and forcing make superficial velocity vary materially?"
+      },
+      {
+        "id": "actuator_and_analyzer_transfer",
+        "status": "open",
+        "question": "What command-to-bed and bed-to-analyzer transfers, sampling, and noise apply?"
+      },
+      {
+        "id": "performance_objective",
+        "status": "project_decision_open",
+        "question": "Which cycle objective and campaign/resource basis defines success?"
+      },
+      {
+        "id": "fair_steady_feasible_set",
+        "status": "project_decision_open",
+        "question": "What constraints and inputs define the optimized steady comparator?"
+      },
+      {
+        "id": "periodic_gain_sign_and_magnitude",
+        "status": "unresolved_target_science",
+        "question": "Does any gain survive target fitting, robust optimization, and held-out experimental validation?"
+      },
+      {
+        "id": "numerical_verification_after_model_definition",
+        "status": "open",
+        "question": "Which conservation, positivity, mesh/time convergence, and solver checks apply to the chosen model?"
+      },
+      {
+        "id": "target_joint_input_state_parameter_reconstructibility",
+        "status": "open",
+        "question": "Can inputs, internal states, and kinetic parameters be separately reconstructed from available signals?"
+      }
+    ],
+    "decisions_requiring_owner_input": [
+      {
+        "id": "target_catalyst",
+        "question": "What exact Pd:Ag ratio, support, particle/egg-shell geometry, preparation, pretreatment, and working surface define the target?",
+        "why": "This selects which catalyst-specific pathway and kinetic evidence could apply."
+      },
+      {
+        "id": "success_metric",
+        "question": "Should success be net ethylene productivity/yield, selectivity above a conversion floor, campaign performance, or a multiobjective front?",
+        "why": "Different denominators and resource accounting can reverse rankings."
+      },
+      {
+        "id": "input_and_constraints",
+        "question": "Which inlet variables can be independently actuated, and what amplitude, bandwidth, pressure, temperature, total-flow, hydrogen, and safety limits apply?",
+        "why": "These define the realizable waveform and fair feasible sets."
+      },
+      {
+        "id": "model_fidelity",
+        "question": "Which PSSA/dynamic-coverage, dispersion, film/pellet, thermal, and boundary alternatives are supported by the available target evidence?",
+        "why": "The selected model determines the possible forcing mechanisms and predictions."
+      },
+      {
+        "id": "evidence_threshold",
+        "question": "What target-specific calibration, held-out dynamic prediction, uncertainty margin, and experimental match would support a gain claim?",
+        "why": "Map inclusion and numerical output do not constitute predictive or experimental validation."
+      }
+    ],
+    "source_access_summary": {
+      "integrated_records": 65,
+      "full_text_read": 19,
+      "abstract_and_preview": 3,
+      "abstract_only": 14,
+      "historical_original_attachments": 96,
+      "scope_note": "Other records include project documents, repository files, metadata-only records, and legacy attachments. Counts are coverage descriptors, not evidence-weighted quality scores."
+    },
+    "interpretation_boundaries": {
+      "periodic_gain": "conditional_unresolved",
+      "urmes2022": "direct periodic acetylene estimation/prediction precedent; no target productivity gain established",
+      "campaign_deactivation": "long-horizon catalyst state; distinct from within-cycle surface memory",
+      "mathematical_no_gain": "each result applies only under its stated model assumptions",
+      "model_comparison": "the kinetic families are source-conditioned alternatives; none is promoted as target truth",
+      "historical_attachments": "prior attachments are provenance leads; a citation edge does not prove claim support"
+    }
+  }
+}

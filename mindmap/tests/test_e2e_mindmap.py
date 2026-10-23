@@ -9,13 +9,9 @@ if hasattr(sys.stdout, "reconfigure"):
 import json
 import hashlib
 from pathlib import Path
-REPO_ROOT = Path(__file__).resolve().parents[5]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
-MINDMAP_DIR = Path(__file__).resolve().parents[1]
-if str(MINDMAP_DIR) not in sys.path:
-    sys.path.insert(0, str(MINDMAP_DIR))
-
 import threading
 import shutil
 import urllib.request
@@ -23,17 +19,18 @@ import urllib.error
 from http.server import ThreadingHTTPServer
 import pytest
 
-from Academics.BEP.Catalysis.mindmap.editor import (
+from mindmap.editor import (
     load_map,
 )
-from Academics.BEP.Catalysis.mindmap import preview as preview_module
-from Academics.BEP.Catalysis.mindmap.preview import (
+from mindmap import preview as preview_module
+from mindmap.preview import (
     MindMapRequestHandler,
     CANONICAL_PATH,
     DRAFT_PATH,
     STATIC_DIR,
 )
-from Academics.BEP.Catalysis.mindmap.schema import merge_maps
+from mindmap.schema import merge_maps
+from mindmap.research_review import compile_questions_portfolio, generate_review_dossier_markdown
 
 
 def test_e2e_canonical_and_draft_integrity():
@@ -58,14 +55,9 @@ def test_e2e_canonical_and_draft_integrity():
     merged.validate_parents_exist()
 
 
-def test_e2e_guided_tour_and_questions_exist():
-    """Verify Phase 4 Guided Tour questions and review dossier exist and validate."""
-    RESEARCH_DIR = MINDMAP_DIR.parent / "research"
-    QUESTIONS_PATH = RESEARCH_DIR / "questions" / "phase_4_questions.json"
-    DOSSIER_PATH = RESEARCH_DIR / "dossiers" / "bep_mindmap_review_dossier.md"
-
-    assert QUESTIONS_PATH.exists()
-    q_data = json.loads(QUESTIONS_PATH.read_text(encoding="utf-8"))
+def test_e2e_guided_tour_questions_and_review_dossier_generate():
+    """Verify the migrated review pipeline generates its portfolio without legacy output files."""
+    q_data = compile_questions_portfolio()
     assert q_data["phase_num"] == 4
     assert len(q_data["questions"]) >= 6
 
@@ -76,11 +68,12 @@ def test_e2e_guided_tour_and_questions_exist():
         assert "recommended" in q and q["recommended"].startswith("(Recommended)")
         assert "rationale" in q and len(q["rationale"]) > 10
 
-    assert DOSSIER_PATH.exists()
-    dossier_text = DOSSIER_PATH.read_text(encoding="utf-8")
+    dossier_text = generate_review_dossier_markdown()
     assert "Executive Review Dossier" in dossier_text
     assert "Recommended Sequential Review Path" in dossier_text
     assert "Question Portfolio" in dossier_text
+    assert "does not approve it" in dossier_text
+    assert "Promote to Approved" not in dossier_text
 
 
 def test_e2e_preview_server_and_promotion_safety(tmp_path, monkeypatch):

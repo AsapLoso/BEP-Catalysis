@@ -20,24 +20,21 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Union
 
-try:
-    from Academics.BEP.Catalysis.mindmap.editor import load_map
-    from Academics.BEP.Catalysis.mindmap.schema import MindMap, merge_maps
-    from Academics.BEP.Catalysis.mindmap.owner_map import (
-        load_owner_map_snapshot,
-        owner_snapshot_source_available,
-    )
-except (ImportError, ModuleNotFoundError):
-    from editor import load_map
-    from schema import MindMap, merge_maps
-    from owner_map import load_owner_map_snapshot, owner_snapshot_source_available
+from mindmap.editor import load_map
+from mindmap.schema import MindMap, merge_maps
+from mindmap.owner_map import (
+    load_owner_map_snapshot,
+    load_owner_reader_document,
+    load_owner_reader_figure,
+    owner_snapshot_source_available,
+)
 
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
 DATA_DIR = BASE_DIR / "data"
 CANONICAL_PATH = DATA_DIR / "bep_map.yaml"
 DRAFT_PATH = DATA_DIR / "bep_draft_overlay.yaml"
-REPO_ROOT = BASE_DIR.parents[3]
+REPO_ROOT = BASE_DIR.parent
 OWNER_SNAPSHOT_OPTIONS: Dict[str, Any] = {}
 OWNER_SNAPSHOT_ENABLED = False
 
@@ -137,6 +134,10 @@ class MindMapRequestHandler(BaseHTTPRequestHandler):
             self._handle_api_config()
         elif path == "/api/graph":
             self._handle_api_graph(parsed.query)
+        elif path == "/api/reader":
+            self._handle_api_reader(parsed.query)
+        elif path == "/api/figure":
+            self._handle_api_figure(parsed.query)
         elif path == "/events":
             self._handle_events()
         else:
@@ -171,6 +172,7 @@ class MindMapRequestHandler(BaseHTTPRequestHandler):
                     self._send_json(
                         {"error": "Owner map snapshot is not configured. Select one explicitly at startup."},
                         status=404,
+                        cors=False,
                     )
                     return
                 res = load_owner_map_snapshot(**OWNER_SNAPSHOT_OPTIONS)
@@ -204,9 +206,9 @@ class MindMapRequestHandler(BaseHTTPRequestHandler):
                     }.get(mode, "AI reference map · combined local checkout files"),
                 }
             res["mode"] = mode
-            self._send_json(res)
+            self._send_json(res, cors=mode != "owner")
         except Exception as e:
-            self._send_json({"error": str(e)}, status=500)
+            self._send_json({"error": str(e)}, status=500, cors=mode != "owner")
 
     def _handle_api_config(self) -> None:
         modes = ["merged", "canonical", "draft"]
@@ -218,13 +220,96 @@ class MindMapRequestHandler(BaseHTTPRequestHandler):
             "owner_snapshot_read_only": True,
         })
 
-    def _send_json(self, payload: Dict[str, Any], status: int = 200) -> None:
+    def _owner_file_options(self) -> Dict[str, Any]:
+        return {
+            key: OWNER_SNAPSHOT_OPTIONS[key]
+            for key in ("path", "git_ref", "git_path", "git_root")
+            if key in OWNER_SNAPSHOT_OPTIONS
+        }
+
+    def _handle_api_reader(self, query_str: str) -> None:
+        if not OWNER_SNAPSHOT_ENABLED:
+            self._send_json({"error": "Owner map snapshot is not configured."}, status=404, cors=False)
+            return
+        query = urllib.parse.parse_qs(query_str, keep_blank_values=True)
+        node_id = query.get("node_id", [""])[0]
+        if not node_id:
+            self._send_json({"error": "A node_id is required."}, status=400, cors=False)
+            return
+        background_raw = query.get("background_index", [None])[0]
+        if background_raw is not None and not background_raw.isdecimal():
+            self._send_json({"error": "background_index must be a non-negative integer."}, status=400, cors=False)
+            return
+        background_index = int(background_raw) if background_raw is not None else None
+        try:
+            asset = load_owner_reader_document(
+                node_id=node_id,
+                background_index=background_index,
+                **self._owner_file_options(),
+            )
+        except FileNotFoundError as exc:
+            self._send_json({"error": str(exc)}, status=404, cors=False)
+            return
+        except (TypeError, ValueError) as exc:
+            self._send_json({"error": str(exc)}, status=400, cors=False)
+            return
+        except Exception:
+            self._send_json({"error": "Could not read the linked owner file."}, status=500, cors=False)
+            return
+
+        if query.get("raw", ["0"])[0] == "1":
+            suffix = Path(asset["file_name"]).suffix.lower()
+            content_type = "text/markdown; charset=utf-8" if suffix in {".md", ".markdown"} else "text/plain; charset=utf-8"
+            self._send_bytes(asset["content"].encode("utf-8"), content_type, asset["file_name"])
+            return
+        asset.pop("_resolved_path", None)
+        self._send_json(asset, cors=False)
+
+    def _handle_api_figure(self, query_str: str) -> None:
+        if not OWNER_SNAPSHOT_ENABLED:
+            self._send_json({"error": "Owner map snapshot is not configured."}, status=404, cors=False)
+            return
+        query = urllib.parse.parse_qs(query_str, keep_blank_values=True)
+        node_id = query.get("node_id", [""])[0]
+        relative_path = query.get("path", [""])[0]
+        if not node_id or not relative_path:
+            self._send_json({"error": "A node_id and linked relative path are required."}, status=400, cors=False)
+            return
+        try:
+            figure = load_owner_reader_figure(
+                node_id=node_id,
+                relative_path=relative_path,
+                **self._owner_file_options(),
+            )
+        except FileNotFoundError:
+            self._send_json({"error": "Figure is not available in this node's reader page."}, status=404, cors=False)
+            return
+        except (TypeError, ValueError):
+            self._send_json({"error": "Figure path or format is not supported."}, status=400, cors=False)
+            return
+        except Exception:
+            self._send_json({"error": "Could not read the linked figure."}, status=500, cors=False)
+            return
+        self._send_bytes(figure["content"], figure["content_type"], Path(figure["path"]).name)
+
+    def _send_bytes(self, data: bytes, content_type: str, file_name: str) -> None:
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(data)))
+        self.send_header("Content-Disposition", f"inline; filename*=UTF-8''{urllib.parse.quote(file_name)}")
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        self.wfile.write(data)
+
+    def _send_json(self, payload: Dict[str, Any], status: int = 200, *, cors: bool = True) -> None:
         data = json.dumps(payload, ensure_ascii=False, indent=2).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(data)))
         self.send_header("Cache-Control", "no-store")
-        self.send_header("Access-Control-Allow-Origin", "*")
+        if cors:
+            self.send_header("Access-Control-Allow-Origin", "*")
         self.end_headers()
         self.wfile.write(data)
 

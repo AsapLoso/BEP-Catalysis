@@ -80,7 +80,7 @@
     </svg>
 
     <!-- Details Drawer -->
-    <aside id="details-drawer" class="drawer hidden">
+    <aside id="details-drawer" class="drawer hidden" aria-label="Selected node details">
       <div class="drawer-header">
         <div class="drawer-tier-badge" id="drawer-tier-badge">Stage not recorded</div>
         <button id="drawer-close-btn" class="close-btn" title="Close details panel">&times;</button>
@@ -101,70 +101,127 @@
         </div>
         <nav id="drawer-breadcrumb" class="drawer-breadcrumb" aria-label="Node ancestry"></nav>
 
-        <section class="drawer-section">
-          <h3>Question</h3>
-          <p id="drawer-question" class="section-content rich-text"></p>
-          <h3>Summary</h3>
-          <p id="drawer-summary" class="section-content rich-text"></p>
+        <section class="drawer-section drawer-primary">
+          <p id="drawer-question" class="section-content rich-text hidden"></p>
+          <p id="drawer-summary" class="section-content rich-text">Select a node to read its summary.</p>
         </section>
 
-        <section class="drawer-section">
-          <h3>Progress and review</h3>
-          <p id="drawer-progress" class="progress-summary"></p>
-          <dl id="drawer-review-status" class="review-status-list"></dl>
+        <section class="drawer-section hidden" id="drawer-reader-section">
+          <div class="reader-heading">
+            <h3>Reader page</h3>
+            <a id="reader-raw-link" class="btn reader-raw-link" target="_blank" rel="noopener">Open Markdown</a>
+          </div>
+          <p id="reader-file-status" class="reader-file-status" aria-live="polite"></p>
+          <article id="reader-content" class="markdown-body reader-content"></article>
         </section>
 
-        <section class="drawer-section hidden" id="drawer-equations-section">
-          <h3>Equations</h3>
-          <ul id="drawer-equations" class="rich-list"></ul>
+        <section class="drawer-section hidden" id="drawer-reference-links-section">
+          <button id="open-linked-references" class="btn reference-launch">Explore AI references</button>
         </section>
 
-        <section class="drawer-section hidden" id="drawer-claims-section">
-          <h3>Claims and source trail</h3>
-          <div id="drawer-claims" class="claims-list"></div>
-        </section>
+        <details id="drawer-audit-details" class="audit-details">
+          <summary>Technical details and source audit</summary>
+          <div class="audit-content">
+            <section class="drawer-section">
+              <h3>Progress and review</h3>
+              <p id="drawer-progress" class="progress-summary"></p>
+              <dl id="drawer-review-status" class="review-status-list"></dl>
+            </section>
 
-        <section class="drawer-section">
-          <h3>Rationale</h3>
-          <p id="drawer-rationale" class="section-content">Rationale text...</p>
-        </section>
+            <section class="drawer-section hidden" id="drawer-equations-section">
+              <h3>Equations</h3>
+              <ul id="drawer-equations" class="rich-list"></ul>
+            </section>
 
-        <section class="drawer-section">
-          <h3>Technical Notes</h3>
-          <div id="drawer-notes" class="section-content markdown-body">Notes...</div>
-        </section>
+            <section class="drawer-section hidden" id="drawer-claims-section">
+              <h3>Claims and source trail</h3>
+              <div id="drawer-claims" class="claims-list"></div>
+            </section>
 
-        <section class="drawer-section hidden" id="drawer-assumptions-section">
-          <h3>Assumptions</h3>
-          <ul id="drawer-assumptions" class="rich-list"></ul>
-        </section>
+            <section class="drawer-section">
+              <h3>Rationale</h3>
+              <p id="drawer-rationale" class="section-content">Rationale text...</p>
+            </section>
 
-        <section class="drawer-section hidden" id="drawer-limitations-section">
-          <h3>Limitations</h3>
-          <ul id="drawer-limitations" class="rich-list"></ul>
-        </section>
+            <section class="drawer-section">
+              <h3>Technical notes</h3>
+              <div id="drawer-notes" class="section-content markdown-body">Notes...</div>
+            </section>
 
-        <section class="drawer-section">
-          <h3>Sources and citation records</h3>
-          <ul id="drawer-sources" class="sources-list"></ul>
-        </section>
+            <section class="drawer-section hidden" id="drawer-assumptions-section">
+              <h3>Assumptions</h3>
+              <ul id="drawer-assumptions" class="rich-list"></ul>
+            </section>
 
-        <section class="drawer-section">
-          <h3>Open Questions</h3>
-          <ul id="drawer-questions" class="questions-list"></ul>
-        </section>
+            <section class="drawer-section hidden" id="drawer-limitations-section">
+              <h3>Limitations</h3>
+              <ul id="drawer-limitations" class="rich-list"></ul>
+            </section>
 
-        <section class="drawer-section" id="drawer-related-section">
-          <h3>Related nodes and project records</h3>
-          <ul id="drawer-related" class="rich-list"></ul>
-          <div id="reference-node-preview" class="reference-node-preview hidden" aria-live="polite"></div>
-          <p><a href="https://github.com/AsapLoso/project-management-agents/blob/devcontainer/Academics/BEP/Catalysis/presentation/RESEARCH_JUSTIFICATION_INDEX_2026-10-14.md" target="_blank" rel="noopener">A–M research dossier index</a></p>
-          <p><a href="https://github.com/AsapLoso/project-management-agents/blob/devcontainer/Academics/BEP/Catalysis/state.md" target="_blank" rel="noopener">BEP project state and tasks</a></p>
-        </section>
+            <section class="drawer-section hidden" id="drawer-file-audit-section">
+              <h3>Reader and background file metadata</h3>
+              <dl id="drawer-file-audit" class="review-status-list"></dl>
+            </section>
 
-        <div class="drawer-actions">
-          <p id="promotion-disabled-note" class="safety-note">Map placement, owner understanding, and citation verification are separate decisions.</p>
+            <section class="drawer-section">
+              <h3>Sources and citation records</h3>
+              <ul id="drawer-sources" class="sources-list"></ul>
+            </section>
+
+            <section class="drawer-section">
+              <h3>Open questions</h3>
+              <ul id="drawer-questions" class="questions-list"></ul>
+            </section>
+
+            <section class="drawer-section" id="drawer-related-section">
+              <h3>Related owner nodes and project records</h3>
+              <ul id="drawer-related" class="rich-list"></ul>
+              <p><a href="https://github.com/AsapLoso/project-management-agents/blob/devcontainer/Academics/BEP/Catalysis/presentation/RESEARCH_JUSTIFICATION_INDEX_2026-10-14.md" target="_blank" rel="noopener">A–M research dossier index</a></p>
+              <p><a href="https://github.com/AsapLoso/project-management-agents/blob/devcontainer/Academics/BEP/Catalysis/state.md" target="_blank" rel="noopener">BEP project state and tasks</a></p>
+            </section>
+
+            <details id="drawer-background-details" class="background-details hidden">
+              <summary>Hidden background files (<span id="background-file-count">0</span>)</summary>
+              <p class="audit-boundary">These files are separate from the reader page. Open one to inspect its recorded background or audit content.</p>
+              <ul id="drawer-background-files" class="rich-list"></ul>
+              <article id="background-reader-content" class="markdown-body reader-content hidden"></article>
+            </details>
+
+            <div class="drawer-actions">
+              <p id="promotion-disabled-note" class="safety-note">Map placement, owner understanding, and citation verification are separate decisions.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </aside>
+
+    <aside id="reference-panel" class="reference-panel hidden" aria-label="Separate AI reference map">
+      <div class="reference-panel-header">
+        <div>
+          <span class="reference-panel-kicker">Separate AI reference snapshot</span>
+          <h2 id="reference-panel-title">AI reference</h2>
         </div>
+        <button id="reference-panel-close" class="close-btn" title="Close AI reference panel">&times;</button>
+      </div>
+      <div class="reference-panel-body">
+        <p class="reference-boundary">AI-only background. It does not record owner understanding, source verification, or approval.</p>
+        <p id="reference-panel-summary" class="reference-summary"></p>
+        <section class="reference-section">
+          <h3>Evidence notes</h3>
+          <div id="reference-panel-claims"></div>
+        </section>
+        <section class="reference-section">
+          <h3>Sources and limits</h3>
+          <div id="reference-panel-sources"></div>
+        </section>
+        <section class="reference-section">
+          <h3>Open uncertainties</h3>
+          <ul id="reference-panel-uncertainties" class="rich-list"></ul>
+        </section>
+        <section class="reference-section hidden" id="reference-panel-related-section">
+          <h3>Related AI reference nodes</h3>
+          <ul id="reference-panel-related" class="rich-list"></ul>
+        </section>
       </div>
     </aside>
 

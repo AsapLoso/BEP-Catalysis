@@ -15,12 +15,8 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-try:
-    from Academics.BEP.Catalysis.mindmap.editor import load_map, promote_draft_node
-    from Academics.BEP.Catalysis.mindmap.schema import MindMap, merge_maps
-except (ImportError, ModuleNotFoundError):
-    from editor import load_map, promote_draft_node
-    from schema import MindMap, merge_maps
+from mindmap.editor import load_map
+from mindmap.schema import MindMap, merge_maps
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 CANONICAL_PATH = DATA_DIR / "bep_map.yaml"
@@ -156,8 +152,8 @@ def generate_review_dossier_markdown() -> str:
     md = f"""# BEP Mind Map: Executive Review Dossier & Question Portfolio
 Date: 2026-10-20  
 Status: Ready for Human Owner Review  
-Target Application: `Academics/BEP/Catalysis/mindmap/`  
-Live Preview: `pixi run preview` (http://127.0.0.1:8765)
+Target Application: `mindmap/`
+Live Preview: `python -m mindmap.preview` (http://127.0.0.1:8765)
 
 ---
 
@@ -236,15 +232,9 @@ The interactive preview visualizer features an automated **Guided Tour Mode** (`
 
     md += """---
 
-## 5. Owner Action Guide (Deterministic Promotion)
+## 5. Read-only Owner Review
 
-To promote any draft topic to **Tier 2 (Owner Critically Understood)**:
-1. **In Browser:** Run `pixi run preview`, open the Guided Tour, review the supporting citations and notes, and click **"Promote to Approved"**.
-2. **Via MCP / Python CLI:**
-   ```powershell
-   pixi run python Academics/BEP/Catalysis/mindmap/editor.py promote-node --id lhhw_kinetics --tier 2
-   ```
-   *The editor atomically transfers the node from `bep_draft_overlay.yaml` into `bep_map.yaml` without manual copy-pasting.*
+The guided tour is a navigation aid. Visiting or returning to a node does not approve it, mark it read, verify a citation, or move it between maps. The preview UI does not provide promotion, and the legacy promotion API returns HTTP 410. Review and any owner-map change require a separate, explicit decision scoped to the exact node and content shown to the owner.
 """
     return md
 
@@ -253,8 +243,6 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="BEP Mind Map Research Review CLI")
     parser.add_argument("--dossier", action="store_true", help="Generate review dossier markdown")
     parser.add_argument("--questions", action="store_true", help="Generate questions JSON portfolio")
-    parser.add_argument("--promote", help="Promote node ID to canonical map")
-    parser.add_argument("--tier", type=int, default=2, help="Target tier upon promotion (default: 2)")
     args = parser.parse_args()
 
     if args.dossier:
@@ -268,11 +256,6 @@ def main() -> None:
         q_data = compile_questions_portfolio()
         QUESTIONS_PATH.write_text(json.dumps(q_data, indent=2), encoding="utf-8")
         print(f"[review] Compiled question portfolio at {QUESTIONS_PATH}")
-
-    if args.promote:
-        promoted = promote_draft_node(DRAFT_PATH, CANONICAL_PATH, args.promote, new_tier=args.tier)
-        print(f"[review] Promoted node '{promoted.id}' to Tier {promoted.tier} in canonical map.")
-
 
 if __name__ == "__main__":
     main()

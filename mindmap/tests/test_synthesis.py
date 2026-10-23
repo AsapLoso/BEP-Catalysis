@@ -7,18 +7,15 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 from pathlib import Path
-REPO_ROOT = Path(__file__).resolve().parents[5]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
-MINDMAP_DIR = Path(__file__).resolve().parents[1]
-if str(MINDMAP_DIR) not in sys.path:
-    sys.path.insert(0, str(MINDMAP_DIR))
 
 import pytest
 
-from Academics.BEP.Catalysis.mindmap.editor import load_map
-from Academics.BEP.Catalysis.mindmap.schema import merge_maps
-from Academics.BEP.Catalysis.mindmap.synthesize_research import CANONICAL_PATH, DRAFT_PATH, synthesize_and_save
+from mindmap.editor import load_map
+from mindmap.schema import merge_maps
+from mindmap.synthesize_research import CANONICAL_PATH, DRAFT_PATH, synthesize_and_save
 
 
 def test_synthesis_generation_and_schema():

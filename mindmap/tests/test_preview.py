@@ -7,12 +7,9 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 from pathlib import Path
-REPO_ROOT = Path(__file__).resolve().parents[5]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
-MINDMAP_DIR = Path(__file__).resolve().parents[1]
-if str(MINDMAP_DIR) not in sys.path:
-    sys.path.insert(0, str(MINDMAP_DIR))
 
 import json
 import hashlib
@@ -21,13 +18,14 @@ import threading
 import time
 import urllib.request
 import urllib.error
+import urllib.parse
 from http.server import ThreadingHTTPServer
 import pytest
 
-from Academics.BEP.Catalysis.mindmap import preview as preview_module
-from Academics.BEP.Catalysis.mindmap.preview import MindMapRequestHandler, STATIC_DIR, CANONICAL_PATH, DRAFT_PATH
-from Academics.BEP.Catalysis.mindmap.editor import add_node, load_map
-from Academics.BEP.Catalysis.mindmap.schema import MindMapNode
+from mindmap import preview as preview_module
+from mindmap.preview import MindMapRequestHandler, STATIC_DIR, CANONICAL_PATH, DRAFT_PATH
+from mindmap.editor import add_node, load_map
+from mindmap.schema import MindMapNode
 
 
 def test_static_assets_exist():
@@ -186,6 +184,7 @@ def test_preview_owner_snapshot_is_read_only_and_separate(preview_server: str, t
     assert config["owner_snapshot_read_only"] is True
 
     with urllib.request.urlopen(f"{preview_server}/api/graph?mode=owner") as resp:
+        assert resp.headers.get("Access-Control-Allow-Origin") is None
         graph = json.loads(resp.read().decode("utf-8"))
     assert {node["id"] for node in graph["nodes"]} == {"root", "theme_a", "theme_b", "q_one"}
     assert graph["source"]["role"] == "owner_personal_map"
@@ -202,3 +201,70 @@ def test_preview_owner_snapshot_is_read_only_and_separate(preview_server: str, t
         urllib.request.urlopen(req)
     assert err.value.code == 410
     assert hashlib.sha256(owner_map.read_bytes()).hexdigest() == owner_before
+
+
+def test_reader_and_figure_api_require_explicit_owner_snapshot(preview_server: str, monkeypatch):
+    monkeypatch.setattr(preview_module, "OWNER_SNAPSHOT_ENABLED", False)
+    monkeypatch.setattr(preview_module, "OWNER_SNAPSHOT_OPTIONS", {})
+    for endpoint in (
+        "/api/graph?mode=owner",
+        "/api/reader?node_id=root",
+        "/api/figure?node_id=root&path=image.png",
+    ):
+        with pytest.raises(urllib.error.HTTPError) as error:
+            urllib.request.urlopen(f"{preview_server}{endpoint}")
+        assert error.value.code == 404
+        assert error.value.headers.get("Access-Control-Allow-Origin") is None
+
+
+def test_reader_and_linked_figure_endpoints_are_opt_in_and_read_only(
+    preview_server: str, tmp_path: Path, monkeypatch,
+):
+    session = tmp_path / "research" / "session"
+    owner_directory = session / "owner_working_map"
+    page_directory = owner_directory / "pages" / "node"
+    (page_directory / "assets").mkdir(parents=True)
+    owner_map = owner_directory / "current_map.yaml"
+    owner_map.parent.mkdir(parents=True, exist_ok=True)
+    reader_content = "# Reader page\n\nReader text only.\n\n![Chart](assets/chart.png)\n"
+    (page_directory / "index.md").write_text(reader_content, encoding="utf-8")
+    figure_bytes = b"\x89PNG\r\n\x1a\nfigure"
+    (page_directory / "assets" / "chart.png").write_bytes(figure_bytes)
+    (owner_directory / "background.md").write_text("Private audit notes.", encoding="utf-8")
+    owner_map.write_text(
+        "nodes:\n  - id: root\n    parent: null\n    title: Root\n"
+        "    reader_file:\n      path: owner_working_map/pages/node/index.md\n      visibility: node_detail\n"
+        "    background_files:\n      - path: owner_working_map/background.md\n        visibility: hidden\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(preview_module, "OWNER_SNAPSHOT_ENABLED", True)
+    monkeypatch.setattr(preview_module, "OWNER_SNAPSHOT_OPTIONS", {
+        "path": owner_map,
+        "git_root": tmp_path,
+    })
+    before = hashlib.sha256(owner_map.read_bytes()).hexdigest()
+
+    query = urllib.parse.urlencode({"node_id": "root"})
+    with urllib.request.urlopen(f"{preview_server}/api/reader?{query}") as response:
+        reader = json.loads(response.read().decode("utf-8"))
+        assert response.headers.get("Access-Control-Allow-Origin") is None
+    assert reader["content"] == reader_content
+    assert "Private audit notes" not in reader["content"]
+
+    with urllib.request.urlopen(f"{preview_server}/api/reader?{query}&raw=1") as response:
+        assert response.headers.get_content_type() == "text/markdown"
+        assert response.read().decode("utf-8") == reader_content
+    with urllib.request.urlopen(f"{preview_server}/api/reader?{query}&background_index=0") as response:
+        background = json.loads(response.read().decode("utf-8"))
+    assert background["content"] == "Private audit notes."
+
+    figure_query = urllib.parse.urlencode({"node_id": "root", "path": "assets/chart.png"})
+    with urllib.request.urlopen(f"{preview_server}/api/figure?{figure_query}") as response:
+        assert response.headers.get_content_type() == "image/png"
+        assert response.headers.get("X-Content-Type-Options") == "nosniff"
+        assert response.read() == figure_bytes
+    unlinked_query = urllib.parse.urlencode({"node_id": "root", "path": "assets/unlinked.png"})
+    with pytest.raises(urllib.error.HTTPError) as error:
+        urllib.request.urlopen(f"{preview_server}/api/figure?{unlinked_query}")
+    assert error.value.code == 404
+    assert hashlib.sha256(owner_map.read_bytes()).hexdigest() == before

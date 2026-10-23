@@ -12,13 +12,17 @@ import pytest
 import yaml
 from pydantic import ValidationError
 
-REPO_ROOT = Path(__file__).resolve().parents[5]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from Academics.BEP.Catalysis.mindmap.editor import edit_node, load_map
-from Academics.BEP.Catalysis.mindmap.owner_map import load_owner_map_snapshot
-from Academics.BEP.Catalysis.mindmap.schema import (
+from mindmap.editor import edit_node, load_map
+from mindmap.owner_map import (
+    load_owner_map_snapshot,
+    load_owner_reader_document,
+    load_owner_reader_figure,
+)
+from mindmap.schema import (
     MindMap,
     OwnerMapDocument,
     ReferenceMapDocument,
@@ -280,14 +284,20 @@ def test_explicit_local_and_pinned_git_snapshots_are_read_only(tmp_path: Path):
 
     (git_root / "manifest.yaml").write_text(yaml.safe_dump({
         "base": {
-            "commit": pinned_commit,
-            "nodes_path": "reference/nodes.yaml",
-            "sources_path": "reference/sources.yaml",
+            "migrated_snapshot": {
+                "commit": pinned_commit,
+                "nodes_path": "reference/nodes.yaml",
+                "sources_path": "reference/sources.yaml",
+                "read_from_working_tree": True,
+            },
         },
     }, sort_keys=False), encoding="utf-8")
     (git_root / "owner.yaml").write_text(yaml.safe_dump(raw_owner, sort_keys=False), encoding="utf-8")
     subprocess.run(["git", "-C", str(git_root), "add", "manifest.yaml", "owner.yaml"], check=True)
     subprocess.run(["git", "-C", str(git_root), "commit", "-m", "add owner and snapshot manifest"], check=True, capture_output=True)
+    (git_root / "reference" / "nodes.yaml").write_text(yaml.safe_dump({
+        "nodes": [{"id": "working-tree-only", "parent": None, "title": "Unpinned edit"}],
+    }), encoding="utf-8")
     git_owner_hash = hashlib.sha256((git_root / "owner.yaml").read_bytes()).hexdigest()
 
     loaded_git = load_owner_map_snapshot(
@@ -302,3 +312,141 @@ def test_explicit_local_and_pinned_git_snapshots_are_read_only(tmp_path: Path):
     assert loaded_git["reference_map"]["sources"][0]["id"] == "source-1"
     assert len(loaded_git["reference_data_sources"]) == 2
     assert hashlib.sha256((git_root / "owner.yaml").read_bytes()).hexdigest() == git_owner_hash
+
+
+def test_owner_reader_and_linked_raster_figure_stay_inside_the_selected_snapshot(tmp_path: Path):
+    repo_root = tmp_path / "repo"
+    session_root = repo_root / "research" / "session"
+    owner_directory = session_root / "owner_working_map"
+    page_directory = owner_directory / "pages" / "node"
+    (page_directory / "assets").mkdir(parents=True)
+    owner_path = owner_directory / "current_map.yaml"
+    owner_path.parent.mkdir(parents=True, exist_ok=True)
+    (page_directory / "index.md").write_text(
+        "# Reader page\n\nAn owner-facing explanation.\n\n![Mechanism](assets/mechanism.png)\n",
+        encoding="utf-8",
+    )
+    (page_directory / "assets" / "mechanism.png").write_bytes(b"\x89PNG\r\n\x1a\nreader figure")
+    (owner_directory / "background.md").write_text("Audit notes only.", encoding="utf-8")
+    owner_path.write_text(yaml.safe_dump({
+        "nodes": [{
+            "id": "root", "parent": None, "title": "Root", "tier": 7,
+            "reader_file": {"path": "owner_working_map/pages/node/index.md", "visibility": "node_detail"},
+            "background_files": [{"path": "owner_working_map/background.md", "visibility": "hidden"}],
+        }],
+    }, sort_keys=False), encoding="utf-8")
+
+    reader = load_owner_reader_document(node_id="root", path=owner_path, git_root=repo_root)
+    assert reader["content"].startswith("# Reader page")
+    assert reader["path"] == "owner_working_map/pages/node/index.md"
+    background = load_owner_reader_document(node_id="root", background_index=0, path=owner_path, git_root=repo_root)
+    assert background["content"] == "Audit notes only."
+
+    figure = load_owner_reader_figure(
+        node_id="root", relative_path="assets/mechanism.png", path=owner_path, git_root=repo_root
+    )
+    assert figure["content_type"] == "image/png"
+    assert figure["content"].endswith(b"reader figure")
+    with pytest.raises(FileNotFoundError, match="not linked"):
+        load_owner_reader_figure(
+            node_id="root", relative_path="assets/unlinked.png", path=owner_path, git_root=repo_root
+        )
+def test_owner_reader_rejects_traversal_and_symlinks_outside_snapshot(tmp_path: Path):
+    repo_root = tmp_path / "repo"
+    owner_path = repo_root / "research" / "session" / "owner_working_map" / "current_map.yaml"
+    owner_path.parent.mkdir(parents=True)
+    outside = tmp_path / "outside.md"
+    outside.write_text("outside", encoding="utf-8")
+    raw_owner = {"nodes": [{
+        "id": "root", "parent": None, "title": "Root",
+        "reader_file": {"path": "owner_working_map/pages/node/index.md"},
+    }]}
+    page = repo_root / "research" / "session" / "owner_working_map" / "pages" / "node" / "index.md"
+    page.parent.mkdir(parents=True)
+    page.write_text("# Reader", encoding="utf-8")
+    owner_path.write_text(yaml.safe_dump(raw_owner), encoding="utf-8")
+    outside_link = page.parent / "outside.md"
+    outside_link.symlink_to(outside)
+
+    raw_owner["nodes"][0]["reader_file"]["path"] = "owner_working_map/pages/node/../../../../outside.md"
+    owner_path.write_text(yaml.safe_dump(raw_owner), encoding="utf-8")
+    with pytest.raises(ValueError, match="cannot traverse"):
+        load_owner_reader_document(node_id="root", path=owner_path, git_root=repo_root)
+
+    raw_owner["nodes"][0]["reader_file"]["path"] = "owner_working_map/pages/node/outside.md"
+    owner_path.write_text(yaml.safe_dump(raw_owner), encoding="utf-8")
+    with pytest.raises(FileNotFoundError, match="not found"):
+        load_owner_reader_document(node_id="root", path=owner_path, git_root=repo_root)
+
+    isolated_directory = tmp_path / "isolated"
+    isolated_directory.mkdir()
+    isolated_map = isolated_directory / "owner.yaml"
+    sibling_file = tmp_path / "sibling.md"
+    sibling_file.write_text("outside the selected map directory", encoding="utf-8")
+    isolated_map.write_text(yaml.safe_dump({"nodes": [{
+        "id": "root", "parent": None, "title": "Root", "reader_file": "sibling.md",
+    }]}), encoding="utf-8")
+    with pytest.raises(FileNotFoundError, match="not found"):
+        load_owner_reader_document(node_id="root", path=isolated_map, git_root=repo_root)
+
+
+def test_hidden_reader_file_is_not_available_through_reader_or_figure_api(tmp_path: Path):
+    repo_root = tmp_path / "repo"
+    owner_directory = repo_root / "research" / "session" / "owner_working_map"
+    page = owner_directory / "pages" / "node" / "index.md"
+    page.parent.mkdir(parents=True)
+    page.write_text("![Chart](chart.png)", encoding="utf-8")
+    (page.parent / "chart.png").write_bytes(b"not available")
+    owner_path = owner_directory / "current_map.yaml"
+    owner_path.parent.mkdir(parents=True, exist_ok=True)
+    owner_path.write_text(yaml.safe_dump({"nodes": [{
+        "id": "root", "parent": None, "title": "Root",
+        "reader_file": {"path": "owner_working_map/pages/node/index.md", "visibility": "hidden"},
+    }]}), encoding="utf-8")
+
+    with pytest.raises(FileNotFoundError, match="not marked"):
+        load_owner_reader_document(node_id="root", path=owner_path, git_root=repo_root)
+    with pytest.raises(FileNotFoundError, match="not marked"):
+        load_owner_reader_figure(
+            node_id="root", relative_path="chart.png", path=owner_path, git_root=repo_root
+        )
+
+
+def test_migrated_bep_snapshot_loads_reference_and_uncertainty_ledgers():
+    owner_path = REPO_ROOT / "research" / "manual_map_sessions_2026_10_22" / "owner_working_map" / "current_map.yaml"
+    reference_path = REPO_ROOT / "research" / "manual_map_sessions_2026_10_22" / "owner_working_map" / "reference_map.yaml"
+    loaded = load_owner_map_snapshot(path=owner_path, reference_path=reference_path, git_root=REPO_ROOT)
+    reader_count = sum(bool(node.get("reader_file")) for node in loaded["nodes"])
+    background_count = sum(len(node.get("background_files", [])) for node in loaded["nodes"])
+    owner_source_count = sum(bool(node.get("sources")) for node in loaded["nodes"])
+    nodes = loaded["reference_map"]["nodes"]
+    source_file = REPO_ROOT / "research" / "integrated_reference_map_2026_10_22" / "sources.yaml"
+    source_records = yaml.safe_load(source_file.read_text(encoding="utf-8"))["sources"]
+    assert len(loaded["nodes"]) == 50
+    assert reader_count == 9
+    assert background_count == 14
+    assert owner_source_count == 44
+    assert len(nodes) == 143
+    assert len(loaded["reference_map"]["sources"]) == len(source_records)
+    assert len(loaded["reference_map"]["uncertainties"]) == 31
+    assert {source["kind"] for source in loaded["reference_data_sources"]} == {"local_snapshot"}
+
+
+def test_all_migrated_owner_reader_and_background_files_resolve():
+    owner_path = REPO_ROOT / "research" / "manual_map_sessions_2026_10_22" / "owner_working_map" / "current_map.yaml"
+    loaded = load_owner_map_snapshot(path=owner_path, git_root=REPO_ROOT)
+    readers = 0
+    backgrounds = 0
+    for node in loaded["nodes"]:
+        if node.get("reader_file"):
+            document = load_owner_reader_document(node_id=node["id"], path=owner_path, git_root=REPO_ROOT)
+            assert document["content"].strip()
+            readers += 1
+        for index, _file in enumerate(node.get("background_files", [])):
+            document = load_owner_reader_document(
+                node_id=node["id"], background_index=index, path=owner_path, git_root=REPO_ROOT
+            )
+            assert document["content"].strip()
+            backgrounds += 1
+    assert readers == 9
+    assert backgrounds == 14

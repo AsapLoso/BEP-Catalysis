@@ -32,7 +32,16 @@
       "source_file": "Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/validation_results.json"
     },
     "source_access_note": "Work's dataset reports 19 full_text_read source records (not necessarily reviewed by owner); remaining source types and uncertain claims must retain their evidence access bounds.",
-    "merge_policy": "Pinned reference SHA updated as a read-only lookup to Goal-4 result. No cherry-pick, merging, or mutation of the PR #180 scientific graph; do not promote personal-map content."
+    "merge_policy": "Pinned reference SHA updated as a read-only lookup to Goal-4 result. No cherry-pick, merging, or mutation of the PR #180 scientific graph; do not promote personal-map content.",
+    "migrated_snapshot": {
+      "repository": "AsapLoso/BEP-Catalysis",
+      "commit": "6803814cd827e4f91323fa7b6f406eea579b286b",
+      "nodes_path": "research/integrated_reference_map_2026_10_22/nodes.yaml",
+      "sources_path": "research/integrated_reference_map_2026_10_22/sources.yaml",
+      "uncertainties_path": "research/integrated_reference_map_2026_10_22/uncertainties.yaml",
+      "read_from_working_tree": true,
+      "note": "The commit identifies the migrated source snapshot; runtime reads the named files from the current checkout and records their content hashes. The original AAPM repository, branch, commit and paths above remain the source-provenance record."
+    }
   },
   "ai_science_updates": [
     {

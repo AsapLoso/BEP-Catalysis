@@ -7,19 +7,16 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 from pathlib import Path
-REPO_ROOT = Path(__file__).resolve().parents[5]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
-MINDMAP_DIR = Path(__file__).resolve().parents[1]
-if str(MINDMAP_DIR) not in sys.path:
-    sys.path.insert(0, str(MINDMAP_DIR))
 
 import shutil
 import tempfile
 import hashlib
 import pytest
 
-from Academics.BEP.Catalysis.mindmap.editor import (
+from mindmap.editor import (
     add_node,
     attach_source,
     delete_node,
@@ -31,8 +28,8 @@ from Academics.BEP.Catalysis.mindmap.editor import (
     set_importance,
     set_tier,
 )
-from Academics.BEP.Catalysis.mindmap.mcp_server import MindMapMCPServer
-from Academics.BEP.Catalysis.mindmap.schema import MindMap, MindMapNode, SourceItem
+from mindmap.mcp_server import MindMapMCPServer
+from mindmap.schema import MindMap, MindMapNode, SourceItem
 
 
 @pytest.fixture

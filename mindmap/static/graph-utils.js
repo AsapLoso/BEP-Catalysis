@@ -241,6 +241,158 @@
     });
   }
 
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function safeMarkdownHref(value) {
+    const href = String(value || "").trim();
+    if (href.startsWith("#")) return href;
+    try {
+      const parsed = new URL(href);
+      return ["http:", "https:", "mailto:"].includes(parsed.protocol) ? href : null;
+    } catch (_error) {
+      return null;
+    }
+  }
+
+  function renderInlineMarkdown(value, options = {}) {
+    const source = String(value ?? "");
+    const tokenPattern = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+["']([^"']*)["'])?\)|\[([^\]]+)\]\(([^)\s]+)\)|`([^`]+)`|\*\*([\s\S]+?)\*\*|\*([^*\n]+)\*/g;
+    let output = "";
+    let cursor = 0;
+    let match;
+    while ((match = tokenPattern.exec(source)) !== null) {
+      output += escapeHtml(source.slice(cursor, match.index)).replace(/\n/g, "<br>");
+      if (match[1] !== undefined) {
+        const alt = match[1];
+        const imagePath = match[2];
+        const rasterImage = /\.(?:png|jpe?g|gif|webp)(?:[?#].*)?$/i.test(imagePath);
+        if (options.allowFigures !== true || !rasterImage || /^(?:[a-z][a-z0-9+.-]*:|\/\/|\/)/i.test(imagePath)) {
+          output += escapeHtml(match[0]);
+        } else {
+          output += `<button type="button" class="reader-figure-button" data-reader-image-path="${escapeHtml(imagePath)}" data-reader-image-alt="${escapeHtml(alt)}">Show figure: ${escapeHtml(alt || "Open figure")}</button>`;
+        }
+      } else if (match[4] !== undefined) {
+        const href = safeMarkdownHref(match[5]);
+        output += href
+          ? `<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(match[4])}</a>`
+          : escapeHtml(match[4]);
+      } else if (match[6] !== undefined) {
+        output += `<code>${escapeHtml(match[6])}</code>`;
+      } else if (match[7] !== undefined) {
+        output += `<strong>${escapeHtml(match[7])}</strong>`;
+      } else {
+        output += `<em>${escapeHtml(match[8])}</em>`;
+      }
+      cursor = tokenPattern.lastIndex;
+    }
+    output += escapeHtml(source.slice(cursor)).replace(/\n/g, "<br>");
+    return output;
+  }
+
+  function renderMarkdownSafe(markdown, options = {}) {
+    const lines = String(markdown ?? "").replace(/\r\n?/g, "\n").split("\n");
+    const blocks = [];
+    let paragraph = [];
+    let listType = null;
+    let listItems = [];
+    let quoteLines = [];
+    let codeLines = null;
+
+    const flushParagraph = () => {
+      if (paragraph.length) {
+        blocks.push(`<p>${renderInlineMarkdown(paragraph.join("\n"), options)}</p>`);
+        paragraph = [];
+      }
+    };
+    const flushList = () => {
+      if (listType && listItems.length) {
+        blocks.push(`<${listType}>${listItems.map((item) => `<li>${renderInlineMarkdown(item, options)}</li>`).join("")}</${listType}>`);
+      }
+      listType = null;
+      listItems = [];
+    };
+    const flushQuote = () => {
+      if (quoteLines.length) {
+        blocks.push(`<blockquote>${quoteLines.map((line) => `<p>${renderInlineMarkdown(line, options)}</p>`).join("")}</blockquote>`);
+      }
+      quoteLines = [];
+    };
+
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (codeLines !== null) {
+        if (/^```/.test(trimmed)) {
+          blocks.push(`<pre><code>${escapeHtml(codeLines.join("\n"))}</code></pre>`);
+          codeLines = null;
+        } else {
+          codeLines.push(line);
+        }
+        continue;
+      }
+      if (/^```/.test(trimmed)) {
+        flushParagraph();
+        flushList();
+        flushQuote();
+        codeLines = [];
+        continue;
+      }
+      if (!trimmed) {
+        flushParagraph();
+        flushList();
+        flushQuote();
+        continue;
+      }
+      const heading = trimmed.match(/^(#{1,6})\s+(.+)$/);
+      if (heading) {
+        flushParagraph();
+        flushList();
+        flushQuote();
+        const level = Math.min(5, heading[1].length + 1);
+        blocks.push(`<h${level}>${renderInlineMarkdown(heading[2], options)}</h${level}>`);
+        continue;
+      }
+      if (/^(?:---+|\*\*\*+|___+)$/.test(trimmed)) {
+        flushParagraph();
+        flushList();
+        flushQuote();
+        blocks.push("<hr>");
+        continue;
+      }
+      const quote = trimmed.match(/^>\s?(.*)$/);
+      if (quote) {
+        flushParagraph();
+        flushList();
+        quoteLines.push(quote[1]);
+        continue;
+      }
+      const listItem = trimmed.match(/^([-+*]|\d+[.)])\s+(.+)$/);
+      if (listItem) {
+        flushParagraph();
+        flushQuote();
+        const nextType = /^\d/.test(listItem[1]) ? "ol" : "ul";
+        if (listType && listType !== nextType) flushList();
+        listType = nextType;
+        listItems.push(listItem[2]);
+        continue;
+      }
+      flushList();
+      flushQuote();
+      paragraph.push(line);
+    }
+    flushParagraph();
+    flushList();
+    flushQuote();
+    if (codeLines !== null) blocks.push(`<pre><code>${escapeHtml(codeLines.join("\n"))}</code></pre>`);
+    return blocks.join("");
+  }
+
   const api = {
     STAGE_LABELS,
     LEGACY_TIER_LABELS,
@@ -252,6 +404,7 @@
     siblingNavigation,
     stagePresentation,
     resolveClaimProvenance,
+    renderMarkdownSafe,
   };
   root.BepMindMapGraph = api;
   if (typeof module !== "undefined" && module.exports) module.exports = api;

@@ -13,30 +13,17 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-try:
-    from Academics.BEP.Catalysis.mindmap.editor import (
-        add_node,
-        attach_source,
-        delete_node,
-        edit_node,
-        load_map,
-        reparent_node,
-        set_importance,
-        set_tier,
-    )
-    from Academics.BEP.Catalysis.mindmap.schema import MindMapNode, merge_maps
-except (ImportError, ModuleNotFoundError):
-    from editor import (
-        add_node,
-        attach_source,
-        delete_node,
-        edit_node,
-        load_map,
-        reparent_node,
-        set_importance,
-        set_tier,
-    )
-    from schema import MindMapNode, merge_maps
+from mindmap.editor import (
+    add_node,
+    attach_source,
+    delete_node,
+    edit_node,
+    load_map,
+    reparent_node,
+    set_importance,
+    set_tier,
+)
+from mindmap.schema import MindMapNode, merge_maps
 
 DEFAULT_DATA_DIR = Path(__file__).resolve().parent / "data"
 CANONICAL_PATH = DEFAULT_DATA_DIR / "bep_map.yaml"

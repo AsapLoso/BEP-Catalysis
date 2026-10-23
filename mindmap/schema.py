@@ -221,6 +221,17 @@ class OwnerSource(OwnerRecord):
     owner_citation_approval: Optional[str] = None
 
 
+class OwnerFileReference(OwnerRecord):
+    """Optional owner-facing reader or hidden audit-file link."""
+
+    path: Optional[str] = None
+    kind: Optional[str] = None
+    visibility: Optional[str] = None
+    purpose: Optional[str] = None
+    status: Optional[str] = None
+    human_review: Optional[str] = None
+
+
 class OwnerMapNode(OwnerRecord):
     """Validated view of a rich personal-map node without rewriting its metadata."""
 
@@ -240,11 +251,14 @@ class OwnerMapNode(OwnerRecord):
     source_claim_review: Optional[str] = None
     maturity: Optional[str] = None
     progress_stage: Optional[ProgressStage] = None
-    tier: Optional[int] = Field(default=None, ge=0, le=4)
+    # Structural depth can exceed the historical 0–4 progress labels.
+    tier: Optional[int] = Field(default=None, ge=0)
     importance: Optional[int] = Field(default=None, ge=0, le=3)
     rationale: Optional[str] = None
     summary: Optional[str] = None
     notes: Optional[str] = None
+    reader_file: Optional[Union[str, OwnerFileReference]] = None
+    background_files: List[Union[str, OwnerFileReference]] = Field(default_factory=list)
     equations: List[Any] = Field(default_factory=list)
     claims: List[OwnerClaim] = Field(default_factory=list)
     claim_refs: List[ReferenceClaimRef] = Field(default_factory=list)
@@ -252,6 +266,7 @@ class OwnerMapNode(OwnerRecord):
     assumptions: List[Any] = Field(default_factory=list)
     limitations: List[Any] = Field(default_factory=list)
     related_ids: List[str] = Field(default_factory=list)
+    related_ai_reference_ids: List[str] = Field(default_factory=list)
     ai_reference_related_ids: List[str] = Field(default_factory=list)
     research_letters: List[str] = Field(default_factory=list)
     open_questions: List[str] = Field(default_factory=list)
@@ -315,6 +330,7 @@ class ReferenceMapDocument(OwnerRecord):
 
     nodes: List[OwnerMapNode] = Field(default_factory=list)
     sources: List[OwnerSource] = Field(default_factory=list)
+    uncertainties: List[Any] = Field(default_factory=list)
 
 
 def merge_maps(canonical: MindMap, overlay: MindMap) -> MindMap:

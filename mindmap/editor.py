@@ -18,10 +18,7 @@ from typing import Any, Dict, List, Optional, Set, Union
 
 import yaml
 
-try:
-    from Academics.BEP.Catalysis.mindmap.schema import MindMap, MindMapNode, SourceItem, SourceType
-except (ImportError, ModuleNotFoundError):
-    from schema import MindMap, MindMapNode, SourceItem, SourceType
+from mindmap.schema import MindMap, MindMapNode, SourceItem, SourceType
 
 
 PROMOTION_DISABLED_MESSAGE = (

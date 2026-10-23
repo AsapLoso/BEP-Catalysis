@@ -42,6 +42,8 @@
   let activeMode = null;
   let graphSource = null;
   let referenceMap = {};
+  let readerRequestId = 0;
+  let currentOwnerReferenceIds = [];
 
   // Pan / Zoom
   let transform = { x: 0, y: 0, scale: 0.68 };
@@ -68,6 +70,7 @@
   const btnZoomOut = document.getElementById("btn-zoom-out");
   const drawer = document.getElementById("details-drawer");
   const drawerCloseBtn = document.getElementById("drawer-close-btn");
+  const referencePanel = document.getElementById("reference-panel");
 
   // Word-wrap utility for squircle cards
   function wrapText(text, maxChars = 21) {
@@ -126,10 +129,6 @@
       ? ["Your personal map", count, graphSource.label || "local snapshot", "read-only", "not live from GitHub"]
       : [graphSource.label || "AI reference map", count];
     if (activeMode !== "owner" && snapshot) parts.push("local snapshot");
-    const path = selectedNodeId
-      ? BepMindMapGraph.parentPath(rawNodes, selectedNodeId).map((node) => node.title || node.id)
-      : [];
-    parts.push(path.length ? "You are here: " + path.join(" › ") : "Select a node to see your place in the tree");
     sourceStatus.textContent = parts.join(" · ");
   }
 
@@ -172,6 +171,8 @@
       graphSource = data.source || null;
       referenceMap = data.reference_map || {};
       activeMode = selectedMode;
+      referencePanel.classList.add("hidden");
+      renderSearchResults();
       if (!initializedModes.has(selectedMode) && !collapsedByMode.has(selectedMode)) initializeCollapsedNodes(rawNodes);
       initializedModes.add(selectedMode);
       const missingSelection = selectedNodeId && !rawNodes.some((node) => node.id === selectedNodeId) ? selectedNodeId : null;
@@ -714,6 +715,111 @@
     document.getElementById("drawer-claims-section").classList.toggle("hidden", !resolved.length);
   }
 
+  function fileReferencePath(reference) {
+    if (typeof reference === "string") return reference;
+    return reference && typeof reference === "object" ? (reference.path || reference.file || "") : "";
+  }
+
+  async function renderOwnerReader(node) {
+    const section = document.getElementById("drawer-reader-section");
+    const content = document.getElementById("reader-content");
+    const status = document.getElementById("reader-file-status");
+    const rawLink = document.getElementById("reader-raw-link");
+    const reference = node.reader_file;
+    const visibility = reference && typeof reference === "object" ? reference.visibility : null;
+    const isVisibleReader = !visibility || ["node_detail", "reader", "visible"].includes(visibility);
+    const path = fileReferencePath(reference);
+    const requestId = ++readerRequestId;
+    content.innerHTML = "";
+    status.textContent = "";
+    section.classList.toggle("hidden", activeMode !== "owner" || !path || !isVisibleReader);
+    if (section.classList.contains("hidden")) return;
+
+    const endpoint = `/api/reader?node_id=${encodeURIComponent(node.id)}`;
+    rawLink.href = `${endpoint}&raw=1`;
+    status.textContent = "Loading reader page…";
+    try {
+      const response = await fetch(endpoint);
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
+      if (requestId !== readerRequestId || selectedNodeId !== node.id) return;
+      const kind = data.kind ? `Reader type: ${String(data.kind).replaceAll("_", " ")}` : "Reader page";
+      const review = data.human_review === "not_assessed"
+        ? "Owner review not assessed"
+        : (data.human_review ? "Review detail in technical audit" : "");
+      status.textContent = [kind, review].filter(Boolean).join(" · ");
+      status.title = [data.status ? `File status: ${data.status}` : "", data.human_review ? `Human review: ${data.human_review}` : ""].filter(Boolean).join("\n");
+      content.innerHTML = BepMindMapGraph.renderMarkdownSafe(data.content, { allowFigures: true });
+    } catch (error) {
+      if (requestId !== readerRequestId || selectedNodeId !== node.id) return;
+      status.textContent = `Reader page could not be loaded: ${error.message}`;
+    }
+  }
+
+  function renderBackgroundFiles(node) {
+    const section = document.getElementById("drawer-background-details");
+    const list = document.getElementById("drawer-background-files");
+    const content = document.getElementById("background-reader-content");
+    const files = activeMode === "owner" && Array.isArray(node.background_files) ? node.background_files : [];
+    document.getElementById("background-file-count").textContent = String(files.length);
+    section.classList.toggle("hidden", !files.length);
+    section.open = false;
+    content.classList.add("hidden");
+    content.innerHTML = "";
+    list.innerHTML = files.length ? files.map((file, index) => {
+      const descriptor = typeof file === "string" ? { path: file } : (file || {});
+      const label = descriptor.path || descriptor.file || `Background file ${index + 1}`;
+      const purpose = descriptor.purpose ? `<small>${escapeHtml(descriptor.purpose)}</small>` : "";
+      const visibility = descriptor.visibility ? `<small>Visibility: ${escapeHtml(descriptor.visibility)}</small>` : "";
+      return `<li><button class="background-file-button" data-background-index="${index}">${escapeHtml(label)}</button>${purpose}${visibility}</li>`;
+    }).join("") : "";
+  }
+
+  function renderFileAudit(node) {
+    const section = document.getElementById("drawer-file-audit-section");
+    const list = document.getElementById("drawer-file-audit");
+    const records = [];
+    const append = (label, value) => {
+      if (value === null || value === undefined || value === "") return;
+      records.push(statusMarkup(label, displayValue(value)));
+    };
+    const reader = activeMode === "owner"
+      ? (node.reader_file && typeof node.reader_file === "object" ? node.reader_file : (node.reader_file ? { path: node.reader_file } : null))
+      : null;
+    if (reader) {
+      ["path", "kind", "visibility", "status", "purpose", "human_review"].forEach((field) => append(`Reader · ${field.replaceAll("_", " ")}`, reader[field]));
+    }
+    (activeMode === "owner" && Array.isArray(node.background_files) ? node.background_files : []).forEach((file, index) => {
+      const descriptor = typeof file === "string" ? { path: file } : (file || {});
+      ["path", "kind", "visibility", "purpose", "status", "human_review"].forEach((field) => append(`Background ${index + 1} · ${field.replaceAll("_", " ")}`, descriptor[field]));
+    });
+    list.innerHTML = records.join("");
+    section.classList.toggle("hidden", !records.length);
+  }
+
+  async function loadBackgroundFile(nodeId, index, button) {
+    const target = document.getElementById("background-reader-content");
+    const requestId = ++readerRequestId;
+    const selectedButton = button;
+    selectedButton.disabled = true;
+    target.classList.remove("hidden");
+    target.textContent = "Loading background file…";
+    try {
+      const endpoint = `/api/reader?node_id=${encodeURIComponent(nodeId)}&background_index=${index}`;
+      const response = await fetch(endpoint);
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
+      if (requestId !== readerRequestId || selectedNodeId !== nodeId) return;
+      target.innerHTML = `<h4>${escapeHtml(data.path || data.file_name || "Background file")}</h4>${BepMindMapGraph.renderMarkdownSafe(data.content, { allowFigures: true })}`;
+    } catch (error) {
+      if (requestId === readerRequestId && selectedNodeId === nodeId) {
+        target.textContent = `Background file could not be loaded: ${error.message}`;
+      }
+    } finally {
+      selectedButton.disabled = false;
+    }
+  }
+
   function showDrawer(node) {
     selectedNodeId = node.id;
     if (activeMode) selectionByMode.set(activeMode, node.id);
@@ -735,9 +841,11 @@
 
     document.getElementById("promotion-disabled-note").classList.toggle("hidden", !node.is_draft);
 
-    const question = node.question || node.research_question || (node.title ? `No separate question field is recorded. Node: ${node.title}` : "Question text not recorded.");
-    const summary = node.summary || node.rationale || "Summary not recorded.";
-    document.getElementById("drawer-question").textContent = question;
+    const question = node.question || node.research_question || "";
+    const summary = node.summary || "Summary not recorded.";
+    const questionElement = document.getElementById("drawer-question");
+    questionElement.textContent = question;
+    questionElement.classList.toggle("hidden", !question);
     document.getElementById("drawer-summary").textContent = summary;
     document.getElementById("drawer-rationale").textContent = node.rationale || "No rationale specified.";
     document.getElementById("drawer-notes").textContent = node.notes || "No technical notes recorded.";
@@ -785,22 +893,30 @@
     }, "No source records attached.");
     setList("drawer-questions", node.open_questions, (questionText) => escapeHtml(typeof questionText === "string" ? questionText : JSON.stringify(questionText)), "No open questions.");
 
-    const related = [...new Set([...(node.related_ids || []), ...(node.ai_reference_related_ids || [])])];
-    const referencePreview = document.getElementById("reference-node-preview");
-    referencePreview.classList.add("hidden");
-    referencePreview.innerHTML = "";
-    if (related.length) {
-      setList("drawer-related", related, (id) => {
-        const target = rawNodes.find((item) => item.id === id);
-        if (target) return `<button class="related-node" data-node-nav="${escapeHtml(id)}">${escapeHtml(target.title)} · ${escapeHtml(id)}</button>`;
-        const referenceNode = (referenceMap.nodes || []).find((item) => item.id === id);
-        return referenceNode
-          ? `<button class="related-node" data-reference-node="${escapeHtml(id)}">AI reference: ${escapeHtml(referenceNode.title || id)} · ${escapeHtml(id)}</button>`
-          : `<span>${escapeHtml(id)} · target unresolved in available snapshots</span>`;
-      }, "No related nodes.");
-    } else {
-      document.getElementById("drawer-related").innerHTML = '<li class="empty-state">No related nodes recorded.</li>';
-    }
+    const ownerRelated = [...new Set(node.related_ids || [])];
+    setList("drawer-related", ownerRelated, (id) => {
+      const target = rawNodes.find((item) => item.id === id);
+      return target
+        ? `<button class="related-node" data-node-nav="${escapeHtml(id)}">${escapeHtml(target.title)} · ${escapeHtml(id)}</button>`
+        : `<span>${escapeHtml(id)} · target unavailable in this snapshot</span>`;
+    }, "No related owner nodes recorded.");
+
+    const linkedReferenceIds = [...new Set([
+      ...(node.related_ai_reference_ids || []),
+      ...(node.ai_reference_related_ids || []),
+    ])];
+    currentOwnerReferenceIds = activeMode === "owner" ? linkedReferenceIds : [];
+    const availableReferenceIds = currentOwnerReferenceIds.filter((id) =>
+      (referenceMap.nodes || []).some((item) => item.id === id)
+    );
+    const referenceLaunch = document.getElementById("drawer-reference-links-section");
+    referenceLaunch.classList.toggle("hidden", !availableReferenceIds.length);
+    document.getElementById("open-linked-references").textContent = `Explore AI references (${availableReferenceIds.length})`;
+
+    renderOwnerReader(node);
+    renderBackgroundFiles(node);
+    renderFileAudit(node);
+    document.getElementById("drawer-audit-details").open = false;
 
     renderBreadcrumb(node);
     renderSiblingNavigation(node);
@@ -822,21 +938,74 @@
 
   function showReferenceNode(nodeId) {
     const item = (referenceMap.nodes || []).find((node) => node.id === nodeId);
-    const preview = document.getElementById("reference-node-preview");
+    const title = document.getElementById("reference-panel-title");
+    const summary = document.getElementById("reference-panel-summary");
+    const claimsContainer = document.getElementById("reference-panel-claims");
+    const sourcesContainer = document.getElementById("reference-panel-sources");
+    const uncertaintiesList = document.getElementById("reference-panel-uncertainties");
+    const relatedSection = document.getElementById("reference-panel-related-section");
+    const relatedList = document.getElementById("reference-panel-related");
     if (!item) {
-      preview.textContent = "This AI reference node is not present in the loaded snapshot.";
-      preview.classList.remove("hidden");
+      title.textContent = "AI reference unavailable";
+      summary.textContent = "This reference node is not present in the loaded snapshot.";
+      claimsContainer.innerHTML = "";
+      sourcesContainer.innerHTML = "";
+      uncertaintiesList.innerHTML = "";
+      relatedSection.classList.add("hidden");
+      referencePanel.classList.remove("hidden");
       return;
     }
+    title.textContent = item.title || item.id;
+    summary.textContent = item.summary || item.explanation || "No summary recorded.";
     const refs = [...(item.claim_refs || []), ...(item.claims || [])];
-    const referenceText = refs.map((claim) => {
-      const support = displayValue(claim.supports || claim.statement || "");
-      const locator = claim.locator ? ` · ${claim.locator}` : "";
-      const sourceId = claim.source_id ? ` · source ${claim.source_id}` : "";
-      return `<li>${escapeHtml(support || "Reference claim details not recorded.")}${escapeHtml(locator)}${escapeHtml(sourceId)}</li>`;
-    }).join("");
-    preview.innerHTML = `<h4>AI reference snapshot · ${escapeHtml(item.title || item.id)}</h4><p>${escapeHtml(item.summary || item.explanation || "No summary recorded.")}</p>${referenceText ? `<ul>${referenceText}</ul>` : '<p class="source-trail">No claim references are attached to this node.</p>'}`;
-    preview.classList.remove("hidden");
+    claimsContainer.innerHTML = refs.length ? refs.map((claim) => {
+      const support = claim.supports || claim.statement || "Evidence note not recorded.";
+      const locator = claim.locator ? `<div class="reference-meta">Locator: ${escapeHtml(claim.locator)}</div>` : "";
+      const sourceId = claim.source_id ? `<div class="reference-meta">Source record: ${escapeHtml(claim.source_id)}</div>` : "";
+      const evidence = claim.evidence_type ? `<div class="reference-meta">Evidence type: ${escapeHtml(claim.evidence_type)}</div>` : "";
+      return `<article class="reference-claim"><p>${escapeHtml(displayValue(support))}</p>${locator}${sourceId}${evidence}</article>`;
+    }).join("") : '<p class="empty-state">No claim references are attached to this node.</p>';
+
+    const sourceIds = new Set(refs.map((claim) => claim.source_id).filter(Boolean));
+    (item.source_ids || []).forEach((id) => sourceIds.add(id));
+    const sourceRecords = (referenceMap.sources || []).filter((source) => sourceIds.has(source.id));
+    const sourceCards = sourceRecords.length ? sourceRecords.map((source) => {
+      const href = safeExternalUrl(source.url) || (source.doi ? `https://doi.org/${encodeURIComponent(source.doi)}` : null);
+      const link = href ? `<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(source.doi ? `doi:${source.doi}` : source.url)}</a>` : "";
+      const fields = [
+        source.locator ? `Locator: ${source.locator}` : "",
+        source.source_access || source.access_status ? `Access: ${source.source_access || source.access_status}` : "",
+        source.verification ? `AI review: ${source.verification}` : "",
+        `Human verification: ${displayStatus(source.human_verified)}`,
+      ].filter(Boolean).map((value) => `<div class="reference-meta">${escapeHtml(value)}</div>`).join("");
+      return `<article class="reference-source"><strong>${escapeHtml(source.title || source.id)}</strong>${link ? `<div>${link}</div>` : ""}${fields}</article>`;
+    }).join("") : '<p class="empty-state">No linked source records are present in this snapshot.</p>';
+    const limitations = Array.isArray(item.limitations) ? item.limitations : (item.limitations ? [item.limitations] : []);
+    const questions = Array.isArray(item.open_questions) ? item.open_questions : (item.open_questions ? [item.open_questions] : []);
+    const limitMarkup = [...limitations.map((value) => `Limitation: ${displayValue(value)}`), ...questions.map((value) => `Open question: ${displayValue(value)}`)]
+      .map((value) => `<li>${escapeHtml(value)}</li>`).join("");
+    sourcesContainer.innerHTML = sourceCards + (limitMarkup ? `<ul class="reference-limits">${limitMarkup}</ul>` : "");
+
+    const affected = (entry) => new Set([
+      ...(Array.isArray(entry.linked_nodes) ? entry.linked_nodes : []),
+      ...(Array.isArray(entry.affected_node_ids) ? entry.affected_node_ids : []),
+      ...(Array.isArray(entry.node_ids) ? entry.node_ids : []),
+    ]);
+    const uncertaintyEntries = (referenceMap.uncertainties || []).filter((entry) => affected(entry).has(item.id));
+    uncertaintiesList.innerHTML = uncertaintyEntries.length ? uncertaintyEntries.map((entry) => {
+      const priority = entry.priority ? `<strong>${escapeHtml(entry.priority)} · </strong>` : "";
+      const status = entry.status ? `<small>${escapeHtml(entry.status)}</small>` : "";
+      return `<li>${priority}${escapeHtml(entry.question || entry.title || entry.id || "Uncertainty not described.")}${status}</li>`;
+    }).join("") : '<li class="empty-state">No uncertainty ledger entries are directly linked to this node.</li>';
+
+    const ownerLinkedIds = currentOwnerReferenceIds.includes(item.id) ? currentOwnerReferenceIds : [];
+    const relatedIds = [...new Set([...(item.related_ids || []), ...ownerLinkedIds])];
+    const relatedNodes = relatedIds.map((id) => (referenceMap.nodes || []).find((node) => node.id === id)).filter(Boolean);
+    relatedSection.classList.toggle("hidden", !relatedNodes.length);
+    relatedList.innerHTML = relatedNodes.map((node) =>
+      `<li><button class="related-node" data-reference-node="${escapeHtml(node.id)}">${escapeHtml(node.title || node.id)} · ${escapeHtml(node.id)}</button></li>`
+    ).join("");
+    referencePanel.classList.remove("hidden");
   }
 
   function closeDrawer() {
@@ -1047,7 +1216,7 @@
     tourStepIndicator.textContent = "Step " + (index + 1) + " of " + TOUR_SEQUENCE.length;
     tourStepCategory.textContent = item.motion === "return" ? "Backtracking" : "Exploring";
     tourNodeTitle.textContent = node.title;
-    tourNodeRationale.textContent = node.summary || node.rationale || "";
+    tourNodeRationale.textContent = node.summary || "Summary not recorded.";
 
     tourPrevBtn.disabled = index === 0;
     tourNextBtn.textContent = index === TOUR_SEQUENCE.length - 1 ? "Finish" : "Next";
@@ -1114,20 +1283,44 @@
       searchResults.classList.add("hidden");
       return;
     }
-    const matches = rawNodes.filter((node) => {
+    const mapMatches = rawNodes.filter((node) => {
       const sources = (node.sources || []).map((source) => typeof source === "string" ? source : JSON.stringify(source)).join(" ");
       const claims = (node.claims || []).map((claim) => claim.statement || "").join(" ");
       const text = [node.id, node.title, node.question, node.summary, node.rationale, node.notes, sources, claims, ...(node.open_questions || [])].join(" ");
       return text.toLocaleLowerCase().includes(query);
-    });
+    }).map((node) => ({ type: "map", node }));
+    const referenceMatches = activeMode === "owner" ? (referenceMap.nodes || []).filter((node) => {
+      const claims = [...(node.claim_refs || []), ...(node.claims || [])]
+        .map((claim) => [claim.supports, claim.statement, claim.locator, claim.source_id].join(" ")).join(" ");
+      const nodeSourceIds = new Set([
+        ...(Array.isArray(node.source_ids) ? node.source_ids : []),
+        ...(Array.isArray(node.claim_refs) ? node.claim_refs.map((claim) => claim.source_id) : []),
+      ].filter(Boolean));
+      const sourceText = (referenceMap.sources || []).filter((source) => nodeSourceIds.has(source.id))
+        .map((source) => [source.id, source.title, source.doi, source.url].join(" ")).join(" ");
+      const uncertaintyText = (referenceMap.uncertainties || []).filter((entry) => {
+        const linkedIds = [entry.linked_nodes, entry.affected_node_ids, entry.node_ids]
+          .filter(Array.isArray).flat();
+        return linkedIds.includes(node.id);
+      }).map((entry) => {
+        const evidenceNeeded = Array.isArray(entry.evidence_needed) ? entry.evidence_needed : [entry.evidence_needed || ""];
+        return [entry.question, entry.why_open, ...evidenceNeeded].join(" ");
+      }).join(" ");
+      const openQuestions = Array.isArray(node.open_questions) ? node.open_questions : [node.open_questions || ""];
+      const limitations = Array.isArray(node.limitations) ? node.limitations : [node.limitations || ""];
+      const text = [node.id, node.title, node.summary, node.explanation, claims, sourceText, uncertaintyText, ...openQuestions, ...limitations].join(" ");
+      return text.toLocaleLowerCase().includes(query);
+    }).map((node) => ({ type: "reference", node })) : [];
+    const matches = [...mapMatches, ...referenceMatches];
     if (!matches.length) {
-      searchResults.innerHTML = '<div class="search-empty">No matching nodes in this snapshot.</div>';
+      searchResults.innerHTML = '<div class="search-empty">No matching nodes in the loaded snapshots.</div>';
       searchResults.classList.remove("hidden");
       return;
     }
     const visibleMatches = matches.slice(0, 40);
-    const results = visibleMatches.map((node) =>
-      `<button class="search-result" role="option" data-search-node="${escapeHtml(node.id)}"><span>${escapeHtml(node.title)}</span><small>${escapeHtml(node.id)}</small></button>`
+    const results = visibleMatches.map(({ type, node }) => type === "reference"
+      ? `<button class="search-result reference-search-result" role="option" data-search-reference="${escapeHtml(node.id)}"><span>${escapeHtml(node.title || node.id)}</span><small>AI reference · ${escapeHtml(node.id)}</small></button>`
+      : `<button class="search-result" role="option" data-search-node="${escapeHtml(node.id)}"><span>${escapeHtml(node.title)}</span><small>${escapeHtml(node.id)}</small></button>`
     ).join("");
     const count = matches.length > visibleMatches.length ? `<div class="search-count">Showing ${visibleMatches.length} of ${matches.length} matches. Refine the search to narrow results.</div>` : `<div class="search-count">${matches.length} match${matches.length === 1 ? "" : "es"}</div>`;
     searchResults.innerHTML = count + results;
@@ -1139,6 +1332,12 @@
   btnRefresh.addEventListener("click", () => fetchGraph());
   graphSearch.addEventListener("input", renderSearchResults);
   searchResults.addEventListener("click", (event) => {
+    const referenceResult = event.target.closest("[data-search-reference]");
+    if (referenceResult) {
+      showReferenceNode(referenceResult.getAttribute("data-search-reference"));
+      searchResults.classList.add("hidden");
+      return;
+    }
     const result = event.target.closest("[data-search-node]");
     if (!result) return;
     navigateToNode(result.getAttribute("data-search-node"));
@@ -1155,8 +1354,46 @@
   document.getElementById("drawer-related").addEventListener("click", (event) => {
     const target = event.target.closest("[data-node-nav]");
     if (target) navigateToNode(target.dataset.nodeNav);
-    const referenceTarget = event.target.closest("[data-reference-node]");
-    if (referenceTarget) showReferenceNode(referenceTarget.dataset.referenceNode);
+  });
+  document.getElementById("open-linked-references").addEventListener("click", () => {
+    const firstReferenceId = currentOwnerReferenceIds.find((id) =>
+      (referenceMap.nodes || []).some((item) => item.id === id)
+    );
+    if (firstReferenceId) showReferenceNode(firstReferenceId);
+  });
+  document.getElementById("reference-panel-close").addEventListener("click", () => referencePanel.classList.add("hidden"));
+  document.getElementById("reference-panel-related").addEventListener("click", (event) => {
+    const target = event.target.closest("[data-reference-node]");
+    if (target) showReferenceNode(target.dataset.referenceNode);
+  });
+  document.getElementById("drawer-background-files").addEventListener("click", (event) => {
+    const target = event.target.closest("[data-background-index]");
+    if (target && selectedNodeId) loadBackgroundFile(selectedNodeId, Number(target.dataset.backgroundIndex), target);
+  });
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-reader-image-path]");
+    if (!button || activeMode !== "owner" || !selectedNodeId) return;
+    let output = button.nextElementSibling;
+    if (!output || !output.classList.contains("reader-figure-output")) {
+      output = document.createElement("span");
+      output.className = "reader-figure-output";
+      const image = document.createElement("img");
+      image.alt = button.dataset.readerImageAlt || "Reader figure";
+      image.loading = "lazy";
+      image.src = `/api/figure?node_id=${encodeURIComponent(selectedNodeId)}&path=${encodeURIComponent(button.dataset.readerImagePath)}`;
+      image.addEventListener("error", () => {
+        output.textContent = "This figure is not available from the selected reader snapshot.";
+      }, { once: true });
+      output.appendChild(image);
+      button.insertAdjacentElement("afterend", output);
+      button.dataset.figureLoaded = "true";
+      button.textContent = "Hide figure";
+      return;
+    }
+    output.classList.toggle("hidden");
+    button.textContent = output.classList.contains("hidden")
+      ? `Show figure: ${button.dataset.readerImageAlt || "Open figure"}`
+      : "Hide figure";
   });
   btnFit.addEventListener("click", fitView);
   btnZoomIn.addEventListener("click", () => zoomAtCenter(1.25));

@@ -14,12 +14,8 @@ if hasattr(sys.stdout, "reconfigure"):
 from pathlib import Path
 from typing import List
 
-try:
-    from Academics.BEP.Catalysis.mindmap.editor import load_map
-    from Academics.BEP.Catalysis.mindmap.schema import MindMap, MindMapNode, SourceItem
-except (ImportError, ModuleNotFoundError):
-    from editor import load_map
-    from schema import MindMap, MindMapNode, SourceItem
+from mindmap.editor import load_map
+from mindmap.schema import MindMap, MindMapNode, SourceItem
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 CANONICAL_PATH = DATA_DIR / "bep_map.yaml"

@@ -34,6 +34,21 @@ assert.ok(app.includes('tourDragHandle.addEventListener("pointerdown"'), "guided
 assert.ok(app.includes('tourDragHandle.addEventListener("keydown"'), "guided tour can be moved by keyboard");
 assert.ok(css.includes(".node-title {") && css.includes("font-size: 15px;"), "map labels use a readable size");
 assert.ok(css.includes('.map-source-status[data-map-mode="owner"]'), "the personal map has a distinct status treatment");
+assert.ok(html.includes('id="drawer-audit-details"') && html.includes("Technical details and source audit"), "technical metadata starts behind an explicit disclosure");
+assert.ok(html.includes('id="drawer-reader-section"') && html.includes('id="reader-content"'), "owner reader pages have a primary content surface");
+assert.ok(html.includes('id="drawer-background-details"') && html.includes("Hidden background files"), "background files require a separate disclosure");
+assert.ok(html.includes('id="reference-panel"') && html.includes("Separate AI reference snapshot"), "AI reference material uses its own panel");
+assert.doesNotMatch(html, /reference-node-preview/, "AI reference content is not embedded in the owner drawer");
+assert.ok(app.includes("async function renderOwnerReader(node)"), "the selected owner reader page is loaded into the reader surface");
+assert.ok(app.includes("loadBackgroundFile(selectedNodeId"), "background text loads only after its explicit action");
+assert.ok(app.includes('data-search-reference=') && app.includes("activeMode === \"owner\""), "reference search is available only with an explicitly loaded owner snapshot");
+assert.ok(app.includes("BepMindMapGraph.renderMarkdownSafe(data.content"), "reader Markdown passes through the safe renderer");
+assert.ok(css.includes(".reference-panel") && css.includes(".audit-details"), "reference and audit surfaces have separate presentation");
+const readerHtml = graph.renderMarkdownSafe('<script>alert("x")</script> ![vector](assets/path.svg) ![plot](assets/plot.png)', { allowFigures: true });
+assert.ok(readerHtml.includes("&lt;script&gt;"), "reader Markdown escapes raw HTML");
+assert.doesNotMatch(readerHtml, /<script>/, "reader Markdown cannot inject script elements");
+assert.doesNotMatch(readerHtml, /data-reader-image-path="assets\/path\.svg"/, "SVG page assets are not exposed as figures");
+assert.ok(readerHtml.includes('data-reader-image-path="assets/plot.png"'), "linked raster figures are available on demand");
 const nodes = [
   { id: "root", parent: null, title: "BEP" },
   { id: "physics", parent: "root", title: "Physics" },

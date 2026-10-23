@@ -30,20 +30,18 @@ The owner view is **opt-in** and reads a local file or an already-fetched local 
 
 Example from the repository root, after fetching the documentation branch and the pinned AI reference commit named in its `owner_working_map/reference_map.yaml` manifest:
 
-```powershell
-pixi run python -m Academics.BEP.Catalysis.mindmap.preview `
-  --owner-map-ref origin/docs/bep-theme-first-progress-units-20261022 `
-  --owner-map-git-path Academics/BEP/Catalysis/research/manual_map_sessions_2026_10_22/owner_working_map/current_map.yaml `
-  --reference-map-ref origin/docs/bep-theme-first-progress-units-20261022 `
-  --reference-map-git-path Academics/BEP/Catalysis/research/manual_map_sessions_2026_10_22/owner_working_map/reference_map.yaml `
+```sh
+python -m mindmap.preview \
+  --owner-map research/manual_map_sessions_2026_10_22/owner_working_map/current_map.yaml \
+  --reference-map research/manual_map_sessions_2026_10_22/owner_working_map/reference_map.yaml \
   --git-root .
 ```
 
-The reference manifest pins separate `nodes.yaml` and `sources.yaml` files. The adapter follows those paths only at the manifest's pinned local commit; fetch that commit explicitly before startup. If a ref or file is missing, startup fails with a clear error. You can instead pass `--owner-map <local-file>` and `--reference-map <local-file>` for local snapshots. Refresh reloads the selected local snapshot; GitHub changes appear only after the user explicitly fetches a newer ref and restarts or selects it.
+The reference manifest records the original AAPM source commit and the migrated BEP Catalysis snapshot. Its component files are read from this checkout as a read-only local snapshot; no remote fetch is performed. If a file is missing, startup fails with a clear error. You can instead pass other explicit local files, or an already-fetched local Git ref and repository-relative path. Refresh reloads the selected snapshot; GitHub changes appear only after the user explicitly fetches a newer ref and restarts or selects it.
 
 Owner nodes support five stages: `idea`, `ai_worked_out`, `human_worked_out`, `informal_writing`, and `formal_writing`. Structural approval, owner reading, owner content approval, AI source attachment, and claim/source `human_verified` are displayed separately. Historical integer tiers are labelled read-only and never migrated into an owner decision. `/api/promote`, the drawer promotion button, and the tour promotion button are disabled; the API returns HTTP 410 and editor/MCP writes fail closed for owner-review fields.
 
-The details drawer shows questions, summaries, equations, claims, assumptions, limitations, notes, open questions, source locators and cross-map links. The reference graph's `claim_refs` and source records are resolved when available. Missing passage excerpts are stated as missing; AI summaries are not rendered as quotations, and link presence does not imply human verification. Search can navigate to nodes excluded from the default scientific overview, such as separate dossier or project records, without turning them into scientific root branches.
+The selected-node panel keeps the title, summary, one progress-stage cue, and any linked reader page visible. Technical notes, source audit, and hidden background files are behind explicit disclosures; a background document loads only after it is selected. Markdown is rendered with raw HTML escaped, and linked raster figures load on request. Unlinked SVG assets are not discovered or exposed. AI references open in a separate panel with evidence notes, source access/verification metadata, limitations, and directly linked uncertainties; they remain separate from the personal map. Search shows reference results only when an owner snapshot and its reference manifest are explicitly loaded. Link presence does not imply owner understanding or human source verification.
 
 ## Reproducible edit-and-review cycle
 

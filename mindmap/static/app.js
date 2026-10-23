@@ -262,22 +262,8 @@
     if (!root || !targetId) return root;
     const path = findNodePath(root, targetId);
     if (!path) return root;
-
     path.forEach((node) => collapsedNodes.delete(node.id));
-
-    function copyPath(node, index) {
-      const copy = { ...node, children: [] };
-      const selectedChild = path[index + 1];
-      copy.children = (node.children || []).map((child) => {
-        if (selectedChild && child.id === selectedChild.id) {
-          return copyPath(child, index + 1);
-        }
-        return { ...child, children: [] };
-      });
-      return copy;
-    }
-
-    return copyPath(path[0], 0);
+    return BepMindMapGraph.focusHierarchy(root, targetId);
   }
 
   function buildScientificHierarchy(root) {
@@ -967,10 +953,8 @@
   const tourPanel = document.getElementById("tour-panel");
   const tourStepIndicator = document.getElementById("tour-step-indicator");
   const tourStepCategory = document.getElementById("tour-step-category");
-  const tourStepLevel = document.getElementById("tour-step-level");
   const tourNodeTitle = document.getElementById("tour-node-title");
   const tourNodeRationale = document.getElementById("tour-node-rationale");
-  const tourBreadcrumb = document.getElementById("tour-breadcrumb");
   const tourPrevBtn = document.getElementById("tour-prev-btn");
   const tourNextBtn = document.getElementById("tour-next-btn");
   const tourCloseBtn = document.getElementById("tour-close-btn");
@@ -1060,12 +1044,10 @@
     showDrawer(node);
     fitView();
 
-    tourStepIndicator.textContent = "Node " + (index + 1) + " of " + TOUR_SEQUENCE.length;
-    tourStepLevel.textContent = "Level " + item.level + " · " + item.levelPosition + " of " + item.levelCount;
-    tourStepCategory.textContent = item.category || "Root";
-    tourBreadcrumb.textContent = item.path.join("  ›  ");
+    tourStepIndicator.textContent = "Step " + (index + 1) + " of " + TOUR_SEQUENCE.length;
+    tourStepCategory.textContent = item.motion === "return" ? "Backtracking" : "Exploring";
     tourNodeTitle.textContent = node.title;
-    tourNodeRationale.textContent = node.rationale;
+    tourNodeRationale.textContent = node.summary || node.rationale || "";
 
     tourPrevBtn.disabled = index === 0;
     tourNextBtn.textContent = index === TOUR_SEQUENCE.length - 1 ? "Finish" : "Next";

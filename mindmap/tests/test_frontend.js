@@ -12,8 +12,9 @@ assert.ok(html.includes('id="btn-zoom-in"'), "the map has a visible zoom-in cont
 assert.ok(html.includes('id="btn-zoom-out"'), "the map has a visible zoom-out control");
 assert.doesNotMatch(html, /btn-promote-node|tour-promote-btn/, "the interface has no promotion button");
 assert.ok(app.includes("BepMindMapGraph.tourSequence(visibleHierarchy)"), "guided tour follows the displayed hierarchy");
-assert.ok(app.includes("tourBreadcrumb.textContent = item.path.join"), "guided tour shows the current path");
-assert.ok(html.includes('id="tour-step-level"'), "guided tour shows the current level and sibling position");
+assert.ok(app.includes('item.motion === "return"'), "guided tour communicates deliberate backtracking");
+assert.ok(app.includes("BepMindMapGraph.focusHierarchy(root, targetId)"), "focus uses the tested ancestry-and-siblings projection");
+assert.doesNotMatch(html, /id="tour-step-level"|id="tour-breadcrumb"/, "tour avoids repeating graph position already available in the drawer");
 assert.ok(html.includes("sibling context"), "the focus control explains the retained siblings");
 assert.ok(app.includes("function layoutHorizontalTree(root)"), "focus view lays the tree out horizontally");
 assert.ok(html.includes('src="/vendor/elk-api.js"'), "the renderer loads the locally served ELK API");
@@ -25,7 +26,7 @@ assert.ok(app.includes("edge.sections") && app.includes("did not return a clippe
 assert.ok(!app.includes('"elk.direction": "RIGHT"'), "the grand overview does not use a left-to-right layout");
 assert.ok(app.includes("using the built-in radial fallback") && app.includes("layoutTree(visibleHierarchy);"), "an engine failure keeps the overview radial");
 assert.ok(!app.includes("readable horizontal tree fallback"), "the overview never falls back to horizontal placement");
-assert.ok(app.includes("selectedChild && child.id === selectedChild.id"), "focus view retains siblings along the selected path");
+assert.ok(graph.focusHierarchy, "focus hierarchy helper is exported for regression tests");
 assert.ok(css.includes(".node-square.root-square") && css.includes("stroke-width: 5px !important"), "the overview root has a strong visible anchor");
 assert.ok(css.lastIndexOf(".node-square.branch-anchor") > css.indexOf(".node-square.stage-idea"), "top-level anchors retain their stronger border over stage colors");
 assert.ok(css.includes(".tree-link.selected-path") && css.includes("stroke-width: 5px"), "the selected ancestry is emphasized");
@@ -75,7 +76,12 @@ assert.equal(graph.parentPath(nodes, "missing").length, 0);
 const tourHierarchy = {
   id: "tour-root", parent: null, title: "Root", children: [
     { id: "a", parent: "tour-root", title: "A", children: [
-      { id: "a1", parent: "a", title: "A1", children: [] },
+      { id: "a1", parent: "a", title: "A1", children: [
+        { id: "a1_child", parent: "a1", title: "A1 child", children: [] },
+      ] },
+      { id: "a2", parent: "a", title: "A2", children: [
+        { id: "a2_child", parent: "a2", title: "A2 child", children: [] },
+      ] },
     ] },
     { id: "b", parent: "tour-root", title: "B", children: [
       { id: "b1", parent: "b", title: "B1", children: [] },
@@ -83,10 +89,26 @@ const tourHierarchy = {
   ],
 };
 const tour = graph.tourSequence(tourHierarchy);
-assert.deepEqual(tour.map((item) => item.id), ["a", "b", "a1", "b1"], "guided tour visits all siblings at a level before going deeper");
-assert.deepEqual(tour.map((item) => item.level), [1, 1, 2, 2]);
-assert.deepEqual(tour.map((item) => [item.levelPosition, item.levelCount]), [[1, 2], [2, 2], [1, 2], [2, 2]]);
-assert.deepEqual(tour[2].path, ["Root", "A", "A1"]);
+assert.deepEqual(tour.map((item) => item.id), [
+  "tour-root", "a", "a1", "a1_child", "a1", "a", "a2", "a2_child",
+  "a2", "a", "tour-root", "b", "b1", "b", "tour-root",
+], "guided tour explores depth-first and revisits parents when backtracking");
+assert.deepEqual(tour.map((item) => item.motion), [
+  "enter", "enter", "enter", "enter", "return", "return", "enter", "enter",
+  "return", "return", "return", "enter", "enter", "return", "return",
+]);
+assert.deepEqual(tour.map((item) => item.level), [0, 1, 2, 3, 2, 1, 2, 3, 2, 1, 0, 1, 2, 1, 0]);
+assert.deepEqual(tour[3].path, ["Root", "A", "A1", "A1 child"]);
+assert.deepEqual([tour[4].levelPosition, tour[4].levelCount], [1, 2], "return visits retain the actual sibling position");
+assert.deepEqual(graph.tourSequence(null), []);
+
+const focused = graph.focusHierarchy(tourHierarchy, "a1");
+assert.deepEqual(focused.children.map((node) => node.id), ["a", "b"], "ancestor sibling is visible");
+assert.deepEqual(focused.children[1].children, [], "ancestor sibling's descendants are hidden");
+assert.deepEqual(focused.children[0].children.map((node) => node.id), ["a1", "a2"], "direct siblings remain visible");
+assert.deepEqual(focused.children[0].children[1].children, [], "direct sibling's descendants are hidden");
+assert.deepEqual(focused.children[0].children[0].children.map((node) => node.id), ["a1_child"], "every selected direct child remains visible");
+assert.deepEqual(graph.focusHierarchy(tourHierarchy, "unknown"), tourHierarchy);
 
 const stages = ["idea", "ai_worked_out", "human_worked_out", "informal_writing", "formal_writing"];
 stages.forEach((stage) => {

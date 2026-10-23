@@ -51,37 +51,58 @@
     return path.reverse();
   }
 
-  // Breadth-first order visits every node at a level before any deeper node.
+  // Euler walk: descend into each branch, then deliberately revisit its parent
+  // before entering the next sibling. A return is navigation, not an approval.
   function tourSequence(rootNode) {
     const sequence = [];
-    const queue = [{ node: rootNode, ancestors: [] }];
-    const visited = new Set();
-    let cursor = 0;
-    while (cursor < queue.length) {
-      const { node, ancestors } = queue[cursor++];
-      if (!node || visited.has(node.id)) continue;
-      visited.add(node.id);
+    const entered = new Set();
+
+    function walk(node, ancestors = [], siblingPosition = 1, siblingCount = 1) {
+      if (!node || entered.has(node.id)) return false;
+      entered.add(node.id);
       const path = [...ancestors, node.title || node.id];
-      if (node.parent) {
-        sequence.push({
-          id: node.id,
-          category: ancestors[ancestors.length - 1] || "Root",
-          path,
-          level: ancestors.length,
-        });
-      }
-      (node.children || []).forEach((child) => queue.push({ node: child, ancestors: path }));
+      const step = {
+        id: node.id,
+        category: ancestors[ancestors.length - 1] || "Root",
+        path,
+        level: ancestors.length,
+        levelPosition: siblingPosition,
+        levelCount: siblingCount,
+      };
+      sequence.push({ ...step, motion: "enter" });
+      const children = node.children || [];
+      children.forEach((child, index) => {
+        if (walk(child, path, index + 1, children.length)) {
+          sequence.push({ ...step, motion: "return" });
+        }
+      });
+      return true;
     }
-    const levelCounts = new Map();
-    sequence.forEach((item) => levelCounts.set(item.level, (levelCounts.get(item.level) || 0) + 1));
-    const levelPositions = new Map();
-    sequence.forEach((item) => {
-      const position = (levelPositions.get(item.level) || 0) + 1;
-      levelPositions.set(item.level, position);
-      item.levelPosition = position;
-      item.levelCount = levelCounts.get(item.level);
-    });
+
+    walk(rootNode);
     return sequence;
+  }
+
+  // Focus keeps every immediate child of the selected node, plus the selected
+  // ancestry and direct siblings at each ancestor level (without their children).
+  function focusHierarchy(rootNode, targetId) {
+    if (!rootNode || !targetId) return rootNode;
+    const path = findHierarchyPath(rootNode, targetId);
+    if (!path) return rootNode;
+
+    function copyPath(node, index) {
+      const selectedChild = path[index + 1];
+      return {
+        ...node,
+        children: (node.children || []).map((child) => (
+          selectedChild && child.id === selectedChild.id
+            ? copyPath(child, index + 1)
+            : { ...child, children: [] }
+        )),
+      };
+    }
+
+    return copyPath(path[0], 0);
   }
 
   function focusNodeIds(nodes, targetId) {
@@ -226,6 +247,7 @@
     findHierarchyPath,
     parentPath,
     focusNodeIds,
+    focusHierarchy,
     tourSequence,
     siblingNavigation,
     stagePresentation,

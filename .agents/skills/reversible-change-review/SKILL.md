@@ -23,6 +23,7 @@ description: >-
 
 - Gather a stable preimage: file content + blob SHA/version and, if possible, a known-good baseline. Make only the requested logical edit. Protect unknown fields, metadata, formatting, local modifications and unrelated files.
 - Validate using the domain-specific checker. For changing file formats or parsers, check round-trip preservation; a visual frontend reading successfully is insufficient to prove data integrity.
+- For interactive graph/layout changes, capture the default overview, focus/tour states, and a narrow viewport. Check that panels either reserve visible canvas space or can be moved, and inspect the rendered screenshot for hidden nodes or clipped controls.
 - Inspect the full change set **before** committing/pushing: exact old/new values, `git diff -- <paths>`, or native record-difference view. Unexpected modifications mean **STOP, investigate, do not bury them in a larger change**.
 
 ## 3. Checkpoint, push, pull, compare

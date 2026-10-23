@@ -43,6 +43,10 @@ Owner nodes support five stages: `idea`, `ai_worked_out`, `human_worked_out`, `i
 
 The selected-node panel keeps the title, summary, one progress-stage cue, and any linked reader page visible. Technical notes, source audit, and hidden background files are behind explicit disclosures; a background document loads only after it is selected. Markdown is rendered with raw HTML escaped, and linked raster figures load on request. Unlinked SVG assets are not discovered or exposed. AI references open in a separate panel with evidence notes, source access/verification metadata, limitations, and directly linked uncertainties; they remain separate from the personal map. Search shows reference results only when an owner snapshot and its reference manifest are explicitly loaded. Link presence does not imply owner understanding or human source verification.
 
+## Viewer layout
+
+The overview is radial with the map root at its center; **Focus Selected** uses a left-to-right ancestry view with nearby sibling context. Opening the detail or reference panel fits the graph into the remaining canvas width. On narrow screens those panels become shorter bottom sheets, and the graph is fitted into the visible area above them. The guided-review card can be moved by dragging its header or focusing it and using the arrow keys. The draft-overlay view adds the canonical root and three discipline arms as labeled context so draft parent paths remain visible; its source YAML is unchanged.
+
 ## Reproducible edit-and-review cycle
 
 1. Read the current branch/HEAD and exact records. Make one coherent, source-bound scientific edit in an isolated branch; preserve concurrent changes and node IDs.

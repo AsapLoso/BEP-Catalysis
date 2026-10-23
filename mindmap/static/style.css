@@ -857,7 +857,7 @@ body {
 .reference-node-preview ul { margin: 8px 0 0 18px; }
 .safety-note { color: var(--text-muted); font-size: 11px; line-height: 1.45; }
 
-@media (max-width: 1500px) {
+@media (max-width: 2000px) {
   .app-header { height: auto; min-height: 64px; flex-wrap: wrap; gap: 8px 16px; padding: 9px 16px; }
   .header-left { flex: 1 1 260px; }
   .header-center { flex: 1 1 100%; order: 3; }
@@ -882,10 +882,10 @@ body {
   .legend-item { font-size: 10px; }
   .legacy-stage-note { flex-basis: 100%; text-align: center; }
   .canvas-container { min-height: 65vh; }
-  .drawer { position: fixed; top: auto; width: 100%; height: min(78vh, 720px); border-left: 0; border-top: 1px solid var(--surface-border); }
+  .drawer { position: fixed; top: auto; width: 100%; height: min(44vh, 440px); border-left: 0; border-top: 1px solid var(--surface-border); }
   .drawer.hidden { transform: translateY(100%); }
   .drawer-body { padding: 16px; gap: 16px; }
-  .reference-panel { position: fixed; top: auto; width: 100%; height: min(78vh, 720px); border-left: 0; border-top: 1px solid #c7d2fe; }
+  .reference-panel { position: fixed; top: auto; width: 100%; height: min(44vh, 440px); border-left: 0; border-top: 1px solid #c7d2fe; }
   .reference-panel-header, .reference-panel-body { padding-left: 16px; padding-right: 16px; }
   .search-results { top: 150px; left: 10px; right: 10px; width: auto; }
   .tour-panel { width: calc(100% - 20px); bottom: 10px; }

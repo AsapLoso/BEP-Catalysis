@@ -124,7 +124,9 @@
       return;
     }
     const snapshot = graphSource.status === "snapshot" || graphSource.status === "local_checkout_snapshot";
-    const count = rawNodes.length + " nodes";
+    const count = activeMode === "draft"
+      ? `${rawNodes.filter((node) => node.is_draft).length} draft nodes + ${rawNodes.filter((node) => node.context_only).length} canonical context nodes`
+      : rawNodes.length + " nodes";
     const parts = activeMode === "owner"
       ? ["Your personal map", count, graphSource.label || "local snapshot", "read-only", "not live from GitHub"]
       : [graphSource.label || "AI reference map", count];
@@ -167,6 +169,16 @@
       const data = await resp.json();
       if (!resp.ok) throw new Error(data.error || `HTTP ${resp.status}`);
       rawNodes = data.nodes || [];
+      if (selectedMode === "draft") {
+        const contextResponse = await fetch("/api/graph?mode=canonical");
+        const contextData = await contextResponse.json();
+        if (!contextResponse.ok) throw new Error(contextData.error || `HTTP ${contextResponse.status}`);
+        const draftIds = new Set(rawNodes.map((node) => node.id));
+        const contextNodes = (contextData.nodes || [])
+          .filter((node) => !draftIds.has(node.id))
+          .map((node) => ({ ...node, context_only: true }));
+        rawNodes = [...contextNodes, ...rawNodes];
+      }
       shouldFitAfterLayout = true;
       graphSource = data.source || null;
       referenceMap = data.reference_map || {};
@@ -568,9 +580,11 @@
         const stageConfig = STAGE_CONFIG[progress.stage] || { color: "#475569" };
         const badgeFill = isRoot ? "#1d4ed8" : (node.is_draft ? "#b45309" : stageConfig.color);
         const badgeLabel = isRoot
-          ? "MAP ROOT"
+          ? (node.context_only ? "CANONICAL CONTEXT" : "MAP ROOT")
           : node.is_draft
           ? "⚡ AI Draft"
+          : node.context_only
+          ? "Context"
           : progress.label;
 
         const badgeElem = `<text x="16" y="${bottomY}" class="node-badge-text" fill="${badgeFill}">${escapeHtml(badgeLabel)}</text>`;
@@ -822,6 +836,7 @@
 
   function showDrawer(node) {
     selectedNodeId = node.id;
+    const drawerWasHidden = drawer.classList.contains("hidden");
     if (activeMode) selectionByMode.set(activeMode, node.id);
     const progress = BepMindMapGraph.stagePresentation(node);
     const tierBadge = document.getElementById("drawer-tier-badge");
@@ -922,6 +937,7 @@
     renderSiblingNavigation(node);
     drawer.classList.remove("hidden");
     btnFocus.disabled = false;
+    if (drawerWasHidden) shouldFitAfterLayout = true;
     renderTree();
     updateSourceStatus();
   }
@@ -937,6 +953,7 @@
   }
 
   function showReferenceNode(nodeId) {
+    const panelWasHidden = referencePanel.classList.contains("hidden");
     const item = (referenceMap.nodes || []).find((node) => node.id === nodeId);
     const title = document.getElementById("reference-panel-title");
     const summary = document.getElementById("reference-panel-summary");
@@ -953,6 +970,10 @@
       uncertaintiesList.innerHTML = "";
       relatedSection.classList.add("hidden");
       referencePanel.classList.remove("hidden");
+      if (panelWasHidden) {
+        shouldFitAfterLayout = true;
+        renderTree();
+      }
       return;
     }
     title.textContent = item.title || item.id;
@@ -1006,11 +1027,16 @@
       `<li><button class="related-node" data-reference-node="${escapeHtml(node.id)}">${escapeHtml(node.title || node.id)} · ${escapeHtml(node.id)}</button></li>`
     ).join("");
     referencePanel.classList.remove("hidden");
+    if (panelWasHidden) {
+      shouldFitAfterLayout = true;
+      renderTree();
+    }
   }
 
   function closeDrawer() {
     drawer.classList.add("hidden");
     btnFocus.disabled = !selectedNodeId;
+    shouldFitAfterLayout = true;
     renderTree();
   }
 
@@ -1103,16 +1129,29 @@
     const graphWidth = maxX - minX + 220;
     const graphHeight = maxY - minY + 220;
 
-    const availableWidth = Math.max(260, rect.width - (drawer.classList.contains("hidden") ? 0 : drawer.offsetWidth));
+    const mobileSheet = window.matchMedia("(max-width: 720px)").matches;
+    const referenceOpen = !referencePanel.classList.contains("hidden");
+    const drawerOpen = !drawer.classList.contains("hidden");
+    const activePanel = referenceOpen ? referencePanel : (drawerOpen ? drawer : null);
+    let availableWidth = rect.width;
+    let availableHeight = rect.height;
+    if (activePanel) {
+      const panelRect = activePanel.getBoundingClientRect();
+      if (mobileSheet) {
+        availableHeight = Math.max(160, Math.min(rect.height, panelRect.top - rect.top));
+      } else {
+        availableWidth = Math.max(260, Math.min(rect.width, panelRect.left - rect.left));
+      }
+    }
     const scaleX = availableWidth / graphWidth;
-    const scaleY = rect.height / graphHeight;
+    const scaleY = availableHeight / graphHeight;
     const newScale = Math.max(0.16, Math.min(1.0, Math.min(scaleX, scaleY)));
 
     transform.scale = newScale;
     const centerX = (minX + maxX) / 2;
     const centerY = (minY + maxY) / 2;
     transform.x = availableWidth / 2 - centerX * newScale;
-    transform.y = rect.height / 2 - centerY * newScale;
+    transform.y = availableHeight / 2 - centerY * newScale;
     applyTransform();
   }
 
@@ -1361,7 +1400,11 @@
     );
     if (firstReferenceId) showReferenceNode(firstReferenceId);
   });
-  document.getElementById("reference-panel-close").addEventListener("click", () => referencePanel.classList.add("hidden"));
+  document.getElementById("reference-panel-close").addEventListener("click", () => {
+    referencePanel.classList.add("hidden");
+    shouldFitAfterLayout = true;
+    renderTree();
+  });
   document.getElementById("reference-panel-related").addEventListener("click", (event) => {
     const target = event.target.closest("[data-reference-node]");
     if (target) showReferenceNode(target.dataset.referenceNode);

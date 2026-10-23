@@ -14,6 +14,8 @@ Use five concept/writing stages: `idea`, `ai_worked_out`, `human_worked_out`, `i
 
 Historical integer tiers remain readable as legacy data and are never converted into owner progress or approval. Promotion is disabled at the HTTP, editor, MCP and tour surfaces. Unknown rich fields and nested metadata must survive adapter and legacy-editor round trips.
 
+The browser viewer uses a center-root radial overview and a left-to-right focus layout. Detail/reference panels reserve the visible map area; on narrow screens the bottom sheet leaves a fitted graph region above it. The guided-review card is movable by its header (and keyboard arrows). These are presentation behaviors only and do not change graph placement, progress, reading, or approval state.
+
 ## 0. What exists NOW (verified from GitHub, not executed locally)
 
 An **actual application already exists** in [`Academics/BEP/Catalysis/mindmap/`](../../mindmap/), on `devcontainer` as inspected 2026-10-20:

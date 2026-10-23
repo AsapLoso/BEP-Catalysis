@@ -1,0 +1,41 @@
+nodes:
+- id: bep
+  parent: null
+  title: 'Dual BEP: Acetylene Semi-Hydrogenation Reactor Modeling'
+  tier: 2
+  importance: 3
+  rationale: Core root node of the thesis.
+  notes: Supervised by Urakawa (CaSE) and Gromotka (DIAM).
+  sources: []
+  open_questions: []
+  is_draft: false
+- id: physics
+  parent: bep
+  title: Physics
+  tier: 0
+  importance: null
+  rationale: 'Physical foundations: kinetics, thermodynamics, and transport.'
+  notes: ''
+  sources: []
+  open_questions: []
+  is_draft: false
+- id: mathematics
+  parent: bep
+  title: Mathematics
+  tier: 0
+  importance: null
+  rationale: 'Mathematical formulation: PDEs, stiff numerical methods, stability.'
+  notes: ''
+  sources: []
+  open_questions: []
+  is_draft: false
+- id: systems_control
+  parent: bep
+  title: Systems & Control
+  tier: 0
+  importance: null
+  rationale: Reactor dynamics, periodic forcing, sensitivity, and state-space control.
+  notes: ''
+  sources: []
+  open_questions: []
+  is_draft: false

@@ -11,8 +11,9 @@
 | Original development checkpoint | `08967eaed47febdf597ebb60f48e6184cbab75bc` |
 | Original local base recorded during V3 work | `6803814cd827e4f91323fa7b6f406eea579b286b`; later remote check showed migration had advanced to `0cd47473a93a71f6200a21e6b66c40d6e3bc7a77`. |
 | Owner-requested PR base | `unified-reactor-model` at `2e1bda47d48a55f2f7d420e4deb34eb59c30929d` |
-| PR integration branch | `feat/unified-reactor-v3-20261024` |
-| Integration method | Cherry-picked the two V3 commits onto `unified-reactor-model`; no existing Unified Reactor notebook or migration branch was edited. |
+| PR integration branch | `feat/unified-reactor-v3-public` |
+| PR | [#5 — Unified Reactor: add BEP V3 vertical slice](https://github.com/AsapLoso/BEP-Catalysis/pull/5), open; head `0535d660a161c4bc9b976e4d6a142eed4729c642` |
+| Integration method | Replayed the two V3 commits onto `unified-reactor-model` as fresh commits after GitHub rejected the first unpublished commits for using a private email. The original V3 development branch remains preserved; no existing Unified Reactor notebook or migration branch was edited. |
 
 The `unified-reactor-model` base does not contain the AI or personal map directories. Their exact source blobs remain available at the immutable migration snapshot commit [`0cd4747`](https://github.com/AsapLoso/BEP-Catalysis/tree/0cd47473a93a71f6200a21e6b66c40d6e3bc7a77), linked below. The crosswalk uses those source records; no map data or personal status was changed.
 

@@ -1,7 +1,7 @@
 # BEP V3 progress
 
-**Checkpoint:** 2026-10-24 · **Development branch:** `v3/bep-vertical-slice-20261023` · **PR branch:** `feat/unified-reactor-v3-20261024` → `unified-reactor-model`
-**Current frontier:** V3 implementation is complete and is being proposed as an additive change to the Unified Reactor Model branch. The mixed benchmark and physical assumptions still need owner review before supervisor-facing use. The PR was owner-authorized; no merge, personal-map edit or Damian message is authorized.
+**Checkpoint:** 2026-10-24 · **Development branch:** `v3/bep-vertical-slice-20261023` · **PR branch:** `feat/unified-reactor-v3-public` → `unified-reactor-model`
+**Current frontier:** V3 implementation is complete and PR [#5](https://github.com/AsapLoso/BEP-Catalysis/pull/5) is open as an additive change to the Unified Reactor Model branch. GitHub reports the PR mergeable; no merge, personal-map edit or Damian message is authorized. The mixed benchmark and physical assumptions still need owner review before supervisor-facing use.
 
 ## Gate status
 
@@ -63,4 +63,4 @@
 
 ## Next precise action
 
-The original V3 development branch was preserved. The PR integration branch is based on `unified-reactor-model` at `2e1bda47d48a55f2f7d420e4deb34eb59c30929d` and contains only the additive `notebooks/v3/` work. The map source records used by the crosswalk are linked to migration snapshot `0cd47473a93a71f6200a21e6b66c40d6e3bc7a77` because that map data is absent from the Unified Reactor Model base. Next: publish this feature branch and open the owner-authorized PR; then request review of the K₁ conflict, mixed Table 1 comparison, assumed transient residence time and provisional PSSA baseline. The Damian handoff remains unsent.
+The original V3 development branch was preserved. PR #5 is based on `unified-reactor-model` at `2e1bda47d48a55f2f7d420e4deb34eb59c30929d`, has head `0535d660a161c4bc9b976e4d6a142eed4729c642`, and contains the additive `notebooks/v3/` work (35 files). GitHub reports it open and mergeable. The map source records used by the crosswalk are linked to migration snapshot `0cd47473a93a71f6200a21e6b66c40d6e3bc7a77` because that map data is absent from the Unified Reactor Model base. Next: owner review the PR, especially the K₁ conflict, mixed Table 1 comparison, assumed transient residence time and provisional PSSA baseline. The Damian handoff remains unsent.

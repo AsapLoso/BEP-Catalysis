@@ -12,6 +12,7 @@ A self-contained, reproducible 1D dynamic packed-bed reactor simulation for acet
 - [x] **Primary Reactor Geometry**: Isothermal single packed-bed tube (bench-scale) to isolate 1D transport and CO coverage dynamics, avoiding multi-bed adiabatic cascade complexity for the core baseline (2026-10-25).
 - [x] **Delivery Architecture**: PR #6 (`unified-reactor-model` -> `main`) serves as the consolidation route so Damian can clone `main` directly (2026-10-25).
 - [x] **Thesis Physics Core**: Focus on periodic $CO$ modulation rather than $H_2$ modulation, because $CO$ acts as a reversible competitive moderator that decouples the activity-selectivity trade-off (2026-10-23 supervisor meeting).
+- [x] **Parallel Worker Dispatch & Consolidation Protocol**: Dispatch all 3 workers simultaneously on their isolated branches (`feat/gobbo-steady-state-benchmark`, `feat/v3-coupled-reactor`, `feat/personal-map-alignment`). Once audited, their verified outputs merge into `unified-reactor-model`, sync to the personal map, and merge into `main` for Damian's Monday clone (2026-10-25).
 
 ---
 

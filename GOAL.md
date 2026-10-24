@@ -67,3 +67,6 @@ Your Jupyter notebook must generate:
 - Strictly adhere to **Rule 19**: Global conda base Python environment, no inline `python -c` scripts.
 - Execute the notebook end-to-end to ensure all cells run cleanly with zero errors.
 - Ensure the notebook executes in under 60 seconds on a standard laptop.
+
+
+**Governance:** `GOAL.md` defines the scientific completion contract; `TODO.md` governs the subgoals and gate receipts.

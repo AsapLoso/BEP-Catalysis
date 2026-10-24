@@ -1,0 +1,2 @@
+OpenAlex Terms Notice: Please check the terms at https://help.openalex.org/ and always check the license of papers retrieved by the skill for any restrictions.
+Timestamp: 2026-10-24T23:24:00+02:00

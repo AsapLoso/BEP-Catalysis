@@ -1,71 +1,63 @@
-# Agent 2 Dispatch: Dynamic 1D Coupled Reactor Engine (Periodic CO Modulation)
+# Agent 2 Dispatch: Dynamic 1D V4 Coupled Reactor Engine (True Transient ODE Integration)
 
-**Assigned Branch:** `feat/v3-coupled-reactor`  
+**Assigned Branch:** `feat/v4-dynamic-reactor`  
 **Parent Commit:** `unified-reactor-model`  
-**Primary Deliverable:** `notebooks/dynamic_reactor/unified_dynamic_reactor.ipynb`
+**Primary Deliverable:** `notebooks/v4/unified_v4_dynamic_reactor.ipynb`
 
 ---
 
-## 1. Context & Objectives
-You are tasked with implementing the dynamic 1D coupled packed-bed reactor model simulating **periodic inlet modulation of Carbon Monoxide ($CO$)** for acetylene semi-hydrogenation. 
+## 1. Context & The Core V4 Scientific Upgrade
+You are tasked with implementing the **V4 Dynamic Coupled Reactor Model** for acetylene semi-hydrogenation with periodic Carbon Monoxide ($CO$) inlet modulation.
 
-In the 2026-10-23 supervisor meeting, Ir. Damian Vico van Berkel established the central scientific thesis:
-> *"Modulating hydrogen, you will never surpass steady state. Just the kinetics don't allow you to... Mostly related on CO... by tuning the concentration of CO on the surface you might be able to tune... poisoning and competitive adsorption... and then you can start trying to explain what your part of the thesis is which is more the mathematics of periodic operation."*
-
-Your mission is to demonstrate numerically that periodic inlet concentration cycling of $CO$ dynamically decouples catalyst activity from ethylene selectivity, shifting the time-averaged trade-off above the static steady-state limit.
+### Why V3 Was Flawed & What Makes This V4:
+1. **The PSSA Fallacy:** V3 relied on a Pseudo-Steady-State Approximation (PSSA / QSSA), assuming the gas phase and surface coverages adapt instantaneously ($\partial C / \partial t = 0$, $\partial \theta / \partial t = 0$). PSSA is by definition **not transient**—it destroys the physical wave propagation and phase lag essential to dynamic catalysis.
+2. **True Transient ODE Integration:** V4 strictly retains the full time-accumulation terms:
+   $$\varepsilon_b \frac{\partial C_{b,i}}{\partial t} \neq 0, \quad \varepsilon_p \frac{\partial c_{p,i}}{\partial t} \neq 0, \quad \frac{\partial \theta_j}{\partial t} \neq 0$$
+   Spatial discretization via the Method of Lines (MOL) yields a stiff system of coupled ordinary differential equations (ODEs):
+   $$\frac{d \mathbf{y}}{d t} = \mathbf{F}(t, \mathbf{y})$$
+   which is integrated forward in time using a proven stiff ODE solver (`scipy.integrate.solve_ivp` with `method='BDF'` or `'Radau'`).
+3. **Competitive CO Adsorption Kinetics:** Unlike V3 (which used CO-free Urmès kinetics), V4 incorporates the verified Langmuir-Hinshelwood rate laws from Schbib et al. (1996) where trace $CO$ competitively blocks active sites and suppresses over-hydrogenation.
 
 ---
 
-## 2. Mathematical Continuum Model
+## 2. Mathematical Formulation
 
-### Governing Equations (1D Axial Dispersion Model + Langmuir-Hinshelwood Kinetics):
-For each gas species $i \in \{C_2H_2, C_2H_4, C_2H_6, H_2, CO\}$:
-$$\varepsilon_b \frac{\partial C_i}{\partial t} = D_{ax,i} \frac{\partial^2 C_i}{\partial z^2} - u \frac{\partial C_i}{\partial z} - \rho_b \, r_i(C, T)$$
+### 1D Dynamic Axial Dispersion Equations (MOL Spatial Discretization):
+For each gas component $i \in \{C_2H_2, C_2H_4, C_2H_6, H_2, CO\}$:
+$$\varepsilon_b \frac{\partial C_{b,i}}{\partial t} = D_{ax,i} \frac{\partial^2 C_{b,i}}{\partial z^2} - u_s \frac{\partial C_{b,i}}{\partial z} - \frac{1 - \varepsilon_b}{\varepsilon_b} k_g a_v \left(C_{b,i} - c_{p,i}|_{r=R_p}\right)$$
 
-Energy balance (Isothermal base case or non-isothermal extension):
-$$(\varepsilon_b \rho_g C_{p,g} + (1 - \varepsilon_b) \rho_s C_{p,s}) \frac{\partial T}{\partial t} = \lambda_{ax} \frac{\partial^2 T}{\partial z^2} - u \rho_g C_{p,g} \frac{\partial T}{\partial z} + \rho_b \sum_j (-\Delta H_{r,j}) r_j$$
+### Intra-Particle Radial Diffusion & Reaction:
+$$\varepsilon_p \frac{\partial c_{p,i}}{\partial t} = \frac{D_{e,i}}{r^2} \frac{\partial}{\partial r}\left(r^2 \frac{\partial c_{p,i}}{\partial r}\right) + \rho_s \sum_j \nu_{i,j} r_j(c_p, T)$$
+
+*(Note: In the well-mixed pellet limit, the intra-pellet radial profile collapses to an effective volume-averaged reaction source term directly in the ODE).*
 
 ### Langmuir-Hinshelwood Kinetics with Competitive CO Adsorption:
-$$r_1 = \frac{k_1 \, C_{C_2H_2} \, C_{H_2}}{\left[1 + K_H C_{H_2}^{1/2} + K_{CO} C_{CO}\right]^3}$$
-$$r_2 = \frac{k_2 \, C_{C_2H_4} \, C_{H_2}}{\left[1 + K_H C_{H_2}^{1/2} + K_{CO} C_{CO}\right]^3}$$
+$$r_1 = \frac{k_1 \, c_{C_2H_2} \, c_{H_2}}{\left[1 + K_H c_{H_2}^{1/2} + K_{CO} c_{CO}\right]^3}$$
+$$r_2 = \frac{k_2 \, c_{C_2H_4} \, c_{H_2}}{\left[1 + K_H c_{H_2}^{1/2} + K_{CO} c_{CO}\right]^3}$$
+Using Arrhenius and adsorption parameters from Schbib (1996) / Gobbo (2004) Table 1.
 
-### Danckwerts Transient Boundary Conditions:
-At inlet $z = 0$:
-$$u C_i(0, t) - D_{ax,i} \left.\frac{\partial C_i}{\partial z}\right|_{z=0} = u \, C_{i,\text{in}}(t)$$
-At outlet $z = L$:
-$$\left.\frac{\partial C_i}{\partial z}\right|_{z=L} = 0$$
-
-### Periodic Forcing Functions:
-At $z = 0$, $C_{CO,\text{in}}(t)$ is periodically modulated:
-1. **Square-Wave Modulation:**
-   $$C_{CO,\text{in}}(t) = C_{CO,\text{mean}} + \Delta C_{CO} \operatorname{sgn}\left(\sin\left(\frac{2\pi t}{\tau_p}\right)\right)$$
-2. **Sinusoidal Modulation:**
-   $$C_{CO,\text{in}}(t) = C_{CO,\text{mean}} + \Delta C_{CO} \sin\left(\frac{2\pi t}{\tau_p}\right)$$
-Where $\tau_p$ is the modulation period, systematically varied relative to the reactor residence time $\tau_{\text{res}} = L/u$ ($\tau_p / \tau_{\text{res}} \in [0.1, 10]$).
+### Danckwerts Transient Inlet Boundary Condition:
+At $z = 0$:
+$$u_s C_{b,i}(0, t) - D_{ax,i} \left.\frac{\partial C_{b,i}}{\partial z}\right|_{z=0} = u_s \, C_{i,\text{in}}(t)$$
+Where $C_{CO,\text{in}}(t)$ is periodically modulated:
+$$C_{CO,\text{in}}(t) = C_{CO,\text{mean}} + \Delta C_{CO} \operatorname{sgn}\left(\sin\left(\frac{2\pi t}{\tau_p}\right)\right)$$
 
 ---
 
-## 3. Implementation Assets
-- Leverage the verified, vendored `pbr` engine in [`notebooks/v3/vendor/pbr/`](file:///c:/Users/Deuts/OneDrive%20-%20Delft%20University%20of%20Technology/Misc/Gemini/BEP-Catalysis/notebooks/v3/vendor/pbr/) (63/63 tests passing).
-- Consult [`Structure.md`](file:///c:/Users/Deuts/OneDrive%20-%20Delft%20University%20of%20Technology/Misc/Gemini/BEP-Catalysis/Structure.md) for parameter conventions.
-- Discretize space via Method of Lines (MOL) on $N_z \in [50, 100]$ interior nodes.
-- Integrate time using stiff solvers (`scipy.integrate.solve_ivp` with `method='BDF'` or `'Radau'`).
+## 3. Implementation Plan
+1. **Engine Foundation:** Adapt the vendored solver in `notebooks/v3/vendor/pbr/` to:
+   - Ensure the gas-phase accumulation term is active (no PSSA shortcuts).
+   - Add Carbon Monoxide ($CO$) as an active species in `pbr.chemistry`.
+   - Implement the Schbib rate laws with $K_{CO}$.
+2. **Stiff ODE Integration:** Run `solve_ivp(self.rhs, t_span, y0, method='BDF', atol=1e-10, rtol=1e-7)`.
+3. **Execution Runtime:** Keep the notebook simulation runtime under **3 minutes** on a standard CPU.
 
 ---
 
-## 4. Required Notebook Figures & Analysis
-The notebook `notebooks/dynamic_reactor/unified_dynamic_reactor.ipynb` must produce:
-1. **Baseline Validation:** Convergence to steady state under constant $C_{CO,\text{in}}$, matching Agent 1's benchmark.
-2. **Spatiotemporal Wave Propagation:** 2D heatmap / carpet plot $C_i(z, t)$ showing concentration waves travelling through the packed bed under periodic square-wave cycling.
-3. **Limit Cycle Phase Plane:** Limit cycle trajectories of Conversion $X(t)$ vs. Ethylene Selectivity $S(t)$ over multiple periods.
-4. **Time-Averaged Performance Comparison:**
-   $$\overline{X} = \frac{1}{\tau_p} \int_0^{\tau_p} X(t) dt, \quad \overline{S} = \frac{1}{\tau_p} \int_0^{\tau_p} S(t) dt$$
-   A Pareto plot comparing $(\overline{X}, \overline{S})$ under periodic operation against the static steady-state trade-off curve across varying periods $\tau_p$.
-
----
-
-## 5. Execution Guardrails
-- Total notebook execution runtime must remain under **3 minutes** on standard hardware.
-- Use vectorized RHS functions in NumPy to prevent CPU bottlenecks.
-- Apply **Rule 19**: Base conda Python, all imports validated.
-- Adhere to **Rule 15**: Clear, rigorous scientific explanations; zero marketing fluff.
+## 4. Deliverable
+A clean, self-contained, executed Jupyter Notebook:
+`notebooks/v4/unified_v4_dynamic_reactor.ipynb`
+Displaying:
+- Dynamic concentration waves traveling along the reactor length over time ($z, t$).
+- Limit cycle phase plane ($X(t)$ vs. $S(t)$).
+- Time-averaged Pareto improvement of periodic $CO$ modulation over steady-state operation.

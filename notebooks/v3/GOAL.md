@@ -4,6 +4,8 @@
 
 **This file governs completion; [TODO.md](TODO.md) governs the actual checklist.** Both are persistent, GitHub-backed mission authority. This is **not** an instruction to start over or to create yet another planning system.
 
+The V2-compatible Urmès PSSA model is a **provisional implementation baseline**. Its physical assumptions remain subject to owner review. Urmès et al. (2019) reports both `K₁ = 611 Pa⁻¹` in the p. 5 text and `K₁ = 13 Pa⁻¹` in Table 5, p. 6; preserve and investigate this source conflict, using 13 only when attempting the published fitted model. A blocked literature comparison does not block a useful, runnable V3 notebook; it does block any claim of reproduction or validation.
+
 ## Start / resume
 
 1. Use `AsapLoso/BEP-Catalysis`. The existing **local** worker branch was reported as `v3/bep-vertical-slice-20261023` at `2586777`, **not pushed as of that report**. Verify this checkout first. This GitHub documentation branch is based on `migration/bep-map-consolidation-20261023`; fetch/copy these two files into the *existing* V3 workspace without overwriting its local work. Do not create a fresh implementation just because these documents live on another branch.

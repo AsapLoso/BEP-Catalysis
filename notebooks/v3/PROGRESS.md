@@ -1,27 +1,66 @@
 # BEP V3 progress
 
-**Checkpoint date:** 2026-10-23 · **Branch:** `v3/bep-vertical-slice-20261023`
-**State:** Blocked before source inventory because the mission file is unavailable.
+**Checkpoint:** 2026-10-23 · **Branch:** `v3/bep-vertical-slice-20261023`
+**Current frontier:** Implementation complete on the isolated local V3 branch; ready for owner review. The mixed benchmark and physical assumptions need review before supervisor-facing use. No push, PR, merge, personal-map edit or Damian message.
 
 ## Gate status
 
 | Gate | Status | Evidence / next action |
 |---|---|---|
-| Inventory | Blocked | `BEP_V3_GOAL.md` was not found by a filesystem search or in the `AsapLoso/BEP-Catalysis` GitHub code search. The requested upstream refs are therefore unknown. Reattach or provide the full goal, copy it to `notebooks/v3/GOAL.md`, then resolve and snapshot all five source objects. |
-| Theory mapping | Not started | Read the AI-reference-map overview and targeted reactor-model context. Full artifact-to-theory mapping depends on the five source artifacts and their refs. |
-| Model blueprint | Not started | No equations, parameter values, or numerical acceptance criteria selected. Derive them only after reconciling source artifacts and supported theory. |
-| Simulation | Not started | No V3 notebook exists or has been run. |
-| Benchmark / handoff | Not started | No published steady-state comparison selected or attempted; no Damian material prepared or sent. |
+| Inventory | **Complete** | Five immutable source snapshots are present and each recomputed Git blob SHA matches the pinned upstream blob. Source roles, limits, V2 dependency provenance and test receipt are in `SOURCE_MANIFEST.md`. The exact V2 tests independently pass (63/63) in the recorded temporary uv environment. |
+| Theory mapping | **Complete** | `ARTIFACT_THEORY_MAP.md` has five separate source sections, cross-source comparison and gap register. All cited AI node IDs were checked against live `nodes.yaml`; local PDF inspection verified the Urmès `K₁` source conflict. No personal-map edits. |
+| Model blueprint | **Complete** | `MODEL_BLUEPRINT.md` specifies the four gas states, void-basis balance, tabulated Urmès PSSA kinetics, source/borrowed assumptions, limits, numerical acceptance checks and an attempted Table 1/6/7 steady point comparison. The closure remains provisional and physical assumptions remain open to owner review. |
+| Simulation | **Complete** | The exact V2 `pbr/` package is vendored and blob-verified; `pyproject.toml`/`uv.lock` provide a local pinned environment. The 17-cell notebook completed top-to-bottom and saved two inline figures plus numerical outputs. |
+| Benchmark / handoff | **Complete with limitation** | Table 1 steady point attempted at 51°C and 62°C with source feed, pressure, total flow and catalyst mass. Agreement is mixed; Table 1 aggregates two loadings. `THEORY_CROSSWALK.md`, `STUDY_PRIORITIES.md`, `DAMIAN_HANDOFF.md` and clean-checkout README are present. Handoff remains owner-review-only and unsent. |
 
-## Verified work
+## Verified receipts
 
-- Created this branch from the fetched `migration/bep-map-consolidation-20261023` head, commit `6803814cd827e4f91323fa7b6f406eea579b286b`. `git ls-remote` returned the same head for that branch.
-- Read the branch's `AGENTS.md`, `README.md`, `STATUS.md`, `MIGRATION_STATUS.md`, the map-edit and reversible-change skills, and the map README.
-- The target base tree contains no `notebooks/` or `pbr/` path. `MIGRATION_STATUS.md` says notebook code remains linked to `Methanol-Catalysis` and separately tracked as AAPM PR #212; V3 source selection must follow the missing goal rather than infer a source from that note.
-- Read the integrated AI reference-map overview and relevant reactor-model/transport passages. Its dataset is AI-authored, with a ceiling of `ai_worked_out`; it does not assert owner understanding, a target fit, a V3 simulation, or experimental validation.
-- Read the personal-map snapshot and its current owner review handoff. The current map has 50 live nodes. `own_ma_mathematical_modeling` is Idea / structural placement only, and `own_ma_surface_kinetic_equations` is also Idea / structural placement only. The proposed Reactor Model subtree is queue-only under Q92 and is not a live personal-map node. `own_ph_isothermal_theory` is Human worked out only for the elementary globally fixed-temperature physical case; this does not establish understanding of its PDE derivation or any model notebook.
-- No personal-map data, approval records, or source verification statuses were changed. No notebook was run; no message was sent to Damian; no push or merge was attempted.
+- Revalidated the working checkout: branch `v3/bep-vertical-slice-20261023`, `HEAD 08967eaed47febdf597ebb60f48e6184cbab75bc`, clean before these scoped V3 documents/snapshots were created. The requested migration base and live remote head are both `6803814cd827e4f91323fa7b6f406eea579b286b`. The V3 branch already existed locally and was preserved; no remote V3 branch was present. No other target worktree was found.
+- S1–S5 are separate upstream objects, including distinct V1 and V2 commits despite their shared path. `SOURCE_MANIFEST.md` records upstream repository/ref/path/commit/blob/size and snapshot names; files in `sources/` were made read-only after blob verification.
+- Inspected S1 and S2 code: 20 axial nodes × 10 radial nodes; bulk/pore gas and three dynamic surface states; zero kinetic constants; BDF; hard shell assignment, a central coefficient of 3 for a spherical limit expected to be 6, and source-level unit/quadrature ambiguities. The V0 state ledger separately records six code defects; the framework audit raises different equation/spec conflicts and explicitly calls some citations unverified.
+- Inspected S3 (20 cells) and S4 (22 cells), including their equations, parameter/assumption tables, configurations, outputs and limitations. Both choose transient bulk/pore gas with algebraic Urmès PSSA, no film and no axial dispersion. S4 uses `N_z=8`, `N_r=12`, BDF, 200 Hz, 10% common cosine forcing, 16 periods, 60 samples/period, `rtol=1e-4`, `atol=1e-8`; its stored output is from the source revision. S4 and its handoff explicitly say this is not target calibration or experimental validation.
+- Inspected S5: narrative about bulk/pore/surface memory and Method of Lines; the only simulated result is a single inert tracer under pure upwind transport, explicitly not a BEP kinetic-model result.
+- Inspected V2 support code from exact S4 commit; independently verified all 11 `pbr/` file hashes against the S4 Git blobs. Ran the exact three-file V2 test set from a temporary package copy with Python 3.12.14, NumPy 2.5.3, SciPy 1.18.0, Pydantic 2.13.5 and pytest 8.4.2: `63 passed in 10.41s`. This is code-level evidence, not a literature or experiment validation.
+- Read AI-map entries including `c2_urmes_2019_effective_rates`, `c2_urmes_2019_adsorption_denominator`, `c2_urmes_2019_net_rates`, `c2_urmes_2019_parameter_ledger`, `c2_surface_kinetic_closure_choices`, `c2_pssa_not_steady_reactor`, `c2_dynamic_theta_model_calibration_gap`, transport/balance, discretization and solver nodes. The actual primary source record says the full Urmès 2019 PDF was AI-read; human citation verification is not claimed.
+- Read current personal-map records and `OWNER_REVIEW_GATE_HANDOFF_2026_10_23.md` / Q92. `own_ma_mathematical_modeling` and `own_ma_surface_kinetic_equations` are Idea / structure-only; the proposed Reactor Model assumption nodes are withdrawn to queue/archive, not live. `own_ph_isothermal_theory` is Human worked out only for the owner's global fixed-temperature physical special case; no PDE/equation derivations are thereby approved or understood. Surface kinetic children remain Idea. Personal map untouched.
+- Updated the old “goal missing” checkpoint: it was an accurate prior-session blocker, but the user has now supplied the goal and the local V3 branch exists. `GOAL.md` is a concise index; since no modular `goals/01–05` existed in this checkout or the other mounted repositories, five short gate checklists were restored from the supplied mission. No duplicate long mission document was added.
+- The standalone integrated-map ID validation initially found a stale pellet-transport label; it was corrected to the real `ph_pellet_transport`. All current AI IDs in the theory map, blueprint, crosswalk and notebook were subsequently checked against `nodes.yaml`.
 
-## Missing evidence and next precise action
+## Decision and uncertainty register
 
-The attached `BEP_V3_GOAL.md` was not present anywhere under `/` in this environment, and code search in `AsapLoso/BEP-Catalysis` returned no result. Its five upstream refs and exact artifact paths are required to avoid guessing. When the full goal is supplied, place its contents at `notebooks/v3/GOAL.md`, read it in full, resolve each exact ref, record source commit/blob SHAs in `SOURCE_MANIFEST.md`, and continue the inventory gate. Until then, source-specific equations, assumptions, gaps, and validation claims remain unknown.
+- The Urmès PSSA is a provisional code baseline, not blanket owner approval of the physical assumptions.
+- Urmès et al. (2019) itself has a published internal discrepancy: `K₁=611 Pa⁻¹` in printed p. 5 text and `K₁=13 Pa⁻¹` in printed p. 6 Table 5. Use 13 for the Table 5 fitted-model attempt; preserve/investigate both values. The V2 comment saying the value is “resolved” is not adopted as resolution of this printed conflict.
+- Source PSSA equations do not justify dynamic surface coverage ODEs. Target PdAg/transient kinetic evidence, actual particle transport data, flow variation and apparatus boundary data remain absent from the available evidence.
+- The V2 model combines Urmès Pd/α-Al₂O₃ kinetics with a tube/mass footprint from another source and assumed porosity, density, tortuosity, void fraction and diffusivities. It is not a source-matched Urmès reactor reproduction.
+- The presentation notebook’s tracer outputs are illustration only. The V2 saved outputs and handoff are preexisting receipts; they are not the V3 run receipt.
+
+## Gate B verification update
+
+- Searched every AI reference ID in the theory map against the target branch's `nodes.yaml`; corrected one stale pellet-transport label to the real `ph_pellet_transport`. The other reference IDs resolve.
+- Independently read the local Urmès PDF and extracted its operating and parameter tables. Printed p. 5 estimates `K₁=611 Pa⁻¹`; Table 5 on printed p. 6 uses `K₁=13 Pa⁻¹` fixed. Both are printed with inverse-pressure units, and the paper provides no reconciliation. Its feed standard condition is 1.0% C₂H₂, 4.3% H₂, 70% C₂H₄, 24.7% Ar; Table 6 gives `Ftot=149 μmol/s`, `Wcat=0.1 g`, `P=1.26 bar`, and 51/62°C. Table 7 reports axial `h/dp=193`, radial `dR/dp=40`, Carberry `3.3×10⁻⁴`, and Weisz–Prater `1.7×10⁻²` for that source setup.
+- Opened printed p. 7 (PDF page 7) showing Figures 1 and 2; a steady comparison is available at condition 1, while Table 1 provides pooled repeatability summary values. Exact per-run numeric observations are not tabulated, so point-level figure comparison may require transparent digitization.
+
+## Gate C verification update
+
+- Wrote `MODEL_BLUEPRINT.md` before creating any V3 simulation code. It chooses a four-species gas-only transient PBR with the table-fitted Urmès PSSA law, uniform-pellet/no-film closure, no axial dispersion, fixed P/T/flow, and no dynamic coverage states.
+- The source point is anchored to Urmès: 51/62°C, 1.26 bar, condition 1 composition, 149 μmol/s total flow, 0.1 g catalyst, 4 mm tube, 100–200 μm sieve fraction, and Table 7's `h/dp=193`; the 75 μm midpoint radius and 28.95 mm bed length are derived. `ε_b=0.45` is explicitly borrowed, and the density passed to V2's geometry API will be an active-equivalent bookkeeping value, not a measured pellet density. This assumption affects transient residence time; it cancels in the steady catalyst-mass loading.
+- The original article's no-transfer criteria justify disabling pellet/film states only for the cited Urmès system and range. No target PdAg or BEP transport claim is made. `K₁=13` is the Table 5 fitted baseline; a 611 sensitivity exposes the paper conflict without reinterpreting it.
+- Acceptance checks include parameter/unit transcription, coverage/site closure, reaction C/H balance, geometry and velocity identities, pure RHS and boundary checks, solver success and positivity, axial-grid/tolerance sensitivity, and a measured-data comparison that reports Table 1 repeatability without calling it a confidence interval.
+
+## Gate D execution receipt
+
+- Copied all 11 Python modules from the exact V2 `pbr/` commit `2ee0dc1a84529d6830dcc628fc771878907fb22c`; each recomputed Git blob SHA matches `SOURCE_MANIFEST.md`. The vendored source is unchanged. The local environment is reproducible from `notebooks/v3/pyproject.toml` and `uv.lock`.
+- Environment sync command: `uv sync --project notebooks/v3 --locked`. Resolved versions include Python 3.12.14, NumPy 2.5.3, SciPy 1.18.0, Pydantic 2.13.5, Matplotlib 3.10.8, ipykernel 6.30.1 and nbconvert 7.16.6.
+- First execution attempt command used `uv run --project notebooks/v3 python -m nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=600 notebooks/v3/bep_v3_vertical_slice.ipynb`; it failed at the RHS probe because the V2 engine expects a callable inlet, not a concentration array. The notebook was corrected to use `make_inlet()` and rerun. The later clean execution initially completed the code, then an integrated source/outflow balance diagnostic was added and the whole notebook was executed again successfully with the same command. No cell errors remain.
+- The final 17-cell notebook reports: 256 gas states at 64 axial cells; baseline T=324.15 K, P=126 kPa, Q=3.1871×10⁻⁶ m³/s, bed scenario L=28.95 mm, ε_b=0.45 borrowed and void-gas residence time 0.05137 s. Minimum sampled transient concentration is 1.01354×10⁻⁴ mol m⁻³.
+- The 51°C steady conversion is 0.131159 (N_z=32/64/128: 0.131164/0.131160/0.131159). N_z=64→128 relative change is 6.56×10⁻⁶ (0.000656%). Integrated source/outflow relative residual is 4.80×10⁻¹⁴ at 51°C and 1.91×10⁻¹⁴ at 62°C.
+- The baseline BDF run completed 5 periods at 20 Hz (`nfev=10023`, `njev=941`, `nlu=1829`); the tighter-tolerance run also succeeded. Outlet acetylene relative RMS change is 7.66×10⁻⁵ (0.00766%). This result is a gas-response scenario only; the surface is algebraic PSSA.
+- Table 1 comparison (reported pooled values vs V3): 51°C conversion 0.131159 vs 0.13 (0.89% relative difference), ethane flow 0.0460207 vs 0.07 μmol/s (34.26%); 62°C conversion 0.245055 vs 0.23 (6.55%), ethane flow 0.0994144 vs 0.11 μmol/s (9.62%). No parameter was retuned. Table 1 pools two catalyst loadings, so the comparison is not an individual-run reconstruction or validation.
+- At the condition-1 feed, the Table 5 K₁ baseline gives θ_H=0.001805 and r_A=0.001882 mol kg_cat⁻¹ s⁻¹; the p. 5 estimate 611 gives θ_H=0.012247 and r_A=0.086634 mol kg_cat⁻¹ s⁻¹. This is a quantified sensitivity, not an explanation of the source's internal conflict.
+- Notebook checks pass for source parameter/site balance, reaction C/H stoichiometry, input immutability, uniform-inlet boundary, disabled-diffusivity invariance, geometry/velocity basis, solver success, positivity, grid sensitivity and time-tolerance sensitivity. The exact V2 test receipt remains separately recorded above (63 passed).
+- `THEORY_CROSSWALK.md`, `STUDY_PRIORITIES.md`, `DAMIAN_HANDOFF.md` and `README.md` were added. The handoff is a draft only; it has not been sent. Personal-map files remain unchanged.
+- The staged whitespace check passes for authored documents, lock/environment files, and the V3 notebook. Exact source snapshots and exact vendored V2 files were excluded from that style check because they contain upstream trailing whitespace; they remain byte-identical to the verified source blobs.
+
+## Next precise action
+
+The V3 mission artifacts are committed locally on `v3/bep-vertical-slice-20261023`; the working tree is clean. The next action is owner review of the source conflict, the mixed Table 1 comparison, the assumed transient bed residence time, and whether the provisional Urmès/Pd baseline is appropriate. The handoff file is review-ready but unsent. Preserve the isolated branch; do not push or open a PR without separate authorization.

@@ -268,6 +268,24 @@ body {
   stroke-width: 3.5px;
 }
 
+.layout-error {
+  position: absolute;
+  z-index: 40;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  max-width: 860px;
+  margin: auto;
+  padding: 14px 18px;
+  border: 1px solid #b91c1c;
+  border-radius: 10px;
+  background: #fff7ed;
+  color: #7f1d1d;
+  box-shadow: 0 12px 28px rgba(127, 29, 29, .16);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 /* Nodes */
 .tree-node {
   cursor: pointer;
@@ -608,10 +626,11 @@ body {
 /* Guided Tour Panel */
 .tour-panel {
   position: absolute;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 560px;
+  top: 12px;
+  left: 12px;
+  width: min(560px, calc(100% - 24px));
+  max-height: calc(100% - 24px);
+  overflow: auto;
   background-color: var(--surface-color);
   border: 1px solid var(--surface-border);
   box-shadow: 0 16px 36px rgba(30, 41, 59, 0.12);
@@ -888,5 +907,5 @@ body {
   .reference-panel { position: fixed; top: auto; width: 100%; height: min(44vh, 440px); border-left: 0; border-top: 1px solid #c7d2fe; }
   .reference-panel-header, .reference-panel-body { padding-left: 16px; padding-right: 16px; }
   .search-results { top: 150px; left: 10px; right: 10px; width: auto; }
-  .tour-panel { width: calc(100% - 20px); bottom: 10px; }
+  .tour-panel { top: 12px; left: 12px; bottom: auto; width: calc(100% - 24px); max-height: calc(100% - 24px); }
 }

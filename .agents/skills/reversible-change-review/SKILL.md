@@ -46,3 +46,8 @@ description: >-
 Provide source and destination versions, exact files/records, edit summary, tests actually run, **real** diff link or concise diff excerpt, push/pull or remote-readback verification, independent rollback instructions, unresolved conflicts and next action. If the file is not synced, was not committed, or the tests were not run, say so.
 
 **Project-specific skills override this generic workflow when domain authorization or integrity is stricter.** Do not infer all future writes are approved merely because the user authorized one class of change.
+
+
+## 6. BEP mind-map frontend evidence
+
+For graph-layout changes, inspect the full diff and prove that the owner-map, AI-reference, and citation source files were not edited. Add data-driven regression fixtures for unequal subtree sizes, changing root-child counts, collapse/expand, and arbitrary depth; do not treat the current owner snapshot's theme and question structure as a fixed production taxonomy. Verify overview node positions and routed ELK edges, horizontal focus, level-order guided navigation, overlay placement, read-only API behavior, and the Windows one-click launcher. Existing screenshots are evidence for their capture revision only; label missing post-change browser captures explicitly.

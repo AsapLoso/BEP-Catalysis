@@ -26,10 +26,10 @@
 - **Not every PR's historical content was duplicated:** the tables above are the complete copied snapshot scope. Unlisted source branches and non-map research are intentionally not claimed migrated.
 - Neither the source PRs nor this new destination's main branch were merged, closed, or approved by this transfer.
 
-## Still needed
+## Frontend reconciliation and remaining decisions
 
-1. Owner review and merge the migration PR, then decide which additional historical AAPM BEP artifacts warrant moving.
-2. Compare **PR #207 vs PR #199**, reconcile the overlapping frontend/schema changes under actual tests. This migration preserves both versions without choosing a winner on behalf of the owner.
-3. Fix paths, import/package configuration, external source references, and execution instructions for the new repository layout; **no local test run was performed during the GitHub-only copy**.
-4. Decide whether and how to bring in notebook sources from `AsapLoso/Methanol-Catalysis` and [AAPM PR #212](https://github.com/AsapLoso/project-management-agents/pull/212). Current transfer keeps them linked, not duplicated.
-5. Never conflate AI reference-map research with owner-approved nodes, nor a successful test with experimental validation.
+- **Implemented in this PR branch:** PR #207 and PR #199 viewer/adapter work is reconciled in the existing app, with the competing source snapshot retained in incoming/pr-199/. The viewer reads evolving owner nodes without hardcoded question names, preserves the five independent stages and per-citation human-verification state, and never writes owner or reference map data.
+- **Implemented in this PR branch:** repository-relative imports and preview paths, root runtime requirements, and [Open_BEP_Mind_Map.bat](Open_BEP_Mind_Map.bat) provide the one-click local read-only owner snapshot. The launcher does not fetch Git branches.
+- **Verification:** the Python and JavaScript regression suites and the Windows launcher smoke test run in GitHub Actions. The 14 real-browser captures and their report remain linked from [issue #4](https://github.com/AsapLoso/BEP-Catalysis/issues/4); they document the captured viewer states before the latest equal-sector and default tour-placement refinement. Post-refinement browser capture remains a separate verification item if no desktop browser is available.
+- Owner review and the migration PR's merge decision remain open. The remaining repository-choice decision for Methanol-Catalysis notebooks is tracked separately in [AAPM PR #212](https://github.com/AsapLoso/project-management-agents/pull/212); notebooks remain linked, not duplicated.
+- Never conflate AI reference-map research with owner-approved nodes, nor a successful software test with experimental validation.

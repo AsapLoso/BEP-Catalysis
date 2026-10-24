@@ -6,7 +6,8 @@
 
 - [Current priorities](STATUS.md) — small, supervisor-first checklist
 - [Personal scientific map](research/manual_map_sessions_2026_10_22/owner_working_map/current_map.yaml) and [review state](research/manual_map_sessions_2026_10_22/SESSION_STATE.md)
-- [Interactive map application](mindmap/README.md) — snapshot from [AAPM PR #207](https://github.com/AsapLoso/project-management-agents/pull/207)
+- [Open the personal map on this PC](Open_BEP_Mind_Map.bat) — one click starts the local read-only viewer
+- [Interactive map application](mindmap/README.md) — reader/frontend notes, local data sources, and verification
 - [Integrated AI scientific reference map](research/integrated_reference_map_2026_10_22/README.md) — includes source and passage-level citation records
 - [Independent AI reference map v2](research/independent_reference_map_2026_10_21/WORK_GOAL.md) and [preserved v1 snapshot](history/independent-reference-map-v1/)
 - [Scientific map reconciliation v3](research/map_comparison_reconciliation_v3_2026_10_23/)
@@ -23,4 +24,4 @@ The modeling and publishing code remains in [Methanol-Catalysis](https://github.
 
 ## Working notes
 
-Most imported files are **source-preserving snapshots** from their stated AAPM branches; some paths, imports, external scientific data, and run commands still refer to the original layout. Treat them as needing a portability pass before claiming the application executes from this new repository. The scientific data and AI/personal status fields are intentionally not rewritten as part of the copy.
+Most imported research files remain **source-preserving snapshots** from their stated AAPM branches. The mind-map viewer now runs from this repository with the root [one-click launcher](Open_BEP_Mind_Map.bat); it reads the personal map snapshot from this checkout and never writes or syncs scientific-map data. Scientific content and AI/personal status fields remain separate and unchanged.

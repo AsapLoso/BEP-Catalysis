@@ -51,35 +51,36 @@
     return path.reverse();
   }
 
-  // Euler walk: descend into each branch, then deliberately revisit its parent
-  // before entering the next sibling. A return is navigation, not an approval.
+  // Traverse by level so every sibling at a depth is shown before the tour
+  // moves to deeper questions. Previous/Next remain direct, read-only navigation.
   function tourSequence(rootNode) {
+    if (!rootNode) return [];
     const sequence = [];
-    const entered = new Set();
+    const visited = new Set();
+    const queue = [{ node: rootNode, ancestors: [], siblingPosition: 1, siblingCount: 1 }];
 
-    function walk(node, ancestors = [], siblingPosition = 1, siblingCount = 1) {
-      if (!node || entered.has(node.id)) return false;
-      entered.add(node.id);
-      const path = [...ancestors, node.title || node.id];
-      const step = {
+    for (let cursor = 0; cursor < queue.length; cursor += 1) {
+      const item = queue[cursor];
+      const node = item.node;
+      if (!node || visited.has(node.id)) continue;
+      visited.add(node.id);
+      const path = [...item.ancestors, node.title || node.id];
+      sequence.push({
         id: node.id,
-        category: ancestors[ancestors.length - 1] || "Root",
+        category: item.ancestors[item.ancestors.length - 1] || "Root",
         path,
-        level: ancestors.length,
-        levelPosition: siblingPosition,
-        levelCount: siblingCount,
-      };
-      sequence.push({ ...step, motion: "enter" });
-      const children = node.children || [];
-      children.forEach((child, index) => {
-        if (walk(child, path, index + 1, children.length)) {
-          sequence.push({ ...step, motion: "return" });
-        }
+        level: item.ancestors.length,
+        levelPosition: item.siblingPosition,
+        levelCount: item.siblingCount,
       });
-      return true;
+      const children = node.children || [];
+      children.forEach((child, index) => queue.push({
+        node: child,
+        ancestors: path,
+        siblingPosition: index + 1,
+        siblingCount: children.length,
+      }));
     }
-
-    walk(rootNode);
     return sequence;
   }
 
@@ -129,6 +130,134 @@
       index,
       count: siblings.length,
     };
+  }
+
+  // Add layout-only leaves to lighter top-level subtrees. ELK Radial's
+  // LEAF_NUMBER criterion then gives each root child the same angular budget,
+  // while the real tree and its node count remain untouched.
+  function radialSectorPadding(nodes, links) {
+    const nodeList = Array.isArray(nodes) ? nodes : [];
+    const edgeList = Array.isArray(links) ? links : [];
+    const childrenById = new Map();
+    const usedIds = new Set(nodeList.map((node) => String(node.id)));
+    const nodeById = new Map(nodeList.map((node) => [String(node.id), node]));
+    const idOf = (value) => String(value && typeof value === "object" ? value.id : value);
+
+    edgeList.forEach((edge) => {
+      const sourceId = idOf(edge.source);
+      const targetId = idOf(edge.target);
+      if (!nodeById.has(sourceId) || !nodeById.has(targetId)) return;
+      childrenById.set(sourceId, [...(childrenById.get(sourceId) || []), targetId]);
+    });
+
+    const root = nodeList.find((node) => node.parent === null || node.parent === undefined);
+    if (!root) return { nodes: [], edges: [], sectors: [], targetLeafCount: 0 };
+    const rootId = String(root.id);
+    const rootChildren = childrenById.get(rootId) || [];
+
+    function leavesInSubtree(id, ancestors = new Set()) {
+      if (ancestors.has(id)) return [];
+      const nextAncestors = new Set(ancestors);
+      nextAncestors.add(id);
+      const children = childrenById.get(id) || [];
+      if (!children.length) return [id];
+      const leaves = children.flatMap((childId) => leavesInSubtree(childId, nextAncestors));
+      return leaves.length ? leaves : [id];
+    }
+
+    const sectors = rootChildren.map((id) => {
+      const leaves = leavesInSubtree(id);
+      return { id: nodeById.get(id)?.id ?? id, leafCount: leaves.length, targetLeafCount: 0, leaves };
+    });
+    const targetLeafCount = sectors.reduce((largest, sector) => Math.max(largest, sector.leafCount), 0);
+    sectors.forEach((sector) => { sector.targetLeafCount = targetLeafCount; });
+
+    let serial = 0;
+    const paddingNodes = [];
+    const paddingEdges = [];
+    function uniqueId(prefix) {
+      let candidate;
+      do {
+        candidate = prefix + serial++;
+      } while (usedIds.has(candidate));
+      usedIds.add(candidate);
+      return candidate;
+    }
+
+    sectors.forEach((sector) => {
+      const missing = targetLeafCount - sector.leafCount;
+      if (missing <= 0) return;
+      const attachmentId = String(sector.leaves[0] ?? sector.id);
+      // Replacing one visible leaf with missing+1 layout leaves increases its
+      // sector's leaf count by exactly the number needed.
+      for (let index = 0; index < missing + 1; index += 1) {
+        const paddingId = uniqueId("__bep_layout_padding_node_");
+        const edgeId = uniqueId("__bep_layout_padding_edge_");
+        paddingNodes.push({ id: paddingId, width: 1, height: 1, layoutOnly: true });
+        paddingEdges.push({ id: edgeId, source: attachmentId, target: paddingId });
+      }
+    });
+
+    return { nodes: paddingNodes, edges: paddingEdges, sectors, targetLeafCount };
+  }
+
+  // Choose the least obstructed tour-card position inside a surface.
+  function chooseOverlayPosition(surface, panel, obstacles, margin = 12) {
+    const surfaceWidth = Math.max(0, Number(surface && surface.width) || 0);
+    const surfaceHeight = Math.max(0, Number(surface && surface.height) || 0);
+    const safeMargin = Math.max(0, Number(margin) || 0);
+    const width = Math.min(Math.max(0, Number(panel && panel.width) || 0), Math.max(0, surfaceWidth - safeMargin * 2));
+    const height = Math.min(Math.max(0, Number(panel && panel.height) || 0), Math.max(0, surfaceHeight - safeMargin * 2));
+    const maxLeft = Math.max(safeMargin, surfaceWidth - width - safeMargin);
+    const maxTop = Math.max(safeMargin, surfaceHeight - height - safeMargin);
+    const clamp = (value, max) => Math.max(safeMargin, Math.min(Number(value) || safeMargin, max));
+    const candidates = new Map();
+    const addCandidate = (left, top) => {
+      const point = { left: clamp(left, maxLeft), top: clamp(top, maxTop) };
+      candidates.set(point.left.toFixed(2) + ":" + point.top.toFixed(2), point);
+    };
+
+    [safeMargin, maxLeft, (surfaceWidth - width) / 2].forEach((left) => {
+      [safeMargin, maxTop, (surfaceHeight - height) / 2].forEach((top) => addCandidate(left, top));
+    });
+    (Array.isArray(obstacles) ? obstacles : []).forEach((obstacle) => {
+      const left = Number(obstacle.left) || 0;
+      const top = Number(obstacle.top) || 0;
+      const right = Number(obstacle.right) || 0;
+      const bottom = Number(obstacle.bottom) || 0;
+      const middleY = (top + bottom - height) / 2;
+      const middleX = (left + right - width) / 2;
+      addCandidate(left - width - safeMargin, middleY);
+      addCandidate(right + safeMargin, middleY);
+      addCandidate(middleX, top - height - safeMargin);
+      addCandidate(middleX, bottom + safeMargin);
+    });
+
+    const items = Array.isArray(obstacles) ? obstacles : [];
+    let best = { left: safeMargin, top: safeMargin, width, height, overlapArea: Infinity };
+    candidates.forEach((candidate) => {
+      let score = 0;
+      items.forEach((obstacle) => {
+        const overlapWidth = Math.max(0, Math.min(candidate.left + width, obstacle.right) - Math.max(candidate.left, obstacle.left));
+        const overlapHeight = Math.max(0, Math.min(candidate.top + height, obstacle.bottom) - Math.max(candidate.top, obstacle.top));
+        score += overlapWidth * overlapHeight * Math.max(1, Number(obstacle.weight) || 1);
+      });
+      if (score < best.overlapArea) best = { ...candidate, width, height, overlapArea: score };
+    });
+    return best;
+  }
+
+  function elkEdgePath(edge, offsetX = 0, offsetY = 0) {
+    const sections = Array.isArray(edge && edge.sections) ? edge.sections : [];
+    return sections.map((section) => {
+      const points = [section.startPoint, ...(section.bendPoints || []), section.endPoint]
+        .filter((point) => point && Number.isFinite(point.x) && Number.isFinite(point.y));
+      if (points.length < 2) return "";
+      return "M " + (points[0].x - offsetX).toFixed(1) + " " + (points[0].y - offsetY).toFixed(1)
+        + points.slice(1).map((point) => (
+          " L " + (point.x - offsetX).toFixed(1) + " " + (point.y - offsetY).toFixed(1)
+        )).join("");
+    }).filter(Boolean).join(" ");
   }
 
   function stagePresentation(node) {
@@ -402,6 +531,9 @@
     focusHierarchy,
     tourSequence,
     siblingNavigation,
+    radialSectorPadding,
+    chooseOverlayPosition,
+    elkEdgePath,
     stagePresentation,
     resolveClaimProvenance,
     renderMarkdownSafe,

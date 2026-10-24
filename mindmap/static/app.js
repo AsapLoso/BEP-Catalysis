@@ -26,7 +26,6 @@
   const R_LEVEL_2 = 360; // Level 1 -> Level 2
   const R_LEVEL_3 = 340; // Level 2 -> Level 3
   const R_LEVEL_DEEP = 320; // Reused at arbitrary depths
-  const SCIENTIFIC_ARM_IDS = new Set(["physics", "mathematics", "systems_control"]);
   const NON_SCIENTIFIC_ROOT_KINDS = new Set(["admin", "administrative", "project", "task", "milestone", "dossier", "letter", "source_dossier"]);
 
   // State
@@ -65,6 +64,7 @@
   const graphSearch = document.getElementById("graph-search");
   const searchResults = document.getElementById("search-results");
   const sourceStatus = document.getElementById("map-source-status");
+  const layoutError = document.getElementById("layout-error");
   const appHeader = document.querySelector(".app-header");
   const btnZoomIn = document.getElementById("btn-zoom-in");
   const btnZoomOut = document.getElementById("btn-zoom-out");
@@ -281,22 +281,14 @@
 
   function buildScientificHierarchy(root) {
     if (!root) return null;
-    // Owner snapshots use their own evolving themes. Only the legacy AI
-    // reference views use the historical three scientific arms.
-    if (activeMode === "owner") {
-      const children = root.children || [];
-      const filtered = children.filter((child) => !NON_SCIENTIFIC_ROOT_KINDS.has(String(child.kind || "").toLowerCase()));
-      const selectedPath = BepMindMapGraph.parentPath(rawNodes, selectedNodeId);
-      const selectedRootChild = selectedPath.length > 1 ? selectedPath[1].id : null;
-      if (selectedRootChild && children.some((child) => child.id === selectedRootChild) && !filtered.some((child) => child.id === selectedRootChild)) {
-        filtered.push(children.find((child) => child.id === selectedRootChild));
-      }
-      return { ...root, children: filtered };
+    const children = root.children || [];
+    const filtered = children.filter((child) => !NON_SCIENTIFIC_ROOT_KINDS.has(String(child.kind || "").toLowerCase()));
+    const selectedPath = BepMindMapGraph.parentPath(rawNodes, selectedNodeId);
+    const selectedRootChild = selectedPath.length > 1 ? selectedPath[1].id : null;
+    if (selectedRootChild && children.some((child) => child.id === selectedRootChild) && !filtered.some((child) => child.id === selectedRootChild)) {
+      filtered.push(children.find((child) => child.id === selectedRootChild));
     }
-    return {
-      ...root,
-      children: (root.children || []).filter((child) => SCIENTIFIC_ARM_IDS.has(child.id)),
-    };
+    return { ...root, children: filtered };
   }
 
   // Focus view lays the ancestry out from the anchored root toward the selected node.
@@ -343,38 +335,13 @@
   const OVERVIEW_LAYOUT_OPTIONS = {
     "elk.algorithm": "radial",
     "elk.radial.centerOnRoot": "true",
-    "elk.radial.wedgeCriteria": "NODE_SIZE",
+    "elk.radial.wedgeCriteria": "LEAF_NUMBER",
     "elk.spacing.nodeNode": "48",
     "elk.spacing.edgeNode": "28",
   };
   let elkLayoutEngine = null;
   let renderGeneration = 0;
   let shouldFitAfterLayout = false;
-
-  function overviewFallbackPath(source, target) {
-    const sourceCenterX = source.x + source.w / 2;
-    const sourceCenterY = source.y + source.h / 2;
-    const targetCenterX = target.x + target.w / 2;
-    const targetCenterY = target.y + target.h / 2;
-    const dx = targetCenterX - sourceCenterX;
-    const dy = targetCenterY - sourceCenterY;
-    const distance = Math.hypot(dx, dy);
-    if (!distance) return "";
-    const ux = dx / distance;
-    const uy = dy / distance;
-    const extent = (node) => Math.min(
-      Math.abs(ux) < 1e-9 ? Infinity : node.w / 2 / Math.abs(ux),
-      Math.abs(uy) < 1e-9 ? Infinity : node.h / 2 / Math.abs(uy),
-    );
-    const sourceExtent = extent(source);
-    const targetExtent = Math.max(0, extent(target) - 8);
-    const startX = sourceCenterX + ux * sourceExtent;
-    const startY = sourceCenterY + uy * sourceExtent;
-    const endX = targetCenterX - ux * targetExtent;
-    const endY = targetCenterY - uy * targetExtent;
-    return "M " + startX.toFixed(1) + " " + startY.toFixed(1)
-      + " L " + endX.toFixed(1) + " " + endY.toFixed(1);
-  }
 
   async function layoutOverviewWithElk(visibleNodes, visibleLinks) {
     if (typeof ELK !== "function") {
@@ -385,19 +352,22 @@
     }
 
     const edgeTargetById = new Map();
+    const sectorPadding = BepMindMapGraph.radialSectorPadding(visibleNodes, visibleLinks);
     const graph = {
       id: "bep-map-overview",
       layoutOptions: OVERVIEW_LAYOUT_OPTIONS,
-      children: visibleNodes.map((node) => ({
-        id: node.id,
-        width: node.w,
-        height: node.h,
-      })),
-      edges: visibleLinks.map((link, index) => {
-        const id = "bep-edge-" + index;
-        edgeTargetById.set(id, link.target.id);
-        return { id, sources: [link.source.id], targets: [link.target.id] };
-      }),
+      children: [
+        ...visibleNodes.map((node) => ({ id: node.id, width: node.w, height: node.h })),
+        ...sectorPadding.nodes,
+      ],
+      edges: [
+        ...visibleLinks.map((link, index) => {
+          const id = "bep-edge-" + index;
+          edgeTargetById.set(id, link.target.id);
+          return { id, sources: [link.source.id], targets: [link.target.id] };
+        }),
+        ...sectorPadding.edges.map((edge) => ({ id: edge.id, sources: [edge.source], targets: [edge.target] })),
+      ],
     };
 
     const layout = await elkLayoutEngine.layout(graph);
@@ -415,15 +385,7 @@
 
     const routes = new Map();
     (layout.edges || []).forEach((edge) => {
-      const path = (edge.sections || []).map((section) => {
-        const points = [section.startPoint, ...(section.bendPoints || []), section.endPoint]
-          .filter((point) => point && Number.isFinite(point.x) && Number.isFinite(point.y));
-        if (points.length < 2) return "";
-        return "M " + (points[0].x - offsetX).toFixed(1) + " " + (points[0].y - offsetY).toFixed(1)
-          + points.slice(1).map((point) => (
-            " L " + (point.x - offsetX).toFixed(1) + " " + (point.y - offsetY).toFixed(1)
-          )).join("");
-      }).filter(Boolean).join(" ");
+      const path = BepMindMapGraph.elkEdgePath(edge, offsetX, offsetY);
       const targetId = edgeTargetById.get(edge.id);
       if (targetId && path) routes.set(targetId, path);
     });
@@ -437,10 +399,12 @@
     const renderId = ++renderGeneration;
     rootHierarchy = buildHierarchy(rawNodes);
     if (!rootHierarchy) {
+      layoutError.classList.add("hidden");
       linksGroup.innerHTML = "";
       nodesGroup.innerHTML = "";
       return;
     }
+    layoutError.classList.add("hidden");
 
     const scientificHierarchy = buildScientificHierarchy(rootHierarchy);
     visibleHierarchy = focusMode
@@ -469,9 +433,13 @@
       try {
         overviewRoutes = await layoutOverviewWithElk(visibleNodes, visibleLinks);
       } catch (error) {
-        console.warn("ELK Radial overview layout failed; using the built-in radial fallback.", error);
-        layoutTree(visibleHierarchy);
-        overviewRoutes = new Map();
+        if (renderId !== renderGeneration) return;
+        console.error("ELK Radial overview layout failed.", error);
+        layoutError.textContent = "The map could not be placed safely because radial layout or routed edges failed. Check the bundled ELK assets, then refresh. Details: " + error.message;
+        layoutError.classList.remove("hidden");
+        linksGroup.innerHTML = "";
+        nodesGroup.innerHTML = "";
+        return;
       }
     }
     if (renderId !== renderGeneration) return;
@@ -521,9 +489,7 @@
           : 'marker-end="url(#arrow-head)"';
         const focusPath = "M " + sX.toFixed(1) + " " + sY.toFixed(1)
           + " Q " + cX.toFixed(1) + " " + cY.toFixed(1) + " " + tX.toFixed(1) + " " + tY.toFixed(1);
-        const path = isFocusLayout
-          ? focusPath
-          : (overviewRoutes.get(t.id) || overviewFallbackPath(s, t));
+        const path = isFocusLayout ? focusPath : overviewRoutes.get(t.id);
         return '<path class="' + cls + '" d="' + path + '" ' + marker + ' />';
       })
       .join("");
@@ -1159,6 +1125,7 @@
   let TOUR_SEQUENCE = [];
   let currentTourIndex = 0;
   const tourPanel = document.getElementById("tour-panel");
+  let tourWasMoved = false;
   const tourStepIndicator = document.getElementById("tour-step-indicator");
   const tourStepCategory = document.getElementById("tour-step-category");
   const tourNodeTitle = document.getElementById("tour-node-title");
@@ -1181,11 +1148,45 @@
     tourPanel.style.transform = "none";
   }
 
+  function positionTourPanel() {
+    const surface = tourPanel.offsetParent;
+    if (!surface) return;
+    const surfaceRect = surface.getBoundingClientRect();
+    const surfaceWidth = surface.clientWidth;
+    const surfaceHeight = surface.clientHeight;
+    const toObstacle = (rect, weight = 1) => {
+      const left = Math.max(0, rect.left - surfaceRect.left);
+      const top = Math.max(0, rect.top - surfaceRect.top);
+      const right = Math.min(surfaceWidth, rect.right - surfaceRect.left);
+      const bottom = Math.min(surfaceHeight, rect.bottom - surfaceRect.top);
+      return right > left && bottom > top ? { left, top, right, bottom, weight } : null;
+    };
+    const obstacles = [];
+    document.querySelectorAll(".tree-node").forEach((node) => {
+      const obstacle = toObstacle(node.getBoundingClientRect());
+      if (obstacle) obstacles.push(obstacle);
+    });
+    [drawer, referencePanel].forEach((panel) => {
+      if (!panel || panel.classList.contains("hidden") || window.getComputedStyle(panel).display === "none") return;
+      const obstacle = toObstacle(panel.getBoundingClientRect(), 100);
+      if (obstacle) obstacles.push(obstacle);
+    });
+
+    const placement = BepMindMapGraph.chooseOverlayPosition(
+      { width: surfaceWidth, height: surfaceHeight },
+      { width: tourPanel.offsetWidth, height: tourPanel.offsetHeight },
+      obstacles,
+      12,
+    );
+    clampTourPanel(placement.left, placement.top);
+  }
+
   tourDragHandle.addEventListener("pointerdown", (event) => {
     if (event.target.closest("button")) return;
     const rect = tourPanel.getBoundingClientRect();
     const surface = tourPanel.offsetParent && tourPanel.offsetParent.getBoundingClientRect();
     if (!surface) return;
+    tourWasMoved = true;
     tourDragState = {
       pointerId: event.pointerId,
       offsetX: event.clientX - rect.left,
@@ -1210,6 +1211,7 @@
     const movement = movements[event.key];
     if (!movement || event.target.closest("button")) return;
     event.preventDefault();
+    tourWasMoved = true;
     const rect = tourPanel.getBoundingClientRect();
     const surface = tourPanel.offsetParent.getBoundingClientRect();
     const step = event.shiftKey ? 64 : 24;
@@ -1219,24 +1221,30 @@
     );
   });
   window.addEventListener("resize", () => {
-    if (tourPanel.style.left) {
+    if (tourPanel.classList.contains("hidden")) return;
+    if (tourWasMoved) {
       clampTourPanel(parseFloat(tourPanel.style.left), parseFloat(tourPanel.style.top));
+    } else {
+      positionTourPanel();
     }
   });
 
-  function startTour() {
+  async function startTour() {
     focusMode = false;
     btnFocus.setAttribute("aria-pressed", "false");
     btnFocus.textContent = "Focus Selected";
-    renderTree();
+    await renderTree();
     TOUR_SEQUENCE = BepMindMapGraph.tourSequence(visibleHierarchy);
     if (!TOUR_SEQUENCE.length) return;
     currentTourIndex = 0;
+    tourWasMoved = false;
+    tourPanel.style.left = "";
+    tourPanel.style.top = "";
     tourPanel.classList.remove("hidden");
-    showTourStep(0);
+    await showTourStep(0);
   }
 
-  function showTourStep(index) {
+  async function showTourStep(index) {
     if (index < 0 || index >= TOUR_SEQUENCE.length) return;
     currentTourIndex = index;
     const item = TOUR_SEQUENCE[index];
@@ -1248,18 +1256,20 @@
     focusMode = true;
     btnFocus.setAttribute("aria-pressed", "true");
     btnFocus.textContent = "Show Overview";
-    renderTree();
     showDrawer(node);
-    fitView();
 
     tourStepIndicator.textContent = "Step " + (index + 1) + " of " + TOUR_SEQUENCE.length;
-    tourStepCategory.textContent = item.motion === "return" ? "Backtracking" : "Exploring";
+    tourStepCategory.textContent = item.level === 0
+      ? "Map root"
+      : "Level " + item.level + " · sibling " + item.levelPosition + " of " + item.levelCount;
     tourNodeTitle.textContent = node.title;
     tourNodeRationale.textContent = node.summary || "Summary not recorded.";
 
     tourPrevBtn.disabled = index === 0;
     tourNextBtn.textContent = index === TOUR_SEQUENCE.length - 1 ? "Finish" : "Next";
-
+    await renderTree();
+    fitView();
+    if (!tourWasMoved) positionTourPanel();
   }
 
   function endTour() {
@@ -1465,7 +1475,12 @@
   window.addEventListener("resize", () => fitView());
   drawerCloseBtn.addEventListener("click", closeDrawer);
 
-  // Initial Boot
-  configureModes().then(() => fetchGraph());
+  // Initial Boot: the one-click launcher can open the explicitly selected owner snapshot.
+  configureModes().then(() => {
+    const requestedMode = new URLSearchParams(window.location.search).get("mode");
+    const requestedOption = Array.from(layerSelect.options).find((option) => option.value === requestedMode);
+    if (requestedOption && !requestedOption.disabled) layerSelect.value = requestedMode;
+    return fetchGraph();
+  });
   initLiveReload();
 })();

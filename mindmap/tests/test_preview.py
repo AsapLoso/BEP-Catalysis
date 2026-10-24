@@ -53,10 +53,12 @@ def test_static_assets_exist():
 
     js = (STATIC_DIR / "app.js").read_text(encoding="utf-8")
     assert "buildHierarchy" in js
-    assert "layoutTree" in js
+    assert "radialSectorPadding" in js
+    assert "positionTourPanel" in js
+    assert "layoutTree" not in js
     assert '"elk.algorithm": "radial"' in js
     assert '"elk.radial.centerOnRoot": "true"' in js
-    assert '"elk.radial.wedgeCriteria": "NODE_SIZE"' in js
+    assert '"elk.radial.wedgeCriteria": "LEAF_NUMBER"' in js
     assert '"elk.direction": "RIGHT"' not in js
     assert "showDrawer" in js
     assert "EventSource" in js

@@ -227,4 +227,3 @@ Exact duplicates are represented as separate raw occurrences and grouped only in
 - Scientific maps and graph datasets on PR #1 were deliberately not read for occurrence extraction (`current_map.yaml`, `reference_map.yaml`, AI map `nodes.yaml`, and related graph data). Their content is out of scope; only task queues, handoffs, progress/audit metadata, and the explicitly deferred frontend task were examined.
 - Original AAPM PR comments/reviews were checked for the PRs recorded open in the 2026-10-23 manifest: all returned zero comments except PR #207 (2), PR #154 (1). Target PR #1 has 3 relevant comments/reviews; they are separate records above.
 - Full source comments/reviews for historical closed PRs not included among the explicitly linked open-PR sources were not inventoried.
-

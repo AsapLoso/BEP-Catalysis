@@ -42,4 +42,3 @@
 ## Run the validator
 
 Run `python3 planning/backlog/validate_backlog.py` from the repository root. The script checks source-reference coverage, unique IDs, exact 1:1 occurrence/cluster assignments, and traceability fields.
-

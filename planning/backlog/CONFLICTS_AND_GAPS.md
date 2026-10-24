@@ -29,4 +29,3 @@
 - Which candidate task restatements should become one canonical cluster, and which are distinct?
 - Which unresolved owner-approved, AI-proposed, or unreviewed items should appear in a future active roadmap? This draft does not promote any.
 - Confirm that the direct current priority instruction is represented separately from all historical checklists: Damian first with one personally understood notebook and a handful of previously discussed map questions after owner review; Zoë second; the weekend benchmark is a possible next slice without a validated due date.
-

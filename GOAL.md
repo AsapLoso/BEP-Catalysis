@@ -53,3 +53,6 @@ Each question must include:
 - Review the personal mind map files in AAPM archive.
 - Ensure all proposed changes strictly respect Rule 42 (Trade-offs belong to the user) and the personal map guardrails.
 - Retain all personal map proposals in `research/notes/theory_alignment/` without modifying master maps without explicit owner approval.
+
+
+**Governance:** `GOAL.md` defines the scientific completion contract; `TODO.md` governs the subgoals and gate receipts.

@@ -61,3 +61,6 @@ Displaying:
 - Dynamic concentration waves traveling along the reactor length over time ($z, t$).
 - Limit cycle phase plane ($X(t)$ vs. $S(t)$).
 - Time-averaged Pareto improvement of periodic $CO$ modulation over steady-state operation.
+
+
+**Governance:** `GOAL.md` defines the scientific completion contract; `TODO.md` governs the subgoals and gate receipts.

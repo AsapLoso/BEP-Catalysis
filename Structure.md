@@ -81,3 +81,4 @@ flowchart TD
 3. **Discretization Engine:** Method of Lines (MOL) with backwards finite differences / Radau stiff solver.
 4. **Dynamic Extension:** Transient mass & heat balances under inlet perturbation.
 5. **Periodic Forcing Study:** CO square/sine wave inlet forcing and cyclic surface coverage response.
+

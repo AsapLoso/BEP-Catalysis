@@ -1,0 +1,1183 @@
+
+--- PAGE 1 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+                                                                                      ISSN 0104-6632                                                                                                                                                                                                                                                      
+Printed in Brazil 
+ 
+ 
+            
+    Vol. 21,  No. 04,  pp. 545 - 556,  October - December  2004 
+ 
+*To whom correspondence should be addressed  
+ 
+ 
+ 
+ 
+Brazilian Journal 
+of Chemical 
+Engineering 
+ 
+ 
+MODELING, SIMULATION, AND OPTIMIZATION 
+OF A FRONT-END SYSTEM FOR ACETYLENE 
+HYDROGENATION REACTORS  
+R. Gobbo1, R. P. Soares1, M. A. Lansarin1*, A. R. Secchi1, and J. M. P. Ferreira2 
+ 1Departamento de Engenharia Química, Universidade Federal do Rio Grande do Sul, 
+Rua Jaú 106/405, CEP 91040-080, Phone +(55) (51) 3316-4103, 
+Fax +(55) (51) 3316-3277, Porto Alegre - RS, Brazil 
+E-mail: {marla, arge}@enq.ufrgs.br 2COPESU, Petroquímica S.A., Triunfo - RS, Brazil. 
+E-mail: jferreira@copesul.com.br 
+ 
+(Received: September 4, 2003 ; Accepted: July 12, 2004) 
+ 
+Abstract - The modeling, simulation, and dynamic optimization of an industrial reaction system for acetylene 
+hydrogenation are discussed in the present work. The process consists of three adiabatic fixed-bed reactors, in 
+series, with interstage cooling. These reactors are located after the compression and the caustic scrubbing 
+sections of an ethylene plant, characterizing a front -end system; in contrast to the tail -end system where the 
+reactors are placed after the de -ethanizer unit. The acetylene conversion and selectivity profiles for the 
+reactors are optimized, taking into account catalyst deactivation and process constraints. A dynamic optimal 
+temperature profile that maximizes ethylene production and meets product  specifications is obtained by 
+controlling the feed and intercoolers temperatures. An industrial acetylene hydrogenation system is used to 
+provide the necessary data to adjust kinetics and transport parameters and to validate the approach. 
+Keywords: optimization, selective hydrogenation, acetylene reactor, front-end system.  
+ 
+ 
+INTRODUCTION 
+ 
+The cracking of petrochemical naphtha with 
+vapor produces a stream composed mainly of 
+ethylene and also of paraffins, diolefins, aromatics, 
+and a small amount of acetyl ene. The ethylene is 
+mainly used in the production of polymers, 
+especially polyethylene (Peacock, 2000).  
+Small amounts of acetylene, on the order of parts 
+per million, are harmful to the catalysts used in 
+polymerization (Schbib et al., 1996). Therefore, t he 
+acetylene in the ethylene stream must be 
+hydrogenated aiming at reducing its concentration 
+with a minimum loss of ethylene to ethane. The 
+inadequate operation of an acetylene hydrogenation 
+reactor in a petrochemical plant can result in a loss of 
+up to f ive million dollars per year (Huang, 1979; 
+Brown et al., 1991; Kalid, 1999). In the 
+petrochemical industry there are two different routes 
+for ethylene production: tail -end and front -end 
+(Schbib et al., 1994). For acetylene removal, the 
+difference between t hem is very significant, as 
+discussed later in this paper.  
+Despite the commercial importance of acetylene 
+hydrogenation, few papers have been published on 
+the kinetics of the reactions for the front -end system, 
+the subject of the present work. The majorit y of the 
+studies (Huang, 1979; Näsi, 1985; Brown et al., 
+1991; Bos and Westerterp, 1993) deal with the tail -
+end system, using pure reactants and operating 
+conditions not even close to those in industrial 
+plants. The difficulties in reproducing industrial 
+operating conditions are due to the high temperature, 
+above 100 °C; the high pressures, above 3 MPa; and 
+the multicomponent feed gas, resulting from the 
+pyrolysis of naphtha. 
+--- PAGE 2 ---
+ 
+ 
+ 
+ 
+546            R. Gobbo, R. P. Soares, M. A. Lansarin, A. R. Secchi, and J. M. P. Ferreir a 
+ 
+ 
+Brazilian Journal of Chemical Engineering  
+ 
+ 
+ 
+ 
+According to Brown et al. (1991), the following 
+reactions can occur inside hydrogenation reactors: 
+ 
+22224CH +H CH →    (Acetylene hydrogenation) 
+ 
+24226CH +H   CH →    (Ethylene hydrogenation) 
+ 
+ 22223nCH +1/2nH   (CH)n → (Oligomerization, 
+formation of green oils) 
+ 
+ In the case of front -end reactors, hydrogenation 
+of methylacetyl ene, propadiene, propylene, and 1,3 
+butadiene also occurs: 
+ 
+33426CH +HCH →  (Methylacetylene or 
+propadiene hydrogenation)  
+ 
+ 36238CH +H CH →  (Propylene hydrogenation) 
+ 
+ 46248CH +H   CH →  (1,3Butadiene hydrogenation) 
+ 
+Only two articles dealing with the kinetics of 
+front-end systems were found in the literature. Using 
+atmospheric pressure; a temperature range of 40 − 80 
+°C; and feed gas composed of methane, acetylene, 
+ethylene, ethane, propadiene, methylacetylene, 
+propylene, pr opane, hydrogen, and carbon 
+monoxide, Godinez et al. (1995) proposed reaction 
+rate equations, depending only on hydrogen partial 
+pressure, for hydrogenation of acetylene, ethylene, 
+methylacetylene, propadiene, and propylene. They 
+assumed the first-order reaction for hydrogenation of 
+acetylene and diolefins and the third -order for 
+hydrogenation of olefins. Using pressures ranging 
+from 0.1 to 3.2 MPa; a temperature range of 15 − 120 
+°C; and feed gas composed of methane, acetylene, 
+ethylene, ethane, hydrogen, an d carbon monoxide, 
+Schbib et al. (1996) proposed first-order reaction rate 
+equations for hydrogenation of acetylene and 
+ethylene for all reactants. 
+One of the most serious problems in the acetylene 
+hydrogenation reaction system is catalyst 
+deactivation. Ya jun et al. (1982) concluded that 
+approximately 40% of the oligomer generated in the 
+reactor (called green oil) is deposited on the catalyst, 
+thereby deactivating it; the H 2/C2H2 ratio is the main 
+parameter that affects oligomerization; and the 
+elevation in the reaction temperature also contributes 
+to the oligomer formation. They found that the 
+oligomer structure in liquid phase is composed of 
+long aliphatic chains with the formula C nH(1.8-1.9)n, 
+with n varying from 14 to 17. According to Sarkany 
+et al. (1984) the molecular formula of the green oil is 
+(C2H3)n, with n varying from 4 to 22. 
+ Brown et al. (1991) developed a function that 
+describes the catalytic activity based on the 
+formation of green oil. The model assumes that the 
+deposition of green oil is un iform throughout the 
+reactor and therefore the activity is the same for all 
+the points in the bed at the same time. The function 
+describes the catalytic activity in terms of the amount 
+of carbon deposited on the catalyst.  Kalid (1999) 
+optimized a tail -end reaction system for acetylene 
+hydrogenation, using a parameter referred to as 
+catalytic effectiveness to represent catalyst 
+deactivation. 
+ There are several articles in the literature that 
+discuss the modeling of an acetylene hydrogenation 
+reactor. Godinez et al. (1995), Schbib et al. (1996), 
+and Szukiewicz et al. (1998) discussed the need for a 
+heterogeneous modeling for this process. They 
+concluded that a pseudohomogeneous model 
+describes the system adequately. 
+ Huang (1979) studied optimization of the ta il-
+end system with only one reactor without presenting 
+the objective function and its constraints and using a 
+steady-state model. Brown et al. (1991) and Kalid 
+(1999) also studied the tail -end system with a low 
+acetylene concentration in the feed and only one 
+reactor. Kalid (1999) designed an objective function 
+for a tail -end system, taking into account some 
+operating costs and using a catalyst deactivation 
+function depending only on run time and not 
+including the effects of green -oil concentration and 
+temperature. Optimization of the front -end system 
+was not found in the literature. 
+In this work, a pseudohomogeneous, one -
+dimensional, and adiabatic dynamic model for an 
+industrial acetylene hydrogenation front -end system 
+was developed. The reactor scheme is c omposed of 
+three fixed -bed reactors in series with intermediary 
+coolers. An equation for activity loss with time, due 
+to hydrocarbon deposition resulting from acetylene 
+oligomerization (green oils), was also developed. 
+The acetylene conversion and ethylene  selectivity 
+profiles for the three reactors were optimized, taking 
+into account the process constraints. This was done 
+by controlling the inlet temperature of each reactor 
+by means of heater and cooler for the first reactor 
+and intermediary coolers for th e second and third 
+reactors. Optimal temperature profiles were then 
+obtained in order to maximize ethylene production 
+without violating of the product specification. Data 
+from an industrial acetylene hydrogenation system 
+--- PAGE 3 ---
+ 
+ 
+ 
+ 
+Modeling, Simulation, and Optimization of a Front -End System                                                       547 
+ 
+ 
+Brazilian Journal of Chemical Engineering Vol. 21,  No. 04,  pp. 545 - 556,  October - December  2004 
+ 
+ 
+ 
+ 
+were used to adjust the kinetic and  transport 
+parameters and to validate the model.  
+ 
+ 
+PROBLEM DESCRIPTION 
+ 
+In the tail -end configuration, the hydrogenation 
+reactor is located after the de -ethanizer column, 
+which means that only ethylene, ethane, and 
+acetylene are found in the reactor feed.  Hydrogen 
+and carbon monoxide (the latter used to increase 
+catalyst selectivity) are fed in separately (Brown et 
+al., 1991). Consequently, the reaction control system 
+is much simpler, since the main variables of the 
+reaction, such as the hydrogen/acetylene ratio, spatial 
+velocity, inlet temperature, and CO concentration, 
+can be modified according to variations in the 
+process and the reactor runs. In the front -end 
+configuration, the reactor is placed after the 
+depropanizer. Therefore, all C 4
+−  cut is found in  the 
+reactor feed stream, except for CO 2 and H 2S, which 
+are removed in the washing columns (Schbib et al., 
+1994; Kalid, 1999). Composition of the reactants and 
+CO concentration are determined by the pyrolysis 
+reaction in the furnaces, with only inlet tempe rature 
+and spatial velocity remaining for control of the 
+hydrogenation unit (Schbib et al., 1994). 
+To compensate for catalyst deactivation, it is 
+necessary to gradually increase the reactor inlet 
+temperature. However, the gradual increase in 
+temperature de creases selectivity for ethylene in 
+favor of formation of ethane, which is a product with 
+a commercial value about five times lower than that 
+of ethylene. During the reactor runs, the ethylene 
+selectivity decreases until reaching a limiting value 
+when the catalyst bed is replaced or regenerated. 
+The proposed solution was formulating a 
+dynamic optimization problem, using a first -
+principles mathematical model, to maximize the 
+acetylene conversion, ethylene selectivity, and unit 
+run time, subject to process co nstraints and catalyst 
+deactivation, by controlling the inlet temperature of 
+each reactor. 
+ 
+ 
+MATHEMATICAL MODELING 
+ 
+Fixed-bed reactors are usually modeled as either 
+pseudohomogeneous or a heterogeneous system. 
+According to Mears (1971), in order to verify which 
+model is more appropriate to represent a catalytic 
+reactor, it is necessary to determine the relative 
+importance of intraparticle resistance, interparticle 
+resistance, axial dispersion, and radial dispersion. 
+The criteria used with respect to each ef fect were 
+Weisz and Prater (1954), Mears (1971), Young and 
+Finlayson (1973), and Mears  (1971). Applying the 
+Weisz and Prater (1954) criterion to plant data, the 
+result was not conclusive, because its condition 
+depends on an inequality (of the type x < 1) t hat was 
+only poorly satisfied (x = 0.479, which is too close to 
+1). Using the Mears (1971) criterion it was possible 
+to conclude that the interfacial mass transfer 
+resistance is negligible because Mears' inequality 
+was satisfied with a value about 105 times lower than 
+its upper bound. 
+Godinez et al. (1995) conducted tests to verify the 
+influence of particle size of the catalyst G83 -C on 
+conversion rate, concluding that it is insensitive to 
+this parameter and that the intraparticle mass transfer 
+resistance i s insignificant. Using the Weisz and 
+Prater (1954) criterion, Schbib et al. (1996) also 
+concluded that the intraparticle resistance to the 
+acetylene hydrogenation reaction is not important. 
+Szukiewicz et al. (1998) compared the 
+pseudohomogeneous and hetero geneous models, 
+concluding that both can satisfactorily represent the 
+acetylene hydrogenation reactor, even though the 
+pseudohomogeneous model requires the use of an 
+effectiveness factor to compare it to the 
+heterogeneous model. Petrus et al. (1998) also 
+showed that pseudohomogeneous models are able to 
+satisfactorily represent an acetylene hydrogenation 
+reactor. Based on the above criteria and on the work 
+found in the literature, a pseudohomogeneous model 
+was considered in this work. 
+In order to verify the deviations from a plug flow 
+condition, Hill (1977) considered that, if the ratio 
+between reactor length and catalyst particle diameter 
+is larger than 100, then axial dispersion can be 
+disregarded. Froment and Bischoff (1990) mention 
+that, for the flow velo cities used in industrial 
+applications, axial dispersion is negligible when the 
+reactor length exceeds by 50 times the value of the 
+catalyst particles diameter. For the case under study, 
+the ratio (reactor length)/(particle diameter) is 347, 
+therefore indi cating  that the axial dispersion is 
+negligible. Besides the above -mentioned criteria, the 
+criterion of Young and Finlayson (1973) for axial 
+dispersion and the criterion of Mears (1971) for 
+radial dispersion were also tested, reaching the same 
+conclusion.  
+As the length/diameter ratio of the reactors 
+studied is small (= 0.53) and the reaction is highly 
+exothermic, the temperature gradient in the radial 
+coordinate could be significant. To assure the choice 
+--- PAGE 4 ---
+ 
+ 
+ 
+ 
+548            R. Gobbo, R. P. Soares, M. A. Lansarin, A. R. Secchi, and J. M. P. Ferreir a 
+ 
+ 
+Brazilian Journal of Chemical Engineering  
+ 
+ 
+ 
+ 
+of the model, the Mears (1971) criterion was tried. 
+However, this criterion takes into account the 
+effective thermal conductivity in the radial direction, 
+which includes the heat transfers (by conduction, 
+convection, and radiation) in the radial direction in 
+the solid and fluid phases. Some work (Kunii and 
+Smith, 1960; Yagi and Kunii, 1957) presents 
+correlations for radial effective thermal conductivity, 
+which are not valid for high Reynolds numbers such 
+as the one obtained in this work of about 10 6. 
+Besides, in the available correlations for calculation 
+of effective thermal conductivity, there are many 
+parameters such as solid emissivity and others that 
+depend on particle shape, which were not found for 
+the case under study.  
+However, the temperature inside the reactors 
+under study is appropriately monitored , allowing a 
+detailed analysis of the data on the runs. It was 
+observed that in the most extreme case, i.e., at the 
+exit of the first reactor, the largest difference 
+between the temperatures at the central point (r  = 0) 
+and the peripheral point (r = R) is of 4.9 ºC. Based 
+on these small temperature differences in the radial 
+direction, radial dispersion was not considered in the 
+model.  
+The reactors under study are thermally isolated 
+with ceramic fiber. Based on the largest internal 
+reactor temperature and u sing the ASTM C680 
+standard, the heat losses were estimated at 60 W/m 2, 
+corresponding to 0.02% of the generated heat. Based 
+on this value, the heat loss was considered negligible 
+and the reactors were modeled as adiabatic reactors.  
+At end of a reactor run , which is the worst 
+condition, the pressure drop across the reactor’s bed 
+length is about 20 kPa, which is less than 1% of its 
+operating pressure (about 3.5 MPa). Therefore, 
+reactor pressure was considered constant and 
+momentum balance was not included in the model.  
+Based on these criteria and on the operating 
+conditions of the reactors, similar dynamic models 
+with the following characteristics were built for the 
+three reactors:  
+§ pseudohomogeneous;  
+§ without radial and axial dispersion;  
+§ negligible pressure drop;  
+§ adiabatic reactors; 
+§ no overall mass accumulation.  
+Based on the above hypothesis, the mass balance 
+can be written as  
+ 
+4
+izi
+i,jj
+j1
+C(uC) rtz =
+∂∂εε=−+ν∂∂ ∑        (1) 
+where t represents time, u z the interstitial gas 
+velocity, ε the bed porosity, ν i,j the stoich iometric 
+coefficient of the i-th component in the j -th reaction, 
+and C i the molar concentration for i  = 1, ..., 6, 
+corresponding to acetylene, ethylene, ethane, 
+hydrogen, methyl -acetylene, and propadiene, 
+respectively, and j = 1, ..., 4, corresponding to t he 
+rates of the hydrogenation reactions of acetylene, 
+ethylene, methylacetylene, and propadiene, 
+respectively. Due to the small amounts of 1,3 
+butadiene and propylene in the feed stream and 
+especially to the fact that these components were not 
+measured to estimate the kinetic constants, their 
+hydrogenation reactions were not considered in the 
+kinetic model. 
+ The energy balance for each stage can be written 
+as  
+ 
+psps
+4
+zpjrj
+j1
+T[c(1)c] t
+Tucr(H) z =
+∂ερ+−ερ= ∂
+∂−ερ+−∆ ∂ ∑
+         (2) 
+ 
+where cp and c ps are the gas and solid specific heat, 
+respectively; ρ  and ρ s are the gas and solid specific 
+mass; T is the temperature; and (− ∆ Hrj) is the heat of 
+the j-th reaction.  
+ As the operating conditions used in the work of  
+Schbib et al. (1996) are very similar to those used in 
+the industrial reactor that is the subject of the present 
+study, their kinetic model was chosen  for use in this 
+work. However, the hydrogenation reactions of 
+methylacetylene and propadiene were not considered 
+in those articles. The kinetic equations are presented 
+below:  
+ 
+( )
+( )
+jiHs
+j 31
+2HHCOCO
+kCC(1)
+r
+1KCKC
+ρ−ε
+−=
+ ++
+
+         (3) 
+ 
+j
+j0,j
+E
+kkexp RT
+=− 
+
+            (4)  
+ 
+where C H and C CO are the hydrogen and oxygen 
+monoxide molar concentrations and K H and K CO are 
+the adsorption constants for these compounds, 
+respectively. The values of the pre -exponential 
+factor, k 0,j, and activation energy, E j, are given in 
+Table 1. The pre-exponential factors for the reactions 
+--- PAGE 5 ---
+ 
+ 
+ 
+ 
+Modeling, Simulation, and Optimization of a Front -End System                                                       549 
+ 
+ 
+Brazilian Journal of Chemical Engineering Vol. 21,  No. 04,  pp. 545 - 556,  October - December  2004 
+ 
+ 
+ 
+ 
+of acetylene and ethylene hydrogenation obtained by 
+Schbib et al. (1996) were adapted to the data from 
+the industrial plant under study. The kineti c 
+constants for the reactions of methylacetylene and 
+propadiene hydrogenations were estimated using 
+transient data on reactor operation during a period of 
+400 days. The gas composition was measured by 
+chromatographic analyses of the outlet mixture of 
+the f irst reactor.  It must be pointed out that no 
+kinetic study was developed in this work; only the 
+functional form of the reaction rates found in the 
+literature were used to fit the plant data, and thus 
+the estimated parameter may have no physical 
+meaning. 
+ 
+ 
+Table 1: Kinetic and adsorption constants. 
+ 
+Component log k0,i Ei  (kJ/mol) 
+Acetylene (m6/kmol kgcat s) 27.4 190.50 
+Ethylene (m6/kmol kgcat s) 23.3 179.78 
+Methyl-acetylene (m6/kmol kgcats) -0.494 4.40 
+Propadiene (m6/kmol kgcat s) -0.130 8.96 
+Hydrogen (m3/kmol) 17.2 88.84 
+CO (m3/kmol) 10.2 41.66 
+ 
+ 
+ 
+DEACTIVATION 
+ 
+Catalyst deactivation in acetylene hydrogenation 
+reactors is mainly caused by the oligomerization of 
+light hydrocarbons, producing green oil (Yajun et al., 
+1982). In the deactivation model,  it is assumed that 
+there is uniform fouling over the length of the reactor 
+bed such that there is an average catalyst 
+deactivation term for the entire bed (Brown et al., 
+1991). Considering that the formation of green oil is 
+proportional to the acetylene c oncentration and 
+taking into account the main deactivation equations 
+in the literature (Brown et al., 1991; Dixit and Grant, 
+1996), the following empirical equation was 
+proposed in the present work:  
+ 
+n A
+1,00
+Ea aCkexptRT
+θ −∂ =− ∂ 
+          (5) 
+ 
+where a is the ca talyst activity and C 1,0 is the inlet 
+acetylene concentration in the reactor, n and θ  are 
+their corresponding orders of apparent deactivation, 
+k0 is the pre -exponential factor, and E A is the 
+apparent activation energy for the catalyst 
+deactivation reaction. These four parameters of the 
+deactivation equation were estimated using transient 
+data on reactor operation during a period of 400 
+days. The orders of reaction were limited to integer 
+values. Table 2 shows the parameters obtained by the 
+maximum likelihoo d method. The high apparent 
+deactivation order θ  related to acetylene 
+concentration is in agreement with the observations 
+of Brown et al. (1991), and the first order for 
+catalytic activity is in accordance with Dixit and 
+Grant (1996). However, it must be e mphasized that 
+the parameters of the empirical model given by 
+Equation 5 are just a fit of the plant data, having no 
+physical meaning. 
+ 
+ 
+Table 2: Deactivation parameters. 
+ 
+Parameter Average 
+Standard 
+deviation 
+n 1 - 
+θ  6 - 
+k0 (m18/kmol6 s) ×  104 1.16 0.26 
+EA  (kJ/mol) 0.4374 0.002 
+ 
+ 
+--- PAGE 6 ---
+ 
+ 
+ 
+ 
+550            R. Gobbo, R. P. Soares, M. A. Lansarin, A. R. Secchi, and J. M. P. Ferreir a 
+ 
+ 
+Brazilian Journal of Chemical Engineering  
+ 
+ 
+ 
+ 
+RESULTS AND DISCUSSION 
+ 
+Using industrial plant data from the first reactor 
+feed as input into the model, several dynamic 
+simulations were carried out in order to verify 
+whether the model reproduces plant behavior 
+appropriately. Figures 1 and 2 illustrate the results 
+obtained with the software gPROMS (Pantelides, 
+1996), where it can be observed that the model is 
+capable of reproducing the process behavior during a 
+long period of time. The partial differential 
+equations, given  by Equations 1 and 2, were 
+discretized by the method of lines using the first -
+order backward finite -difference formula with a 
+mesh size of 50 points in each reactor, which was 
+small enough for the required accuracy (relative 
+tolerance of 10-6 and absolute tolerance of 10 -8). The 
+resulting system of differential -algebraic equations 
+was solved by the multi -step code DASOLV, with 
+variable order and variable step size, implemented 
+inside the software gPROMS. 
+It can also be observed in Figure 1 that the 
+predicted reactor temperature has some peaks with a 
+relative deviation of about 1.6 %. These relatively 
+higher deviations are caused by larger variations in 
+the feed composition at those times, which can also 
+be observed in the outlet acetylene concentration of 
+the first reactor (Figure 2). These deviations could be 
+reduced by improving estimation of the kinetic 
+parameters using data from bench -scale reactors, 
+thereby avoiding the effects of noise in industrial 
+plant data. The average relative deviations of the 
+measured variables used to estimate the model 
+parameters are presented in Table 3. Considering that 
+industrial plant data were used to estimate the model 
+parameters, the relative deviations obtained are 
+acceptable in order to have confidence in the 
+simulation results. 
+Figure 3 shows the simulation results for a 
+situation where the inlet temperatures of the three 
+reactors were maintained constant at 55 °C. Under 
+that condition, deactivation of the catalyst beds can 
+be observed during their lifetimes. Clearly,  some 
+corrective action should be taken early in the first 
+year of operation because the outlet acetylene 
+concentration of the last reactor is above its specified 
+value (5 ppm or less, Schbib et al., 1996), as 
+illustrated in Figure 4.  
+0.985
+0.990
+0.995
+1.000
+1.005
+1.010
+1.015
+1.020
+1.025
+1.030
+1.035
+0 10 20 30 40 50 60 70 80
+Time [days]
+Plant data
+Model
+Dimensionless Temperature
+ 
+Figure 1: Dimensionless outlet temperature for the first reactor. 
+ 
+0.2 
+0.4 
+0.6 
+0.8 
+1.0 
+1.2 
+1.4 
+0 10 20 30 40 50 60 70 80 
+Time [days] 
+Plant data 
+Model 
+Dimensionless Acetylene Concentration 
+ 
+Figure 2: Dimensionless outlet acetylene concentration for the first reactor. 
+--- PAGE 7 ---
+ 
+ 
+ 
+ 
+Modeling, Simulation, and Optimization of a Front -End System                                                       551 
+ 
+ 
+Brazilian Journal of Chemical Engineering Vol. 21,  No. 04,  pp. 545 - 556,  October - December  2004 
+ 
+ 
+ 
+ 
+Table 3: Relative deviations of the measured variables  
+used to estimate model parameters. 
+ 
+Measured variable Average relative  
+deviation, % 
+Maximum relative 
+deviation, % 
+Outlet temperature of Reactor A 1.26 1.61 
+Outlet temperature of Reactor B 2.19 2.90 
+Outlet temperature of Reactor C 1.30 1.88 
+Outlet ethane concentration of Reactor A 2.83 9.57 
+Outlet ethane concentration of Reactor B 2.95 9.62 
+Outlet ethane concentration of Reactor C 3.00 10.16 
+Outlet acetylene concentration of Reactor A 7.48 29.14 
+Outlet acetylene concentration of Reactor B 13.34 39.82 
+Outlet methylacetylene concentration of Reactor A 6.93 19.30 
+Outlet propadiene concentration of Reactor A 11.22 24.20 
+ 
+ 
+Figure 3: Catalyst activity in the reactors versus time with constant inlet temperature. 
+ 
+ 
+Figure 4:  Outlet acetylene concentration for Reactor C. 
+ 
+ 
+To deal with the catalyst deactivation problem, it 
+is necessary to develop an optimization tool to allow 
+answering questions such as what is the run cycle 
+time that minimizes the catalyst replacement and 
+what is the optimal operating condition that 
+maximizes ethylene formation, guaranteeing that the 
+outlet acetylene concentration is within specifications.  
+The optimal operating condition would be that 
+under which the largest possible portion of the 
+acetylene fed in were converted into ethyleneat the 
+lowest possible temperature to prevent formation of 
+green oil and at the lowest deactivation rate to 
+guarantee that the outlet acetylene concentration is 
+within the specifications. The product specification 
+--- PAGE 8 ---
+ 
+ 
+ 
+ 
+552            R. Gobbo, R. P. Soares, M. A. Lansarin, A. R. Secchi, and J. M. P. Ferreir a 
+ 
+ 
+Brazilian Journal of Chemical Engineering  
+ 
+ 
+ 
+ 
+must be for an acetylene concentration of5 ppm or 
+less (Schbib et al., 1996). 
+The critical variable that should be carefully 
+controlled during unit operation is ethylene 
+selectivity, defined as  
+ 
+2424inletoutlet
+2222inletautlet
+CHCH
+CHCH
+FF
+S FF
+−
+= −            (6) 
+ 
+where Fi are the inlet and outlet molar flow rates of 
+acetylene and ethylene in the unit.  
+ Control of ethylene selectivity is important 
+because the unit price of ethylene is about five times 
+higher than that of ethane. For this reason, other 
+operational costs, such as those of heating the reactor 
+feed stream with vapor and coo ling the outlet 
+streams of reactors A and B with water, were not 
+considered in the objective function. Another factor 
+that could make a significant contribution to the 
+objective function is the cost of a new catalytic bed. 
+However, as the final time, t f, w as not fixed in the 
+optimization, the cost of replacing a spent bed with a 
+new one is constant, thus not affecting the objective 
+function. The catalyst regeneration cost of a spent 
+bed was not considered in this work, since that cost 
+had not as yet been totally defined. 
+ The constraints imposed on the objective function 
+are fundamental to guaranteeing a feasible operating 
+condition. The main constraint is the outlet acetylene 
+concentration of the third reactor, as this limitation is 
+the very reason for havi ng a hydrogenation unit. If 
+this concentration is above that specified, then the 
+product has to be burned in the flare, resulting in a 
+large loss to the plant. Besides, selectivity should at 
+least be limited to positive values, so that all the 
+acetylene co ntained in the load could be 
+hydrogenated to ethane, specifying the product, but 
+the fed ethylene should not be hydrogenated to 
+ethane, reducing the conversion obtained in the 
+pyrolysis furnaces. 
+ Another important constraint imposed on the 
+objective function is the acetylene conversion in the 
+last reactor. In the case of front -end systems, where 
+changes in operating conditions cannot be 
+compensated for by adjustments to the hydrogen and 
+CO feed flow rates, the third reactor should have an 
+additional capaci ty to absorb possible process 
+disturbances. Thus, the maximum conversion in 
+reactor C was limited to 10 % of the overall 
+conversion in the unit.  
+Catalyst type defines the lower limit of inlet 
+temperature in the reactors. Moreover, as 
+hydrogenation reactio ns are highly exothermic, the 
+temperature and heat generation inside the reactors 
+should be limited to prevent runaways. As heat 
+generation is proportional to the temperature 
+difference between the outlet and inlet streams of 
+each reactor, this difference must be limited. 
+ To achieve the above conditions, the following 
+objective function was designed:  
+ 
+( )
+f
+0,10,20,3f
+t
+2233
+f 0
+(T,T,T,t)
+1 PwPwdt
+Φ=
+=∆+∆ξ∫
+        (7) 
+ 
+subject to the following path constraints: 
+  
+1,33C(t,L)5ppm≤  
+ 
+1,33X(t,L)10%≤  
+ 
+S(t)0%≥  
+ 
+0,kT(t)52C>°               (8) 
+ 
+kT(t)55C∆≤°  
+ 
+( )kkTt,L130C<°  
+ 
+for k = 1, 2 and 3, corresponding to reactors A, B 
+and C, respectively. T0,k(t) is the inlet temperature of 
+the k -th reactor; P 2 and P 3 are the ethylene and 
+ethane specific prices, respectively; ∆ w2(t) and 
+∆ w3(t) are the ethylene and ethane net mass rates 
+produced in the unit, respectively; L k is the length of 
+the k -th reactor; C 1,3(t,L3) is the outlet acetylene 
+concentration of the third reactor (product 
+specification); X 1,3(t,L3) is the acetylene conversion 
+in the third reactor; S(t) is the ethylene selectivity of 
+the unit; Tk(t,Lk) is the outlet temperature of the k -th 
+reactor; ∆ Tk(t) is the temperature difference between 
+the outlet and inlet of the k -th reactor; a nd tf is the 
+unit run time. As the objective function seeks the 
+highest ethylene selectivity, because P 2 > P 3, the 
+optimization has to maximize it. The maximum 
+conversion constraint in the third reactor provides a 
+greater flexibility to the unit to absorb load 
+disturbances, guaranteeing that product 
+specifications will be met. The last two constraints 
+given by Equation 8 are defined to prevent 
+runaways. 
+--- PAGE 9 ---
+ 
+ 
+ 
+ 
+Modeling, Simulation, and Optimization of a Front -End System                                                       553 
+ 
+ 
+Brazilian Journal of Chemical Engineering Vol. 21,  No. 04,  pp. 545 - 556,  October - December  2004 
+ 
+ 
+ 
+ 
+To solve the optimization problem, the Dynamic 
+Optimisation Code (DAEOPT) which implements 
+the single sho oting technique in the software 
+gPROMS, was used. With the software gPROMS it 
+is possible to use piecewise constant (steps) and 
+piecewise linear (ramps) functions for the control 
+variables. Although it is also possible to use a 
+continuous smooth function (polynomial, exponential, 
+etc.) with time invariant parameters to be 
+determined, this form was not explored in this work, 
+because the solution is not practical for 
+implementation in the industrial plant. The first two 
+forms of temperature variation were ado pted in this 
+work, and the final decision was made based on a 
+comparison of the optimization results. 
+ Figure 5 shows a comparison of the optimal 
+objective function with the situation wherein the 
+inlet temperatures of the three reactors were 
+maintained con stant and with the situation 
+wherein these temperatures varied linearly with 
+run time (a typical operation of an industrial unit 
+to compensate for the effects of deactivation). 
+For the case of constant temperatures, the lowest 
+value observed in the industr ial practice was 
+used. The linear profiles were used as initial 
+estimates for the optimal profiles. 
+It can be observed in Figure 5 that the highest 
+value for the objective function was obtained when 
+the inlet temperatures were maintained constant at 
+the l owest possible value. However, looking at 
+Figure 6 it can be observed that the outlet acetylene 
+concentration of the third reactor seriously violates 
+the product specification constraint (5 ppm) for this 
+situation.  
+The simulation results using a linear increase in the 
+inlet temperatures approximately reproduces the 
+profile usually established by the operators based on 
+observation of unit behavior. This profile satisfies the 
+constraints although, as can be observed in Figure 5, it 
+is not optimal. The optimal profile has an increase in 
+the objective function of about 20% relative to this 
+linear profile, which is directly related to the 
+improvement in selectivity and plant profitability. 
+As the outlet acetylene concentration of the third 
+reactor is the most st ringent constraint, the optimal 
+profile will always reach this constraint at least once 
+on the path (see Figure 6). Thus, for a more 
+conservative solution, it is sufficient to lower the 
+product specification constraint. 
+ 
+ 
+Figure 5: Objective function for the three inlet temperature profiles for the reactors. 
+ 
+Figure 6: Outlet acetylene concentration for the last reactor for the three inlet temperature profiles. 
+--- PAGE 10 ---
+ 
+ 
+ 
+ 
+554            R. Gobbo, R. P. Soares, M. A. Lansarin, A. R. Secchi, and J. M. P. Ferreir a 
+ 
+ 
+Brazilian Journal of Chemical Engineering  
+ 
+ 
+ 
+ 
+Figures 7 to 9 illustrate the dimensionless inlet 
+temperatures for the three profiles in each  reactor. It 
+can be observed that in the first reactor the optimal 
+profile represents an intermediary situation between 
+maintaining the temperature constant and to increasing 
+it linearly. For this reactor, the industrial unit operates 
+at high temperatures, resulting in additional costs that 
+could be avoided. It can also be observed in Figures 
+7 to 9 that the time period of each interval of the 
+optimal inlet temperature profile is about 150 days. 
+In other words, during almost half the year the inlet 
+temperature of each reactor remains constant, which 
+is an easier operation than the linear profile. 
+The behavior observed in the second reactor is a 
+consequence of the profile adopted for the first one 
+because a compensation tendency exists between 
+them, i.e., due  to the constraint in the conversion of 
+the third reactor, at least 90% of the acetylene 
+conversion must occur in the first two reactors. 
+Therefore, instead of a large increase in temperature 
+in the first reactor during the time period of 300 to 
+800 days to compensate for catalyst deactivation, the 
+optimal solution is an increase in conversion in the 
+second reactor to maintain selectivity as high as 
+possible (see Figure 5). After 800 days that situation 
+was reversed to meet the product specification that 
+reached its constraint, i.e., the temperature in the first 
+reactor was increased while in the second reactor the 
+temperature was decreased (see Figure 6). The 
+behavior observed in the third reactor results from 
+the constraint imposed by the product specifica tion 
+and unit flexibility (a conversion constraint of 10%).  
+With the optimal solution it was possible to vary 
+the inlet temperature of the reactors in order to 
+maximize ethylene selectivity and to keep the 
+catalyst activities of the beds at proper levels to 
+guarantee that product specification were met. 
+Although the catalytic bed of the first reactor tends 
+to deactivate faster than those of the other two, it was 
+possible to prolong the process runs by decreasing 
+the temperature in the first bed and increas ing the 
+temperature in the second and third reactors. 
+ 
+ 
+Figure 7: Dimensionless inlet temperatures for the three  
+simulated situations for the first reactor. 
+ 
+Figure 8: Dimensionless inlet temperatures for the three  
+simulated situations for the second reactor.  
+--- PAGE 11 ---
+ 
+ 
+ 
+ 
+Modeling, Simulation, and Optimization of a Front -End System                                                       555 
+ 
+ 
+Brazilian Journal of Chemical Engineering Vol. 21,  No. 04,  pp. 545 - 556,  October - December  2004 
+ 
+ 
+ 
+ 
+ 
+Figure 9: Dimensionless inlet temperatures for the three  
+simulated situations for the third reactor.  
+ 
+ 
+CONCLUSIONS 
+ 
+The modeling, simulation, and dynamic 
+optimization of an industrial reaction system for 
+acetylene hydrogenation were carried out in this 
+work. The model is able to satisfactorily predict the 
+outlet temperature and concentrations of ethane, 
+acetylene, methylacetylene, and propadiene in each 
+reactor (the available measured variables). The 
+model developed also describes the catalys t 
+deactivation process as a function of acetylene 
+concentration and reactor temperature. The results 
+were able to represent the conditions in an industrial 
+plant with a front-end configuration. 
+The acetylene conversion and ethylene selectivity 
+profiles were optimized for the reactors, taking into 
+account catalyst deactivation and process constraints. 
+A dynamic temperature profile that maximizes 
+ethylene production and satisfies product 
+specifications, varying the inlet temperatures of the 
+reactors, was obta ined. The optimal profile 
+represents an intermediary solution in between 
+maintaining the temperature constant and in 
+increasing it linearly. When the inlet temperatures 
+are kept at constant low values, the product 
+specification constraint is violated, but the best 
+selectivity is achieved. On the other hand, a linear 
+increase in the inlet temperatures maintains the outlet 
+acetylene concentration in the last reactor well below 
+the constraint, but selectivity is lost. The optimal 
+profile is a compromise between product quality and 
+selectivity. In practice, the optimal profile could be 
+adjusted periodically and automatically, based on 
+plant feedback, thus avoiding violation of 
+constraints. Although similar results were obtained 
+with the use of piecewise linear p rofiles, the use of 
+piecewise constant profiles is more adequate for 
+practical implementation. 
+ 
+ 
+ACKNOWLEDGEMENT 
+ 
+This work was supported by COPESUL. 
+ 
+ 
+NOMENCLATURE 
+ 
+a catalyst activity (-) 
+C  molar concentration  (kmol m-3) 
+cp specific heat  (kJ kg-1 K1) 
+E activation energy of the 
+hydrogenation reactions  
+ 
+(kJ mol-1) 
+EA  activation energy of the 
+deactivation reaction  
+ 
+(kJ mol-1) 
+F molar flow rate  (kmol s-1) 
+∆ H reaction heat  (kJ kmol-1) 
+k kinetic constant  (-) 
+K adsorption constant  (-) 
+k0 pre-exponential factor  (-) 
+L reactor length  (m) 
+n deactivation order for the 
+activity  
+ 
+(-) 
+P price per unit of mass  ($ kg-1) 
+r specific hydrogenation 
+reaction rates  
+ 
+(kmol m-3 s1) 
+R universal constant  (kJ mol-1 K-1) 
+S ethylene selectivity  (-) 
+T temperature  (K) 
+T0 inlet temperature  (K) 
+t  time  (s) 
+tf unit run time  (s) 
+uz interstitial velocity  (m s-1) 
+--- PAGE 12 ---
+ 
+ 
+ 
+ 
+556            R. Gobbo, R. P. Soares, M. A. Lansarin, A. R. Secchi, and J. M. P. Ferreir a 
+ 
+ 
+Brazilian Journal of Chemical Engineering  
+ 
+ 
+ 
+ 
+∆ w net production rate in the 
+unit  
+ 
+(kg s-1) 
+X acetylene conversion  (-) 
+z axial coordinate  (m) 
+ 
+Greek Letters 
+  
+ε bed  porosity (-) 
+ν  stoichiometric coefficient  (-) 
+ρ  specific mass  (kg m-3) 
+θ  deactivation order for the 
+acetylene 
+ 
+(-) 
+ 
+Subscripts  
+ 
+i components of the reactional mixture:  
+1 - acetylene, 2 - ethylene, 3 - ethane,  
+4 - hydrogen, 5- methylacetylene,  
+6 - propadiene, CO - carbon monoxide  
+j hydrogenation reaction: 1 - acetylene,  
+2 - ethylene, 3 - methylacetylene,  
+4 - propadiene 
+k hydrogenation reactor: 1 - Reactor A,  
+2 - Reactor B, 3 - Reactor C 
+s catalyst 
+ 
+ 
+REFERENCES 
+ 
+Bos, A.N.R. and Westerterp, K.R., Mechanisms and 
+Kinetics of the Selective Hydrogenation of 
+Ethyne and Ethene, Chem. Eng. and Proc., 32, 1 
+(1993). 
+Brown, M.W., Penlidis, A. and Sullivan, G., Control 
+Policies for an Industrial Acetylene 
+Hydrogenation Reactor, The Can. J. of Chem. 
+Eng., 69, 152 (1991). 
+Dixit, R. and Grant, N., Dynamic Operation of 
+Butadiene Dimerization Reactor Undergoing 
+Catalyst Deactivation, The Can. J. of Chem. Eng., 
+74, 651 (1996). 
+Froment, G.F. and Bischoff, K.B., Chemical Reactor 
+Analysis and Design, Second Edition. John Wiley 
+and Sons (1990). 
+Godinez, C., Cabanes, A.L. and Villora, G., 
+Experimental Study of the Front -end Selective 
+Hydrogenation of Steam-cracking C2-C3 Mixture, 
+Chemical Engineering as Processing, 34, 459 
+(1995). 
+Hill, C.G., An Introduction to Chemical Engineering 
+Kinetics and Reactor Design, First edition. John 
+Wiley and Sons (1977). 
+Huang, W.,  Optimize Acetylene Removal, Hydrocarbon 
+Processing, 59, 131 (1979). 
+Kalid, R.A., Modelagem, Simulação, Controle e 
+Otimização de Conversores de Acetileno. Ph.D. 
+diss., Universidade de São Paulo, São Paulo, SP,  
+Brazil (1999). 
+Kunii, D. and Smith, J.M., Heat Transfer 
+Characteristics of Porous Rocks, AIChE J., 6, No. 
+1, 71 (1960). 
+Mears, D.E., Tests for Transport Limitation in 
+Experimental Catalytic Reactors, Ind. Eng. Chem. 
+Proc. Des. Dev., 10, No. 4, 541 (1971). 
+Näsi, M., Alikoski, M. and  White, C., Advanced 
+Control of Acetylene Hydrogenation Reactors, 
+Hydrocarbon Processing, 64, 57 (1985). 
+Pantelides C.C., An Advanced Tool for Process 
+Modelling, Simulation and Optimisation, presented 
+at CHEMPUTERS EUROPE III, Frankfurt (1996). 
+Peacock, A. J., Handbook of Polyethylene, Marcel 
+Dekker, Inc., Basel, New York (2000). 
+Petrus, R., Kaczmarski, K. and Szukiewicz, M., 
+Modelling of Fixed Bed Reactor: Two Models of 
+Industrial Reactor for Selective Hydrogenation of 
+Acetylene, Chem. Eng. Science, 53, No. 1, 149 
+(1998). 
+Sarkany, A., Weiss, A.H., Szilágyi, T., Sándor, P. 
+and Guczi, L., Green Oil Poisoning of Pd/Al 2O3 
+Acetylene Hydrogenation Catalyst, Ap. Cat., 12,  
+373 (1984). 
+Schbib, N.S., E rrazu, A.F., Romagnoli, J.A. and 
+Porras, J.A., Dynamics and Control of an 
+Industrial Front-end Acetylene Converter, Comp. 
+& Chem. Engng., 18, s355 (1994). 
+Schbib, N.S., García, M.A., Gigola, C.E. and Errazu, 
+A.F., Kinetics of Front -end Acetylene 
+Hydrogenation in Ethylene Production, Ind. Eng. 
+Chem. Res., 35, 1496 (1996). 
+Szukiewicz, M., Kaczmarski, K. and  Petrus, R., 
+Modelling of Fixed Bed Reactor: Two Models of 
+Industrial Reactor for Selective Hydrogenation of 
+Acetylene, Chem. Eng. Science. 53 (1), 149 (1998). 
+Weisz, P.B. and Prater, C.D., Interpretation of 
+Measurement in Experimental Catalysis, Adv. 
+Catal., 6, 143 (1954). 
+Yagi, S. and Kunii, D., Studies on Effective Thermal 
+Conductivities in Packed Beds, AIChE J., 3, No. 
+3, 373 (1957). 
+Yajun, L., Jing, Z.  and Xueru, M., Study on the 
+Formation of Polymers During the Hydrogenation 
+of Acetylene in Ethylene -Ethane Fraction. Proc. 
+Joint Meeting Chem. Eng., Chem. Ind. Eng. Soc.  
+China. AIChE.  Beijing, 2, 688 (1982). 
+Young, L.C. and Finlayson, B.A., Axial Disper sion 
+in Non-Isothermal Packed Bed Chemical Reactor, 
+Ind. Eng. Chem. Fund., 12, 412 (1973).  

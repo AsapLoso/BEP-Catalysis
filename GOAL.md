@@ -68,3 +68,6 @@ Verify that simulated RMSE matches Larsen's published values:
 A clean, self-contained, and fully executed Jupyter notebook:
 `notebooks/benchmarks/larsen_2024_benchmark.ipynb`
 with side-by-side plots reproducing Larsen's Conversion & Selectivity curves and explicit error metrics.
+
+
+**Governance:** `GOAL.md` defines the scientific completion contract; `TODO.md` governs the subgoals and gate receipts.

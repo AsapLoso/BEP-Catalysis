@@ -1,7 +1,7 @@
 # BEP V3 progress
 
-**Checkpoint:** 2026-10-23 · **Branch:** `v3/bep-vertical-slice-20261023`
-**Current frontier:** Implementation complete on the isolated local V3 branch; ready for owner review. The mixed benchmark and physical assumptions need review before supervisor-facing use. No push, PR, merge, personal-map edit or Damian message.
+**Checkpoint:** 2026-10-24 · **Development branch:** `v3/bep-vertical-slice-20261023` · **PR branch:** `feat/unified-reactor-v3-20261024` → `unified-reactor-model`
+**Current frontier:** V3 implementation is complete and is being proposed as an additive change to the Unified Reactor Model branch. The mixed benchmark and physical assumptions still need owner review before supervisor-facing use. The PR was owner-authorized; no merge, personal-map edit or Damian message is authorized.
 
 ## Gate status
 
@@ -63,4 +63,4 @@
 
 ## Next precise action
 
-The V3 mission artifacts are committed locally on `v3/bep-vertical-slice-20261023`; the working tree is clean. The next action is owner review of the source conflict, the mixed Table 1 comparison, the assumed transient bed residence time, and whether the provisional Urmès/Pd baseline is appropriate. The handoff file is review-ready but unsent. Preserve the isolated branch; do not push or open a PR without separate authorization.
+The original V3 development branch was preserved. The PR integration branch is based on `unified-reactor-model` at `2e1bda47d48a55f2f7d420e4deb34eb59c30929d` and contains only the additive `notebooks/v3/` work. The map source records used by the crosswalk are linked to migration snapshot `0cd47473a93a71f6200a21e6b66c40d6e3bc7a77` because that map data is absent from the Unified Reactor Model base. Next: publish this feature branch and open the owner-authorized PR; then request review of the K₁ conflict, mixed Table 1 comparison, assumed transient residence time and provisional PSSA baseline. The Damian handoff remains unsent.

@@ -2,16 +2,19 @@
 
 **Core inventory:** five inputs = four original notebooks plus one Python script. All five snapshots are read-only source records under `sources/`; no input was edited. Their Git blob IDs were recomputed from downloaded bytes and match the recorded upstream blobs.
 
-## Target branch and base
+## Development snapshot and PR integration
 
 | Item | Verified value |
 |---|---|
 | Target repository | `AsapLoso/BEP-Catalysis` |
-| Working branch | `v3/bep-vertical-slice-20261023` (already existed locally; preserved) |
-| Initial V3 checkpoint | `08967eaed47febdf597ebb60f48e6184cbab75bc` |
-| Requested base | `migration/bep-map-consolidation-20261023` |
-| Verified base commit | `6803814cd827e4f91323fa7b6f406eea579b286b` |
-| Current remote branch state checked | Migration branch still at `6803814...`; no remote V3 branch exists. No push or PR attempted. |
+| Original development branch | `v3/bep-vertical-slice-20261023` (preserved locally) |
+| Original development checkpoint | `08967eaed47febdf597ebb60f48e6184cbab75bc` |
+| Original local base recorded during V3 work | `6803814cd827e4f91323fa7b6f406eea579b286b`; later remote check showed migration had advanced to `0cd47473a93a71f6200a21e6b66c40d6e3bc7a77`. |
+| Owner-requested PR base | `unified-reactor-model` at `2e1bda47d48a55f2f7d420e4deb34eb59c30929d` |
+| PR integration branch | `feat/unified-reactor-v3-20261024` |
+| Integration method | Cherry-picked the two V3 commits onto `unified-reactor-model`; no existing Unified Reactor notebook or migration branch was edited. |
+
+The `unified-reactor-model` base does not contain the AI or personal map directories. Their exact source blobs remain available at the immutable migration snapshot commit [`0cd4747`](https://github.com/AsapLoso/BEP-Catalysis/tree/0cd47473a93a71f6200a21e6b66c40d6e3bc7a77), linked below. The crosswalk uses those source records; no map data or personal status was changed.
 
 ## Immutable core inputs
 
@@ -28,8 +31,8 @@ The current `project-management-agents/devcontainer` tip reported by `git ls-rem
 ## Supporting V0 and map context
 
 - V0 implementation audit: `project-management-agents/Academics/BEP/Catalysis/3_Model/transient_model_framework_audit.md`; code defect ledger and execution state: `3_Model/state.md`. These are audit records, not independent physical source papers. The audit itself flags paper-excerpt claims as unverified; do not promote them to primary-source evidence without a cited source locator.
-- Integrated AI reference map at the V3 base: `research/integrated_reference_map_2026_10_22/`; `nodes.yaml` blob `ff508ddf167296a73a4843a9a68ff82b9ddb0037`. AI-authored, maturity ceiling `ai_worked_out`; no human understanding or human citation verification asserted.
-- Personal map snapshot at the V3 base: `research/manual_map_sessions_2026_10_22/owner_working_map/current_map.yaml` blob `8a9b7fda318849ad6369cf2e75899a3969290f64`. Read-only. Q92 and the 2026-10-23 owner-review handoff say the proposed Reactor Model assumptions were withdrawn to queue/archive; do not create or infer personal-map approval from V3.
+- Integrated AI reference map at migration snapshot commit `0cd47473a93a71f6200a21e6b66c40d6e3bc7a77`: [`nodes.yaml`](https://github.com/AsapLoso/BEP-Catalysis/blob/0cd47473a93a71f6200a21e6b66c40d6e3bc7a77/research/integrated_reference_map_2026_10_22/nodes.yaml), blob `ff508ddf167296a73a4843a9a68ff82b9ddb0037`. AI-authored, maturity ceiling `ai_worked_out`; no human understanding or human citation verification asserted.
+- Personal map snapshot at the same migration commit: [`current_map.yaml`](https://github.com/AsapLoso/BEP-Catalysis/blob/0cd47473a93a71f6200a21e6b66c40d6e3bc7a77/research/manual_map_sessions_2026_10_22/owner_working_map/current_map.yaml), blob `8a9b7fda318849ad6369cf2e75899a3969290f64`. Read-only. Q92 and the 2026-10-23 owner-review handoff say the proposed Reactor Model assumptions were withdrawn to queue/archive; do not create or infer personal-map approval from V3.
 
 ## V2 engine and rerun provenance
 

@@ -1,30 +1,33 @@
-# Subgoals & Gate Receipts — Larsen (2024) PdAg Replication
+# Agent 4 — Larsen 2024 independent re-audit gates
 
-**Status: COMPLETED (2026-10-25).** The selected-curve benchmark and executed BDF notebook are complete. Known data limit: the thesis omits full raw Pd₂Ag/Pd₃Ag response tables, so the reported all-experiment RMSE values are preserved from Figure 6.6 but cannot be independently recalculated.
+**Current status (2026-10-25): prior selected-curve notebook exists; SOURCE-FAITHFUL BASELINE IS UNDER REVIEW.** The prior `COMPLETED` banner is a **historical implementation receipt**, not approval of the exact source equation, flow/parameter units or independent experimental validation. Read revised `GOAL.md` and [issue #11](https://github.com/AsapLoso/BEP-Catalysis/issues/11) first.
 
-## 01 — High-Resolution Source Extraction
-- [x] Render scanned Appendix E/F pages at 300 DPI and inspect them visually.
-- [x] Confirm E.1–E.3 are standard-model variant comparisons, not final parameter tables.
-- [x] Transcribe all eight final parameters per catalyst from Figure 6.6.
-- [x] Recover Appendix F geometry and the Table 6.1 catalyst masses: 0.5 cm tube ID, 2.65 g cm⁻³ support density, and 100/75/100 mg for Pd₀Ag/Pd₂Ag/Pd₃Ag.
+## 00 — Source access and own plan (before code changes)
+- [ ] Verify access to the **full** Larsen BEP thesis in the current execution environment (the owner reports a separate Zotero copy, **not stored on this Git branch**); if inaccessible, state the limitation and assess which source checks can be performed using actual existing files.
+- [ ] Inspect **existing** 18 render PNGs: `notebooks/benchmarks/source_renders/appendix_pages/page-71.png` … `page-88.png`, plus `README.md`; do not reproduce them unless necessary. They cover Appendix E/F, **not** main-text Eq. 6.11.
+- [ ] Inspect the imported notebook, selected-curve CSV, parameter CSV and source/experiment distinction; record historical assertions vs directly verified claims.
+- [ ] Present an independently developed **scientific re-audit plan** addressing disputed Eq. 6.11, feed volume-flow reference basis, missing fitted coefficient units, source access, discriminating comparisons and actual PASS/BLOCKED criteria. Get owner plan feedback before substantive model changes.
 
-## 02 — Experimental Data Extraction
-- [x] Transcribe selected exact Pd₀Ag responses from the Appendix F experiment and comparison tables.
-- [x] Digitize the matching Pd₂Ag and Pd₃Ag responses from Figures 6.1–6.4; mark chart-derived values as estimates with reading uncertainty.
-- [x] Save selected responses and parameter provenance to CSV under `notebooks/benchmarks/data/`.
-- [x] Correct source mapping: Figures 6.1–6.4 and Appendix A are experimental; Appendices B–D are simulated.
+## 01 — Source equation and unit basis (after plan approval)
+- [ ] Read original thesis Eq. 6.9–6.11 (or label unavailable), including `r1_raw`, `r1_max` cap, `r2` inhibition factor and **first vs squared adsorption denominator**. Audit alternative Appendix F code if it implements a different model. Record exact page/equation evidence.
+- [ ] Compare source-printed formula with the previous notebook's `r2` squared denominator, using the SAME fitted coefficients, and report numerical effects; do not silently refit.
+- [ ] Extract Figure 6.6 eight-element vectors (k1,k2,r1_max,K_C2H2,K_H2,K_C2H4,K_inh,n_inh); record direct transcription vs inferred units and preserve model/pressure basis.
+- [ ] Resolve or bracket flow volume reference conditions: actual vs STP/standardized `flow_ml_min`, the correct `T_ref,P_ref`, mass-normalized space velocity, catalyst loading, tube diameter and support density.
+- [ ] Inspect experimental Figure 6.1–6.4/Appendix A versus simulated B–D; do not mistake selected-digitized points or appendix variant tables for measured data or final parameters.
 
-## 03 — Differential Reactor Model
-- [x] Implement the species molar balances and final extended LHHW law, including `r1_max` and `n_inh`.
-- [x] Use He as the inert balance gas and exclude CO.
-- [x] Integrate the model with `solve_ivp(method="BDF")` at all 45 selected feed conditions and calculate conversion/selectivity.
+## 02 — Independent no-CO reproducibility
+- [ ] Run source-faithful BDF simulations at source feed/mass conditions for Pd0Ag, Pd2Ag, Pd3Ag; record outputs, actual software environment and convergence checks.
+- [ ] Verify molar/element balances, positivity, finite states and denominator/rate-law dimensional consistency.
+- [ ] Compare to exact Pd0Ag Appendix F measured table and estimated Pd2Ag/Pd3Ag plot points with uncertainty; keep published all-experiment RMSE (41/42/41 source experiments) separate from selected-subset performance.
+- [ ] Investigate whether changed Eq. 6.11 or feed flow convention *improves/worsens* literature reproduction; include contradictory or null results and identifiability caveats.
 
-## 04 — RMSE and Figure Comparison
-- [x] Plot measured/digitized selected curves with model overlays for Figures 6.1–6.4.
-- [x] Calculate paired experiment RMSE and component RMSE for the selected 15-point subsets.
-- [x] Record Larsen's all-experiment RMSE values from Figure 6.6 (5.0962/5.4320/7.1353 percentage points; N=41/42/41).
-- [x] State the limit: the thesis does not provide full raw response tables for Pd₂Ag/Pd₃Ag, so the published all-experiment RMSE values cannot be independently recalculated from this source alone.
+## 03 — Report and handoff
+- [ ] Write `research/reports/larsen_2024_equation_and_baseline_audit.md`: primary-source locators; source accessibility; full equation comparison; parameter/units ledger; flow reference definition; data provenance; numerical evidence; limitations.
+- [ ] Correct the notebook / derived CSV **only if warranted by primary evidence**. Preserve old implementation and outputs in Git history and document all changes.
+- [ ] Mark source-derived reproduction **PASS or BLOCKED** (not automatically completed merely because the notebook runs). Supply the verification receipt and remaining source questions to Agent 5.
+- [ ] Commit/push only on `feat/larsen-pdag-benchmark` after owner approves the plan. No PR or merge, no personal-map modifications; report commit SHA.
 
-## 05 — Gate Receipt
-- [x] Execute `notebooks/benchmarks/larsen_2024_benchmark.ipynb` with zero cell errors in under 60 seconds.
-- [x] Commit the notebook, selected response data, parameter data, and 300-DPI Appendix E/F renders.
+## Prior historical implementation (preserved in Git, not rechecked now)
+- A 13-cell Larsen benchmark notebook and selected response/parameter CSVs exist with saved executed plots.
+- Appendix E/F were already rendered into 18 Git-tracked 300-DPI PNGs.
+- Earlier work reported source Figure 6.6 RMSEs and 45 selected curve comparisons. Its code currently has a squared `r2` denominator and converts volumetric inlet flows using reactor conditions; **both require independent source verification**.

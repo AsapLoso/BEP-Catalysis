@@ -6,6 +6,8 @@ These files are **already committed to this branch**: 18 PNGs of Larsen's thesis
 [71](page-71.png) · [72](page-72.png) · [73](page-73.png) · [74](page-74.png) · [75](page-75.png) · [76](page-76.png) · [77](page-77.png) · [78](page-78.png) · [79](page-79.png)  
 [80](page-80.png) · [81](page-81.png) · [82](page-82.png) · [83](page-83.png) · [84](page-84.png) · [85](page-85.png) · [86](page-86.png) · [87](page-87.png) · [88](page-88.png)
 
+**Readable transcription status:** The PNGs are source images, not yet a complete usable text record. See [the page-by-page transcription worklist](../../../../research/evidence/transcriptions/larsen_appendix_E_F_worklist.md). The agent must produce [a readable checked appendix transcript](../../../../research/evidence/transcriptions/larsen_2024_appendix_E_F.md) as a research deliverable; **that target file does not exist yet**. Source words and tables go in `research/evidence/transcriptions/`, scientific interpretation in `research/evidence/analysis/`, and processed/digitized values in `research/evidence/derived/`.
+
 ## What this source set can and cannot verify
 
 - The images preserve scan-only **Appendix E/F** material for close inspection: alternative LHHW model comparison tables, selected modelling/code/input listings, and the Pd₀Ag experimental/comparison table. Read any scientific assertions directly from the rendered pages; the fact of a file's existence does not verify its contents.

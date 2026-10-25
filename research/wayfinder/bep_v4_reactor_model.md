@@ -92,3 +92,4 @@ A scientifically verified, self-contained, reproducible 1D dynamic packed-bed re
 - Frontend UI dashboards, web applications, or ELK visualizers.
 - Blind parameter fitting without primary literature grounding.
 - Direct mutations to the owner's personal mind map without explicit authorization.
+

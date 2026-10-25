@@ -81,10 +81,27 @@ A scientifically verified, self-contained, reproducible 1D dynamic packed-bed re
 
 ---
 
+## Island 5: Bimetallic PdAg + CO Dynamic Synthesis & Periodic Modulation (The Core BEP Innovation)
+* **Branch:** [eat/pdag-co-synthesis](https://github.com/AsapLoso/BEP-Catalysis/tree/feat/pdag-co-synthesis)
+* **Governing Files:** GOAL.md, TODO.md, 
+otebooks/benchmarks/pdag_co_synthesis.ipynb
+* **Source Assets:**
+  - Larsen (2024) Master Thesis (Figure 6.6 & Appendix A 8-parameter kinetic vectors)
+  - Schbib et al. (1996) Table 8 (Competitive CO chemisorption isotherm)
+* **Active Tickets:**
+  - [ ] **T5.1: Bimetallic Kinetic Synthesis Formulation** (wayfinder:task) — *Unify Larsen PdAg rate expressions with Schbib competitive CO adsorption denominator.*
+  - [ ] **T5.2: Steady-State Co-Feed Benchmark & Synergy Analysis** (wayfinder:task) — *Sweep 0–1500 ppm CO across Pd1Ag0, Pd2Ag1, Pd3Ag1 to quantify Ag site-isolation benefits.*
+  - [ ] **T5.3: Periodic Dynamic Inlet Modulation** (wayfinder:task) — *Implement square-wave CO pulsing with varying period (1–60 s) and duty cycle (0.1–0.9).*
+  - [ ] **T5.4: Dynamic Pareto Frontier Evaluation** (wayfinder:task) — *Compare steady-state vs. dynamic conversion-selectivity frontiers to test breaking the static ceiling.*
+* **Primary Code Deliverable:**
+  - 
+otebooks/benchmarks/pdag_co_synthesis.ipynb
+
+---
+
 ## 4. The Fog of War (Downstream Slices)
-- *Island 5: Synthesis of Larsen PdAg kinetics with Schbib CO periodic modulation.*
-- *Island 6: Frequency optimization and asymmetric duty-cycle tuning ($t_{\text{pulse}} \ll t_{\text{purge}}$).*
-- *Long-horizon industrial deactivation and multi-bed adiabatic cascades (excluded to focus on microkinetics and dynamic modulation).*
+- *Island 6: Frequency optimization and asymmetric duty-cycle tuning ({\text{pulse}} \ll t_{\text{purge}}$).*
+- *Multi-dimensional radial heat transport & Hotspot mitigation in pilot-scale tubes.*
 
 ---
 

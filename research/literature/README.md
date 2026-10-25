@@ -1,10 +1,12 @@
 # Literature Grounding & Primary Benchmarks
 
-This directory archives verified literature papers, extracted text, and parameter registers for reactor modeling and kinetics in the BEP-Catalysis project.
+This directory archives historical literature papers, extracted text, and parameter registers for reactor modeling and kinetics in the BEP-Catalysis project. **Archive presence does not establish source verification or current model relevance.**
+
+**Current independent source audits:** Agent 1 = Schbib (1996); Agent 4 = Larsen (2024). Agent 5 remains paused. Gobbo (2004) is kept as a historical comparison only, not an assigned benchmark or a source for silent parameter transfer.
 
 ---
 
-## 1. Primary Benchmark Paper: Gobbo et al. (2004)
+## 1. Historical archived comparison (NOT an active benchmark): Gobbo et al. (2004)
 
 * **Full Title:** *Modeling, simulation, and optimization of a front-end system for acetylene hydrogenation reactors*
 * **Authors:** R. Gobbo, R. P. Soares, M. A. Lansarin, A. R. Secchi, J. M. P. Ferreira (COPESUL & Universidade Federal do Rio Grande do Sul - UFRGS)

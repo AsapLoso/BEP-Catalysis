@@ -21,6 +21,6 @@ These files are **already committed to this branch**: 18 PNGs of Larsen's thesis
 3. Cross-check source statements against the notebook **before** altering code or claiming model reproducibility. Do not re-render these pages simply because an earlier prompt asked for rendering.
 4. In the audit report, include a source-access matrix: **exact source/page actually inspected → claim it supports → accessibility status → what is still unknown.**
 
-See branch-root [GOAL.md](../../../GOAL.md), [TODO.md](../../../TODO.md) and [Agent 4 source-audit issue #11](https://github.com/AsapLoso/BEP-Catalysis/issues/11).
+See branch-root [GOAL.md](../../../../GOAL.md), [TODO.md](../../../../TODO.md) and [Agent 4 source-audit issue #11](https://github.com/AsapLoso/BEP-Catalysis/issues/11).
 
 **Provenance:** renders are from Victor Larsen's June 2024 TU Delft Bachelor End Project thesis. Their raster image files were imported on the earlier Agent 4 branch and **are not altered by this documentation update**.

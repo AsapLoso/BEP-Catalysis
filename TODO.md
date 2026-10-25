@@ -15,7 +15,7 @@
 ## 03 — Differential Reactor Model
 - [x] Implement the species molar balances and final extended LHHW law, including `r1_max` and `n_inh`.
 - [x] Use He as the inert balance gas and exclude CO.
-- [x] Integrate the model at all 45 selected feed conditions and calculate conversion/selectivity.
+- [x] Integrate the model with `solve_ivp(method="BDF")` at all 45 selected feed conditions and calculate conversion/selectivity.
 
 ## 04 — RMSE and Figure Comparison
 - [x] Plot measured/digitized selected curves with model overlays for Figures 6.1–6.4.

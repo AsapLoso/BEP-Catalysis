@@ -44,6 +44,7 @@ Using Python (`fitz` / PyMuPDF or `pdf2image`):
 
 ### Step 3: Implement the 1D Differential Reactor ODE Model
 Implement Larsen's molar balance ODEs (Eqs. 4.6–4.9):
+Integrate the balances with `scipy.integrate.solve_ivp(method="BDF")` across the selected experimental conditions.
 $$\frac{d F_i}{d z} = A \, \rho_{\text{support}} \, \sum_j \nu_{i,j} \, r_j$$
 With Extended LHHW rate laws (Eqs. 6.9–6.11):
 $$r_{1,\mathrm{raw}} = \frac{k_1 K_{\text{C}_2\text{H}_2} p_{\text{C}_2\text{H}_2} K_{\text{H}_2} p_{\text{H}_2}}{\left(1 + K_{\text{C}_2\text{H}_2} p_{\text{C}_2\text{H}_2} + K_{\text{C}_2\text{H}_4} p_{\text{C}_2\text{H}_4} + K_{\text{H}_2} p_{\text{H}_2}\right)^2},\qquad r_1=\frac{r_{1,\mathrm{raw}}}{1+r_{1,\mathrm{raw}}/r_{1,\max}}$$

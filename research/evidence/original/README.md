@@ -11,7 +11,6 @@ Original paper/PDF/photo and publisher/author correction must be distinguished. 
 | Reference | Exact location | Evidence type / limitation |
 |---|---|---|
 | Schbib (1996) journal article | [archived PDF](../../literature/schbib_1996_front_end_acetylene_hydrogenation.pdf), [large HTML](../../literature/schbib_1996_full_article.html) | Historical paper copies; the companion [extracted text](../../literature/schbib_1996_extracted_text.txt) is a **transcription aid**, not a new original |
-| Gobbo et al. (2004) | [archived PDF](../../literature/gobbo_2004_front_end_acetylene_hydrogenation.pdf) | Different industrial system/re-fit; use as secondary context, not Schbib's unchanged calibration |
 
 | Schbib author-shared correction record | [readable candidate Table 8 correction](../transcriptions/schbib_1996_author_table8_correction.md) | Publicly linked corrective note; status of a journal-published erratum must be verified |
 

@@ -11,7 +11,8 @@ Original paper/PDF/photo and publisher/author correction must be distinguished. 
 | Reference | Exact location | Evidence type / limitation |
 |---|---|---|
 | Schbib (1996) journal article | [archived PDF](../../literature/schbib_1996_front_end_acetylene_hydrogenation.pdf), [large HTML](../../literature/schbib_1996_full_article.html) | Historical paper copies; the companion [extracted text](../../literature/schbib_1996_extracted_text.txt) is a **transcription aid**, not a new original |
-| Larsen (2024) thesis Appendix E/F pages | [18 rendered page images](../../../notebooks/benchmarks/source_renders/appendix_pages/README.md) | PDF pages 71–88 preserved as source-image renditions; **full original Larsen PDF is NOT in this branch** |
+| Larsen (2024) complete thesis PDF, **as uploaded by owner** | [Original 97-page PDF](Larsen%20-%202024%20-%20Semihydrogenation%20of%20acetylene%20to%20ethylene%20with%20a%20PdAg%20catalyst.pdf) | 9,167,352 bytes; SHA-256 `b5aaa2300ff9b64aca70e58cc5e4d8be30b3c12ee264e69af89e01c86f5120c9`, Git blob `8207c91e...`. PDF internally compiled 2026-06-26; official 2024 deposit status not independently established |
+| Larsen (2024) thesis Appendix E/F pages | [18 rendered page images](../../../notebooks/benchmarks/source_renders/appendix_pages/README.md) | PDF pages 71–88, image renditions; native machine extraction alone does not transcribe scanned tables/code |
 
 
 **Source archive convention:** the old source locations above are authoritative existing blobs and stay unchanged; transcribed/AI-generated words should never be inserted into these original files. New primary artifacts may be added here later with page/DOI/version and exact checksum provenance.

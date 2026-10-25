@@ -3,7 +3,7 @@
 **Current state (2026-10-25): PREPARING PLAN; SOURCE AUDIT NOT YET VERIFIED.** The pre-existing notebook and four plots are historical artifacts, not verified Table 6 reproduction. Read `GOAL.md` and [issue #10](https://github.com/AsapLoso/BEP-Catalysis/issues/10). Do not check a box without a source or execution receipt.
 
 ## 00 — Plan for owner review (first)
-- [ ] Inspect the original Schbib PDF/HTML/text, historical notebook/plots and any accessible author/publisher correction; check source access and exact relevant pages.
+- [ ] Inspect the original Schbib PDF/HTML/text and the **new readable candidate correction table** `research/evidence/transcriptions/schbib_1996_author_table8_correction.md`; verify it against the linked author-shared source and determine any journal-erratum status. Inspect historical notebook/plots and exact relevant pages.
 - [ ] Present an **independently expanded scientific plan**, explicitly testing alternative causes of the failed Table 6 result, including corrected logs, unit/mass bases, rate equations and reactor heat/geometry closure.
 - [ ] Receive owner review/approval of the plan **before substantive changes to models and primary-code implementation**.
 

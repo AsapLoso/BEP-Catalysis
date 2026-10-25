@@ -20,7 +20,7 @@ The table labels its second column `LOG A_i` and third column `E (kcal/gmol)`. R
 | K_Et | -3.012 | 0.001 | adsorption term |
 | K_A | -19.0 | 0.001 | adsorption term |
 
-**Dispute to investigate:** Agent 1's earlier `GOAL.md` and archived notebook use **20.2** for the hydrogen and **13.6** for the CO `LOG A_i` values from the printed Table 8. The author's later table lists **17.2** and **10.16** respectively; later Gobbo (2004) rounds CO to 10.2 but independently fitted industrial kinetic constants must not be substituted wholesale.
+**Dispute to investigate:** Agent 1's earlier `GOAL.md` and archived notebook use **20.2** for the hydrogen and **13.6** for the CO `LOG A_i` values from the printed Table 8. The author's later table lists **17.2** and **10.16** respectively; any external parameter fit belongs to a separate model and cannot replace these values without independent evidence.
 
 **Why it matters:** `10^(13.6-10.16)` is a factor of roughly 2754 for a fixed Arrhenius energy and temperature. This does not establish that the large Table 6 mismatch is caused solely by this difference. Agent 1 must independently inspect source pages, check dimensions and reactor/energy assumptions, reproduce numerical results, and record when the source remains ambiguous.
 

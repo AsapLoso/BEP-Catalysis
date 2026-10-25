@@ -4,7 +4,7 @@
 
 ## Existing original images
 
-The exact source view is `notebooks/benchmarks/source_renders/appendix_pages/`, PDF page **71–88**, one-based filename `page-<N>.png`. That directory's README explains that the source thesis PDF itself was **not** copied into this branch. The user's separate Zotero archive may contain it locally, but availability in an agent's runtime is unverified.
+The exact source view is `notebooks/benchmarks/source_renders/appendix_pages/`, PDF page **71–88**, one-based filename `page-<N>.png`. The entire original 97-page thesis PDF is **now committed** at `research/evidence/original/Larsen - 2024 - Semihydrogenation of acetylene to ethylene with a PdAg catalyst.pdf` (byte-verified against the uploaded copy); image-only pages nevertheless require page-by-page transcription.
 
 ## Current preparation (not yet a completed transcript)
 
@@ -15,7 +15,7 @@ A [page-by-page Markdown scaffold](larsen_2024_appendix_E_F.md) now exists with 
 - `research/evidence/transcriptions/larsen_2024_appendix_E_F.md`: one headed section per PDF page, **71 to 88**, with printed page number (if visible), complete readable prose, tables, equations, parameters and any relevant source code fragments. For genuinely visual-only plots describe axes, legends and data visibility rather than inventing exact plotted numbers. Pages with no machine-readable text still require human-readable manual transcription from the image.
 - For large tables, optionally add `*.csv` with exact transcribed columns and rows; distinguish this from `notebooks/benchmarks/data/larsen_2024_selected_curves.csv` (which already contains a mix of exact table values and graph-digitized estimates).
 - For each page: original image link; provenance/method; status `raw_unchecked` then `checked_against_image` only after visual comparison; ambiguity marker `[unclear]` where needed. Use OCR only as a preliminary aid and verify against the original image. Put all interpretation and proposed mathematical corrections into `../analysis/`, **never** within the literal source transcription.
-- Create a distinct transcription for Larsen's *main-body* Eq. 6.9–6.11 and Figure 6.6 **only if the full thesis is actually accessible**. These pages are absent from the 18 PNGs; do not hallucinate their source text. Highlight this source blocker in the report.
+- Create a source-checked readable transcription for main-body Eq. 6.9–6.11 (PDF p. 43) and source-derived Figure 6.6 parameters (PDF p. 44), using the now available complete PDF. Do not claim parameters are printed in Appendix E/F when they actually come from the main text.
 
 ## Existing leads (not full source transcript)
 

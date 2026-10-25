@@ -4,32 +4,29 @@ This directory archives verified literature papers, extracted text, and paramete
 
 ---
 
-## 1. Primary Benchmark Paper: Gobbo et al. (2004)
+## 1. Primary Kinetic Benchmark: Schbib et al. (1996)
 
-* **Full Title:** *Modeling, simulation, and optimization of a front-end system for acetylene hydrogenation reactors*
-* **Authors:** R. Gobbo, R. P. Soares, M. A. Lansarin, A. R. Secchi, J. M. P. Ferreira (COPESUL & Universidade Federal do Rio Grande do Sul - UFRGS)
-* **Journal:** *Brazilian Journal of Chemical Engineering*, Vol. 21, No. 04, pp. 545–556, October–December 2004.
-* **DOI:** [`10.1590/s0104-66322004000400004`](https://doi.org/10.1590/s0104-66322004000400004)
+* **Full Title:** *Kinetics of Front-End Acetylene Hydrogenation in Ethylene Production*
+* **Authors:** Noemí S. Schbib, Miguel A. García, Carlos E. Gígola (PLAPIQUI - UNS - CONICET)
+* **Journal:** *Industrial & Engineering Chemistry Research*, Vol. 35, No. 5, pp. 1496–1503 (1996).
+* **DOI:** [`10.1021/ie950600k`](https://doi.org/10.1021/ie950600k)
 * **Files:**
-  - PDF: [`gobbo_2004_front_end_acetylene_hydrogenation.pdf`](gobbo_2004_front_end_acetylene_hydrogenation.pdf) (124 KB)
-  - Full Extracted Text: [`gobbo_2004_extracted_text.txt`](gobbo_2004_extracted_text.txt) (44.6 KB)
+  - Full Lossless Article HTML: [`schbib_1996_full_article.html`](schbib_1996_full_article.html) (2.75 MB, complete tables and text)
+  - PDF: [`schbib_1996_front_end_acetylene_hydrogenation.pdf`](schbib_1996_front_end_acetylene_hydrogenation.pdf) (1.2 MB)
+  - Full Extracted Text: [`schbib_1996_extracted_text.txt`](schbib_1996_extracted_text.txt) (39.5 KB)
 
-### Key Equations & Locators in Gobbo (2004)
-* **Mass Balance (Page 4, Eq. 1):**
-  $$\varepsilon \frac{\partial C_i}{\partial t} = -\frac{\partial (u_z C_i)}{\partial z} + (1 - \varepsilon)\rho_s \sum_j \nu_{i,j} r_j$$
-* **Energy Balance (Page 4, Eq. 2):**
-  $$\left[\varepsilon \rho c_p + (1 - \varepsilon)\rho_s c_{p,s}\right] \frac{\partial T}{\partial t} = - u_z \rho c_p \frac{\partial T}{\partial z} + (1 - \varepsilon)\rho_s \sum_j (-\Delta H_{r,j}) r_j$$
-* **Langmuir-Hinshelwood Kinetics with CO Moderation (Page 4, Eq. 3 & Eq. 4):**
-  $$r_j = \frac{k_j C_i C_{\text{H}_2}}{\left(1 + K_{\text{H}}^{1/2} C_{\text{H}_2}^{1/2} + K_{\text{CO}} C_{\text{CO}}\right)^3}$$
-  $$k_j = k_{0,j} \exp\left(-\frac{E_j}{R T}\right), \quad K_m = K_{0,m} \exp\left(-\frac{E_{a,m}}{R T}\right)$$
-* **Table 1: Kinetic and Adsorption Constants (Page 5, Line 492):**
-  - **Acetylene hydrogenation ($r_1$):** $\log_{10} k_{0,1} = 27.4\ \text{m}^6/(\text{kmol}\cdot\text{kg}_{\text{cat}}\cdot\text{s})$, $E_1 = 190.50\ \text{kJ/mol}$
-  - **Ethylene hydrogenation ($r_2$):** $\log_{10} k_{0,2} = 23.3\ \text{m}^6/(\text{kmol}\cdot\text{kg}_{\text{cat}}\cdot\text{s})$, $E_2 = 179.78\ \text{kJ/mol}$
-  - **$\text{H}_2$ Adsorption ($K_{\text{H}}$):** $\log_{10} K_{0,\text{H}} = 17.2\ \text{m}^3/\text{kmol}$, $E_{\text{H}} = 88.84\ \text{kJ/mol}$
-  - **$\text{CO}$ Adsorption ($K_{\text{CO}}$):** $\log_{10} K_{0,\text{CO}} = 10.2\ \text{m}^3/\text{kmol}$, $E_{\text{CO}} = 41.66\ \text{kJ/mol}$
-* **Numerical Method (Page 6):**
-  - Discretized along axial coordinate $z$ via the Method of Lines (MOL) with 50 spatial nodes using backward finite differences.
-  - Solved with variable-order, variable-step stiff ODE/DAE integrator (DASOLV in gPROMS, equivalent to `scipy.integrate.solve_ivp(method='BDF')` or `Radau`).
+### Key Equations & Parameters in Schbib (1996)
+* **Rate Law with Competitive CO Adsorption (Table 8):**
+  $$(-r_j) = \frac{k_j C_j C_H \rho_s (1 - \varepsilon_b)}{\left[1 + K_H C_H^{1/2} + K_{CO} C_{CO}\right]^3}$$
+* **Kinetic and Adsorption Constants (Table 8):**
+  - **Acetylene hydrogenation ($k_A$):** $\log A = 31.1\ \text{m}^6/(\text{s}\cdot\text{g}_{\text{cat}}\cdot\text{kmol})$, $E = 45.51\ \text{kcal/gmol}$ ($190.42\ \text{kJ/mol}$)
+  - **Ethylene hydrogenation ($k_E$):** $\log A = 26.6\ \text{m}^6/(\text{s}\cdot\text{g}_{\text{cat}}\cdot\text{kmol})$, $E = 42.94\ \text{kcal/gmol}$ ($179.66\ \text{kJ/mol}$)
+  - **$\text{H}_2$ Adsorption ($K_H$):** $\log A = 20.2\ \text{m}^3/\text{kmol}$, $E = 21.22\ \text{kcal/gmol}$ ($88.78\ \text{kJ/mol}$)
+  - **$\text{CO}$ Adsorption ($K_{CO}$):** $\log A = 13.6\ \text{m}^3/\text{kmol}$, $E = 9.95\ \text{kcal/gmol}$ ($41.63\ \text{kJ/mol}$)
+* **Experimental Benchmarks:**
+  - Table 3: Feed mixture (0.52% C2H2, 43.99% C2H4, 22.1% H2, 150-5000 ppm CO), 100 STP cm3/min, 1-3 g catalyst.
+  - Table 6: Experimental conversion benchmarks with CO inhibition.
+  - Figures 1–4: Conversion, rates, and axial hotspot profiles.
 
 ---
 

@@ -84,7 +84,7 @@ A scientifically verified, self-contained, reproducible 1D dynamic packed-bed re
 ## 4. The Fog of War (Downstream Slices)
 - *Island 5: Synthesis of Larsen PdAg kinetics with Schbib CO periodic modulation.*
 - *Island 6: Frequency optimization and asymmetric duty-cycle tuning ($t_{\text{pulse}} \ll t_{\text{purge}}$).*
-- *Island 7: 400-day industrial deactivation and adiabatic cascade scaling (Gobbo 2004 plant layout).*
+- *Long-horizon industrial deactivation and multi-bed adiabatic cascades (excluded to focus on microkinetics and dynamic modulation).*
 
 ---
 

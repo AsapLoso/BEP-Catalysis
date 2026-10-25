@@ -1,0 +1,4 @@
+catalyst,k1,k2,r1_max,K_C2H2,K_H2,K_C2H4,K_inh,n_inh,pressure_unit,rate_unit,published_overall_rmse_pct_points,reported_conversion_rmse_pct_points,reported_selectivity_rmse_pct_points,n_experiments,source
+Pd0Ag,6.470e12,9.020e11,0.007809,2.407e-03,1.820e-19,1.800e-05,0.000e+00,-1966.78,inferred Pa,inferred mol kg_cat^-1 s^-1,5.0962,7.37,3.45,41,"Larsen 2024 thesis, Fig. 6.6(a), printed p. 38"
+Pd2Ag,6.82925,0.79396,0.014413,1.891e-03,1.170e-06,9.930e-06,1.890e-07,10.5927,inferred Pa,inferred mol kg_cat^-1 s^-1,5.4320,4.50,9.63,42,"Larsen 2024 thesis, Fig. 6.6(b), printed p. 38"
+Pd3Ag,670.788,578.54,0.0383402,4.819e-05,2.378e-07,8.709e-08,1.176e-04,4.89665,inferred Pa,inferred mol kg_cat^-1 s^-1,7.1353,4.06,15.62,41,"Larsen 2024 thesis, Fig. 6.6(c), printed p. 38"

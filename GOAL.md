@@ -16,7 +16,7 @@ Your plan must identify:
 - explicit PASS/BLOCKED criteria, anticipated deliverables and source-access blockers;
 - what you will *not* claim even if your code runs.
 
-**Present the plan for owner review before making substantive scientific/code corrections.** After the owner approves the plan, work autonomously on your assigned branch, testing and committing verified changes without seeking approval for each commit. You may do ordinary focused commits/pushes on this branch; never force-push, merge or create a PR without a separate request. Do not touch any owner personal map, owner-written notebook, Agent 4/5 branch or `main`.
+**Present the plan for owner review before making substantive scientific/code corrections.** The owner is reviewing scope, priorities, experimental design and whether claims are independently checkable; **the owner is not responsible for personally certifying scientific formulas or original-paper data**. You must verify those yourself against primary material, document competing hypotheses, and state honestly when evidence remains inadequate. After the owner approves the plan, work autonomously on your assigned branch, testing and committing verified changes without seeking approval for each commit. You may do ordinary focused commits/pushes on this branch; never force-push, merge or create a PR without a separate request. Do not touch any owner personal map, owner-written notebook, Agent 4/5 branch or `main`.
 
 ## 1. Existing on-branch sources and outputs (inspect; no needless re-fetch)
 

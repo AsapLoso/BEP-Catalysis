@@ -1,37 +1,43 @@
-# B-GOBBO-2004-01 — Gobbo 2004: dynamic-reactor modeling, deactivation and temperature control
+# B-GOBBO-2004-01 — Concept destinations to consider (Idea), with Gobbo as an optional reference
 
-**Tag / maturity: IDEA (bridge only).** **Status: unplaced, owner has not read or personally verified the science.** Related open owner queue: **Q107**. This is a possible *future study link* across Physics, Mathematics and Systems & Control, **not** a live node, an active kinetic benchmark, a validated parameter source or a recommendation to use Gobbo's equations unchanged.
+> **Bridge ≠ paper summary.** The bridge says **where we might eventually bridge to in the owner's knowledge map**. It does **not** assert that Gobbo deserves a modeling chapter or that these concepts have been personally learned. Status: **IDEA / UNPLACED**. Owner queue **Q107**. No live map node, maturity promotion or owner-written text is authorized.
 
-## What the original paper actually covers (source-bounded AI summary)
+## Destination ideas — not approved nodes or guaranteed locations
 
-**Paper:** R. Gobbo, R. P. Soares, M. A. Lansarin, A. R. Secchi and J. M. P. Ferreira, *Modeling, Simulation, and Optimization of a Front-End System for Acetylene Hydrogenation Reactors*, *Brazilian Journal of Chemical Engineering* **21** (2004), pp. 545–556. DOI: https://doi.org/10.1590/S0104-66322004000400004.
+| Target concept to discuss later | Candidate location / existing bridge | When it would be useful | Is Gobbo specifically needed? |
+|---|---|---|---|
+| **Dynamic reactor species and energy balances** | **Mathematics → Mathematical Modeling → Dynamic Reactor Balances** (candidate), cross-reference existing **B-M1** | When actually deriving the chosen \(C_i(z,t)\) and possibly \(T(z,t)\) PDE rather than merely plotting a reactor | **Only potentially**: Gobbo (2004), Eqs. 1–2, prints a time-dependent 1D pseudohomogeneous mass/energy model with specified omissions. Prefer the equations/geometry of our own original proposal and more directly relevant reactor sources for our model. |
+| **Method of lines / discretization and stiff time integration** | **Mathematics → Mathematical Modeling → Numerical Solution / Method of Lines** (candidate), existing **B-M3** | When turning our own spatial PDE into ODEs and checking discretization, stiffness and solver convergence | **Possible concrete example:** Gobbo discretizes with 50 backward-difference axial points/reactor and solves an ODE/DAE system using DASOLV. A numerical methods reference and our actual implementation are better for the *method itself*. |
+| **Catalyst deactivation / slow activity loss** | **Physics → Catalyst Surface & Active Sites → Catalyst Activity Loss** (candidate; exact parent to be discussed), nearby existing **B-P4** | Only if our BEP scope includes deactivation, green-oil formation or long-time catalyst aging | Gobbo presents a **plant-fitted empirical decay law** (Eq. 5, Table 2). This is not physical proof of a molecular poisoning pathway, not a CO coverage time constant, and not necessarily appropriate for PdAg. |
+| **Dynamic, constrained reactor-temperature optimization** | **Systems & Control → Dynamic Reactor Optimization → Manipulated Temperature Inputs** (candidate; no approved S&C child) | If we investigate objectives and constraints over operation rather than only simulating kinetics | Gobbo optimizes temperature programs over slow catalyst lifetime in a three-bed industrial configuration. This is *not* evidence for periodic CO selectivity improvement. Prefer a more directly relevant control theory source if we pursue it. |
 
-- **Industrial context:** three adiabatic front-end packed-bed reactors in series, with interstage cooling. Unlike the smaller BEP PdAg experiments, this is an industrial multicomponent feed and a different catalyst/plant scenario. Source: paper abstract and Problem Description, journal pp. 545–547.
-- **Dynamic model:** time- and axial-position-dependent species and energy balances, pseudohomogeneous approximation, neglected radial/axial dispersion under argued industrial assumptions, catalyst activity changing slowly. Source: Mathematical Modeling, journal pp. 547–549, Eqs. 1–2.
-- **Numerics:** method of lines, 50 first-order-backward axial points in each reactor, stiff variable-step/order differential-algebraic solver in gPROMS/DASOLV. Source: Results and Discussion, journal p. 550.
-- **Control/optimization:** dynamic selection of reactor inlet/intercooler temperature profiles to meet product constraints while compensating for catalyst deactivation over a long operating period; this is **not** a demonstration of improved selectivity from periodic CO feed. Source: paper abstract, Optimization and Results sections.
-- **Kinetic limitation:** uses the functional form from Schbib 1996, but fits industrial constants to plant data and explicitly cautions that fitted parameters may have no physical meaning. Thus the rate parameters and the CO inhibition factor **must not be imported** as source-verified values for the current Schbib/PdAg experiments. Source: Mathematical Modeling, journal p. 549.
+**Important:** These are alternative destinations to **review one at a time**, not four compulsory future nodes, not branches that must all be created, and not assignments for Agents 1, 4 or 5. The personal-map tree and all understanding states remain unchanged.
 
-## Candidate idea bridges to existing personal map
+## What concrete mathematical material Gobbo does and does not supply
 
-| Possible learning topic | Bridge / current anchor | Why it might help later |
-|---|---|---|
-| Spatiotemporal reactor state and balance equations | **B-M1**, Mathematics → Mathematical Modeling (existing parent) | A concrete industrial example of time-and-space-dependent coupled balances |
-| Spatial semi-discretization and stiff time solver | **B-M3** | A numerical method used for a real multiphysics reactor model; not automatically the best method for our geometry |
-| Thermal effects, slow catalyst activity loss | **B-P4**, Physics → Thermodynamics & Thermal Dynamics (existing parent) | Keep energy storage/heat release distinct from deactivation dynamics |
-| Boundary conditions and reduction choices | **B-MODEL-BC-01** | Compare why Gobbo's industrial assumptions may differ from another PDE model's dispersion and inlet/outlet conditions |
-| Dynamic optimization and feedback for reactor operation | **Systems & Control (existing root; no selected child)** | Possible future question about manipulating temperature in response to slow activity loss, not periodic CO wave claims |
+- **Genuinely concrete:** its source **Eqs. 1–2** are coupled, time-dependent species and energy conservation equations for a spatially varying industrial fixed-bed reactor. It documents why, under *its particular plant conditions*, it neglects axial/radial dispersion and pressure drop; those simplifications are not transferred automatically to the BEP reactor.
+- **Genuinely concrete:** its **Method of Lines discretization** uses first-order backward spatial finite differences with 50 points per reactor, integrated using a stiff variable-order/step DAE solver; these details could help us formulate a convergence *question* but do not constitute evidence that 50 points suffice for our own model.
+- **Distinct but outside likely immediate scope:** a separately fitted **slow catalyst activity function** and an **optimal temperature schedule** under product constraints; neither validates a PdAg+CO mechanism.
+- **Not useful as our kinetic foundation:** Gobbo adopts Schbib's functional form but **refits kinetics** on different industrial operating data, explicitly warning fitted coefficients may lack physical meaning. Do not transfer rates or constants into the Schbib benchmark, Larsen, Agent 5 or owner notebook.
 
-## Questions to answer before retaining more than a bibliographic pointer
+**Original reference:** [Gobbo et al., *Modeling, Simulation, and Optimization of a Front-End System for Acetylene Hydrogenation Reactors*, BJCE 21 (2004), 545–556](https://doi.org/10.1590/S0104-66322004000400004). Source verified against the [SciELO publisher article](https://www.scielo.br/j/bjce/a/6WsJzKqRwSHR9kQbQcHc9Qk/?lang=en), especially its Mathematical Modeling and Results and Discussion sections. No independent numerical reproduction performed.
 
-1. Does our BEP actually need **catalyst deactivation over long times** or **industrial temperature optimization**? If not, is Gobbo useful only as contextual reading rather than a local PDF in the curated scientific source archive?
-2. Is there anything in Gobbo's PDE/ODE numerical formulation beyond what the more directly relevant 2008/2009/2019/2022 sources already cover? Compare source-backed equations and validation cases, not superficial terminology.
-3. What physical effects are deliberately omitted in Gobbo's industrial pseudohomogeneous closure, and which omissions cannot be carried into our laboratory catalyst/transport model?
-4. Which part of its control objective is distinct from the proposed fast CO inlet modulation? Do not confuse long-run temperature adjustment for deactivation with rapid periodic selectivity enhancement.
-5. If the archive is later pruned, what minimal reference should remain (citation, DOI, short exclusion rationale), and should repository binaries be deleted only after an explicit owner decision?
+## Source-selection rule: choose the *concept* first, then the best supporting paper
 
-## Separation, limitations and next action
+Gobbo is **not the default reference for mathematical modeling** simply because it contains equations.
 
-This is **AI reference prose** based on an inspection of the repository's extracted Gobbo paper. It is not an owner-understood scientific section and does not independently validate the paper's industrial simulations. The Gobbo PDF and extracted text currently remain in `research/literature/`; **do not delete, redistribute, reclassify as a key source, or copy coefficients into other models as a result of this Idea bridge**.
+- For **periodic acetylene-hydrogenation measurements and transient kinetic identification**, compare [Urmès et al. (2022)](https://doi.org/10.1002/cctc.202101826), which experimentally studies a fixed bed under small-amplitude flow oscillations. Different catalyst/conditions still matter; it is *more directly aligned in question*, not automatically superior in all mathematics.
+- For **industrial dynamic reactors, disturbances and independent validation**, consider [Rijo et al. (2020)](https://doi.org/10.1016/j.cej.2019.122390), which reports measured industrial disturbances and a dynamic reactor model. We have checked its published abstract, not conducted a formula-by-formula comparison.
+- For **our own mass/energy PDE, boundary conditions, approximation hierarchy and MOL implementation**, prioritize the BEP proposal, relevant original 2008/reactor theory already collected, and a numerical method reference. Test the exact model/units and compare actual code rather than transplanting Gobbo's plant assumptions.
+- For **Larsen PdAg kinetics**, the Larsen original thesis and its audited implementation remain primary; **Schbib** is the separate CO adsorption audit. Neither is validated by Gobbo's adjusted industrial parameters.
 
-**Next owner-led step:** When dynamic control, slow deactivation or reactor-model simplifications become the topic of study, show the owner a short comparison against more directly relevant sources, and let the owner decide whether this Idea warrants its own concept or only a Zotero citation. No current-map node, status promotion, human source verification, personal prose or active Agent 1/4/5 GOAL change is authorized.
+**Open comparison gate:** If an alternative source supports the same mathematical idea more directly, rigorously and with better matching assumptions, prefer that source. Gobbo may then remain at most a DOI/Zotero pointer instead of a Git-tracked PDF.
+
+## Later owner decision
+
+1. Choose **one actual target concept** to discuss, starting where the user's existing understanding ends (B-M1 and B-M3 are already queued; do not duplicate them).
+2. Compare only the concrete formulas/assumptions needed for that target against the best candidate reference; show source, units, limitations and one test/derivation if appropriate.
+3. Decide whether that concept merits an exact preview for owner approval and whether Gobbo has any distinct value worth local archiving. Until then, retain the existing paper bytes **unchanged**.
+4. Do not write owner prose, place a node, promote knowledge status, or modify science/agent GOAL files based on this bridge.
+
+**This note is AI background for the Q107 decision, not owner-understood science.**

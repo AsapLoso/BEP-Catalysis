@@ -27,7 +27,13 @@ Your plan needs a source-access assessment, priority/order of corrections, exact
 
 **Primary thesis:** Victor Larsen, *Semihydrogenation of acetylene to ethylene with a PdAg catalyst*, TU Delft BEP (June 2024). The paper/project is a **Bachelor End Project, not a master's thesis**.
 
-## 2. Key disputed questions — evidence before source-law edits
+## 2. Mandatory readable appendix transcription — evidence before code corrections
+
+The existing 18 original PNG page renders are *not* an accessible text substitute. **Deliver a page-indexed, human-readable source transcription** at `research/evidence/transcriptions/larsen_2024_appendix_E_F.md`, covering PDF page indices 71–88, with readable tables, equations, and relevant printed-code passages. Use `research/evidence/transcriptions/larsen_appendix_E_F_worklist.md` as the tracked transcription specification and link each section to its corresponding original image. Provide printed thesis page numbers where present, and explicit `[unclear]` markers for unreadable cells; don't invent missing content. If using OCR as a draft aid, visually verify each page/table against the render. Keep all personal interpretation and proposed model corrections in `research/evidence/analysis/` or the audit report, never inside literal source transcription. Existing derived CSVs and stored model outputs are not verified transcripts.
+
+**The owner should NOT have to evaluate source mathematics to grant plan approval.** Present source-evidence comparisons, falsifiable model checks, options and remaining uncertainties, with your own technical recommendation and independent validation responsibility. Ask the owner only for scope/priorities or genuinely unresolvable policy/physical-design choices. Never equate an owner's plan approval with verification of a source equation.
+
+## 3. Key disputed questions — evidence before source-law edits
 
 1. **Eq. 6.11 exponent:** The imported notebook currently computes `r2` using the **square** of `(1 + K_C2H2*p_C2H2 + K_C2H4*p_C2H4)`. Another reading of the original thesis reports a **first-power** denominator. **Do not declare either one source-faithful without reading the exact original equation and, if possible, its derivation/Appendix F implementation.** Preserve side-by-side interpretations and the actual effects on calculated rates/conversion/selectivity. Distinguish manuscript error, alternative fit and coding mistake as hypotheses.
 2. **Eq. 6.9/6.10 and saturation:** Verify the full acetylene rate, its second-order adsorption factor and the capped `r1 = r1_raw / (1 + r1_raw/r1_max)`. Check how the distinct `(1+K_inh p_A)^{n_inh}` factor enters `r2`; do not invent a shared site denominator merely for symmetry.

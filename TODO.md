@@ -5,10 +5,13 @@
 ## 00 — Source access and own plan (before code changes)
 - [ ] Verify access to the **full** Larsen BEP thesis in the current execution environment (the owner reports a separate Zotero copy, **not stored on this Git branch**); if inaccessible, state the limitation and assess which source checks can be performed using actual existing files.
 - [ ] Inspect **existing** 18 render PNGs: `notebooks/benchmarks/source_renders/appendix_pages/page-71.png` … `page-88.png`, plus `README.md`; do not reproduce them unless necessary. They cover Appendix E/F, **not** main-text Eq. 6.11.
+- [ ] Plan a **literal, human-readable, visually checked, page-by-page transcription** `research/evidence/transcriptions/larsen_2024_appendix_E_F.md` for the 18 rendered pages. Preserve table/code fidelity and mark ambiguous fields; do not substitute already-derived CSVs for original text.
 - [ ] Inspect the imported notebook, selected-curve CSV, parameter CSV and source/experiment distinction; record historical assertions vs directly verified claims.
 - [ ] Present an independently developed **scientific re-audit plan** addressing disputed Eq. 6.11, feed volume-flow reference basis, missing fitted coefficient units, source access, discriminating comparisons and actual PASS/BLOCKED criteria. Get owner plan feedback before substantive model changes.
 
-## 01 — Source equation and unit basis (after plan approval)
+## 01 — Readable original-source transcription and equation audit (after plan approval)
+- [ ] Transcribe each available PDF page 71–88 into Markdown text/tables/code as source-faithfully as possible, with original image links, method, printed-page index where visible and visual verification status. Keep interpretations in a separate analysis file.
+- [ ] If the full original PDF is accessible, similarly transcribe/verify the main-text Eq. 6.9–6.11, Figure 6.6 parameters and flow definitions. If unavailable, explain the exact source blocker and do **not** fabricate the missing equation.
 - [ ] Read original thesis Eq. 6.9–6.11 (or label unavailable), including `r1_raw`, `r1_max` cap, `r2` inhibition factor and **first vs squared adsorption denominator**. Audit alternative Appendix F code if it implements a different model. Record exact page/equation evidence.
 - [ ] Compare source-printed formula with the previous notebook's `r2` squared denominator, using the SAME fitted coefficients, and report numerical effects; do not silently refit.
 - [ ] Extract Figure 6.6 eight-element vectors (k1,k2,r1_max,K_C2H2,K_H2,K_C2H4,K_inh,n_inh); record direct transcription vs inferred units and preserve model/pressure basis.

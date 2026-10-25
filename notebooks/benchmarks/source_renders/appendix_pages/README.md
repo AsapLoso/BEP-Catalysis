@@ -11,15 +11,15 @@ These files are **already committed to this branch**: 18 PNGs of Larsen's thesis
 ## What this source set can and cannot verify
 
 - The images preserve scan-only **Appendix E/F** material for close inspection: alternative LHHW model comparison tables, selected modelling/code/input listings, and the Pd₀Ag experimental/comparison table. Read any scientific assertions directly from the rendered pages; the fact of a file's existence does not verify its contents.
-- The **entire original thesis PDF is NOT in this branch**. The owner reports it exists separately in a local Zotero archive, which may not be available in a remote agent checkout. Do not interpret old `file:///c:/Users/...` links as automatically accessible here.
+- The [full original 97-page thesis PDF](../../../../research/evidence/original/Larsen%20-%202024%20-%20Semihydrogenation%20of%20acetylene%20to%20ethylene%20with%20a%20PdAg%20catalyst.pdf) is **now on this branch**, byte-verified against the owner's upload. A [machine-extracted text layer](../../../../research/evidence/transcriptions/larsen_2024_complete_native_text_unverified.txt) is searchable for native-text pages, but scanned Appendix E/F data remain incomplete in it. PDF metadata dates the compilation 2026; official deposit provenance remains unconfirmed.
 - Main-text **Eqs. 6.9–6.11**, **Figure 6.6 (printed p. 38)**, original experimental **Figures 6.1–6.4** and other main-body context **are not supplied by these Appendix E/F image files**. Do not claim to have read the disputed `r2` denominator exponent or full parameter-unit definitions from these images alone.
 - The on-branch derived data `../../data/larsen_2024_parameters.csv` and `../../data/larsen_2024_selected_curves.csv` are **working transcriptions/digitizations**, not independent replacements for the actual thesis. The associated `../../larsen_2024_benchmark.ipynb` is a historical attempted reproduction with stored outputs.
-- Apparent contradictions between the body equation, Appendix F code, fitted Figure 6.6 parameter vectors and prior notebook implementation require direct evidence with exact locators. Where the full thesis is not accessible, record **SOURCE BLOCKED** instead of guessing or silently changing the kinetics.
+- Apparent contradictions between the body equation, Appendix F code, fitted Figure 6.6 parameter vectors and prior notebook implementation require direct evidence with exact locators. **The PDF is now accessible**; if any specific source reading is ambiguous, mark that claim unresolved instead of guessing.
 
 ## Suggested audit order
 
 1. Review this appendix and the existing derived files, identifying exactly which equations/inputs/observations they actually support.
-2. Seek the full original thesis through legitimately accessible project/Zotero or publisher records in the active execution environment. If available, verify Eq. 6.11, Eq. 6.9–6.10, Figure 6.6, flow reference conditions and explicitly defined coefficient units directly.
+2. Open the now-committed full thesis PDF directly, verify Eq. 6.9–6.11 (PDF p. 43), Figure 6.6 (PDF p. 44), flow reference conditions and any defined parameter units. The 2026 PDF metadata still warrants comparing against an official deposit where feasible.
 3. Cross-check source statements against the notebook **before** altering code or claiming model reproducibility. Do not re-render these pages simply because an earlier prompt asked for rendering.
 4. In the audit report, include a source-access matrix: **exact source/page actually inspected → claim it supports → accessibility status → what is still unknown.**
 

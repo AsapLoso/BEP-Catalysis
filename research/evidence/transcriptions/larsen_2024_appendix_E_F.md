@@ -3,7 +3,7 @@
 > **STATUS: STRUCTURAL TEMPLATE ONLY, NOT A COMPLETED TRANSCRIPTION (2026-10-25).** These 18 Git-tracked 300-DPI source PNGs could not be accessed as viewable images in the current assistant environment. The source text, equations and tables have therefore **NOT been visually read or transcribed here**. Every page must be filled and checked by Agent 4 against its source image. Do not cite this template as extracted primary data.
 
 **Primary work:** Victor Larsen, *Semihydrogenation of acetylene to ethylene with a PdAg catalyst* (TU Delft Bachelor End Project, 2024).  
-**Source type:** Appendix E/F raster renders of 1-based PDF pages 71–88; the full thesis PDF itself is not present on this branch.  
+**Source type:** Appendix E/F raster renders of 1-based PDF pages 71–88; the full original thesis PDF is now also present under `research/evidence/original/`.  
 **Source-images guide:** [appendix README](../../../notebooks/benchmarks/source_renders/appendix_pages/README.md).  
 **Transcription protocol:** [README](README.md), [worklist](larsen_appendix_E_F_worklist.md).  
 **Related existing derived CSV:** [selected curves](../../../notebooks/benchmarks/data/larsen_2024_selected_curves.csv) (not a literal transcription).
@@ -12,7 +12,7 @@
 
 Copy actual **source text** into the page entries, including full numerical tables, equations, parameter lists and any useful source code, with row/column accuracy. For plots, describe accurately what is visible and note that datapoints are estimated if digitized; never fabricate printed values. Record printed thesis page number if shown (different from PDF file index). Mark unreadable characters `[unclear]`. Keep typographical corrections and scientific explanations outside the transcribed source passage under a clearly labelled **Transcriber notes** subsection. For any OCR draft, check against the source image before declaring `checked_against_image`.
 
-**Important source limitation:** The main-body Eqs. 6.9–6.11 and Figure 6.6 are not supplied in these 18 images. Access the actual full thesis before claiming the main kinetic rate law or fitted-vector units have been verified.
+**Main-text context:** Eqs. 6.9–6.11 and Figure 6.6 are not in these 18 image renders, but are NOW accessible in the separately committed full thesis (PDF pp. 43–44). Keep this appendix-only transcript separate from checked main-text equations.
 
 ## Page-by-page source text (pending)
 

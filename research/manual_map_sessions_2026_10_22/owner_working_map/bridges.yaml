@@ -2178,6 +2178,51 @@
         "Q91"
       ],
       "queue_relationship_status": "pending_until_tasks_completed_and_node_placement_owner_approved"
+    },
+    {
+      "id": "B-GOBBO-2004-01",
+      "title": "Gobbo (2004): industrial dynamic-reactor modeling and catalyst deactivation as possible future reference",
+      "status": "discussed_not_yet_placed",
+      "maturity": "idea",
+      "not_a_personal_node": true,
+      "date": "2026-10-25",
+      "owner_direction": "Keep Gobbo's possible relevance in the queue as an Idea bridge, not as an active kinetics benchmark or personal-map knowledge.",
+      "scientific_scope": "Gobbo et al. (2004) model three adiabatic front-end fixed-bed reactors with interstage temperature control, a 1D dynamic pseudo-homogeneous model, empirical activity loss, and dynamic optimization. Their kinetic form was borrowed from Schbib but re-fitted to industrial process data. The source authors caution that estimated kinetic parameters may not have physical meaning.",
+      "value_to_revisit": "Possible reference for time-dependent reactor material/energy balances, Method of Lines discretization and stiff integration, catalyst deactivation and industrial inlet/interstage temperature optimization. No claim of relevance to the target PdAg CO adsorption mechanism without new evidence.",
+      "scope_exclusions": [
+        "Not an independently validated kinetic baseline for Schbib (1996).",
+        "Not experimentally supported PdAg+CO kinetics.",
+        "Do not copy its re-fitted parameters into agents 1, 4, or 5.",
+        "Do not interpret dynamic temperature optimization as experimentally established rapid CO periodic-operation benefit."
+      ],
+      "candidate_disciplines": [
+        "Mathematics — Mathematical Modeling (spatiotemporal balances, Method of Lines)",
+        "Physics — Thermodynamics and catalyst evolution (activity loss, heat)",
+        "Systems & Control — dynamic optimization of reactor inlet/interstage temperature (future topic only)"
+      ],
+      "related_bridge_ids": [
+        "B-M1",
+        "B-M3",
+        "B-P4",
+        "B-MODEL-BC-01"
+      ],
+      "related_live_node_ids": [
+        "own_ma_mathematical_modeling",
+        "own_ph_thermodynamics_thermal_dynamics"
+      ],
+      "reference": "R. Gobbo et al., Modeling, Simulation, and Optimization of a Front-End System for Acetylene Hydrogenation Reactors, Brazilian Journal of Chemical Engineering 21 (2004), pp. 545–556. DOI 10.1590/S0104-66322004000400004.",
+      "reference_archive_paths": [
+        "research/literature/gobbo_2004_front_end_acetylene_hydrogenation.pdf",
+        "research/literature/gobbo_2004_extracted_text.txt"
+      ],
+      "bridge_note_path": "owner_working_map/bridges/GOBBO2004_DYNAMIC_REACTOR_IDEA_2026_10_25.md",
+      "archive_policy": "Do not delete or promote the existing PDF/text; the question of whether to retain binaries in the curated BEP archive is open pending owner choice.",
+      "source_validation": "Assistant checked the repository's Gobbo extracted primary text; no new independent reproduction of its industrial model was executed; owner has not read or verified the derivations.",
+      "owner_review": "Only topic-level Idea-tagged relevance and queue placement are requested. No node creation, human-understood status, parameter promotion or change to an agent's active science goal.",
+      "action_queue_ids": [
+        "Q107"
+      ],
+      "queue_relationship_status": "open_idea_until_owner_decides_relevance_and_repository_archive_scope"
     }
   ],
   "placements": [

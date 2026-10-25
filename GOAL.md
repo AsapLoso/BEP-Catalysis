@@ -27,7 +27,7 @@ Your plan must identify:
 - `research/literature/schbib_1996_extracted_text.txt` — convenience text, **not** a substitute for checking ambiguous superscripts/units against the original page.
 - `notebooks/benchmarks/schbib_1996_steady_state.ipynb` — historical agent reproduction, with saved executed output.
 - `notebooks/benchmarks/schbib_fig1_conversion_temperature.png`, `schbib_fig2_rates_temperature.png`, `schbib_fig3_axial_profiles.png`, `schbib_fig4_axial_profiles.png` — recorded plots. Inspect them but do **not** call them independently validated or rerun until you actually reproduce them.
-- `research/literature/gobbo_2004_*.pdf/.txt` and `research/literature/README.md` — secondary comparison only; Gobbo's later industrial parameter sets must not silently replace Schbib's published laboratory constants.
+- Other papers may remain in `research/literature/` as historical archives; they are **not** part of this audit. Independently verify Schbib's original paper and author correction without importing unrelated industrial refits.
 
 Use repository-relative paths, not historical `file:///c:/Users/...` links, which may not exist in an agent environment.
 

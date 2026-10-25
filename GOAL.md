@@ -5,6 +5,8 @@
 **Tracking issue:** [#11 — Larsen primary-source audit](https://github.com/AsapLoso/BEP-Catalysis/issues/11)  
 **Dependency:** Agent 5's PdAg–CO synthesis remains paused until Agent 1 and 4 produce auditable baselines and the owner reviews them.
 
+**CURRENT REVIEW GATE (2026-10-26): The first Agent 4 plan predates the complete GitHub PDF, full searchable text layer and independent assistant source audit. Request an UPDATED plan in Plan Mode BEFORE scientific implementation.** Re-read issue #11 and the new `research/evidence/analysis/larsen_2024_assistant_preliminary_source_audit.md`, inspect original pages yourself, and prioritize 18-page appendix verification by table/code relevance. Explain changed source assumptions and new conflicts (100°C vs 80°C; first-power Eq. 6.11 vs squared notebook; 42 Pd₂Ag rows vs figure counts; source RMSE aggregation); do not assume the assistant's preliminary claims are already validated. Present a revised investigation and test plan to the owner. No model/data edits or synthesis authorization until reviewed.
+
 ## 0. Begin in plan mode — expand, challenge, then execute
 
 First read this GOAL, `TODO.md`, issue #11, the original thesis where accessible, the **existing** notebook/CSV/appendix renders, and `AGENTS.md`. **Design your own detailed investigation plan** from the user-suggested corrections, not just an implementation list. Explain competing interpretations and propose source checks and numerical experiments that can distinguish them.

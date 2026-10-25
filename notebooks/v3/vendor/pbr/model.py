@@ -47,6 +47,7 @@ from pbr.discretisation import FiniteVolumeRadialGrid
 from pbr.parameters import (
     DIFFUSION_VOLUMES,
     MASSES,
+    R_GAS,
     Catalyst,
     Geometry,
     KineticSet,
@@ -55,7 +56,7 @@ from pbr.parameters import (
     fuller_diffusivity,
 )
 from pbr.solver import Layout, Model, derive
-from pbr.species import GASES
+from pbr.species import GASES, IGAS
 
 
 def effective_diffusivities(
@@ -212,6 +213,7 @@ def build_model(
         diffusivities=d_eff,
         advection_scheme=str(solver.advection_scheme),
         inlet=inlet,
+        surface_site_density=catalyst.site_density,
     )
 
 
@@ -222,6 +224,59 @@ def constant_inlet(operating: OperatingPoint) -> NDArray[np.float64]:
     """Steady feed as a `(n_gas,)` concentration vector."""
     concentrations = operating.concentrations()
     return np.array([concentrations.get(name, 0.0) for name in GASES], dtype=float)
+
+
+@dataclass(frozen=True, slots=True)
+class PeriodicCOInlet:
+    """Time-dependent CO feed using the requested square or sine waveform."""
+
+    base_concentrations: tuple[float, ...]
+    pressure: float
+    temperature: float
+    mean_ppm: float
+    delta_ppm: float
+    period_s: float
+    waveform: str = "square"
+
+    def __post_init__(self) -> None:
+        if self.period_s <= 0.0:
+            raise ValueError("period_s must be positive")
+        if self.mean_ppm < abs(self.delta_ppm):
+            raise ValueError("CO inlet must remain nonnegative over its cycle")
+        if self.waveform not in {"square", "sinusoidal"}:
+            raise ValueError("waveform must be 'square' or 'sinusoidal'")
+        if len(self.base_concentrations) != len(GASES):
+            raise ValueError("base inlet does not match the gas species layout")
+
+    def __call__(self, t: float) -> NDArray[np.float64]:
+        phase = np.sin(2.0 * np.pi * t / self.period_s)
+        modulation = np.sign(phase) if self.waveform == "square" else phase
+        co_ppm = self.mean_ppm + self.delta_ppm * modulation
+        inlet = np.asarray(self.base_concentrations, dtype=float).copy()
+        inlet[IGAS["CO"]] = (
+            co_ppm * 1.0e-6 * self.pressure / (R_GAS * self.temperature)
+        )
+        return inlet
+
+
+def periodic_co_inlet(
+    operating: OperatingPoint,
+    *,
+    mean_ppm: float,
+    delta_ppm: float,
+    period_s: float,
+    waveform: str = "square",
+) -> PeriodicCOInlet:
+    """Build the periodic CO hook while preserving the other feed species."""
+    return PeriodicCOInlet(
+        base_concentrations=tuple(constant_inlet(operating)),
+        pressure=operating.pressure,
+        temperature=operating.temperature,
+        mean_ppm=mean_ppm,
+        delta_ppm=delta_ppm,
+        period_s=period_s,
+        waveform=waveform,
+    )
 
 
 def make_inlet(
@@ -320,10 +375,12 @@ def zero_state(model: Model) -> NDArray[np.float64]:
 
 __all__ = [
     "Inputs",
+    "PeriodicCOInlet",
     "build_model",
     "constant_inlet",
     "effective_diffusivities",
     "make_inlet",
+    "periodic_co_inlet",
     "steady_state_initial_condition",
     "zero_state",
 ]

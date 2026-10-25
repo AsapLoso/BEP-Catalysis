@@ -77,20 +77,37 @@ from pbr.closures import (
 from pbr.discretisation import (
     FiniteVolumeRadialGrid,
     axial_advection,
-    axial_dispersion,
+    axial_advection_dispersion,
     jacobian_sparsity,
     radial_diffusion_fv,
 )
 from pbr.parameters import R_GAS
-from pbr.species import GASES, IGAS, atom_counts
+from pbr.species import GASES, IGAS, IADS, atom_counts
 
-N_ADSORBATE_STATES = 3  # H*, C2H2*, C2H4*; the vacant site is 1 - sum.
+N_ADSORBATE_STATES = 4  # H*, C2H2*, C2H4*, CO*; the vacant site is 1 - sum.
 
 
 class Inlet(Protocol):
     """`t -> (n_gas,)` inlet concentration in mol/m^3 of void gas."""
 
     def __call__(self, t: float) -> NDArray[np.float64]: ...
+
+
+def coverage_gas_exchange(
+    d_theta: NDArray[np.float64], surface_site_density: float
+) -> NDArray[np.float64]:
+    """Gas production per kg catalyst implied by changing surface inventories.
+
+    ``d_theta`` carries H*, C2H2*, C2H4* and CO* in that order. Adsorption
+    removes each molecule from its gas pool; desorption returns it. H* is
+    formed from dissociative H2, so two adsorbed H atoms correspond to one H2.
+    """
+    gas = np.zeros(d_theta.shape[:-1] + (len(GASES),), dtype=float)
+    gas[..., IGAS["H2"]] = -0.5 * surface_site_density * d_theta[..., IADS["H*"] - 1]
+    gas[..., IGAS["C2H2"]] = -surface_site_density * d_theta[..., IADS["C2H2*"] - 1]
+    gas[..., IGAS["C2H4"]] = -surface_site_density * d_theta[..., IADS["C2H4*"] - 1]
+    gas[..., IGAS["CO"]] = -surface_site_density * d_theta[..., IADS["CO*"] - 1]
+    return gas
 
 
 @dataclass(frozen=True, slots=True)
@@ -249,6 +266,7 @@ class Model:
     diffusivities: dict[str, float]
     advection_scheme: str
     inlet: Inlet
+    surface_site_density: float = 0.0
     _sparsity: csr_matrix | None = field(default=None, init=False, repr=False)
     _d_eff: NDArray[np.float64] = field(init=False, repr=False)
 
@@ -285,33 +303,75 @@ class Model:
 
         # --- particle field and the rate law ------------------------------
         diffusion = None
+        surface_for_rates = None
+        d_theta = None
+        surface_exchange = None
+        if theta is not None:
+            surface_for_rates = theta if self.layout.carries_radial else theta[:, 0, :]
+        if self.layout.carries_surface:
+            coverage_pressure = c_particle * rt if self.layout.carries_radial else c_bulk * rt
+            target = self.rate.coverages(coverage_pressure, self.temperature)
+            if target is None:
+                raise NotImplementedError(
+                    f"rate law {self.rate.name!r} does not expose an adsorption "
+                    "target, so it cannot drive dynamic coverage states."
+                )
+            if not self.layout.carries_radial:
+                target = target[:, None, :]
+            d_theta = self.surface.derivative(theta, target)
+            if self.surface_site_density <= 0.0:
+                raise ValueError(
+                    "dynamic coverage states require a positive site density "
+                    "to conserve adsorbing gas inventories"
+                )
+            surface_exchange = coverage_gas_exchange(
+                d_theta, self.surface_site_density
+            )
         if self.layout.carries_radial:
             shell = self.shell_concentration(c_bulk, c_particle)
             diffusion = self._radial_diffusion(c_particle, shell)
             local_p = c_particle * rt
-            result = self.rate.rates(local_p, self.temperature)
+            result = self.rate.rates(local_p, self.temperature, surface_for_rates)
         else:
             shell = c_bulk
-            result = self.rate.rates(c_bulk * rt, self.temperature)
+            result = self.rate.rates(c_bulk * rt, self.temperature, surface_for_rates)
             mean_rate = result.gas
+            if surface_exchange is not None:
+                mean_rate = mean_rate + surface_exchange[:, 0, :]
 
         # --- bulk: transport, then source ---------------------------------
-        # Both transport terms are divided by eps_b because C_b is a
-        # void-volume concentration while u_s is a cross-section-average
-        # velocity and D_ax is defined per unit total volume.
+        # `c_bulk` is an ODE state: eps_b*dC_b/dt is the conservative total
+        # flux divergence (and source terms). The division here produces the
+        # derivative; it never replaces the inventory with a steady solve.
         d_c_bulk = np.empty_like(c_bulk)
-        d_ax = self.dispersion.coefficient / self.derived.void_fraction
-        for j in range(self.layout.n_gas):
-            column = c_bulk[:, j : j + 1]
-            advection = axial_advection(
-                column,
-                self.derived.u_interstitial,
-                dz,
-                c_in[j : j + 1],
-                self.advection_scheme,
+        d_ax = self.dispersion.coefficient
+        eps_b = self.derived.void_fraction
+        if d_ax > 0.0:
+            inlet_flux = self.dispersion.inlet_flux(
+                self.derived.u_superficial, c_in
             )
-            dispersion = axial_dispersion(column, d_ax, dz)
-            d_c_bulk[:, j] = advection[:, 0] + dispersion[:, 0]
+            outlet_flux = self.dispersion.outflow(
+                self.derived.u_superficial, c_bulk[-1]
+            )
+            d_c_bulk[:] = axial_advection_dispersion(
+                c_bulk,
+                self.derived.u_superficial,
+                d_ax,
+                dz,
+                inlet_flux,
+                outlet_flux,
+            ) / eps_b
+        else:
+            for j in range(self.layout.n_gas):
+                column = c_bulk[:, j : j + 1]
+                advection = axial_advection(
+                    column,
+                    self.derived.u_interstitial,
+                    dz,
+                    c_in[j : j + 1],
+                    self.advection_scheme,
+                )
+                d_c_bulk[:, j] = advection[:, 0]
         if self.layout.carries_radial:
             # The resolved pellet contains its own pore-gas inventory. Its
             # chemical source is applied in the pellet equation below; the
@@ -333,21 +393,12 @@ class Model:
         if self.layout.carries_radial:
             assert diffusion is not None
             d_c_particle = diffusion.copy()
-            d_c_particle += self.derived.particle_source_factor * result.gas
+            particle_rate = result.gas
+            if surface_exchange is not None:
+                particle_rate = particle_rate + surface_exchange
+            d_c_particle += self.derived.particle_source_factor * particle_rate
 
         # --- surface -------------------------------------------------------
-        d_theta = None
-        if self.layout.carries_surface:
-            target = self.rate.coverages(c_bulk * rt, self.temperature)
-            if target is None:
-                raise NotImplementedError(
-                    f"rate law {self.rate.name!r} does not expose coverages, so "
-                    f"it cannot drive a relaxing surface. Either choose a "
-                    f"rate law that does (Urmes2019) or use the algebraic "
-                    f"surface closure."
-                )
-            d_theta = self.surface.derivative(theta, target)
-
         return self.layout.pack(d_c_bulk, d_c_particle, d_theta)
 
     def _radial_diffusion(
@@ -377,11 +428,7 @@ class Model:
                 self.layout.n_z,
                 self.layout.n_gas,
                 self.layout.n_radial if self.layout.carries_radial else None,
-                (
-                    self.layout.n_radial_effective
-                    if self.layout.carries_surface
-                    else None
-                ),
+                N_ADSORBATE_STATES if self.layout.carries_surface else None,
             )
         return self._sparsity
 
@@ -394,6 +441,7 @@ class Model:
         rtol: float = 1e-7,
         atol: float = 1e-12,
         max_step: float | None = None,
+        t_eval: NDArray[np.float64] | None = None,
         use_sparsity: bool = True,
         dense_output: bool = False,
     ):
@@ -416,6 +464,8 @@ class Model:
             kwargs["jac_sparsity"] = self.sparsity
         if max_step is not None:
             kwargs["max_step"] = max_step
+        if t_eval is not None:
+            kwargs["t_eval"] = t_eval
         return solve_ivp(self.rhs, t_span, y0, **kwargs)
 
 
@@ -428,8 +478,8 @@ def atom_balance(y: NDArray[np.float64], layout: Layout) -> tuple[float, ...]:
     """
     c_bulk, _c_particle, theta = layout.unpack(np.asarray(y, dtype=float))
     n_gas = {name: float(c_bulk[:, IGAS[name]].sum()) for name in GASES}
-    n_ads = {"H*": 0.0, "C2H2*": 0.0, "C2H4*": 0.0}
+    n_ads = {"H*": 0.0, "C2H2*": 0.0, "C2H4*": 0.0, "CO*": 0.0}
     if theta is not None:
-        for index, name in enumerate(("H*", "C2H2*", "C2H4*")):
+        for index, name in enumerate(("H*", "C2H2*", "C2H4*", "CO*")):
             n_ads[name] = float(theta[:, :, index].sum())
     return atom_counts(n_gas, n_ads)

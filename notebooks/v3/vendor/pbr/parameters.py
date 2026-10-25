@@ -37,7 +37,7 @@ FARADAY = 96485.33212  # C/mol
 #: across the source literature; N2 is accepted because it is common in this
 #: literature and refusing it would be pedantry. An inert is excluded from the
 #: reactive concentrations and never appears in a rate expression.
-INERTS: frozenset[str] = frozenset({"Ar", "He", "N2"})
+INERTS: frozenset[str] = frozenset({"Ar", "He", "N2", "CH4"})
 
 
 class AdvectionScheme(StrEnum):
@@ -134,7 +134,7 @@ class OperatingPoint(BaseModel):
 
     @model_validator(mode="after")
     def _check_composition(self) -> OperatingPoint:
-        allowed = {"H2", "C2H2", "C2H4", "C2H6"} | INERTS
+        allowed = {"H2", "C2H2", "C2H4", "C2H6", "CO"} | INERTS
         unknown = set(self.mole_fractions) - allowed
         if unknown:
             raise ValueError(
@@ -504,6 +504,67 @@ class Urmes2019(KineticSet):
         return float(prefactor * np.exp(-(Ea * 1.0e3 / R_GAS) / temperature))
 
 
+class Schbib1996(KineticSet):
+    """Schbib et al. (1996) reduced CO-competitive LH parameterisation.
+
+    Table 8 reports log pre-exponentials and activation energies for ``kA``,
+    ``kE``, ``KH`` and ``KCO``. The rate constants use concentrations in
+    kmol/m^3 and a gram-catalyst basis. ``log`` is printed without an explicit
+    base in the source; this implementation uses log10 and records that
+    interpretation in the accompanying V4 notebook.
+    """
+
+    reference: str = "schbibFrontEndAcetyleneHydrogenation1996"
+    pressure_scale: float = 1.0  # rate law uses concentrations, not pressure
+    temperature: float = 341.0  # nominal V4 operating point; not a fit temp
+    mass_scale: float = 1.0e3  # g_cat -> kg_cat
+
+    log_A_kA: float = Field(default=31.1, description="Table 8 log pre-exponential")
+    E_kA_kcal_mol: float = Field(default=45.51, gt=0.0, description="kcal/gmol")
+    log_A_kE: float = Field(default=26.6, description="Table 8 log pre-exponential")
+    E_kE_kcal_mol: float = Field(default=42.94, gt=0.0, description="kcal/gmol")
+    log_A_KH: float = Field(default=20.2, description="Table 8 log pre-exponential")
+    E_KH_kcal_mol: float = Field(default=21.22, gt=0.0, description="kcal/gmol")
+    log_A_KCO: float = Field(default=13.6, description="Table 8 log pre-exponential")
+    E_KCO_kcal_mol: float = Field(default=9.95, gt=0.0, description="kcal/gmol")
+
+    @property
+    def k(self) -> dict[str, float]:
+        return {"kA": 10.0**self.log_A_kA, "kE": 10.0**self.log_A_kE}
+
+    @property
+    def K(self) -> dict[str, float]:
+        return {"H2": 10.0**self.log_A_KH, "CO": 10.0**self.log_A_KCO}
+
+    @property
+    def orders(self) -> dict[str, int]:
+        # The prefactors multiply two concentration factors in the rate law.
+        return {"kA": 0, "kE": 0}
+
+    @staticmethod
+    def _arrhenius(log_A: float, E_kcal_mol: float, temperature: float) -> float:
+        return float(
+            10.0**log_A
+            * np.exp(-(E_kcal_mol * 4184.0) / (R_GAS * temperature))
+        )
+
+    def arrhenius_rate_constant(self, name: str, temperature: float) -> float:
+        """Return a source rate coefficient at T, preserving its g-cat basis."""
+        if name == "kA":
+            return self._arrhenius(self.log_A_kA, self.E_kA_kcal_mol, temperature)
+        if name == "kE":
+            return self._arrhenius(self.log_A_kE, self.E_kE_kcal_mol, temperature)
+        raise KeyError(name)
+
+    def adsorption_constant_at(self, name: str, temperature: float) -> float:
+        """Return ``KH`` or ``KCO`` in m^3/kmol at T."""
+        if name == "KH":
+            return self._arrhenius(self.log_A_KH, self.E_KH_kcal_mol, temperature)
+        if name == "KCO":
+            return self._arrhenius(self.log_A_KCO, self.E_KCO_kcal_mol, temperature)
+        raise KeyError(name)
+
+
 #: Every parameterisation the model knows how to evaluate, by name. Populated
 #: in `pbr.parameter_sets`; kept here so a caller can enumerate them without
 #: importing the concrete sets, which is what the CLI and the docs generator do.
@@ -511,6 +572,7 @@ KINETIC_SETS: dict[str, str] = {
     "urmes2019": "single-site Horiuti-Polanyi, with activation energies",
     "borodzinski2000": "two-site LHHW, A/E site populations",
     "larsen2024": "extended LHHW, rate saturation + acetylene inhibition",
+    "schbib1996": "CO-competitive acetylene and ethylene hydrogenation",
 }
 
 
@@ -557,6 +619,8 @@ DIFFUSION_VOLUMES: dict[str, float] = {
     "C2H2": 37.8,
     "C2H4": 41.6,
     "C2H6": 52.5,
+    "CO": 18.0,
+    "CH4": 25.14,
 }
 
 #: Molar masses for the Fuller correlation [g/mol].
@@ -567,4 +631,6 @@ MASSES: dict[str, float] = {
     "C2H2": 26.038,
     "C2H4": 28.054,
     "C2H6": 30.070,
+    "CO": 28.010,
+    "CH4": 16.043,
 }

@@ -1,20 +1,12 @@
 """Rate laws, one per literature parameterisation, behind one interface.
 
-Every rate law here is *macro*: it returns a rate directly from partial
-pressures and temperature, with no adsorbed intermediate appearing explicitly.
-That is not laziness, it is what the available data supports. The parameter
-database holds composite rate constants -- products of elementary constants
-that the source chose to report as one number -- so there is no way to
-reconstruct `dtheta/dt` from them. Refusing to invent the missing elementary
-constants costs us mechanistic detail and buys us a model whose every rate is
-traceable to a table in a published paper.
-
-What that costs is the pseudo-steady-state assumption: a macro rate law has,
-by construction, already assumed the surface is at equilibrium. `Urmes2019Rate`
-therefore does something the other two cannot. Its adsorption terms are
-reported individually rather than as products, so its coverages can be written
-down, and with `Relaxation` surface dynamics it becomes a genuine transient
-model. That is why it is the default.
+Rate laws return gas production rates and optional surface-coverage targets.
+Schbib's published macro-kinetics do not provide elementary adsorption rates,
+so the Schbib V4 case uses a transparent finite-relaxation extension of the
+reported H/CO adsorption equilibrium. Its relaxation time is a declared
+scenario assumption, not a fitted or literature rate constant. The reactor
+gas, pore and surface inventories remain ODE states when their closures are
+enabled; the V4 notebook uses `Relaxation`, never `AlgebraicEquilibrium`.
 
 Interface. `rates` takes partial pressures in Pa and returns
 
@@ -46,6 +38,8 @@ from pbr.parameters import (
     Borodzinski2000,
     KineticSet,
     Larsen2024,
+    R_GAS,
+    Schbib1996,
     Urmes2019,
 )
 from pbr.species import GASES, IGAS
@@ -60,10 +54,10 @@ class RateResult:
     """
 
     gas: NDArray[np.float64]
-    """Shape (..., 4) in the order of `pbr.species.GASES`. mol/(kg_cat s)."""
+    """Shape (..., 5) in the order of `pbr.species.GASES`. mol/(kg_cat s)."""
 
     surface: NDArray[np.float64]
-    """Shape (..., 3) for H*, C2H2*, C2H4*. 1/s. All zeros if unavailable."""
+    """Shape (..., 4) for H*, C2H2*, C2H4*, CO*. 1/s."""
 
     @property
     def has_surface(self) -> bool:
@@ -81,11 +75,13 @@ class RateLaw(Protocol):
         self,
         pressures: NDArray[np.float64],
         temperature: float,
+        surface: NDArray[np.float64] | None = None,
     ) -> RateResult:
         """Evaluate at partial pressures in Pa.
 
         `pressures` broadcasts over leading axes, so a (N_z, N_r) stack of
-        local pressures gives a (N_z, N_r, 4) result without a Python loop.
+        local pressures gives a (N_z, N_r, 5) result without a Python loop.
+        Dynamic laws may use the current coverage state supplied in `surface`.
         """
 
     def coverages(
@@ -115,8 +111,11 @@ def _gas_stack(
     c2h2: NDArray[np.float64],
     c2h4: NDArray[np.float64],
     c2h6: NDArray[np.float64],
+    co: NDArray[np.float64] | None = None,
 ) -> NDArray[np.float64]:
-    return np.stack([h2, c2h2, c2h4, c2h6], axis=-1)
+    if co is None:
+        co = np.zeros_like(h2)
+    return np.stack([h2, c2h2, c2h4, c2h6, co], axis=-1)
 
 
 # --- Larsen 2024 ------------------------------------------------------------
@@ -165,6 +164,7 @@ class Larsen2024Rate:
         self,
         pressures: NDArray[np.float64],
         temperature: float,
+        surface: NDArray[np.float64] | None = None,
     ) -> RateResult:
         p = pressures
         ph2 = p[..., IGAS["H2"]]
@@ -203,7 +203,7 @@ class Larsen2024Rate:
                 +r1 - r2,  # C2H4
                 +r2,  # C2H6
             ),
-            surface=np.stack([zeros, zeros, zeros], axis=-1),
+            surface=np.stack([zeros, zeros, zeros, zeros], axis=-1),
         )
 
     def coverages(
@@ -226,7 +226,8 @@ class Larsen2024Rate:
         w_c2h2 = self.params.adsorption_constant("C2H2") * pa
         w_c2h4 = self.params.adsorption_constant("C2H4") * pb
         denom = 1.0 + w_h2 + w_c2h2 + w_c2h4
-        return np.stack([w_h2 / denom, w_c2h2 / denom, w_c2h4 / denom], axis=-1)
+        zero = np.zeros_like(w_h2)
+        return np.stack([w_h2 / denom, w_c2h2 / denom, w_c2h4 / denom, zero], axis=-1)
 
 
 # --- Borodzinski & Cybulski 2000 --------------------------------------------
@@ -266,6 +267,7 @@ class Borodzinski2000Rate:
         self,
         pressures: NDArray[np.float64],
         temperature: float,
+        surface: NDArray[np.float64] | None = None,
     ) -> RateResult:
         p = pressures
         ph2 = p[..., IGAS["H2"]]
@@ -306,7 +308,7 @@ class Borodzinski2000Rate:
         zeros = np.zeros_like(ph2)
         return RateResult(
             gas=_gas_stack(h2_net, c2h2_net, c2h4_net, c2h6_net),
-            surface=np.stack([zeros, zeros, zeros], axis=-1),
+            surface=np.stack([zeros, zeros, zeros, zeros], axis=-1),
         )
 
     def coverages(
@@ -323,6 +325,77 @@ class Borodzinski2000Rate:
         elementary constants, which is a claim the source does not make.
         """
         return None
+
+
+# --- Schbib et al. 1996 ----------------------------------------------------
+
+
+@dataclass(frozen=True, slots=True)
+class Schbib1996Rate:
+    """CO-competitive Schbib kinetics with a dynamic H/CO site inventory.
+
+    At equilibrium the free-site fraction is exactly
+    ``1 / (1 + sqrt(KH C_H2) + KCO C_CO)``; cubing it recovers the source's
+    reduced equations (24-25). With `surface` supplied, rates use the current
+    free-site fraction and the coverage states lag their adsorption targets.
+    The relaxation closure supplies the declared timescale.
+    """
+
+    params: Schbib1996
+
+    @property
+    def name(self) -> str:
+        return "Schbib1996 (CO-competitive LH with dynamic H/CO adsorption)"
+
+    def rates(
+        self,
+        pressures: NDArray[np.float64],
+        temperature: float,
+        surface: NDArray[np.float64] | None = None,
+    ) -> RateResult:
+        p = np.maximum(pressures, 0.0)
+        c_total = p / (1.0e3 * R_GAS * temperature)  # kmol/m^3
+        c_h2 = c_total[..., IGAS["H2"]]
+        c_c2h2 = c_total[..., IGAS["C2H2"]]
+        c_c2h4 = c_total[..., IGAS["C2H4"]]
+        c_co = c_total[..., IGAS["CO"]]
+
+        if surface is None:
+            kh = self.params.adsorption_constant_at("KH", temperature)
+            kco = self.params.adsorption_constant_at("KCO", temperature)
+            free_site = 1.0 / (1.0 + np.sqrt(kh * c_h2) + kco * c_co)
+        else:
+            # Surface order: H*, C2H2*, C2H4*, CO*. Schbib's reduced
+            # denominator drops the two hydrocarbon adsorption terms.
+            occupied = np.clip(surface[..., 0] + surface[..., 3], 0.0, 1.0)
+            free_site = 1.0 - occupied
+
+        rate_scale = self.params.mass_scale * 1.0e3  # g->kg and kmol->mol
+        k_a = self.params.arrhenius_rate_constant("kA", temperature)
+        k_e = self.params.arrhenius_rate_constant("kE", temperature)
+        r_a = rate_scale * k_a * c_c2h2 * c_h2 * free_site**3
+        r_e = rate_scale * k_e * c_c2h4 * c_h2 * free_site**3
+
+        zeros = np.zeros_like(c_h2)
+        return RateResult(
+            gas=_gas_stack(-r_a - r_e, -r_a, r_a - r_e, r_e, zeros),
+            surface=np.zeros(c_h2.shape + (4,), dtype=float),
+        )
+
+    def coverages(
+        self,
+        pressures: NDArray[np.float64],
+        temperature: float,
+    ) -> NDArray[np.float64]:
+        p = np.maximum(pressures, 0.0)
+        concentration = p / (1.0e3 * R_GAS * temperature)  # kmol/m^3
+        kh = self.params.adsorption_constant_at("KH", temperature)
+        kco = self.params.adsorption_constant_at("KCO", temperature)
+        h_weight = np.sqrt(kh * concentration[..., IGAS["H2"]])
+        co_weight = kco * concentration[..., IGAS["CO"]]
+        free = 1.0 / (1.0 + h_weight + co_weight)
+        zero = np.zeros_like(free)
+        return np.stack([h_weight * free, zero, zero, co_weight * free], axis=-1)
 
 
 # --- Urmes et al. 2019 ------------------------------------------------------
@@ -360,6 +433,7 @@ class Urmes2019Rate:
         self,
         pressures: NDArray[np.float64],
         temperature: float,
+        surface: NDArray[np.float64] | None = None,
     ) -> RateResult:
         # `arrhenius` returns mol/(mol_Pd_s s); multiplying by the reported
         # site density gives mol/(kg_cat s), the model's working unit.
@@ -398,7 +472,7 @@ class Urmes2019Rate:
                 +(r1 - r2),
                 +r2,
             ),
-            surface=np.stack([zeros, zeros, zeros], axis=-1),
+            surface=np.stack([zeros, zeros, zeros, zeros], axis=-1),
         )
 
     def coverages(
@@ -422,7 +496,8 @@ class Urmes2019Rate:
         w_c2h2 = self.params.K_C2H2 * pa
         w_c2h4 = pb / self.params.K_C2H4_des
         denom = 1.0 + w_h + w_c2h2 + w_c2h4
-        return np.stack([w_h / denom, w_c2h2 / denom, w_c2h4 / denom], axis=-1)
+        zero = np.zeros_like(w_h)
+        return np.stack([w_h / denom, w_c2h2 / denom, w_c2h4 / denom, zero], axis=-1)
 
 
 def rate_law(
@@ -448,6 +523,8 @@ def rate_law(
             return Borodzinski2000Rate(params, site_basis=site_basis)
         case Urmes2019():
             return Urmes2019Rate(params)
+        case Schbib1996():
+            return Schbib1996Rate(params)
     raise TypeError(f"no rate law implemented for {type(params).__name__}")
 
 
@@ -456,6 +533,7 @@ __all__ = [
     "Larsen2024Rate",
     "RateLaw",
     "RateResult",
+    "Schbib1996Rate",
     "Urmes2019Rate",
     "rate_law",
 ]

@@ -63,12 +63,12 @@ class AxialDispersion(Protocol):
         """`D_ax` in m^2/s."""
 
     def inlet_flux(
-        self, c_in: NDArray[np.float64], c_0: NDArray[np.float64], dz: float
+        self, u_s: float, c_in: NDArray[np.float64]
     ) -> NDArray[np.float64]:
-        """Total molar flow arriving in the first cell, per unit area."""
+        """Total molar flux entering at z=0, per unit area."""
 
-    def outflow(self, c_n: NDArray[np.float64], dz: float) -> NDArray[np.float64]:
-        """Molar flow leaving the last cell, per unit area."""
+    def outflow(self, u_s: float, c_n: NDArray[np.float64]) -> NDArray[np.float64]:
+        """Total molar flux leaving at z=L, per unit area."""
 
 
 @dataclass(frozen=True, slots=True)
@@ -86,26 +86,24 @@ class NoDispersion:
 
     def inlet_flux(
         self,
+        u_s: float,
         c_in: NDArray[np.float64],
-        c_0: NDArray[np.float64],
-        dz: float,
     ) -> NDArray[np.float64]:
-        # u_s * C_b(0, t): the Dirichlet value simply enters the balance.
-        return c_in
+        return u_s * c_in
 
-    def outflow(self, c_n: NDArray[np.float64], dz: float) -> NDArray[np.float64]:
-        return c_n
+    def outflow(self, u_s: float, c_n: NDArray[np.float64]) -> NDArray[np.float64]:
+        return u_s * c_n
 
 
 @dataclass(frozen=True, slots=True)
 class DanckwertsDispersion:
     """Open boundary conditions matched to axial dispersion.
 
-    The inlet supplies `u_s C_in - D_ax dC/dz|_0` and the outlet takes
-    `-u_s C_N + D_ax dC/dz|_N`, so the flux entering the domain equals the flux
-    leaving it at steady state. Applying a Dirichlet at both ends instead --
-    the obvious thing to write -- over-determines the system and pins the exit
-    concentration rather than letting it float.
+    At the inlet, the total Danckwerts flux is prescribed as `u_s C_in`, which
+    is the finite-volume form of `u_s C(0) - D_ax dC/dz|_0 = u_s C_in`.
+    At the outlet, `dC/dz|_L = 0`, so the leaving total flux is `u_s C_N`.
+    Imposing a Dirichlet concentration at both ends would over-determine this
+    second-order axial balance.
     """
 
     d_ax: float
@@ -116,17 +114,13 @@ class DanckwertsDispersion:
 
     def inlet_flux(
         self,
+        u_s: float,
         c_in: NDArray[np.float64],
-        c_0: NDArray[np.float64],
-        dz: float,
     ) -> NDArray[np.float64]:
-        # Ghost node at -dz with the known inlet value: one-sided derivative.
-        derivative = (c_in - c_0) / dz
-        return c_in - self.d_ax * derivative
+        return u_s * c_in
 
-    def outflow(self, c_n: NDArray[np.float64], dz: float) -> NDArray[np.float64]:
-        derivative = np.zeros_like(c_n)
-        return c_n - self.d_ax * derivative
+    def outflow(self, u_s: float, c_n: NDArray[np.float64]) -> NDArray[np.float64]:
+        return u_s * c_n
 
 
 def dispersion_for(d_ax: float, u_s: float, length: float) -> AxialDispersion:

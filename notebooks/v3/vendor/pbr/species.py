@@ -1,6 +1,6 @@
 """The chemical species of the semi-hydrogenation network, and their algebra.
 
-Four gas species and three adsorbed ones. The choice is not cosmetic: it is
+Five gas species and four adsorbed ones. The choice is not cosmetic: it is
 what makes an element balance check possible, and an element balance is the
 cheapest test that a stoichiometry table has been transcribed correctly.
 
@@ -23,6 +23,7 @@ class Gas(StrEnum):
     C2H2 = "C2H2"
     C2H4 = "C2H4"
     C2H6 = "C2H6"
+    CO = "CO"
 
 
 class Adsorbate(StrEnum):
@@ -36,6 +37,7 @@ class Adsorbate(StrEnum):
     H = "H*"
     C2H2 = "C2H2*"
     C2H4 = "C2H4*"
+    CO = "CO*"
 
 
 @dataclass(frozen=True, slots=True)
@@ -71,9 +73,11 @@ FORMULAS: dict[str, Formula] = {
     Gas.C2H2: Formula({"C": 2, "H": 2}),
     Gas.C2H4: Formula({"C": 2, "H": 4}),
     Gas.C2H6: Formula({"C": 2, "H": 6}),
+    Gas.CO: Formula({"C": 1, "O": 1}),
     Adsorbate.H: Formula({"H": 1}),
     Adsorbate.C2H2: Formula({"C": 2, "H": 2}),
     Adsorbate.C2H4: Formula({"C": 2, "H": 4}),
+    Adsorbate.CO: Formula({"C": 1, "O": 1}),
 }
 
 #: Molar mass in kg/mol, and the number of atoms each molecule carries per mole.
@@ -82,6 +86,7 @@ MOLAR_MASS: dict[str, float] = {
     Gas.C2H2: 26.038e-3,
     Gas.C2H4: 28.054e-3,
     Gas.C2H6: 30.070e-3,
+    Gas.CO: 28.010e-3,
 }
 
 GASES: tuple[str, ...] = tuple(Gas)
@@ -93,7 +98,7 @@ IADS: dict[str, int] = {name: i for i, name in enumerate(ADSORBATES)}
 
 #: Element totals of the whole gas mixture, for the atom-balance diagnostic.
 #: Both hydrogen and carbon must be conserved along a trajectory.
-ELEMENTS: tuple[str, ...] = ("C", "H")
+ELEMENTS: tuple[str, ...] = ("C", "H", "O")
 
 
 def atom_counts(

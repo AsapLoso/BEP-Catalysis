@@ -394,6 +394,34 @@ def axial_dispersion(
     return d_ax * second
 
 
+def axial_advection_dispersion(
+    c: NDArray[np.float64],
+    u_s: float,
+    d_ax: float,
+    dz: float,
+    inlet_flux: NDArray[np.float64],
+    outlet_flux: NDArray[np.float64],
+) -> NDArray[np.float64]:
+    """Conservative total-flux divergence for Danckwerts axial boundaries.
+
+    Internal faces use first-order upwind advection and centred dispersion.
+    The boundary fluxes are supplied by the selected `AxialDispersion`
+    closure: Danckwerts prescribes `u_s C_in` at z=0 and zero-gradient
+    outflow, `u_s C_N`, at z=L. The returned value is `-div(J)`; callers divide
+    by `eps_b` to obtain `dC_b/dt`.
+    """
+    if d_ax <= 0.0:
+        raise ValueError("the combined axial flux operator requires D_ax > 0")
+    n_z = c.shape[0]
+    flux = np.empty((n_z + 1, c.shape[1]), dtype=float)
+    flux[0] = inlet_flux
+    flux[-1] = outlet_flux
+    if n_z > 1:
+        gradient = np.diff(c, axis=0) / dz
+        flux[1:-1] = u_s * c[:-1] - d_ax * gradient
+    return -np.diff(flux, axis=0) / dz
+
+
 def jacobian_sparsity(
     n_z: int,
     n_gas: int,
@@ -446,6 +474,12 @@ def jacobian_sparsity(
                 for r in range(n_radial):
                     for j in range(n_gas):
                         _add(row, gas_size + (z * n_radial + r) * n_gas + j)
+            elif n_surface:
+                # In a well-mixed pellet, the dynamic surface exchange and
+                # Schbib rate depend on the coverage states in this cell.
+                surface_offset = gas_size
+                for j in range(n_surface):
+                    _add(row, surface_offset + z * n_surface + j)
 
     # Particle: same-species radial diffusion plus local cross-species
     # kinetics. The outermost cell also sees its same-species bulk shell value.
@@ -458,6 +492,13 @@ def jacobian_sparsity(
                         _add(row, gas_size + (z * n_radial + rr) * n_gas + i)
                     for j in range(n_gas):
                         _add(row, gas_size + (z * n_radial + r) * n_gas + j)
+                    if n_surface:
+                        surface_offset = gas_size + radial_size
+                        for j in range(n_surface):
+                            _add(
+                                row,
+                                surface_offset + (z * n_radial + r) * n_surface + j,
+                            )
                     if r == n_radial - 1:
                         _add(row, z * n_gas + i)
 
@@ -479,6 +520,16 @@ def jacobian_sparsity(
                             )
                     for i in range(n_gas):
                         _add(row, gas_size + (z * n_radial + r) * n_gas + i)
+
+    if n_surface and not n_radial:
+        surface_offset = gas_size
+        for z in range(n_z):
+            for j in range(n_surface):
+                row = surface_offset + z * n_surface + j
+                for i in range(n_gas):
+                    _add(row, z * n_gas + i)
+                for jj in range(n_surface):
+                    _add(row, surface_offset + z * n_surface + jj)
 
     data = np.ones(len(rows), dtype=np.int8)
     return csr_matrix((data, (rows, cols)), shape=(total, total))

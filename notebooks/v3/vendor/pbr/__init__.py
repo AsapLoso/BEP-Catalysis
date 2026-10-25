@@ -25,7 +25,7 @@ Quick start::
     solution = model.integrate(y0, (0.0, 10.0))
 """
 
-from pbr.chemistry import RateLaw, RateResult
+from pbr.chemistry import RateLaw, RateResult, Schbib1996Rate
 from pbr.closures import (
     AlgebraicEquilibrium,
     DanckwertsDispersion,
@@ -47,10 +47,12 @@ from pbr.discretisation import (
 )
 from pbr.model import (
     Inputs,
+    PeriodicCOInlet,
     build_model,
     constant_inlet,
     effective_diffusivities,
     make_inlet,
+    periodic_co_inlet,
     steady_state_initial_condition,
     zero_state,
 )
@@ -59,6 +61,7 @@ from pbr.parameters import (
     Geometry,
     KineticSet,
     OperatingPoint,
+    Schbib1996,
     SolverSettings,
     TransportProperties,
 )
@@ -89,8 +92,11 @@ __all__ = [
     "RadialGrid",
     "RateLaw",
     "RateResult",
+    "Schbib1996",
+    "Schbib1996Rate",
     "Registry",
     "Relaxation",
+    "PeriodicCOInlet",
     "SolverSettings",
     "Source",
     "TransportProperties",
@@ -105,6 +111,7 @@ __all__ = [
     "external_specific_area",
     "jacobian_sparsity",
     "make_inlet",
+    "periodic_co_inlet",
     "radial_diffusion_fv",
     "steady_state_initial_condition",
     "zero_state",

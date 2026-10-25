@@ -64,6 +64,7 @@ from pbr.parameters import (
     Geometry,
     Larsen2024,
     OperatingPoint,
+    Schbib1996,
     TransportProperties,
     Urmes2019,
 )
@@ -73,6 +74,7 @@ B2000 = "borodzinskiKineticModelHydrogenation2000"
 U2019 = "urmesKineticStudySelective2019"
 L2024 = "larsenSemihydrogenationAcetyleneEthylene2024"
 B2006 = "borodzinskiSelectiveHydrogenationEthyne2006"
+S1996 = "schbibFrontEndAcetyleneHydrogenation1996"
 
 
 # --- kinetics ---------------------------------------------------------------
@@ -135,6 +137,11 @@ def larsen_2024() -> Larsen2024:
         n_inh=1.0,
         mass_scale=1.0e3,
     )
+
+
+def schbib_1996() -> Schbib1996:
+    """Reduced CO-competitive kinetics transcribed from Schbib Table 8."""
+    return Schbib1996(reference=S1996)
 
 
 # --- geometry and catalyst --------------------------------------------------
@@ -291,6 +298,15 @@ PROVENANCE = Registry(
         "larsen.K_H2": Provenance(L2024, "Appendix F", note="bar^-1"),
         "larsen.K_inh": Provenance(L2024, "Appendix F", note="bar^-1"),
         "larsen.n_inh": Provenance(L2024, "Appendix F", note="exponent, 1.0 = linear"),
+        # -- Schbib 1996
+        "schbib.kA.log_A": Provenance(S1996, "Table 8", note="31.1; log base interpreted as 10"),
+        "schbib.kA.E": Provenance(S1996, "Table 8", note="45.51 kcal/gmol"),
+        "schbib.kE.log_A": Provenance(S1996, "Table 8", note="26.6; log base interpreted as 10"),
+        "schbib.kE.E": Provenance(S1996, "Table 8", note="42.94 kcal/gmol"),
+        "schbib.KH.log_A": Provenance(S1996, "Table 8", note="20.2; log base interpreted as 10"),
+        "schbib.KH.E": Provenance(S1996, "Table 8", note="21.22 kcal/gmol"),
+        "schbib.KCO.log_A": Provenance(S1996, "Table 8", note="13.6; log base interpreted as 10"),
+        "schbib.KCO.E": Provenance(S1996, "Table 8", note="9.95 kcal/gmol"),
         # -- geometry
         "catalyst.particle_radius": Provenance(
             U2019,
@@ -399,6 +415,7 @@ __all__ = [
     "TransportProperties",
     "borodzinski_2000",
     "larsen_2024",
+    "schbib_1996",
     "larsen_catalyst",
     "larsen_operating",
     "urmes_2019",

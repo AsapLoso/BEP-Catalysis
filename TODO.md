@@ -1,5 +1,7 @@
 # Subgoals & Gate Receipts — Larsen (2024) PdAg Replication
 
+**Status: COMPLETED (2026-10-25).** The selected-curve benchmark and executed BDF notebook are complete. Known data limit: the thesis omits full raw Pd₂Ag/Pd₃Ag response tables, so the reported all-experiment RMSE values are preserved from Figure 6.6 but cannot be independently recalculated.
+
 ## 01 — High-Resolution Source Extraction
 - [x] Render scanned Appendix E/F pages at 300 DPI and inspect them visually.
 - [x] Confirm E.1–E.3 are standard-model variant comparisons, not final parameter tables.
@@ -25,4 +27,4 @@
 
 ## 05 — Gate Receipt
 - [x] Execute `notebooks/benchmarks/larsen_2024_benchmark.ipynb` with zero cell errors in under 60 seconds.
-- [x] Commit the notebook, selected response data, and parameter data.
+- [x] Commit the notebook, selected response data, parameter data, and 300-DPI Appendix E/F renders.

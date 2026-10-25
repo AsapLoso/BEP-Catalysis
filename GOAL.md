@@ -4,6 +4,8 @@
 **Parent Commit:** `unified-reactor-model`  
 **Primary Deliverable:** `notebooks/benchmarks/larsen_2024_benchmark.ipynb`
 
+**Status:** COMPLETED (2026-10-25), with the raw-data limitation documented. The notebook reproduces selected published curves and records the thesis RMSE values; the thesis does not provide the full Pd₂Ag/Pd₃Ag response tables needed for an independent all-experiment RMSE calculation.
+
 ---
 
 ## 1. Context & Objectives

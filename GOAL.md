@@ -11,7 +11,7 @@ First read this GOAL, `TODO.md`, issue #11, the original thesis where accessible
 
 **Present the plan for the owner's review before changing model equations/data.** Once reviewed/approved, work autonomously within `feat/larsen-pdag-benchmark`: investigate, run, modify files, document evidence, commit and push without per-commit permission. No force-push, PR or merge, no modification of `main`/other branches, owner personal map or personally authored notebook.
 
-Your plan needs a source-access assessment, priority/order of corrections, exactly what is considered published versus computed, regression tests, expected changes in predictions, fallback for missing full thesis/raw measurements, and honest PASS/BLOCKED criteria.
+Your plan needs a source-version/provenance assessment, priority/order of corrections, exactly what is published versus computed, regression tests, expected changes in predictions, fallback for missing raw measurements, and honest PASS/BLOCKED criteria.
 
 ## 1. Available evidence: inspect before re-creating
 
@@ -23,7 +23,7 @@ Your plan needs a source-access assessment, priority/order of corrections, exact
 - `notebooks/benchmarks/data/larsen_2024_parameters.csv` — eight extracted parameter fields per catalyst, marked **inferred** units.
 - `notebooks/benchmarks/data/larsen_2024_selected_curves.csv` — selected response table: exact transcriptions and visually digitized markers labelled differently.
 
-**Missing here:** the *full* Larsen 2024 thesis PDF. The owner reports it exists in a **local Zotero archive** outside this Git branch. Check whether the actual execution environment offers accessible Zotero files, prior project archives or source-publisher access. Historical absolute `file:///c:/Users/...` pointers in earlier notes are not portable. Do **not** assume those paths or Zotero archives are mounted in cloud environments. If the thesis is accessible, inspect it with actual PDF page images and text, especially the main-text Eq. 6.9–6.11 and Figure 6.6 (printed p. 38). If not, explicitly mark which questions are unverified: appendix pages 71–88 **do not substitute** for pages containing the main-body equations. Do not silently call derived CSVs a primary source.
+**Now available on this branch:** the full, original 97-page uploaded thesis at `research/evidence/original/Larsen - 2024 - Semihydrogenation of acetylene to ethylene with a PdAg catalyst.pdf`. Its Git blob SHA is `8207c91efb912bc59e6a01923214f6cc74f7cb2a`, byte-for-byte matching the user upload SHA-256 `b5aaa2300ff9b64aca70e58cc5e4d8be30b3c12ee264e69af89e01c86f5120c9`. Its internal PDF creation metadata says 2026-06-26; that does **not** by itself establish a revised or official 2024 version. An authentic official deposit remains a separate provenance check. The companion `research/evidence/transcriptions/larsen_2024_complete_native_text_unverified.txt` is a MACHINE-EXTRACTED searchable text layer; it is not a verified transcription of scanned Appendix E/F pages. Check original PDF page images directly, especially Eqs. 6.9–6.11 on PDF p. 43 and Figure 6.6 on PDF p. 44. Historical absolute `file:///c:/Users/...` paths are obsolete.
 
 **Primary thesis:** Victor Larsen, *Semihydrogenation of acetylene to ethylene with a PdAg catalyst*, TU Delft BEP (June 2024). The paper/project is a **Bachelor End Project, not a master's thesis**.
 

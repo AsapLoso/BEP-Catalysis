@@ -2181,34 +2181,17 @@
     },
     {
       "id": "B-GOBBO-2004-01",
-      "title": "Gobbo (2004): industrial dynamic-reactor modeling and catalyst deactivation as possible future reference",
+      "title": "Potential destination: dynamic reactor balances / numerical discretization / slow activity and temperature control (Gobbo as optional example)",
       "status": "discussed_not_yet_placed",
       "maturity": "idea",
       "not_a_personal_node": true,
       "date": "2026-10-25",
-      "owner_direction": "Keep Gobbo's possible relevance in the queue as an Idea bridge, not as an active kinetics benchmark or personal-map knowledge.",
-      "scientific_scope": "Gobbo et al. (2004) model three adiabatic front-end fixed-bed reactors with interstage temperature control, a 1D dynamic pseudo-homogeneous model, empirical activity loss, and dynamic optimization. Their kinetic form was borrowed from Schbib but re-fitted to industrial process data. The source authors caution that estimated kinetic parameters may not have physical meaning.",
-      "value_to_revisit": "Possible reference for time-dependent reactor material/energy balances, Method of Lines discretization and stiff integration, catalyst deactivation and industrial inlet/interstage temperature optimization. No claim of relevance to the target PdAg CO adsorption mechanism without new evidence.",
+      "owner_direction": "Owner corrected: a bridge is an intended destination in the knowledge map, NOT a set of themes associated with an archived paper. Preserve concrete mathematical ideas as candidate links; prefer better-matched modeling references when available.",
       "scope_exclusions": [
         "Not an independently validated kinetic baseline for Schbib (1996).",
         "Not experimentally supported PdAg+CO kinetics.",
         "Do not copy its re-fitted parameters into agents 1, 4, or 5.",
         "Do not interpret dynamic temperature optimization as experimentally established rapid CO periodic-operation benefit."
-      ],
-      "candidate_disciplines": [
-        "Mathematics — Mathematical Modeling (spatiotemporal balances, Method of Lines)",
-        "Physics — Thermodynamics and catalyst evolution (activity loss, heat)",
-        "Systems & Control — dynamic optimization of reactor inlet/interstage temperature (future topic only)"
-      ],
-      "related_bridge_ids": [
-        "B-M1",
-        "B-M3",
-        "B-P4",
-        "B-MODEL-BC-01"
-      ],
-      "related_live_node_ids": [
-        "own_ma_mathematical_modeling",
-        "own_ph_thermodynamics_thermal_dynamics"
       ],
       "reference": "R. Gobbo et al., Modeling, Simulation, and Optimization of a Front-End System for Acetylene Hydrogenation Reactors, Brazilian Journal of Chemical Engineering 21 (2004), pp. 545–556. DOI 10.1590/S0104-66322004000400004.",
       "reference_archive_paths": [
@@ -2216,13 +2199,67 @@
         "research/literature/gobbo_2004_extracted_text.txt"
       ],
       "bridge_note_path": "owner_working_map/bridges/GOBBO2004_DYNAMIC_REACTOR_IDEA_2026_10_25.md",
-      "archive_policy": "Do not delete or promote the existing PDF/text; the question of whether to retain binaries in the curated BEP archive is open pending owner choice.",
-      "source_validation": "Assistant checked the repository's Gobbo extracted primary text; no new independent reproduction of its industrial model was executed; owner has not read or verified the derivations.",
-      "owner_review": "Only topic-level Idea-tagged relevance and queue placement are requested. No node creation, human-understood status, parameter promotion or change to an agent's active science goal.",
+      "archive_policy": "PDF/text retained unchanged until explicit later decision. Idea-bridge inclusion is NOT itself justification for preserving a local archived binary.",
+      "source_validation": "2004 paper source model and numerical method reviewed, with original publisher SciELO article available; no independent computation performed; alternative references compared only at published abstract level.",
+      "owner_review": "Idea targets are not accepted locations; no personal node, maturity promotion, human source verification or active kinetics goal.",
       "action_queue_ids": [
         "Q107"
       ],
-      "queue_relationship_status": "open_idea_until_owner_decides_relevance_and_repository_archive_scope"
+      "queue_relationship_status": "open_idea_target_destinations_and_source_selection",
+      "bridge_intent": "Bridge from currently understood model/reaction basics to specific future personal concepts (none added yet). Sources are to be chosen AFTER the topic is identified; Gobbo is an optional illustration, not itself a proposed map node.",
+      "candidate_destinations": [
+        {
+          "idea": "Dynamic species and energy conservation equations in 1D reactor",
+          "current_anchor": "own_ma_mathematical_modeling",
+          "existing_bridge_id": "B-M1",
+          "proposed_path": "Mathematics → Mathematical Modeling → Dynamic Reactor Balances (name/position to discuss)",
+          "concrete_gobbo_evidence": "2004 paper Eqs. 1–2, time-and-axial species/energy balances with stated pseudohomogeneous/adiabatic simplifications",
+          "priority": "eligible only if those exact equations/method assumptions help in our personally built model",
+          "source_policy": "Compare original BEP proposal/2008 reactor sources first; Gobbo only if it adds a specific derivation, assumption check or test."
+        },
+        {
+          "idea": "Spatial discretization and stiff ODE/DAE time integration",
+          "current_anchor": "own_ma_mathematical_modeling",
+          "existing_bridge_id": "B-M3",
+          "proposed_path": "Mathematics → Mathematical Modeling → Numerical Solution → Method of Lines (candidate, not placed)",
+          "concrete_gobbo_evidence": "2004 paper pp. 549–550: 50 first-order backward-difference axial points per reactor, stiff variable-order/step DASOLV integrator",
+          "priority": "secondary pedagogical example only, no solver prescription",
+          "source_policy": "Prefer a method-specific numerical reference and the actual BEP implementation; compare convergence and boundary conditions."
+        },
+        {
+          "idea": "Slow catalyst activity loss",
+          "current_anchor": "own_ph_catalyst_surface_active_sites",
+          "existing_bridge_id": "B-P4",
+          "proposed_path": "Physics → Catalyst Surface & Active Sites → Catalyst Deactivation / Activity Loss (candidate; NOT automatically under Thermodynamics)",
+          "concrete_gobbo_evidence": "2004 paper Eq. 5 and Table 2 empirical activity decay fit to 400-day industrial records",
+          "priority": "defer until owner confirms deactivation belongs to the BEP scope",
+          "source_policy": "A fit over months is not a microscopic poisoning mechanism or fast CO coverage time constant."
+        },
+        {
+          "idea": "Constrained manipulation of reactor temperature over long catalyst lifetime",
+          "current_anchor": "systems_control",
+          "existing_bridge_id": null,
+          "proposed_path": "Systems & Control → Dynamic Reactor Optimization → Temperature-Control Inputs (candidate; no child accepted)",
+          "concrete_gobbo_evidence": "2004 paper industrial multi-reactor inlet/interstage temperature optimization to accommodate slow activity decline",
+          "priority": "defer as a different control objective from rapid CO modulation",
+          "source_policy": "Prefer proper dynamic optimization/control references if owner elects this direction."
+        }
+      ],
+      "alternative_sources_to_assess": [
+        {
+          "source": "Urmès et al. (2022), DOI 10.1002/cctc.202101826",
+          "relevance": "Direct periodic-flow acetylene hydrogenation transient response/kinetic identification on Pd/Al2O3; not automatically target PdAg."
+        },
+        {
+          "source": "Rijo et al. (2020), DOI 10.1016/j.cej.2019.122390",
+          "relevance": "Dynamic industrial acetylene reactor model including disturbances and independent validation; possible closer updated industrial benchmark."
+        },
+        {
+          "source": "BEP's chosen proposal, original reactor-model papers and numerical methods references",
+          "relevance": "Prefer exact adopted PDE, boundary conditions, method-of-lines approximation, and convergence checks before selecting generic industrial examples."
+        }
+      ],
+      "source_priority": "First choose the owner-relevant math/physical/control concept; then compare candidate papers for a concrete equation, transparent assumptions and independent numerical evidence. If Gobbo does not add anything distinctive, keep only its bibliographic citation/Zotero pointer."
     }
   ],
   "placements": [

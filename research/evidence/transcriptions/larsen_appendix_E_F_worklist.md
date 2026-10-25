@@ -6,6 +6,10 @@
 
 The exact source view is `notebooks/benchmarks/source_renders/appendix_pages/`, PDF page **71–88**, one-based filename `page-<N>.png`. That directory's README explains that the source thesis PDF itself was **not** copied into this branch. The user's separate Zotero archive may contain it locally, but availability in an agent's runtime is unverified.
 
+## Current preparation (not yet a completed transcript)
+
+A [page-by-page Markdown scaffold](larsen_2024_appendix_E_F.md) now exists with links to **each** of the original 18 source PNGs and explicit `not_started` review statuses. This is intentionally **not** a transcription of the source words; none of the 18 source images were visually readable from the assistant's current environment. Fill the scaffold using actual visual evidence and check technical notation page by page.
+
 ## Work product Agent 4 must produce
 
 - `research/evidence/transcriptions/larsen_2024_appendix_E_F.md`: one headed section per PDF page, **71 to 88**, with printed page number (if visible), complete readable prose, tables, equations, parameters and any relevant source code fragments. For genuinely visual-only plots describe axes, legends and data visibility rather than inventing exact plotted numbers. Pages with no machine-readable text still require human-readable manual transcription from the image.

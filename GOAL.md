@@ -20,6 +20,8 @@ Your plan must identify:
 
 ## 1. Existing on-branch sources and outputs (inspect; no needless re-fetch)
 
+**New readable source record:** `research/evidence/transcriptions/schbib_1996_author_table8_correction.md` provides the numeric table from a public author-shared corrective note, with a clear UNVERIFIED-AS-JOURNAL-ERRATUM status. Read and **visually verify** it against the linked document before choosing parameters. The older local extracted paper text lacks this appended correction. The companion `research/evidence/` directories separate originals, transcriptions, agent analysis and computed results. Do not silently replace the historical Table 8 or treat the text note as an independently validated source correction.
+
 - `research/literature/schbib_1996_full_article.html` — large article HTML archive; inspect content carefully, including any appended/embedded corrections, and preserve its original bytes.
 - `research/literature/schbib_1996_front_end_acetylene_hydrogenation.pdf` — archived paper PDF.
 - `research/literature/schbib_1996_extracted_text.txt` — convenience text, **not** a substitute for checking ambiguous superscripts/units against the original page.

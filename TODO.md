@@ -31,3 +31,12 @@
 - [x] Commit and push only to `feat/schbib-co-benchmark`; no PR, merge, personal-map edit, or other-branch change.
 
 The complete all-species Table 6 reproduction remains unresolved. Do not describe the author-shared table as an independently verified erratum or claim that one correction alone explains the discrepancy.
+
+
+## 05 — Small follow-up: independent state-space numerical verification (NOT a new source fit)
+- [x] Document and scratch-run a **two-reaction-extent** formulation against the isothermal Table 6 system. SymPy balance equations and four SciPy solvers yield the previously reported species-flow numerical predictions to displayed precision. Record checked scope and runtime in [analysis note](research/evidence/analysis/schbib_reaction_extent_state_space_crosscheck_2026_10_26.md).
+- [x] Add independently implemented [cross-check script](notebooks/benchmarks/schbib_1996_extent_crosscheck.py) to the agent branch. It checks the extent-space results against the original six-flow derived JSON without changing the audit notebook.
+- [ ] **Execute the new repository-local script with its derived JSON present**, capture stdout and a runtime receipt. This additional end-to-end test has not been run in the GitHub branch environment by this assistant; do not claim otherwise.
+- [ ] If Model III work is authorized, first inventory every published heat/mass-transfer coefficient, catalyst pellet diameter, wall temperature profile and experimental input; separate published numeric values from parameters available only through cited correlations and genuinely missing quantities. **Do not substitute another kinetics paper merely because thermal/transport inputs are incomplete.**
+
+The existing all-species Table 6 result is still **BLOCKED**. No changes to Agent 5 or owner map are authorized by this check.

@@ -1,5 +1,8 @@
 # Isothermal CO kinetics — source selection (independent research track)
 
+> **OWNER CORRECTION — 2026-10-26, OVERRIDES EARLIER BERTY INSTRUCTION:** The intended reactor is a **fixed-temperature PLUG-FLOW REACTOR (PFR)**. Do **not** require or prioritize reproducing Bos's Berty reactor before proceeding. Prefer CO-sensitive kinetic papers with explicit PFR/packed-bed experimental conditions, source parameters and measurable PFR conversion/selectivity data. Bos (Berty reactor) may be assessed as a source of local intrinsic rate-law candidates only; placing that law in a PFR is a transfer/hypothesis, **not** reproduction or validation against Bos's Berty measurements. The source-selection recommendation must say whether a defensible **isothermal CO-sensitive PFR benchmark** actually exists; if none is found, return **NO SOURCE READY**, preserve the most useful bounded kinetic source(s) and identify the smallest missing evidence. This constraint applies to the now-approved execution plan; do not request another approval. No thermal modeling, PFR refitting to force agreement, or Agent 5 synthesis.
+
+
 **Assigned branch:** `feat/isothermal-co-kinetics-source-selection`  
 **Tracking issue:** [#12 — Source selection](https://github.com/AsapLoso/BEP-Catalysis/issues/12)  
 **Parent snapshot:** `feat/schbib-co-benchmark` at `e27cb766d644de685d02f2fc8f11d2300aff909c`. Its research report/notebook remain historical and must not be silently recast as validated.  

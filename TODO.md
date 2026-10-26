@@ -46,7 +46,7 @@
 
 ## Git receipt
 
-- Implementation commit: recorded in the follow-up receipt commit and final handoff.
-- Final documentation commit: the receipt update is committed after the implementation commit; its SHA is reported in the final handoff.
+- Implementation commit: `a3af8ee03642f053b143273b5040a6904678453a`.
+- This receipt update is a second documentation commit; its SHA is reported in the final handoff because a commit cannot contain its own hash.
 - Branch: feat/larsen-pdag-benchmark.
 - No PR, merge, force-push, personal-map edit or Agent 5 synthesis was made.

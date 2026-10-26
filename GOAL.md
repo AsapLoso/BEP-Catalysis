@@ -1,6 +1,8 @@
 # Agent 1 — Schbib (1996) source and benchmark re-audit
 
 **Branch:** `feat/schbib-co-benchmark`  
+**Audit status (2026-10-26):** Report, executed six-flow notebook and provenance JSON delivered at `f44366f`; internal numerical checks pass, but the full Table 6 experimental reproduction remains **BLOCKED**, principally on C₂H₄. A separate reaction-extent verification technique, symbolic stoichiometry and 4-solver scratch results are documented in `research/evidence/analysis/schbib_reaction_extent_state_space_crosscheck_2026_10_26.md` with a repository-local automated cross-check script. The repository-local script has **not** yet been executed as an integrated test here; do not count it as an experimental pass.
+
 **Current task:** independently investigate and correct the Schbib source-model interpretation and benchmark.  
 **Tracking issue:** [#10 — Schbib baseline audit](https://github.com/AsapLoso/BEP-Catalysis/issues/10)  
 **Dependency:** Agent 5 may not start the combined PdAg–CO model until this and Agent 4's separate audit have been reviewed by the owner.

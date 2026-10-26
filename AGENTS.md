@@ -5,7 +5,7 @@ Operating rules, execution standards, and workspace conventions for the **BEP-Ca
 ```yaml
 project: BEP-Catalysis (TU Delft Double BSc Applied Mathematics & Applied Physics)
 topic: Mathematical Modeling & Kinetics of Acetylene Semi-Hydrogenation in Packed Bed Reactors (PBR)
-environment: Windows (PowerShell 5.1), OneDrive workspace, Python (global conda base)
+environment: Local Windows/PowerShell or cloud Linux; verified Python interpreter (Conda when present, otherwise compatible venv/Python)
 derived_from: Aa Project management (core rules and operational invariants)
 ```
 
@@ -55,18 +55,19 @@ When authoring scientific prose, proposals, documentation, or commit messages:
 
 ## 3. Python Execution & Environment (Rule 19)
 
-- **Standard Environment Tool:** Python runs directly via the global conda base environment. Execute all Python scripts via:
-  ```powershell
-  python <script.py>
-  ```
-- **Never run inline Python:** Never execute multi-line code via `python -c "..."`. Shell escaping and PowerShell newline handling introduce subtle errors. Always write to a dedicated script (use a gitignored `scratch/` folder for throwaways) and execute the file.
-- **Windows UTF-8 Guardrail:** Any script handling file I/O, literature data, or text with diacritics must start with:
+- **Environment-aware, not Conda-only:** Identify the actual OS, working directory, available `python`/`python3` and `conda`, and project dependency files *before* choosing an interpreter. The owner's **local Windows** default is the existing global Conda base **when installed and usable**; a remote Linux/cloud agent is **not required** to have Conda or access to OneDrive. Missing `conda` alone is **not** a reason to mark numerical work BLOCKED.
+- **Choose a reproducible interpreter:** Prefer the project's declared environment if available. Otherwise, in remote/cloud work use a compatible installed Python or create a project-local, gitignored virtual environment (e.g. `.venv`) when permitted. Keep installs isolated to the selected environment; do not overwrite existing environments. Execute scripts with that same interpreter (`python <script.py>`, `python3 <script.py>`, or the virtual environment's Python executable). Never claim a numerical result was rerun without actual execution.
+- **Never run inline multi-line Python:** Avoid `python -c "..."` for program logic; shell escaping and PowerShell newline handling can corrupt code. Write executable snippets as dedicated `.py` files (use gitignored `scratch/` for throwaways) and execute the script. Use the same chosen Python interpreter for Jupyter/notebooks and check that the active kernel matches.
+- **Reproducibility receipt required for numerical work:** Record OS, interpreter path and version, selected environment, key package versions, install commands/dependency changes, exact script/notebook execution command, tolerances, and Git commit. Separate source inspections, historical saved notebook outputs, and genuinely new computations.
+- **Dependencies and truthful blocking:** When packages are missing, install them *only in the selected isolated environment or the already-authorized local Conda base*, where permitted; prefer existing repository dependency specifications. If the necessary runtime genuinely cannot be made available, report the attempted alternatives and exact blocker, mark **numerical execution** BLOCKED, and continue source/transcription analysis independently. Do **not** silently change physical model assumptions, drop tests, or substitute old notebook outputs to claim PASS.
+- **Windows/UTF-8 guardrail:** For scripts handling literature text, numerical files or diacritics, include when applicable:
   ```python
   import sys
   if hasattr(sys.stdout, 'reconfigure'):
       sys.stdout.reconfigure(encoding='utf-8')
   ```
-- **Package Installation:** Adding required scientific packages via `conda install` or `pip install` inside the global conda base environment is permitted when needed.
+  Platform-specific PowerShell, local-user-path and OneDrive instructions elsewhere in this file apply **only** in environments where those features actually exist.
+
 
 ---
 

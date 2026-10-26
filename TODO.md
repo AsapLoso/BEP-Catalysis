@@ -1,30 +1,33 @@
 # Agent 1 — Schbib source/benchmark audit gates
 
-**Current state (2026-10-25): PREPARING PLAN; SOURCE AUDIT NOT YET VERIFIED.** The pre-existing notebook and four plots are historical artifacts, not verified Table 6 reproduction. Read `GOAL.md` and [issue #10](https://github.com/AsapLoso/BEP-Catalysis/issues/10). Do not check a box without a source or execution receipt.
+**Current state (2026-10-26): AUDIT EXECUTED; report and reproducible notebook delivered.** See [the research report](research/reports/schbib_parameter_and_benchmark_audit.md), [the executed benchmark notebook](notebooks/benchmarks/schbib_1996_steady_state.ipynb), and [the derived result record](research/evidence/derived/schbib_1996_audit_results.json). The plan was approved before substantive model changes. Commit and branch-push receipt is recorded in the task completion summary.
 
-## 00 — Plan for owner review (first)
-- [ ] Inspect the original Schbib PDF/HTML/text and the **new readable candidate correction table** `research/evidence/transcriptions/schbib_1996_author_table8_correction.md`; verify it against the linked author-shared source and determine any journal-erratum status. Inspect historical notebook/plots and exact relevant pages.
-- [ ] Present an **independently expanded scientific plan**, explicitly testing alternative causes of the failed Table 6 result, including corrected logs, unit/mass bases, rate equations and reactor heat/geometry closure.
-- [ ] Receive owner review/approval of the plan **before substantive changes to models and primary-code implementation**.
+## 01 — Source verification
 
-## 01 — Source-verified kinetics and source audit (after plan approval)
-- [ ] Record Table 3/4/6/8 evidence by page/figure/table, plus any verified correction provenance and author/publisher status.
-- [ ] Verify original vs potential corrected `log10 A(K_H)`/`log10 A(K_CO)`; distinguish logarithms from numerical pre-exponentials and check concentration/catalyst mass/rate units.
-- [ ] Check complete vs simplified rate equations and each adsorption-denominator term; test dimensional factors and catalyst/bed definitions.
-- [ ] Check laboratory temperature/pressure/flow and heat-transfer model against the adiabatic simplified notebook; document where exact reproduction is not justified.
+- [x] Visually inspect the archived Schbib PDF at PDF pages 4, 6, 7, and 8 (printed pp.1499, 1501–1503); transcribe Tables 3, 4, 6, 8 and Eqs. 22, 24, 25 with source locators. **PASS.** The original PDF, HTML, and extracted-text source files were left unchanged.
+- [x] Keep the printed Table 8 and author-shared correction as separate records and parameter sets. **PASS.** The correction matches ResearchGate machine-readable text, but its linked PDF returned 404; visual verification and formal erratum status remain **BLOCKED**.
+- [x] Record the Table 7 prose/table inconsistency and distinguish directly sourced values from interpretations and diagnostics. **PASS.** The report retains this unresolved discrepancy.
 
-## 02 — Reproducibility and failure isolation
-- [ ] Independently execute baseline with original printed values; write actual Table 6 residuals and Figure 1–4 differences. Saved historical outputs are not rerun results.
-- [ ] Test verifiable corrected/alternative parameter interpretations **one change at a time**; explicitly document unresolvable data, discrepancies and any differences in physical reactor assumptions.
-- [ ] Check species/element balance, nonnegative/finite states, positive denominators, solver convergence, temperature law and mass/volume factor units.
-- [ ] Explain the common-denominator local rate-ratio cancellation and distinguish reactor outlet selectivity and gas-phase thermal responses.
+## 02 — Numerical execution and controlled comparisons
 
-## 03 — Research report and handoff
-- [ ] Deliver `research/reports/schbib_parameter_and_benchmark_audit.md` with source citations, validation table, reproducibility instructions, actual environment and uncertainties.
-- [ ] Correct/update `notebooks/benchmarks/schbib_1996_steady_state.ipynb` where justified; preserve source-version/provenance explanations and old interpretation in Git history.
-- [ ] Provide an Agent 5 readiness receipt: **PASS if a source-faithful parameter/rate formulation is demonstrable; BLOCKED if not**, listing exact unresolved transfer/validation risks. Do not force PASS to produce a success narrative.
-- [ ] Commit/push on `feat/schbib-co-benchmark` only after plan approval, and report exact SHA. No PR/merge; no owner personal-map edits.
+- [x] Inspect Python/runtime dependencies and execute the model under Rule 19. **PASS.** Python 3.12.14 with NumPy, SciPy, pandas, Matplotlib, ipykernel, nbclient, and nbformat was available; no packages or dependency files were changed. See the report/JSON receipt for interpreter, package versions, and exact command.
+- [x] Compare original printed and complete author-shared parameter sets; separately run one-group sensitivities, full versus simplified kinetics, mass-basis and concentration-unit checks. **PASS.** Diagnostics are labeled and not represented as physically consistent source models.
+- [x] Validate atom balance, finite/nonnegative accepted states, positive denominators, Arrhenius/log behavior, unit invariance, and solver refinement. **PASS** for tested trajectories; numerical tolerances and measured deltas are in the report and result record.
+- [x] Reproduce the historical Table 6 run in a temporary copy and preserve the historical notebook byte-for-byte. **PASS.** Fresh temporary outputs agree with stored historical outputs; historical plot files were not modified.
+- [x] Execute the fresh notebook top-to-bottom and inspect rendered plots. **PASS.** Four new diagnostic plots were inspected; saved historical plots were inspected separately.
 
-## Historical baseline status (not new checkmarks)
-- The branch already contains an executed notebook and four generated figures.
-- The notebook's source-input PFR check reported severe acetylene Table 6 disagreement; **the existing "figure reproduction" alone is not an independently validated benchmark.**
+## 03 — Experimental gates and interpretation
+
+- [x] Evaluate Table 6 with the original printed Table 8 set. **BLOCKED overall:** C₂H₂ predictions are 0.8409%, 0.0099%, and 0.0018% versus 98.31%, 98.99%, and 98.62% measured.
+- [x] Evaluate Table 6 with the author-shared text set. **PASS provisionally for C₂H₂ only:** maximum absolute C₂H₂ error 1.475 percentage points. **BLOCKED overall:** maximum C₂H₄ error is 10.763 points for net disappearance (9.583 points if the measured quantity is interpreted as reaction-2 extent). Correction provenance is independently unverified.
+- [x] Evaluate Figures 1–4. Figure 1 quantitative pointwise comparison **BLOCKED** (no digitization); Figure 2 **PARTIAL** inlet-rate scale check; Figures 3–4 **PARTIAL** acetylene-outlet checks and **BLOCKED** full profiles/heat-transfer reproduction.
+- [x] Separate internal implementation checks from experimental validation. **PASS** internally does not imply full source-model reproduction; full Table 6 benchmark gate remains **BLOCKED**.
+
+## 04 — Report, handoff, and delivery
+
+- [x] Deliver [`research/reports/schbib_parameter_and_benchmark_audit.md`](research/reports/schbib_parameter_and_benchmark_audit.md), checked source transcription, separate correction provenance record, derived JSON, and fresh notebook outputs.
+- [x] Preserve the pre-audit notebook as [`notebooks/benchmarks/schbib_1996_steady_state_historical.ipynb`](notebooks/benchmarks/schbib_1996_steady_state_historical.ipynb).
+- [x] Give the future Agent 5 a bounded handoff: the Pd/α-Al₂O₃ reaction bookkeeping and provenance-labeled rate laws are usable as reference; the two CO adsorption pre-exponentials remain alternatives; neither set is validated for PdAg transfer.
+- [x] Commit and push only to `feat/schbib-co-benchmark`; no PR, merge, personal-map edit, or other-branch change.
+
+The complete all-species Table 6 reproduction remains unresolved. Do not describe the author-shared table as an independently verified erratum or claim that one correction alone explains the discrepancy.

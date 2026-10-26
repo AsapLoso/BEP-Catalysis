@@ -5,3 +5,7 @@ This directory is **not** source text. Put agents' derivations, formula comparis
 For each claim, identify which original document and exact location supports it, whether the reading was verified in the source/transcription, whether units are published or inferred, and whether a proposed extrapolation is speculative.
 
 Scientific method/repository tests can be recorded here without suggesting the user has read or approved them. Do not create or edit personal-map nodes or owner `index.md` pages.
+
+## Current Schbib audit
+
+- [Schbib parameter and benchmark audit report](../../reports/schbib_parameter_and_benchmark_audit.md): independent source comparison, model interpretation, Table 6 failure diagnosis, figure gates, and open uncertainty register.

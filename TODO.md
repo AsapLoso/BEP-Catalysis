@@ -1,5 +1,8 @@
 # Isothermal CO kinetics — source selection worklist
 
+> **CURRENT OWNER REQUIREMENT (2026-10-26): PFR, NOT BERTY.** Plan already approved with this correction. Prefer **fixed-T CO-sensitive PFR/packed-bed kinetic experiments** with reproducible measured outlet conversions/selectivities and complete inputs. Bos Berty data can support a bounded rate-law discussion, not direct PFR validation; do not make Berty replication a mandatory preparatory step. Compare any PFR calculation against **actual PFR observations at matching conditions**; otherwise mark predicted PFR curves as unvalidated. No thermal model or refitting. If no suitable published benchmark, report **NO SOURCE READY**.
+
+
 **Branch:** `feat/isothermal-co-kinetics-source-selection`  
 **Issue:** [#12](https://github.com/AsapLoso/BEP-Catalysis/issues/12)  
 **Status:** SOURCE SELECTION PENDING — no primary replacement approved, no coupling/merge.

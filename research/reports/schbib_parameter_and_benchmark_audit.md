@@ -4,14 +4,14 @@
 
 ## Executive findings and gate receipt
 
-The original printed Table 8 and the author-shared correction were kept as separate parameter sets. The original values and equations were checked visually against the archived article PDF. The later correction values are present in the ResearchGate machine-readable page text, but its PDF download link currently returns 404; the correction therefore remains unverified against a page image and is not confirmed as an ACS erratum.
+The original printed Table 8 and the author-shared correction were kept as separate parameter sets. The original values and equations were checked visually against the archived article PDF. Public records support attributing the ResearchGate upload to the paper's first author: ACS identifies Noemí S. Schbib as an author, while ResearchGate lists Noemi Susana Schbib and says she uploaded the content. The correction text is also signed “Dr. Susana Schbib.” This is credible author attribution, but it does not authenticate the correction document's integrity or establish publisher approval. The linked PDF still returns 404, and no ACS correction record was found in the targeted DOI/issue checks.
 
 The original printed set reproduces the historical Table 6 acetylene failure: the fresh mass-coordinate isothermal PFR predicts at most 0.841% C₂H₂ conversion where Table 6 reports 98.31–98.99%. The author-shared set brings all three acetylene conversions within 1.48 percentage points of Table 6, but its ethylene conversion remains far outside the provisional 2-point gate. Table 6 reproduction for both reported species is **BLOCKED**.
 
 | Gate | Result |
 |---|---|
 | Original article Tables 3, 4, 6, 8 and Eqs. 22, 24, 25 | **PASS** for visual transcription; recorded in the checked transcription |
-| Author-shared correction provenance | **BLOCKED** for visual verification and journal-erratum status; machine text is transcribed separately |
+| Author-shared correction provenance | **PARTIAL** author attribution from ACS and ResearchGate records; **BLOCKED** for visual document verification and publisher/erratum confirmation |
 | Distinct source sets and diagnostic sensitivities | **PASS**; no sensitivity row is presented as a physical source model |
 | Numerical execution environment | **PASS**; compatible Python 3.12.14 runtime used under Rule 19; no install or dependency change |
 | Internal implementation checks | **PASS**: stoichiometric element balance, finite/nonnegative accepted states, positive rate denominator, mol/kmol unit invariance, solver refinement, and Arrhenius/log sanity |
@@ -41,9 +41,11 @@ The exact source transcription is [schbib_1996_parameter_tables.md](../evidence/
 
 ### Author-shared correction: text record, not confirmed erratum
 
-The author-shared copy appears on the [ResearchGate full-text page](https://www.researchgate.net/publication/231391687_Kinetics_of_Front-End_Acetylene_Hydrogenation_in_Ethylene_Production). Its extracted text appends a note saying that incorrect values of `K_H`, `K_CO`, `K_E`, `K_Et`, and `K_A` appeared in Table 8 and gives corrected log values 17.2, 10.16, −2.74, −3.012, and −19.0. The page says its author content was uploaded by Noemi Susana Schbib on 2021-01-25. The accessible text explicitly gives rates in kmol/(kgcat s), concentrations in kmol/m³, and `k_A`/`k_E` units per kgcat.
+The [ResearchGate record](https://www.researchgate.net/publication/231391687_Kinetics_of_Front-End_Acetylene_Hydrogenation_in_Ethylene_Production) lists Noemi Susana Schbib among the article authors and states that she uploaded the author content on 2021-01-25. The accessible note is signed “Dr. Susana Schbib” and gives `sschbib@plapiqui.edu.ar`. The [ACS article record](https://pubs.acs.org/doi/10.1021/ie950600k) independently lists Noemí S. Schbib as a coauthor at UNS-CONICET. Together these records make the note credibly author-attributed, but the uploader identity and appended document have not been independently confirmed by the publisher or an institutional repository.
 
-The linked PDF retrieval returned 404 during this audit, so the correction text has **not** been visually checked against the source document. The ACS article/issue records checked identify the original paper but did not expose a separately linked correction. This does not prove that no journal correction exists. The readable table is preserved with status and access details in [schbib_1996_author_table8_correction.md](../evidence/transcriptions/schbib_1996_author_table8_correction.md); it is not called a formal erratum or a visually verified transcription.
+The ResearchGate extracted text says incorrect values of `K_H`, `K_CO`, `K_E`, `K_Et`, and `K_A` appeared in Table 8 and gives replacement log values 17.2, 10.16, −2.74, −3.012, and −19.0. It labels `k_A` and `k_E` per kgcat, rates in kmol/(kgcat s), and concentrations in kmol/m³. The linked PDF returns 404, so the correction table and these unit labels cannot be checked against a rendered page. Targeted ACS DOI and issue checks exposed no correction record for this article; Crossref and direct ACS retrieval were inaccessible in this environment. These checks do not prove that no publisher correction exists.
+
+The correction text is a credible author-attributed record, not an independently authenticated document or a confirmed erratum. The readable transcription preserves that distinction in [schbib_1996_author_table8_correction.md](../evidence/transcriptions/schbib_1996_author_table8_correction.md).
 
 ## Interpretation and controlled model comparisons
 
@@ -51,7 +53,7 @@ The linked PDF retrieval returned 404 during this audit, so the correction text 
 
 The source tables label their first parameter column `log A_i` without a base subscript. The implementation interprets this as base 10, sets `A = 10^(log10 A)`, and evaluates `p(T) = A exp(−E/(RT))`, with kcal/mol converted using 4184 J/kcal. This is the conventional interpretation for the tabulated kinetic pre-exponentials and is consistent with the source's stated positive-energy temperature trend; the base is still not printed explicitly. The distinction between the logarithm and its exponential is maintained in code and output.
 
-Using kmol/m³, adsorption terms `K_i C_i` and `sqrt(K_H C_H)` are dimensionless. The printed rate coefficient units produce kmol/(mass·s) after multiplication by `C_A C_H` or `C_E C_H`. In the catalyst-mass coordinate `W [kg]`, the printed gcat-based rate coefficient must be multiplied by 1000, equivalent to +3 in its log pre-exponential. The author-shared note already reports kgcat rates with the same numeric `log A` values for `k_A` and `k_E`, so its per-kg coefficient is 1000 times lower than a per-kg conversion of the original printed gcat coefficient. That difference was retained, not reconciled away.
+Using kmol/m³, adsorption terms `K_i C_i` and `sqrt(K_H C_H)` are dimensionless. The printed rate coefficient units produce kmol/(mass·s) after multiplication by `C_A C_H` or `C_E C_H`. In the catalyst-mass coordinate `W [kg]`, a coefficient reported per gcat must be multiplied by 1000, equivalent to +3 in its log pre-exponential. The author-shared text gives the same numeric `log A` for `k_A` and `k_E` but labels those coefficients per kgcat, so its per-kg coefficient is 1000 times lower than the per-kg conversion of the printed gcat coefficient. The correction note's prose says the `K_*` values should change, yet its table also changes the `k_A`/`k_E` mass-unit labels without explanation. Because that table is not visually available, keep the parameter/unit combinations separate; do not silently treat the unit change as verified.
 
 The model integrates `dF/dW = ν r`, avoiding an unsupported bed-length or packed-bed void assumption. At Table 6's 100 cm³(STP)/min flow and `SV = 100`, catalyst mass is 1 g. Table 4's porosity is a catalyst characterization value, not a measured interparticle bed void. The historical notebook multiplied real density by one minus this porosity to produce 1.64255 g/cm³, numerically close to apparent density 1.61 g/cm³; this is a particle-density estimate and does not identify packed-bed catalyst loading. Without interparticle void/loading, a physical `z` mapping cannot be inferred from Tables 3–4.
 
@@ -121,10 +123,19 @@ The notebook now uses `scipy.integrate.solve_ivp(method="Radau")` in catalyst-ma
 - Rewriting the complete corrected 1400 ppm model in mol/m³ and mol/(kg s) changes C₂H₂ conversion by 3.19×10⁻¹¹ pp and net C₂H₄ conversion by 1.62×10⁻¹³ pp.
 - Tightening solver tolerances and refining the grid changes C₂H₂ by 1.10×10⁻¹⁰ pp, net C₂H₄ by 1.52×10⁻¹² pp, and outlet temperature by 0 K at reported precision.
 - The Arrhenius check verifies `A_kA = 10^31.1`, the 4184 J/kcal conversion, and increasing `k_A` with temperature under the positive-energy interpretation.
+- A separate two-extent implementation, with symbolic `E·N = 0`, was run through Radau, BDF, LSODA, and DOP853. Maximum inter-solver spread was 1.013×10⁻⁷ pp, and the largest difference from the six-flow result JSON was 4.934×10⁻⁶ pp, within the script's limits of 1×10⁻⁶ pp and 1×10⁻⁴ pp, respectively. The run reproduced all six cases; it verifies numerical/state-space consistency, not experimental agreement.
 
 **Execution receipt:** OS Linux x86_64 (kernel 6.18.55); Python executable `/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python`; Python 3.12.14; NumPy 2.3.5, SciPy 1.17.0, pandas 2.2.3, Matplotlib 3.10.8, ipykernel 7.4.0, nbclient 0.11.0, nbformat 5.11.1. Conda is absent, but the active compatible Python and required packages were verified and used. No packages were installed and no dependency files changed. Kernel `python3` resolves to the active interpreter printed above.
 
 The final top-to-bottom notebook execution completed in 13.27 seconds (wall clock); the run receipt records the measured duration.
+
+The repository-local extent cross-check ran from the repository root as `python notebooks/benchmarks/schbib_1996_extent_crosscheck.py` in 1.27 seconds. It used Python 3.12.14, NumPy 2.3.5, SciPy 1.17.0, and SymPy 1.14.0; no packages were installed. Script SHA256: `4fbc273e706d7e42583d15751b31c1ed31071df8bfbbc8b9a9d1ef1d0dbc03d0`. Its JSON comparisons cover C₂H₂ conversion, net C₂H₄ conversion, and reaction-2 extent for both parameter sets and all three CO cases.
+
+### Fixed-temperature reference status
+
+The visually checked printed Table 8 full rate law and its reduced Eqs. 24–25 remain usable as an explicit **fixed-temperature Pd/α-Al₂O₃ reference calculation**, provided the inferred base-10 `log A` convention is stated and the printed gcat rate units are converted consistently when integrating over catalyst mass in kg. The two-extent check supports the implementation's stoichiometry and numerical integration against the six-flow code. It does not make the printed parameters experimentally validated: their Table 6 acetylene predictions fail by up to 98.980 pp and ethylene by up to 10.459 pp under the two definitions tested.
+
+The author-shared text set can be retained as a separate fixed-temperature scenario, but its correction table is not image-authenticated and its unchanged `k_A`/`k_E` log values are paired with kgcat labels instead of the printed gcat labels. The intended physical mass basis, the formal correction status, and whether Table 6 ethylene means net disappearance or reaction-2 extent remain unestablished. This follow-up did not validate Model III thermal/transport behavior or transfer the constants to PdAg.
 
 Run from the repository root:
 
@@ -141,9 +152,9 @@ The output record is [`schbib_1996_audit_results.json`](../evidence/derived/schb
 
 ### Open uncertainties
 
-1. Visual source and publisher status of the author-shared correction remain unverified. Do not call it a formal erratum.
+1. The correction is credibly attributed to the first author on ResearchGate, but its document integrity, visual values/units, and publisher status remain unverified. Do not call it a formal erratum.
 2. The paper does not specify the base of Table 8 `log A`, and Eq. 22 is a relative surface/bulk relation rather than an explicit absolute `A_i` definition.
-3. The printed original kA/kE units say gcat while the correction note uses kgcat and the article nomenclature uses catalyst mass in kg; the physical intended mass basis remains a source inconsistency.
+3. Printed Table 8 labels `k_A`/`k_E` per gcat while the extracted correction table labels them per kgcat, with unchanged numeric log pre-exponentials; the physical intended mass basis remains unresolved.
 4. The Table 6 ethylene conversion remains unreproduced under both net disappearance and reaction-2 extent definitions; reported uncertainty is absent.
 5. Table 7's `r_{2,35}` rejection marker conflicts with the p.1501 text naming that model as best fit.
 6. STP reference conditions are not specified beyond the label `STP`; this audit uses 273.15 K and 1 atm. The rounded Table 3 feed was normalized to include the separate CO fraction.

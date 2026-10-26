@@ -5,7 +5,7 @@
 ## 01 — Source verification
 
 - [x] Visually inspect the archived Schbib PDF at PDF pages 4, 6, 7, and 8 (printed pp.1499, 1501–1503); transcribe Tables 3, 4, 6, 8 and Eqs. 22, 24, 25 with source locators. **PASS.** The original PDF, HTML, and extracted-text source files were left unchanged.
-- [x] Keep the printed Table 8 and author-shared correction as separate records and parameter sets. **PASS.** The correction matches ResearchGate machine-readable text, but its linked PDF returned 404; visual verification and formal erratum status remain **BLOCKED**.
+- [x] Keep the printed Table 8 and author-shared correction as separate records and parameter sets. **PASS.** ACS authorship and ResearchGate uploader/signature records support attribution to Noemí S. Schbib; visual verification and publisher/erratum confirmation remain **BLOCKED** because the linked PDF returns 404. The extracted correction changes `k_A`/`k_E` units from gcat to kgcat while retaining their numeric logs; this mass-basis difference remains unresolved.
 - [x] Record the Table 7 prose/table inconsistency and distinguish directly sourced values from interpretations and diagnostics. **PASS.** The report retains this unresolved discrepancy.
 
 ## 02 — Numerical execution and controlled comparisons
@@ -19,7 +19,7 @@
 ## 03 — Experimental gates and interpretation
 
 - [x] Evaluate Table 6 with the original printed Table 8 set. **BLOCKED overall:** C₂H₂ predictions are 0.8409%, 0.0099%, and 0.0018% versus 98.31%, 98.99%, and 98.62% measured.
-- [x] Evaluate Table 6 with the author-shared text set. **PASS provisionally for C₂H₂ only:** maximum absolute C₂H₂ error 1.475 percentage points. **BLOCKED overall:** maximum C₂H₄ error is 10.763 points for net disappearance (9.583 points if the measured quantity is interpreted as reaction-2 extent). Correction provenance is independently unverified.
+- [x] Evaluate Table 6 with the author-shared text set. **PASS provisionally for C₂H₂ only:** maximum absolute C₂H₂ error 1.475 percentage points. **BLOCKED overall:** maximum C₂H₄ error is 10.763 points for net disappearance (9.583 points if the measured quantity is interpreted as reaction-2 extent). The correction is author-attributed but not independently document-authenticated or publisher-verified.
 - [x] Evaluate Figures 1–4. Figure 1 quantitative pointwise comparison **BLOCKED** (no digitization); Figure 2 **PARTIAL** inlet-rate scale check; Figures 3–4 **PARTIAL** acetylene-outlet checks and **BLOCKED** full profiles/heat-transfer reproduction.
 - [x] Separate internal implementation checks from experimental validation. **PASS** internally does not imply full source-model reproduction; full Table 6 benchmark gate remains **BLOCKED**.
 
@@ -36,7 +36,10 @@ The complete all-species Table 6 reproduction remains unresolved. Do not describ
 ## 05 — Small follow-up: independent state-space numerical verification (NOT a new source fit)
 - [x] Document and scratch-run a **two-reaction-extent** formulation against the isothermal Table 6 system. SymPy balance equations and four SciPy solvers yield the previously reported species-flow numerical predictions to displayed precision. Record checked scope and runtime in [analysis note](research/evidence/analysis/schbib_reaction_extent_state_space_crosscheck_2026_10_26.md).
 - [x] Add independently implemented [cross-check script](notebooks/benchmarks/schbib_1996_extent_crosscheck.py) to the agent branch. It checks the extent-space results against the original six-flow derived JSON without changing the audit notebook.
-- [ ] **Execute the new repository-local script with its derived JSON present**, capture stdout and a runtime receipt. This additional end-to-end test has not been run in the GitHub branch environment by this assistant; do not claim otherwise.
+- [x] Execute the repository-local script with its derived JSON present and capture stdout/runtime. **PASS:** `E·N = 0`; max solver spread 1.013×10⁻⁷ pp; maximum difference from the six-flow JSON 4.934×10⁻⁶ pp; elapsed time 1.27 s. It covers both parameter sets and all three CO cases and checks acetylene conversion, net ethylene conversion, and reaction-2 extent. See the updated analysis note and audit report.
+- [x] State the fixed-temperature reference boundary. The visually checked printed Table 8 law remains usable for a reproducible Pd/α-Al₂O₃ reference calculation with the base-10 `log A` assumption and gcat-to-kg mass conversion stated. Its Table 6 predictions are not experimentally validated; the correction's publisher status, visual values and kgcat/gcat intent remain unestablished.
 - [ ] If Model III work is authorized, first inventory every published heat/mass-transfer coefficient, catalyst pellet diameter, wall temperature profile and experimental input; separate published numeric values from parameters available only through cited correlations and genuinely missing quantities. **Do not substitute another kinetics paper merely because thermal/transport inputs are incomplete.**
+
+The Model III inventory was outside this bounded follow-up and was not repeated.
 
 The existing all-species Table 6 result is still **BLOCKED**. No changes to Agent 5 or owner map are authorized by this check.

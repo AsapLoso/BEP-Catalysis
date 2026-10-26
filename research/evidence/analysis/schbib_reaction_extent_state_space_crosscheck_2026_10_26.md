@@ -32,13 +32,41 @@ An independent Python script, implementing both source alternatives from their t
 - With the full printed Table 8: C2H2 conversions **0.840893%, 0.009865%, 0.001767%** (150/1400/5000 ppm).
 - With the complete *author-shared but visually unverified* Table 8 alternative: C2H2 conversions **99.785357%, 99.998239%, 100.000000%** and **net C2H4 conversions −0.312667%, 0.093528%, 0.726408%**.
 - These match the six-species audit report to its displayed precision. The source-independent test reproduces the numerical predictions, **not** Schbib's experimental Table 6 ethylene conversions.
-- The scratch environment did not contain the Git repository. The additional automated comparison against the full upstream derived JSON is therefore **not marked executed** in that environment; use the repository-local companion script for that check.
+- The scratch environment did not contain the Git repository, so comparison against the derived JSON was deferred there. The repository-local companion script below subsequently completed that check.
+
+## Repository-local cross-check receipt
+
+Executed after fast-forwarding `feat/schbib-co-benchmark` to `e27cb766d644de685d02f2fc8f11d2300aff909c`:
+
+```bash
+python notebooks/benchmarks/schbib_1996_extent_crosscheck.py
+```
+
+- **Result:** PASS; SymPy verified `E·N = 0`. Radau, BDF, LSODA, and DOP853 produced a maximum spread of **1.013×10⁻⁷ percentage points**. The largest difference from the recorded six-flow audit JSON was **4.934×10⁻⁶ percentage points**. The script thresholds are 1×10⁻⁶ pp and 1×10⁻⁴ pp, respectively.
+- **Wall time:** 1.27 s.
+- **Runtime:** Python 3.12.14, NumPy 2.3.5, SciPy 1.17.0, SymPy 1.14.0. No dependency changes.
+- **Script SHA256:** `4fbc273e706d7e42583d15751b31c1ed31071df8bfbbc8b9a9d1ef1d0dbc03d0`.
+
+The repository run checked C₂H₂ conversion, net C₂H₄ conversion, and reaction-2 extent for each CO case and each of the two parameter sets against the derived JSON. Its printed values were:
+
+| Parameter set | CO (ppm) | C₂H₂ conversion | Net C₂H₄ conversion |
+|---|---:|---:|---:|
+| Original printed Table 8 | 150 | 0.840893% | −0.008755% |
+| Original printed Table 8 | 1400 | 0.009865% | −0.000105% |
+| Original printed Table 8 | 5000 | 0.001767% | −0.000019% |
+| Author-shared text transcription | 150 | 99.785357% | −0.312667% |
+| Author-shared text transcription | 1400 | 99.998239% | 0.093528% |
+| Author-shared text transcription | 5000 | 100.000000% | 0.726408% |
+
+This verifies two numerical state-space implementations against each other within the declared tolerances. It does not validate the source correction or the experimental ethylene conversions; the all-species Table 6 gate remains **BLOCKED**.
 
 ## What this demonstrates / does NOT demonstrate
 
 **Supported:** the stoichiometric coupling, sign convention and numerical integration of the currently implemented isothermal rate-law system are mutually consistent under two different state representations and four solvers.
 
-**Not established:** whether the published author-shared correction is formally valid; whether original Model III uses the same reactor physics, surface temperatures and boundary conditions; whether Table 6's C2H4 experimental observable is defined identically; or whether the Pd/Al2O3 kinetics transfer to PdAg. The all-species Schbib Table 6 benchmark remains **BLOCKED**.
+**Usable fixed-temperature reference:** the visually checked original printed Table 8 law and Eqs. 24–25 can anchor a reproducible Pd/α-Al₂O₃ calculation at a prescribed temperature, with base-10 `log A` and the printed gcat-to-kg mass conversion explicitly stated. The cross-check verifies numerical consistency only; the original source set still fails the Table 6 conversion comparison.
+
+**Not established:** publisher approval or visual/document authentication of the author-shared correction, including whether its kgcat labels are intended to change the original gcat rate basis; whether original Model III uses the same reactor physics, surface temperatures and boundary conditions; whether Table 6's C2H4 experimental observable is defined identically; or whether the Pd/Al2O3 kinetics transfer to PdAg. The all-species Schbib Table 6 benchmark remains **BLOCKED**.
 
 ## Source availability and next evidence question
 

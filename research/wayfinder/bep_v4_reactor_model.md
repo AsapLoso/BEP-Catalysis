@@ -82,20 +82,18 @@ A scientifically verified, self-contained, reproducible 1D dynamic packed-bed re
 ---
 
 ## Island 5: Bimetallic PdAg + CO Dynamic Synthesis & Periodic Modulation (The Core BEP Innovation)
-* **Branch:** [eat/pdag-co-synthesis](https://github.com/AsapLoso/BEP-Catalysis/tree/feat/pdag-co-synthesis)
-* **Governing Files:** GOAL.md, TODO.md, 
-otebooks/benchmarks/pdag_co_synthesis.ipynb
+* **Branch:** [`feat/pdag-co-synthesis`](https://github.com/AsapLoso/BEP-Catalysis/tree/feat/pdag-co-synthesis)
+* **Governing Files:** `GOAL.md`, `TODO.md`, `notebooks/benchmarks/pdag_co_synthesis.ipynb`
 * **Source Assets:**
   - Larsen (2024) Master Thesis (Figure 6.6 & Appendix A 8-parameter kinetic vectors)
-  - Schbib et al. (1996) Table 8 (Competitive CO chemisorption isotherm)
+  - Schbib et al. (1996) Table 8 / Bos et al. (1993) (Competitive CO chemisorption isotherm)
 * **Active Tickets:**
-  - [ ] **T5.1: Bimetallic Kinetic Synthesis Formulation** (wayfinder:task) — *Unify Larsen PdAg rate expressions with Schbib competitive CO adsorption denominator.*
-  - [ ] **T5.2: Steady-State Co-Feed Benchmark & Synergy Analysis** (wayfinder:task) — *Sweep 0–1500 ppm CO across Pd1Ag0, Pd2Ag1, Pd3Ag1 to quantify Ag site-isolation benefits.*
-  - [ ] **T5.3: Periodic Dynamic Inlet Modulation** (wayfinder:task) — *Implement square-wave CO pulsing with varying period (1–60 s) and duty cycle (0.1–0.9).*
-  - [ ] **T5.4: Dynamic Pareto Frontier Evaluation** (wayfinder:task) — *Compare steady-state vs. dynamic conversion-selectivity frontiers to test breaking the static ceiling.*
+  - [ ] **T5.1: Bimetallic Kinetic Synthesis Formulation** (`wayfinder:task`) - *Unify Larsen PdAg rate expressions with competitive CO adsorption denominator.*
+  - [ ] **T5.2: Steady-State Co-Feed Benchmark & Synergy Analysis** (`wayfinder:task`) - *Sweep 0-1500 ppm CO across Pd1Ag0, Pd2Ag1, Pd3Ag1 to quantify Ag site-isolation benefits.*
+  - [ ] **T5.3: Periodic Dynamic Inlet Modulation** (`wayfinder:task`) - *Implement square-wave CO pulsing with varying period (1-60 s) and duty cycle (0.1-0.9).*
+  - [ ] **T5.4: Dynamic Pareto Frontier Evaluation** (`wayfinder:task`) - *Compare steady-state vs. dynamic conversion-selectivity frontiers to test breaking the static ceiling.*
 * **Primary Code Deliverable:**
-  - 
-otebooks/benchmarks/pdag_co_synthesis.ipynb
+  - `notebooks/benchmarks/pdag_co_synthesis.ipynb`
 
 ---
 

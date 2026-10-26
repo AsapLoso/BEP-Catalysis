@@ -1,0 +1,310 @@
+dataset:
+  name: Scientific claim reconciliation ledger
+  edition: integrated-v1-2026-10-22
+  count: 21
+claims:
+- id: periodic_gain_sign
+  status: conditional_unresolved
+  position: No universal sign follows from periodic forcing.
+  synthesis: Stable LTI systems at settled periodic response preserve the DC output at fixed mean input; a static
+    concave scalar response is bounded by Jensen; set nesting gives only a weak no-worse optimum if constant steady
+    controls embed under identical constraints. Nonlinear distributed dynamics may yield positive, zero or negative
+    mean changes depending on mechanism, phase, constraints, catalyst state and objective.
+  source_ids:
+  - feimer1982
+  - horn_bailey1971
+  - ziegelhoeffer1972
+  - espinoza2022
+  - kaps2026
+  do_not_infer:
+  - A strict gain for the target reactor.
+  - A universal null result.
+  - That a matched kinetic timescale is sufficient.
+- id: periodic_acetylene_precedent
+  status: broad_novelty_claim_narrowed
+  position: A direct Pd/α-Al₂O₃ periodic-acetylene precedent exists.
+  synthesis: Urmès et al. (2022) report small-amplitude periodic-flow experiments, dynamic kinetic estimation and
+    fixed-bed outlet prediction. Accessible abstract/preview does not establish the exact distributed axial model,
+    a PdAg target, or cycle-integrated gain against an optimized steady point.
+  source_ids:
+  - urmes2022
+  do_not_infer:
+  - No periodic acetylene model or experiment exists.
+  - A target PdAg model or gain has already been validated.
+- id: berger_doi_mismatch
+  status: corrected_bibliographic_error
+  position: The legacy DOI is unrelated to catalysis; the corrected Berger review has a different DOI.
+  synthesis: 'Crossref identifies 10.1016/j.ces.2008.08.012 as Nanofluidization as affected by vibration and electrostatic
+    fields. The local 26-page Berger PDF and Crossref identify Dynamic methods for catalytic kinetics as Applied
+    Catalysis A: General, DOI 10.1016/j.apcata.2008.03.020. The citation defect does not by itself disprove the
+    attached Arrhenius or coverage equations.'
+  source_ids:
+  - berger_wrong_doi_metadata
+  - berger2008
+  do_not_infer:
+  - Correcting the DOI validates every legacy Berger claim.
+- id: urmes2019_hydrogen_adsorption_constant
+  status: unresolved_primary_source_conflict
+  position: Preserve both values until an erratum, code, data table or author clarification resolves them.
+  synthesis: The source text on printed p. 5 estimates K1=611 Pa^-1 from a sticking coefficient/desorption-energy
+    calculation; printed p. 6 Table 5 lists K1=13 Pa^-1 (fixed). The values are not silently reconciled. Table 5
+    can be transcribed as the final tabulated set, but exact reproduction must investigate the discrepancy. For
+    ethylene, the p. 5 strength 0.14 Pa^-1 is reciprocal to the p. 6 denominator convention p_C2H4/K5 with K5=7.4
+    Pa.
+  source_ids:
+  - urmes2019
+  do_not_infer:
+  - Either K1 value is a target BEP parameter.
+  - The K5 notation difference is necessarily a contradiction.
+- id: larsen_thesis_bibliography_and_scope
+  status: bibliographic_correction_and_scope_bounded
+  position: The local source is a BEP PDF with uncertain date, not a verified MSc thesis (2024).
+  synthesis: The local PDF title page identifies Victor Larsen and labels the work BEP; date and institution are
+    not visible there. It reports three PdAg/SiO2 preparations and steady tests, then an empirical extended LHHW
+    fit with cap/inhibition terms. The result is useful source-specific evidence, but the date, catalyst match and
+    parameter transfer need confirmation.
+  source_ids:
+  - larsen_bep_pdf
+  do_not_infer:
+  - The source is an MSc thesis.
+  - The year 2024 is confirmed by the title page.
+  - The empirical fit is an explicit dynamic surface mechanism.
+- id: pssa_vs_dynamic_coverages
+  status: alternative_model_closures
+  position: PSSA surface closure and dynamic coverage ODEs are distinct kinetic models; either may feed a transient
+    gas reactor.
+  synthesis: Urmès 2019 provides a source-specific effective single-site PSSA model. Urmès 2022 provides a dynamic
+    periodic-acetylene precedent for another Pd/α-Al2O3 system. Neither resolves the exact BEP catalyst model. Dynamic
+    coverages require elementary rates, site closure and consistent gas/surface elemental inventories.
+  source_ids:
+  - urmes2019
+  - urmes2022
+  - proposal_main
+  do_not_infer:
+  - PSSA is universal.
+  - A dynamic gas bed proves dynamic surface storage.
+  - One closure is target truth without model-discrimination evidence.
+- id: target_mechanism_and_active_sites
+  status: source_specific_alternatives
+  position: Retain one-site, two-site, PdAg ensemble and ideal-surface pathway descriptions as alternatives conditioned
+    on their sources.
+  synthesis: Urmès 2019 selected a single-site Pd/α-Al2O3 model for its data; Pachulski 2012 abstract reports a
+    two-site PdAg/Al2O3 model; Mei 2009 treats idealized Pd/PdAg surfaces with KMC; Li 2021 studies Pd1Ag3/TiO2.
+    None establishes the current target batch’s active surface or rates.
+  source_ids:
+  - urmes2019
+  - pachulski2012
+  - mei2009
+  - li2021
+  do_not_infer:
+  - Quantitative transfer among supports, surface compositions or methods.
+- id: microscale_temperature_pulsing_transfer
+  status: analogy_bounded
+  position: Keep the Pt/CO fast temperature-pulse result as a different apparatus/reaction precedent.
+  synthesis: Zhu et al. (2021) reports a fast heater response and rate enhancement for temperature-pulsed CO oxidation
+    on Pt. It does not measure acetylene coverage relaxation or demonstrate concentration-pulse gain on PdAg.
+  source_ids:
+  - zhu2021
+  do_not_infer:
+  - Microsecond target surface kinetics.
+  - An acetylene forcing period or benefit factor.
+- id: measurement_and_observability
+  status: absolute_claim_corrected
+  position: Selected dynamic surface species can be measured in suitable lab systems; full distributed BEP state
+    observability is not established.
+  synthesis: Urakawa et al. (2008) describes modulation-excitation spectroscopy and phase-sensitive detection. Outlet-only
+    data, finite bandwidth, sampling and transport may leave distributed states poorly observable; impossibility
+    is too categorical.
+  source_ids:
+  - urakawa2008
+  do_not_infer:
+  - That all internal industrial coverages are directly observable.
+  - That latent states are physically impossible to observe.
+- id: bed_equation_basis_and_pellet_scope
+  status: basis_clarified_scope_preserved
+  position: The proposal’s compact PDE requires declared porosity, velocity, catalyst-density and rate conventions;
+    pellet diffusion is an extension.
+  synthesis: The integrated conservative balance uses void-gas concentration, superficial velocity, axial dispersion
+    flux and catalyst mass per bed volume. A radial pellet PDE is not in the proposal baseline and is retained as
+    a supporting model extension.
+  source_ids:
+  - proposal_main
+  - froment2011
+  - danckwerts1953
+  do_not_infer:
+  - The compact proposal equation is uniquely dimensioned without definitions.
+  - A 1D bed model already resolves pellet transport.
+- id: square_wave_and_input_parameterization
+  status: categorical_claim_corrected
+  position: Square waves and Fourier inputs are not categorically numerically invalid; each representation has manageable
+    tradeoffs.
+  synthesis: A discontinuous command can be handled by event-aligned integration; truncated Fourier representations
+    of discontinuities can exhibit Gibbs behavior; actuator bandwidth smooths the realized input. Urakawa reports
+    practical square-wave stimulation with on/off valves for MES.
+  source_ids:
+  - urakawa2008
+  - proposal_main
+  do_not_infer:
+  - Square waves inherently cause severe solver instability.
+  - B-splines are physically realized without actuator filtering.
+- id: steady_comparator_and_objective
+  status: metric_project_decision_open
+  position: Compare a cycle objective with an optimized feasible steady value under the same constraints, objective
+    and resource basis.
+  synthesis: Yield, selectivity and productivity have different denominators; net ethylene subtracts inlet ethylene;
+    ratios of integrated amounts differ from averages of instantaneous ratios. A nominal steady point is not a valid
+    best-steady comparator.
+  source_ids:
+  - proposal_main
+  - lan2025
+  do_not_infer:
+  - A gain against an arbitrary baseline.
+  - Strict improvement from feasible-set nesting alone.
+- id: optimization_stationary_point_language
+  status: mathematical_claim_corrected
+  position: Local methods do not inevitably converge to a local minimum for a yield-maximization problem.
+  synthesis: The proposal mixes maximization language with a categorical “local minimum” claim. The result depends
+    on sign convention, algorithm, constraints, initialization, gradients and convergence conditions; a local candidate
+    does not establish global optimality.
+  source_ids:
+  - proposal_main
+  do_not_infer:
+  - Any particular local or global optimum.
+- id: zero_redesign_claim
+  status: unsupported_hardware_claim
+  position: The reactor vessel may remain unchanged while actuators, mixer, controls, safety and measurement hardware
+    still require qualification.
+  synthesis: The proposal itself plans MFC modulation. A laboratory or industrial system’s required changes cannot
+    be decided without the plant boundary and safety envelope.
+  source_ids:
+  - proposal_main
+  - silveston1995
+  do_not_infer:
+  - No physical changes or apparatus checks are needed.
+- id: borodzinski2000_ae_mechanism_scope
+  status: source_specific_mechanistic_interpretation
+  position: Preserve the 2000 A/E deposit-associated site model as a catalyst-specific fitted hypothesis, not direct
+    site characterization or a universal Pd/PdAg mechanism.
+  synthesis: The paper measures rate responses for one commercial Pd/α-Al₂O₃ system and compares a two-family A/E
+    kinetic model against four candidate rate expressions. The model has the highest reported F_c in that comparison,
+    but the authors state that other models could fit equally well or better and report parameter correlations above
+    0.8. The active-site families and calculated coverages are model interpretations. Their model and the 2019 one-site
+    Pd/α-Al₂O₃ PSSA fit remain distinct, source-conditioned choices rather than a contradiction that can be resolved
+    without matched catalyst/feed evidence.
+  source_ids:
+  - borodzinski2000
+  - urmes2019
+  do_not_infer:
+  - The deposit-created A/E geometry is directly imaged or uniquely identified by the rate fit.
+  - The model transfers to the BEP catalyst, PdAg, or periodic surface dynamics.
+  - The best fit among four candidates proves a unique mechanism.
+- id: pd_mn_substitution_vs_langmuir_closures
+  status: competing_catalyst_specific_kinetic_models
+  position: Keep the Pd–Mn adsorption-substitution mechanism as a source-specific alternative to reversible Langmuir/PSSA
+    closures.
+  synthesis: Stytsenko et al. report TPD retention of C2H2/C2H4 over their promoted Pd–Mn/Al2O3 and a QMS acetylene-for-ethylene
+    displacement experiment, then formulate a C2H4Z2-centered model with different low- and high-conversion closures.
+    The source explicitly assumes a fast, unknown replenishment step and assigns spectral bands to candidate adsorbates.
+    Urmès 2019 and Borodziński 2000 fit different catalysts/conditions and model families; these papers do not resolve
+    one universal surface mechanism.
+  source_ids:
+  - stytsenko2022
+  - urmes2019
+  - borodzinski2000
+  do_not_infer:
+  - All Pd or PdAg surfaces retain hydrocarbons irreversibly.
+  - The proposed C2H4Z2 intermediate, spectral assignments or unknown step are uniquely established elementary chemistry.
+  - The reported Pd–Mn constants or 75% conversion switch apply to the BEP catalyst.
+- id: industrial_pdag_decay_vs_within_cycle_coverage
+  status: distinct_dynamic_state_scales
+  position: The Dehghani Pd–Ag model’s campaign-time activity state and quasi-steady axial balances do not constitute
+    a within-cycle dynamic-surface model.
+  synthesis: The article fits an empirical LHHW-style rate family for a specified industrial OleMax 201 Pd–Ag/α-Al2O3
+    catalyst and couples a scalar activity-decay ODE to pseudo-steady lead/guard-bed balances. This is evidence
+    that catalyst state can evolve over campaign time, but the model neglects pellet gradients, radial/axial dispersion
+    and transient gas profiles. Its activity ODE does not retain adsorbate coverages. The separate PdAg DFT/steady
+    microkinetic model and Pd/α-Al2O3 periodic-acetylene precedent address different states and experiments; no
+    one source resolves the target BEP dynamics.
+  source_ids:
+  - dehghani2019_pdag_alphaal2o3
+  - wang2023_pdag_descriptors
+  - urmes2022
+  do_not_infer:
+  - A slow activity ODE proves fast periodic surface memory.
+  - The source catalyst or fitted parameters transfer to the BEP target.
+  - The reported campaign model establishes a periodic gain or within-cycle observability.
+- id: packed_bed_boundary_conditions_are_domain_specific
+  status: competing_boundary_interpretations_preserved
+  position: Danckwerts-type flux matching is one physically interpretable dispersed-bed closure, but its outlet
+    condition and applicability depend on the external domains included in the model.
+  synthesis: The proposal names Danckwerts-type conditions without specifying equations or apparatus domains. The
+    integrated map writes a conventional feed-flux match and a zero-dispersive-gradient exit under an isolated-bed/convective-exit
+    convention. Mott and Green's accessible abstract proposes revised conditions based on concentration continuity
+    and flux conservation at both boundaries and reports hypothetical profile differences in a serpentine reactor.
+    The full derivation is not accessible in this pass, so the alternative is retained as a competing source interpretation
+    rather than accepted or rejected. Bed inlet mixers, tubing, exit volumes and analyzer lines can be modeled as
+    explicit domains or folded into boundary transfer relations; target tracer and geometry evidence is needed.
+  source_ids:
+  - proposal_main
+  - danckwerts1953
+  - mott_green2015
+  do_not_infer:
+  - The proposal's use of the phrase Danckwerts-type uniquely fixes a target outlet boundary condition.
+  - The abstract-only Mott and Green proposal is a universally superior boundary condition.
+  - A conserved flux at the reactor face determines the physical boundary without defining the upstream/downstream
+    system.
+- id: urmes2022_experiment_and_model_result_evidence_classes
+  status: evidence_classes_separated
+  position: The abstract supports the occurrence of periodic acetylene-flow experiments and a fitted transient-model
+    result; measured traces, fitted predictions and performance comparisons are different claims.
+  synthesis: The accessible Urmès et al. (2022) abstract says that small-amplitude flow oscillations were used to
+    estimate parameters for a single-site Pd/α-Al2O3 mechanism, that the optimized transient model reproduces outlet
+    reactant/product molar-fraction histories over tested amplitudes and frequencies, and that the authors interpret
+    two steps as controlling conversion. The experimental perturbation/data statement can be cited as source observation.
+    Model reproduction and mechanistic attribution are source-model results, not direct measurements of elementary
+    steps. The article and supporting information remain abstract/preview-limited here, so exact reactor spatial
+    scope and independent hold-out validation were not verified.
+  source_ids:
+  - urmes2022
+  do_not_infer:
+  - Fitted-model reproduction is independent predictive validation.
+  - A model-specific control-step interpretation is direct observation of an elementary surface event.
+  - Periodic kinetic identification demonstrates higher cycle-integrated productivity than a best steady policy.
+- id: kaps2026_measured_reference_vs_optimized_steady_front
+  status: empirical_and_model_comparators_distinguished
+  position: Kaps et al. (2026) provide a cross-system experimental FPO result and a separate model-based steady/periodic
+    Pareto analysis; the evidence levels and comparator conditions must remain distinct.
+  synthesis: The paper reports measured methanol productivity and yield increases of 4.4% and 4.6% against its selected
+    steady laboratory CSTR reference using the same time-averaged inlet molar flows. Separately, it formulates and
+    numerically calculates steady and periodic multiobjective Pareto fronts with a methanol kinetic model. The experimental
+    pair is a matched-feed reference experiment, not a direct measurement of a global best-steady search over every
+    feasible steady policy. The model optimization is an analysis under a particular model, constraint set, and
+    numerical procedure, not a target-system performance guarantee. The paper also documents catalyst activity decline
+    over a multi-month campaign and moderate quantitative agreement between theory and observations. These results
+    show that periodic gain can occur in a different CSTR chemistry and that meaningful comparisons require explicit
+    metrics and comparator definitions; they do not transfer a gain sign or magnitude to acetylene hydrogenation.
+  source_ids:
+  - kaps2026
+  do_not_infer:
+  - The 4.4%/4.6% methanol result is a measured BEP gain.
+  - The experimentally measured matched-mean-feed reference is identical to the model-computed best feasible steady
+    optimum.
+  - A numerical Pareto front proves global optimality without regard to model, solver and constraints.
+  - A periodic methanol CSTR result predicts a packed-bed acetylene result.
+- id: waldron_mbdoe_precision_result_evidence_class
+  status: model_design_result_classified_correctly
+  position: Waldron et al. report improved estimates from a model-based design applied to experimental data; the
+    precision improvement is an analysis/model-design result, not a direct sensor observation.
+  synthesis: Second-pass reading of the full article confirms that model-predicted measurement sensitivities form
+    an approximate Fisher information/covariance matrix, and that bounded D-optimal ramp designs were evaluated
+    against intuitive designs on a homogeneous esterification PFR data set. The article reports more precise estimates
+    and prediction of additional experiments. The previous evidence label source_observation on the precision result
+    was too broad; this graph claim is now source_model_result. The measured concentration time series remain observations,
+    but estimates and their reported precision are inferred through the chosen model/error treatment. No claim transfers
+    to acetylene/Pd packed beds.
+  source_ids:
+  - waldron2020_transient_flow_mbdoe
+  do_not_infer:
+  - The precision gain was directly measured independently of the model and noise assumptions.
+  - The local covariance approximation proves structural identifiability or model correctness.
+  - The homogeneous esterification design result establishes information gain for the BEP target.

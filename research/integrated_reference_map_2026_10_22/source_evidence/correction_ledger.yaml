@@ -1,0 +1,597 @@
+dataset:
+  name: Citation and interpretation correction ledger
+  status: B1–B17 first-pass source findings recorded; B1–B16 separate post-commit second passes complete; B17 post-commit second pass pending; source access and scientific uncertainties remain; unresolved questions remain listed below
+corrections:
+- correction_id: CORR-I0-001
+  record_type: dataset_documentation_count_correction
+  artifact: integrated_reference_map_2026_10_22/README.md
+  previous_statement: The graph has 137 nodes.
+  corrected_statement: The graph has 143 nodes.
+  basis: 'Re-ran the graph validator on target snapshot commit 1cd680f95902a0a79b17afb084fa29ab49c6b25f; it found
+    143 unique node IDs and the PR #180 metadata independently listed 143 scientific nodes.'
+  scope: Documentation count only; no node, claim, or scientific interpretation was changed.
+  ai_audit_stage: rechecked_against_graph_validator_and_pr_metadata
+  human_verification_status: not_verified
+- correction_id: CORR-B1-001
+  record_type: source_equation_sign_dispute
+  source_id: dehghani2019_pdag_alphaal2o3
+  claim_ids:
+  - CLM-c1_pdag_industrial_lhhw_decay-004
+  locator: printed p. 8, Eq. (25)
+  source_as_printed: dP/dz equals the positive sum of a viscous and inertial Ergun-like term.
+  conditional_assessment: With downstream-positive z, positive downstream V and positive parameters, the displayed
+    RHS is positive but a conventional pressure drop has dP/dz<0.
+  disposition: disputed_conditional; preserve source print and derivation DRV-B1-ERGUN-SIGN; author coordinate/V/φ
+    convention unresolved.
+  human_verification_status: not_verified
+- correction_id: CORR-B1-002
+  record_type: objective_function_interpretation
+  source_id: dehghani2019_pdag_alphaal2o3
+  claim_ids:
+  - CLM-c1_pdag_industrial_lhhw_decay-003
+  locator: printed p. 8, Eq. (26)
+  source_as_printed: AMRE objective has |y_exp−y_model| divided pointwise by y_exp, averaged and multiplied by 100.
+  correction: Call Eq. (26) a mean relative absolute error percentage, not unnormalized MAE. Keep the separate activity-model
+    objective description distinct.
+  derivation_id: DRV-B1-AMRE-METRIC
+  human_verification_status: not_verified
+- correction_id: CORR-B1-003
+  record_type: designed_conditions_vs_supplementary_runs
+  source_id: dehghani2019_pdag_alphaal2o3
+  claim_ids:
+  - CLM-c1_pdag_industrial_lhhw_decay-001
+  locators:
+  - printed p. 5, Table 3
+  - S1 Set 1, Sheet1!A1:V159
+  source_statements: Table 3 reports 216 designed full-factorial conditions; Set 1 has 158 numeric RUN labels 1–158.
+  disposition: unresolved_correspondence; Table 3 is a planned design count. Do not state 58 runs are missing or
+    that all planned conditions were executed.
+  human_verification_status: not_verified
+- correction_id: CORR-B1-004
+  record_type: reported_activity_points_vs_supplementary_rows
+  source_id: dehghani2019_pdag_alphaal2o3
+  claim_ids:
+  - CLM-c1_pdag_industrial_lhhw_decay-004
+  - CLM-sc_fair_steady_periodic_cycle_comparison-002
+  locators:
+  - printed p. 8, §5
+  - S1 Set 2, Sheet1!A4:B49 and A78:A80
+  source_statements: Article says 48 data points; Set 2 contains 46 phase-coded numeric-day rows (13 SOR,14 MOR,19
+    EOR), plus three date-text rows with blank day and no composition columns T:AT.
+  disposition: unresolved mapping; no omitted/replicated-row explanation inferred.
+  human_verification_status: not_verified
+- correction_id: CORR-B1-005
+  record_type: supplementary_composition_arithmetic_mismatch
+  source_id: dehghani2019_pdag_alphaal2o3
+  claim_ids:
+  - CLM-c1_pdag_industrial_lhhw_decay-002
+  locator: S1 Set 3, Sheet1!A85:B91
+  source_values: Six displayed categories sum to 100.021; B91 Total Sum is 100.
+  disposition: preserve exact values and discrepancy; analytical basis and cause unresolved. The discrepancy is
+    larger than the maximum 0.003 percentage-point sum error if six values were independently rounded to 0.001.
+  derivation_id: DRV-B1-PIONA-SUM
+  human_verification_status: not_verified
+- correction_id: CORR-B1-006
+  record_type: validation_scope_narrowing
+  source_id: dehghani2019_pdag_alphaal2o3
+  claim_ids:
+  - CLM-c1_pdag_industrial_lhhw_decay-004
+  - CLM-sc_fair_steady_periodic_cycle_comparison-002
+  locator: printed p. 18, §6.3.1 and Figure 11
+  source_statements: The paper labels a section Model Validation and reports model/plant error below 3.0%.
+  correction: Report this as source-specific model-to-plant agreement; no held-out data separation is described
+    in the inspected fit/comparison passages. Do not infer out-of-sample validation or target predictive accuracy.
+  human_verification_status: not_verified
+- correction_id: CORR-B1-007
+  record_type: rate_parameter_portability_limit
+  source_id: dehghani2019_pdag_alphaal2o3
+  claim_ids:
+  - CLM-c1_pdag_industrial_lhhw_decay-003
+  - CLM-c1_pdag_industrial_lhhw_decay-004
+  locators:
+  - printed p. 17, Table 5 and Eqs. (27)–(29)
+  - printed pp. 20–21, Nomenclature
+  source_findings: No rate units, catalyst-mass basis or pressure unit for p_i are attached to Table 5; the Nomenclature
+    leaves r_i and P without dimensions and does not define V or φ.
+  disposition: retain source equations as printed; do not assign units or transfer numerical parameters absent clarification.
+  human_verification_status: not_verified
+- correction_id: CORR-SP-B1-001
+  record_type: source_rate_law_transcription_correction_and_internal_inconsistency
+  source_id: dehghani2019_pdag_alphaal2o3
+  claim_ids:
+  - CLM-c1_pdag_industrial_lhhw_decay-003
+  passage_id: DGH19-P17-TABLE5-RATE-LAWS
+  locator: printed p. 17, Table 5, row C2H4 + H2 → C2H6
+  first_pass_transcription: The numerator was transcribed as p_C2H4^1.4.
+  second_pass_source_transcription: The printed numerator is p_C2H2^1.4 p_H2^1.4; the denominator is (1 + K_C2H4 p_C2H4)^1.6.
+  scientific_assessment: The reaction label describes ethylene hydrogenation, but the printed numerator contains acetylene
+    partial pressure while the inhibition denominator contains ethylene. This is internally inconsistent as printed.
+  disposition: Correct the passage record to the literal source. Do not silently infer a typographical error or substitute
+    p_C2H4. The authors' intended equation and the expression used in fitting remain unresolved.
+  detection_stage: second_pass_after_commit_d4da958
+  human_verification_status: not_verified
+- correction_id: CORR-B2-001
+  record_type: conflicting_fixed_adsorption_parameter_values
+  source_id: urmes2019
+  claim_ids:
+  - CLM-c2_urmes_2019_parameter_ledger-001
+  - CLM-c2_urmes_2019_effective_rates-004
+  locators:
+  - printed p. 5, hydrogen adsorption estimate paragraph
+  - printed p. 6, Table 5
+  source_as_printed: The text estimates K1=611 Pa^-1, while Table 5 lists K1=13 Pa^-1 (fixed).
+  scientific_assessment: Both entries label K1 as a fixed hydrogen adsorption equilibrium constant with the same Pa^-1
+    units. Their values differ by a factor of about 47; the article gives no reconciliation in the inspected pages.
+  disposition: Preserve both source values and mark the intended value, implementation value, and any erratum as unresolved.
+    Do not silently select one.
+  human_verification_status: not_verified
+- correction_id: CORR-B2-002
+  record_type: internal_inconsistency_between_elementary_and_net_rate_equations
+  source_id: urmes2019
+  claim_ids:
+  - CLM-ph_lh_rates-001
+  - CLM-c2_urmes_2019_effective_rates-004
+  - CLM-c2_urmes_2019_net_rates-003
+  locators:
+  - printed p. 3, Table 3, step 6 (C2H4* + H* -> C2H5* + *)
+  - printed p. 4, elementary rate r7 and derived net ethane rate
+  source_as_printed: The r7 elementary expression uses P_C2H2; the derived r_C2H6 equation uses P_C2H4.
+  scientific_assessment: Table 3 identifies ethylene as the reactant leading to the ethyl intermediate, while the net
+    rate also uses ethylene pressure. The intermediate equation is internally inconsistent with that sequence and
+    the final rate expression as printed.
+  disposition: Preserve both expressions literally and flag the mismatch; do not infer which equation the authors used
+    in regression or silently repair the source.
+  human_verification_status: not_verified
+- correction_id: CORR-B3-001
+  record_type: source_internal_apparent_rate_constant_unit_conflict
+  source_id: borodzinski2000
+  claim_ids:
+  - CLM-c1_borodzinski_ae_effective_rates-001
+  - CLM-c1_borodzinski_ae_effective_rates-002
+  locators:
+  - printed p. 53, Table 1 model 5 equation and notation footnote
+  - printed p. 60, Table 3 k2-prime parameter row
+  source_as_printed: The Table 1 footnote reports k2-prime units with kPa^-3, while Table 3 reports kPa^-2 for the same apparent ethane-rate constant.
+  dimensional_check: In displayed r2, p_C2H4 p_H2 contributes kPa^2 and the denominator is dimensionless under the listed kPa^-1 adsorption constants; the rate basis therefore requires k2-prime in mol_C2H6 mol_Pd^-1 s^-1 kPa^-2.
+  scientific_assessment: The dimensional check and Table 3 agree; Table 1 footnote disagrees. The authors' intended unit or regression implementation is not recoverable from these passages.
+  derivation_id: DRV-B3-K2-UNIT-DIMENSION
+  disposition: Preserve the printed Table 1/Table 3 mismatch and the conditional dimensional result; do not silently correct the source footnote or infer the fitted code's units.
+  human_verification_status: not_verified
+- correction_id: CORR-B3-002
+  record_type: source_internal_rate_denominator_exponent_conflict
+  source_id: borodzinski2000
+  claim_ids:
+  - CLM-c1_borodzinski_ae_effective_rates-001
+  - CLM-c1_borodzinski_ae_effective_rates-002
+  locators:
+  - printed p. 53, Table 1, model 5 total ethane-formation equation, ethylene-hydrogenation term
+  - printed p. 65, Appendix A, Eq. (A.45)
+  source_as_printed: Table 1 model 5 uses a squared competitive adsorption denominator for its k2-prime ethylene term; Appendix A Eq. (A.45) gives r2 with the same k2-prime and pressure product but a cubed denominator.
+  scientific_assessment: Both denominators are dimensionless under the listed kPa^-1 adsorption constants, so the exponent mismatch does not change the conditional k2-prime dimensional requirement. The paper does not reconcile the expressions or identify which representation was used in regression.
+  disposition: Preserve both source expressions with their locators; do not silently harmonize the exponent or choose a form for exact reproduction.
+  human_verification_status: not_verified
+- correction_id: CORR-B4-001
+  record_type: bibliographic_doi_mismatch_correction
+  source_id: berger2008
+  related_metadata_record: berger_wrong_doi_metadata
+  affected_historical_attachment_ids:
+  - original_devcontainer_overlay:centered_arrhenius:1
+  - original_devcontainer_overlay:surface_coverage_dynamics:2
+  - original_devcontainer_overlay:internal_diffusion_thiele:1
+  - original_devcontainer_overlay:external_film_transfer:1
+  source_as_printed: >-
+    The Berger et al. local PDF identifies “Dynamic methods for catalytic kinetics,” Applied Catalysis A: General 342 (2008), pp. 3–28, DOI 10.1016/j.apcata.2008.03.020.
+  legacy_citation: DOI 10.1016/j.ces.2008.08.012, previously attached to Berger et al. (2008).
+  corrected_metadata_basis: The local PDF first page confirms the catalytic review's title and correct DOI. The retained Crossref receipt dated 2026-10-21 identifies the legacy DOI with the unrelated title “Nanofluidization as affected by vibration and electrostatic fields”; that metadata lookup was not repeated in B4.
+  disposition: Keep the legacy DOI in historical provenance, cite the corrected DOI for all Berger content, and do not attribute catalytic claims to the unrelated Chemical Engineering Science record.
+  human_verification_status: not_verified
+- correction_id: CORR-B4-002
+  record_type: source_locator_and_transport_criterion_scope_correction
+  source_id: berger2008
+  claim_ids:
+  - CLM-ph_dynamic_memory-005
+  - CLM-internal_diffusion_thiele-001
+  - CLM-external_film_transfer-001
+  historical_locator_errors:
+  - “Section 2.1 Dynamic Surface Balances” is incorrect; Berger §2.1 is Stimuli.
+  - “Section 5.1 External transport diagnostics” is not the section cited; §5 is Criteria.
+  source_findings: Berger §4 distinguishes ODE surface balances from the instantaneous-following algebraic limit; §6.4.4 gives a SO2–NOx/Na–gamma-Al2O3 dynamic packed-bed example with gas and adsorbed-species balances. Section 5/Table 2 names Carberry external mass-transfer, Wheeler–Weisz internal-diffusion and Prater heat-transfer criteria. The local PDF text does not contain “Mears” and does not derive a Thiele modulus or pellet effectiveness factor.
+  disposition: Correct the surface-balance locator and restrict it to the cross-system SO2–NOx model. Narrow Berger transport citations to the criteria actually named. Preserve the Mears equation and Thiele concept as inherited map content but require separate source verification and target-basis checks before treating them as validated equations.
+  human_verification_status: not_verified
+- correction_id: CORR-B4-003
+  record_type: source_notation_and_conditional_rate_basis_correction
+  source_id: berger2008
+  claim_ids:
+  - CLM-external_film_transfer-001
+  locators:
+  - printed p. 11, Table 2, Carberry number
+  - printed p. 5, Nomenclature, a' and r_obs
+  first_pass_transcription: The Carberry denominator used a_0, described as specific particle surface area, and the dimensional check treated the observed rate basis as particle volume.
+  source_as_printed: Table 2 uses a' (a prime), and the nomenclature defines a' as particle surface area per particle volume. The same nomenclature reports r_obs per m^3_cat.
+  scientific_assessment: Replacing subscript-zero notation with the printed prime corrects the source transcription. The dimensional equality of k_g a' c_b and r_obs requires matching the m^3_cat rate basis with the particle-volume basis of a'; that match is an explicit condition of the derivation, not a target-reactor result.
+  disposition: Update the integrated equation, variables, passage transcription and derivation to a'. Keep the Carberry check conditional on compatible volume bases and add the notation/basis question to the open transport uncertainty.
+  human_verification_status: not_verified
+- correction_id: CORR-B5-001
+  record_type: source_access_inventory_correction
+  source_id: silveston1995
+  previous_inventory_statement: local_path was null, local_path_exists_at_inventory was false, and the source was listed as abstract_only.
+  corrected_source_record: A local 22-page review PDF is present at Academics/BEP/Catalysis/Articles/Zotero Backup/Silveston e.a. - 1995 - Periodic operation of catalytic reactors—introduction and overview.pdf; SHA-256 c3e72721b84b1f528108b1452450bd964d74e181c9c104613ebb18212e540714.
+  basis: The local file was directly opened and its first-page title/authors/journal and printed SSDI/PII were visually checked; selected passages were re-read from the PDF. The DOI is retained from the existing bibliographic record but is not printed on that page and was not independently queried in B5. No remote source retrieval was performed.
+  disposition: Correct the current source-path and access coverage fields; retain recorded_access_status_before_mission as abstract_only to preserve the previous metadata state. Only selected pages were reviewed, and all AI/human-verification statuses remain not_verified.
+  detection_stage: B5 first pass; verification scope refined in the post-commit second pass
+  human_verification_status: not_verified
+- correction_id: CORR-SP-B5-001
+  record_type: passage_definition_refinement
+  source_id: silveston1995
+  passage_id: SIL95-P03-CYCLE-VARIABLES
+  locator: Printed p. 93, Fig. 2 discussion of split/duty fraction
+  first_pass_record: The split was transcribed as the duration of one cycle part divided by period, with s=0.5 denoting equal durations.
+  second_pass_source_detail: The paper further defines the split relative to one selected reactant and measures the fraction of the cycle for which that reactant is at its highest concentration.
+  scientific_assessment: This is a definition refinement, not a conflict with the first-pass dimensional description. The reactant-specific convention matters when assigning duty fraction to a waveform.
+  disposition: Add the source's high-concentration-segment convention to the structured passage; keep s dimensionless and require explicit conversion when another waveform convention is used.
+  detection_stage: second_pass_after_commit_9d33ffd
+  human_verification_status: not_verified
+- correction_id: CORR-SP-B5-002
+  record_type: source_metadata_verification_scope_correction
+  source_id: silveston1995
+  related_correction_id: CORR-B5-001
+  locator: Local PDF first page, printed p. 91
+  first_pass_statement: The first-pass correction basis said the article DOI was visually checked, alongside first-page identity details.
+  second_pass_finding: The local first page confirms title, authors, journal, volume/pages and printed SSDI 0920-5861(95)00101-8, but does not print a DOI. The existing DOI metadata 10.1016/0920-5861(95)00101-K was not re-queried or independently verified in B5.
+  disposition: Correct the verification-scope wording in CORR-B5-001 and the source access record. Retain the DOI as inherited bibliography metadata without claiming a new B5 DOI verification.
+  detection_stage: second_pass_after_commit_9d33ffd
+  human_verification_status: not_verified
+- correction_id: CORR-B6-001
+  record_type: source_access_inventory_correction
+  source_id: danckwerts1953
+  previous_inventory_statement: local_path was null, local_path_exists_at_inventory was false, source access was
+    abstract_only, and the full text had not been reopened.
+  corrected_source_record: A local 13-page original PDF is present at Academics/BEP/Catalysis/Articles/Zotero Backup/Danckwerts
+    - 1953 - Continuous flow systems Distribution of residence times.pdf; SHA-256 40786c9d5b5cb6c6f00ded4a99363e7895dc4ced18930edffc332519e2ecf67e.
+    Title, author, journal and issue appear on p. 1; full text and figures were inspected locally. DOI remains inherited
+    bibliography metadata and was not independently re-queried or visually confirmed.
+  basis: Local PDF reopened; fresh pdftotext extraction and renders; printed pp. 1–13 checked and passages recorded
+    on pp. 1–11. No remote retrieval or Git transfer.
+  disposition: Update source, coverage and review ledgers. Preserve recorded_access_status_before_mission=abstract_only
+    and mark DOI as inherited/not independently rechecked.
+  human_verification_status: not_verified
+- correction_id: CORR-B6-002
+  record_type: source_locator_and_boundary_equation_scope_correction
+  source_id: danckwerts1953
+  claim_ids:
+  - CLM-ph_danckwerts-002
+  - CLM-ma_initial_boundary-002
+  historical_locator_errors:
+  - Citation said full text was not read and gave only abstract/bibliography.
+  - Claim said displayed generalized equations were not quoted from the article.
+  source_findings: Printed p. 10 Eqs. (30)–(32) directly give a steady first-order axial-dispersion balance, inlet
+    feed-flux matching and zero-gradient outlet. Assumptions include constant mean velocity, no volume change and
+    spatially constant first-order k. Source u, apparent D and concentration basis must not be silently equated
+    with generalized superficial-velocity/porosity/dynamic-coverage conventions.
+  disposition: Replace abstract-only locator with pp. 10 Eqs. (30)–(32); preserve generalized BEP equations as a
+    declared convention and add source-specific equations to the node. Applicability to the BEP boundary remains
+    unresolved.
+  human_verification_status: not_verified
+- correction_id: CORR-SP-B6-001
+  record_type: source_notation_reuse_and_second_pass_evidence_extension
+  source_id: danckwerts1953
+  claim_ids:
+  - CLM-ph_residence_time_distribution-001
+  - CLM-u_sc_plant-003
+  locators:
+  - printed pp. 3, 11–12, Eqs. (5), (39), (46)–(49)
+  second_pass_finding: The source uses I(θ) for internal age density in Eqs. (4)–(5), then reuses I(τ) in Eq. (48)
+    for the overlap integral ∫E(θ)E(θ+τ)dθ. The functions are mathematically distinct despite the shared letter.
+    Eq. (49) weights that overlap by normalized input autocorrelation to predict outlet/input variance for a passive
+    blender.
+  disposition: Added passage DAN53-P12-AUTOCORRELATION-FILTERING and an RTD-node variance equation using dataset-only
+    G(τ) notation. The equation describes transport smoothing of stationary input fluctuations; it does not establish
+    catalytic performance gain or a target apparatus transfer function.
+  human_verification_status: not_verified
+- correction_id: CORR-B8-001
+  record_type: source_internal_temperature_conflict
+  source_id: larsen_bep_pdf
+  claim_ids:
+  - CLM-lhhw_kinetics-001
+  passage_ids:
+  - LARSEN-BEP-P01-ABSTRACT
+  - LARSEN-BEP-P15-METHOD-TEMPERATURE
+  - LARSEN-BEP-P23-RESULTS-CONDITIONS
+  locators:
+  - Abstract, printed p. 1
+  - §4.2, printed p. 15
+  - §6.1/Table 6.1, printed p. 23
+  source_statements: The abstract and §6.1/Table 6.1 report 100 °C and 1000 mbar; §4.2 says the reactor temperature
+    is maintained at 80 °C during experiments.
+  disposition: Preserve both values as a source-internal conflict. Add an uncertainty requiring run logs or original
+    data/code before assigning a test temperature or transferring fitted rates.
+  human_verification_status: not_verified
+- correction_id: CORR-B8-002
+  record_type: historical_dynamic_pde_attachment_scope_correction
+  source_id: larsen_bep_pdf
+  claim_ids:
+  - CLM-ma_gas_pde-003
+  passage_id: LARSEN-BEP-P16-STEADY-PFR-BALANCES
+  historical_attachment_id: original_devcontainer_overlay:pbr_governing_pdes:1
+  locator: §4.3, printed p. 16, Eqs. (4.6)–(4.9)
+  source_findings: The displayed equations are axial molar-flow ODEs in z for a steady PFR. They show no temporal
+    accumulation or axial dispersion; multiplying r_i by ρ_support A leaves the material basis undefined in the
+    inspected equations. The surrounding prose's phrase about composition changing “over time” does not change the
+    independent variable in the equations.
+  disposition: Reclassify the current source link as source_model_result scoped to steady ODEs and explicitly state
+    that it does not evidence the integrated dynamic PDE. Keep the historical attachment and its original filename
+    lineage traceable; record the rate/density/area units as unresolved.
+  human_verification_status: not_verified
+- correction_id: CORR-B8-003
+  record_type: source_internal_hydrogen_adsorption_form_ambiguity
+  source_id: larsen_bep_pdf
+  claim_ids:
+  - CLM-lhhw_kinetics-001
+  passage_id: LARSEN-BEP-P16-DISSOCIATIVE-H2-DESCRIPTION
+  related_passage_id: LARSEN-BEP-P17-H2-DENOMINATOR-FORM
+  locator: §4.3, printed p. 16 prose and printed p. 17 Eqs. (4.12)–(4.13)
+  source_findings: The prose describes dissociative H2 adsorption; Eqs. (4.12)–(4.13) show a linear K_H2 p_H2 term
+    in the adsorption denominator. For simple quasi-equilibrium dissociative adsorption on equivalent sites, the
+    adsorbed-H term normally scales with the square root of hydrogen pressure, but the thesis does not define its
+    site convention or fitted parameter normalization.
+  disposition: Record a source-model-form ambiguity rather than inferring molecular adsorption or silently replacing
+    the printed expression. Keep the source's kinetic closure empirical until the underlying site balance/code is
+    clarified.
+  human_verification_status: not_verified
+- correction_id: CORR-B8-004
+  record_type: unsupported_appendix_locator_correction
+  source_id: larsen_bep_pdf
+  node_id: lhhw_kinetics
+  prior_open_question: Resolve unmeasured cross-sectional area A and support density rho_support from Appendix F.
+  inspection: The contents and extractable text identify Appendix F as “Standard LHHW model code.” Printed pp. 72–82
+    contain embedded code images; the PDF text layer exposes no symbol definitions, and OCR of the available images
+    did not reliably recover the code.
+  disposition: Remove the claim that Appendix F is a parameter/geometry definition section. Keep the meaning and
+    units of rho_support, A, rates and pressure as open questions pending readable source code or author documentation;
+    do not claim these quantities are absent from every image.
+  human_verification_status: not_verified
+- correction_id: CORR-B8-005
+  record_type: source_fit_metric_scope_clarification
+  source_id: larsen_bep_pdf
+  claim_ids:
+  - CLM-lhhw_kinetics-001
+  passage_id: LARSEN-BEP-P17-RMSE-DE
+  locator: §4.3, printed p. 17, Eqs. (4.14)–(4.15)
+  source_findings: The objective equally weights conversion and selectivity squared errors for each experiment, then
+    takes the arithmetic mean of experiment-level RMSE values. The reported unit is percentage points when responses
+    are expressed on a percent scale.
+  disposition: Keep this as a model-fitting score. Do not call it ethylene yield/productivity, predictive validation,
+    or a periodic-versus-best-steady performance metric.
+  human_verification_status: not_verified
+- correction_id: CORR-B8-006
+  record_type: catalyst_sample_label_clarification
+  source_id: larsen_bep_pdf
+  claim_ids:
+  - CLM-lhhw_kinetics-001
+  passage_id: LARSEN-BEP-P15-CATALYST-TABLE
+  locator: Table 4.1, printed p. 15
+  source_findings: “Pd0 Ag” contains 0.025 wt% Pd and 5 wt% Ag; it is the sample's lowest-Pd label, not a Pd-free
+    material. The table labels its numeric ratio Ag:Pd=200.
+  disposition: Preserve the sample label but explain its nonzero Pd loading and distinguish Ag:Pd from Pd:Ag notation.
+  human_verification_status: not_verified
+
+- correction_id: CORR-B11-URM22-001
+  record_type: citation_attachment_unsupported_by_accessible_passage
+  source_id: urmes2022
+  claim_ids:
+  - CLM-u_sc_objective-003
+  prior_open_question: Whether this source passage contributes evidence to the theme of cycle metrics and an optimized steady benchmark.
+  inspected_resource: Wiley publisher abstract, HTML lines 158–161; full-text link redirected to abstract and SI returned HTTP 403.
+  finding: The inspected abstract concerns dynamic kinetic parameter estimation and transient outlet-model reproduction; it does not state a cycle objective or compare periodic operation with an optimized feasible steady state.
+  disposition: Mark this source link unsupported by the inspected abstract while preserving the stable claim/source edge and underlying node concept. The inaccessible full article may contain additional discussion; do not claim the complete paper omits the benchmark.
+  human_verification_status: not_verified
+- correction_id: CORR-B11-URM22-002
+  record_type: citation_attachment_unsupported_by_accessible_passage
+  source_id: urmes2022
+  claim_ids:
+  - CLM-u_sc_feasibility-005
+  prior_open_question: Whether this source passage contributes evidence to reactor-waveform hardware feasibility, process constraints and robustness.
+  inspected_resource: Wiley publisher abstract, HTML lines 158–161; full-text link redirected to abstract and SI returned HTTP 403.
+  finding: No actuator, measurement-bandwidth, safety, process-limit, robustness or campaign-feasibility evidence appears in the inspected abstract.
+  disposition: Mark this source link unsupported by the inspected abstract while preserving the stable claim/source edge and node concept. The full article remains inaccessible, so article-wide absence is not established.
+  human_verification_status: not_verified
+
+- correction_id: CORR-B12-PROPOSAL-001
+  record_type: proposal_thermodynamic_state_scope_correction
+  source_id: proposal_main
+  claim_ids: [CLM-ph_metrics-001]
+  passage_id: BEP-PROP-B12-P02-STEADY-YIELD-ASSERTION
+  locator: main.tex §1.1, line 117
+  source_as_written: The proposal says steady-state surface coverages remain locked at fixed thermodynamic equilibrium and asserts an unavoidable cap on intermediate yield.
+  finding: This passage documents a proposal rationale, not evidence for its universal limit. Stationary reactor operation, time-invariant surface coverage and thermodynamic equilibrium are distinct; a steady flow balance can coexist with transport and reaction source terms.
+  disposition: Preserve the proposal as provenance for the hypothesis, but do not promote its cap/equilibrium wording to general physical fact. Require catalyst-specific kinetics and a matched optimized-steady benchmark before evaluating gain.
+  human_verification_status: not_verified
+- correction_id: CORR-B12-PROPOSAL-002
+  record_type: proposed_timescale_window_without_derivation
+  source_id: proposal_main
+  claim_ids: [CLM-ph_dynamic_memory-001, CLM-ma_timescale-001]
+  passage_id: BEP-PROP-B12-P05-FORCING-TIMESCALE
+  locator: main.tex §3.1, line 197
+  source_as_written: The proposal states tau_desorption ~ T_pulse < tau_residence as a viable forcing window.
+  finding: The selected lines provide no derivation, measured target time constants, kinetic criterion or comparison with a residence-time distribution.
+  disposition: Keep the inequality as a testable hypothesis only; do not use it as a validated or sufficient condition for performance improvement.
+  human_verification_status: not_verified
+- correction_id: CORR-B12-PROPOSAL-003
+  record_type: steady_benchmark_definition_gap
+  source_id: proposal_main
+  claim_ids: [CLM-sc_baseline-001, CLM-sc_objective-001]
+  passage_id: BEP-PROP-B12-P08-OBJECTIVE-LOCAL-SEARCH
+  locator: main.tex §3.3, lines 262–264, and §3.4, line 276
+  source_as_written: The proposal plans to exceed a theoretical steady-state yield baseline and later states a time-averaged ethylene-selectivity objective.
+  finding: The selected lines do not define the best feasible steady policy, matched objective and constraints, campaign or cycle horizon, or relation between selectivity and ethylene productivity.
+  disposition: Preserve project intent; do not describe this as a completed optimized-steady comparison or evidence of periodic superiority.
+  human_verification_status: not_verified
+
+- correction_id: CORR-B12-METADATA-001
+  record_type: generated_batch_count_reconciliation
+  artifact: B12 first-pass claim-source, passage, coverage and validation records
+  inspected_records: B12 claim-source register entries and the ten proposal passage records, parsed in focused YAML fragments and cross-checked for reciprocal IDs.
+  previous_statement: B12 ledgers reported 31 selected claim links, 110 total claim links with passage evidence, 230 links without passage evidence, and 112 AI-rechecked links.
+  corrected_statement: The committed record set contains 30 distinct B12 claim-source links and 30 passage-to-claim associations; totals are 109 with passage IDs, 231 without passage IDs, and 111 AI-rechecked links. The proposal source has 78 links, so 48 remain unreviewed.
+  finding: The 31-link figure was a generated summary-count error. The ten passage records reference 30 unique claim IDs, and every reference has a reciprocal passage ID in its claim-source record. All 30 records are scoped as proposal-intent or assumption support and remain human_verification_status not_verified.
+  disposition: Correct the generated counts and preserve the scientific interpretations. Do not infer an additional claim review from the earlier summary text.
+  human_verification_status: not_verified
+
+
+- correction_id: CORR-B13-ZHU-001
+  record_type: quantitative_citation_not_verifiable_in_accessible_abstract
+  source_id: zhu2021
+  related_proposal_claim_ids: [CLM-u_ph_thermal-001]
+  passage_ids: [BEP-PROP-B13-P01-ZHU-40FOLD-ATTRIBUTION, ZHU21-B13-P03-RATE-RESPONSE, ZHU21-B13-P04-POWER-COMPARATOR, ZHU21-B13-P05-COVERAGE-MEMORY]
+  inspected_resource: TU/e Research Portal author-institution article record, abstract lines 31–36; ScienceDirect full article request returned HTTP 403.
+  source_as_written: The proposal attributes an up-to-40-fold rate enhancement during fast temperature pulsing to Zhu et al. (2021), citing transient catalyst-site depopulation.
+  finding: The accessible abstract reports that fast temperature pulses significantly increase reaction rates and require less power than steady-state operation. It describes a simulation-based desorption/repopulation interpretation but gives no numerical fold enhancement. Full article and detailed comparator conditions were unavailable in this pass.
+  disposition: Retain the 40-fold statement as proposal wording but mark its quantitative citation unresolved, not disproven. Reopen the full article or the underlying cited source before using the number. Do not transfer this thermal CO-oxidation result to acetylene feed-composition forcing, ethylene yield/selectivity or PdAg.
+  human_verification_status: not_verified
+
+- correction_id: CORR-B14-DG19-001
+  record_type: source_specific_numerical_method_scope
+  source_id: di_giuliano_pellegrino2019
+  claim_ids:
+  - CLM-ma_explicit_transport_step_bound-002
+  - CLM-ma_conservative_finite_volume-002
+  locators:
+  - Methods §3.1, Eqs. (37)–(42)
+  - Methods §3.1.2, Eqs. (43)–(45)
+  source_as_written: The article uses central finite differences and false-boundary ghost points for the method-of-lines spatial discretization; a forward spatial difference is separately used to calculate the velocity profile. Explicit Euler is also evaluated as a time integrator for the semidiscrete ODE system, where the authors report a severe case-specific stability restriction. Their reported simulations use ode23tb.
+  finding: Spatial differencing used to calculate u(z,t), time integration of the semidiscrete state, and the distinct cell-integrated finite-volume derivation in the map are separate numerical choices. The paper's dimensionless Eq. (45) bound and reported J scale cannot be transferred to the BEP scheme.
+  disposition: Preserve the source's two explicit-Euler roles and ode23tb simulation choice. Keep the finite-volume node's derivation distinct from this source's finite-difference implementation; do not generalize the reported time-step bound.
+  human_verification_status: not_verified
+
+- correction_id: CORR-SP-B14-DG19-001
+  record_type: distinct_simulation_metric_trends
+  source_id: di_giuliano_pellegrino2019
+  claim_ids:
+  - CLM-ph_variable_superficial_velocity-003
+  passage_id: DG19-B14-P04-VELOCITY-COMPARISON-RESULTS
+  locators:
+  - Results §4.3, Figs. 6–7
+  - Conclusions
+  previous_statement: The first-pass batch compressed the constant-u inert-flow and cumulative CO2-balance diagnostics as artifacts that worsen together as inlet CO2 dilution falls.
+  source_as_written: The article reports that outlet CO2-profile differences and the constant-u inert-N2-flow artifact increase with higher inlet CO2 concentration; separately, the constant-u cumulative CO2-balance deviation trends inversely with inlet CO2 mole fraction and is larger at lower y_CO2.
+  finding: The two balance diagnostics have different trends with inlet composition. The source's conclusion that variable-u is more physically reasonable is a model-based interpretation of these diagnostics, not independent experimental validation.
+  disposition: Keep the outlet-profile, inert-flow and cumulative-CO2-balance results distinct. Replace the compressed first-pass summary; do not state that every artifact worsens in the less-dilute feed direction.
+  human_verification_status: not_verified
+
+- correction_id: CORR-B15-PACHULSKI-METADATA-001
+  record_type: bibliographic_author_metadata_correction
+  source_id: pachulski2012
+  claim_ids:
+  - CLM-u_ph_reaction-003
+  - CLM-u_ph_catalyst-001
+  - CLM-u_ph_kinetics-002
+  - CLM-u_ma_inverse-005
+  - CLM-u_sc_feasibility-004
+  - CLM-ph_site_ensembles-002
+  - CLM-ph_sequential_path-003
+  - CLM-ph_lh_rates-002
+  - CLM-ph_adsorbate_balance-002
+  - CLM-ph_mechanism_choice-001
+  - CLM-ma_surface_balance-002
+  - CLM-sc_robustness-002
+  - CLM-sc_validation-002
+  locators:
+  - Publisher article author line, ScienceDirect, DOI 10.1016/j.apcata.2012.08.018
+  - Publisher abstract and DOI landing page
+  previous_statement: The integrated source record and its 13 claim-source identities named Andreas Pachulski and Sven Schödel.
+  source_as_written: The publisher lists Axel Pachulski, Rainer Schödel, and Peter Claus.
+  finding: The two given names in the existing ledger were incorrect; official publisher metadata identifies Axel Pachulski and Rainer Schödel.
+  disposition: Correct the author metadata in integrated sources.yaml, source_review_ledger.yaml, and the 13 linked claim identity blocks. Preserve this correction record; no scientific interpretation changes.
+  human_verification_status: not_verified
+- correction_id: CORR-B17-VALIDATION-COUNT-001
+  record_type: audit_validation_count_correction
+  artifact: source_evidence/claim_passage_register.yaml; source_evidence/coverage_ledger.yaml; source_evidence/validation_results.json; research-progress records
+  previous_statement: >-
+    The cumulative ledgers reported 210 links without passage or derivation at B15, 201 at B16, and 197 at B17.
+    These values subtracted nine derivation-bearing links from no-passage totals.
+  corrected_statement: >-
+    All nine claim rows with derivation IDs also have passage IDs. Correct counts are 219/349 links with neither
+    passage nor derivation at the B15 checkpoint (130 passage-bearing links), 210/349 at B16 (139 passage-bearing),
+    and 206/349 after B17 (143 passage-bearing).
+  basis: >-
+    Recounted the stable claim register and checked the set intersection: the nine derivation-bearing claim rows
+    are a subset of passage-bearing rows. Therefore links with neither evidence type equal links without passage IDs
+    in these checkpoints: 349 - 130 = 219 at B15; 349 - 139 = 210 at B16; and 349 - 143 = 206 at B17.
+    The previous counts incorrectly subtracted derivation-bearing rows even though they already had passages.
+  disposition: >-
+    Correct aggregate fields and historical progress summaries. Keep passage-bearing and derivation-bearing counts
+    separate while stating their overlap; this is a data-quality correction only and changes no scientific claim,
+    node maturity, or human-verification status.
+  human_verification_status: not_verified
+
+- correction_id: CORR-B17-VALIDATION-COUNT-002
+  record_type: source_review_ledger_count_correction
+  artifact: source_evidence/source_review_ledger.yaml; source_evidence/coverage_ledger.yaml; source_evidence/validation_results.json; research-progress records
+  source_id: null
+  claim_ids: []
+  passage_id: null
+  previous_statement: >-
+    The current source-review header remained at 16 source records reopened and 50 unopened after the B17 Urmès 2020
+    source review was added.
+  corrected_statement: >-
+    After B17, 17 of 66 source records have been reopened in source text and 49 remain unopened. The B16 Rosa et al.
+    record is represented by mission_access_status: full_text_xml_via_europe_pmc; B17 adds the selected indexed text
+    for Urmès et al. (2020).
+  basis: >-
+    Counted all 66 unique source records in source_review_ledger.yaml and classified a record as reopened when its
+    access_level_reopened_this_mission or mission_access_status records source-text inspection. Seventeen rows meet
+    that condition; the other 49 are explicitly not_reopened. coverage_ledger.yaml already reported 17 reopened,
+    confirming the source-review header was stale.
+  disposition: >-
+    Correct the current source-review header and add the explicit unopened count in the coverage summary. Preserve
+    historical B16 checkpoint counts as time-specific values. This is a data-quality correction only; it changes no
+    scientific claim, AI maturity or human-verification status.
+  human_verification_status: not_verified
+
+- correction_id: CORR-B17-AUDIT-RECEIPT-LINKS-001
+  record_type: missing_ai_audit_receipt_link_correction
+  artifact: source_evidence/claim_passage_register.yaml; source_evidence/second_pass_audit.yaml
+  source_id: null
+  claim_ids:
+  - CLM-ma_gas_pde-003
+  - CLM-lhhw_kinetics-001
+  - CLM-reaction_thermodynamics-001
+  - CLM-c1_pdag_descriptor_mkm-001
+  - CLM-c1_pdag_descriptor_mkm-002
+  - CLM-c1_pdag_descriptor_mkm-003
+  passage_id: null
+  previous_statement: >-
+    Six claim rows had a non-default AI evidence-check stage and source passage IDs, but their ai_audit_receipt_ids
+    fields were empty.
+  corrected_statement: >-
+    The three Larsen thesis claim rows now reference SP-B8-20261022-LARSEN, and the three Wang et al. claim rows
+    reference SP-B10-20261022-WANG-PDAG.
+  basis: >-
+    Both named second-pass records are present in source_evidence/second_pass_audit.yaml and explicitly list these
+    six stable claim IDs in claim_links_reaudited with corresponding passage results. The repair links existing
+    audit evidence; no source interpretation, maturity or verification status was changed.
+  disposition: >-
+    Add the existing same-agent AI audit receipt IDs to the six claim rows so their non-default evidence-check stage
+    is addressable. Preserve the existing audit log wording and keep human verification not_verified.
+  human_verification_status: not_verified
+
+- correction_id: CORR-B17-AUDIT-CHECKPOINT-RESOLUTION-001
+  record_type: orphaned_ai_audit_checkpoint_resolution
+  artifact: source_evidence/research_batches.yaml; source_evidence/claim_passage_register.yaml
+  source_id: null
+  claim_ids: []
+  passage_id: null
+  previous_statement: >-
+    Six first-pass AI audit checkpoint IDs referenced from claim rows were not present in the batch, source-review,
+    or second-pass audit ledgers.
+  corrected_statement: >-
+    The six IDs are now explicit ai_reviewer_checkpoint values on their corresponding B4, B5, B12, B13, B15 and
+    B16 primary-source batch records.
+  basis: >-
+    Each checkpoint ID matches the batch number, date and source described by its already-recorded claim passages
+    and findings: B4 Berger, B5 Silveston, B12 proposal, B13 Zhu, B15 Pachulski and B16 Rosa. The underlying batch
+    records already contain source/resource access, locators, counts, findings and validation boundaries.
+  disposition: >-
+    Resolve the six existing audit references to their durable batch records. This is a provenance-link repair only;
+    no scientific claims, source interpretations, maturity or human-verification statuses were changed.
+  human_verification_status: not_verified

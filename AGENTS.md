@@ -9,6 +9,17 @@ environment: Local Windows/PowerShell or cloud Linux; verified Python interprete
 derived_from: Aa Project management (core rules and operational invariants)
 ```
 
+## BEP scientific-map and migration boundaries
+
+This repository's general operating rules below remain in force. For the migrated BEP mind maps and interactive viewer, also observe these project-specific requirements:
+
+- Start with [README.md](README.md), [STATUS.md](STATUS.md), and [MIGRATION_STATUS.md](MIGRATION_STATUS.md) when working on migrated content. Treat this as a scientific-understanding and reactor-notebook repository, not a general task tracker; original AAPM links preserve source review history.
+- For scientific-map changes, follow `.agents/skills/bep-map-edit-review/SKILL.md`; for reversible Git changes, follow `.agents/skills/reversible-change-review/SKILL.md`.
+- The personal map and AI reference maps are separate. Before creating, approving, reparenting, or promoting any personal-map node, show the exact proposed change and obtain explicit, scoped owner approval. Keep AI-only research and interpretations separately labelled.
+- Preserve existing owner review records and source/claim provenance. An AI-attached reference is **not** a human-verified citation or proof of owner understanding.
+- Distinguish derivation, passing code tests, reproduction of published model output, and experimental validation. Do not publish or send supervisor-facing scientific material without owner review.
+- Migrated viewer files may still contain AAPM module paths or untested execution assumptions. Port and test them explicitly; copying code into this repository is not evidence that it runs.
+
 ---
 
 ## 1. What This Repo Is

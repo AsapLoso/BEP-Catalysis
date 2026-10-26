@@ -1,0 +1,103 @@
+name: BEP mind-map smoke tests
+
+on:
+  push:
+    branches:
+      - migration/bep-map-consolidation-20261023
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frontend:
+    name: Frontend helpers and assets
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: |
+          node --check mindmap/static/app.js
+          node --check mindmap/static/graph-utils.js
+          node --check mindmap/tests/test_frontend.js
+      - name: Frontend regression tests
+        run: node mindmap/tests/test_frontend.js
+      - name: Bundled assets present
+        run: |
+          test -s mindmap/static/index.html
+          test -s mindmap/static/style.css
+          test -s mindmap/static/vendor/elk-worker.min.js
+          test "$(find mindmap/evidence/viewer-layout-review-2026-10-24 -maxdepth 1 -type f -name '*.png' | wc -l)" -eq 14
+
+  backend:
+    name: Backend portability, data safety, and HTTP tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install test dependencies
+        run: python -m pip install pytest PyYAML 'pydantic>=2,<3'
+      - name: Python syntax
+        run: python -m compileall -q mindmap
+      - name: Full mind-map regression suite
+        run: python -m pytest -q mindmap/tests
+      - name: Source maps are untouched by the viewer commit
+        run: |
+          git diff --exit-code HEAD^ HEAD -- research/manual_map_sessions_2026_10_22/owner_working_map/current_map.yaml research/manual_map_sessions_2026_10_22/owner_working_map/reference_map.yaml research/integrated_reference_map_2026_10_22/nodes.yaml research/integrated_reference_map_2026_10_22/sources.yaml mindmap/data/bep_map.yaml mindmap/data/bep_draft_overlay.yaml
+
+  windows-launcher:
+    name: One-click local owner-map startup
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install runtime dependencies
+        run: python -m pip install PyYAML 'pydantic>=2,<3'
+      - name: Run the root launcher and verify the read-only snapshot
+        shell: powershell
+        run: |
+          $env:BEP_MINDMAP_NO_BROWSER = '1'
+          $env:BEP_MINDMAP_PORT = '8768'
+          $env:BEP_MINDMAP_PYTHON = (Get-Command python).Source
+          $mapPath = Join-Path $PWD 'research/manual_map_sessions_2026_10_22/owner_working_map/current_map.yaml'
+          $beforeHash = (Get-FileHash -Algorithm SHA256 $mapPath).Hash
+          $launcher = Start-Process -FilePath 'cmd.exe' -ArgumentList '/d /c Open_BEP_Mind_Map.bat' -WorkingDirectory $PWD -PassThru -WindowStyle Hidden
+          try {
+            $ready = $false
+            for ($attempt = 0; $attempt -lt 60; $attempt++) {
+              try {
+                $config = Invoke-RestMethod 'http://127.0.0.1:8768/api/config' -TimeoutSec 1
+                if (('owner' -in $config.available_modes) -and $config.owner_snapshot_read_only) {
+                  $ready = $true
+                  break
+                }
+              } catch { }
+              Start-Sleep -Seconds 1
+            }
+            if (-not $ready) { throw 'The launcher did not expose the read-only owner snapshot within 60 seconds.' }
+            $owner = Invoke-RestMethod 'http://127.0.0.1:8768/api/graph?mode=owner' -TimeoutSec 5
+            if (-not $owner.nodes -or $owner.nodes.Count -lt 1) { throw 'The owner graph returned no nodes.' }
+            $roots = @($owner.nodes | Where-Object { $null -eq $_.parent })
+            if ($roots.Count -ne 1) { throw "Expected one connected graph root; got $($roots.Count)." }
+            $afterHash = (Get-FileHash -Algorithm SHA256 $mapPath).Hash
+            if ($beforeHash -ne $afterHash) { throw 'The one-click reader modified the owner-map source file.' }
+            if (-not $launcher.WaitForExit(15000)) { throw 'The launcher did not return after opening the local server.' }
+            if ($launcher.ExitCode -ne 0) { throw "The launcher returned exit code $($launcher.ExitCode)." }
+            Write-Host "Read-only owner snapshot loaded: $($owner.nodes.Count) nodes; source hash unchanged."
+          } finally {
+            $serverProcesses = Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '*mindmap.preview*' -and $_.CommandLine -like '*--port 8768*' }
+            foreach ($serverProcess in $serverProcesses) { Stop-Process -Id $serverProcess.ProcessId -Force -ErrorAction SilentlyContinue }
+            if (-not $launcher.HasExited) { Stop-Process -Id $launcher.Id -Force -ErrorAction SilentlyContinue }
+          }

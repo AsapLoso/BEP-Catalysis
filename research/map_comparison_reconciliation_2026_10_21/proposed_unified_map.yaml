@@ -1,0 +1,1329 @@
+dataset:
+  name: Proposed unified BEP scientific reference map
+  edition: reconciliation-proposal-2026-10-21
+  status: proposed_only
+  authorship: AI-authored provisional synthesis
+  maturity_ceiling: ai_worked_out
+  personal_understanding: not_assessed
+  human_verification: not_claimed
+  purpose: Semantic reconciliation proposal. It does not replace, rewrite, merge or promote either source map.
+  scope_anchor: Academics/BEP/Catalysis/0_Project_Management/main.tex
+source_snapshots:
+- dataset: original_ai_map
+  branch: devcontainer
+  commit: f18682d97153251f23396ca7b82fd9dd38f0edf0
+  files:
+  - path: Academics/BEP/Catalysis/mindmap/data/bep_map.yaml
+    blob: 5669f2481cbb24505f49cc5531069553defd8cbd
+  - path: Academics/BEP/Catalysis/mindmap/data/bep_draft_overlay.yaml
+    blob: 5816807c2d3077e367d3a3bb9ce014a76b3112fe
+- dataset: independent_v2
+  branch: work/bep-independent-reference-v2-20261021
+  commit: ea391357ad8e4e03cfd27324d4b274513826b254
+  path: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/
+node_contract:
+  required_fields:
+  - id
+  - parent
+  - title
+  - kind
+  - status
+  - maturity
+  - summary
+  - explanation
+  - equations
+  - assumptions
+  - limitations
+  - open_questions
+  - source_map_refs
+  - primary_source_ids
+  id_policy: Only shared root and discipline IDs are reused. Proposed content IDs use u_; both source datasets and
+    their IDs remain preserved.
+  evidence_policy: Literature observation, mathematical result under assumptions, project hypothesis and unverified
+    mechanism remain distinct.
+nodes:
+- id: bep
+  parent: null
+  title: BEP scientific domain
+  kind: root
+  status: proposed_ai_reference
+  maturity: idea
+  summary: Dynamic acetylene semi-hydrogenation in a packed bed and conditional periodic-versus-optimized-steady comparison.
+  explanation: This is an integration proposal, not a merged dataset or validated conclusion. It preserves both maps
+    as immutable snapshots and relates them with semantic crosswalks.
+  equations: []
+  assumptions:
+  - All synthesis remains AI-provisional.
+  limitations:
+  - No personal understanding, human verification, simulator, fitted parameters, optimized waveform or performance
+    gain is certified.
+  open_questions:
+  - Under what catalyst, model, forcing, objective and experimental conditions can periodic forcing improve ethylene
+    performance against an optimized feasible steady benchmark?
+  source_map_refs:
+    original:
+    - bep
+    independent_v2:
+    - bep
+  primary_source_ids:
+  - proposal_main
+- id: physics
+  parent: bep
+  title: Physics
+  kind: discipline
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: Reaction chemistry, catalyst state, kinetics, transport, thermal behavior and measurement.
+  explanation: The physical response is catalyst- and apparatus-specific. Connect chemistry to local rates, transport,
+    thermal state and observation without treating a source catalyst as the BEP target.
+  equations: []
+  assumptions: []
+  limitations:
+  - Target catalyst and apparatus applicability remain unresolved.
+  open_questions:
+  - Which physical states are needed at the first evidence-supported fidelity?
+  source_map_refs:
+    original:
+    - physics
+    independent_v2:
+    - physics
+  primary_source_ids:
+  - proposal_main
+- id: mathematics
+  parent: bep
+  title: Mathematics
+  kind: discipline
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: Conservation models, scaling, periodic dynamics, numerics, inverse problems and uncertainty.
+  explanation: Derivations are separated from empirical observations and conditioned on explicit equations, conventions
+    and feasible sets. Numerical reproducibility is not experimental validation.
+  equations: []
+  assumptions: []
+  limitations:
+  - Final equation set, rate basis and uncertainty model remain open.
+  open_questions:
+  - Which reductions are justified by scales and target data?
+  source_map_refs:
+    original:
+    - mathematics
+    independent_v2:
+    - mathematics
+  primary_source_ids:
+  - proposal_main
+- id: systems_control
+  parent: bep
+  title: Systems & Control
+  kind: discipline
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: Plant boundary, input realization, excitation, measurement, objective, benchmark and feasibility.
+  explanation: Control concepts organize command and observation and fair comparison; they do not imply that a controller
+    or experiment has been executed.
+  equations: []
+  assumptions: []
+  limitations:
+  - Hardware limits, objective and evidence threshold need project/lab decisions.
+  open_questions:
+  - Which actuation and measurement configuration is available?
+  source_map_refs:
+    original:
+    - systems_control
+    independent_v2:
+    - systems_control
+  primary_source_ids:
+  - proposal_main
+- id: u_ph_reaction
+  parent: physics
+  title: Reaction network, pathways and products
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: The sequential C2H2 → C2H4 → C2H6 backbone defines the desired intermediate and principal over-hydrogenation
+    loss; microscopic routes and side products remain catalyst- and condition-dependent.
+  explanation: Keep net stoichiometry, elementary pathways and measured product accounting distinct. Pd/PdAg calculations
+    and catalyst-specific fits support alternatives such as vinyl, ethyl, ethylidene and ethylene desorption/readsorption,
+    but do not establish the BEP working surface. Include inlet ethylene, ethane, C4+ products and deposits in the
+    carbon boundary when measurements warrant. A forcing benefit is a hypothesis about joint pathway and transport
+    response, not a consequence of the reaction sequence.
+  equations:
+  - C2H2 + H2 → C2H4; C2H4 + H2 → C2H6 (net stoichiometry, not elementary mechanism)
+  - R_g = N r (state the stoichiometric matrix and rate basis)
+  assumptions:
+  - The C2 sequence is a minimum accounting scaffold, not a complete catalyst mechanism.
+  - Products below detection are unobserved, not necessarily absent.
+  limitations:
+  - Surface intermediates and competing products are source/catalyst specific.
+  - An incomplete carbon balance can misstate selectivity and deposition.
+  open_questions:
+  - Which products and carbon sinks are measurable over the forcing envelope?
+  - Does the target catalyst support any proposed Pd/PdAg route?
+  source_map_refs:
+    original:
+    - c1_reaction_chemistry_pathways
+    - c1_net_reaction_network
+    - c1_acetylene_semihydrogenation
+    - c1_ethylene_overhydrogenation
+    - c1_ethylene_rich_inlet
+    - c1_microscopic_surface_path
+    - c1_horiuti_polanyi_family
+    - c1_vinyl_intermediate
+    - c1_adsorbed_ethylene_fork
+    - c1_adsorbed_ethylene_desorption
+    - c1_ethyl_intermediate
+    - c1_parallel_ethane_paths
+    - c1_no_independent_direct_rate
+    - c1_vinyl_ethylidene_alternative
+    independent_v2:
+    - ph_reaction_chemistry
+    - ph_reaction_network
+    - ph_sequential_path
+    - ph_competing_channels
+  primary_source_ids:
+  - proposal_main
+  - mei2009
+  - pachulski2012
+  - urmes2019
+  - lan2025
+- id: u_ph_catalyst
+  parent: physics
+  title: Catalyst identity, active sites and working-surface state
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: Nominal Pd:Ag composition does not uniquely specify working-surface structure, site ensembles, support
+    interactions, pretreatment, adsorbate inventory or history.
+  explanation: Keep single-site, multisite, alloy-ensemble, hydride and changing-surface models as competing families.
+    Dissociative H2 adsorption may require adjacent vacancies in a chosen mechanism; site-count and coverage conventions
+    must follow that mechanism. The 2019 Pd catalyst, modeled Pd/PdAg surfaces, a studied PdAg/TiO2 catalyst and the
+    BEP catalyst are not interchangeable evidence objects. Surface-state and deposit hypotheses should remain explicit
+    and testable.
+  equations:
+  - 'For a specified site family s: Σ_j θ_(j,s) = 1; multisite models need a balance for each family.'
+  assumptions:
+  - A site balance is model-specific; one vacancy fraction is not universal.
+  - Static characterization constrains structure but does not alone determine transient rates.
+  limitations:
+  - Target catalyst/support, preparation, pretreatment, particle geometry and working state are unresolved.
+  - PdAg ensemble effects cannot be transferred quantitatively without evidence.
+  open_questions:
+  - What exact catalyst formulation, support and preparation define the BEP?
+  - Do hydrogen storage, segregation, deposits or deactivation evolve on the forcing timescale?
+  source_map_refs:
+    original:
+    - physics_catalytic_chemistry
+    - c1_catalyst_active_site_chemistry
+    - c1_catalyst_identity
+    - c1_urmes_source_catalyst
+    - c1_pdag_support_transfer
+    - c1_multisite_hydride_carbide
+    - c1_surface_sites
+    - c1_full_site_balance
+    - c1_reduced_site_balance
+    - c1_adsorption_desorption
+    - c1_dissociative_h2_adsorption
+    - c1_adjacent_site_requirement
+    - c1_hydrocarbon_site_competition
+    - c1_ethylene_readsorption
+    - c1_c4_coke_deactivation
+    independent_v2:
+    - ph_catalyst_chemistry
+    - ph_site_ensembles
+    - ph_pd_ag_surface
+    - ph_catalyst_memory
+    - ph_surface_states
+    - ph_deposits
+  primary_source_ids:
+  - pachulski2012
+  - urmes2019
+  - mei2009
+  - li2021
+  - borodzinski2000
+  - borodzinski2006
+- id: u_ph_kinetics
+  parent: physics
+  title: Kinetic law, thermal dependence and surface-memory closures
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: An algebraic effective rate law and explicit dynamic coverages are alternative closures; a dynamic reactor
+    does not require dynamic surface states.
+  explanation: A PSSA/Langmuir–Hinshelwood model can map local gas composition and temperature to rates instantaneously
+    while gas-phase bed states remain transient. Explicit coverage ODEs require an elementary mechanism, site balances,
+    adsorption/desorption constants and identifiable parameters. Preserve the original centered-Arrhenius correction
+    and validity conditions. Parameter estimation under excitation is distinct from evidence of improved production.
+  equations:
+  - dθ/dt = S_s r_s(θ,c,T), subject to site balance
+  - k(T)=k(T_ref) exp[−E_a/R (1/T−1/T_ref)] (reference-rate Arrhenius form)
+  assumptions:
+  - PSSA is a local closure, not a claim that the whole reactor is steady.
+  - Rate basis and gas/adsorbate coupling must be dimensionally and stoichiometrically consistent.
+  limitations:
+  - Published kinetics are conditioned on catalyst, feed and fitted data.
+  - Two original claims misbind the Berger DOI; correcting the citation does not validate the target rate law.
+  open_questions:
+  - Which closure is identifiable from target-catalyst transient data?
+  - Are adsorption and surface relaxation times comparable to feasible forcing periods?
+  source_map_refs:
+    original:
+    - physics_reaction_kinetics
+    - lhhw_kinetics
+    - centered_arrhenius
+    - surface_coverage_dynamics
+    - c1_kinetic_closure_boundary
+    - c2_urmes_2019_effective_rates
+    - c2_urmes_2019_adsorption_denominator
+    - c2_urmes_2019_net_rates
+    - c2_urmes_2019_parameter_ledger
+    - c2_surface_kinetic_closure_choices
+    - c2_pssa_not_steady_reactor
+    - c2_dynamic_theta_model_calibration_gap
+    independent_v2:
+    - ph_lh_rates
+    - ph_adsorbate_balance
+    - ph_mechanism_choice
+    - ph_dynamic_memory
+  primary_source_ids:
+  - urmes2019
+  - pachulski2012
+  - berger2008
+  - urmes2022
+  - proposal_main
+- id: u_ph_transport
+  parent: physics
+  title: Packed-bed, pellet and interphase transport
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: The bed-plane forcing seen by catalyst particles can differ from a commanded inlet because of mixing, residence-time
+    distribution, dispersion and gas–solid transport.
+  explanation: Represent axial convection and optional dispersion with a declared coordinate and flux convention;
+    assess external-film and intraparticle resistance before choosing an effectiveness-factor or lumped-rate model.
+    Tracer response and pellet transport can filter or phase-shift a waveform. Danckwerts boundary conditions are
+    tied to a flux formulation and should not be copied into an incompatible PDE convention.
+  equations:
+  - ∂(ε c_i)/∂t + ∂(u_s c_i)/∂z = ∂/∂z(D_ax ∂c_i/∂z) + (1−ε)ρ_cat R_i (stated basis required)
+  assumptions:
+  - One-dimensional axial geometry is a reduction.
+  - Neglect of dispersion, film or pellet gradients requires a scale argument or data.
+  limitations:
+  - Target bed dimensions, tracer response, particle properties and transport coefficients are unresolved.
+  - A frequency window from one diffusion-limited pellet example is not universal.
+  open_questions:
+  - What is the measured command-to-bed-plane transfer function?
+  - Are axial, film or pellet timescales material at candidate frequencies?
+  source_map_refs:
+    original:
+    - physics_transport_phenomena
+    - transport_phenomena
+    - internal_diffusion_thiele
+    - external_film_transfer
+    independent_v2:
+    - ph_packed_bed
+    - ph_residence_time_distribution
+    - ph_axial_balance
+    - ph_axial_dispersion
+    - ph_pellet_transport
+    - ph_danckwerts
+  primary_source_ids:
+  - proposal_main
+  - danckwerts1953
+  - froment2011
+  - shi2024
+  - ziegelhoeffer1972
+- id: u_ph_thermal
+  parent: physics
+  title: Energy balance, thermal dynamics and catalyst evolution
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: An isothermal model is a falsifiable baseline; reaction heat, heat exchange and catalyst evolution can
+    add memory and constrain safe operation.
+  explanation: Assess an energy balance using measured heat release, bed heat capacity, wall/jacket transfer and spatial
+    temperature evidence before treating temperature as fixed. Thermal runaway limits and jacket dynamics couple physical
+    chemistry to operating constraints. Deposits or aging may be slow states; if they evolve across cycles, a one-cycle
+    objective can hide campaign-scale loss.
+  equations:
+  - C_eff ∂T/∂t + heat transport = heat exchange + (−ΔH_r) r (schematic; consistent basis required)
+  assumptions:
+  - Isothermal operation is a comparison model, not established target behavior.
+  - Thermal and aging states can be omitted only when their effects and timescales are bounded.
+  limitations:
+  - Target heat-transfer coefficients, thermocouple response, exotherm and aging times are not established.
+  - Runaway boundaries are not transferable without matching parameters and geometry.
+  open_questions:
+  - Are temperature oscillations material to kinetic sensitivity and selectivity margins?
+  - Should productivity include aging and utility costs over repeated cycles?
+  source_map_refs:
+    original:
+    - physics_reactor_thermodynamics
+    - reaction_thermodynamics
+    independent_v2:
+    - ph_thermal_evolution
+    - ph_energy_balance
+    - ph_isothermal
+  primary_source_ids:
+  - proposal_main
+  - zhu2021
+  - borodzinski2006
+  - borodzinski2000
+- id: u_ma_conservation
+  parent: mathematics
+  title: Stoichiometric and continuum conservation models
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: Gas, surface and product balances need consistent species, rate and volume bases with explicit initial
+    and boundary data.
+  explanation: Connect reaction source vectors to axial gas transport and, where selected, surface-state dynamics.
+    State whether concentrations are on gas-void, total-bed-volume or catalyst-mass basis; convert solid rates with
+    matching porosity and density factors. Algebraic PSSA rates may feed transient gas PDEs; dynamic coverage adds
+    states and possibly algebraic constraints.
+  equations:
+  - ∂(εc)/∂t + ∂J/∂z = (1−ε)ρ_cat N r
+  - dθ/dt = S_s r_s (or justified algebraic closure)
+  assumptions:
+  - Continuum averaging and one-dimensional geometry are model reductions.
+  - Initial and boundary conditions are part of the model.
+  limitations:
+  - Final harmonized rate/volume basis is still needed.
+  - Stoichiometric completeness depends on product coverage.
+  open_questions:
+  - Which conserved quantities and dimensions will be checked?
+  - Which boundary convention represents the inlet/outlet hardware?
+  source_map_refs:
+    original:
+    - math_mathematical_modelling
+    - pbr_governing_pdes
+    - c1_net_gas_source_vector
+    independent_v2:
+    - ma_conservation
+    - ma_stoichiometry
+    - ma_gas_pde
+    - ma_surface_balance
+    - ma_initial_boundary
+  primary_source_ids:
+  - proposal_main
+  - froment2011
+  - danckwerts1953
+  - urmes2019
+- id: u_ma_scaling
+  parent: mathematics
+  title: Dimensionless groups and timescale hierarchy
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: Dimensionless ratios organize transport and forcing regimes but are not evidence of resonance or gain by
+    themselves.
+  explanation: Use axial Péclet, Damköhler, forcing/residence, pellet Thiele and relevant thermal or adsorption timescale
+    ratios to screen regimes and justify reductions. Define every group from the chosen dimensional equations; conventions
+    can invert ratios or change prefactors. Scaling should guide experiment design and numerical resolution, then
+    be checked against measured plant response.
+  equations:
+  - Pe_ax = uL/D_ax (convention-dependent)
+  - Da = k_eff C_ref L/u (illustrative; rate-law dependent)
+  - St = f τ_res or ω τ_res (state frequency convention)
+  - φ = R_p sqrt(k/D_eff) (illustrative first-order pellet scaling)
+  assumptions:
+  - Groups require a stated geometry, kinetic law and reference scale.
+  - Timescale coincidence motivates a test; it does not prove a gain.
+  limitations:
+  - Target measurements and parameters needed to evaluate groups are unresolved.
+  - Expressions change for nonlinear rates, geometry and nonisothermal pellets.
+  open_questions:
+  - Which timescales are measured versus inferred?
+  - Which model reductions survive target-specific screening?
+  source_map_refs:
+    original: []
+    independent_v2:
+    - ma_dimensionless
+    - ma_pellet_scaling
+    - ma_Peclet
+    - ma_Damkohler
+    - ma_Strouhal
+    - ma_timescale
+  primary_source_ids:
+  - proposal_main
+  - shi2024
+  - ziegelhoeffer1972
+  - froment2011
+- id: u_ma_numerics
+  parent: mathematics
+  title: Discretization, stiff integration and numerical verification
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: A transient discretized model needs spatial, temporal and periodic-orbit convergence evidence before small
+    predicted gains can be interpreted physically.
+  explanation: The method of lines converts PDEs to potentially stiff ODE/DAE systems. Convection-dominated transport
+    can cause numerical diffusion or oscillation; switching inputs challenge error control and event handling. Verify
+    grid/time refinement, conservation, physical bounds, periodic residuals, tolerances and suitable alternative discretizations.
+    Verification is not validation against data.
+  equations:
+  - 'MOL: dx_h/dt = F_h(x_h,u,t)'
+  - 'Periodic residual: ||x(T)−x(0)|| ≤ stated tolerance'
+  assumptions:
+  - Solver choice follows stiffness and smoothness diagnostics.
+  - Input switching times are represented consistently.
+  limitations:
+  - No solver, grid or simulation is executed or endorsed here.
+  - The proposal numerical plan is prospective.
+  open_questions:
+  - What refinement and balance tolerances are small relative to the claimed difference?
+  - Do alternative schemes converge to the same periodic objective?
+  source_map_refs:
+    original:
+    - math_numerical_analysis
+    - method_of_lines_mol
+    - stiff_ode_solvers
+    independent_v2:
+    - ma_numerics
+    - ma_MOL
+    - ma_convection_scheme
+    - ma_stiff_solver
+    - ma_discontinuous_input
+    - ma_numerical_checks
+  primary_source_ids:
+  - proposal_main
+  - froment2011
+  - urakawa2008
+- id: u_ma_periodic
+  parent: mathematics
+  title: Periodic orbits, mean response and no-gain limits
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: The sign of periodic-operation effects is conditional; mathematical limits and contrasting model-specific
+    studies rule out universal benefit claims.
+  explanation: At settled periodic response, a stable LTI system has mean output equal to its DC response to mean
+    input. A static concave response obeys Jensen’s no-gain bound at fixed mean. Nonlinear stateful systems may rectify
+    forcing positively, negatively or not at all. A strict advantage is not implied by nonlinearity or a frequency
+    window in one pellet model. Separately, if the periodic feasible set contains all steady controls under identical
+    constraints and objective, its global optimum cannot be worse; this does not prove a strict gain or real-world
+    feasibility.
+  equations:
+  - 'Stable LTI: mean(y)=G(0) mean(u) at settled periodic response'
+  - 'Static concave f: E[f(u)]≤f(E[u])'
+  - U_s⊆U_p ⇒ max_(u∈U_p)J(u)≥max_(u∈U_s)J(u), for identical objective/constraints
+  assumptions:
+  - LTI result requires stability and settled periodic response.
+  - Jensen requires a memoryless concave response and fixed-mean input.
+  - Set inclusion requires matched resource, safety and campaign constraints.
+  limitations:
+  - Gain and no-gain examples use different models and are not a contradiction for one target plant.
+  - No theorem fixes the gain sign for the proposed nonlinear reactor.
+  open_questions:
+  - Which nonlinear memory/transport mechanisms survive target-specific tests?
+  - Does periodic operation beat the optimized steady point after uncertainty and actuator limits?
+  source_map_refs:
+    original:
+    - math_dynamical_systems
+    independent_v2:
+    - ma_periodic_system
+    - ma_average_gain
+    - ma_lti_no_gain
+    - ma_concavity_bound
+    - ma_nonlinear_rectification
+    - ma_periodic_orbit
+    - ma_stability
+  primary_source_ids:
+  - proposal_main
+  - feimer1982
+  - horn_bailey1971
+  - ziegelhoeffer1972
+  - silveston1995
+  - espinoza2022
+  - kaps2026
+- id: u_ma_inverse
+  parent: mathematics
+  title: Identifiability, sensitivity and uncertainty
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: A model reproducing one transient need not uniquely identify parameters or predict a robust optimum.
+  explanation: Separate structural and practical identifiability, sensitivity and uncertainty propagation. Correlated
+    kinetic parameters, uncertain catalyst state, latent profiles and analyzer filtering can make models observationally
+    similar. Excitation may improve discrimination, but must respect measurement bandwidth, noise and constraints.
+    Propagate parameter and model uncertainty into the periodic-versus-steady difference.
+  equations:
+  - S_ij = ∂y_i/∂p_j; rank/conditioning is local and conditional on model, outputs and trajectory
+  assumptions:
+  - Identifiability depends on model, input, output and noise assumptions.
+  - Parameter confidence is not model adequacy.
+  limitations:
+  - No target fit, posterior or sensitivity result is produced.
+  - The original sensitivity threshold requires source- and model-specific checking.
+  open_questions:
+  - Which parameter combinations are practically identifiable?
+  - What uncertainty bound makes a gain distinguishable from zero?
+  source_map_refs:
+    original:
+    - math_inverse_problems
+    - parameter_sensitivity_jacobian
+    - c2_transient_parameter_identifiability
+    independent_v2:
+    - ma_inverse
+    - ma_identifiability
+    - ma_sensitivity
+  primary_source_ids:
+  - proposal_main
+  - urmes2022
+  - berger2008
+  - urakawa2008
+  - pachulski2012
+- id: u_sc_plant
+  parent: systems_control
+  title: Plant, input realization and model boundary
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: The command, realized bed-plane composition, reactor states and measured outputs form an input–state–output
+    boundary.
+  explanation: Trace feed commands through controllers, mixer/manifold, total-flow and pressure coupling, inlet volume
+    and bed dispersion to forcing at the particles. Include output sampling and analyzer dynamics. Distinguish plant
+    from equipment and observation dynamics; a reduced model is acceptable only for the question and bandwidth it
+    preserves.
+  equations:
+  - u_bed(t)=H_in(s)u_cmd(t) is a possible local linearization; identify or validate H_in rather than assume command
+    equals bed input.
+  assumptions:
+  - Input-path linearization is local and may fail near saturation or switching limits.
+  - A measured output is not an internal state.
+  limitations:
+  - Target controller, MFC, mixer, pressure and analyzer configuration are unspecified.
+  - PDC is conceptual provenance, not actual-reactor evidence.
+  open_questions:
+  - Which variables are manipulated, measured and constrained?
+  - Can bed-plane input be measured/reconstructed at relevant frequencies?
+  source_map_refs:
+    original:
+    - system_modelling_reduction
+    - pdc_process_dynamics_foundations
+    independent_v2:
+    - sc_plant
+    - sc_manipulated_input
+    - sc_bed_input_realization
+  primary_source_ids:
+  - proposal_main
+  - proposal_roadmap
+  - danckwerts1953
+  - espinoza2022
+- id: u_sc_excitation
+  parent: systems_control
+  title: Periodic excitation and kinetic discrimination
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: Periodic inputs may reveal dynamic kinetics, but successful parameter identification is distinct from production
+    improvement.
+  explanation: Specify waveform, mean, amplitude, frequency, phase, duty cycle and slew behavior at the plant boundary.
+    Design excitation to distinguish kinetic closures while respecting actuators, safety and analyzer sampling. Modulation-excitation
+    spectroscopy and periodic reactor experiments are methodological precedents; their objective and catalyst must
+    remain distinct from this BEP performance question.
+  equations:
+  - 'Two-level input mean: δu_H+(1−δ)u_L, with both levels and duty fraction stated.'
+  assumptions:
+  - Command and bed-plane waveforms may differ.
+  - Excitation quality is judged against discrimination and observation limits.
+  limitations:
+  - Urmès et al. 2022 is periodic Pd/α-Al2O3 acetylene precedent for estimation/prediction, not optimized net-production
+    gain.
+  open_questions:
+  - Which excitation is safe, realizable and informative?
+  - What output bandwidth and phase accuracy are required?
+  source_map_refs:
+    original:
+    - system_identification
+    - system_input_experiment_design
+    - periodic_feed_forcing
+    independent_v2:
+    - sc_periodic_forcing
+    - sc_excitation
+    - sc_waveform
+  primary_source_ids:
+  - urmes2022
+  - berger2008
+  - silveston1995
+  - urakawa2008
+  - proposal_main
+- id: u_sc_objective
+  parent: systems_control
+  title: Cycle metric and optimized steady benchmark
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: An improvement claim needs a declared cycle metric and fully optimized steady comparator under matched
+    constraints.
+  explanation: Separate conversion, selectivity, yield and productivity; state carbon basis, inlet-product subtraction,
+    horizon, catalyst-mass normalization, conversion floor and resource constraints. Compare periodic cycle performance
+    to the best feasible steady point, not an arbitrary nominal point. Feasible-set nesting gives weak no-worse ordering
+    only if objective and constraints match; strict gain still needs evidence and uncertainty separation.
+  equations:
+  - N_E,net=∫(F_E,out−F_E,in)dt; N_A,cons=∫(F_A,in−F_A,out)dt
+  - S_E=N_E,net/N_A,cons under a stated carbon/selectivity convention; productivity=N_E,net/(m_cat T)
+  assumptions:
+  - Both cases use matched feed, conversion, pressure, thermal, safety and campaign constraints.
+  - Integrate after a declared periodic-orbit/startup criterion.
+  limitations:
+  - The exact objective and feasible set remain project decisions.
+  - Different objective definitions may reverse the ranking.
+  open_questions:
+  - Net production, selectivity at conversion floor, productivity or Pareto objective?
+  - Include startup, cycle duration, energy, aging and inlet ethylene?
+  source_map_refs:
+    original:
+    - math_optimization_theory
+    - system_control_optimization
+    independent_v2:
+    - ph_metrics
+    - sc_baseline
+    - sc_benchmark_nesting
+    - sc_optimization
+    - sc_objective
+    - sc_local_search
+  primary_source_ids:
+  - proposal_main
+  - lan2025
+  - urmes2022
+- id: u_sc_observation
+  parent: systems_control
+  title: Measurements, observability and state estimation
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: Outlet analyzers observe filtered boundary signals; bed concentration and coverage profiles are latent
+    without additional measurements or a validated observer.
+  explanation: Model sensor response, sampling, calibration, delay, noise and detection limits before fitting transients
+    or evaluating cycles. Observability depends on model, sensors and trajectory; EKF/UKF is a future method, not
+    proof that latent coverages are recoverable. Modulation spectroscopy may associate periodic signals with surface
+    response but requires catalyst-specific assignments and temporal resolution.
+  equations:
+  - τ_a dy_m/dt+y_m=y_out is a first-order analyzer model only if experimentally supported.
+  assumptions:
+  - Measurement dynamics belong to the observation model.
+  - Observability is conditional on model, input and outputs.
+  limitations:
+  - No analyzer response, noise, sensor layout or observer performance is validated here.
+  - Spectra or gas analysis do not directly identify every intermediate.
+  open_questions:
+  - Which states can actual measurements distinguish?
+  - What analyzer delay, bandwidth, sampling and detection limits apply?
+  source_map_refs:
+    original:
+    - physics_experiments_measurements
+    - system_filtering_estimation
+    - state_observer_mpc
+    independent_v2:
+    - ph_measurement
+    - ph_boundary_measurement
+    - ph_operando_spectroscopy
+    - sc_output_model
+    - sc_state_estimation
+    - sc_observability
+    - sc_ekf_ukf
+  primary_source_ids:
+  - proposal_main
+  - urakawa2008
+  - espinoza2022
+  - urmes2022
+- id: u_sc_feasibility
+  parent: systems_control
+  title: Feasibility, robustness and evidence ladder
+  kind: proposed_theme
+  status: proposed_ai_reference
+  maturity: ai_worked_out
+  summary: The periodic feasible set includes hardware, process, safety, uncertainty and campaign constraints; scientific
+    claims need staged numerical and experimental evidence.
+  explanation: Bound inlet composition, total flow, pressure, temperature, slew, cycling frequency, runaway, catalyst
+    health and sensor bandwidth from apparatus evidence. Separate numerical verification, parameter estimation, held-out
+    validation and prospective performance comparison. A local optimizer solution is not global unless established.
+    Model predictions are conditional on applicability; robustness across plausible parameters and model alternatives
+    matters when gains are small.
+  equations:
+  - U_p should encode amplitude, mean feed, flow, pressure, slew, temperature and safety; U_s uses compatible resource
+    accounting.
+  assumptions:
+  - Operating limits and uncertainty distributions are target-specific.
+  - Evidence stages answer different questions and are not interchangeable.
+  limitations:
+  - No simulator, optimizer, validation experiment or safety study is executed in this task.
+  - Proposal plans are not results.
+  open_questions:
+  - Which constraints define the admissible periodic set?
+  - What held-out evidence is needed for a credible gain?
+  - How should degradation and campaign duration enter?
+  source_map_refs:
+    original:
+    - reactor_operating_window
+    - cooling_jacket_control
+    independent_v2:
+    - sc_hardware_constraints
+    - sc_robustness
+    - sc_experiment_design
+    - sc_identification_vs_performance
+    - sc_co_design
+    - sc_validation
+  primary_source_ids:
+  - proposal_main
+  - proposal_method
+  - silveston1995
+  - pachulski2012
+  - urmes2022
+  - espinoza2022
+cross_links:
+- from: u_ph_reaction
+  to: u_ma_conservation
+  relation: stoichiometry-and-source-vector
+- from: u_ph_catalyst
+  to: u_ph_kinetics
+  relation: site-structure-constrains-closure
+- from: u_ph_kinetics
+  to: u_ma_inverse
+  relation: kinetic-parameter-identifiability
+- from: u_ph_kinetics
+  to: u_sc_excitation
+  relation: surface-timescales-and-forcing
+- from: u_ph_transport
+  to: u_sc_plant
+  relation: input-realization-and-RTD
+- from: u_ph_transport
+  to: u_ma_scaling
+  relation: transport-regime-groups
+- from: u_ph_thermal
+  to: u_sc_feasibility
+  relation: thermal-limits
+- from: u_ma_periodic
+  to: u_sc_objective
+  relation: periodic-steady-comparison
+- from: u_ma_periodic
+  to: u_ma_inverse
+  relation: uncertainty-in-gain-sign
+- from: u_sc_excitation
+  to: u_sc_observation
+  relation: excitation-and-measurement-bandwidth
+- from: u_sc_objective
+  to: u_sc_feasibility
+  relation: matched-objective-and-constraints
+- from: u_sc_observation
+  to: u_ma_inverse
+  relation: observability-and-identifiability
+- from: u_sc_feasibility
+  to: u_ma_numerics
+  relation: claim-tolerance-and-resolution
+crosswalk:
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_reaction_chemistry_pathways
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_net_reaction_network
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_acetylene_semihydrogenation
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_ethylene_overhydrogenation
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_ethylene_rich_inlet
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_microscopic_surface_path
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_horiuti_polanyi_family
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_vinyl_intermediate
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_adsorbed_ethylene_fork
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_adsorbed_ethylene_desorption
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_ethyl_intermediate
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_parallel_ethane_paths
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_no_independent_direct_rate
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_vinyl_ethylidene_alternative
+  proposed_node_id: u_ph_reaction
+- dataset: independent_v2
+  source_node_id: ph_reaction_chemistry
+  proposed_node_id: u_ph_reaction
+- dataset: independent_v2
+  source_node_id: ph_reaction_network
+  proposed_node_id: u_ph_reaction
+- dataset: independent_v2
+  source_node_id: ph_sequential_path
+  proposed_node_id: u_ph_reaction
+- dataset: independent_v2
+  source_node_id: ph_competing_channels
+  proposed_node_id: u_ph_reaction
+- dataset: original_devcontainer_overlay
+  source_node_id: physics_catalytic_chemistry
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_catalyst_active_site_chemistry
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_catalyst_identity
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_urmes_source_catalyst
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_pdag_support_transfer
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_multisite_hydride_carbide
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_surface_sites
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_full_site_balance
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_reduced_site_balance
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_adsorption_desorption
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_dissociative_h2_adsorption
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_adjacent_site_requirement
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_hydrocarbon_site_competition
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_ethylene_readsorption
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_c4_coke_deactivation
+  proposed_node_id: u_ph_catalyst
+- dataset: independent_v2
+  source_node_id: ph_catalyst_chemistry
+  proposed_node_id: u_ph_catalyst
+- dataset: independent_v2
+  source_node_id: ph_site_ensembles
+  proposed_node_id: u_ph_catalyst
+- dataset: independent_v2
+  source_node_id: ph_pd_ag_surface
+  proposed_node_id: u_ph_catalyst
+- dataset: independent_v2
+  source_node_id: ph_catalyst_memory
+  proposed_node_id: u_ph_catalyst
+- dataset: independent_v2
+  source_node_id: ph_surface_states
+  proposed_node_id: u_ph_catalyst
+- dataset: independent_v2
+  source_node_id: ph_deposits
+  proposed_node_id: u_ph_catalyst
+- dataset: original_devcontainer_overlay
+  source_node_id: physics_reaction_kinetics
+  proposed_node_id: u_ph_kinetics
+- dataset: original_devcontainer_overlay
+  source_node_id: lhhw_kinetics
+  proposed_node_id: u_ph_kinetics
+- dataset: original_devcontainer_overlay
+  source_node_id: centered_arrhenius
+  proposed_node_id: u_ph_kinetics
+- dataset: original_devcontainer_overlay
+  source_node_id: surface_coverage_dynamics
+  proposed_node_id: u_ph_kinetics
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_kinetic_closure_boundary
+  proposed_node_id: u_ph_kinetics
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_urmes_2019_effective_rates
+  proposed_node_id: u_ph_kinetics
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_urmes_2019_adsorption_denominator
+  proposed_node_id: u_ph_kinetics
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_urmes_2019_net_rates
+  proposed_node_id: u_ph_kinetics
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_urmes_2019_parameter_ledger
+  proposed_node_id: u_ph_kinetics
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_surface_kinetic_closure_choices
+  proposed_node_id: u_ph_kinetics
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_pssa_not_steady_reactor
+  proposed_node_id: u_ph_kinetics
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_dynamic_theta_model_calibration_gap
+  proposed_node_id: u_ph_kinetics
+- dataset: independent_v2
+  source_node_id: ph_lh_rates
+  proposed_node_id: u_ph_kinetics
+- dataset: independent_v2
+  source_node_id: ph_adsorbate_balance
+  proposed_node_id: u_ph_kinetics
+- dataset: independent_v2
+  source_node_id: ph_mechanism_choice
+  proposed_node_id: u_ph_kinetics
+- dataset: independent_v2
+  source_node_id: ph_dynamic_memory
+  proposed_node_id: u_ph_kinetics
+- dataset: original_devcontainer_overlay
+  source_node_id: physics_transport_phenomena
+  proposed_node_id: u_ph_transport
+- dataset: original_devcontainer_overlay
+  source_node_id: transport_phenomena
+  proposed_node_id: u_ph_transport
+- dataset: original_devcontainer_overlay
+  source_node_id: internal_diffusion_thiele
+  proposed_node_id: u_ph_transport
+- dataset: original_devcontainer_overlay
+  source_node_id: external_film_transfer
+  proposed_node_id: u_ph_transport
+- dataset: independent_v2
+  source_node_id: ph_packed_bed
+  proposed_node_id: u_ph_transport
+- dataset: independent_v2
+  source_node_id: ph_residence_time_distribution
+  proposed_node_id: u_ph_transport
+- dataset: independent_v2
+  source_node_id: ph_axial_balance
+  proposed_node_id: u_ph_transport
+- dataset: independent_v2
+  source_node_id: ph_axial_dispersion
+  proposed_node_id: u_ph_transport
+- dataset: independent_v2
+  source_node_id: ph_pellet_transport
+  proposed_node_id: u_ph_transport
+- dataset: independent_v2
+  source_node_id: ph_danckwerts
+  proposed_node_id: u_ph_transport
+- dataset: original_devcontainer_overlay
+  source_node_id: physics_reactor_thermodynamics
+  proposed_node_id: u_ph_thermal
+- dataset: original_devcontainer_overlay
+  source_node_id: reaction_thermodynamics
+  proposed_node_id: u_ph_thermal
+- dataset: independent_v2
+  source_node_id: ph_thermal_evolution
+  proposed_node_id: u_ph_thermal
+- dataset: independent_v2
+  source_node_id: ph_energy_balance
+  proposed_node_id: u_ph_thermal
+- dataset: independent_v2
+  source_node_id: ph_isothermal
+  proposed_node_id: u_ph_thermal
+- dataset: original_devcontainer_overlay
+  source_node_id: math_mathematical_modelling
+  proposed_node_id: u_ma_conservation
+- dataset: original_devcontainer_overlay
+  source_node_id: pbr_governing_pdes
+  proposed_node_id: u_ma_conservation
+- dataset: original_devcontainer_overlay
+  source_node_id: c1_net_gas_source_vector
+  proposed_node_id: u_ma_conservation
+- dataset: independent_v2
+  source_node_id: ma_conservation
+  proposed_node_id: u_ma_conservation
+- dataset: independent_v2
+  source_node_id: ma_stoichiometry
+  proposed_node_id: u_ma_conservation
+- dataset: independent_v2
+  source_node_id: ma_gas_pde
+  proposed_node_id: u_ma_conservation
+- dataset: independent_v2
+  source_node_id: ma_surface_balance
+  proposed_node_id: u_ma_conservation
+- dataset: independent_v2
+  source_node_id: ma_initial_boundary
+  proposed_node_id: u_ma_conservation
+- dataset: independent_v2
+  source_node_id: ma_dimensionless
+  proposed_node_id: u_ma_scaling
+- dataset: independent_v2
+  source_node_id: ma_pellet_scaling
+  proposed_node_id: u_ma_scaling
+- dataset: independent_v2
+  source_node_id: ma_Peclet
+  proposed_node_id: u_ma_scaling
+- dataset: independent_v2
+  source_node_id: ma_Damkohler
+  proposed_node_id: u_ma_scaling
+- dataset: independent_v2
+  source_node_id: ma_Strouhal
+  proposed_node_id: u_ma_scaling
+- dataset: independent_v2
+  source_node_id: ma_timescale
+  proposed_node_id: u_ma_scaling
+- dataset: original_devcontainer_overlay
+  source_node_id: math_numerical_analysis
+  proposed_node_id: u_ma_numerics
+- dataset: original_devcontainer_overlay
+  source_node_id: method_of_lines_mol
+  proposed_node_id: u_ma_numerics
+- dataset: original_devcontainer_overlay
+  source_node_id: stiff_ode_solvers
+  proposed_node_id: u_ma_numerics
+- dataset: independent_v2
+  source_node_id: ma_numerics
+  proposed_node_id: u_ma_numerics
+- dataset: independent_v2
+  source_node_id: ma_MOL
+  proposed_node_id: u_ma_numerics
+- dataset: independent_v2
+  source_node_id: ma_convection_scheme
+  proposed_node_id: u_ma_numerics
+- dataset: independent_v2
+  source_node_id: ma_stiff_solver
+  proposed_node_id: u_ma_numerics
+- dataset: independent_v2
+  source_node_id: ma_discontinuous_input
+  proposed_node_id: u_ma_numerics
+- dataset: independent_v2
+  source_node_id: ma_numerical_checks
+  proposed_node_id: u_ma_numerics
+- dataset: original_devcontainer_overlay
+  source_node_id: math_dynamical_systems
+  proposed_node_id: u_ma_periodic
+- dataset: independent_v2
+  source_node_id: ma_periodic_system
+  proposed_node_id: u_ma_periodic
+- dataset: independent_v2
+  source_node_id: ma_average_gain
+  proposed_node_id: u_ma_periodic
+- dataset: independent_v2
+  source_node_id: ma_lti_no_gain
+  proposed_node_id: u_ma_periodic
+- dataset: independent_v2
+  source_node_id: ma_concavity_bound
+  proposed_node_id: u_ma_periodic
+- dataset: independent_v2
+  source_node_id: ma_nonlinear_rectification
+  proposed_node_id: u_ma_periodic
+- dataset: independent_v2
+  source_node_id: ma_periodic_orbit
+  proposed_node_id: u_ma_periodic
+- dataset: independent_v2
+  source_node_id: ma_stability
+  proposed_node_id: u_ma_periodic
+- dataset: original_devcontainer_overlay
+  source_node_id: math_inverse_problems
+  proposed_node_id: u_ma_inverse
+- dataset: original_devcontainer_overlay
+  source_node_id: parameter_sensitivity_jacobian
+  proposed_node_id: u_ma_inverse
+- dataset: original_devcontainer_overlay
+  source_node_id: c2_transient_parameter_identifiability
+  proposed_node_id: u_ma_inverse
+- dataset: independent_v2
+  source_node_id: ma_inverse
+  proposed_node_id: u_ma_inverse
+- dataset: independent_v2
+  source_node_id: ma_identifiability
+  proposed_node_id: u_ma_inverse
+- dataset: independent_v2
+  source_node_id: ma_sensitivity
+  proposed_node_id: u_ma_inverse
+- dataset: original_devcontainer_overlay
+  source_node_id: system_modelling_reduction
+  proposed_node_id: u_sc_plant
+- dataset: original_devcontainer_overlay
+  source_node_id: pdc_process_dynamics_foundations
+  proposed_node_id: u_sc_plant
+- dataset: independent_v2
+  source_node_id: sc_plant
+  proposed_node_id: u_sc_plant
+- dataset: independent_v2
+  source_node_id: sc_manipulated_input
+  proposed_node_id: u_sc_plant
+- dataset: independent_v2
+  source_node_id: sc_bed_input_realization
+  proposed_node_id: u_sc_plant
+- dataset: original_devcontainer_overlay
+  source_node_id: system_identification
+  proposed_node_id: u_sc_excitation
+- dataset: original_devcontainer_overlay
+  source_node_id: system_input_experiment_design
+  proposed_node_id: u_sc_excitation
+- dataset: original_devcontainer_overlay
+  source_node_id: periodic_feed_forcing
+  proposed_node_id: u_sc_excitation
+- dataset: independent_v2
+  source_node_id: sc_periodic_forcing
+  proposed_node_id: u_sc_excitation
+- dataset: independent_v2
+  source_node_id: sc_excitation
+  proposed_node_id: u_sc_excitation
+- dataset: independent_v2
+  source_node_id: sc_waveform
+  proposed_node_id: u_sc_excitation
+- dataset: original_devcontainer_overlay
+  source_node_id: math_optimization_theory
+  proposed_node_id: u_sc_objective
+- dataset: original_devcontainer_overlay
+  source_node_id: system_control_optimization
+  proposed_node_id: u_sc_objective
+- dataset: independent_v2
+  source_node_id: ph_metrics
+  proposed_node_id: u_sc_objective
+- dataset: independent_v2
+  source_node_id: sc_baseline
+  proposed_node_id: u_sc_objective
+- dataset: independent_v2
+  source_node_id: sc_benchmark_nesting
+  proposed_node_id: u_sc_objective
+- dataset: independent_v2
+  source_node_id: sc_optimization
+  proposed_node_id: u_sc_objective
+- dataset: independent_v2
+  source_node_id: sc_objective
+  proposed_node_id: u_sc_objective
+- dataset: independent_v2
+  source_node_id: sc_local_search
+  proposed_node_id: u_sc_objective
+- dataset: original_devcontainer_overlay
+  source_node_id: physics_experiments_measurements
+  proposed_node_id: u_sc_observation
+- dataset: original_devcontainer_overlay
+  source_node_id: system_filtering_estimation
+  proposed_node_id: u_sc_observation
+- dataset: original_devcontainer_overlay
+  source_node_id: state_observer_mpc
+  proposed_node_id: u_sc_observation
+- dataset: independent_v2
+  source_node_id: ph_measurement
+  proposed_node_id: u_sc_observation
+- dataset: independent_v2
+  source_node_id: ph_boundary_measurement
+  proposed_node_id: u_sc_observation
+- dataset: independent_v2
+  source_node_id: ph_operando_spectroscopy
+  proposed_node_id: u_sc_observation
+- dataset: independent_v2
+  source_node_id: sc_output_model
+  proposed_node_id: u_sc_observation
+- dataset: independent_v2
+  source_node_id: sc_state_estimation
+  proposed_node_id: u_sc_observation
+- dataset: independent_v2
+  source_node_id: sc_observability
+  proposed_node_id: u_sc_observation
+- dataset: independent_v2
+  source_node_id: sc_ekf_ukf
+  proposed_node_id: u_sc_observation
+- dataset: original_devcontainer_overlay
+  source_node_id: reactor_operating_window
+  proposed_node_id: u_sc_feasibility
+- dataset: original_devcontainer_overlay
+  source_node_id: cooling_jacket_control
+  proposed_node_id: u_sc_feasibility
+- dataset: independent_v2
+  source_node_id: sc_hardware_constraints
+  proposed_node_id: u_sc_feasibility
+- dataset: independent_v2
+  source_node_id: sc_robustness
+  proposed_node_id: u_sc_feasibility
+- dataset: independent_v2
+  source_node_id: sc_experiment_design
+  proposed_node_id: u_sc_feasibility
+- dataset: independent_v2
+  source_node_id: sc_identification_vs_performance
+  proposed_node_id: u_sc_feasibility
+- dataset: independent_v2
+  source_node_id: sc_co_design
+  proposed_node_id: u_sc_feasibility
+- dataset: independent_v2
+  source_node_id: sc_validation
+  proposed_node_id: u_sc_feasibility
+source_catalog_ref:
+  path: Academics/BEP/Catalysis/research/independent_reference_map_2026_10_21/sources.yaml
+  meaning: primary_source_ids resolve in this source ledger, which records access and applicability; original citations
+    remain in the preserved original overlay.
+claim_reconciliations:
+- claim_id: periodic_gain_sign
+  position: unresolved_conditional
+  synthesis: No universal improvement follows. Stable-LTI and static-concave cases give no-gain under stated assumptions;
+    nonlinear diffusion-limited and sufficient-condition studies are model-specific.
+  source_ids:
+  - feimer1982
+  - horn_bailey1971
+  - ziegelhoeffer1972
+  - espinoza2022
+  - kaps2026
+  do_not_infer: The examples establish sign or magnitude for the target reactor.
+- claim_id: periodic_acetylene_novelty
+  position: narrowed_gap
+  synthesis: Urmès et al. 2022 is periodic acetylene precedent on Pd/α-Al2O3 for estimation and outlet prediction;
+    accessible evidence recorded in v2 does not establish optimized net ethylene gain for target PdAg.
+  source_ids:
+  - urmes2022
+  do_not_infer: No periodic acetylene model or experiment exists.
+- claim_id: berger_2008_doi_binding
+  position: verified_citation_defect
+  synthesis: Original overlay binds 10.1016/j.ces.2008.08.012 to a catalysis review, but publisher metadata identifies
+    unrelated nanofluidization. Relevant Berger catalytic-kinetics review is 10.1016/j.apcata.2008.03.020 (v2 source
+    berger2008).
+  source_ids:
+  - berger2008
+  do_not_infer: Correcting the DOI validates the original kinetic claims.
+- claim_id: pdag_mechanism_transfer
+  position: source_specific_alternatives
+  synthesis: Pd/PdAg pathway and ensemble studies support alternatives for their stated surfaces and conditions; target
+    catalyst identity and working state are unresolved.
+  source_ids:
+  - mei2009
+  - li2021
+  - pachulski2012
+  - urmes2019
+  do_not_infer: Quantitative rate transfer or target active-site identity.
+- claim_id: pssa_vs_dynamic_surface
+  position: alternative_closures
+  synthesis: PSSA surface closure can feed a dynamic gas/bed model. Explicit coverage ODEs need an elementary mechanism,
+    consistent site balances and identifiable parameters.
+  source_ids:
+  - urmes2019
+  - pachulski2012
+  - urmes2022
+  - proposal_main
+  do_not_infer: Either closure is target truth before model discrimination.
+- claim_id: performance_metric_and_baseline
+  position: project_decision_required
+  synthesis: Declare the cycle metric and compare with optimized steady operation under matched feasible constraints,
+    horizon and resource accounting.
+  source_ids:
+  - proposal_main
+  - lan2025
+  do_not_infer: A gain against an arbitrary nominal steady point.
+pending_project_decisions:
+- id: target_catalyst
+  question: Exact Pd:Ag ratio, support, geometry, preparation, pretreatment, feed and operating window?
+  why: Controls transferability of mechanism, kinetics and transport.
+- id: performance_objective
+  question: Net productivity/yield, selectivity at conversion floor or multiobjective? Include inlet ethylene, startup,
+    energy, aging and horizon?
+  why: Different objectives can rank operation differently.
+- id: control_set
+  question: Which inputs are actuated and what bandwidth, slew, total-flow coupling, pressure and safety limits apply?
+  why: Defines periodic and matched steady feasible sets.
+- id: model_fidelity
+  question: PSSA LHHW or explicit dynamic coverages, and which dispersion/pellet/film/thermal/aging states are justified?
+  why: Determines gain mechanisms, identifiability and numerical burden.
+- id: evidence_threshold
+  question: What target data, held-out transient tests and uncertainty separation are required before a gain claim?
+  why: Separates fit, validation and performance evidence.
+validation_policy:
+  preserve_snapshots: true
+  auto_merge: false
+  simulator_implemented: false
+  parameter_fitting_performed: false
+  waveform_optimization_performed: false
+  experimental_validation_performed: false
+  verification_state: Structural/reference checks are recorded in progress.md; no scientific model execution was performed.

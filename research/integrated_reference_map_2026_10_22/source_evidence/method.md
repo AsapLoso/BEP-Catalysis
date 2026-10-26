@@ -1,0 +1,8 @@
+# Passage evidence method
+
+1. Inventory every current `nodes.yaml` `claim_refs` attachment and every original overlay citation attachment. The stable claim ID is assigned from the immutable node ID and one-based reference position in the frozen starting graph. The initial position is retained even when a claim assessment changes.
+2. Record prior source-access labels as inherited metadata only. For a current review, reopen the original PDF, publisher HTML, abstract or project source and store the actual access level, source identity/hash, precise locator, and brief source wording or a structured equation/table/data transcription.
+3. Re-read the AI claim beside the source passage. State whether the source supports, partly supports, disputes, or cannot adjudicate that interpretation; bound it by catalyst, model, operating regime, measurement and assumptions. Preserve author interpretations as interpretations and separate observations, model results, project proposals and derivations.
+4. For PDF quotations, use the exact printed/PDF page locator; the validator re-extracts the selected physical page and checks the brief quotation after only Unicode, whitespace and line-break hyphen normalization. Equations, tables and workbook-cell calculations are recorded as transcriptions, not prose quotations.
+5. A same-agent second pass is a separate AI check, not independent human verification. `human_verification_status` remains `not_verified` unless the owner later confirms that exact passage-to-interpretation link.
+6. Keep unreviewed claims and the 96 historical attachments explicitly queued. A valid YAML graph or matching quote does not prove claim entailment, source completeness, target-model validity or owner understanding.

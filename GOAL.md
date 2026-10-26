@@ -6,7 +6,7 @@
 **Assigned branch:** `feat/isothermal-co-kinetics-source-selection`  
 **Tracking issue:** [#12 — Source selection](https://github.com/AsapLoso/BEP-Catalysis/issues/12)  
 **Parent snapshot:** `feat/schbib-co-benchmark` at `e27cb766d644de685d02f2fc8f11d2300aff909c`. Its research report/notebook remain historical and must not be silently recast as validated.  
-**Status (2026-10-26): PREPARED, PLAN FIRST.** No replacement source has been chosen or validated.
+**Status (2026-10-26): SOURCE SELECTION COMPLETE — NO SOURCE READY.** The primary-source comparison and limits are recorded in [`research/reports/isothermal_co_kinetics_source_selection.md`](research/reports/isothermal_co_kinetics_source_selection.md). Bos remains a Berty-domain rate-law candidate; no source in the screen provides a defensible fixed-temperature CO-sensitive PFR benchmark.
 
 ## Decision to resolve
 
@@ -27,7 +27,7 @@ Its **printed Table 3 (p. 60)** includes Model 8 fitted parameter values, and **
 3. **Fixed-temperature kinetics only:** a source can use (k(T)), (K(T)) at specified uniform (T), but do **not** implement energy balances, particle/wall heat transfer, thermal model III, or transient CO dynamics. If source's parameter extraction or prediction demands thermal reconstruction, explain the **NO** without forcing it.
 4. **Check independent quantitative predictions:** don't equate equation/source transcription, internal solver agreement, selected figures or PDF fit scores with reproduction of measured experimental results. A limited unit-consistent independent reproduction may support a **provisional YES** with stated restrictions.
 5. **Decision matrix + recommendation:** rank eligible papers by scientific defensibility, practical reproduction, relevance to CO, and honest transfer limits to Larsen's **CO-free PdAg** source. One line per source: **YES** (supports a defensible isothermal reference for its stated domain) or **NO — improvement/missing evidence**. Neither verdict alone proves PdAg-CO improvement.
-6. **Deliver:** `research/reports/isothermal_co_kinetics_source_selection.md`, page/equation/parameter/data provenance, small reproducible test only if justified, and an Agent 5 handoff listing source limits and possible future validation. Preserve all original source/parameter versions and notebook snapshots.
+6. **Deliver:** `research/reports/isothermal_co_kinetics_source_selection.md`, page/equation/parameter/data provenance and a bounded reproduction only where justified. Do not prepare an Agent 5 handoff or synthesis. Preserve all original source/parameter versions and notebook snapshots.
 7. **Branch safety:** ordinary commits only to this branch, no PR, merge, force push, owner map edits, modifications of A1/A4/Agent5 branches or new integrated CO model. **Agent 5 remains PAUSED.**
 
 ## Disqualifying failures

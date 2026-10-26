@@ -7,7 +7,7 @@
 - [x] Fetched the latest remote branch and reviewed intervening source-audit changes before implementation.
 - [x] Verified the uploaded thesis binary SHA-256: b5aaa2300ff9b64aca70e58cc5e4d8be30b3c12ee264e69af89e01c86f5120c9. The tracked copy matches the upload; official-deposit identity remains unverified.
 - [x] Visually rechecked PDF p. 43 Eqs. 6.9–6.11 and PDF p. 44 Figure 6.6; separately transcribed main-text model/results excerpts.
-- [x] Transcribed Appendix E Tables E.1–E.3 and checked Appendix F equations, geometry/flow passages, optimizer bounds, selected table responses, fit filter and RMSE passages against the existing page renders.
+- [x] Transcribed Appendix E Tables E.1–E.3 and all readable Appendix F code on PDF pp. 78–88; transcribed every displayed processed-input table row and legible cell plus the complete 41-row Pd₀Ag comparison table, with page locators and explicit `[unclear]`/cropping/source-ellipsis markers.
 - [x] Mapped all 15 selected Pd₂Ag operating conditions to displayed Appendix F experiment IDs and four Pd₃Ag Figure 6.1 head rows. The crosswalk preserves condition-match versus same-record uncertainty.
 - [x] Added source-processed response cells for the mapped Pd₂Ag/Pd₃Ag rows without modifying the historical selected-curve CSV or relabeling processed outputs as raw GC data.
 - [x] Reconciled source/table counts: Pd₀Ag 41, Pd₂Ag 42 and Pd₃Ag 77 processed rows; Figure 6.6 reports 41/42/41. The 36-row Pd₃Ag final-fit exclusion mask is not shown.
@@ -30,9 +30,10 @@
 
 ## PASS / BLOCKED gates
 
-- **PASS:** uploaded-file hash; target equation notation; Figure 6.6 eight-value transcription; Appendix E tables; source RMSE definition; fixed-parameter candidate-law comparison; selected-row numerical stability and elemental balances; no-CO model scope.
+- **PASS:** uploaded-file hash; target equation notation; Figure 6.6 eight-value transcription; Appendix E tables; recoverable Appendix F code/input-table/comparison-table transcription; source RMSE definition; fixed-parameter candidate-law comparison; selected-row numerical stability and elemental balances; no-CO model scope.
+- **PASS with source gaps:** Appendix F readable code and visible processed-table/comparison entries are transcribed. The Pd₃Ag middle rows are absent from Larsen's display; six cell values across five rows are marked `[unclear]`; a page-edge comparison row is partly unreadable; intermediate DataFrame previews omit rows/columns, and the p. 85 `df_fit` output elides columns. These limitations do not alter the processed-input table counts.
 - **PASS with limitation:** Pd₀Ag/Pd₂Ag processed-row counts and all 15 selected Pd₂Ag table ID matches; four visible Pd₃Ag flow-row ID matches.
-- **BLOCKED:** full Appendix F text/code/table transcription; four source table versus plotted response mismatches; Pd₃Ag's 36 final-fit IDs; raw GC/workbook provenance; independent Figure 6.6 all-experiment RMSE; official thesis version; final extended fit implementation; source-certified temperature, flow reference, pressure and parameter units.
+- **BLOCKED:** four source table versus plotted response mismatches; Pd₃Ag's 36 final-fit IDs; raw GC/workbook provenance; independent Figure 6.6 all-experiment RMSE; official thesis version; final extended fit implementation; source-certified temperature, flow reference and final fitted-parameter units.
 
 ## Reproduction environment
 

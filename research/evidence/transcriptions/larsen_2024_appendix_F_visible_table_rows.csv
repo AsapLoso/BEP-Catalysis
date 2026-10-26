@@ -1,0 +1,138 @@
+pdf_page,printed_page,table_name,display_index,exp_numb,catalyst,flow_mL_min,WHSV_cm3_h_g_cat,vol_C2H2_pct,vol_C2H4_pct,vol_H2_pct,vol_He_pct,vol_CO_pct,mass_cat_mg,conv_pct,selec_pct,C_balance_pct,conv_sim_pct,selec_sim_pct,conv_exp_pct,selec_exp_pct,visibility_or_note,rmse_pct,visible_columns_and_values
+78,72,tabel_AgPd2,0,NaN,AgPd2,flow [mL/min],WHSV [cm3/h/g_cat],C2H2,C2H4,H2,He,CO,m_cat [mg],X_C2H2 (%),S (%),C (%),,,,,header-like row printed by pandas,,
+78,72,tabel_AgPd2,1,EXP1,AgPd2,200,100000,1,20,20,59,0,75,58.018857,95.600234,86.818862,,,,,visible,,
+78,72,tabel_AgPd2,2,EXP2,AgPd2,150,120000,1,20,20,59,0,75,86.417753,94.243281,87.317188,,,,,visible,,
+78,72,tabel_AgPd2,3,EXP3,AgPd2,100,80000,1,20,20,59,0,75,99.276357,84.886849,91.513288,,,,,visible,,
+78,72,tabel_AgPd2,4,EXP4,AgPd2,50,40000,1,20,20,59,0,75,99.349524,55.84652,90.843877,,,,,visible,,
+78,72,tabel_AgPd2,5,EXP5,AgPd2,100,80000,0.5,20,20,69.5,0,75,99.643873,62.018595,91.662849,,,,,visible,,
+78,72,tabel_AgPd2,6,EXP6,AgPd2,100,80000,0.5,20,10,69.5,0,75,99.428641,77.145141,90.40664,,,,,visible,,
+78,72,tabel_AgPd2,7,EXP7,AgPd2,100,80000,0.5,20,5,74.5,0,75,98.473103,86.357098,90.589642,,,,,visible,,
+78,72,tabel_AgPd2,8,EXP8,AgPd2,100,80000,0.5,20,25,54.5,0,75,99.603149,-1.455721,89.842034,,,,,visible,,
+78,72,tabel_AgPd2,9,EXP9,AgPd2,100,80000,0.5,20,15,64.5,0,75,99.672505,46.892802,93.824675,,,,,visible,,
+78,72,tabel_AgPd2,10,EXP10,AgPd2,50,40000,1,20,20,59,0,75,99.690002,46.175088,90.789918,,,,,visible,,
+78,72,tabel_AgPd2,11,EXP11,AgPd2,50,40000,1,30,20,58,0,75,99.592906,43.509811,95.123134,,,,,visible,,
+78,72,tabel_AgPd2,12,EXP12,AgPd2,50,40000,1,40,20,58,0,75,99.562281,39.081743,99.562015,,,,,visible,,
+78,72,tabel_AgPd2,13,EXP13,AgPd2,50,40000,1,10,20,68,0,75,99.56641,67.99235,84.662566,,,,,visible,,
+78,72,tabel_AgPd2,14,EXP14,AgPd2,100,80000,0.5,40,20,58,0,75,99.661391,27.756005,96.066297,,,,,visible,,
+78,72,tabel_AgPd2,15,EXP15,AgPd2,100,80000,0.5,10,20,68,0,75,99.659019,57.629123,83.283371,,,,,visible,,
+78,72,tabel_AgPd2,16,EXP16,AgPd2,100,80000,0.5,30,20,58,0,75,99.653853,36.294416,95.328362,,,,,visible,,
+78,72,tabel_AgPd2,17,EXP17,AgPd2,100,80000,0.5,20,20,58,0,75,99.681646,47.284657,96.457802,,,,,visible,,
+78,72,tabel_AgPd2,18,EXP18,AgPd2,100,80000,0.5,40,5,58,0,75,96.134489,82.876603,97.337821,,,,,visible,,
+78,72,tabel_AgPd2,19,EXP19,AgPd2,100,80000,0.5,40,15,58,0,75,99.602241,25.834125,98.12192,,,,,visible,,
+78,72,tabel_AgPd2,20,EXP20,AgPd2,100,80000,0.5,40,20,58,0,75,99.624922,10.648119,97.36907,,,,,visible,,
+78,72,tabel_AgPd2,21,EXP21,AgPd2,100,80000,0.5,40,10,58,0,75,99.548308,68.096788,96.180869,,,,,visible,,
+78,72,tabel_AgPd2,22,EXP22,AgPd2,100,80000,0.5,10,20,58,0,75,99.758811,54.078598,92.873962,,,,,visible,,
+78,72,tabel_AgPd2,23,EXP23,AgPd2,100,80000,2,10,20,68,0,75,65.146477,97.656965,86.238949,,,,,visible,,
+79,73,tabel_AgPd2,24,EXP24,AgPd2,100,80000,1.5,10,20,58,0,75,95.805658,94.890037,86.722084,,,,,visible,,
+79,73,tabel_AgPd2,25,EXP25,AgPd2,100,80000,1,10,20,58,0,75,99.666736,77.442457,70.077186,,,,,visible,,
+79,73,tabel_AgPd2,26,EXP26,AgPd2,100,80000,0.5,20,20,58,0,75,99.839984,34.318529,91.951498,,,,,visible,,
+79,73,tabel_AgPd2,27,EXP27,AgPd2,100,80000,2,20,20,58,0,75,64.205258,96.961742,91.431014,,,,,visible,,
+79,73,tabel_AgPd2,28,EXP28,AgPd2,100,80000,1.5,20,20,58,0,75,93.838585,93.315702,90.137574,,,,,visible,,
+79,73,tabel_AgPd2,29,EXP29,AgPd2,100,80000,1,20,20,58,0,75,99.844802,81.193792,101.40934,,,,,visible,,
+79,73,tabel_AgPd2,30,EXP30,AgPd2,100,80000,0.5,30,20,58,0,75,99.830618,26.425184,97.024715,,,,,visible,,
+79,73,tabel_AgPd2,31,EXP31,AgPd2,50,40000,2,30,20,58,0,75,99.868971,86.224109,97.391424,,,,,visible,,
+79,73,tabel_AgPd2,32,EXP32,AgPd2,50,40000,1.5,30,20,58,0,75,99.865303,73.736824,96.486989,,,,,visible,,
+79,73,tabel_AgPd2,33,EXP33,AgPd2,50,40000,1,30,20,58,0,75,99.869483,41.673898,96.86405,,,,,visible,,
+79,73,tabel_AgPd2,34,EXP34,AgPd2,50,40000,0.5,30,20,58,0,75,92.813089,-29.870214,95.999082,,,,,visible,,
+79,73,tabel_AgPd2,35,EXP35,AgPd2,50,40000,2,20,10,58,0,75,79.318032,96.909178,92.408612,,,,,visible,,
+79,73,tabel_AgPd2,36,EXP36,AgPd2,50,40000,1.5,20,10,58,0,75,92.487792,82.667845,92.990812,,,,,visible,,
+79,73,tabel_AgPd2,37,EXP37,AgPd2,50,40000,1,20,10,58,0,75,92.832456,76.951782,104.254605,,,,,visible,,
+79,73,tabel_AgPd2,38,EXP38,AgPd2,50,40000,0.5,20,10,58,0,75,95.392858,50.886892,90.573448,,,,,visible,,
+79,73,tabel_AgPd2,39,EXP39,AgPd2,50,40000,2,20,5,58,0,75,55.1299,97.319244,94.109775,,,,,visible,,
+79,73,tabel_AgPd2,40,EXP40,AgPd2,50,40000,1.5,20,5,58,0,75,75.089864,96.70324,92.865028,,,,,visible,,
+79,73,tabel_AgPd2,41,EXP41,AgPd2,50,40000,1,20,5,58,0,75,99.14635,87.0853,102.54149,,,,,visible,,
+79,73,tabel_AgPd2,42,EXP42,AgPd2,50,40000,0.5,20,5,58,0,75,99.431031,47.882041,91.4687,,,,,visible,,
+79,73,tabel_AgPd3,0,NaN,AgPd3,flow [mL/min],WHSV [cm3/h/g_cat],C2H2,C2H4,H2,He,CO,m_cat [mg],X_C2H2 (%),S (%),C (%),,,,,header-like row printed by pandas,,
+79,73,tabel_AgPd3,1,EXP1,AgPd3,200,120000,1,20,20,59,0,100,99.74857,68.89139,99.206749,,,,,visible,,
+79,73,tabel_AgPd3,2,EXP2,AgPd3,150,90000,1,20,20,59,0,100,99.714813,56.165749,102.694058,,,,,visible,,
+79,73,tabel_AgPd3,3,EXP3,AgPd3,100,60000,1,20,20,59,0,100,99.63909,35.640171,100.446485,,,,,visible,,
+79,73,tabel_AgPd3,4,EXP4,AgPd3,50,30000,1,20,20,59,0,100,99.306389,-82.203658,96.834521,,,,,visible,,
+79,73,tabel_AgPd3,…,[source display ellipsis],AgPd3,…,…,…,…,…,…,…,…,…,…,…,,,,,visible,,
+79,73,tabel_AgPd3,73,EXP73,AgPd3,50,150000,2,30,20,58,0,20,91.372041,89.795665,102.690968,,,,,visible,,
+79,73,tabel_AgPd3,74,EXP74,AgPd3,50,150000,1.5,30,20,58,0,20,98.626359,79.081587,98.387508,,,,,visible,,
+79,73,tabel_AgPd3,75,EXP75,AgPd3,50,150000,1,30,20,58,0,20,99.55274,52.85292,97.59163,,,,,visible,,
+79,73,tabel_AgPd3,76,EXP76,AgPd3,50,150000,0.5,30,20,58,0,20,99.817177,9.62407,97.166481,,,,,visible,,
+79,73,tabel_AgPd3,77,EXP77,AgPd3,50,150000,2,20,10,58,0,20,89.231734,96.13066,99.103822,,,,,visible,,
+80,74,tabel_AgPd0,0,NaN,AgPd0,flow [mL/min],WHSV [cm3/h/g_cat],C2H2,C2H4,H2,He,CO,m_cat [mg],X_C2H2 (%),S (%),C (%),,,,,header-like row printed by pandas,,
+80,74,tabel_AgPd0,1,EXP1,AgPd0,200,120000,1,20,20,59,0,100,10.462575,99.716055,103.118627,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,2,EXP2,AgPd0,150,90000,1,20,20,59,0,100,20.991291,99.858475,102.922557,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,3,EXP3,AgPd0,100,60000,1,20,20,59,0,100,41.147780,98.759845,98.042775,,,,,visible; PDF p. 80 input-table selectivity reads 98.759845; comparison_de_df on pp. 87–88 prints 98.759846,,
+80,74,tabel_AgPd0,4,EXP4,AgPd0,50,30000,1,20,20,59,0,100,89.976409,94.960679,98.865154,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,5,EXP5,AgPd0,100,60000,0.5,20,20,59.5,0,100,82.467170,93.278888,95.638212,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,6,EXP6,AgPd0,100,60000,0.5,20,10,69.5,0,100,48.097891,99.018459,95.758961,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,7,EXP7,AgPd0,100,60000,0.5,20,5,74.5,0,100,26.268002,99.536018,92.202554,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,8,EXP8,AgPd0,100,60000,0.5,20,25,54.5,0,100,99.251859,87.648772,93.820723,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,9,EXP9,AgPd0,100,60000,0.5,20,15,64.5,0,100,78.192680,92.597644,95.425023,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,10,EXP10,AgPd0,50,30000,1,20,20,59,0,100,98.791597,90.843586,102.84236,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,11,EXP11,AgPd0,50,30000,1,30,20,58,0,100,94.846143,90.274211,[unclear],,,,,visible; C-balance final digits unreadable in PDF p. 80,,
+80,74,tabel_AgPd0,12,EXP12,AgPd0,50,30000,1,40,20,58,0,100,89.290816,89.835532,102.311236,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,13,EXP13,AgPd0,50,30000,1,10,20,58,0,100,96.442351,94.686778,102.029133,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,14,EXP14,AgPd0,100,60000,0.5,40,20,58,0,100,82.684527,84.948803,96.757535,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,15,EXP15,AgPd0,100,60000,0.5,10,20,58,0,100,93.611079,93.032813,100.078357,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,16,EXP16,AgPd0,100,60000,0.5,30,20,58,0,100,81.075898,88.064639,98.962162,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,17,EXP17,AgPd0,100,60000,0.5,20,20,58,0,100,85.488353,90.059896,95.059496,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,18,EXP18,AgPd0,100,60000,0.5,40,5,58,0,100,12.685322,97.871800,92.129158,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,19,EXP19,AgPd0,100,60000,0.5,40,15,58,0,100,62.632562,82.463707,97.945281,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,20,EXP20,AgPd0,100,60000,0.5,40,20,58,0,100,77.063764,85.348316,98.834894,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,21,EXP21,AgPd0,100,60000,0.5,40,10,58,0,100,[unclear],93.056003,98.297807,,,,,visible; conversion digits unreadable in PDF p. 80,,
+80,74,tabel_AgPd0,22,EXP22,AgPd0,100,60000,0.5,10,20,58,0,100,91.863070,93.217509,100.230661,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,23,EXP23,AgPd0,100,60000,2,10,20,68,0,100,99.894769,99.093028,101.813501,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,24,EXP24,AgPd0,100,60000,1.5,10,20,58,0,100,28.921287,98.090568,101.922444,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,25,EXP25,AgPd0,100,60000,1,10,20,58,0,100,46.519400,97.538916,98.645137,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,26,EXP26,AgPd0,100,60000,0.5,20,20,58,0,100,90.692707,89.875899,98.367993,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,27,EXP27,AgPd0,100,60000,2,20,20,58,0,100,21.782473,99.112238,100.032724,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,28,EXP28,AgPd0,100,60000,1.5,20,20,58,0,100,26.055440,98.164887,96.557869,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,29,EXP29,AgPd0,100,60000,1,20,20,58,0,100,68.351930,95.040856,96.784842,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,30,EXP30,AgPd0,100,60000,0.5,30,20,58,0,100,81.797062,86.166601,99.393266,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,31,EXP31,AgPd0,50,30000,2,30,20,58,0,100,43.369806,98.404244,98.713697,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,32,EXP32,AgPd0,50,30000,1.5,30,20,58,0,100,61.208434,96.725177,98.236963,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,33,EXP33,AgPd0,50,30000,1,30,20,58,0,100,92.784525,90.647609,97.973471,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,34,EXP35,AgPd0,50,30000,2,20,10,68,0,100,30.638149,98.660829,96.702082,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,35,EXP36,AgPd0,50,30000,1.5,20,10,68.5,0,100,40.469403,99.884229,97.835629,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,36,EXP37,AgPd0,50,30000,1,20,10,69,0,100,55.909774,98.006326,100.252049,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,37,EXP38,AgPd0,50,30000,0.5,20,10,69.5,0,100,97.752323,85.407464,99.608689,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,38,EXP39,AgPd0,50,30000,2,20,5,73,0,100,22.908086,99.595962,104.62669,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,39,EXP40,AgPd0,50,30000,1.5,20,5,73.5,0,100,13.471929,99.434254,101.782663,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,40,EXP41,AgPd0,50,30000,1,20,5,74,0,100,30.786908,97.504127,96.00494,,,,,visible; source-checked on PDF p. 80,,
+80,74,tabel_AgPd0,41,EXP42,AgPd0,50,30000,0.5,20,5,74.5,0,100,63.784910,94.820135,98.3229,,,,,visible; source-checked on PDF p. 80,,
+87,81,comparison_de_df,0,EXP1,AgPd0,,,,,,,,,,,,29.588462,92.604854,10.462575,99.716055,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+87,81,comparison_de_df,1,EXP2,AgPd0,,,,,,,,,,,,34.682012,92.852724,20.991291,99.858475,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+87,81,comparison_de_df,2,EXP3,AgPd0,,,,,,,,,,,,53.581036,99.384633,41.147780,98.759846,PDF p. 87 comparison output prints select_exp 98.759846; input table PDF p. 80 and experimental preview PDF p. 83 print 98.759845,,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+87,81,comparison_de_df,3,EXP4,AgPd0,,,,,,,,,,,,97.268019,85.039758,89.976409,94.960679,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+87,81,comparison_de_df,4,EXP5,AgPd0,,,,,,,,,,,,93.920644,91.181972,82.467170,93.278888,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+87,81,comparison_de_df,5,EXP6,AgPd0,,,,,,,,,,,,63.302732,97.852293,48.097891,99.018459,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+87,81,comparison_de_df,6,EXP7,AgPd0,,,,,,,,,,,,33.659843,88.422807,26.268002,99.536018,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+87,81,comparison_de_df,7,EXP8,AgPd0,,,,,,,,,,,,97.568334,86.266354,99.251859,87.648772,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+87,81,comparison_de_df,8,EXP9,AgPd0,,,,,,,,,,,,63.622920,96.123930,78.192680,92.597644,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+87,81,comparison_de_df,9,EXP10,AgPd0,,,,,,,,,,,,97.268019,85.039758,98.791597,90.843586,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+87,81,comparison_de_df,10,EXP11,AgPd0,,,,,,,,,,,,84.468912,87.486847,94.846143,90.274211,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+87,81,comparison_de_df,11,EXP12,AgPd0,,,,,,,,,,,,71.140083,97.849873,89.290816,89.835532,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+87,81,comparison_de_df,12,EXP13,AgPd0,,,,,,,,,,,,[unclear],[unclear],96.442351,94.686778,PDF p. 87 bottom row: simulated response cells are cropped/unreadable; experimental response cells transcribed from same visible row,,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,13,EXP14,AgPd0,,,,,,,,,,,,64.857759,93.911833,82.684527,84.948803,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,14,EXP15,AgPd0,,,,,,,,,,,,99.904689,83.096671,93.611079,93.032813,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,15,EXP16,AgPd0,,,,,,,,,,,,78.978778,93.638647,81.075898,88.064639,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,16,EXP17,AgPd0,,,,,,,,,,,,93.837448,91.114613,85.488353,90.059896,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,17,EXP18,AgPd0,,,,,,,,,,,,20.636165,97.245387,12.685322,97.871800,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,18,EXP19,AgPd0,,,,,,,,,,,,53.186505,95.320607,62.632562,82.463707,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,19,EXP20,AgPd0,,,,,,,,,,,,64.857759,93.911833,77.063764,85.348316,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,20,EXP21,AgPd0,,,,,,,,,,,,38.395894,95.419564,[unclear],93.056003,PDF p. 88; conv_exp unreadable in raster; select_exp readable,,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,21,EXP22,AgPd0,,,,,,,,,,,,99.904689,83.096671,91.863070,93.217509,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,22,EXP23,AgPd0,,,,,,,,,,,,19.629162,99.955698,99.894769,99.093028,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,23,EXP24,AgPd0,,,,,,,,,,,,33.697684,99.806566,28.921287,98.090568,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,24,EXP25,AgPd0,,,,,,,,,,,,68.957263,99.576627,46.519400,97.538916,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,25,EXP26,AgPd0,,,,,,,,,,,,93.837448,91.114613,90.692707,89.875899,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,26,EXP27,AgPd0,,,,,,,,,,,,17.428309,99.906452,21.782473,99.112238,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,27,EXP28,AgPd0,,,,,,,,,,,,28.498276,99.810940,26.055440,98.164887,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,28,EXP29,AgPd0,,,,,,,,,,,,63.646560,99.888620,68.351930,95.040856,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,29,EXP30,AgPd0,,,,,,,,,,,,78.978778,93.638647,81.797062,86.166601,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,30,EXP31,AgPd0,,,,,,,,,,,,32.609866,99.810936,43.369806,98.404244,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,31,EXP32,AgPd0,,,,,,,,,,,,61.807760,99.548771,61.208434,96.725177,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,32,EXP33,AgPd0,,,,,,,,,,,,84.468912,97.486847,92.784525,90.647609,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,33,EXP35,AgPd0,,,,,,,,,,,,17.854374,99.904946,30.638149,98.660829,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,34,EXP36,AgPd0,,,,,,,,,,,,29.471287,99.807457,40.469403,99.884229,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,35,EXP37,AgPd0,,,,,,,,,,,,[unclear],92.344845,55.909774,98.006326,PDF p. 88; conv_sim unreadable in raster,,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,36,EXP38,AgPd0,,,,,,,,,,,,96.005252,88.002025,97.752323,85.407464,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,37,EXP39,AgPd0,,,,,,,,,,,,8.786395,92.914495,22.908086,99.595962,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,38,EXP40,AgPd0,,,,,,,,,,,,14.345291,92.841065,13.471929,99.434254,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,39,EXP41,AgPd0,,,,,,,,,,,,27.423373,99.595301,30.786908,97.504127,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"
+88,82,comparison_de_df,40,EXP42,AgPd0,,,,,,,,,,,,65.320021,97.258708,63.784910,94.820135,"visible; six-parameter Pd0Ag standard-model output, not raw measurement",,"exp_numb,catalyst,conv_sim,selec_sim,conv_exp,selec_exp"

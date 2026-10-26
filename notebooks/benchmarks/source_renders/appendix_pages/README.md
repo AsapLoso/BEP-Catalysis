@@ -6,7 +6,7 @@ These files are **already committed to this branch**: 18 PNGs of Larsen's thesis
 [71](page-71.png) · [72](page-72.png) · [73](page-73.png) · [74](page-74.png) · [75](page-75.png) · [76](page-76.png) · [77](page-77.png) · [78](page-78.png) · [79](page-79.png)  
 [80](page-80.png) · [81](page-81.png) · [82](page-82.png) · [83](page-83.png) · [84](page-84.png) · [85](page-85.png) · [86](page-86.png) · [87](page-87.png) · [88](page-88.png)
 
-**Readable transcription status:** A [page-linked, 18-section Markdown transcription scaffold](../../../../research/evidence/transcriptions/larsen_2024_appendix_E_F.md) now exists, but **none of its page text has been transcribed or visually verified yet**. The PNGs are original images, not a complete usable text record. See [the page-by-page transcription worklist](../../../../research/evidence/transcriptions/larsen_appendix_E_F_worklist.md). The agent must produce [a readable checked appendix transcript](../../../../research/evidence/transcriptions/larsen_2024_appendix_E_F.md) as a research deliverable; **that target file is currently an unfilled scaffold, not a verified source transcript**. Source words and tables go in `research/evidence/transcriptions/`, scientific interpretation in `research/evidence/analysis/`, and processed/digitized values in `research/evidence/derived/`.
+**Readable transcription status (2026-10-26):** The [page-linked transcription](../../../../research/evidence/transcriptions/larsen_2024_appendix_E_F.md) records all 18 pages after visual inspection. Appendix E Tables E.1–E.3 are transcribed in full. Appendix F has checked equations, constants, bounds, methods, selected processed responses and output excerpts, but not every code line or displayed table cell. Its Pd₃Ag display itself omits middle rows with an ellipsis. The transcription labels partial/ambiguous coverage rather than treating OCR or derived outputs as a source transcript. Scientific interpretation is kept in the separate audit report; processed and digitized values are indexed in `research/evidence/derived/`.
 
 ## What this source set can and cannot verify
 
@@ -16,12 +16,11 @@ These files are **already committed to this branch**: 18 PNGs of Larsen's thesis
 - The on-branch derived data `../../data/larsen_2024_parameters.csv` and `../../data/larsen_2024_selected_curves.csv` are **working transcriptions/digitizations**, not independent replacements for the actual thesis. The associated `../../larsen_2024_benchmark.ipynb` is a historical attempted reproduction with stored outputs.
 - Apparent contradictions between the body equation, Appendix F code, fitted Figure 6.6 parameter vectors and prior notebook implementation require direct evidence with exact locators. **The PDF is now accessible**; if any specific source reading is ambiguous, mark that claim unresolved instead of guessing.
 
-## Suggested audit order
+## Audit result and open source requests
 
-1. Review this appendix and the existing derived files, identifying exactly which equations/inputs/observations they actually support.
-2. Open the now-committed full thesis PDF directly, verify Eq. 6.9–6.11 (PDF p. 43), Figure 6.6 (PDF p. 44), flow reference conditions and any defined parameter units. The 2026 PDF metadata still warrants comparing against an official deposit where feasible.
-3. Cross-check source statements against the notebook **before** altering code or claiming model reproducibility. Do not re-render these pages simply because an earlier prompt asked for rendering.
-4. In the audit report, include a source-access matrix: **exact source/page actually inspected → claim it supports → accessibility status → what is still unknown.**
+The independent audit is recorded in [the report](../../../../research/reports/larsen_2024_equation_and_baseline_audit.md). It checks the equation image and Figure 6.6 against the historical notebook, reconciles visible processed rows with selected plot conditions, and executes a separate fixed-parameter model comparison. It does not claim full reproduction of the final fits.
+
+The remaining transcription/reproduction blockers are the complete Appendix F code and all visible Pd₀Ag/Pd₂Ag table cells, the final Pd₂Ag/Pd₃Ag fit masks, the hidden middle of the Pd₃Ag source display, and the original workbook/GC records. The final extended-model fitting code and source-certified units/reference conditions are also absent. Keep those gaps explicit; do not fill them from OCR, an inferred model, or digitized curves.
 
 See branch-root [GOAL.md](../../../../GOAL.md), [TODO.md](../../../../TODO.md) and [Agent 4 source-audit issue #11](https://github.com/AsapLoso/BEP-Catalysis/issues/11).
 

@@ -1,37 +1,52 @@
-# Agent 4 — Larsen 2024 independent re-audit gates
+# Agent 4 — Larsen 2024 source-audit execution receipt
 
-**Current status (2026-10-25): prior selected-curve notebook exists; SOURCE-FAITHFUL BASELINE IS UNDER REVIEW.** The prior `COMPLETED` banner is a **historical implementation receipt**, not approval of the exact source equation, flow/parameter units or independent experimental validation. Read revised `GOAL.md` and [issue #11](https://github.com/AsapLoso/BEP-Catalysis/issues/11) first.
+**Status:** Revised plan approved and executed on feat/larsen-pdag-benchmark. This branch contains a restricted independent audit, not a full-data validation of Figure 6.6.
 
-## 00 — Source access and own plan (before code changes)
-- [ ] **REVISION REQUIRED (2026-10-26):** Update the previously submitted Agent 4 plan in Plan Mode after pulling the current remote branch. Inspect the complete uploaded PDF and native-text extraction, the unfilled Appendix E/F transcript scaffold and assistant preliminary audit; independently verify claims. Address Eq. 6.11 exponent and inconsistent implementation, source 100°C/80°C statements, Appendix F Pd₂Ag/Pd₃Ag table counts versus Figure 6.6, exact source RMSE definition, PDF provenance, and prioritize full 18-page transcription. Present revised plan and wait for owner review BEFORE numerical/model modifications.
-- [x] **Source access only:** the 97-page Larsen PDF has now been uploaded to `research/evidence/original/` and its Git blob matches the user-uploaded original (`8207c91e...`); the native text layer is also available. **This does NOT verify an official 2024 deposit or its scientific content.**
-- [ ] Inspect **existing** 18 render PNGs: `notebooks/benchmarks/source_renders/appendix_pages/page-71.png` … `page-88.png`, plus `README.md`; do not reproduce them unless necessary. They cover Appendix E/F, **not** main-text Eq. 6.11.
-- [ ] Plan a **literal, human-readable, visually checked, page-by-page transcription** `research/evidence/transcriptions/larsen_2024_appendix_E_F.md` for the 18 rendered pages. Preserve table/code fidelity and mark ambiguous fields; do not substitute already-derived CSVs for original text.
-- [ ] Inspect the imported notebook, selected-curve CSV, parameter CSV and source/experiment distinction; record historical assertions vs directly verified claims.
-- [ ] Present an independently developed **scientific re-audit plan** addressing disputed Eq. 6.11, feed volume-flow reference basis, missing fitted coefficient units, source access, discriminating comparisons and actual PASS/BLOCKED criteria. Get owner plan feedback before substantive model changes.
+## Completed
 
-## 01 — Readable original-source transcription and equation audit (after plan approval)
-- [ ] Transcribe each available PDF page 71–88 into Markdown text/tables/code as source-faithfully as possible, with original image links, method, printed-page index where visible and visual verification status. Keep interpretations in a separate analysis file.
-- [ ] Use the now-accessible full PDF to visually verify Eqs. 6.9–6.11 (PDF p. 43), Figure 6.6 parameter plot (PDF p. 44), experimental methods, and flow definitions. Treat native text and graph/scan images differently; do not fabricate unrecognized table cells.
-- [ ] Read original thesis Eq. 6.9–6.11 (or label unavailable), including `r1_raw`, `r1_max` cap, `r2` inhibition factor and **first vs squared adsorption denominator**. Audit alternative Appendix F code if it implements a different model. Record exact page/equation evidence.
-- [ ] Compare source-printed formula with the previous notebook's `r2` squared denominator, using the SAME fitted coefficients, and report numerical effects; do not silently refit.
-- [ ] Extract Figure 6.6 eight-element vectors (k1,k2,r1_max,K_C2H2,K_H2,K_C2H4,K_inh,n_inh); record direct transcription vs inferred units and preserve model/pressure basis.
-- [ ] Resolve or bracket flow volume reference conditions: actual vs STP/standardized `flow_ml_min`, the correct `T_ref,P_ref`, mass-normalized space velocity, catalyst loading, tube diameter and support density.
-- [ ] Inspect experimental Figure 6.1–6.4/Appendix A versus simulated B–D; do not mistake selected-digitized points or appendix variant tables for measured data or final parameters.
+- [x] Fetched the latest remote branch and reviewed intervening source-audit changes before implementation.
+- [x] Verified the uploaded thesis binary SHA-256: b5aaa2300ff9b64aca70e58cc5e4d8be30b3c12ee264e69af89e01c86f5120c9. The tracked copy matches the upload; official-deposit identity remains unverified.
+- [x] Visually rechecked PDF p. 43 Eqs. 6.9–6.11 and PDF p. 44 Figure 6.6; separately transcribed main-text model/results excerpts.
+- [x] Transcribed Appendix E Tables E.1–E.3 and checked Appendix F equations, geometry/flow passages, optimizer bounds, selected table responses, fit filter and RMSE passages against the existing page renders.
+- [x] Mapped all 15 selected Pd₂Ag operating conditions to displayed Appendix F experiment IDs and four Pd₃Ag Figure 6.1 head rows. The crosswalk preserves condition-match versus same-record uncertainty.
+- [x] Added source-processed response cells for the mapped Pd₂Ag/Pd₃Ag rows without modifying the historical selected-curve CSV or relabeling processed outputs as raw GC data.
+- [x] Reconciled source/table counts: Pd₀Ag 41, Pd₂Ag 42 and Pd₃Ag 77 processed rows; Figure 6.6 reports 41/42/41. The 36-row Pd₃Ag final-fit exclusion mask is not shown.
+- [x] Compared printed first-power Eq. 6.11 with the historical/Appendix F squared alternative using the same Figure 6.6 vectors and no refit.
+- [x] Created and top-to-bottom executed a separate source-audit notebook plus a reproducible nbclient runner. The original benchmark notebook remains unchanged.
+- [x] Saved model predictions, five flow-reference scenarios, solver/balance checks, mapped processed-subset metrics, pointwise plot/table discrepancies and reconciliation tables under research/evidence/derived/.
+- [x] Wrote the independent source/model/data audit report and updated this GOAL/TODO status without claiming full source completion.
 
-## 02 — Independent no-CO reproducibility
-- [ ] Run source-faithful BDF simulations at source feed/mass conditions for Pd0Ag, Pd2Ag, Pd3Ag; record outputs, actual software environment and convergence checks.
-- [ ] Verify molar/element balances, positivity, finite states and denominator/rate-law dimensional consistency.
-- [ ] Compare to exact Pd0Ag Appendix F measured table and estimated Pd2Ag/Pd3Ag plot points with uncertainty; keep published all-experiment RMSE (41/42/41 source experiments) separate from selected-subset performance.
-- [ ] Investigate whether changed Eq. 6.11 or feed flow convention *improves/worsens* literature reproduction; include contradictory or null results and identifiability caveats.
+## Numerical receipt
 
-## 03 — Report and handoff
-- [ ] Write `research/reports/larsen_2024_equation_and_baseline_audit.md`: primary-source locators; source accessibility; full equation comparison; parameter/units ledger; flow reference definition; data provenance; numerical evidence; limitations.
-- [ ] Correct the notebook / derived CSV **only if warranted by primary evidence**. Preserve old implementation and outputs in Git history and document all changes.
-- [ ] Mark source-derived reproduction **PASS or BLOCKED** (not automatically completed merely because the notebook runs). Supply the verification receipt and remaining source questions to Agent 5.
-- [ ] Commit/push only on `feat/larsen-pdag-benchmark` after owner approves the plan. No PR or merge, no personal-map modifications; report commit SHA.
+- Selected chart subset, paired RMSE (pp), first-power / squared:
+  - Pd₀Ag: 13.4450 / 5.2680, 15 points.
+  - Pd₂Ag: 15.4886 / 5.4700, 15 points.
+  - Pd₃Ag: 21.2881 / 21.0815, 15 points.
+- Visible source-processed mapped subset, first-power / squared: Pd₀Ag 13.4450 / 5.2680 (15); Pd₂Ag 16.3833 / 6.1663 (15); Pd₃Ag 9.7003 / 9.5815 (4). These unequal subsets are not final fit metrics.
+- Four plot/table differences exceed the prior ±2 pp graph-reading band: Pd₂Ag Figure 6.2 conversion at 10 and 15 mbar; Pd₂Ag Figure 6.4 selectivity at 100 mbar H₂; Pd₃Ag Figure 6.1 selectivity at GHSV 30000 h⁻¹.
+- Paired RMSE formula agrees with direct Eq. 4.14–4.15 evaluation within 1e-12 pp. Stored squared-law historical metrics are reproduced within 4.3e-7 pp.
+- Max BDF/Radau difference 1.73e-5 pp; max base/tight tolerance difference 1.69e-5 pp; consistent Pa-to-kPa parameter scaling difference 7.47e-10 pp.
+- Most negative integrated species flow −6.62e-17 mol s⁻¹; maximum elemental-flow residual 2.89e-19 mol atoms s⁻¹. Tests passed at the tolerances recorded in the audit report.
 
-## Prior historical implementation (preserved in Git, not rechecked now)
-- A 13-cell Larsen benchmark notebook and selected response/parameter CSVs exist with saved executed plots.
-- Appendix E/F were already rendered into 18 Git-tracked 300-DPI PNGs.
-- Earlier work reported source Figure 6.6 RMSEs and 45 selected curve comparisons. Its code currently has a squared `r2` denominator and converts volumetric inlet flows using reactor conditions; **both require independent source verification**.
+## PASS / BLOCKED gates
+
+- **PASS:** uploaded-file hash; target equation notation; Figure 6.6 eight-value transcription; Appendix E tables; source RMSE definition; fixed-parameter candidate-law comparison; selected-row numerical stability and elemental balances; no-CO model scope.
+- **PASS with limitation:** Pd₀Ag/Pd₂Ag processed-row counts and all 15 selected Pd₂Ag table ID matches; four visible Pd₃Ag flow-row ID matches.
+- **BLOCKED:** full Appendix F text/code/table transcription; four source table versus plotted response mismatches; Pd₃Ag's 36 final-fit IDs; raw GC/workbook provenance; independent Figure 6.6 all-experiment RMSE; official thesis version; final extended fit implementation; source-certified temperature, flow reference, pressure and parameter units.
+
+## Reproduction environment
+
+- OS: Linux 6.18.55-x86_64, glibc 2.41.
+- Interpreter: `/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python` (preinstalled runtime; no dependencies installed or repository environment files changed).
+- Python 3.12.14; NumPy 2.3.5; pandas 2.2.3; SciPy 1.17.0; Matplotlib 3.10.8; nbformat 5.11.1; nbclient 0.11.0.
+- Command: python notebooks/benchmarks/run_larsen_source_audit.py
+- Execution: nbclient, Python 3 kernel, timeout 600 s, working directory notebooks/benchmarks, 18 cells, top-to-bottom. Runtime: 29.095 s.
+- Executed notebook SHA-256: 5966774c96f99186095e0c07be205d8f5c7367125ec96e81877f882693ce3465.
+- Tolerances: paired metric atol 1e-12 pp; stored historical regression <0.02 pp; solver/tolerance and unit-scaling response changes <1e-4 pp; minimum flow state >−1e-10 mol s⁻¹; element-flow residual <1e-10 mol atoms s⁻¹.
+
+## Git receipt
+
+- Implementation commit: recorded in the follow-up receipt commit and final handoff.
+- Final documentation commit: the receipt update is committed after the implementation commit; its SHA is reported in the final handoff.
+- Branch: feat/larsen-pdag-benchmark.
+- No PR, merge, force-push, personal-map edit or Agent 5 synthesis was made.

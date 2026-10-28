@@ -374,7 +374,7 @@ the owning issue/PR. A standalone retrospective document is not
 completion of an implementation task.
 
 In BEP-Catalysis, see
-[`BEP_EXECUTION_HANDOFF_2026_10_29.md`](../../research/workflows/BEP_EXECUTION_HANDOFF_2026_10_29.md).
+[`BEP_EXECUTION_HANDOFF_2026_10_29.md`](../../../research/workflows/BEP_EXECUTION_HANDOFF_2026_10_29.md).
 On resumption, the agent should immediately inspect the current
 repository state and **execute the next safe engineering action** rather
 than asking the user to restate the plan. Only request user input for a

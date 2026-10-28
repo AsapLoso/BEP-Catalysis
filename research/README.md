@@ -5,6 +5,8 @@ This folder groups the evidence and planning behind the reactor notebooks. Use t
 ## Source material
 
 - [literature/](./literature/) contains papers, extracted text, and literature indexes. Verify scientific claims against the primary source files.
+- [evidence/](./evidence/README.md) separates source transcriptions, analyses, and derived outputs from their original papers. Imported Schbib and Larsen audits retain their source-branch provenance and limitations.
+- [reports/](./reports/README.md) indexes the consolidated benchmark audit reports.
 - [specs/v3/](./specs/v3/) contains the V3 scope, source manifest, model blueprint, theory crosswalk, audit trail, and handoff drafts. The V3 implementation itself lives under [notebooks/reference/v3/](../notebooks/reference/v3/).
 - [audits/](./audits/) contains focused model reviews and any calculations supporting those reviews.
 

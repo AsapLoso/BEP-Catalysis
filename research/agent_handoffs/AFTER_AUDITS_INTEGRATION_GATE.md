@@ -10,7 +10,7 @@
 - **Agent 5:** its own branch's current observed HEAD `cff6935` still contains historical imported notebook/data snapshots, not approved results. **Do not initiate synthesis, PR, copy-back, notebook edits, or source integration.** Review the exact final upstream SHAs again when both reports arrive; the above hashes are only a dated checkpoint.
 - **Next action after results arrive:** verify each report's actual PASS/BLOCKED scope, parameter/provenance ledger, experiment subset, original-versus-corrected equation version, newly executed notebook/run receipts, and unresolved units/flow/temperature. Prepare a *minimal, file-by-file diff* of any proposed reference import, explicitly choosing between copying a file or linking to it; keep historical snapshots intact. Present the owner with a brief **GO / NO (improvement needed)** request covering both *integration* and *scientific synthesis* separately.
 
-**STATUS: NOT AUTHORIZED FOR SCIENTIFIC COUPLING.** This is a handoff and proposed PR procedure, not a PR or a merge. The main Agent 5 contracts are [GOAL.md](../../GOAL.md), [TODO.md](../../TODO.md), and [issue #8](https://github.com/AsapLoso/BEP-Catalysis/issues/8).
+**STATUS: NOT AUTHORIZED FOR SCIENTIFIC COUPLING.** This is a handoff and proposed PR procedure, not a PR or a merge. The main Agent 5 contracts are [GOAL.md](./agent-5-pdag-co/GOAL.md), [TODO.md](./agent-5-pdag-co/TODO.md), and [issue #8](https://github.com/AsapLoso/BEP-Catalysis/issues/8).
 
 ## Dependency chain
 

@@ -1,17 +1,8 @@
-# Original source material — index only
+# Original source files
 
-Store newly acquired **unaltered** primary-source files here where lawful, together with exact citation/source URL, version, access date, page/figure locators and SHA where available. Link the historical `research/literature/` source archive and existing image/PDF files rather than moving or re-encoding them.
+The source files remain at their established locations or on the branch that introduced them.
 
-Original paper/PDF/photo and publisher/author correction must be distinguished. An author-shared note appended to a third-party hosted article is not automatically a journal-issued erratum.
+- Schbib et al. (1996): see the [literature index](../../literature/README.md) and the archived [PDF](../../literature/schbib_1996_front_end_acetylene_hydrogenation.pdf), extracted text, and HTML.
+- Larsen (2024): the full thesis PDF and its Appendix E/F page renders are retained on [feat/larsen-pdag-benchmark at adf33269](https://github.com/AsapLoso/BEP-Catalysis/tree/adf33269fadc2a70891a144ed6dd86f25c58db25/research/evidence/original). The thesis copy was not duplicated into this branch because it is a large binary artifact. Its official repository provenance was not authenticated by the audit.
 
-**No edited equation, reformatted value, guessed unit, or AI summary belongs in the original-source layer.** See `../transcriptions/` for faithfully copied text, `../analysis/` for reasoning and `../derived/` for measurements/computations.
-
-## Existing source inventory on this branch (paths preserved)
-
-| Reference | Exact location | Evidence type / limitation |
-|---|---|---|
-| Schbib (1996) journal article | [archived PDF](../../literature/schbib_1996_front_end_acetylene_hydrogenation.pdf), [large HTML](../../literature/schbib_1996_full_article.html) | Historical paper copies; the companion [extracted text](../../literature/schbib_1996_extracted_text.txt) is a **transcription aid**, not a new original |
-| Larsen (2024) thesis Appendix E/F pages | [18 rendered page images](../../../notebooks/benchmarks/source_renders/appendix_pages/README.md) | PDF pages 71–88 preserved as source-image renditions; **full original Larsen PDF is NOT in this branch** |
-
-
-**Source archive convention:** the old source locations above are authoritative existing blobs and stay unchanged; transcribed/AI-generated words should never be inserted into these original files. New primary artifacts may be added here later with page/DOI/version and exact checksum provenance.
+Derived transcriptions and interpretations are indexed separately under [transcriptions/](../transcriptions/), [analysis/](../analysis/), and [derived/](../derived/).

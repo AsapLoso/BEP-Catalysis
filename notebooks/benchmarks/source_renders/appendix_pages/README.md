@@ -1,5 +1,7 @@
-# Appendix E/F raster renders
+# Larsen 2024 Appendix E/F page renders
 
-These 18 PNGs preserve PDF pages 71–88 of Victor Larsen's June 2024 thesis, rendered at 300 DPI for visual inspection of the scan-only Appendix E/F content. Filenames use the 1-based PDF page index, not the thesis's printed page number.
+The 18 PNG page renders (PDF pages 71–88) are kept on the [pinned Larsen source branch](https://github.com/AsapLoso/BEP-Catalysis/tree/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages) rather than duplicated here.
 
-The rendered source is the thesis PDF in the project archive. The source PDF is not duplicated here. Appendix E contains tested LHHW model variants and RMSE values; Appendix F contains code, reactor inputs, and the Pd₀Ag experiment/comparison tables.
+The [page-linked transcription](../../../../research/evidence/transcriptions/larsen_2024_appendix_E_F.md) records what was readable and marks missing, cropped, or ambiguous material. The [audit report](../../../../research/reports/larsen_2024_equation_and_baseline_audit.md) summarizes the source and numerical limits. The original thesis PDF is also on the source branch; see [research/evidence/original](../../../../research/evidence/original/README.md).
+
+The benchmark and its selected curve data are in [notebooks/benchmarks](../../README.md). These are source-study references, not a complete reproduction of the final all-experiment fit.

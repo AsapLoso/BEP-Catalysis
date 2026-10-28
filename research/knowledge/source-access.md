@@ -39,6 +39,6 @@ The local `AsapLoso/Methanol-Catalysis` checkout was on `main` at `5785fa5f11289
 
 ## Sessions and limits
 
-The Agent Host listed four BEP-Catalysis workspace sessions, including this task. The two relevant prior sessions were `ahp-session:/2a08282b-fb6f-46a2-a997-45d71487c44c` (reactor/branch audit) and `ahp-session:/e9f1214c-dcee-413e-ad5a-2128005f6f7a` (unified dynamic reactor notebook context). These provide partial local conversation context, not a complete ChatGPT archive.
+The Agent Host listed four BEP-Catalysis workspace sessions, including this task. I could read partial context from two relevant prior sessions: `ahp-session:/2a08282b-fb6f-46a2-a997-45d71487c44c` (a branch and reference audit that distinguished planning-only workstreams from a branch removing V3 files, and raised personal-map review constraints) and `ahp-session:/e9f1214c-dcee-413e-ad5a-2128005f6f7a` (the unified notebook discussion, where an attached snapshot was empty and the repository notebook was described as placeholder pseudocode without executed cells). The session contexts are truncated and do not provide complete ChatGPT conversations.
 
 No literature PDFs were reopened for this consolidation, no new source extraction or citation audit was run, no notebook or simulation was run, and no files in the supporting repositories were modified.

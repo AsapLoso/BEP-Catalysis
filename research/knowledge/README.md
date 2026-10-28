@@ -23,7 +23,7 @@ Nothing in this folder changes the personal map, review queue, AI reference data
 | Periodic operation, CO modulation, and hypotheses | [Periodic operation](periodic-operation.md) | [proposal-derived periodic outlook](../../planning/source-snapshots/aapm-devcontainer/Academics/BEP/Catalysis/presentation/deep-dives/L_periodic_optimisation_research_outlook_2026-10-14.md); [V4 reactor wayfinder](https://github.com/AsapLoso/BEP-Catalysis/blob/884a5303adf112941b180cc7191cf8ef3c8604f7/research/wayfinder/bep_v4_reactor_model.md) |
 | Owner decisions and supervisor deliverables | [Decisions and deliverables](decisions-and-deliverables.md) | [reconsolidation capture](../../planning/source-snapshots/aapm-devcontainer/Academics/BEP/Catalysis/research/notes/reconsolidation_capture_2026-10-16.md); [meeting transcript](https://github.com/AsapLoso/BEP-Catalysis/blob/884a5303adf112941b180cc7191cf8ef3c8604f7/research/notes/meetings/2026-10-23_supervisor_meeting.md) |
 
-Use the [open-question and contradiction register](open-questions.md) for unresolved scope and evidence conflicts, and the [source-access record](source-access.md) for what was available on this PC.
+Use the [open-question and contradiction register](open-questions.md) for unresolved scope and evidence conflicts, the [source-access record](source-access.md) for what was available on this PC, and the [handoff](HANDOFF.md) for the preserved state and next review points.
 
 ## Existing indexes and maps
 

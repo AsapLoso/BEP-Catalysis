@@ -2,7 +2,7 @@
 
 This page makes part of the existing **machine-readable CSV** accessible as an ordinary Markdown table. It is **not** a page-by-page verified transcription of the thesis. The table below is reproduced from `notebooks/benchmarks/data/larsen_2024_selected_curves.csv`, rows tagged `response_origin=exact_appendix_F_table` by the prior Agent 4. Whether each numeric cell matches the **original image** is still an open, explicit verification task.
 
-**Original source location claimed by the earlier agent:** Larsen 2024 thesis, Appendix F experiment and comparison table (printed pp. 75–76). Actual page images: `notebooks/benchmarks/source_renders/appendix_pages/page-71.png` through `page-88.png`; the exact PDF-to-printed-page mapping must be confirmed visually.
+**Original source location claimed by the earlier agent:** Larsen 2024 thesis, Appendix F experiment and comparison table (printed pp. 75–76). Actual page images are on the [pinned source-branch render directory](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages); the exact PDF-to-printed-page mapping must be confirmed visually.
 
 | Prior agent ID | Flow reported (mL/min) | Catalyst mass (mg) | Feed C2H2 (%) | C2H4 (%) | H2 (%) | He (%) | GHSV value (cm³ h⁻¹ gcat⁻¹, reference convention unresolved) | C2H2 conversion (%) | C2H4 selectivity (%) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|

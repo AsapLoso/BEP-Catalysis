@@ -1,6 +1,6 @@
 # Larsen 2024 — Appendix E/F page-checked transcription
 
-**Primary source:** Victor Larsen, *Semihydrogenation of acetylene to ethylene with a PdAg catalyst*, TU Delft Bachelor End Project, June 2024. The PDF in `research/evidence/original/` is the user-provided copy (SHA-256 `b5aaa2300ff9b64aca70e58cc5e4d8be30b3c12ee264e69af89e01c86f5120c9`); official-deposit equivalence is not established.
+**Primary source:** Victor Larsen, *Semihydrogenation of acetylene to ethylene with a PdAg catalyst*, TU Delft Bachelor End Project, June 2024. The user-provided PDF is available on the [pinned Larsen source branch](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/research/evidence/original/Larsen%20-%202024%20-%20Semihydrogenation%20of%20acetylene%20to%20ethylene%20with%20a%20PdAg%20catalyst.pdf) (SHA-256 `b5aaa2300ff9b64aca70e58cc5e4d8be30b3c12ee264e69af89e01c86f5120c9`); official-deposit equivalence is not established.
 
 **Source renders:** 18 unmodified 300-DPI PNGs of one-based PDF pages 71–88: [page guide](../../../notebooks/benchmarks/source_renders/appendix_pages/README.md). Each image link below points to the checked original render. Printed page numbers are transcribed from the page itself.
 
@@ -8,7 +8,7 @@
 
 ## PDF page 71 — Appendix E divider
 
-- **Original image:** [page-71.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-71.png)
+- **Original image:** [page-71.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-71.png)
 - **Printed page:** 65
 - **Review status:** `checked_against_image`
 - **Visible source text:** `E` / `Table tests`.
@@ -16,7 +16,7 @@
 
 ## PDF page 72 — blank divider verso
 
-- **Original image:** [page-72.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-72.png)
+- **Original image:** [page-72.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-72.png)
 - **Printed page:** 66
 - **Review status:** `checked_against_image`
 - **Visible source text:** Running divider `E. Table tests`; otherwise blank.
@@ -24,7 +24,7 @@
 
 ## PDF page 73 — Table E.1, Pd₀Ag
 
-- **Original image:** [page-73.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-73.png)
+- **Original image:** [page-73.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-73.png)
 - **Printed page:** 67
 - **Review status:** `checked_against_image`
 - **Visible source heading/caption:** `E.1. Table per cat. with every LHHW model variance`; `E.1.1. Pd₀Ag`; `Table E.1: Overview of the tested kinetic model variants for Pd₀Ag, if ✓ it is a variable in the LHHW model and if × the term is let out of the LHHW model`.
@@ -63,7 +63,7 @@
 
 ## PDF page 74 — Table E.2, Pd₂Ag
 
-- **Original image:** [page-74.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-74.png)
+- **Original image:** [page-74.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-74.png)
 - **Printed page:** 68
 - **Review status:** `checked_against_image`
 - **Visible source heading/caption:** `E.1.2. Pd₂Ag`; Table E.2 gives the tested kinetic model variants for Pd₂Ag and defines `✓` as a variable in the LHHW model and `×` as a term left out.
@@ -101,7 +101,7 @@
 
 ## PDF page 75 — Table E.3, Pd₃Ag
 
-- **Original image:** [page-75.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-75.png)
+- **Original image:** [page-75.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-75.png)
 - **Printed page:** 69
 - **Review status:** `checked_against_image`
 - **Visible source heading/caption:** `E.1.3. Pd₃Ag`; Table E.3 gives the tested kinetic model variants for Pd₃Ag and defines `✓` as a variable in the LHHW model and `×` as a term left out.
@@ -138,21 +138,21 @@
 
 ## PDF page 76 — blank page
 
-- **Original image:** [page-76.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-76.png)
+- **Original image:** [page-76.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-76.png)
 - **Printed page:** 70
 - **Review status:** `checked_against_image`
 - **Visible source text:** No substantive text.
 
 ## PDF page 77 — Appendix F divider
 
-- **Original image:** [page-77.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-77.png)
+- **Original image:** [page-77.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-77.png)
 - **Printed page:** 71
 - **Review status:** `checked_against_image`
 - **Visible source heading:** `F. Standard LHHW model code`.
 
 ## PDF page 78 — Appendix F import, input workbook, Pd₂Ag table start
 
-- **Original image:** [page-78.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-78.png)
+- **Original image:** [page-78.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-78.png)
 - **Printed page:** 72
 - **Review status:** `checked_against_image` for code and all displayed Pd₂Ag cells
 - **Visible source structure:** Heading `Kinetic modeling Acetylene semihydrogenation`; notebook imports NumPy, pandas, Matplotlib, SciPy ODE/optimization functions and warning utilities; reads a local Excel workbook with one sheet per catalyst; comments explicitly exclude experiment 34 (Excel row 36) from the Pd₀Ag data; maps the Pd₂Ag columns to an experiment number, flow, WHSV, feed volume percentages, catalyst mass, conversion, selectivity and carbon balance.
@@ -180,7 +180,7 @@
 
 ## PDF page 79 — Appendix F Pd₂Ag table end, Pd₃Ag preview, combined-table setup
 
-- **Original image:** [page-79.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-79.png)
+- **Original image:** [page-79.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-79.png)
 - **Printed page:** 73
 - **Review status:** `checked_against_image` for the complete Pd₂Ag continuation and all displayed Pd₃Ag cells
 - **Visible source structure:** Pd₂Ag table continues without an ellipsis through `EXP42`, yielding 42 processed experiment rows. The Pd₃Ag table preview shows `EXP1`–`EXP4`, a literal pandas ellipsis, and terminal displayed rows `EXP73`–`EXP77`; its footer reads `78 rows × 12 columns` (including the header-like row). The Pd₀Ag extraction begins below it.
@@ -199,7 +199,7 @@
 
 ## PDF page 80 — Appendix F Pd₀Ag processed response table and combined data
 
-- **Original image:** [page-80.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-80.png)
+- **Original image:** [page-80.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-80.png)
 - **Printed page:** 74
 - **Review status:** `checked_against_image` for the complete displayed Pd₀Ag table, concatenation code and preview metadata
 - **Visible source structure:** The Pd₀Ag table is continuous: it contains `EXP1`–`EXP33` and `EXP35`–`EXP42`; `EXP34` was excluded in the preceding code cell. Every displayed Pd₀Ag input-table cell is in the linked CSV. The concatenated table footer reads `163 rows × 13 columns` and includes a header-like row for each catalyst. A note above constants reads: `All the constants that can be filled out beforehand, and turning DW [g] into Dz [m]. Through density of Al2O3 = 3.987 g/cm^3` [capitalization/grammar as printed].
@@ -208,7 +208,7 @@
 
 ## PDF page 81 — Appendix F geometry, reactor balances and standard LHHW equations
 
-- **Original image:** [page-81.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-81.png)
+- **Original image:** [page-81.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-81.png)
 - **Printed page:** 75
 - **Review status:** `checked_against_image` for all readable code, constants, balance structure and displayed rate equations
 - **Visible constants (transcription):** `R = 8.314` (J mol⁻¹ K⁻¹); `D = 0.5` cm; `rho = 2.65` (comment: density SiO₂, g cm⁻³); catalyst masses read from the data tables; `T = 373` (comment: 100 Celsius); `P_total = 100000` Pa; `A = (np.pi * D**2)/4` cm²; `dW_dz = rho * A * 100` g m⁻¹. The displayed catalyst lengths are approximately 0.001921871 m for Pd₀Ag, 0.001441403 m for Pd₂Ag, and 0.001921871 m for Pd₃Ag.
@@ -225,7 +225,7 @@
 
 ## PDF page 82 — Appendix F ideal-gas feed conversion and combined rows
 
-- **Original image:** [page-82.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-82.png)
+- **Original image:** [page-82.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-82.png)
 - **Printed page:** 76
 - **Review status:** `checked_against_image` for the readable flow-conversion code, equations, and output dimensions
 - **Visible source calculation (transcribed):** A function removes repeated rows marked `flow [mL/min]`; calculates `V_m3_s = flow × 1e-6 / 60`; calculates total inlet molar flow as `F_tot_mol_s = P * V_m3_s / (R*T)`; divides feed volume percentages by 100 and multiplies by total molar flow to set species inlet flows. The rendered call supplies `R`, `T`, `P_total`, and a flow-column label. No explicit mass-flow-controller standard reference condition is stated.
@@ -234,7 +234,7 @@
 
 ## PDF page 83 — Appendix F simulated response table
 
-- **Original image:** [page-83.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-83.png)
+- **Original image:** [page-83.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-83.png)
 - **Printed page:** 77
 - **Review status:** `checked_against_image` for the readable code and preview structure
 - **Visible source structure:** A three-reaction species-flow simulation is applied to the combined 160-row input DataFrame; simulated conversion/selectivity are assembled by experiment number and catalyst. Pandas output footer reads `160 rows × 4 columns`; the visible head and tail are not the full table.
@@ -242,7 +242,7 @@
 
 ## PDF page 84 — Appendix F RMSE computation and standard-model score
 
-- **Original image:** [page-84.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-84.png)
+- **Original image:** [page-84.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-84.png)
 - **Printed page:** 78
 - **Review status:** `checked_against_image` for all readable RMSE code, formula, score, and visible preview ranges
 - **Visible source formula:** `RMSE_i = sqrt(((conv_sim - conv_exp)^2 + (selec_sim - selec_exp)^2)/2)`; overall score is the arithmetic mean of the experiment RMSE values. The code calls `np.sum(RMSE_results)/len(df_all)`.
@@ -251,7 +251,7 @@
 
 ## PDF page 85 — Appendix F displayed fit subset
 
-- **Original image:** [page-85.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-85.png)
+- **Original image:** [page-85.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-85.png)
 - **Printed page:** 79
 - **Review status:** `checked_against_image` for filter, row count and comments
 - **Visible text/code:** Heading `Optimisation`; prose says “Need to use: differential_evolution” and says catalysts are fitted separately because each has its own kinetics. Under `Start fitting with the "best" data`, code sets `df_fit = df_all[df_all["catalyst"] == "AgPd0"].copy()`. The `#All data` line and `#df_fit = df_all.copy()` are commented. Output footer: `41 rows × 26 columns`.
@@ -259,7 +259,7 @@
 
 ## PDF page 86 — Appendix F standard fit function
 
-- **Original image:** [page-86.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-86.png)
+- **Original image:** [page-86.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-86.png)
 - **Printed page:** 80
 - **Review status:** `checked_against_image` for all readable function code and all six bounds
 - **Visible structure:** A six-variable Differential Evolution bound list, a comparison function that simulates each DataFrame row, a paired conversion/selectivity RMSE routine, and an objective function. The variables passed to the standard-model rate function are `k1`, `k2`, `K1`, `K2`, `Kinh`, and `KH`; no `r1_max` or `n_inh` is present in this displayed standard-model code.
@@ -278,7 +278,7 @@
 
 ## PDF page 87 — Appendix F Differential Evolution output
 
-- **Original image:** [page-87.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-87.png)
+- **Original image:** [page-87.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-87.png)
 - **Printed page:** 81
 - **Review status:** `checked_against_image` for the optimizer call, readable printed results, and comparison-table rows on this page
 - **Visible run settings:** Differential Evolution output shows 50 steps, population size 42, tolerance `1e-8`, seed 42 and a polishing step with `L-BFGS-B`.
@@ -287,7 +287,7 @@
 
 ## PDF page 88 — Appendix F Pd₀Ag comparison rows and parity code
 
-- **Original image:** [page-88.png](../../../notebooks/benchmarks/source_renders/appendix_pages/page-88.png)
+- **Original image:** [page-88.png](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages/page-88.png)
 - **Printed page:** 82
 - **Review status:** `checked_against_image` for all readable plotting code and the complete displayed comparison table
 - **Visible source structure:** Remaining Pd₀Ag comparison output rows are shown, followed by conversion/selectivity parity-plot code. The code sets a relative band `band = 0.10`, calculates the fraction of predicted points inside the band, and separately calculates conversion and selectivity RMSE. Plot labels show experimental vs simulated values; the screenshot begins/continues a Pd₀Ag parity plot.

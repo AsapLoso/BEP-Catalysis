@@ -135,4 +135,4 @@ Before using this benchmark to support a hypothetical CO mechanism, obtain (or c
 - **Notebook execution:** nbclient, Python 3 kernel, timeout 600 s, working directory notebooks/benchmarks, top-to-bottom. The executable notebook writes its derived CSV outputs to research/evidence/derived/.
 - **Measured runtime:** 29.095 s for the documented runner invocation (one full notebook execution).
 - **Numerical tolerances:** BDF/Radau and base/tight response deltas <1e-4 percentage points; unit-rescaling response delta <1e-4 pp; minimum state >−1e-10 mol s⁻¹; elemental-flow residual <1e-10 mol atoms s⁻¹; paired-score direct-formula comparison atol 1e-12 pp; stored historical selected-score regression absolute delta <0.02 pp.
-- **Runtime and artifact hash:** recorded in TODO.md after the final runner execution. Commit SHA for the completed implementation is recorded there.
+- **Runtime and artifact hash:** the original execution receipt and implementation commit SHA are recorded in the [source-branch TODO](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/TODO.md). This central reference import did not rerun the audit.

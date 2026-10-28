@@ -1,22 +1,17 @@
-# BEP reactor notebook review workspace
+# Reactor notebook references
 
-This folder holds editable copies of the three reactor-model notebooks and the related legacy Python scaffold. The copied source files are unchanged snapshots; this setup did not execute the notebooks or alter their code or saved outputs.
+This folder contains implementations and proposals kept for comparison. The personal working notebook is [../unified_dynamic_reactor.ipynb](../unified_dynamic_reactor.ipynb). Edit that notebook by default; open a reference when a specific comparison is useful.
 
-## The four artifacts
+## Contents
 
-| Local copy | Role | Source snapshot |
-|---|---|---|
-| [legacy/c2h2_hydrogenation_transient_model.ipynb](legacy/c2h2_hydrogenation_transient_model.ipynb) | Legacy inline transient packed-bed model | [Methanol-Catalysis, `5785fa5f11289d72127457f9a3a25aa5c4e71be3`](https://github.com/AsapLoso/Methanol-Catalysis/blob/5785fa5f11289d72127457f9a3a25aa5c4e71be3/content/c2h2_hydrogenation_transient_model.ipynb) |
-| [v1/bep_dynamic_reactor_response.ipynb](v1/bep_dynamic_reactor_response.ipynb) | Dynamic reactor response, V1 (PR #1) | [Methanol-Catalysis, `791e51c0eba11f4bd5095f48d0520c6af317f5f8`](https://github.com/AsapLoso/Methanol-Catalysis/blob/791e51c0eba11f4bd5095f48d0520c6af317f5f8/notebooks/bep_dynamic_reactor_response.ipynb) |
-| [v2/bep_dynamic_reactor_response.ipynb](v2/bep_dynamic_reactor_response.ipynb) | Dynamic reactor response, V2 (PR #2) | [Methanol-Catalysis, `2ee0dc1a84529d6830dcc628fc771878907fb22c`](https://github.com/AsapLoso/Methanol-Catalysis/blob/2ee0dc1a84529d6830dcc628fc771878907fb22c/notebooks/bep_dynamic_reactor_response.ipynb) |
-| [legacy/c2h2_hydrogenation_transient_model.py](legacy/c2h2_hydrogenation_transient_model.py) | Python form of the legacy scaffold in `3_Model` | [project-management-agents, `cd0df858219d3786fb7943d2ea380a9bc66195ba`](https://github.com/AsapLoso/project-management-agents/blob/cd0df858219d3786fb7943d2ea380a9bc66195ba/Academics/BEP/Catalysis/3_Model/c2h2_hydrogenation_transient_model.py) |
+- [v3/](./v3/) is the implemented V3 vertical slice, including its vendor engine and locked environment. Its scope and limitations are documented in [research/specs/v3/README.md](../../research/specs/v3/README.md).
+- [v4/](./v4/README.md) contains the imported V4 dynamic CO notebook, its builder, and an isolated copy of the engine used by that branch.
+- [legacy/](./legacy/) contains the older inline transient model and its Python scaffold copy.
+- [ai/](./ai/) contains an explicitly labeled AI proposal. Treat it as a comparison prompt, not scientific validation.
+- [snapshots/](./snapshots/) contains saved drafts with incomplete provenance; they are retained for comparison.
 
-The canonical Python scaffold remains at [`3_Model/c2h2_hydrogenation_transient_model.py`](../../3_Model/c2h2_hydrogenation_transient_model.py). The copy here is for the side-by-side review workspace; the original has not been moved or replaced.
+Historical V1/V2 dynamic-response runs and literature benchmark work are indexed under [../benchmarks/](../benchmarks/README.md).
 
-## Scope and status
+## Reference discipline
 
-Lucas confirmed the initial editable set as **three reactor notebooks and one Python file**. The BEP presentation notebook and `content/Results.ipynb` remain relevant as separate project context, but are not part of this four-artifact workspace.
-
-V1 and V2 are literature-reproduction vertical slices. Their saved notebook outputs are preserved from their source commits. Copying them does not establish that they run in this repository; V1/V2 use the `pbr` package, and dependencies have not been installed or checked here.
-
-During review, keep these evidence types separate: what the code does, what saved or newly reproduced numerical evidence supports, what AI analysis proposes, and what Lucas has personally understood or approved. No new scientific interpretation or validation is implied by this branch setup.
+Saved notebook outputs show what was present in those snapshots. They do not establish that the notebooks run in this repository, reproduce a paper, or validate the BEP model. Read each artifact's README and audit report before reusing equations or parameters.

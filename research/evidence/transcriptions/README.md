@@ -1,12 +1,19 @@
-# Readable source transcriptions
+# Source transcriptions
 
-This is the preferred reading layer **for image-only source pages**, so reviewers need not decipher 300-DPI PNGs for every piece of mathematics and tables.
+These files preserve source wording, tables, and selected text separately from analysis. Read each file's verification labels and omissions before using a value.
 
-Each page/transcription entry should link its exact original file and include:
-- original page index and printed page number (different when present);
-- the literal source text, equation or table, retaining ambiguity markers rather than normalizing guesses;
-- method: native PDF text / manually read rendered page / OCR draft;
-- review status: `raw_unchecked`, `checked_against_image` or `ambiguous`;
-- a clear separate `Transcriber notes` section, never interleaved with purported source words.
+## Schbib (1996)
 
-Existing extracted text (`research/literature/*_extracted_text.txt`) is only provisional transcription until checked, especially where PDF mathematical notation is garbled. New page-by-page transcriptions belong here. **Do not invent missing text from an image or derived CSV.** Cite the original when reporting source claims.
+- [Parameter tables](./schbib_1996_parameter_tables.md): transcription and source notes.
+- [Author-shared Table 8 correction](./schbib_1996_author_table8_correction.md): provenance and visual verification remain unresolved; do not treat it as a verified correction.
+- Primary PDF, extracted text, and HTML are in [research/literature](../../literature/README.md).
+
+## Larsen (2024)
+
+- [Appendix E/F transcription](./larsen_2024_appendix_E_F.md): page-linked transcription with marked omissions and unreadable cells.
+- [Visible Appendix F rows](./larsen_2024_appendix_F_visible_table_rows.csv)
+- [Main-source excerpts](./larsen_2024_main_source_excerpts.md)
+- [Appendix E/F worklist](./larsen_appendix_E_F_worklist.md)
+- [Native extracted text](./larsen_2024_complete_native_text_unverified.txt): machine-extracted text, explicitly unverified and not authoritative for scanned pages.
+
+The original thesis PDF and its 18 page renders are available from the [pinned Larsen source branch](https://github.com/AsapLoso/BEP-Catalysis/tree/adf33269fadc2a70891a144ed6dd86f25c58db25/research/evidence/original). Their absence from this branch is documented in [original sources](../original/README.md).

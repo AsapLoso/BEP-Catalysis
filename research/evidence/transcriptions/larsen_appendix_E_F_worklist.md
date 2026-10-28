@@ -4,7 +4,7 @@
 
 ## Existing original images
 
-The exact source view is `notebooks/benchmarks/source_renders/appendix_pages/`, PDF page **71–88**, one-based filename `page-<N>.png`. The entire original 97-page thesis PDF is **now committed** at `research/evidence/original/Larsen - 2024 - Semihydrogenation of acetylene to ethylene with a PdAg catalyst.pdf` (byte-verified against the uploaded copy); image-only pages nevertheless require page-by-page transcription.
+The exact source view is the [pinned branch render directory](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/notebooks/benchmarks/source_renders/appendix_pages), PDF pages **71–88**, one-based filename page-N.png. The original 97-page thesis PDF is retained on the [pinned Larsen source branch](https://github.com/AsapLoso/BEP-Catalysis/blob/adf33269fadc2a70891a144ed6dd86f25c58db25/research/evidence/original/Larsen%20-%202024%20-%20Semihydrogenation%20of%20acetylene%20to%20ethylene%20with%20a%20PdAg%20catalyst.pdf); image-only pages nevertheless require page-by-page transcription.
 
 ## Completed source transcription work
 

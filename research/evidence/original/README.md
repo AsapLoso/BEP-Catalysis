@@ -1,18 +1,8 @@
-# Original source material — index only
+# Original source files
 
-Store newly acquired **unaltered** primary-source files here where lawful, together with exact citation/source URL, version, access date, page/figure locators and SHA where available. Link the historical `research/literature/` source archive and existing image/PDF files rather than moving or re-encoding them.
+The source files remain at their established locations or on the branch that introduced them.
 
-Original paper/PDF/photo and publisher/author correction must be distinguished. An author-shared note appended to a third-party hosted article is not automatically a journal-issued erratum.
+- Schbib et al. (1996): see the [literature index](../../literature/README.md) and the archived [PDF](../../literature/schbib_1996_front_end_acetylene_hydrogenation.pdf), extracted text, and HTML.
+- Larsen (2024): the thesis PDF is in this folder and its Appendix E/F page renders are under [benchmarks](../../../notebooks/benchmarks/source_renders/appendix_pages/). They originate from [feat/larsen-pdag-benchmark at adf33269](https://github.com/AsapLoso/BEP-Catalysis/tree/adf33269fadc2a70891a144ed6dd86f25c58db25/research/evidence/original). The audit did not authenticate the thesis copy's official repository provenance.
 
-**No edited equation, reformatted value, guessed unit, or AI summary belongs in the original-source layer.** See `../transcriptions/` for faithfully copied text, `../analysis/` for reasoning and `../derived/` for measurements/computations.
-
-## Existing source inventory on this branch (paths preserved)
-
-| Reference | Exact location | Evidence type / limitation |
-|---|---|---|
-| Schbib (1996) journal article | [archived PDF](../../literature/schbib_1996_front_end_acetylene_hydrogenation.pdf), [large HTML](../../literature/schbib_1996_full_article.html) | Historical paper copies; the companion [extracted text](../../literature/schbib_1996_extracted_text.txt) is a **transcription aid**, not a new original |
-| Larsen (2024) complete thesis PDF, **as uploaded by owner** | [Original 97-page PDF](Larsen%20-%202024%20-%20Semihydrogenation%20of%20acetylene%20to%20ethylene%20with%20a%20PdAg%20catalyst.pdf) | 9,167,352 bytes; SHA-256 `b5aaa2300ff9b64aca70e58cc5e4d8be30b3c12ee264e69af89e01c86f5120c9`, Git blob `8207c91e...`. PDF internally compiled 2026-06-26; official 2024 deposit status not independently established |
-| Larsen (2024) thesis Appendix E/F pages | [18 rendered page images](../../../notebooks/benchmarks/source_renders/appendix_pages/README.md) | PDF pages 71–88, image renditions; native machine extraction alone does not transcribe scanned tables/code |
-
-
-**Source archive convention:** the old source locations above are authoritative existing blobs and stay unchanged; transcribed/AI-generated words should never be inserted into these original files. New primary artifacts may be added here later with page/DOI/version and exact checksum provenance.
+Derived transcriptions and interpretations are indexed separately under [transcriptions/](../transcriptions/), [analysis/](../analysis/), and [derived/](../derived/).

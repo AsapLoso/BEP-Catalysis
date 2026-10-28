@@ -84,3 +84,4 @@ Deliver your audit findings as a structured markdown report covering:
 1. **Validated Strengths:** What parts of the formulations are mathematically and physically sound.
 2. **Deficiencies & Traps:** Specific risks, unit mismatches, or unverified assumptions.
 3. **Actionable Recommendations:** Exact modifications needed before presenting this simulation suite to supervisor Damian Vico van Berkel.
+

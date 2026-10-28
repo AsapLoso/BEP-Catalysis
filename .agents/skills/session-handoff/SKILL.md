@@ -364,3 +364,21 @@ Two corrections learned the hard way:
 
 If a **tier-1** file you claimed to write does not appear in `git status --porcelain`, your
 report is provably false. Fix the report.
+## Completion-driving handoff — never stop at a plan
+
+When an unresolved request concerns **implementation**, a handoff must
+carry not only context but an executable work order: desired observable
+outcome, actual current state, owner approvals/vetoes, chosen next
+action, testable acceptance gates, blocker escape routes, and a link to
+the owning issue/PR. A standalone retrospective document is not
+completion of an implementation task.
+
+In BEP-Catalysis, see
+[`BEP_EXECUTION_HANDOFF_2026_10_29.md`](../../research/workflows/BEP_EXECUTION_HANDOFF_2026_10_29.md).
+On resumption, the agent should immediately inspect the current
+repository state and **execute the next safe engineering action** rather
+than asking the user to restate the plan. Only request user input for a
+genuine scientific or approval decision. The handoff remains open until
+operational acceptance is evidenced; distinguish "handoff recorded"
+from "workflow implemented" and from "end-to-end verified".
+

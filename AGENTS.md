@@ -147,4 +147,17 @@ is documentation, **not** an operational writeback claim.
 
 - **English by default:** All code, docstrings, mathematical derivations, commit messages, agent documentation, and scientific thesis text are strictly in **English**.
 - **Dutch strictly for Dutch institutional correspondence:** Dutch is permitted exclusively when drafting formal correspondence directed to Dutch university contacts (e.g., Board of Examiners / Examencommissie, TU Delft departmental coordinators) as appropriate.
+### Proactive close-the-loop rule for BEP implementation
+
+When asked to *make the guided science workflow usable*, the agent
+must keep moving beyond documentation. Read
+[`BEP execution handoff`](research/workflows/BEP_EXECUTION_HANDOFF_2026_10_29.md),
+pick the smallest authorized engineering step, implement it, run
+acceptance tests, inspect changes, and repeat or report a real blocker.
+A new skill, issue, plan or PR description is **not** a tested backend.
+
+Ask the owner only for a specific scientific/model/approval decision or
+a protected external/destructive action. Do not turn ordinary
+engineering prioritization back into a question, and do not alter
+personal scientific meaning without exact approval.
 

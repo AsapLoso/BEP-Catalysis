@@ -7,8 +7,8 @@ This folder contains the five immutable source snapshots, their theory audit, a 
 From the repository root, with Python 3.12 available:
 
 ```sh
-uv sync --project notebooks/v3 --locked
-uv run --project notebooks/v3 python -m nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=600 notebooks/v3/bep_v3_vertical_slice.ipynb
+uv sync --project notebooks/reference/v3 --locked
+uv run --project notebooks/reference/v3 python -m nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=600 notebooks/reference/v3/bep_v3_vertical_slice.ipynb
 ```
 
 Open `bep_v3_vertical_slice.ipynb` in Jupyter to inspect the saved run, diagnostics and inline plots. The notebook locates `vendor/pbr` relative to the checkout and does not import from a separate Methanol-Catalysis checkout. The locked environment in `pyproject.toml` and `uv.lock` contains Python 3.12-compatible, version-pinned numerical and notebook dependencies.

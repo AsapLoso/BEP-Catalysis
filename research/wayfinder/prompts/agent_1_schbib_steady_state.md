@@ -18,9 +18,9 @@ under varying temperatures ($288\text{--}393\ \text{K}$), pressures ($1\text{--}
 
 ## 2. Primary Ground Truth Sources
 Do not guess or hallucinate any parameters. All data must be read directly from the workspace files:
-- **Full Machine-Readable HTML:** [`research/literature/schbib_1996_full_article.html`](file:///c:/Users/Deuts/OneDrive%20-%20Delft%20University%20of%20Technology/Misc/Gemini/BEP-Catalysis/research/literature/schbib_1996_full_article.html)
-- **Primary PDF:** [`research/literature/schbib_1996_front_end_acetylene_hydrogenation.pdf`](file:///c:/Users/Deuts/OneDrive%20-%20Delft%20University%20of%20Technology/Misc/Gemini/BEP-Catalysis/research/literature/schbib_1996_front_end_acetylene_hydrogenation.pdf)
-- **Extracted Text:** [`research/literature/schbib_1996_extracted_text.txt`](file:///c:/Users/Deuts/OneDrive%20-%20Delft%20University%20of%20Technology/Misc/Gemini/BEP-Catalysis/research/literature/schbib_1996_extracted_text.txt)
+- **Full Machine-Readable HTML:** [schbib_1996_full_article.html](../../literature/schbib_1996_full_article.html)
+- **Primary PDF:** [schbib_1996_front_end_acetylene_hydrogenation.pdf](../../literature/schbib_1996_front_end_acetylene_hydrogenation.pdf)
+- **Extracted Text:** [schbib_1996_extracted_text.txt](../../literature/schbib_1996_extracted_text.txt)
 
 ### Key Data Tables to Extract from HTML:
 - **Table 3 (Feed & Operating Conditions):**

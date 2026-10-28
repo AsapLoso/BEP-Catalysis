@@ -47,7 +47,7 @@ Execute the mission defined in `GOAL.md` on branch `feat/schbib-co-benchmark`:
 
 ## Pair 2: Agent 2 — Dynamic 1D V4 Coupled Reactor Engine (True Transient ODE Integration)
 * **Branch:** `feat/v4-dynamic-reactor`
-* **Local Deliverable:** `notebooks/v4/unified_v4_dynamic_reactor.ipynb`
+* **Local Deliverable:** `notebooks/reference/v4/unified_v4_dynamic_reactor.ipynb`
 
 ### Prompt 2A: Initialization Prompt
 ```markdown
@@ -68,12 +68,12 @@ To begin, read your root mission specification in `GOAL.md` and report your exec
 ```markdown
 Execute the mission defined in `GOAL.md` on branch `feat/v4-dynamic-reactor`:
 
-1. Adapt the vendored `pbr` engine in `notebooks/v3/vendor/pbr/`:
+1. Adapt the vendored `pbr` engine in `notebooks/reference/v3/vendor/pbr/`:
    - Verify that the gas accumulation term (eps_b * dC_b/dt) is fully active in `pbr/solver.py`.
    - Update `pbr/chemistry.py` to include Carbon Monoxide (CO) with Schbib (1996) competitive adsorption kinetics.
    - Implement Danckwerts boundary conditions at z = 0 with a time-dependent periodic inlet hook:
      C_CO,in(t) = C_CO,mean + delta_C_CO * sgn(sin(2*pi*t / tau_p)).
-2. In `notebooks/v4/unified_v4_dynamic_reactor.ipynb`:
+2. In `notebooks/reference/v4/unified_v4_dynamic_reactor.ipynb`:
    - Benchmark: Verify convergence to the steady-state profile under constant inlet conditions.
    - Transient Wave Dynamics: Simulate square-wave and sinusoidal CO inlet pulsing across periods tau_p in [0.1, 10] s. Plot 2D spatiotemporal heatmaps C_i(z, t) showing concentration wave propagation along the reactor.
    - Limit Cycles: Plot phase plane trajectories of instantaneous Conversion X(t) vs. Ethylene Selectivity S(t).

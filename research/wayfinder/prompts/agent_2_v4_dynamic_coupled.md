@@ -2,7 +2,7 @@
 
 **Assigned Branch:** `feat/v3-coupled-reactor`  
 **Parent Commit:** `unified-reactor-model`  
-**Primary Deliverable:** `notebooks/dynamic_reactor/unified_dynamic_reactor.ipynb`
+**Primary Deliverable:** `notebooks/reference/v4/unified_v4_dynamic_reactor.ipynb`
 
 ---
 
@@ -46,15 +46,15 @@ Where $\tau_p$ is the modulation period, systematically varied relative to the r
 ---
 
 ## 3. Implementation Assets
-- Leverage the verified, vendored `pbr` engine in [`notebooks/v3/vendor/pbr/`](file:///c:/Users/Deuts/OneDrive%20-%20Delft%20University%20of%20Technology/Misc/Gemini/BEP-Catalysis/notebooks/v3/vendor/pbr/) (63/63 tests passing).
-- Consult [`Structure.md`](file:///c:/Users/Deuts/OneDrive%20-%20Delft%20University%20of%20Technology/Misc/Gemini/BEP-Catalysis/Structure.md) for parameter conventions.
+- Use the vendored `pbr` engine in [notebooks/reference/v3/vendor/pbr/](../../../notebooks/reference/v3/vendor/pbr/) as the V3 comparison implementation (63/63 tests passed in the recorded V3 verification).
+- Consult [Structure.md](../../../Structure.md) for parameter conventions.
 - Discretize space via Method of Lines (MOL) on $N_z \in [50, 100]$ interior nodes.
 - Integrate time using stiff solvers (`scipy.integrate.solve_ivp` with `method='BDF'` or `'Radau'`).
 
 ---
 
 ## 4. Required Notebook Figures & Analysis
-The notebook `notebooks/dynamic_reactor/unified_dynamic_reactor.ipynb` must produce:
+The notebook `notebooks/reference/v4/unified_v4_dynamic_reactor.ipynb` must produce:
 1. **Baseline Validation:** Convergence to steady state under constant $C_{CO,\text{in}}$, matching Agent 1's benchmark.
 2. **Spatiotemporal Wave Propagation:** 2D heatmap / carpet plot $C_i(z, t)$ showing concentration waves travelling through the packed bed under periodic square-wave cycling.
 3. **Limit Cycle Phase Plane:** Limit cycle trajectories of Conversion $X(t)$ vs. Ethylene Selectivity $S(t)$ over multiple periods.

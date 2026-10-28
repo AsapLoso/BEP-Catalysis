@@ -1,14 +1,22 @@
 # Notebook workspace
 
-## Personal working notebook
+This folder separates the notebook you are actively developing from archived implementations and benchmark work.
 
-[unified_dynamic_reactor.ipynb](./unified_dynamic_reactor.ipynb) is the personal working notebook. Its notes record the author's current understanding and model sketch. This is the default notebook to edit.
+## Personal work
 
-## References
+- [unified_dynamic_reactor.ipynb](./unified_dynamic_reactor.ipynb) is the personal working notebook and the default notebook to edit.
 
-Use material under [reference/](./reference/README.md) as reference. When opening an alternative, identify the specific notebook and explain its purpose, assumptions, and source status. Verify equations and parameters against primary sources before bringing them into the personal notebook.
+## Reference implementations
 
-- [reference/ai/](./reference/ai/): explicitly identified AI model proposal(s), for comparison and guided discussion.
-- [reference/snapshots/](./reference/snapshots/): saved drafts whose full provenance is not recorded; retained for comparison.
-- [reference/legacy/](./reference/legacy/), [reference/v1/](./reference/v1/), and [reference/v2/](./reference/v2/): legacy models and earlier literature-reproduction notebooks; see the reference README for provenance.
-- [v3/](./v3/): a separate vertical-slice implementation, not the default working notebook.
+- [reference/](./reference/README.md) contains AI proposals, saved drafts, the V3 implementation, and the planned V4 location.
+- [reference/v3/](./reference/v3/) contains the V3 vertical slice and its pinned environment. It is a separate implementation for study, not the personal working notebook.
+- [reference/v4/](./reference/v4/README.md) records where a future V4 reference notebook belongs. No V4 notebook is currently present.
+- [reference/legacy/](./reference/legacy/) contains older reactor-model artifacts.
+- [reference/ai/](./reference/ai/) and [reference/snapshots/](./reference/snapshots/) hold AI proposals and saved drafts, with provenance described in the reference index.
+
+## Benchmarks
+
+- [benchmarks/](./benchmarks/README.md) contains the historical V1 and V2 dynamic-response notebooks. Their saved outputs are preserved; their presence does not mean they have been rerun or validated in this checkout.
+- New literature benchmark notebooks and supporting data belong here, grouped by source or study as they are added.
+
+See [research/](../research/README.md) for literature, model specifications, audit records, meeting notes, prompts, and planning maps.

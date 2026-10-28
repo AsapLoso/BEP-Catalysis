@@ -38,7 +38,7 @@ First-order upwind finite-volume transport is conservative at the semidiscrete l
 
 ### Stiff integration and state meaning
 
-The available [solver.py](../../notebooks/v3/vendor/pbr/solver.py#L279) integrates gas concentration states with <code>solve_ivp</code>, defaulting to BDF. The gas accumulation term is therefore active in this implementation; it is not a steady-state gas balance. BDF is a reasonable candidate for a stiff method-of-lines system, subject to tolerance, mesh, and discontinuous-input checks.
+The available [solver.py](../../notebooks/reference/v3/vendor/pbr/solver.py#L279) integrates gas concentration states with <code>solve_ivp</code>, defaulting to BDF. The gas accumulation term is therefore active in this implementation; it is not a steady-state gas balance. BDF is a reasonable candidate for a stiff method-of-lines system, subject to tolerance, mesh, and discontinuous-input checks.
 
 ### Schbib inhibition scale
 
@@ -70,7 +70,7 @@ Thus the supplied “established view” differs in two places: it omits \(K_AK_
 
 Appendix F’s standard LHHW implementation (PDF p. 81 / printed p. 75) instead uses a **squared** adsorption factor for reaction 2. The p. 86 render is an optimizer/comparison function with six fitted variables (<code>k1</code>, <code>k2</code>, <code>K1</code>, <code>K2</code>, <code>Kinh</code>, <code>KH</code>); it contains neither <code>r1max</code> nor <code>ninh</code>. It therefore does not document the eight-parameter Figure 6.6 fit. These are distinct source versions, not a resolved typo: retain the printed Eq. 6.11 and the standard-code form as separate candidates until the final extended-model fitting code is found.
 
-The current [Larsen2024Rate](../../notebooks/v3/vendor/pbr/chemistry.py#L126) implementation includes the \(K_A,K_H\) numerator factors and the linear \(K_Hp_H\) term in reaction 1. For reaction 2 it follows the printed first-power adsorption factor. It has no CO term.
+The current [Larsen2024Rate](../../notebooks/reference/v3/vendor/pbr/chemistry.py#L126) implementation includes the \(K_A,K_H\) numerator factors and the linear \(K_Hp_H\) term in reaction 1. For reaction 2 it follows the printed first-power adsorption factor. It has no CO term.
 
 #### Figure 6.6 does not establish eight well-conditioned parameters
 
@@ -162,15 +162,15 @@ At the high-\(Pe\) end, first-order upwind would dominate the physical dispersio
 
 The spatial finite-volume flux difference conserves each gas species across internal faces. Carbon/hydrogen conservation follows if the reaction stoichiometry and catalyst-mass basis are consistent. The time integrator only satisfies the corresponding transient control-volume balance to numerical tolerance. A square wave defined with <code>sgn(sin(...))</code> is discontinuous at every half-period; integrate separately between known switch times and restart from the boundary state at each switch. Do not let an adaptive BDF step straddle an unannounced discontinuity. Keep \(C_{CO,mean}\ge|\Delta C_{CO}|\) so the prescribed inlet never becomes negative.
 
-The current [solver RHS](../../notebooks/v3/vendor/pbr/solver.py#L306) injects the inlet through its advective face and uses zero-gradient dispersive ghost values at both ends. In the divided concentration equation the inlet flux is (u_s/epsilon_b) C_in, equivalent to u_s C_in in the original bed-volume balance, with zero dispersive outlet flux. However, the separate <code>inlet_flux</code>/<code>outflow</code> methods in [closures.py](../../notebooks/v3/vendor/pbr/closures.py#L65) are documented as molar fluxes while accepting no velocity; the dispersive implementation also combines concentration with \(D_{ax}\partial_z C\), which is not dimensionally a flux. Those methods are not called by the current solver, but should be corrected before using them as the V4 boundary API.
+The current [solver RHS](../../notebooks/reference/v3/vendor/pbr/solver.py#L306) injects the inlet through its advective face and uses zero-gradient dispersive ghost values at both ends. In the divided concentration equation the inlet flux is (u_s/epsilon_b) C_in, equivalent to u_s C_in in the original bed-volume balance, with zero dispersive outlet flux. However, the separate <code>inlet_flux</code>/<code>outflow</code> methods in [closures.py](../../notebooks/reference/v3/vendor/pbr/closures.py#L65) are documented as molar fluxes while accepting no velocity; the dispersive implementation also combines concentration with \(D_{ax}\partial_z C\), which is not dimensionally a flux. Those methods are not called by the current solver, but should be corrected before using them as the V4 boundary API.
 
 #### Gas PSSA and surface PSSA are separate decisions
 
-The available V3 <code>rhs</code> integrates gas storage. It supports four gases—H₂, C₂H₂, C₂H₄, C₂H₆—and has no CO species ([species.py](../../notebooks/v3/vendor/pbr/species.py#L19)). Its surface options include algebraic equilibrium and a generic relaxation law \(d\theta/dt=(\theta_{ss}-\theta)/\tau\); the latter explicitly treats \(\tau\) as an unsourced assumption ([closures.py](../../notebooks/v3/vendor/pbr/closures.py#L328), [closures.py](../../notebooks/v3/vendor/pbr/closures.py#L352)). It is not an elementary-step CO adsorption/desorption model.
+The available V3 <code>rhs</code> integrates gas storage. It supports four gases—H₂, C₂H₂, C₂H₄, C₂H₆—and has no CO species ([species.py](../../notebooks/reference/v3/vendor/pbr/species.py#L19)). Its surface options include algebraic equilibrium and a generic relaxation law \(d\theta/dt=(\theta_{ss}-\theta)/\tau\); the latter explicitly treats \(\tau\) as an unsourced assumption ([closures.py](../../notebooks/reference/v3/vendor/pbr/closures.py#L328), [closures.py](../../notebooks/reference/v3/vendor/pbr/closures.py#L352)). It is not an elementary-step CO adsorption/desorption model.
 
 Low gas residence time alone cannot justify surface PSSA. PSSA is defensible only if a measured or mechanistically calculated surface relaxation time is much shorter than the shortest forcing timescale and the relevant gas/reaction timescales. If the proposed result relies on delayed CO coverage, phase lag, or a surface “memory,” the coverage state and its gas-phase CO sink/source must be dynamically integrated or replaced by a reduced model calibrated against transient data.
 
-Finally, the currently reviewed checkout contains the V3 engine under <code>notebooks/v3/vendor/pbr</code>; the [V4 reactor document](../wayfinder/bep_v4_reactor_model.md) describes planned work, while <code>notebooks/v4/</code> has no tracked implementation. Do not present the V4 CO/PSSA claims as code-verified results.
+Finally, the currently reviewed checkout contains the V3 engine under <code>notebooks/reference/v3/vendor/pbr</code>; the [V4 reactor document](../wayfinder/bep_v4_reactor_model.md) describes planned work, and [notebooks/reference/v4/](../../notebooks/reference/v4/README.md) records that no V4 implementation is present. Do not present the V4 CO/PSSA claims as code-verified results.
 
 ### Pillar 4 — PdAg + CO and periodic Pareto claims
 

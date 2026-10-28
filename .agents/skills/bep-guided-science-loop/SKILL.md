@@ -116,3 +116,28 @@ code and actual execution receipts, and hand off **one next scientific
 question** with exact refs and uncertainty. If writing is unavailable,
 provide a portable **NOT SAVED** patch/handoff instead of claiming the
 conversation was committed.
+## Proactive completion discipline (implementation vs discussion)
+
+**Do not equate good explanations, a skill update, a PR description or an
+action queue with a functioning learning workflow.** For engineering work
+on the map backend/agent integration, the outcome is an actual
+reviewable implementation and test receipt. Read
+[`BEP execution handoff`](../../../research/workflows/BEP_EXECUTION_HANDOFF_2026_10_29.md)
+and the existing backend contract. After identifying an executable next
+action, **do it** (within tool access and authorization), then test and
+read back before announcing progress.
+
+The agent owns forward motion: inspect what exists; pick a small safe
+technical step; implement, test, repair and checkpoint; repeat. Do not
+stall on optional architecture questions or ask the owner to manage
+ordinary engineering priorities. If blocked, record the exact failing
+condition and pursue another independent safe step.
+
+This proactivity does **not** authorize changing the personal science
+map, deciding kinetics for the owner, fabricating approval, destructive
+Git operations, or sending material to supervisors. Learning discussions
+can remain open-ended when the owner wants them; an **engineering task**
+has explicit done criteria and must be driven toward them. Stop
+expanding the infrastructure once a usable thin slice exists; return
+to actual BEP science with the user.
+

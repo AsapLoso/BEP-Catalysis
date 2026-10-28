@@ -1,0 +1,466 @@
+{
+  "artifact_type": "derived numerical audit record",
+  "generated_utc": "2026-10-26T02:11:22.292159+00:00",
+  "source_records": {
+    "original_article_pdf": {
+      "path": "research/literature/schbib_1996_front_end_acetylene_hydrogenation.pdf",
+      "sha256": "4b4c2728f1ac1d73acdf74eef1f247203f3aa5b8ab38cace45d1f6e513dbc60a",
+      "visually_checked_pdf_pages_1_based": [
+        4,
+        6,
+        7,
+        8
+      ],
+      "printed_pages": [
+        1499,
+        1501,
+        1502,
+        1503
+      ]
+    },
+    "article_html_sha256": "c5e8a4aad1ba01a896e13bc51fd46e3df8cd02bcace4b252373e4f90dc4830c3",
+    "article_extracted_text_sha256": "8b8bc1a142103cf0005b2f8d18b2d46c5b04b1d7ee665948fa457f2dfacc350c",
+    "author_shared_correction": {
+      "url": "https://www.researchgate.net/publication/231391687_Kinetics_of_Front-End_Acetylene_Hydrogenation_in_Ethylene_Production",
+      "source_status": "machine-readable appended note; linked PDF returned 404; not confirmed as a journal erratum",
+      "visual_verification": "blocked"
+    }
+  },
+  "parameter_sets": {
+    "original_printed_table8": {
+      "k_A": {
+        "log_A": 31.1,
+        "E_kcal_mol": 45.51,
+        "unit": "m6/(s gcat kmol)"
+      },
+      "k_E": {
+        "log_A": 26.6,
+        "E_kcal_mol": 42.94,
+        "unit": "m6/(s gcat kmol)"
+      },
+      "K_H": {
+        "log_A": 20.2,
+        "E_kcal_mol": 21.22,
+        "unit": "m3/kmol"
+      },
+      "K_CO": {
+        "log_A": 13.6,
+        "E_kcal_mol": 9.95,
+        "unit": "m3/kmol"
+      },
+      "K_E": {
+        "log_A": 0.26,
+        "E_kcal_mol": 0.005,
+        "unit": "m3/kmol"
+      },
+      "K_Et": {
+        "log_A": -0.012,
+        "E_kcal_mol": 0.001,
+        "unit": "m3/kmol"
+      },
+      "K_A": {
+        "log_A": -16.0,
+        "E_kcal_mol": 0.001,
+        "unit": "m3/kmol"
+      }
+    },
+    "author_shared_text_transcription": {
+      "k_A": {
+        "log_A": 31.1,
+        "E_kcal_mol": 45.51,
+        "unit": "m6/(s kgcat kmol)"
+      },
+      "k_E": {
+        "log_A": 26.6,
+        "E_kcal_mol": 42.94,
+        "unit": "m6/(s kgcat kmol)"
+      },
+      "K_H": {
+        "log_A": 17.2,
+        "E_kcal_mol": 21.22,
+        "unit": "m3/kmol"
+      },
+      "K_CO": {
+        "log_A": 10.16,
+        "E_kcal_mol": 9.95,
+        "unit": "m3/kmol"
+      },
+      "K_E": {
+        "log_A": -2.74,
+        "E_kcal_mol": 0.005,
+        "unit": "m3/kmol"
+      },
+      "K_Et": {
+        "log_A": -3.012,
+        "E_kcal_mol": 0.001,
+        "unit": "m3/kmol"
+      },
+      "K_A": {
+        "log_A": -19.0,
+        "E_kcal_mol": 0.001,
+        "unit": "m3/kmol"
+      },
+      "status": "candidate source-consistent set from author-shared text; not visually checked and not publisher-verified"
+    }
+  },
+  "numerical_method": {
+    "coordinate": "catalyst mass W in kg; avoids inferring packed-bed length or interparticle void fraction",
+    "primary_temperature_closure": "isothermal at Table 6 reported temperature",
+    "pressure_atm": 16.0,
+    "feed_flow_cm3_stp_min": 100.0,
+    "catalyst_mass_g": 1.0,
+    "solver": "scipy.integrate.solve_ivp(method=Radau)",
+    "default_rtol": 1e-10,
+    "default_atol": 1e-19,
+    "max_step_fraction_of_mass": 0.0125,
+    "equation_forms": [
+      "full Table 8 denominator",
+      "simplified Eqs. 24-25"
+    ],
+    "reported_C2H4_definition": "net outlet disappearance, with reaction-2 extent also shown separately",
+    "diagnostic_solver_stage_guard": "negative implicit trial concentrations are floored only for rate evaluation; accepted state values are retained and checked"
+  },
+  "table6_full_law_results": [
+    {
+      "set": "Original printed Table 8",
+      "equation": "full",
+      "thermal": "isothermal",
+      "CO (ppm)": 150.0,
+      "T (K)": 341.0,
+      "C2H2 measured (%)": 98.31,
+      "C2H2 model (%)": 0.84089,
+      "C2H2 error (pp)": -97.46911,
+      "C2H4 measured net (%)": 10.45,
+      "C2H4 model net (%)": -0.00876,
+      "C2H4 net error (pp)": -10.45876,
+      "C2H4 reaction-2 extent (%)": 0.00118,
+      "C2H4 extent error (pp)": -10.44882,
+      "T outlet (K)": 341.0
+    },
+    {
+      "set": "Original printed Table 8",
+      "equation": "full",
+      "thermal": "isothermal",
+      "CO (ppm)": 1400.0,
+      "T (K)": 359.0,
+      "C2H2 measured (%)": 98.99,
+      "C2H2 model (%)": 0.00986,
+      "C2H2 error (pp)": -98.98014,
+      "C2H4 measured net (%)": 6.7,
+      "C2H4 model net (%)": -0.00011,
+      "C2H4 net error (pp)": -6.70011,
+      "C2H4 reaction-2 extent (%)": 1e-05,
+      "C2H4 extent error (pp)": -6.69999,
+      "T outlet (K)": 359.0
+    },
+    {
+      "set": "Original printed Table 8",
+      "equation": "full",
+      "thermal": "isothermal",
+      "CO (ppm)": 5000.0,
+      "T (K)": 393.0,
+      "C2H2 measured (%)": 98.62,
+      "C2H2 model (%)": 0.00177,
+      "C2H2 error (pp)": -98.61823,
+      "C2H4 measured net (%)": 6.08,
+      "C2H4 model net (%)": -2e-05,
+      "C2H4 net error (pp)": -6.08002,
+      "C2H4 reaction-2 extent (%)": 0.0,
+      "C2H4 extent error (pp)": -6.08,
+      "T outlet (K)": 393.0
+    },
+    {
+      "set": "Author-shared correction (text transcription)",
+      "equation": "full",
+      "thermal": "isothermal",
+      "CO (ppm)": 150.0,
+      "T (K)": 341.0,
+      "C2H2 measured (%)": 98.31,
+      "C2H2 model (%)": 99.78536,
+      "C2H2 error (pp)": 1.47536,
+      "C2H4 measured net (%)": 10.45,
+      "C2H4 model net (%)": -0.31267,
+      "C2H4 net error (pp)": -10.76267,
+      "C2H4 reaction-2 extent (%)": 0.86688,
+      "C2H4 extent error (pp)": -9.58312,
+      "T outlet (K)": 341.0
+    },
+    {
+      "set": "Author-shared correction (text transcription)",
+      "equation": "full",
+      "thermal": "isothermal",
+      "CO (ppm)": 1400.0,
+      "T (K)": 359.0,
+      "C2H2 measured (%)": 98.99,
+      "C2H2 model (%)": 99.99824,
+      "C2H2 error (pp)": 1.00824,
+      "C2H4 measured net (%)": 6.7,
+      "C2H4 model net (%)": 0.09353,
+      "C2H4 net error (pp)": -6.60647,
+      "C2H4 reaction-2 extent (%)": 1.27559,
+      "C2H4 extent error (pp)": -5.42441,
+      "T outlet (K)": 359.0
+    },
+    {
+      "set": "Author-shared correction (text transcription)",
+      "equation": "full",
+      "thermal": "isothermal",
+      "CO (ppm)": 5000.0,
+      "T (K)": 393.0,
+      "C2H2 measured (%)": 98.62,
+      "C2H2 model (%)": 100.0,
+      "C2H2 error (pp)": 1.38,
+      "C2H4 measured net (%)": 6.08,
+      "C2H4 model net (%)": 0.72641,
+      "C2H4 net error (pp)": -5.35359,
+      "C2H4 reaction-2 extent (%)": 1.9085,
+      "C2H4 extent error (pp)": -4.1715,
+      "T outlet (K)": 393.0
+    }
+  ],
+  "table6_gate": {
+    "tolerance_pp": 2.0,
+    "original_printed_set": "BLOCKED",
+    "author_shared_set": "BLOCKED overall; acetylene-only PASS; ethylene fails",
+    "definition": "every reported species, every Table 6 case, within 2 percentage points"
+  },
+  "sensitivity_at_CO_1400ppm_T359K": [
+    {
+      "diagnostic": "Original printed full set",
+      "C2H2 predicted (%)": 0.00986,
+      "C2H2 error (pp)": -98.98014,
+      "C2H4 net predicted (%)": -0.00011,
+      "C2H4 net error (pp)": -6.70011,
+      "C2H4 reaction-2 extent (%)": 1e-05,
+      "mass basis": "gcat"
+    },
+    {
+      "diagnostic": "Diagnostic: only K_H logA corrected",
+      "C2H2 predicted (%)": 0.01159,
+      "C2H2 error (pp)": -98.97841,
+      "C2H4 net predicted (%)": -0.00012,
+      "C2H4 net error (pp)": -6.70012,
+      "C2H4 reaction-2 extent (%)": 1e-05,
+      "mass basis": "gcat"
+    },
+    {
+      "diagnostic": "Diagnostic: only K_CO logA corrected",
+      "C2H2 predicted (%)": 45.88439,
+      "C2H2 error (pp)": -53.10561,
+      "C2H4 net predicted (%)": -0.47097,
+      "C2H4 net error (pp)": -7.17097,
+      "C2H4 reaction-2 extent (%)": 0.07143,
+      "mass basis": "gcat"
+    },
+    {
+      "diagnostic": "Diagnostic: only K_E/K_Et/K_A logA corrected",
+      "C2H2 predicted (%)": 0.00987,
+      "C2H2 error (pp)": -98.98013,
+      "C2H4 net predicted (%)": -0.00011,
+      "C2H4 net error (pp)": -6.70011,
+      "C2H4 reaction-2 extent (%)": 1e-05,
+      "mass basis": "gcat"
+    },
+    {
+      "diagnostic": "Diagnostic: original adsorption, kg rate basis",
+      "C2H2 predicted (%)": 1e-05,
+      "C2H2 error (pp)": -98.98999,
+      "C2H4 net predicted (%)": 0.0,
+      "C2H4 net error (pp)": -6.7,
+      "C2H4 reaction-2 extent (%)": 0.0,
+      "mass basis": "kgcat"
+    },
+    {
+      "diagnostic": "Diagnostic: all five adsorption entries correc...",
+      "C2H2 predicted (%)": 100.0,
+      "C2H2 error (pp)": 1.01,
+      "C2H4 net predicted (%)": 47.87452,
+      "C2H4 net error (pp)": 41.17452,
+      "C2H4 reaction-2 extent (%)": 49.0566,
+      "mass basis": "gcat"
+    },
+    {
+      "diagnostic": "Author-shared complete set",
+      "C2H2 predicted (%)": 99.99824,
+      "C2H2 error (pp)": 1.00824,
+      "C2H4 net predicted (%)": 0.09353,
+      "C2H4 net error (pp)": -6.60647,
+      "C2H4 reaction-2 extent (%)": 1.27559,
+      "mass basis": "kgcat"
+    }
+  ],
+  "diagnostic_factors": {
+    "K_CO_preexponential_reduction": 2754.228703338163,
+    "K_H_preexponential_reduction": 1000.0,
+    "source_model_variants_are_separate_from_one_group_sensitivities": true
+  },
+  "figure3_4_diagnostic": [
+    {
+      "figure": 3,
+      "T0 (K)": 325.0,
+      "set": "Original printed Table 8",
+      "X_A model isothermal (%)": 0.0009,
+      "source text/figure approximate X_A (%)": 70.7,
+      "error (pp)": -70.6991,
+      "temperature rise in this closure (K)": 0.0,
+      "borrowed condition": "1 g from Table 6 SV; not stated in Figure caption"
+    },
+    {
+      "figure": 3,
+      "T0 (K)": 325.0,
+      "set": "Author-shared correction (text transcription)",
+      "X_A model isothermal (%)": 70.1,
+      "source text/figure approximate X_A (%)": 70.7,
+      "error (pp)": -0.6,
+      "temperature rise in this closure (K)": 0.0,
+      "borrowed condition": "1 g from Table 6 SV; not stated in Figure caption"
+    },
+    {
+      "figure": 4,
+      "T0 (K)": 345.0,
+      "set": "Original printed Table 8",
+      "X_A model isothermal (%)": 0.0039,
+      "source text/figure approximate X_A (%)": 98.0,
+      "error (pp)": -97.9961,
+      "temperature rise in this closure (K)": 0.0,
+      "borrowed condition": "1 g from Table 6 SV; not stated in Figure caption"
+    },
+    {
+      "figure": 4,
+      "T0 (K)": 345.0,
+      "set": "Author-shared correction (text transcription)",
+      "X_A model isothermal (%)": 99.1741,
+      "source text/figure approximate X_A (%)": 98.0,
+      "error (pp)": 1.1741,
+      "temperature rise in this closure (K)": 0.0,
+      "borrowed condition": "1 g from Table 6 SV; not stated in Figure caption"
+    }
+  ],
+  "figure2_corrected_inlet": {
+    "conditions": "Table 3 feed; 325 K; 16.3 atm; 1400 ppm CO",
+    "rates_kmol_kgcat_s": {
+      "r_A": 4.6569e-07,
+      "r_E": 6.6625e-08
+    },
+    "denominator": 14.2515,
+    "status": "scale check only; full adiabatic trajectory lacks caption space velocity"
+  },
+  "historical_notebook": {
+    "archived_copy": "notebooks/benchmarks/schbib_1996_steady_state_historical.ipynb",
+    "snapshot_sha256": "e4d81cf218464ab2514ad122e118b00a722bfbf601a4de7db59cdae89f443d93",
+    "old_saved_outputs_table6": [
+      {
+        "CO (ppm)": 150.0,
+        "T (K)": 341.0,
+        "C2H2 measured (%)": 98.31,
+        "C2H2 simulated (%)": 0.8467,
+        "C2H2 error (pp)": -97.4633,
+        "C2H4 measured (%)": 10.45,
+        "C2H4 simulated (%)": 0.0012,
+        "C2H4 error (pp)": -10.4488,
+        "T outlet (K)": 341.1834
+      },
+      {
+        "CO (ppm)": 1400.0,
+        "T (K)": 359.0,
+        "C2H2 measured (%)": 98.99,
+        "C2H2 simulated (%)": 0.0099,
+        "C2H2 error (pp)": -98.9801,
+        "C2H4 measured (%)": 6.7,
+        "C2H4 simulated (%)": 0.0,
+        "C2H4 error (pp)": -6.7,
+        "T outlet (K)": 359.002
+      },
+      {
+        "CO (ppm)": 5000.0,
+        "T (K)": 393.0,
+        "C2H2 measured (%)": 98.62,
+        "C2H2 simulated (%)": 0.0018,
+        "C2H2 error (pp)": -98.6182,
+        "C2H4 measured (%)": 6.08,
+        "C2H4 simulated (%)": 0.0,
+        "C2H4 error (pp)": -6.08,
+        "T outlet (K)": 393.0003
+      }
+    ],
+    "fresh_temporary_copy_run_table6": [
+      {
+        "CO (ppm)": 150.0,
+        "T (K)": 341.0,
+        "C2H2 measured (%)": 98.31,
+        "C2H2 simulated (%)": 0.8467,
+        "C2H2 error (pp)": -97.4633,
+        "C2H4 measured (%)": 10.45,
+        "C2H4 simulated (%)": 0.0012,
+        "C2H4 error (pp)": -10.4488,
+        "T outlet (K)": 341.1834
+      },
+      {
+        "CO (ppm)": 1400.0,
+        "T (K)": 359.0,
+        "C2H2 measured (%)": 98.99,
+        "C2H2 simulated (%)": 0.0099,
+        "C2H2 error (pp)": -98.9801,
+        "C2H4 measured (%)": 6.7,
+        "C2H4 simulated (%)": 0.0,
+        "C2H4 error (pp)": -6.7,
+        "T outlet (K)": 359.002
+      },
+      {
+        "CO (ppm)": 5000.0,
+        "T (K)": 393.0,
+        "C2H2 measured (%)": 98.62,
+        "C2H2 simulated (%)": 0.0018,
+        "C2H2 error (pp)": -98.6182,
+        "C2H4 measured (%)": 6.08,
+        "C2H4 simulated (%)": 0.0,
+        "C2H4 error (pp)": -6.08,
+        "T outlet (K)": 393.0003
+      }
+    ],
+    "fresh_run_command": "jupyter execute --inplace historical.ipynb (in /tmp/schbib-audit)",
+    "result_note": "fresh temporary-copy outputs match the archived saved table; old model remains a low-conversion historical implementation"
+  },
+  "internal_checks": {
+    "atom_conservation": "PASS; relative elemental-flow drift order 1e-15",
+    "positive_denominators": "PASS for all Table 6 full/simplified trajectories",
+    "nonnegative_finite_states": "PASS; minimum accepted flow >= -1e-16 kmol/s",
+    "unit_invariance_delta_pp": {
+      "C2H2": "3.19e-11 pp",
+      "C2H4_net": "1.62e-13 pp"
+    },
+    "solver_refinement_delta": {
+      "C2H2_pp": "1.1e-10 pp",
+      "C2H4_net_pp": "1.52e-12 pp",
+      "T_out_K": "0 K"
+    },
+    "arrhenius": "PASS; log10 A and positive-E temperature monotonicity checked"
+  },
+  "figures_1_to_4_gate": {
+    "figure1": "BLOCKED quantitative digitized comparison; diagnostic curves use caption SV=33 and isothermal closure",
+    "figure2": "PARTIAL inlet rate scale check; full curve BLOCKED because caption omits SV",
+    "figure3": "PARTIAL acetylene outlet check (correction set 70.10% vs source narrative 70.7%); full profile BLOCKED because isothermal diagnostic cannot reproduce model III heat/transfer",
+    "figure4": "PARTIAL acetylene outlet check (correction set 99.17% vs source narrative close to 98%); full profile BLOCKED because isothermal diagnostic cannot reproduce model III hot spot"
+  },
+  "execution_receipt": {
+    "os": "Linux x86_64; kernel 6.18.55; glibc 2.41",
+    "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "python_version": "3.12.14",
+    "packages": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.8",
+      "ipykernel": "7.4.0",
+      "nbclient": "0.11.0",
+      "nbformat": "5.11.1"
+    },
+    "conda": "not installed; compatible installed runtime selected per Rule 19",
+    "dependency_changes": "none",
+    "notebook_command": "jupyter execute --inplace schbib_1996_steady_state.ipynb",
+    "working_directory": "notebooks/benchmarks",
+    "notebook_wall_time_seconds": 13.267413,
+    "notebook_code_sha256": "ec7bb2f04a1346059ab3a1114f2d1a2df05b52574296c38f46636fffff63daf3",
+    "base_git_commit": "155a1e6ed00e92ed6f18535ae90708bf22c98584"
+  }
+}

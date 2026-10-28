@@ -12,7 +12,7 @@ This notebook advances bulk-gas concentrations and H*/CO* coverages as ODE state
 
 ## Context & methods
 
-The V3 engine is vendored at `notebooks/v3/vendor/pbr/`. V4 adds CO to its gas and surface state layouts, Schbib et al. (1996) competitive H/CO adsorption, a finite-volume Danckwerts inlet, and a time-dependent CO inlet hook. The dynamic closure uses `Relaxation`, so gas and coverage accumulation remain in the integrated state; the notebook does not use `AlgebraicEquilibrium`.
+The V3 engine is vendored at `notebooks/reference/v4/vendor/pbr/`. V4 adds CO to its gas and surface state layouts, Schbib et al. (1996) competitive H/CO adsorption, a finite-volume Danckwerts inlet, and a time-dependent CO inlet hook. The dynamic closure uses `Relaxation`, so gas and coverage accumulation remain in the integrated state; the notebook does not use `AlgebraicEquilibrium`.
 
 The source's Table 8 gives macro-rate and adsorption constants, but not elementary adsorption/desorption rates. The finite surface-memory extension therefore needs an assumed relaxation time. That time is exposed, varied in a sensitivity check, and is not presented as a Schbib kinetic constant. The Schbib table prints `log A_i` without its base; the implementation interprets it as base 10, an explicit unresolved source convention.
 
@@ -40,11 +40,11 @@ import scipy
 from IPython.display import display
 
 ROOT = Path.cwd().resolve()
-while not (ROOT / "notebooks" / "v3" / "vendor" / "pbr").is_dir():
+while not (ROOT / "notebooks" / "reference" / "v4" / "vendor" / "pbr").is_dir():
     if ROOT.parent == ROOT:
         raise RuntimeError("Could not locate the vendored pbr engine")
     ROOT = ROOT.parent
-sys.path.insert(0, str(ROOT / "notebooks" / "v3" / "vendor"))
+sys.path.insert(0, str(ROOT / "notebooks" / "reference" / "v4" / "vendor"))
 
 from pbr.closures import NoExternalResistance, Relaxation, Uniform
 from pbr.model import Inputs, build_model, periodic_co_inlet

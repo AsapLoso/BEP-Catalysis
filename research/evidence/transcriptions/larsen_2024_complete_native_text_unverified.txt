@@ -1,0 +1,2696 @@
+# GENERATED TEXT-LAYER EXTRACTION — NOT A PAGE-CHECKED TRANSCRIPTION
+# Source: user-uploaded "Larsen - 2024 - Semihydrogenation of acetylene to ethylene with a PdAg catalyst.pdf"
+# PDF SHA-256: b5aaa2300ff9b64aca70e58cc5e4d8be30b3c12ee264e69af89e01c86f5120c9
+# Page count: 97. Source was read through the ChatGPT parsed document view.
+# Critical limitation: scanned/image pages including Appendix E/F have little/no readable native text.
+# Treat extracted equations/tables as UNCHECKED; verify against visually rendered ORIGINAL PDF pages.
+# Original PDF upload to GitHub is a SEPARATE operation; this file is NOT the PDF.
+# Page boundary markers below come from the document parser and use 1-based PDF page numbers.
+
+<PARSED TEXT FOR PAGE: 1 / 97>
+BEP
+Semihydrogenation of acetylene to
+ethylene with a PdAg catalyst
+
+
+Victor Larsen
+Under supervision of:
+Ir. Damian Vico van Berkel – Daily Supervisor
+Prof. Atsushi Urakawa – Responsible Thesis Supervisor
+<PARSED TEXT FOR PAGE: 3 / 97>
+                        BEP
+Semihydrogenation of acetylene to ethylene
+          with a PdAg catalyst
+                                     by
+
+
+
+                    Victor Larsen
+                            Supervised by:
+              Ir. Damian Vico van Berkel - Daily supervisor
+         Prof. Atsushi Urakawa - Responsible thesis supervisor
+
+
+
+
+                  Cover Image: Beschrijving foto. Bron foto.
+<PARSED TEXT FOR PAGE: 5 / 97>
+                                                                                  Contents
+1 Abstract                                                                                              1
+2 Introduction                                                                                          3
+3 Literature Background                                                                                 7
+  3.1 Industrial relevance of the semi-hydrogenation reaction . . . . . . . . . . . . . . . . . . . 7
+       3.1.1 Reaction and possible side reactions . . . . . . . . . . . . . . . . . . . . . . . . . 7
+  3.2 Current catalysts, and their challenges . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+       3.2.1 Palladium catalysts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+       3.2.2 Catalyst dilution. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+       3.2.3 Effect of metal-oxide catalyst support . . . . . . . . . . . . . . . . . . . . . . . . . 10
+  3.3 Competitive Adsorption acetylene, ethylene and hydrogen . . . . . . . . . . . . . . . . . 10
+  3.4 Kinetic modeling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+       3.4.1 Power law model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+       3.4.2 Langmuir-Hinselwood-Hougen-Watson model . . . . . . . . . . . . . . . . . . . . 12
+       3.4.3 Mass Transfer Limitations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+4 Materials and Methods                                                                                15
+  4.1 Catalyst preparation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+  4.2 Reactor Configuration and Catalytic Testing . . . . . . . . . . . . . . . . . . . . . . . . . 15
+  4.3 Kinetic modeling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+      4.3.1 Modifications of LHHW model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+  4.4 Characterization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+      4.4.1 Powder XRD . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+      4.4.2 H2 -TPR . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+5 Characterization                                                                                      21
+  5.1 XRD . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+  5.2 Hydrogen Temperature-Programmed-Redcution . . . . . . . . . . . . . . . . . . . . . . . 21
+6 Results & Discussion                                                                                  23
+  6.1 Experimental . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+      6.1.1 Effect of flow rate . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+      6.1.2 Effect of acetylene . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+      6.1.3 Effect of ethylene . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+      6.1.4 Effect of hydrogen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+  6.2 Kinetic modeling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+      6.2.1 Standard LHHW model. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+      6.2.2 LHHW model modification . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+      6.2.3 Final extended LHHW model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+      6.2.4 Cross-catalyst comparison . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+      6.2.5 Comparison with experimental data . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+7 Conclusion                                                                                           43
+8 Acknowledgments                                                                                      45
+9 Bibliography                                                                                         47
+A Results non mentioned sets                                                                            51
+  A.1 Influence ethylene . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 51
+  A.2 Influence hydrogen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 51
+  A.3 Influence acetylene . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52
+
+                                                    iii
+<PARSED TEXT FOR PAGE: 6 / 97>
+iv                                                                                              Contents
+
+
+B Conversion and Selectivity plotted against changing parameter Pd0 Ag                                53
+  B.1 Conversion + Selectivity against 𝑝C2 H2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53
+  B.2 Conversion + Selectivity against 𝑝C2 H4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . 56
+  B.3 Conversion + Selectivity against 𝑝H2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 56
+C Conversion and Selectivity plotted against changing parameter Pd2 Ag                                57
+  C.1 Conversion + Selectivity against 𝑝C2 H2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . 57
+  C.2 Conversion + Selectivity against 𝑝C2 H4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . 60
+  C.3 Conversion + Selectivity against 𝑝H2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 60
+D Conversion and selectivity plotted against changing parameter Pd3 Ag                                61
+  D.1 Conversion + selectivity against 𝑝C2 H2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . 61
+  D.2 Conversion + Selectivity against 𝑝C2 H4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+  D.3 Conversion + Selectivity against 𝑝H2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+E Table tests                                                                                           65
+  E.1 Table per cat. with every LHHW model variance . . . . . . . . . . . . . . . . . . . . . . . 67
+       E.1.1 Pd0 Ag . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+       E.1.2 Pd2 Ag . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 68
+       E.1.3 Pd3 Ag . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 69
+F Standard LHHW model code                                                                             71
+G Plots simplified LHHW model, v4a                                                                     83
+H Plots with inhibition term LHHW model, v5                                                            85
+I    Result plots with inhibition term squared LHHW model, v5d                                         87
+J Declaration of AI use                                                                               89
+  J.1 Responsible use . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 89
+  J.2 Transparent use . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 90
+<PARSED TEXT FOR PAGE: 7 / 97>
+                                                                                           1
+                                                                                  Abstract
+The selective hydrogenation of acetylene to ethylene remains an industrially relevant process used to
+remove acetylene impurities from ethylene-rich product streams derived from stream cracking. Palla-
+dium based catalysts are widely used for this reaction, but their tendency to over-hydrogenate ethylene
+to ethane limits its selectivity. The addition of silver as diluent metal has been shown to improve the
+selectivity through both the geometric and electronic effects on the active palladium sites.
+
+   In this work, three different PdAg/SiO2 catalysts with varying palladium loadings (Pd:Ag ratios of
+1:200, 1:100, and 1:50) were prepared by incipient wetness co-impregnation and tested for selective
+acetylene hydrogenation at 100 °C and 1000 mbar. The effects of increasing flow rate, acetylene, ethy-
+lene and hydrogen concentrations were tested. Catalyst characterization was performed using powder
+XRD and H2 -TPR.
+
+    The experimental results have shown a trade-off between conversion and selectivity as a function
+of palladium loading. The catalysts with higher palladium loading have higher conversion, but also pro-
+moted over-hydrogenation, reducing selectivity. Catalysts with lower palladium loading have shown to
+maintain higher selectivity, but reduced activity.
+
+    Kinetic modeling using an extended LHHW model was applied to describe the observed catalytic
+behavior. The final model includes a maximum rate cap for acetylene hydrogenation and a flexible
+acetylene inhibition term for the over-hydrogenation reaction. This models has provided the best fit
+for all three catalysts with overall RMSE values of 5.10, 5.43, and 7.14 percentage points for Pd0 Ag,
+Pd2 Ag, and Pd3 Ag respectively. The results suggest that acetylene and ethylene hydrogenation are
+governed by different physical limitations, and that the Pd2 Ag offers the most favorable balance be-
+tween conversion and selectivity.
+
+   Key Words: Acetylene hydrogenation, palladium silver bimetallic catalysts, LHHW kinetic modeling
+
+
+
+
+                                                  1
+<PARSED TEXT FOR PAGE: 9 / 97>
+                                                                                               2
+                                                                            Introduction
+A world without ethylene (C2 H4 ) is unthinkable, as it is one of the largest standard chemical building
+blocks. Ethylene is widely used as a feedstock for the production of polymers and polymer precursors,
+including polyethylene and polyvinyl chloride (PVC). Industrial ethylene is produced mainly through oil
+steam cracking, a process that is not free of hurdles. This is due to the resulting ethylene rich product
+stream can contain small amounts of acetylene (C2 H2 ). Although acetylene can only be found in the
+stream in very small quantity, it still is known to poison to the Ziegler-Natta catalyst used in downstream
+ethylene conversion processes.1 Therefore, acetylene must be removed from this product stream be-
+fore further processing.
+
+
+    This is typically done through selective hydrogenation of acetylene to ethylene (C2 H2 + H2 −−−→
+C2 H4 ). This route is attractive because it removes acetylene, while possibly increasing the amount of
+ethylene in the stream. However, for this selective hydrogenation reaction a problem arises: ethylene
+can also hydrogenate to ethane (C2 H4 + H2 −−−→ C2 H6 ). The formation of ethane lowers the ethylene
+yield and decreases the value of the purified ethylene stream. Therefore, for this process an effective
+catalyst must not only achieve high conversion, but also needs to suppress ethylene hydrogenation.
+This balance between acetylene conversion and ethylene selectivity has proven to be the main chal-
+lenge in selective acetylene hydrogenation.
+
+
+    Palladium (Pd) is among the most widely studied and industrially relevant catalysts for acetylene
+hydrogenation because of its high hydrogenation activity. Palladium has proven to very efficiently ac-
+tivate hydrogen and adsorb unsaturated hydrocarbons. However, this efficiency also causes serious
+limitations. If acetylene concentration decreases, more active sites become available for ethylene to
+adsorb on. As a result, the catalysts selectivity can drop when high acetylene conversion is achieved.
+   In addition to over-hydrogenation, other unwanted side reactions can occur during hydrogenation.
+One important side reaction is C-C coupling, which can lead to the formation of so called ”green oil”.
+Green oil refers to heavier C4+ hydrocarbon species formed through coupling reactions between ad-
+sorbed acetylene- and ethylene-derived intermediates. These C4+ species can accumulate on the
+catalyst surface and ultimately lead to deactivation of the catalyst due to blockage of its active sites.2,3
+    Coke formation is another side reaction that can occur. Coke is formed through decomposition or
+further transformation of strongly adsorbed hydrocarbon species, which again leads to catalyst deac-
+tivation.2,4–6 The main reactions and, side reactions, that can occur during this reaction are shown in
+Figure 2.1.
+
+
+                                                     3
+<PARSED TEXT FOR PAGE: 10 / 97>
+4                                                                                          2. Introduction
+
+
+
+
+Figure 2.1: Overview of all possible reactions
+
+
+    A common strategy used to improve the selectivity of palladium based catalysts is through dilution
+with another metal. Metals such as copper (Cu) and silver (Ag) have proven to increase palladium
+based catalysts selectivity.7–13 The addition of a second metal can influence the catalyst both geomet-
+rically and electronically. Geometrically, a second metal can dilute the catalyst surface and break up
+large palladium ensembles, reducing the number of sites that promote over-hydrogenation. Electron-
+ically, the second metal can modify the electronic structure of palladium. This can shift the d-band of
+palladium, resulting in a decrease of adsorption strength of the catalyst.3,7,14 Through these effects,
+diluted palladium catalysts can improve the balance between acetylene conversion and ethylene se-
+lectivity.
+
+   Besides the addition of a second metal, the catalyst support also plays an important role. The
+support mainly influences the metal dispersion, but can also influence active site accessibility. Com-
+monly investigated supports for acetylene hydrogenation are metal oxides such as Al2 O3 , TiO2 and
+SiO2 .2,4,7,10,15,16 In this research, SiO2 was used as a support because it is generally considered to be
+more inert compared to other supports. This makes it suitable for studying the effect of different Pd/Ag
+compositions while minimizing additional support related effects.
+
+    Among bimetallic catalysts, PdAg remains among the most studied and industrially relevant cata-
+lysts for this reaction.2,5,17 Previous studies have shown that PdAg catalysts can achieve high conver-
+sion, while maintaining relatively high selectivity. However, exact performance depends strongly on
+catalyst composition, particle structure, support, and reaction conditions.2 This means that the palla-
+dium silver ratio is a crucial design parameter. A too low loading of silver may leave larger palladium
+ensembles to promote over-hydrogenation, while a too high loading can dilute the palladium too much
+thereby decreasing catalyst activity. Therefore, identifying an optimal palladium silver ratio requires a
+systematic comparison of catalytic performance.
+
+    Kinetic modeling is a useful tool for making this comparison more quantitative. Experimental con-
+version and selectivity show how a catalyst performs under tested condition, but kinetic modeling can
+help relate this performance to reaction rates, adsorption effects, inhibition terms, and reaction orders.
+Especially for this reaction, kinetic modeling is useful because it can describe both the desired and un-
+desired hydrogenation reactions that can occur at the same time. With kinetic modeling these reaction
+can be described independently from each other. The kinetic parameters can provide insight into how
+different catalysts promote the desired reaction while suppressing other reactions. In addition, a suffi-
+ciently accurate kinetic model can be used to estimate catalyst performance under reaction conditions
+that were not tested experimentally.
+
+   The aim of this research is therefore to investigate different PdAg ratios in PdAg/SiO2 catalysts
+on the selective semi hydrogenation of acetylene to ethylene. The catalysts are evaluated on their
+conversion and selectivity, and kinetic modeling is used to quantify differences in catalytic behavior
+between the different compositions. By combining experimental and simulated data, this work aims to
+<PARSED TEXT FOR PAGE: 11 / 97>
+                                                                                                  5
+
+
+identify which PdAg ratio provides the most favorable ratio between conversion and selectivity.
+<PARSED TEXT FOR PAGE: 13 / 97>
+                                                                                              3
+                                                  Literature Background
+3.1. Industrial relevance of the semi-hydrogenation reaction
+After pumping crude oil, it still needs to undergo some changes before it can be used as fossil fuels
+or feedstock for plastics. The crude oil mainly exists of long hydrocarbon chains, which need to be
+broken apart to smaller hydrocarbon chains. Breaking these hydrocarbon chains is called the cracking
+of crude oil. This cracking happens in a cracking furnace, after which the cracked hydrocarbons go
+to a fractional distillation tower and get separated based on boiling points and chain length. However,
+this separation is not very precise, meaning that there can be some unwanted by products. One of
+these ”over-cracked” by products is acetylene, which stays mixed with the desired ethylene, usually
+this stream contains only an acetylene concentration up to 3%.18 Still, concentrations such as these
+poison the Ziegler-Natta catalyst used for the polymerization of ethylene, which is the reason it needs
+to be reduced to below 5 ppm in the feed stream to obtain higher yields.2 One of the most effective
+ways to date remains the catalytic semi-hydrogenation of acetylene. The hydrogenation of acetylene
+creates more ethylene and thus improves yield and product quality.19
+
+3.1.1. Reaction and possible side reactions
+Generally speaking, the hydrogenation reaction has been found to be best represented by the Horuiti-
+Polanyi mechanism.20 This mechanism describes the overall reaction by the sequential addition of a
+singular hydrogen atom, giving intermediates like vinyl (C2 H3 ∗). The full reaction following the Horuiti-
+Polanyi mechanism is described below.
+                               H∗            H∗
+          C2 H2 −
+                −
+                ↽−−
+                  ⇀
+                  −− C2 H2 ∗ −
+                             −
+                             ↽−−
+                               ⇀
+                               −− C2 H3 ∗ −
+                                          −
+                                          ↽−−
+                                            ⇀
+                                            −− C2 H4 ∗ −
+                                                       −
+                                                       ↽−−
+                                                         ⇀
+                                                         −− C2 H4        Δ𝐻 = −172 kJ mol−1
+In addition to this desired hydrogenation reaction, ethylene can also hydrogenate again to ethane. This
+leads to a decrease in the selectivity of ethylene.
+                         H∗           H∗           H∗            H∗
+         −−
+   C2 H2 ↽−−
+           −⇀         −−
+            − C2 H2 ∗ ↽−−
+                        −⇀         −−
+                         − C2 H3 ∗ ↽−−
+                                     −⇀         −−
+                                      − C2 H4 ∗ ↽−−
+                                                  −⇀
+                                                   − C2 H5 ∗ −−−→ C2 H6         Δ𝐻 = −308 kJ mol−1
+Both reactions are exothermic, and increasing the temperatures can increase the reaction rate and
+therefore increase the conversion of acetylene. However, higher temperatures not only promote the
+wanted semi-hydrogenation but also promote the over-hydrogenation to ethane, leading to a decrease
+in selectivity and yield.
+
+Next to the hydrogenation reaction there are also other reactions that can happen on the catalyst.
+One of these side reactions is so called C-C coupling, this is is the creation of longer carbon chains
+which happens when adsorbed acetylene and ethylene couple and together form C4+ products.2 These
+chains keep on growing on the catalysts surface and after a while form polymeric deposits, which are
+called green oil. These oils form a sticky layer on the catalysts surface which blocks active sites, and
+ultimately leads to catalyst deactivation because acetylene can’t reach the sites anymore.
+                      2 C2 H2 + H2 −−−→ CH2 CHCHCH2 ∗ −−−→ C4+ (green oil)
+
+                                                    7
+<PARSED TEXT FOR PAGE: 14 / 97>
+8                                                                                 3. Literature Background
+
+
+Another side reaction that can occur is coke formation, this happens when C-C bond cleavage occurs.
+The cleavage modifies the active phase of the catalyst, like the formation of PdC𝑥 on palladium based
+catalysts.
+                                C2 H2 ∗ −−−→ C𝑥 H𝑦 ∗ −−−→ C(s) (coke)
+Both of these side reactions are nearly impossible to avoid on industrial scale and are often compen-
+sated by increasing the temperature over time until the catalyst activity is below acceptable level.2
+
+
+3.2. Current catalysts, and their challenges
+For this hydrogenation reaction of acetylene, a lot of different metals have been found to be able to act
+as catalysts. The catalysts used for this reaction all work in the same principle, bringing the acetylene
+and hydrogen molecules together while activating hydrogen. The working of the catalyst starts with
+the adsorption of acetylene on its surface, because of the triple bond of acetylene it can relatively easy
+adsorb on the catalysts surface. In the meantime, the hydrogen also gets adsorbed and activated on
+the surface. This activation of hydrogen is one of the main reasons why a catalyst is needed for this
+reaction. Hydrogen on its own is a stable molecule and therefore is normally quite difficult to react
+with. After both these molecules are adsorbed the earlier described Horuiti-Polanyi mechanism can
+happen and the newly produced ethylene can desorb. However, this is where the challenge for these
+catalysts arise because if the acetylene concentration gets to low ethylene also can get adsorbed by the
+catalyst. When ethylene is adsorbed, the same mechanism can occur again leading to the formation
+of ethane and giving the low selectivity towards ethylene known for this reaction, and therefore the
+biggest challenge at this point in time.
+
+3.2.1. Palladium catalysts
+Throughout the years, transition metals like palladium (Pd), gold (Au), nickel (Ni) and copper (Cu)
+have been proven useful for this reaction.2 Nickel was one of the first catalysts found to be able to
+promote hydrogenation. However, after some time, other transition metals have also been found to
+be good catalysts with great conversion and reasonable selectivity towards ethylene. Since the 1950s
+monometallic palladium has been the standard industrially, because of its ability to easily activate hydro-
+gen and ease in adsorbing acetylene, while also desorbing ethylene relatively well.5 Catalyst existing
+of palladium on a carbon support have been found to achieve conversion of 92% and selectivity of
+50% at 75 °C.21 While other metals like gold for example achieve a conversion of 80%, while having
+a selectivity of 76% at 150 °C on a C-TiO2 -R250 support.22 For this reason, palladium remains an im-
+portant catalyst in industrial applications, despite its relatively high cost. This also helps explain why it
+continues to be extensively investigated in catalyst research.
+     However, even for palladium catalysts, improvements can be made. The main area for improvement
+is the catalysts low selectivity when high conversion is achieved. Achieving this higher selectivity can be
+achieved by different methods, but the method with the greatest potential has been catalyst modification
+by the addition of another metal. This is the area in which most research is done nowadays and is also
+showing significant improvements since research has started.
+
+3.2.2. Catalyst dilution
+As stated above, the palladium catalyst is continuously improving through catalyst modification, and
+the most researched is the addition of another metal. The beneficial effect, on semi-hydrogenation,
+of adding a second metal was first discovered in 1952 by Herbert Lindlar, and the catalyst found is
+called the Lindlar catalyst. Lindlar added palladium on calcium carbonate (CaCO3 ) after which it was
+poisoned by lead (Pb) or sulfur (S).23 Specifically for the selective hydrogenation of acetylene bimetallic
+catalysts were introduced in the 1980s.5 All of these catalysts used palladium as the base metal and
+promoted it with different metals such as the previously mentioned silver (Ag) and gold (Au), but also
+metals such as nickel (Ni), zinc (Zn) or lead (Pb).5 The purpose of diluting palladium with a second metal
+is to modify the active sites of palladium geometrically and electronically. This weakens the adsorption
+of ethylene on the catalyst surface, allowing ethylene to desorb more easily and thus suppressing its
+further hydrogenation to ethane, as can be seen in Figure 3.1.17 Palladium diluted with silver is the
+catalyst in which most research has been done and is also the most widely used form of industrial
+catalyst for the hydrogenation of acetylene to ethylene.2,5,17 This proven effectiveness industrially is
+the reason most research keeps concentrating on improving these palladium-silver catalysts.
+<PARSED TEXT FOR PAGE: 15 / 97>
+3.2. Current catalysts, and their challenges                                                                                9
+
+
+
+
+Figure 3.1: Schematic view of monometallic vs. bimetallic (Pd vs. PdAg) catalyst
+
+
+
+Geometric effect
+Bimetallic catalysts improve the selectivity of the palladium catalyst in two different ways, the introduc-
+tion of the second metal tunes the geometric and electronic structure of the catalyst.12 By changing the
+geometric structure, the selectivity of the catalyst is increased because it breaks up large ensembles
+of palladium atoms.
+    Large ensembles as described above are the main components that promote hydrogenation to-
+wards ethane. On these palladium rich ensembles acetylene can strongly bind to the catalyst through
+multi-coordinated 𝜋/𝑑𝑖-𝜎 type bonding.10 Besides the ensemble effect affecting acetylene and ethylene
+adsorption, it also influences hydrogen activation. Between palladium atoms hydrogen can be moved
+or stored which increases the chance of hydrogen being close to an adsorbed acetylene or ethylene
+molecule.13 But this is the same effect is where the problem towards selectivity originates from, the
+bonds these large ensembles form are so strong the newly formed ethylene can remain adsorbed, or
+can get readsorbed further in the reactor. If there is an activated hydrogen atom close to this adsorbed
+ethylene the hydrogenation will continue, ultimately forming ethane as an end product.
+    Through breaking these large ensembles up, with metals like silver, the possibility of forming such
+strong multi-coordinated 𝜋/𝑑𝑖-𝜎 type bond becomes harder. This leads to acetylene only being able to
+bond to the catalyst surface through a weaker 𝜋-bond.10 However, the bond is still strong enough for the
+conversion of acetylene to ethylene, but the bond is not strong enough for ethylene to remain adsorbed
+or be readsorbed further in the reaction, preventing further hydrogenation to ethane. In addition to
+this effect, the dilution of palladium in the catalyst also ensures that the chance of a hydrogen atom
+being close enough to adsorbed ethylene for further hydrogenation gets smaller.13 This shows that
+the ensemble effect has a large influence on the selective hydrogenation reaction by being able to
+significantly increase the selectivity of the reaction towards ethylene.
+
+Possible catalyst configurations
+This ensemble effect can also be influenced by the way these bimetallic catalysts active sites are config-
+ured. The most researched configurations are disordered alloy sites, ordered intermetallic compound
+(IMC) phases, and single-atom (SA) sites. These configuration possibilities are schematically shown
+in Figure 3.2.
+
+
+
+
+Figure 3.2: Schematic view of distinct types of active sites for acetylene hydrogenation. Adapted from Lan, Chen, and Wang [2]
+
+
+    In disordered alloy sites, the chance of large palladium ensembles is still significant. These cata-
+lysts are commonly prepared through methods such as co-impregnation or sequential impregnation.
+After which they are reduced through thermal treatment.17 However, both of these preparation methods
+do not include any way of influencing the way both metallic atoms are ordered, leaving us with limited
+atomic-level control over the ordering of palladium-silver.24 As a result, isolated palladium atoms, small
+palladium ensembles, and large palladium ensembles can co-exist depending on the total palladium
+loading.25,26 This explains how with disordered alloy sites, the ensemble effect can still have an influ-
+ence on the catalysts performance.
+<PARSED TEXT FOR PAGE: 16 / 97>
+10                                                                               3. Literature Background
+
+
+    For intermetallic compounds this is different, the atomic arrangement is more ordered. These cata-
+lysts are prepared with controlled metal ratios, after which they undergo a high temperature reduction.
+This high temperature reduction allows the atoms to rearrange in an ordered structure.27 The ordered
+structure into which these atoms rearrange often has a predefined stoichiometry and crystal structure.28
+However, whether the ensemble effect is still at play depends on the specific intermetallic phase and
+the surface structure.29 When palladium atoms are still neighboring each other with this structure, the
+ensemble effect can still become active, once again having lower selectivity of the catalyst towards
+ethylene as consequence.
+    The final configuration on which a lot of research has been done is single-atom sites. In these types
+of catalysts, palladium atoms are isolated in a sliver rich matrix.30 For this to be possible, very dilute
+amounts of palladium are introduced together with silver precursors onto a support by incipient wetness
+impregnation. This is then followed by drying and reduction in hydrogen, resulting in a palladium-silver
+alloy phase, and when the palladium loading is sufficiently low, palladium atoms can become atomically
+dispersed within the silver matrix, preventing the formation of larger palladium ensembles.31 Without
+neighboring palladium atoms, the known palladium ensemble effect is severely suppressed, which
+therefore prevents the multi-coordinated bond with acetylene or ethylene.8 The danger with SA-sites
+is that the palladium load is too low, which ultimately decreases the conversion of acetylene and thus
+the catalyst becomes inactive.32
+
+Electronic effect
+The other effect described is the change in electronic structure that the addition of a second metal brings
+with it. Whenever a metal is combined with another metal, they influence each other on an electronic
+level, this electronic level is the d-band of palladium.17 Silver has been found to move an electron from
+silver to palladium filling the d-band of palladium.8 The filling of the d-band improves the selectivity of
+the reaction because it lowers the d-states to lower energy. And since both acetylene and ethylene bind
+through their 𝜋-orbitals with the d-states of palladium, favorable back donation interactions by palladium
+are reduced.33,34 This ultimately leads to a weaker interaction between acetylene and ethylene with
+palladium, which again reduces over-hydrogenation to ethane, thus improving selectivity.11
+
+3.2.3. Effect of metal-oxide catalyst support
+In addition to the composition of the bimetallic catalyst, the metal-oxide support on which it is placed
+also influences its selectivity towards hydrogenation of acetylene. The strongest influence of the sup-
+port is to stabilize the metal atoms during the reaction. If palladium atoms become mobile, they can
+migrate and aggregate into larger ensembles, a phenomenon known as sintering, which especially has
+a great influence on the selectivity of a catalyst at higher temperatures.16 Oxide supports prevent this
+phenomenon by separating the metal atoms and anchoring them to the support surface.35 First of all, by
+adding a support to the active palladium atoms are more spread out than without support, making the
+chance of them finding each other during heating smaller.36 Secondly, the anchoring through oxygen
+atoms and hydroxyl groups; palladium atoms can coordinate towards the surface oxygen atoms, form-
+ing palladium-oxygen bonds. This bond improves adhesion between the active catalyst and the support,
+making sintering less favorable, once again preventing the formation of larger palladium ensembles.35
+Next, the addition of a catalyst support also helps spread the heat evenly, therefore preventing local hot
+spots where sintering or side reactions can take place.15 There are many metal-oxides that can be used
+as a support for this specific reaction, among the most common are Al2 O3 , SiO2 , and TiO2 .2,5,15,16,18,20
+However, industrially the most used support is Al2 O3 , specifically 𝛼-Al2 O3 supports are very common to
+find.2,5,16,20 However, SiO2 has proven its worth in research towards single-atom palladium-silver cat-
+alysts because SiO2 is a relatively inert support, therefore making it easier to observe the metal-alloy
+effect without support effects.37
+
+3.3. Competitive Adsorption acetylene, ethylene and hydrogen
+As mentioned above, the feed stream for this reaction contains only a small amount of acetylene,
+whereas the ethylene concentration is much higher. This creates an ethylene-rich feed stream in
+which acetylene, ethylene, and hydrogen compete for adsorption on the catalyst surface. Therefore,
+competitive adsorption plays an important role in determining both acetylene conversion and ethylene
+selectivity. The surface coverage of the catalyst can be calculated through the equation in 3.1, where
+𝐾𝑖 is the adsorption constant and 𝑝𝑖 is the partial pressure.
+<PARSED TEXT FOR PAGE: 17 / 97>
+3.4. Kinetic modeling                                                                                             11
+
+
+
+                                                     𝜃𝑖 ∝ 𝐾𝑖 𝑝𝑖                                                (3.1)
+     Acetylene itself forms a stronger bond with palladium than ethylene; acetylene (CH –    –
+                                                                                             – CH) has a
+triple bond through which both 𝜋-bonds can strongly interact with the d-orbitals of palladium, compared
+to the double bond of ethylene (CH2 –  – CH2 ) which only has one 𝜋-bond that can interact with palla-
+dium. The formation of this bond between the d-orbitals of palladium and the 𝜋-bonds of acetylene and
+ethylene can be described through the Dewar–Chatt–Duncanson model, which can be seen in Figure
+3.3. This model describes the donation of an electron from the 𝜋-system of acetylene or ethylene to
+the d-bands of palladium, while the palladium return an electron back through back-donation to the 𝜋 ∗
+(anti bonding) orbitals of acetylene and ethylene, which weakens the triple and double bond.38 Since
+acetylene has two 𝜋-bonds, the adsorption onto palladium is stronger than that between palladium and
+ethylene, meaning that the adsorption constant of acetylene is significantly higher than that of ethylene.
+This is beneficial because that means that even though the feed stream is ethylene rich, acetylene will
+still adsorb stronger than ethylene. However, if the bond is too strong acetylene derived products can
+remain on the catalysts surface which can block sites for hydrogen adsorption, or help the coke and
+green oil formation.2,39
+
+
+
+
+Figure 3.3: Schematic representation of the Dewar–Chatt–Duncanson model for the bond between palladium and acetylene/
+ethylene
+
+
+   In addition to the binding strength, the amount of molecule available in the gas phase also influences
+the surface coverage and therefore the competitive adsorption. This variable is expressed by partial
+pressure, which is calculated using 𝑝𝑖 = 𝑦𝑖 𝑃 this formula, and since it is an ethylene rich feed, the partial
+pressure of ethylene will be much higher. This means that, especially when acetylene concentration
+gets low, when conversion approaches completion, ethylene can compete for the active sites of the
+catalyst which leads to the hydrogenation to ethane.6,40
+
+    However, not only is acetylene and ethylene adsorption important for this reaction, but hydrogen
+also needs to be adsorbed and activated before it can react with either of these molecules. If the partial
+pressure of hydrogen is too low, the formation of activated hydrogen gets too little, thus becoming the
+limiting rate for its reaction. But when the partial pressure is too high, the after hydrogenation, adsorbed
+ethylene still can receive another activated hydrogen molecule leading to the hydrogenation of ethylene
+to ethane.4
+
+
+3.4. Kinetic modeling
+Kinetic modeling is often used in research to get a better understanding of the reaction being re-
+searched, especially for our hydrogenation reaction because the reaction is determined not only by
+the conversion of acetylene, but also by its selectivity towards ethylene. So in our case, that is the
+hydrogenation of acetylene to ethane, at which we can look at in two steps. Step one is the desired
+hydrogenation of acetylene to ethylene (𝑟1 ), and the second step of the reaction is the undesired hy-
+drogenation of ethylene to ethane (𝑟2 ). Through kinetic modeling we can get insight on the influence of
+operating conditions as temperature and pressure, but also on the influence hydrogen, acetylene and
+ethylene concentration have on the acetylene conversion and ethylene selectivity. Especially for tail-
+end conditions this is important, because in this part of the reactor acetylene concentrations becomes
+<PARSED TEXT FOR PAGE: 18 / 97>
+12                                                                                     3. Literature Background
+
+
+quite low and therefore small changes in surface coverage can have a big influence on the balance
+between conversion and selectivity.20,40
+
+3.4.1. Power law model
+A kinetic model that is often used in the beginning is the relatively simple power law model. The power
+law model uses reaction orders to describe the change in hydrogenation rate when partial pressures are
+changed, in addition to the stoichiometry of the reaction these also take into account adsorption and
+surface coverage.40 The general power law equations for this hydrogenation reaction are equations
+3.2 and 3.3. Earlier research has shown that the reaction order of hydrogen has been reported to be
+positive, showing that hydrogen availability has an immediate influence on the hydrogenation rate.40
+For acetylene the reaction rates have been found to be near zero, or in some cases even negative, this
+shows the strong bond between the palladium and acetylene, but also shows that when the catalysts
+active sites are full the addition of extra acetylene does not influence the reaction.40 The effect of
+ethylene is not really important for acetylene consumption, which explains the reaction order being
+zero, but ethylene does become more important for ethane formation so for the second reaction ethane
+usually has a reaction order between 0.3 and 1.20 This shows that the concentration of ethylene does
+increase the rate of ethane formation, but not linearly.
+
+
+                                                         𝑎      𝑏
+                                           𝑟1 = 𝑘1 (𝑇) 𝑝C12 H2 𝑝H12                                       (3.2)
+                                                        𝑎       𝑏
+                                           𝑟2 = 𝑘2 (𝑇) 𝑝C22 H4 𝑝H22                                       (3.3)
+
+3.4.2. Langmuir-Hinselwood-Hougen-Watson model
+Compared with the power-law model, the LHHW model takes an adsorption term into account. These
+are the 𝐾-terms in the equations 3.4 and 3.5, and given that earlier studies have shown that the LHHW
+kinetic model is a representative way of looking at the dynamics, this model is most used in research
+on the kinetics of this reaction.20 For the hydrogenation reaction, acetylene, ethylene, and hydrogen
+compete for the same active sites. This makes the adsorption term per molecule important for the kinetic
+model and its ability to predict the conversion and selectivity. In the denominator term, the competition
+between acetylene and ethylene can be seen by both terms being stated there. As described, the
+adsorption term of acetylene will be higher than that of ethylene, with both adsorption terms being
+much higher than that of hydrogen.20 However, also in this kinetic model, it becomes clear that when
+the acetylene concentration drops, the reaction will shift towards 𝑟2 and thus produce ethane as an end
+product.
+
+
+                                             𝑘1 𝐾C2 H2 𝑝C2 H2 𝐾H2 𝑝H2
+                           𝑟1 =                                                    2                      (3.4)
+                                  (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 )
+                                              𝑘2 𝐾C2 H4 𝑝C2 H4 𝐾H2 𝑝H2
+                           𝑟2 =                                                    2                      (3.5)
+                                  (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 )
+
+3.4.3. Mass Transfer Limitations
+However, there is still is a factor that both models do not take into account. Both models assume
+the measured reaction rates only reflect the intrinsic catalyst behavior. This assumption can only be
+made when mass transfer does not significantly limit the transport of reactants.41 If external, or internal
+mass transfer becomes rate-limiting the observed reaction rate can, next to adsorption and surface
+reaction steps, also be determined by diffusion of reactants through the gas phase, the pores of the
+catalyst or inside the particle.41 Mass transfer limitations can occur in different phases of the reaction,
+such as diffusion of the feed stream to the catalyst surface (external) and diffusion in the catalyst
+pores (internal).41,42 Typical signs of mass transfer limitations include a significant dependence of the
+observed reaction rate on flow rate, and more active catalysts does not result in proportionally higher
+reaction rates.42,43
+<PARSED TEXT FOR PAGE: 19 / 97>
+3.4. Kinetic modeling                                                                                    13
+
+
+External mass transfer
+External mass transfer limitations occurs when reactants are consumed at a rate at the catalyst surface
+faster than that supplied by the feed stream. In this case, the concentration of the feed stream is higher
+than at the catalyst surface.43 Kinetic models such as the LHHW model may assume incorrect reactant
+concentrations at the active sites when limited external mass transfer occurs. The model can assume
+the concentration of acetylene at the catalyst surface is equal to the concentration in the bulk gas
+phase.20 When internal mass-transfer limitations are present, this assumption is no longer valid and
+must be corrected.
+
+Internal mass transfer
+Internal mass transfer limitations occur when reactants cannot diffuse through the pores of catalyst
+particles fast enough to reach all internal active sites. As a result, the whole catalyst particle is not
+effectively used. The active sites of the catalyst near the surface are used mainly, while more internal
+active sides experience lower reactant concentrations.44
+
+Correcting for mass transfer limitations and other physical effects
+When mass transfer limitations are significant, the observed reaction rate no longer only reflects the
+intrinsic surface kinetics. In that case, a purely kinetic LHHW model may overpredict the reaction rate,
+especially under conditions where the intrinsic acetylene hydrogenation rate becomes very high. To
+account for this effect in a simplified way, an empirical rate cap can be introduced for the acetylene
+hydrogenation rate. This correction limits the rate predicted by the LHHW expression to a maximum
+observable rate, (𝑟1,max ), as shown in equation 3.6.43 It should be noted that this rate cap should not
+be interpreted as representing only mass transfer limitations. Instead, it is an empirical correction that
+takes the maximal observed rate into account. Therefore is this cap a combination of several effects
+as reactor operation and catalyst bed behavior. But mass transfer limitations are expected to have a
+significant influence on this maximum observed rate, because of their possible restriction of reactants
+reaching the active sites. As a result, when the intrinsic reaction rate is low, 𝑟1 ≈ 𝑟1,𝐿𝐻𝐻𝑊 , the reaction
+is kinetically controlled. In contrast, when the intrinsic reaction rate becomes higher 𝑟1 becomes closer
+to 𝑟1,𝑚𝑎𝑥 , eventually reaching a maximum reaction rate controlled by other effects, like mass transfer
+limitations.
+
+                                                       𝑟1,𝐿𝐻𝐻𝑊
+                                           𝑟1,𝑜𝑏𝑠 =       𝑟1,𝐿𝐻𝐻𝑊                                      (3.6)
+                                                      1+
+                                                           𝑟1,𝑚𝑎𝑥
+<PARSED TEXT FOR PAGE: 21 / 97>
+                                                                                             4
+                                                     Materials and Methods
+4.1. Catalyst preparation
+All catalysts used in this work have all been prepared in the same way, with the incipient wetness co-
+impregnation method. Starting with 3 grams of SiO2 as the support on which a predetermined amount
+of Pd and Ag is dropped. The amount of Pd and Ag loaded onto the SiO2 support is based on the
+ratio we wanted to analyze. As a base however we ensured a Ag wt% of 5% and change the ratio by
+the amount of Pd getting loaded. We worked with ratios ranging from PdAg50 to PdAg200 . For getting
+the right amount Pd loaded, Pd(NO3 )2 ⋅ 2 H2 O is used as the stock molecule and for Ag this is AgNO3 .
+After the weighting of both molecules has been done, 1 mL of Pd (stock solution) is added to the Ag
+solution. After this solution is shaken, 0.5 mL water is added. When this is shaken thoroughly again,
+half of this solution is added on the SiO2 support dropwise. After mixing this for 5 minutes the other
+half of the solution is added in the same way and mixed for 10 minutes. Finally, the mixture is dried for
+12 hours at 80 °C so the mixture can calcinate. The prepared catalyst that have been tested can be
+found in Table 4.1.
+Table 4.1: Prepared PdAg catalysts with each weight percentage and ratio
+
+                                  Catalyst     Pd wt%      Ag wt%          Ratio (Ag:Pd)
+                                  Pd0 Ag        0.025         5                 200
+                                  Pd2 Ag         0.05         5                 100
+                                  Pd3 Ag          0.1         5                  50
+
+
+
+4.2. Reactor Configuration and Catalytic Testing
+To test the selective hydrogenation of acetylene, a certain setup was used, for start a fixed-bed tubular
+reactor was used. In this glass reactor quartz wool is put inside on both ends, while having the catalyst
+loaded in between. The glass reactor then gets put inside the experimental setup, where it is tested for
+leaks with a flow of He and Snoop. When there are no more bubbles forming, meaning there are no
+leakages, the pretreatment of the catalyst can start.
+    This means the reactor needs to be heated up to 250 °C under a flow of He and H2 at 10% and
+                                                  −1
+40% respectively with a ramp rate of 10 °C min . When the temperature has reached 250 °C, it stays
+here for 1 hour, after which the catalyst gets cleaned. This is done by turning the flow of He up to 80%
+and turning the flow of H2 off and keeping these conditions for 10 minutes. After these 10 minutes, the
+temperature is put to 80 °C and when the reactor is cooled down the experiment can start, when the
+experiment has started the reactor temperature is maintained at 80 °C.
+    For the running of the experiment, a recipe is used to automatically switch every half an hour be-
+tween flows of H2 , He, C2 H2 and C2 H4 . When all recipes are started correctly, wait 7 minutes for it
+to stabilize, after which the gas chromatograph (GC) is started. The concentration of each material is
+based on the area’s of C2 H2 , C2 H4 and C2 H6 . This is done by a formula obtained with the calibration
+of the mass flow controller (MFC). These formula’s look as follows:
+
+                                                           15
+<PARSED TEXT FOR PAGE: 22 / 97>
+16                                                                                   4. Materials and Methods
+
+
+
+
+                              𝐶C2 H2 = 1.034518 × 10−8 ⋅ GC areaC2 H2                                   (4.1)
+                                                             −8
+                              𝐶C2 H4 = 1.5234839 × 10             ⋅ GC areaC2 H4                        (4.2)
+                                                               −8
+                              𝐶C2 H6 = 1.52348391 × 10              ⋅ GC areaC2 H6                      (4.3)
+
+   After performing these concentration calculations for every area that results from GC, we can cal-
+culate the specific conversion of acetylene and selectivity towards ethylene using the formulas 4.4 and
+4.5.
+
+                                              C2 H2 feed − C2 H2
+                            conversion =                                × 100%                          (4.4)
+                                                  C2 H2 feed
+                                                    C2 H6 + 2C4+
+                             selectivity = (1 −                       ) × 100%                          (4.5)
+                                                   C2 H2 feed − C2 H2
+
+4.3. Kinetic modeling
+The first part to setup for the kinetic model is the reactor model. The packed bed reactor is the reactor
+used throughout the regular experiments, and therefore the best to use for the reactor model. However,
+most packed bed reactors describe flow over catalyst weight, but for our research we want to see how
+the composition of the flow changes over time, showing that the semi hydrogenation took place, or that
+over-hydrogenation happened. Before we can set up this model, it is important to know which reaction
+is which. Therefore we define the hydrogenation of acetylene as 𝑟1 and the hydrogenation of ethylene
+as 𝑟2 , as seen below.
+                                         r1
+                           C2 H2 + H2 −−−→ C2 H4             Δ𝐻 = −172 kJ mol−1
+                                         r2
+                           C2 H4 + H2 −−−→ C2 H6             Δ𝐻 = −136 kJ mol−1
+    With this in mind, the differential molar balance equations can be determined. Given that the reaction
+is quite simple, the balance equations are also quite simple, as can be seen in the reaction formula’s
+below:
+
+                                      𝑑𝐹C2 H2
+                                              = −𝑟1 𝜌support 𝐴                                          (4.6)
+                                        𝑑𝑧
+                                      𝑑𝐹C2 H4
+                                              = (𝑟1 − 𝑟2 )𝜌support 𝐴                                    (4.7)
+                                        𝑑𝑧
+                                      𝑑𝐹C2 H6
+                                              = 𝑟2 𝜌support 𝐴                                           (4.8)
+                                        𝑑𝑧
+                                        𝑑𝐹H2
+                                              = (−𝑟1 − 𝑟2 )𝜌support 𝐴                                   (4.9)
+                                         𝑑𝑧
+   There are 2 common kinetic models in use, namely the power law and the Langmuir-Hinselwood-
+Hougen-Watson (LHHW) model. The power law is a simpler model that does not need as much com-
+puting effort, while the LHHW model is a more complex model one that takes into account competitive
+adsorption of ethylene and acetylene , while also considering dissociative H2 adsorption. With these
+models the reaction rates for both reactions can be calculated, for the power law this is done through
+equations 4.10 and 4.11. In these formula’s 𝑎1 , 𝑏1 , 𝑎2 , and 𝑏2 describe the reaction order.
+
+                                                         𝑎          𝑏
+                                          𝑟1 = 𝑘1 (𝑇) 𝑝C12 H2 𝑝H12                                     (4.10)
+                                                       𝑎       𝑏
+                                          𝑟2 = 𝑘2 (𝑇) 𝑝C22 H4 𝑝H22                                     (4.11)
+
+   As stated before, the LHHW model is a more realistic kinetic model commonly used to describe
+the kinetics of the semi hydrogenation of acetylene. Therefore the reaction rates for r1 and r2 need to
+<PARSED TEXT FOR PAGE: 23 / 97>
+4.3. Kinetic modeling                                                                                        17
+
+
+be calculated in a different way, that can be found in equations 4.12 and 4.13. In these equations the
+denominator describes the active area of the catalyst, and shows that if acetylene is present in a large
+enough quantity, it vastly suppresses 𝑟2 and thus prevents the over-hydrogenation to ethane.
+
+
+                                                𝑘1 𝐾C2 H2 𝑝C2 H2 𝐾H2 𝑝H2
+                            𝑟1 =                                                     2                   (4.12)
+                                   (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 )
+                                               𝑘2 𝐾C2 H4 𝑝C2 H4 𝐾H2 𝑝H2
+                            𝑟2 =                                                     2                   (4.13)
+                                   (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 )
+
+    Given the fact that the LHHW model gives a better grip on reality, this reactor model is the model
+used throughout the rest of the research. Important to note is the fact that the addition of another metal,
+like silver, does not change these models but only changes the kinetic parameters within these models.
+
+    When both these models have ben set up, the selectivity and conversion functions can be set up
+through the formula’s 4.4 and 4.5. Based on the modeled conversion and selectivity the error between
+the simulated and experimental data can be calculated. The error is determined through the root mean
+square error (RMSE), 4.14. This RMSE is calculated per experiment after which, the overall RMSE is
+calculated by dividing it by the total number of experiments, as can be seen in 4.15.
+
+                                                             2                           2
+                                 (convsim − convexp ) + (selecsim − selecexp )
+                        RMSE = √                                                                         (4.14)
+                                                      2
+
+                                                                 𝑁
+                                                       1
+                                          𝑅𝑀𝑆𝐸𝑜𝑣𝑒𝑟𝑎𝑙𝑙 = ∑ 𝑅𝑀𝑆𝐸𝑖                                          (4.15)
+                                                       𝑁
+                                                              𝑖=1
+
+    If the error calculation is set up, a way is needed to find the best kinetic parameters fit. This is done
+through a technique called differential evolution (DE), this optimization technique is commonly used in
+kinetic modeling. It is commonly used because it is a global optimizer, which is nice for kinetic modeling
+because these models can have a lot local minima. The advantage this technique has is that it does
+not need any start values, and only needs bounds to operate in. The target of the DE is to minimize
+the RMSE between the experimental and simulated conversion and selectivity. It does so by creating a
+population of possible parameter combinations which then are recombined to new candidate solutions.
+This ultimately gives us a minimum error, and therefore the best fit of parameters. However, algorithms
+like DE do not necessary guarantee the optimal solution to be found, but with the bounds chosen right,
+has a very high chance to do so.
+
+4.3.1. Modifications of LHHW model
+Simplification
+The first modification done to the standard LHHW is to simplify the LHHW model. This is done to
+evaluate the hydrogen parameter inside the kinetic model. If removal of the hydrogen adsorption term
+results in a similar or better fit, this indicates that the fitted model is not strongly dependent on this term.
+Therefore, the hydrogen adsorption term may be left out to simplify the LHHW expression. However,
+this does not necessarily mean that hydrogen adsorption is physically absent, only that its contribution
+is not required to describe the experimental data within the tested model structure. This simplification
+results in the rate equations below.
+
+                                                    𝑘1 𝐾C2 H2 𝑝C2 H2
+                                   𝑟1 =                                          2                       (4.16)
+                                          (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 )
+                                                    𝑘2 𝐾C2 H4 𝑝C2 H4
+                                   𝑟2 =                                          2                       (4.17)
+                                          (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 )
+<PARSED TEXT FOR PAGE: 24 / 97>
+18                                                                                          4. Materials and Methods
+
+
+Inhibition term
+As stated before, acetylene forms a stronger bond with the catalyst active sites. Therefore, acetylene
+can inhibit the hydrogenation of ethylene when it remains on the catalyst surface. The addition of this
+term can mainly improve the model’s selectivity because of its inhibitory effect on 𝑟2 . The rate equations
+the addition gives us are Equations 4.18 and 4.19 for the reaction rates.
+
+
+                                                  𝑘1 𝐾C2 H2 𝑝C2 H2 𝐾H2 𝑝H2
+                                𝑟1 =                                                    2                     (4.18)
+                                       (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 )
+                                                   𝑘2 𝐾C2 H4 𝑝C2 H4 𝐾H2 𝑝H2
+                  𝑟2 =                                                         2                              (4.19)
+                          (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 ) (1 + 𝐾inh 𝑝C2 H2 )
+
+
+Inhibition term squared
+In addition to just the inhibition term as a term in the LHHW model, the model’s fit with the inhibition
+term squared was also calculated. The reason to test the inhibition term squared is to know whether, for
+some catalysts, the regular inhibition term is too weak to describe the drop in ethylene hydrogenation.
+This could improve the model because it allows the model to describe a situation where acetylene
+inhibition is weak at low acetylene concentration, but becomes significantly stronger with increasing
+concentrations. The rate equations that follow from this modification can be found in Equation 4.20
+and 4.21.
+
+
+                                                  𝑘1 𝐾C2 H2 𝑝C2 H2 𝐾H2 𝑝H2
+                                𝑟1 =                                                    2                     (4.20)
+                                       (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 )
+                                                   𝑘2 𝐾C2 H4 𝑝C2 H4 𝐾H2 𝑝H2
+                  𝑟2 =                                                         2                   2          (4.21)
+                         (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 ) (1 + 𝐾inh 𝑝C2 H2 )
+
+
+Final rate equations
+As a final modification, a combined LHHW-based model was tested. In this model, the first hydro-
+genation step was limited using an 𝑟1,max term, while the second hydrogenation step included a flexible
+acetylene inhibition term. The acetylene hydrogenation rate was first calculated as a regular LHHW-
+type rate, after which it was corrected by the maximum-rate expression. This correction prevents the
+model from predicting unrealistically high acetylene consumption rates when 𝑟1,raw becomes large. The
+rate cap therefore improves the physical meaning of the conversion fit, but should not be interpreted
+as a description of a specific physical phenomena but more the collective of non-mentioned influential
+phenomena. By the addition of this 𝑟1,𝑚𝑎𝑥 an extra equation is created to the model. Besides this
+addition, another parameter was added, 𝑛inh . This makes the model more flexible than the previous
+inhibition models. In those models, 𝑛inh is fitted linear or straight, allowing the strength of acetylene
+inhibition to change depending on the catalyst. All the final rate equations can be found in Equations
+4.22, 4.23 and 4.24.
+
+
+                                                    𝑘1 𝐾C2 H2 𝑝C2 H2 𝐾H2 𝑝H2
+                           𝑟1,raw =                                                         2                 (4.22)
+                                        (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 )
+
+                                                            𝑟1,raw
+                                                    𝑟1 =        𝑟1,raw                                        (4.23)
+                                                           1+
+                                                                𝑟1,max
+
+
+                                                  𝑘2 𝐾C2 H4 𝑝C2 H4 𝐾H2 𝑝H2
+                         𝑟2 =                                                               𝑛inh              (4.24)
+                                (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 ) (1 + 𝐾inh 𝑝C2 H2 )
+<PARSED TEXT FOR PAGE: 25 / 97>
+4.4. Characterization                                                                                19
+
+
+4.4. Characterization
+4.4.1. Powder XRD
+Powder X-Ray Diffraction (XRD) is used to identify the crystalline phases in the prepared catalysts. The
+measurements were obtained through a Bruker D8 Advanced Diffractometer equipped with a copper
+source. The measured samples were in powder form, meaning particle sizes below 100 µm. Total
+measurement times per sample were 30 min, spanning a 2𝜃 range between 20° and 90°.
+
+4.4.2. H2 -TPR
+H2 -Temperature Programmed Reduction (TPR) experiments were carried out using a custom built setup
+equipped with a H2 -TCD. In each experiment, 150 mg of sample was physically mixed with 300 mg of
+SiC and loaded into a tubular quartz reactor. The packed bed was kept in place by a quartz wool plug,
+                                                                   −1
+and at the top a thermocouple was placed. A ramp rate of 10 °C min was used until a temperature
+of 600 °C was reached. No pretreatment of the samples was carried out, and the reduction took place
+under a flow of 30 mL/min, with 10 vol.% H2 concentration in Ar.
+<PARSED TEXT FOR PAGE: 27 / 97>
+                                                                                             5
+                                                              Characterization
+
+5.1. XRD
+The results of the performed XRD can be found in Figure 5.1. This figure shows that the overall diffrac-
+tion patterns are very similar for all catalysts. The first broad bump for every catalyst at ∼22-25∘ 2𝜃,
+which can be attributed to amorphous SiO2 .8 One can expect to see palladium oxide reflections around
+∼30∘ and ∼46∘ .8 In contrast, at these angles no distinct palladium silver reflections can be resolved
+above the broad located at 33∘ . These reflections are only visible for the two catalysts with highest
+Pd amount. However, their band is broad, indicating very small particle sizes which origin at the low
+palladium loading (0.025 - 0.1 wt%).
+
+
+
+
+Figure 5.1: XRD of the different prepared catalysts
+
+
+
+
+5.2. Hydrogen Temperature-Programmed-Redcution
+H2 -TPR experiments were conducted to study the degree of reducibility of the metal species within the
+catalysts. As shown in Figure 5.2, the Pd and Ag sites reduce prior to 250∘ C, which is typical of Pd and
+Ag-based materials. Moreover, the intensity in H2 consumption positively varies depending on loading,
+directly related to the amount of sites capable of consuming H2 during reduction.
+
+                                                      21
+<PARSED TEXT FOR PAGE: 28 / 97>
+22                                                    5. Characterization
+
+
+
+
+Figure 5.2: TPR of the different prepared catalysts
+<PARSED TEXT FOR PAGE: 29 / 97>
+                                                                                                            6
+                                                             Results & Discussion
+6.1. Experimental
+To test the effect of each parameter on each catalysts conversion of acetylene and selectivity of ethy-
+lene, several experiments have been done on the catalysts. The catalytic performance of each catalyst
+was tested against different parameters, these parameters being the flow rate, hydrogen concentration,
+ethylene concentration, and acetylene concentration. All experiments carried out have been performed
+under the conditions of 100 °C and 1000 mbar, as can be seen in Table 6.1.
+
+Table 6.1: Catalyst conditions
+
+       Catalyst      Catalyst mass (mg)          Operating temperature (∘ C)           Operating pressure (mbar)
+       Pd0 Ag                100                            100                                  1000
+       Pd2 Ag                 75                            100                                  1000
+       Pd3 Ag                100                            100                                  1000
+
+
+
+6.1.1. Effect of flow rate
+First, the effect of the flow rate on the performance of the catalysts was tested. This was done with a
+composition of 1 vol.% acetylene, 20 vol.% ethylene, 20 vol.% hydrogen, and balance helium. To be
+able to make a good comparison between the different catalysts and the possible difference in catalyst
+mass used, a mass normalized flow rate is used as a parameter (GHSV). GHSV is calculated by dividing
+                                                                                       −1
+the flow rate by the mass of the catalyst, which gives this quantity units of 𝑐𝑚3 ℎ−1 𝑔𝑐𝑎𝑡 . Each catalyst
+                                                        −1
+is tested at total flows of 50, 100, 150 and 200 mL min , the GHSV per catalyst can be found in Table
+6.2. The effect of GHSV on conversion, selectivity and the first-order behavior is shown in Figure 6.1.
+
+Table 6.2: Mass normalized space velocity calculated for each total flow rate and catalyst.
+
+                                             −1                                  −1                                −1
+ Flow (𝑚𝐿/𝑚𝑖𝑛)          GHSVPd0 Ag (𝑐𝑚3 ℎ−1 𝑔𝑐𝑎𝑡 )          GHSVPd2 Ag (𝑐𝑚3 ℎ−1 𝑔𝑐𝑎𝑡 )        GHSVPd3 Ag (𝑐𝑚3 ℎ−1 𝑔𝑐𝑎𝑡 )
+       50                       30000                               40000                             30000
+      100                       60000                               80000                             60000
+      150                       90000                              120000                             90000
+      200                      120000                              160000                            120000
+
+
+
+
+                                                              23
+<PARSED TEXT FOR PAGE: 30 / 97>
+24                                                                                                 6. Results & Discussion
+
+
+
+
+(a)                                        (b)                                         (c)
+
+Figure 6.1: Influence of flow per catalyst, shown with: (a) conversion plotted against GHSV, (b) selectivity plotted against GHSV,
+(c) first order check
+
+
+
+Conversion
+In general, increasing the mass-normalized space velocity leads to a decrease in acetylene conversion,
+as can be seen in the graph in Figure 6.1(a). This can be explained by the shorter residence time of the
+gas over the catalyst surface. At higher flow rates, acetylene molecules have less time to adsorb on
+the catalyst surface and react with hydrogen before leaving the reactor. As a result, more unconverted
+acetylene remains in the product stream.
+
+    Both Pd0 Ag and Pd2 Ag follow this trend, while the conversion of Pd3 Ag remains close to 100% with
+higher flow rates. This is consistent with the higher palladium loading of Pd3 Ag, which likely provides
+more available active sites for acetylene hydrogenation. As a result, this catalyst can compensate
+better for the shorter residence time. For Pd0 Ag and Pd2 Ag, the lower palladium loading likely results
+in fewer active palladium sites. Therefore, these catalysts cannot compensate for the shorter residence
+time, leading to a decrease in conversion as the flow rate increases.
+    The first order check in Figure 6.1(c) was used to evaluate whether the decrease in conversion
+follows first order behavior. For Pd0 Ag, the data shows a clear linear trend, indicating that the con-
+version decrease is consistent with first order acetylene consumption. Unfortunately there are only 2
+data points for Pd2 Ag, therefore not much can be said about the reaction order. However, first-order
+behavior too can be assumed for this catalyst.
+
+
+Selectivity
+In contrast to conversion, ethylene selectivity generally increases with increasing flow rates, as shown
+in Figure 6.1(b). The results show that the selectivity for ethylene increases with increasing GHSV.
+This trend can be explained by the same residence-time principle used to describe the conversion
+results. Newly formed ethylene has less time to readsorb on the catalyst surface and undergo further
+hydrogenation to ethane. Therefore, a larger fraction of the converted acetylene leaves the reactor as
+ethylene.
+     For Pd0 Ag, the ethylene selectivity is already high over the full GHSV range and only slightly in-
+creases with increasing flow rate. This indicates that further hydrogenation of ethylene is already largely
+suppressed for this catalyst, even at lower flow rates. Therefore, increasing the flow rate has only a
+limited additional effect on its selectivity.
+     For Pd2 Ag a much stronger increase in selectivity is observed, from ∼55 to ∼99%. This suggests
+that for this catalyst, at lower flow rates ethylene hydrogenation is more allowed. But with an increase
+in flow rate this problem can be strongly reduced, resulting in a selectivity of almost 100%.
+     In contrast, Pd3 Ag shows negative ethylene selectivity at low flow rates. This indicates net ethylene
+consumption, meaning that the ethylene from the feed and/or newly formed ethylene is further hydro-
+genated to ethane. This behavior is consistent with the higher palladium loading, which makes it more
+active for hydrogenation. Even at the highest flow rate, the selectivity remains relatively low compared
+with other catalysts, showing that this catalyst is too active for selective ethylene formation under these
+conditions.
+<PARSED TEXT FOR PAGE: 31 / 97>
+6.1. Experimental                                                                                                                                                       25
+
+
+Conclusion on GHSV effect
+Overall, the flow rate experiments show a clear trade-off between acetylene conversion and ethylene
+selectivity. Increasing the flow rate decreases the residence time, which can lower acetylene conversion
+for certain catalysts. At the same time, increased flow rate prevents ethylene hydrogenation, thereby
+improving selectivity. This trade-off has been found to strongly depend on palladium loading. Pd0 Ag
+shows the highest selectivity over the full GHSV range, but its lower loading limits its ability to maintain
+high conversion at higher flow rates. In contrast, Pd3 Ag maintains a high conversion even as the
+flow rate increases, but shows significantly lower ethylene selectivity than the other catalysts due to
+stronger overhydrogenation. Pd2 Ag shows the clearest improvement in selectivity with increasing flow
+rate, suggesting that its performance is especially sensitive to the residence time.
+
+6.1.2. Effect of acetylene
+Next, the effect of the acetylene concentration on catalyst performance was investigated. Five sets of
+experiments were carried out. For each set of experiments, the acetylene concentration was increased
+from 0.5 to 2 vol.% with steps of 0.5 vol.%.
+    Five sets of experiments were carried out under different flow rates, hydrogen concentration and
+                                                                                        −1
+ethylene concentration. Sets 1 and 2 were performed at a total flow rate of 100 mL min , while sets
+                                      −1
+3 to 5 were performed at 50 mL min . The corresponding space velocities and gas composition are
+shown in Table 6.3.
+Table 6.3: Experimental conditions used to investigate the influence of acetylene concentration on catalyst performance.
+                                                      −1                                                                                     −1
+ Set   Catalyst   Flow rate (𝑚𝐿/𝑚𝑖𝑛)   GHSV (𝑐𝑚3 ℎ−1 𝑔𝑐𝑎𝑡 )    vol.% C2 H4   vol.% H2   Set   Catalyst   Flow rate (𝑚𝐿/𝑚𝑖𝑛)   GHSV (𝑐𝑚3 ℎ−1 𝑔𝑐𝑎𝑡 )   vol.% C2 H4   vol.% H2
+  1    Pd0 Ag             100               60000                  10           20       3    Pd0 Ag             50                30000                 30           20
+       Pd2 Ag             100               80000                  10           20            Pd2 Ag             50                40000                 30           20
+       Pd3 Ag             100               60000                  10           20            Pd3 Ag             50                30000                 30           20
+  2    Pd0 Ag             100               60000                  20           20      4     Pd0 Ag             50                30000                 20           10
+       Pd2 Ag             100               80000                  20           20            Pd2 Ag             50                40000                 20           10
+       Pd3 Ag             100               60000                  20           20            Pd3 Ag             50                30000                 20           10
+                                                                                        5     Pd0 Ag             50                30000                 20            5
+                                                                                              Pd2 Ag             50                40000                 20            5
+                                                                                              Pd3 Ag             50                30000                 20            5
+
+
+
+    The results of set 4 are selected to be discussed in detail because this set shows a clear and
+generally consistent trend over the investigated acetylene range. In addition, this set was carried out
+at intermediate ethylene concentration and relatively low hydrogen concentration, making it useful for
+evaluating the influence of acetylene on both conversion and selectivity. The influence of acetylene
+partial pressure on conversion, ethylene selectivity, and the acetylene reaction order for set 4 is shown
+in Figure 6.2. And the results of the other sets of experiments are included in Appendix ??.
+
+
+
+
+(a)                                                      (b)                                                       (c)
+
+Figure 6.2: Influence of acetylene concentration on catalyst performance for set 4: (a) acetylene conversion as a function of
+acetylene partial pressure, (b) ethylene selectivity as a function of acetylene partial pressure, and (c) acetylene reaction order
+fit.
+
+
+
+Conversion
+The acetylene conversion as a function of acetylene concentration is shown in Figure 6.2(a). In general,
+increasing acetylene concentration has the strongest effect on catalysts with lower palladium loading.
+The conversion of Pd0 Ag decreases strongly with increasing acetylene concentration, while Pd2 Ag only
+<PARSED TEXT FOR PAGE: 32 / 97>
+26                                                                               6. Results & Discussion
+
+
+shows a clear decrease at the highest acetylene concentration. In contrast, Pd3 Ag maintains almost
+complete conversion over the full investigated range.
+    For Pd3 Ag, the acetylene remains above 99% over the whole range of acetylene concentration.
+This indicates that the catalyst has sufficient hydrogenation capacity under these conditions to convert
+nearly all acetylene, even when more acetylene is in the feed stream.
+    Pd2 Ag also maintains a good conversion for the lower and medium concentrations, but decreases
+at higher acetylene concentrations. This suggests that the catalyst can accommodate the increase in
+acetylene concentration up to a certain point, after which the hydrogenation capacity becomes limiting.
+    The decrease is much more pronounced for Pd0 Ag. At the highest acetylene concentration, the
+conversion decreases to ∼30%. This shows that this catalyst is less able to maintain high acetylene
+conversion when acetylene concentration is increased in the feed.
+
+     The decrease in conversion at higher acetylene concentrations can be explained by the lower hydro-
+gen to acetylene ratio. Because hydrogen concentration is kept constant while acetylene concentration
+is increased, more acetylene has to be converted with the same amount of hydrogen. In addition, more
+acetylene molecules compete for the available active sites. If the catalyst has a limited amount of ac-
+tive sites, the fraction of acetylene that is converted decreases. The acetylene reaction order in Figure
+6.2(c) supports this observation. Pd3 Ag shows an acetylene reaction order close to 1, indicating that the
+reaction rate increases strongly with acetylene partial pressure. This is consistent with the maintained
+high conversion observed for this catalyst. For Pd2 Ag, the reaction order is also high, but slightly lower
+than for Pd3 Ag, which agrees with the observed decrease in conversion at the maximum acetylene
+concentration. In contrast, Pd0 Ag shows a much lower reaction order, indicating that the reaction rate
+changes only weakly with increasing acetylene concentration. This suggests that the catalyst becomes
+limited under these conditions, most likely because the available number of active sites is too low to
+convert the increased acetylene feed.
+
+
+Selectivity
+The effect of acetylene concentration on ethylene selectivity is shown in Figure 6.2(b). For all catalysts,
+the ethylene selectivity increases with increasing acetylene concentration. This increase is minimal for
+Pd0 Ag, because the selectivity is already at ∼85% at the lowest acetylene concentration. For Pd2 Ag
+and Pd3 Ag, the increase is much more pronounced.
+    The minimal increase for Pd0 Ag indicates that overhydrogenation is already strongly limited for this
+catalyst.
+    For Pd2 Ag, a stronger increase in selectivity is observed, showing that higher acetylene concentra-
+tions strongly suppress the further hydrogenation of ethylene.
+    The largest increase is for Pd3 Ag, this is mainly because the catalyst shows negative selectivity
+at low acetylene concentration. This means that mainly ethylene is consumed for the hydrogenation
+towards ethane. At higher acetylene concentrations, this overhydrogenation is reduced, resulting in a
+strong increase in selectivity.
+
+    Increase in ethylene selectivity can be explained by competitive adsorption between acetylene and
+ethylene. Acetylene adsorbs more strongly on palladium than ethylene. Therefore, at higher acetylene
+concentrations, more active sites are occupied by acetylene, making it more difficult for ethylene to
+readsorb and further hydrogenate to ethane. In addition, the decreasing hydrogen-acetylene ratio with
+increasing acetylene concentrations can reduce overhydrogenation because relatively less hydrogen
+is available per hydrogenation reaction.
+
+Conclusion on acetylene effect
+Generally, increasing the acetylene concentration has the strongest influence on conversion of the less
+active catalysts. This effect is especially clear for Pd0 Ag, where the conversion decreases strongly at
+higher acetylene concentrations. In contrast, Pd3 Ag maintains almost complete acetylene conversion
+over the full investigated range. This behavior is consistent with its higher palladium loading, which
+likely provides a larger number of available active sites.
+    In contrast to conversion, ethylene selectivity increases with increasing acetylene concentration for
+all catalysts. This can be explained by stronger competitive adsorption of acetylene compared with
+<PARSED TEXT FOR PAGE: 33 / 97>
+6.1. Experimental                                                                                                               27
+
+
+ethylene. At higher acetylene concentrations, acetylene occupies more active sites, which suppresses
+ethylene readsorption and further hydrogenation to ethane. Therefore, increasing the acetylene con-
+centration improves ethylene selectivity, but can lower acetylene conversion if the catalyst does not
+have enough active sites to hydrogenate the higher concentration of acetylene.
+
+6.1.3. Effect of ethylene
+To investigate the effect that the change of ethylene has on the catalyst performance, experiments were
+carried out at two different flow rates. Set 1 was performed at 50 mL/min, while set 2 was performed
+at 100 mL/min. Because different catalyst masses were used, the corresponding GHSV values differ
+between the catalysts, as shown in Table 6.4. During these experiments, the acetylene and hydrogen
+concentrations were kept constant, while the concentration of ethylene increased from 10 to 40 vol.%,
+with steps of 10 vol.%.
+
+Table 6.4: Experimental conditions used to investigate the influence of ethylene concentration on catalyst performance.
+
+                                                                            −1
+          Catalyst      Set     Flow rate (𝑚𝐿/𝑚𝑖𝑛)           GHSV (𝑐𝑚3 ℎ−1 𝑔𝑐𝑎𝑡 )             vol.% C2 H2     vol.% H2
+          Pd0 Ag         1               50                       30000                            1             20
+                         2              100                       60000                           0.5            20
+           Pd2 Ag        1               50                       40000                            1             20
+                         2              100                       80000                           0.5            20
+           Pd3 Ag        1               50                       30000                            1             20
+                         2              100                       60000                           0.5            20
+
+   Set 2 was selected for the main discussion because the trends in conversion and selectivity are
+more pronounced at the higher flow rates. This makes it easier to compare the influence of ethylene
+concentration between the different catalysts. The influence of ethylene partial pressure on acetylene
+conversion, ethylene selectivity, and the ethylene reaction order fit for set 2 is shown in Figure 6.3,
+while the results of set 1 can be found in the appendix ??.
+
+
+
+
+(a)                                         (b)                                         (c)
+
+Figure 6.3: Influence of ethylene concentration on catalyst performance for set 2: (a) acetylene conversion as a function of
+ethylene partial pressure, (b) ethylene selectivity as a function of ethylene partial pressure, and (c) ethylene reaction-order fit.
+
+
+
+Conversion
+The acetylene conversion as a function of ethylene partial pressure is shown in Figure 6.3(a). The
+increasing of ethylene concentration has only a limited effect on the conversion of Pd2 Ag and Pd3 Ag.
+Both these catalysts maintain a high conversion over the whole ethylene concentration range. In con-
+trast, Pd0 Ag shows a more notable decrease in conversion with increasing ethylene concentration.
+    This trend can also be seen in the ethylene reaction order fit shown in Figure 6.3(c). Both Pd2 Ag
+and Pd3 Ag show an ethylene reaction order near zero. This indicates that under these conditions, the
+acetylene hydrogenation rate is nearly independent of ethylene partial pressure. For Pd0 Ag, a light
+negative reaction order is found. This is consistent with the decrease in acetylene conversion at higher
+ethylene concentrations.
+    The decrease in conversion for Pd0 Ag can be explained by the competitive adsorption between ethy-
+lene and acetylene for the catalysts active sites. Although acetylene adsorbs stronger than ethylene,
+<PARSED TEXT FOR PAGE: 34 / 97>
+28                                                                                              6. Results & Discussion
+
+
+the much higher ethylene partial pressure can compensate for this, increasing the surface coverage
+of ethylene. As a result, fewer active sites are available for acetylene to adsorb on, causing a weak
+inhibiting effect. For Pd0 Ag this effect is most visible, because a lower palladium loading likely results
+in fewer available palladium active sites. Blocking even a small fraction of these sites can result in a
+larger relative effect on acetylene conversion.
+
+
+Selectivity
+The influence of ethylene concentration on ethylene selectivity is shown in Figure 6.3(b). Every cata-
+lyst follows the same trend, increasing ethylene concentration leads to a decrease in selectivity. This
+indicates that a higher ethylene partial pressure promotes further hydrogenation of ethylene to ethane.
+    The decrease in selectivity is strongest for Pd3 Ag. At low ehtylene concentration this catalyst al-
+ready shows a relatively low selectivity, and the selectivity decreases further when the ethylene con-
+centration is increased. This indicates that this catalyst has a strong tendency to hydrogenate ethylene,
+especially at higher ethylene partial pressures.
+    Pd2 Ag shows a more moderate decrease. This indicates that the catalyst has a lower tendency
+for over-hydrogenation to ethane than Pd3 Ag, while still being sensitive to changes in ethylene partial
+pressure.
+    For Pd0 Ag, the decrease in selectivity is the smallest. The selectivity remains relatively high over
+the investigated ethylene concentration range. This shows that further hydrogenation is suppressed
+the strongest by this catalyst.
+
+    The decrease in ethylene selectivity with increasing ethylene concentration can be explained by the
+higher probability of ethylene readsorption by the catalyst. This effect is especially strong for catalysts
+with higher palladium loading, like Pd3 Ag, because more active sites are available for the ethylene to be
+hydrogenated. In contrast, for catalysts with lower palladium loading, such as Pd0 Ag, the loading likely
+limits the number of active sites available for hydrogenation, which helps maintain a higher selectivity.
+
+Conclusion on ethylene effect
+In general, increasing the ethylene concentration has only a limited effect on the conversion for Pd2 Ag
+and Pd3 Ag. For these catalysts, the reaction order with respect to ethylene is close to zero, indicat-
+ing the acetylene hydrogenation rate is virtually independent of ethylene partial pressure under these
+conditions. The effect on selectivity is much stronger for all catalysts. Increasing the ethylene con-
+centration decreases ethylene selectivity, as can be seen for every catalyst. This shows that higher
+ethylene partial pressure promotes further hydrogenation to ethane. This effect has been found to be
+the strongest for Pd3 Ag, which remains highly active, and the weakest for Pd0 Ag, where the lower
+palladium loading likely limits the further hydrogenation.
+
+6.1.4. Effect of hydrogen
+The effect of hydrogen concentration on the catalyst conversion and selectivity was also investigated.
+For each catalyst this was done at a total flow rate of 100 mL/min. In set 1, the ethylene concentration
+was kept at 20 vol.%, while for set 2 the ethylene concentration was kept at 40 vol.%. The remaining
+reaction conditions were kept constant and are shown in Table 6.5. For set 1 the experiments were
+carried out with a hydrogen concentration range of 5 to 25 vol.%, while for set 2 it was varied from 5 to
+20 vol.%.
+
+
+Table 6.5: Experimental conditions used to investigate the influence of hydrogen concentration on catalyst performance.
+
+                                                                        −1
+        Catalyst     Set     Flow rate (𝑚𝐿/𝑚𝑖𝑛)          GHSV (𝑐𝑚3 ℎ−1 𝑔𝑐𝑎𝑡 )        vol.% C2 H2       vol.% C2 H4
+        Pd0 Ag        1              100                      60000                      0.5               20
+                      2              100                      60000                      0.5               40
+         Pd2 Ag       1              100                      80000                      0.5               20
+                      2              100                      80000                      0.5               40
+         Pd3 Ag       1              100                      60000                      0.5               20
+                      2              100                      60000                      0.5               40
+<PARSED TEXT FOR PAGE: 35 / 97>
+6.1. Experimental                                                                                                                  29
+
+
+    The results from set 2 were selected for the main discussion because the higher ethylene concen-
+tration makes the influence of hydrogen on conversion, selectivity and overhydrogenation more clearly
+visible. The influence of hydrogen partial pressure on conversion, selectivity, and the hydrogen reac-
+tion order fit for set 2 is shown in Figure 6.4, and the results of set 1 are included in Appendix ??.
+
+
+
+
+(a)                                          (b)                                          (c)
+
+Figure 6.4: Influence of H2 per catalyst, set 2, shown with: (a) conversion plotted against PH2 , (b) selectivity plotted against PH2 ,
+(c) rate order fit
+
+
+
+Conversion
+The influence of the hydrogen concentration on acetylene conversion is shown in Figure 6.4(a). For
+all catalysts, increasing the hydrogen concentration has a positive effect on acetylene conversion.
+This effect is most clearly visible for Pd0 Ag, where the conversion increases strongly with increasing
+hydrogen concentration. In contrast, the conversion for Pd2 Ag and Pd3 Ag remains close to 100% over
+the investigated hydrogen concentration range.
+    For Pd0 Ag, the conversion increases significantly, which shows that hydrogen concentration has
+a strong influence on the activity of this catalyst. At lower hydrogen concentrations the catalyst is not
+able to convert all acetylene, while at higher concentrations the catalyst increasingly is able to.
+    For both Pd2 Ag and Pd3 Ag, the conversion remains near 100% conversion. This indicates that
+these catalysts are active enough on their own to convert virtually all acetylene. Therefore, increasing
+the hydrogen concentration barely influences the conversion for these catalysts.
+
+    The hydrogen reaction order fit in Figure 6.4(c) supports these observations. For Pd0 Ag, the reac-
+tion order is ∼0.89, which is close to first order. This indicates that the acetylene hydrogenation rate
+strongly depends on the partial pressure of hydrogen. This is consistent with the strong increase in
+conversion for this catalyst.
+    In contrast, the reaction order for Pd2 Ag and Pd3 Ag is close to zero. This indicates that, under
+these condition, the acetylene hydrogenation rate is nearly independent of hydrogen partial pressure,
+agreeing with the constant conversion of both catalysts.
+
+    The positive effect of hydrogen concentration on conversion can be explained by the increased
+availability of hydrogen on the catalyst surface. At higher concentrations, hydrogen partial pressure
+increases, meaning more hydrogen can adsorb on palladium sites, making more activated hydrogen
+available for acetylene hydrogenation.
+    For Pd0 Ag, this effect is particularly important because of its lower palladium loading. This likely
+limits the number of sites available to activate hydrogen on at lower hydrogen concentrations. How-
+ever, when hydrogen partial pressure does increase, more hydrogen can adsorb on the active sites
+making more hydrogen available for the hydrogenation reaction. This limitation is less visible for Pd2 Ag
+and Pd3 Ag, these catalyst already achieve nearly complete conversion at low hydrogen concentration
+suggesting both catalysts have enough active sites to activate enough hydrogen for the hydrogenation
+of acetylene.
+
+Selectivity
+The influence of hydrogen on the selectivity of the catalysts can be seen in Figure 6.4(b). In this case,
+every catalyst follows the same general trend, showing a decrease in selectivity with increasing hydro-
+<PARSED TEXT FOR PAGE: 36 / 97>
+30                                                                               6. Results & Discussion
+
+
+gen concentration. This shows that a higher hydrogen partial pressure also promotes hydrogenation
+of ethylene.
+     The decrease is smallest for Pd0 Ag. Even at higher hydrogen concentrations, the selectivity remains
+relatively high. This suggests that hydrogenation of ethylene is largely suppressed for this catalyst.
+     For Pd2 Ag, the decrease in selectivity is more pronounced. At higher hydrogen concentrations the
+selectivity approaches slightly negative values. This shows that ethylene hydrogenation is becoming
+increasingly important.
+     The most significant decrease can be found for Pd3 Ag. This catalyst shows strong negative selec-
+tivity at higher hydrogen concentrations, indicating strong over-hydrogenation towards ethane. From
+this can be found that the catalyst is too active for selective hydrogenation in hydrogen rich conditions.
+
+    the decrease in ethylene selectivity with increasing hydrogen concentration can be explained by the
+increase of activated hydrogen available on the catalyst surface. A higher hydrogen partial pressure
+increases the probability that when ethylene is adsorbed it undergoes hydrogenation to ethane. This
+effect is strongest for catalysts with higher palladium loading, such as Pd3 Ag, because more active
+sites are available for hydrogen activation and ethylene hydrogenation. In contrast, for lower palladium
+loaded catalysts, like Pd0 Ag, the number of active sites is less making it harder for the overhydrogena-
+tion. As a result, the ethylene selectivity remains relatively high.
+
+Conclusion for hydrogen
+In general, increasing the hydrogen concentration has a positive effect on the conversion of Pd0 Ag,
+while the conversion of Pd2 Ag and Pd3 Ag remains almost unchanged. This is because these cata-
+lysts already reach nearly complete conversion at the lowest hydrogen concentration. For Pd0 Ag, the
+positive reaction order with respect to hydrogen shows that the reaction rate is strongly influenced by
+hydrogen concentration.
+    However, the effect on selectivity is negative for every catalyst. Increasing the hydrogen concen-
+tration promotes further hydrogenation of ethylene towards ethane, causing ethylene selectivity to de-
+crease. Pd0 Ag remains the most selective catalyst, while Pd3 Ag shows the strongest decrease in
+selectivity due to severe overhydrogenation. This shows that a higher hydrogen concentration can be
+beneficial for conversion for catalysts with low palladium loadings, but reduces selectivity, especially
+for catalysts with a higher palladium loading.
+
+
+6.2. Kinetic modeling
+6.2.1. Standard LHHW model
+The LHHW model is often used to describe hydrogenation kinetics, but the standard form of the model
+does not describe all catalysts with the same accuracy, as can be seen in the results for each catalyst
+in Figure 6.5.
+
+    For Pd0 Ag, the model gives a reasonable description of the experimental data, as shown in Figure
+6.5(a), with an overall RMSE of 17.54 percentage points. Especially the selectivity is fitted well with
+100% of the points in the ±10% band. In contrast, the model does not give a good fit for conversion.
+All data points are widely scattered, with a small number of points falling within the ±10% band. This
+also explains the high RMSE of 30.36 percentage points. This suggests that for Pd0 Ag the standard
+LHHW model gives a good description of selectivity, but its conversion fit is relatively weak over the
+whole experimental range.
+
+    As can be seen in Figure 6.5(b) the standard LHHW model seems to make a better fit for Pd2 Ag,
+with an overall RMSE value of 11.98 percentage points. Especially the acetylene conversion seems
+better fitted for this catalyst, with 83.3% within the ±10% band. However, the model predicts ∼100%
+conversion for every condition, which suggests the data is better fitted than it actually is since a lot
+of experimental data is also near 100%. However, this should be interpreted carefully because every
+point is predicted near 100%, making it more likely that the fitted parameters are physically meaning-
+less. In contrast, the modeled selectivity for this catalyst is poorly described with only 28.6% inside
+the ±10% band. At higher experimental selectivity the model appears to underestimate the selectivity,
+while at the lower experimental selectivity the simulated selectivity is overestimated. This indicates that
+<PARSED TEXT FOR PAGE: 37 / 97>
+6.2. Kinetic modeling                                                                                          31
+
+
+the standard LHHW model does not fully capture the competition between 𝑟1 and 𝑟2 for Pd2 Ag.
+
+    Finally, the fit for Pd3 Ag can be found in Figure 6.5(c), for this catalyst the overall RMSE is 43.08
+percentage points, significantly worse than the other catalysts. Acetylene conversion seems to have
+been described reasonably well with 81.8% of the points within the ±10% band. However, for this
+catalyst too all simulated conversion points are at ∼100% even though not every experimental value
+is ∼100%. Once again making physically meaningless parameters very likely. For ethylene selectivity
+it becomes clear this model performs poorly, confirmed with a selectivity RMSE of 81.82 percentage
+points. This shows that for Pd3 Ag the LHHW model also cannot accurately describe the competition
+between 𝑟1 and 𝑟2 .
+
+
+
+Shortcomings standard LHHW model
+The standard LHHW model has shown that for the Pd0 Ag catalyst it gives a mixed description of the
+experimental data. The quality differs strongly between conversion and selectivity. The selectivity is
+described well, while the conversion fit is less accurate. At lower and intermediate conversion, the
+model over- and under predicts data points indicating that it does not capture the correct dependence
+of conversion. At higher experimental conversion, several points are simulated too low, meaning that
+the model also struggles to reproduce conditions where the catalyst experimentally reaches high con-
+version. Therefore, the standard LHHW model captures the conversion trend only weakly, but it is not
+flexible enough to accurately simulate the full conversion behavior. From Figure 6.1(a) the conversion
+does decrease with increasing flow rate. This suggests that mass transfer limitations are not limiting
+for this catalyst, since mass transfer limited reactions would show little sensitivity to flow rate. Never-
+theless, this bad fit suggests that the fitted parameters are not really physically meaningful.
+
+    In contrast, for Pd2 Ag it seems the model describes the catalyst relatively well. Especially acety-
+lene conversion is suggested to be simulated quite well, but every simulated conversion is ∼100%.
+In contrast, the selectivity fit does not seem so good. At lower and intermediate experimental values
+the model tends to overestimate it. This indicates that the standard LHHW model does not accurately
+describe the balance between 𝑟1 and 𝑟2 . This balance can come from the same mistake that ensures
+every simulated conversion is ∼100%. A possible explanation could be parameter compensation of 𝑘1
+and 𝐾1 . It is plausible that these parameters are artificially high to fit most of the experimental ∼100%
+results rather than correctly describing the kinetics of the catalyst. This parameter compensation can
+also be the reason the ethylene selectivity fit is off. An artificially high 𝑘1 might force the model to-
+ward high acetylene conversion, which can indirectly affect the predicted balance between ethylene
+formation and ethane formation. Compensation of 𝐾1 increases surface coverage of acetylene, this
+can suppress 𝑟2 and increase simulated selectivity. This can explain the overestimation of selectivity at
+low experimental selectivity and underestimation at higher experimental selectivity. In Figure 6.1(a) in
+the beginning the conversion is not influenced by increasing GHSV, consistent with possible external
+mass transfer limitations. However, after a certain point the conversion does drop, which is expected
+for a catalyst without physical limitations. Therefore, even though the overall RMSE suggests a rela-
+tively well fit, it is very likely that the parameters are physically meaningless and the good fit is artificially
+created.
+
+    The LHHW model does significantly show its limitations for the Pd3 Ag catalyst. Although the simu-
+lated conversion seems relatively well fit, this is again because the model predicts ∼100% conversion
+for every condition. Once again, this too suggests the idea of parameter compensation. The modeled
+selectivity values similarly deviate substantially from experiment, showing that the LHHW model re-
+quires modification to accurately describe the competition between 𝑟1 and 𝑟2 . For this catalyst Figure
+6.1(a) does suggest mass transfer limitations need to be taken into account. In this figure the con-
+version of Pd3 Ag does not decrease with increasing GHSV. This behavior is consistent with possible
+external mass transfer limitations. However, because the conversion remains close to 100%, this trend
+alone is not sufficient to prove mass transfer limitations.
+<PARSED TEXT FOR PAGE: 38 / 97>
+32                                                                                                    6. Results & Discussion
+
+
+
+
+(a)
+
+
+
+
+(b)
+
+
+
+
+(c)
+
+Figure 6.5: Fit of the standard LHHW model, with fitted 𝑘1 , 𝑘2 , 𝐾1 , 𝐾2 , 𝐾𝐻 for: (a) Pd0 Ag,(b) Pd2 Ag, (c) Pd3 Ag
+<PARSED TEXT FOR PAGE: 39 / 97>
+6.2. Kinetic modeling                                                                                   33
+
+
+6.2.2. LHHW model modification
+As mentioned the standard LHHW model was used as a starting point for the kinetic modeling (Equation
+6.1 and 6.2). Especially for Pd2 Ag and Pd3 Ag the model has shown to not describe either experimental
+conversion or selectivity. Therefore several modifications were made to the LHHW model, resulting in
+different variants of the LHHW model. For every catalyst the same kinetic model changes have been
+made. The different variants of the LHHW model were modeled stepwise. First the standard LHHW
+model was stripped down, in which specific adsorption terms, or partial pressures were removed. After
+this, different models were tested with a 𝑟2 inhibition constant, linear and squared.
+    The parameters used in each variant can be found in Appendix tables E.1 to E.3, together with every
+calculated RMSE, RMSE𝑐𝑜𝑛𝑣𝑒𝑟𝑠𝑖𝑜𝑛 and RMSE𝑠𝑒𝑙𝑒𝑐𝑡𝑖𝑣𝑖𝑡𝑦 values. The target of these different variations
+was not only to reduce the RMSE, but also to evaluate whether the fitted parameters are physically
+meaningful.
+
+                                               𝑘1 𝐾C2 H2 𝑝C2 H2 𝐾H2 𝑝H2
+                           𝑟1 =                                                     2                 (6.1)
+                                  (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 )
+                                              𝑘2 𝐾C2 H4 𝑝C2 H4 𝐾H2 𝑝H2
+                           𝑟2 =                                                     2                 (6.2)
+                                  (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 )
+
+Simplified LHHW model (v4a)
+The simplification by removal of the hydrogen parameters resulted in v4a. The rate equations for this
+variant are rate equations 6.3 and 6.4. The fit this resulted in for each catalyst can be found in Appendix
+G.1.
+
+                                                   𝑘1 𝐾C2 H2 𝑝C2 H2
+                                  𝑟1 =                                          2                     (6.3)
+                                         (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 )
+                                                   𝑘2 𝐾C2 H4 𝑝C2 H4
+                                  𝑟2 =                                          2                     (6.4)
+                                         (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 )
+
+   For Pd0 Ag, the overall RMSE increases with ∼4.2 percentage points. Although the selectivity is
+described very well with an RMSE of only 3.45 percentage points and 100% of all points plotted within
+the ±10% band, the conversion fit is worse. By removing it the RMSE increased to 35.62 percentage
+points. This is also supported by the hydrogen order having a value between 0.84 and 0.89 in Figure
+6.4(c), suggesting hydrogen does influence the acetylene hydrogenation rate. From this we can con-
+clude that the hydrogen parameter in the LHHW model is needed for this catalyst.
+
+    In addition, the overall RMSE for Pd2 Ag increases with ∼2.6 percentage points with the removal of
+hydrogen parameters. This increase can also be seen for the selectivity RMSE. This increases with
+∼3.66 percentage points. For the simulated conversion fitted points, the model does suggest that the
+newly fitted parameters are more physically meaningful because not every simulated conversion is
+∼100% anymore.
+    The hydrogen order analysis supports this observation. The apparent hydrogen orders of ∼0 in
+Figure 6.4(c) show that the acetylene conversion rate is almost independent of hydrogen and partial
+pressure under the investigated conditions. This suggests that hydrogen does not strongly control
+the acetylene consumption rate for Pd2 Ag. Generally speaking, the removal of the hydrogen parame-
+ters barely influences the overall RMSE, suggesting that the hydrogen parameters are not necessarily
+needed in the adsorption term. At the same time, the simulated conversion data does become phys-
+ically more meaningful, so a better conclusion from these plots would be that the model fit does not
+strongly require explicit hydrogen dependence under these conditions.
+
+   The removal of hydrogen parameters for Pd3 Ag shows a slight improvement in overall RMSE of
+∼0.3 percentage points. However, for this catalyst, this improvement also seems negligible when look-
+ing at the graph in Figure G.1(c). The conversion seems to not change at all, maintaining the same
+RMSE. This is supported by the hydrogen order for Pd3 Ag being ∼0 in Figure 6.4(c). Indicating that
+<PARSED TEXT FOR PAGE: 40 / 97>
+34                                                                                       6. Results & Discussion
+
+
+the acetylene consumption rate is independent of hydrogen. Nevertheless, removing the hydrogen
+parameters has not made the simulated data for conversion physically meaningful, every point still
+reaches ∼100% conversion suggesting parameter compensation of 𝑘1 and 𝐾1 . Even though the selec-
+tivity RMSE decreases, the RMSE value of 76.29 percentage points is still too high to be meaningful.
+Therefore, the removal of the hydrogen adsorption term gives a numerical improvement in the overall
+RMSE, but does not result in a physically reliable model for Pd3 Ag.
+
+    The simplification of the standard LHHW model by the removal of hydrogen parameters shows us
+that for Pd0 Ag it is important to keep the parameters within the model. This is confirmed by a clear
+worsening of the conversion fit, while also confirmed by the hydrogen reaction order. The results
+for Pd2 Ag suggest that the hydrogen parameters can probably be left out of the denominator. The
+general fit barely changes, and the hydrogen reaction order is ∼0. This does not mean that hydrogen
+is unimportant for the reaction but that hydrogen parameters are not needed in the denominator to
+describe the reaction. In contrast, for Pd3 Ag the hydrogen parameters are needed to give a meaningful
+result. The removal did not result in meaningfull simulated conversion across the whole region. In
+short, for Pd0 Ag and Pd3 Ag the hydrogen parameters are necessary, while for Pd2 Ag it is not in the
+denominator but does give a slightly worse fit when included.
+
+LHHW model with acetylene inhibition (v5)
+The next modification made to the LHHW model is the addition of an acetylene inhibition term in the
+denominator of the rate equation for the hydrogenation of ethylene to ethane, resulting in v5. The rate
+equations this addition gives us can be found in Equation 6.5 and 6.6. The resulting fit for every catalyst
+is found in Appendix fig. H.1.
+
+
+                                               𝑘1 𝐾C2 H2 𝑝C2 H2 𝐾H2 𝑝H2
+                             𝑟1 =                                                    2                     (6.5)
+                                    (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 )
+                                                𝑘2 𝐾C2 H4 𝑝C2 H4 𝐾H2 𝑝H2
+                   𝑟2 =                                                   2                                (6.6)
+                          (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 ) (1 + 𝐾inh 𝑝C2 H2 )
+
+    Figure fig. H.1(a) shows that for Pd0 Ag the addition of this inhibition term quite significantly im-
+proves the overall fit compared to the regular LHHW model. The overall RMSE decreases by ∼11.10
+percentage points. The strongest improvement can be found for conversion. The RMSE for conver-
+sion decreases to 9.73 percentage points. This shows that the regular LHHW model is not able to
+describe the acetylene conversion well, while the inhibition term gives the model more flexibility to fol-
+low the conversion trend. The selectivity was already described pretty well by the regular LHHW model.
+The RMSE increases by 1.02 percentage points, showing a worse fit with the addition of the inhibition
+term. However, this decrease is small compared to the strong improvement in the conversion fit. This
+suggest that acetylene inhibition plays an important role for Pd0 Ag. Chemically, this sounds plausible
+because acetylene forms a stronger bond with palladium, inhibiting the hydrogenation of ethylene. As
+a result the addition of the inhibition term helps improve the conversion fit because the model gains
+more flexibility to describe both hydrogenation steps separate. The increase for selectivity is not really
+meaningful, because the fit is still good. Therefore, the conclusion can be made that the addition of the
+inhibition term overall improves the models fit.
+
+   In contrast, the addition of the inhibition term barely influences the fit for Pd2 Ag. The overall RMSE
+decreases from 12.75 to 12.72 percentage points. For the conversion, RMSE does not change be-
+tween the models, and the selectivity RMSE of the model slightly decreases with 0.33 percentage
+points. Which shows that for this catalyst the inhibition term likely is not strong enough. This suggests
+that the addition of a linear inhibition term does not significantly influence the models fit of the catalyst.
+
+   For Pd3 Ag the addition of the inhibition term slightly improves the fit of the model. The overall,
+conversion and selectivity RMSE values decrease, with changes of ∼1.07, ∼0.89 and ∼9.15 percent-
+age points, respectively. This suggests that the addition of an inhibition term helps the model predict
+the catalyst behavior, but the overall fit is still far off. Therefore, inhibition of acetylene in the second
+<PARSED TEXT FOR PAGE: 41 / 97>
+6.2. Kinetic modeling                                                                                     35
+
+
+hydrogenation step is an improvement, but not significant enough to meaningfully describe Pd3 Ag.
+
+    The influence of the addition of the acetylene inhibition term has been shown to be catalyst depen-
+dent. For Pd0 Ag the inhibition term improves the conversion fit, decreasing the overall RMSE. This
+suggests that acetylene inhibition can help describe the catalysts activity. However, for Pd2 Ag, the ad-
+dition of the term only slightly improves the models fit. This indicates that acetylene inhibition can help
+describe the catalysts behavior, but does not significantly improve it. In addition, for Pd3 Ag the addition
+barely shows any change to the fit, only slightly improving the fit. This means that for this catalyst too
+the addition of the inhibition term can help describe the catalyst, but not significantly enough to have
+a meaningful fit. In short, the addition of the inhibition term significantly improves the Pd0 Ag fit, while
+only very slightly improving the fit for Pd2 Ag and Pd3 Ag.
+
+LHHW model with acetylene inhibition squared (v5d)
+In addition to just the inhibition term as a term in the LHHW model, the models fit with the inhibition
+term squared was also calculated, resulting in v5d and reaction rate equations 6.7, 6.8. The results for
+this updated model can be found in Appendix I.1.
+
+                                              𝑘1 𝐾C2 H2 𝑝C2 H2 𝐾H2 𝑝H2
+                            𝑟1 =                                                    2                   (6.7)
+                                   (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 )
+                                               𝑘2 𝐾C2 H4 𝑝C2 H4 𝐾H2 𝑝H2
+                  𝑟2 =                                                   2                   2          (6.8)
+                         (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 ) (1 + 𝐾inh 𝑝C2 H2 )
+
+    For Pd0 Ag, the addition of the squared inhibition term has increased the overall RMSE compared
+to the regular LHHW model and linear inhibition term. This model shows an overall RMSE of 18.07
+percentage points, this increase overall RMSE can mainly be attributed to the worse conversion fit.
+The conversion RMSE increases with ∼21.02 percentage points compared to the linear inhibition term.
+The selectivity fit too becomes slightly worse but is minimal compared to the decrease for conversion.
+Chemically this suggests that the influence of acetylene inhibition is described strong enough by linear
+inhibition. By squaring the term, the inhibition term has become too strong resulting in a worse fit for
+Pd0 Ag.
+
+    The squaring of the inhibition term for Pd2 Ag barely influences the models fit. The overall RMSE is
+slightly better than that of the linear inhibition term. The conversion RMSE remains the same, and the
+selectivity RMSE decreases slightly. Chemically this means that for this catalyst the linear inhibition
+term is sufficient to describe the acetylene inhibition. This means that squaring the inhibition term for
+this catalyst does not give a meaningful benefit, suggesting that a strong inhibition effect is not neces-
+sarily needed to model for Pd2 Ag.
+
+   The graph in Figure 6.6(c) shows no significant difference compared to the linear inhibition term for
+Pd3 Ag. The overall RMSE slightly increases, while both the conversion and selectivity RMSE show
+a negligible increase. This means that for this catalyst increasing the influence of the inhibition effect
+does not improve its fitting. This confirms that very likely for Pd3 Ag the inhibition term is not the effect
+that explains the relatively poor model fit.
+
+   Overall, the effect of squaring the inhibition term has again shown to be catalyst dependent. For
+Pd0 Ag, squaring the term has shown a worse fit to the model. This suggests that for this catalyst
+acetylene inhibition may still be important, but a linear inhibition term appears to describe it better than
+a squared term. The linear inhibition term has been proven to be enough for Pd2 Ag. The model barely
+changes by squaring the term, suggesting that the reaction is not very sensitive to whether the inhibition
+term is linear or squared. Pd3 Ag has shown no improvement by adding the squared inhibition term,
+suggesting that this catalyst is not strongly governed by nonlinear acetylene inhibition.
+
+Overview of LHHW model modifications
+In total, three modifications to the standard LHHW model were evaluated to determine which physical
+effects are needed to best describe acetylene hydrogenation over the different PdAg catalysts. The
+<PARSED TEXT FOR PAGE: 42 / 97>
+36                                                                                6. Results & Discussion
+
+
+standard LHHW model includes adsorption terms for acetylene, ethylene and hydrogen in the denom-
+inator to describe competitive adsorption on the catalyst active sites. This means that the model does
+not only describe the reaction rate through the rate constants, but also through the surface coverage
+of the different adsorbing species.
+
+    The first modifications were made to see whether the LHHW model could be simplified. This was
+done by removing the hydrogen terms in the model, evaluating the hydrogen importance in the model.
+If the simplified model gave a similar or better fit, this would suggest that the hydrogen terms are
+not necessary to describe the data. However, this does not mean hydrogen has no influence on the
+reaction.
+    Secondly, an inhibition term was added to the rate equation for ethylene hydrogenation. This was
+added because acetylene can inhibit the second hydrogenation step by blocking active catalyst sites
+through its stronger adsorption on palladium active sites. The addition of this term therefore makes
+it possible to describe a situation where ethylene hydrogenation is suppressed by the presence of
+acetylene. This can improve the selectivity fit because it suppresses the modeled formation of ethane.
+    Finally, the inhibition term for ethylene hydrogenation was squared. This modification increases
+the strength of the inhibition effect at higher acetylene concentrations. Chemically, this can represent
+stronger site blocking or a more pronounced suppression of ethylene hydrogenation when the surface
+is highly covered by acetylene. This modification can therefore be found useful when the linear inhibi-
+tion term is too weak to describe the observed decrease in ethylene hydrogenation.
+
+    The Pd0 Ag catalyst was already described quite well by the original LHHW model. In particular the
+selectivity is fitted well, while the conversion is less accurate, especially conversion at lower rates is
+not simulated accurately. Removal of the hydrogen term worsens the fit significantly by increasing the
+overall RMSE, even though the selectivity remains described well. This suggests that for this catalyst
+the hydrogen term should stay in the model. The addition of the inhibition term shows a decrease in
+overall RMSE, especially when the inhibition term is squared. This suggests that acetylene inhibition
+is important for this catalyst and that this inhibition becomes stronger at higher acetylene coverage.
+Therefore, for Pd0 Ag, hydrogen should be retained in the model and among the tested variants, and
+the LHHW model with the squared acetylene inhibition term gives the most suitable description of the
+data.
+
+     For Pd2 Ag, the regular LHHW model seems to describe the reaction reasonably well. However, all
+the simulated conversion points are ∼100% meaning that the values are not fully physically meaningful.
+In addition, the selectivity is described less well, showing a relatively large spread throughout the selec-
+tivity range. This combination suggests that the regular LHHW model can describe the overall trends
+to some extent, but that the conversion fit should be interpreted carefully because the model tends to
+over predict conversion. The test in which the hydrogen terms were omitted shows a slightly worse
+fit. This suggests that the hydrogen terms are not dominant for Pd2 Ag, but because the fit becomes
+slightly worse, it is still preferable to continue with the regular LHHW model. Adding the inhibition term
+improves the overall model fit, mainly by providing a better selectivity fit. The squared inhibition term
+gives a similar fit as the linear inhibition term. This is consistent with the chemical explanation that
+acetylene inhibits the further hydrogenation of ethylene by blocking active palladium sites. The effect
+of the inhibition term appears less pronounced than for Pd0 Ag, which may be related to the higher pal-
+ladium content and the resulting difference in available active sites. Therefore, for Pd2 Ag, the LHHW
+model with the linear acetylene inhibition term gives the most suitable description of the data, but the
+conversion fit should still be interpreted carefully because the model tends to over predict conversion.
+
+    The regular LHHW model describes Pd3 Ag reasonably well based on the overall RMSE. However,
+the simulated conversion values are often close to complete conversion, suggesting that these pre-
+dictions are not fully physically meaningful. The main limitation of the model is found in the selectivity
+description, where the graphs show a very large spread. The hydrogen-removal test shows that sim-
+plifying the model by omitting the hydrogen terms does not improve the fit. The addition of either the
+linear or squared inhibition term also does not improve the model fit. This could mean that the reaction
+for this catalyst is not mainly controlled by acetylene inhibition of ethylene hydrogenation. Therefore,
+for Pd3 Ag, the regular LHHW model remains limited, and neither the linear nor the squared inhibition
+<PARSED TEXT FOR PAGE: 43 / 97>
+6.2. Kinetic modeling                                                                                    37
+
+
+term improves the description sufficiently. This suggests that the current LHHW modifications are not
+sufficient for Pd3 Ag, and a different model structure or additional physical effects may be needed to
+describe this catalyst properly.
+
+6.2.3. Final extended LHHW model
+From all the information these LHHW model modifications gave on improving the models fit to describe
+conversion and selectivity a new, final, kinetic base model was created for every catalyst. This model
+takes the hydrogen terms and inhibition term into account. This addition was done to compensate for
+the often simulated unrealistic ∼100% conversion. Besides both these terms the model also limits the
+reaction rate through a 𝑟1,𝑐𝑎𝑝 , while the second hydrogenation step included a flexible inhibition term.
+The addition of these terms give the final reaction rate equations in Equations 6.9, 6.10 and 6.11. This
+model was fitted for every catalyst having Figure 6.6 as result.
+
+
+
+                                                  𝑘1 𝐾C2 H2 𝑝C2 H2 𝐾H2 𝑝H2
+                          𝑟1,raw =                                                    2                (6.9)
+                                     (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 + 𝐾H2 𝑝H2 )
+
+                                                         𝑟1,raw
+                                                 𝑟1 =        𝑟1,raw                                  (6.10)
+                                                        1+
+                                                             𝑟1,max
+
+
+                                                𝑘2 𝐾C2 H4 𝑝C2 H4 𝐾H2 𝑝H2
+                        𝑟2 =                                                             𝑛inh        (6.11)
+                               (1 + 𝐾C2 H2 𝑝C2 H2 + 𝐾C2 H4 𝑝C2 H4 ) (1 + 𝐾inh 𝑝C2 H2 )
+
+    This final model shows a good fit for all catalysts. With an overall RMSE of 5.10, 5.43, and 7.14 for
+Pd0 Ag, Pd2 Ag, and Pd3 Ag, respectively.
+    For Pd0 Ag, the model gives a good description of the catalysts selectivity. The selectivity RMSE
+remains low, showcasing that the model can describe the selectivity well, even in the high selectivity
+region. The conversion is also described reasonably, although some deviations remain significant,
+especially at lower conversion.
+    Compared to previous modifications the fit improvements are limited. This is to be expected be-
+cause the selectivity of Pd0 Ag was already described well by previous models. However, the addition
+of a 𝑟1,𝑐𝑎𝑝 and flexible inhibition do not strongly change the interpretation of the catalyst, but does make
+the model more flexible. This allows the taking the conversion limitations into account without losing
+the good selectivity fit.
+
+   The final kinetic model does show significant improvement for Pd2 Ag. In particular does the fit for
+conversion improve for this catalyst, shown by the significantly lower conversion RMSE. This indicates
+that the introduction of the maximal reaction rate for acetylene hydrogenation helps to correct the over
+prediction previous models have shown. The selectivity fit of the model also increases significantly
+compared to the previous models, although some scatter can still be found in the plot.
+
+    Compared to the regular and hydrogen-less LHHW models, this final model gives a more com-
+plete description because it keeps the dependence on adsorption and hydrogen availability, while also
+preventing unrealistically high acetylene consumption rates. Compared to the LHHW models with the
+linear and squared inhibition terms, fitted 𝑛𝑖𝑛ℎ component provides more freedom for the model to find
+the best fit by determining the right strength for this term. This suggests that acetylene hydrogena-
+tion and ethylene hydrogenation are affected by different limitations: the first step is mainly limited by
+the maximum attainable acetylene consumption rate, while the second step is strongly influenced by
+acetylene inhibition of ethylene hydrogenation.
+<PARSED TEXT FOR PAGE: 44 / 97>
+38                                                                                                 6. Results & Discussion
+
+
+
+
+(a)
+
+
+
+
+(b)
+
+
+
+
+(c)
+
+Figure 6.6: Addition of 𝑟1,𝑐𝑎𝑝 and fitted 𝑛𝑖𝑛ℎ inhibition term in LHHW model: (a) Pd0 Ag, (b) Pd2 Ag, (c) Pd3 Ag
+<PARSED TEXT FOR PAGE: 45 / 97>
+6.2. Kinetic modeling                                                                                    39
+
+
+6.2.4. Cross-catalyst comparison
+For every catalyst, the final extended LHHW kinetic model gave the best fit. However, from this one
+cannot conclude that every catalyst has the same kinetics because different parameters were fitted for
+every catalyst. Using the same final kinetic model allows the fitted parameter sets to be compared,
+which gives insight into how the catalysts differ kinetically.
+
+    In this model the rate constants 𝑘1 and 𝑘2 describe their contribution to their representative hydro-
+genation reaction. The rate constant 𝑘1 relates to the hydrogenation of acetylene to ethylene, while 𝑘2
+relates to the over-hydrogenation of ethylene to ethane. For selectivity, the relative balance between
+𝑘1 and 𝑘2 is especially important, while the absolute values also influence the predicted conversion
+and overall reaction rate. A relatively large 𝑘1 compared to 𝑘2 indicates that the semi hydrogenation
+is favored, resulting in higher ethylene selectivity. In contrast, a stronger contribution of 𝑘2 suggests a
+higher tendency for overhydrogenation. This trend can be connected to the ensemble effect. Larger
+palladium loading usually leads to larger palladium ensembles which are more active in hydrogenation
+because they provide neighboring palladium sites for adsorption and hydrogen activation. However,
+these larger ensembles also increase the probability that ethylene stays adsorbed and hydrogenates to
+ethane. Therefore, an increase in palladium loading usually coincides with a lower ratio 𝑘1 : 𝑘2 , showing
+the increased chance of over-hydrogenation. This can also clearly be seen in the ratio for Pd0 Ag and
+Pd3 Ag, explaining the tendency of Pd3 Ag to over hydrogenate and therefore its lower selectivity.
+
+    The fitted adsorption parameters 𝐾C2 H2 , 𝐾C2 H4 and 𝐾H2 describe how these reactants compete for
+the catalyst surface. The strongest interaction is between acetylene and the catalyst surface. This can
+be explained by its ability of forming such a strong bond with palladium. This results in the adsorption
+constant of acetylene being the largest of the three, and therefore more strongly dominates the catalyst
+surface. This increases the selectivity because this prevents active sites adsorbing ethylene and over
+hydrogenating. The ethylene adsorption constant has the opposite effect. If this parameter increases,
+the probability of ethylene readsorption increases, lowering the catalysts selectivity. Therefore, the ratio
+between 𝐾C2 H2 and 𝐾C2 H4 contributes to the predicted selectivity, because it describes the extent to
+which acetylene can compete with ethylene for surface sites. However, this ratio should be interpreted
+together with 𝑘2 , 𝐾H2 , and the inhibition term to be able to describe the difference between the catalysts
+quality.
+    The hydrogen adsorption constant represents the role of hydrogen availability in the rate expres-
+sions. Because hydrogen is needed for both hydrogenation reactions, a higher hydrogen contribution
+can increase conversion and may also enhance the second hydrogenation reaction. Therefore, this
+constant can promote the conversion of acetylene, but can also decrease selectivity.
+
+   The inhibition parameters 𝐾𝑖𝑛ℎ and 𝑛𝑖𝑛ℎ describe the suppression of ethylene hydrogenation by
+acetylene. Both these terms are only included in 𝑟2 to emphasize the competitive adsorption between
+acetylene and the other reactants. These terms represents how, when acetylene is adsorbed on the
+catalyst surface it strongly inhibits the second hydrogenation reaction.
+
+    For Pd0 Ag, 𝐾𝑖𝑛ℎ is essentially zero; this means that for this final model inhibition has almost no
+effect on the catalyst. This suggests that the high selectivity of this catalyst is mainly described by the
+low effective contribution of ethylene and the limited hydrogenation capacity of the catalyst. For Pd2 Ag,
+this term has a small, but significant value. The value of 𝐾𝑖𝑛ℎ is very small, but through the 𝑛𝑖𝑛ℎ it still
+has a significant influence on the model. Through these fitted parameters the balance between acety-
+lene and ethylene hydrogenation is better described in the model. The inhibition term has the biggest
+influence on Pd3 Ag. This catalyst on its own has a strong tendency to over hydrogenate. The fitted
+inhibition contribution helps reduce this over-hydrogenation when acetylene is present. By adding this
+term, the model has significantly improved the models selectivity fit, but it still shows that this catalyst
+has a high tendency to over hydrogenate.
+
+    The parameter 𝑟1,𝑚𝑎𝑥 caps the maximum acetylene hydrogenation rate. The addition of this term
+prevents the model over predicting acetylene conversion to unrealistic values. Without this term, mean-
+ingless values would be fitted. This capacity can be influenced by the number of active sites, palladium
+loading, but also by the physical limitations when the reaction becomes fast. Therefore, this cap is es-
+<PARSED TEXT FOR PAGE: 46 / 97>
+40                                                                                  6. Results & Discussion
+
+
+pecially important for highly active catalysts, the observed conversion may be affected by mass transfer
+limitations affecting how efficiently reactants reach the active sites. That is why the fitted rate should be
+interpreted as the maximum observable acetylene hydrogenation capacity under the tested conditions,
+and not as a directly chemically meaningful parameter.
+
+    Overall, the fitted parameters show how the same final extended LHHW model is able to describe
+the kinetic behavior of each catalyst well. For Pd0 Ag, the fitted model mainly reflects a limited con-
+tribution of the second hydrogenation step, agreeing with the high selectivity of the catalyst. The pa-
+rameters of Pd2 Ag show a more balanced system. Acetylene conversion stays high, while ethylene
+hydrogenation is still partly suppressed. Pd3 Ag shows that the fitted model needs a higher acetylene
+hydrogenation capacity. Additionally, it also needs a stronger contribution of ethylene hydrogenation.
+Therefore, the parameter comparison shows how the balance between the first and second hydrogena-
+tion step changes with palladium loading. However, it is important to keep in mind that all parameters
+are fitted simultaneously, and therefore the individual values are not really meaningful. It is mainly the
+combination that can be used to compare the catalysts kinetics.
+
+6.2.5. Comparison with experimental data
+The same conversion and selectivity analysis as in Chapter 6.1 has been done on the simulated con-
+version and selectivity. By reviewing the experimental and simulated conversion and selectivity trends,
+the extent to which the kinetic model captures the observed catalytic behavior can be evaluated. In this
+section only the influence of GHSV will be discussed and can be found in Figure 6.7. The remaining
+plots can be found in Appendix chapters B to D.
+
+     For Pd0 Ag the simulated conversion and selectivity trend follows the experimental values quite well.
+The decrease in conversion with increasing GHSV is slightly less pronounced in the simulation, but the
+overall trend is reproduced well. The same can be said about the simulated selectivity trend. The
+simulation shows the small increase selectivity with increasing GHSV, and in addition starts at a similar
+selectivity. Chemically, this suggests that for this catalyst the fitted parameters describe the dominant
+kinetic trends reasonably well.
+     When comparing the simulated and experimental values of Pd2 Ag it also appears to match well.
+The decrease in conversion begins at approximately the same GHSV in both the experimental and
+simulated data, indicating that the model captures the general effect of residence time on acetylene
+conversion. The selectivity of the simulated data appears to be ∼10% lower than that is calculated
+based on the experimental data. This suggests that chemically the model slightly overestimates the
+rate of the secondary hydrogenation reaction, or that it underestimates the inhibiting effect of acetylene
+on ethylene on active sites. Therefore, although the conversion behavior of Pd2 Ag is captured well,
+the difference for selectivity suggests the model does not fully describe the competitive adsorption on
+the catalyst surface.
+     The results for Pd3 Ag require a careful interpretation. The conversion is almost indistinguishable
+between experimental and simulated data. However, as stated before the conversion is ∼100% over
+the whole flow rate range. Because the conversion remains close to complete conversion, it provides
+limited sensitivity for evaluating the fitted kinetic parameters. In contrast, the selectivity seems to not be
+reproduced well. The simulated selectivity for this catalyst starts ∼40% below the experimental value
+at that flow rate. This suggests that the model still has difficulty describing the balance between 𝑟1 and
+𝑟2 . Therefore, for Pd3 Ag, the final extended LHHW model does not provide a satisfactory description
+of the experimental selectivity trend.
+<PARSED TEXT FOR PAGE: 47 / 97>
+6.2. Kinetic modeling                                                                                   41
+
+
+
+
+(a)                                        (b)                                         (c)
+
+Figure 6.7: Conversion and selectivity plotted against GHSV. (a) - Pd0 Ag, (b) - Pd2 Ag, (c) - Pd3 Ag
+<PARSED TEXT FOR PAGE: 49 / 97>
+                                                                                                 7
+                                                                              Conclusion
+This research investigated the selective hydrogenation of acetylene in an ethylene rich feed stream over
+PdAg/SiO2 catalysts with different palladium loadings (Pd:Ag loadings of 1:200 Pd0 Ag, 1:100 Pd2 Ag,
+and 1:50 Pd3 Ag). The main aim was to investigate how different compositions of palladium silver cata-
+lysts influence the conversion and selectivity, combining experimental testing with kinetic modeling to
+describe the experimentally observed trends.
+
+    The experimental results clearly demonstrate the effect of palladium loading on each catalysts con-
+version and selectivity. Higher palladium loading generally shows near complete conversion, which
+can be explained by the larger number of active palladium sites, but this is often accompanied with
+low selectivity. In contrast, catalysts with lower palladium maintain a higher selectivity, while its load-
+ing limited its hydrogenation capacity. The mediate loading of Pd2 Ag emerged as promising catalyst
+composition. The catalyst maintained high conversion across most tested conditions, while achieving
+significantly better selectivity than catalysts with higher palladium loading.
+    The role of silver, as diluting metal, was confirmed by the experimental trends on the catalyst be-
+havior. Palladium is necessary for hydrogenation, but large palladium ensembles promote over hydro-
+genation too. Through the addition of silver, palladium is diluted and reduces the number of active pal-
+ladium sites. As a result, semi hydrogenation can still take place, while the undesired hydrogenation is
+suppressed. The observed differences between the catalysts therefore suggest that the interaction be-
+tween the palladium loading and silver dilution significantly determines the final catalytic performance.
+
+     The standard LHHW model was not able to correctly describe the experiment data. The model
+consistently predicted near complete acetylene conversion regardless of conditions, suggesting that
+the fitted parameters were physically meaningless. Furthermore, the standard model too failed to
+describe the competition between acetylene and ethylene hydrogenation, leading to a poor selectivity
+fit.
+     The important improvements made to the standard model are the introduction of a maximum con-
+version rate term for acetylene hydrogenation, combined with a flexible inhibition term. The introduction
+of a maximum rate prevents the model from over predicting conversion. Instead of parameters com-
+pensating for this, the maximum rate term provides a hard limit to the conversion of acetylene. While
+the flexible inhibition term also improved the description of the catalysts selectivity. This term gives the
+model the freedom to fit the right strength of the inhibition term. This improves the fit because acetylene
+acts as not only a reactant but also as an inhibitor of over hydrogenation.
+
+    The final extended LHHW model incorporating both modifications achieved overall RMSE values of
+5.10, 5.43 and 7.14 for Pd0 Ag, Pd2 Ag and Pd3 Ag respectively, representing significant improvement.
+Especially for Pd2 Ag and Pd3 Ag the additions improved the overall model’s fit.
+    The effect this final, improved model has been proven to be catalyst depended. For Pd0 Ag, the im-
+provement was relatively limited because the selectivity was already well described by previous models.
+In this case, the added flexibility mainly allowed the model to account for conversion limitations without
+
+                                                    43
+<PARSED TEXT FOR PAGE: 50 / 97>
+44                                                                                         7. Conclusion
+
+
+losing the good selectivity fit.
+
+    Overall this work shows that the performance of PdAg/SiO2 catalysts for acetylene hydrogenation is
+strongly affected by palladium loading and silver dilution. Higher palladium loading increases acetylene
+conversion, while silver maintains ethylene selectivity by suppressing over hydrogenation. The final ki-
+netic model, significantly improved the models fit through the addition of an artificial conversion rate
+cap and a flexible inhibition term. This suggests that this model was able to capture the most significant
+experimental trends relatively accurate for most catalysts. This suggests that acetylene and ethylene
+hydrogenation are affected by different physical limitations; acetylene hydrogenation is mainly limited
+by the maximum attainable consumption rate, while ethylene hydrogenation is strongly influenced by
+acetylene inhibition. Therefore, the final model provides a useful tool for comparing the catalytic be-
+havior and understanding the balance between activity and selectivity in acetylene hydrogenation for
+Pd0 Ag and Pd2 Ag, while for Pd3 Ag the model needs to be improvised further before it becomes useful.
+<PARSED TEXT FOR PAGE: 51 / 97>
+                                                                                              8
+                                                          Acknowledgments
+First, and most foremost I would like to thank my daily supervisor Damian Vico van Berkel. When I
+was presented with all the great options within the Catalysis Engineering group, your enthusiasm really
+stood out. In addition, I really liked the subject was significantly different compared the other (basic)
+CO2 reduction projects. One of the first conversations we had was immediately about my tennis racket
+and how we should play some time, which we eventually did. You have taught me important lessons
+to just keep going, even when I wanted to cut corners.
+    In addition, I would like to thank prof. dr. ir. Urakawa for providing me with the opportunity to do my
+Bachelor End Projects at the Catalysis Engineering group. The way you taught the catalyst concepts
+from the Chemical Reactor Engineering course, really sparked my interest towards this specific chem-
+ical subject. Furthermore, I would like to thank Dr. Ana Somoza-Tornos for taking the time to evaluate
+my work as a second examiner.
+    Furthermore, I of course cannot forget the people with whom I have spent the last 10 weeks. To-
+gether we made it through this storm, with the much needed coffee breaks at some times. Of these
+people, I would like to thank one person in particular. Apparently we spent so much time together that
+most people thought we were housemates. We then had to disappoint them by explaining we only met
+at the start of this study. So thank you Wout.
+    In addition, I cannot forget to thank my true housemates for don’t letting me to live as a hermit. So
+thank you ”boze mannen” Ping, Marv, Joe and Wurm. In the same trend my Schakel cannot be left
+behind, I am sorry for locking myself away the last few weeks. From now I will make sure to enjoy a
+beer with all you guys more often. Of course Nout and Charlotte cannot be forgotten, thank you for
+your daily updates of the vacation I missed.
+    Last but definitely not least, I would like to thank my parents and little brother. Vera, Ivo and Leon,
+thank you for always picking up the phone at any time, and bringing me back to reality when I needed
+it most.
+
+   Thank you!
+
+
+
+
+                                                    45
+<PARSED TEXT FOR PAGE: 53 / 97>
+                                                                                            9
+                                                                        Bibliography
+ [1] Joaquin Hernandez-Fernandez, Elias Bello-León, and Edgar Marquez. “Computational Study on
+     the Inhibition Mechanisms of the Ziegler-Natta Catalyst in the Propylene Polymerization Process:
+     Part 1 Effects of Acetylene and Methylacetylene”. In: International Journal of Molecular Sciences
+     25.19 (Oct. 2024). ISSN: 14220067. DOI: 10.3390/ijms251910585.
+ [2] Xiaocheng Lan, Jingguang G. Chen, and Tiefeng Wang. Recent advances in thermocatalytic
+     acetylene selective hydrogenation. Aug. 2025. DOI: 10.1039/d4cs01237b.
+ [3] Zhi Jian Zhao et al. “Competition of C-C bond formation and C-H bond formation For acetylene
+     hydrogenation on transition metals: A density functional theory study”. In: AIChE Journal 65.3
+     (Mar. 2019), pp. 1059–1066. ISSN: 15475905. DOI: 10.1002/aic.16492.
+ [4] Ourmazd Dehghani, Mohammad Reza Rahimpour, and Alireza Shariati. “An experimental ap-
+     proach on industrial Pd-Ag supported 𝛼-Al 2 O 3 catalyst used in acetylene hydrogenation pro-
+     cess: Mechanism, kinetic and catalyst decay”. In: Processes 7.3 (Mar. 2019). ISSN: 22279717.
+     DOI: 10.3390/pr7030136.
+ [5] Maryam Takht Ravanchi and Saeed Sahebdelfar. “Pd-Ag/Al2O3 catalyst: Stages of deactivation
+     in tail-end acetylene selective hydrogenation”. In: Applied Catalysis A: General 525 (Sept. 2016),
+     pp. 197–203. ISSN: 0926860X. DOI: 10.1016/j.apcata.2016.07.014.
+ [6] Andrzej Borodzi´nski Borodzi´nski and Andrzej Cybulski. The kinetic model of hydrogenation of
+     acetylene-ethylene mixtures over palladium surface covered by carbonaceous deposits. Tech.
+     rep. 2000, pp. 51–66.
+ [7] Madelyn R. Ball et al. “AgPd and CuPd Catalysts for Selective Hydrogenation of Acetylene”. In:
+     ACS Catalysis 10.15 (Aug. 2020), pp. 8567–8581. ISSN: 21555435. DOI: 10.1021/acscatal.
+     0c01536.
+ [8] Guang Xian Pei et al. “Ag alloyed Pd single-atom catalysts for efficient selective hydrogenation
+     of acetylene to ethylene in excess ethylene”. In: ACS Catalysis 5.6 (June 2015), pp. 3717–3725.
+     ISSN: 21555435. DOI: 10.1021/acscatal.5b00700.
+ [9] Guang Xian Pei et al. “Performance of Cu-Alloyed Pd Single-Atom Catalyst for Semihydrogena-
+     tion of Acetylene under Simulated Front-End Conditions”. In: ACS Catalysis 7.2 (Feb. 2017),
+     pp. 1491–1500. ISSN: 21555435. DOI: 10.1021/acscatal.6b03293.
+[10] Yunya Zhang et al. “Selective hydrogenation of acetylene in excess ethylene using Ag- and Au-
+     Pd/SiO2 bimetallic catalysts prepared by electroless deposition”. In: Applied Catalysis A: General
+     469 (2014), pp. 419–426. ISSN: 0926860X. DOI: 10.1016/j.apcata.2013.10.024.
+[11] Priyam A. Sheth, Matthew Neurock, and C. Michael Smith. “First-principles analysis of the effects
+     of alloying Pd with Ag for the catalytic hydrogenation of acetylene-ethylene mixtures”. In: Journal
+     of Physical Chemistry B 109.25 (June 2005), pp. 12449–12466. ISSN: 15206106. DOI: 10 .
+     1021/jp050194a.
+
+
+
+                                                  47
+<PARSED TEXT FOR PAGE: 54 / 97>
+48                                                                                         9. Bibliography
+
+
+[12] Xinxiang Cao et al. Synthetic Strategies of Supported Pd-Based Bimetallic Catalysts for Selective
+     Semi-Hydrogenation of Acetylene: A Review and Perspectives. Mar. 2023. DOI: 10 . 3390 /
+     molecules28062572.
+[13] Alan J. McCue and James A. Anderson. Recent advances in selective acetylene hydrogenation
+     using palladium containing catalysts. June 2015. DOI: 10.1007/s11705-015-1516-4.
+[14] Ying Wang et al. “Probe into the effects of surface composition and ensemble effect of active sites
+     on the catalytic performance of C2H2 semi-hydrogenation over the Pd-Ag bimetallic catalysts”.
+     In: Chemical Engineering Science 218 (June 2020). ISSN: 00092509. DOI: 10.1016/j.ces.
+     2020.115549.
+[15] Chenglin Miao et al. “Array Modified Molded Alumina Supported PdAg Catalyst for Selective
+     Acetylene Hydrogenation: Intrinsic Kinetics Enhancement and Thermal Effect Optimization”. In:
+     Industrial and Engineering Chemistry Research 60.23 (June 2021), pp. 8362–8374. ISSN: 15205045.
+     DOI: 10.1021/acs.iecr.1c00423.
+[16] Klara Sophia Kley, Jacopo De Bellis, and Ferdi Schüth. “Selective hydrogenation of highly con-
+     centrated acetylene streams over mechanochemically synthesized PdAg supported catalysts”.
+     In: Catalysis Science and Technology 13.1 (Nov. 2022), pp. 119–131. ISSN: 20444761. DOI:
+     10.1039/d2cy01424f.
+[17] Jiayi Wang et al. “Rational Design of PdAg Catalysts for Acetylene Selective Hydrogenation via
+     Structural Descriptor-based Screening Strategy”. In: ACS Catalysis 13.1 (Jan. 2023), pp. 433–
+     444. ISSN: 21555435. DOI: 10.1021/acscatal.2c05498.
+[18] Valentine D. Stytsenko et al. “Kinetic regularities and mechanism of acetylene hydrogenation
+     over PdMn catalyst”. In: Molecular Catalysis 533 (Dec. 2022). ISSN: 24688231. DOI: 10.1016/
+     j.mcat.2022.112750.
+[19] Kefeng Xie et al. Catalysts for selective hydrogenation of acetylene: A review. Nov. 2023. DOI:
+     10.1016/j.mtcata.2023.100029.
+[20] Caroline Urmès et al. “Kinetic study of the selective hydrogenation of acetylene over supported
+     palladium under tail-end conditions”. In: Catalysts 9.2 (Feb. 2019). ISSN: 20734344. DOI: 10.
+     3390/catal9020180.
+[21] Ieuan T. Ellis et al. “Lithium and boron as interstitial palladium dopants for catalytic partial hydro-
+     genation of acetylene”. In: Chemical Communications 53.3 (2017), pp. 601–604. ISSN: 1364548X.
+     DOI: 10.1039/C6CC08404D.
+[22] Xiaoliang Yan et al. “Stable Au catalysts for selective hydrogenation of acetylene in ethylene”.
+     In: Applied Catalysis A: General 487 (2014), pp. 36–44. ISSN: 0926860X. DOI: 10.1016/j.
+     apcata.2014.08.039.
+[23] Peter M Wovkulich et al. Metallic Palladium, the Actual Catalyst in Lindlar and Rosenmund Re-
+     ductions? Tech. rep. 1983, pp. 4436–4438. URL: https://pubs.acs.org/sharingguidelines.
+[24] Junling Lu et al. “Toward atomically-precise synthesis of supported bimetallic nanoparticles using
+     atomic layer deposition”. In: Nature Communications 5 (Feb. 2014). ISSN: 20411723. DOI: 10.
+     1038/ncomms4264.
+[25] Jianfeng Tang et al. “Surface segregation and chemical ordering patterns of Ag-Pd nanoalloys:
+     Energetic factors, nanoscale effects, and catalytic implication”. In: Journal of Physical Chemistry
+     C 118.48 (Dec. 2014), pp. 27850–27860. ISSN: 19327455. DOI: 10.1021/jp507710k.
+[26] Yunsheng Ma et al. “The interaction of CO with PdAg/Pd(111) surface alloys - A case study of
+     ensemble effects on a bimetallic surface”. In: Physical Chemistry Chemical Physics 13.22 (June
+     2011), pp. 10741–10754. ISSN: 14639076. DOI: 10.1039/c1cp00009h.
+[27] Wei Jie Zeng et al. “Phase diagrams guide synthesis of highly ordered intermetallic electrocat-
+     alysts: separating alloying and ordering stages”. In: Nature Communications 13.1 (Dec. 2022).
+     ISSN: 20411723. DOI: 10.1038/s41467-022-35457-1.
+[28] Livio Battezzati. “ Intermetallics. Structures, Properties, and Statistics . By Walter Steurer and
+     Julia Dshemuchadse. Oxford University Press, 2016, Hardcover, Pp. 592. Price GBP 85.00. ISBN
+     9780198714552 ”. In: Acta Crystallographica Section B Structural Science, Crystal Engineering
+     and Materials 73.6 (Dec. 2017), pp. 1194–1195. DOI: 10.1107/s2052520617015888.
+<PARSED TEXT FOR PAGE: 55 / 97>
+                                                                                                    49
+
+
+[29] Nilanjan Roy et al. Structural chemistry of intermetallic compounds for active site design in het-
+     erogeneous catalysis. Apr. 2025. DOI: 10.1039/d5sc01810b.
+[30] Caroline Hartwig et al. “Isolated Pd atoms in a silver matrix: Spectroscopic and chemical proper-
+     ties”. In: Journal of Chemical Physics 154.18 (May 2021). ISSN: 10897690. DOI: 10.1063/5.
+     0045936.
+[31] Payoli Aich et al. “Single-Atom Alloy Pd-Ag Catalyst for Selective Hydrogenation of Acrolein”. In:
+     Journal of Physical Chemistry C 119.32 (June 2015), pp. 18140–18148. ISSN: 19327455. DOI:
+     10.1021/acs.jpcc.5b01357.
+[32] Fabio Cameli et al. “Intensification of plasma-catalytic processes via additive manufacturing. Ap-
+     plication to non-oxidative methane coupling to ethylene”. In: Chemical Engineering Journal 482
+     (Feb. 2024). ISSN: 13858947. DOI: 10.1016/j.cej.2024.148720.
+[33] Qiang Li et al. “Ensemble and ligand effects on the acetylene adsorption on ordered Pd xAg1-
+     x/Pd(100) surface alloys investigated by periodic DFT study”. In: Physical Chemistry Chemical
+     Physics 15.46 (Dec. 2013), pp. 20345–20353. ISSN: 14639076. DOI: 10.1039/c3cp52504j.
+[34] Qiang Li et al. “Impact of surface arrangement and composition on ethylene adsorption over Pd-
+     Ag surface alloys: A computational study”. In: RSC Advances 6.75 (2016), pp. 70932–70942.
+     ISSN: 20462069. DOI: 10.1039/c6ra12912a.
+[35] Wonjun Kim et al. In situ observation of catalyst nanoparticle sintering resistance on oxide sup-
+     ports via gas phase transmission electron microscopy. Dec. 2024. DOI: 10 . 1186 / s42649 -
+     024-00100-4.
+[36] Sieghard E Wanke and Peter C Flynn. The Sintering of Supported Metal Catalysts. Tech. rep.
+     Taylor & Francis, 1975, pp. 93–135. DOI: 10.1080/01614947508067523.
+[37] David Kordus et al. “Cu–Ga Interactions and Support Effects in CO2Hydrogenation to Methanol
+     Catalyzed by Size-Controlled CuGa Nanoparticles Deposited on SiO2and ZnO”. In: ACS Catal-
+     ysis 15 (Jan. 2025), pp. 17241–17254. ISSN: 21555435. DOI: 10.1021/acscatal.5c03414.
+[38] F R Hartley. OLEFIN AND ACETYLENE COMPLEXES OF PLATINUM AND PALLADIUM. Tech.
+     rep. URL: https://pubs.acs.org/sharingguidelines.
+[39] Jiamin Ma et al. “Active site tuning based on pseudo-binary alloys for low-temperature acetylene
+     semihydrogenation”. In: Chemical Science 15.11 (Jan. 2024), pp. 4086–4094. ISSN: 20416539.
+     DOI: 10.1039/d3sc03704e.
+[40] Noemí S Schbib et al. Kinetics of Front-End Acetylene Hydrogenation in Ethylene Production.
+     Tech. rep. 1996, pp. 1496–1505. URL: https://pubs.acs.org/sharingguidelines.
+[41] Julieth García-Sánchez et al. Calculation of mass transfer limitations of a gas-phase reaction in
+     an isothermal fixed bed reactor: tutorial and sensitivity analysis. Tech. rep.
+[42] Malte. Behrens and Abhaya K.. Datye. Catalysis for the conversion of biomass and its derivatives.
+     Edition Open Access, 2013, p. 474. ISBN: 9783844242829.
+[43] O. O. Zhokh and P. E. Strizhak. “An approach to select between the plausible kinetic models
+     of a heterogeneous catalytic process using intraparticle diffusion with external mass transfer
+     resistance”. In: Discover Applied Sciences 6.12 (Dec. 2024). ISSN: 30049261. DOI: 10.1007/
+     s42452-024-06385-0.
+[44] Richard K Herz. Reaction and Diffusion in a Porous Catalyst Pellet. Tech. rep.
+<PARSED TEXT FOR PAGE: 57 / 97>
+                                                           A
+                                      Results non mentioned sets
+
+A.1. Influence ethylene
+
+
+
+
+Figure A.1: Combined influence ethylene, set 1
+
+
+
+
+A.2. Influence hydrogen
+
+
+
+
+Figure A.2: Combined influence hydrogen, set 1
+
+
+                                                 51
+<PARSED TEXT FOR PAGE: 58 / 97>
+52                                                        A. Results non mentioned sets
+
+
+A.3. Influence acetylene
+
+
+
+
+      (a)
+
+
+
+
+      (b)
+
+
+
+
+      (c)
+
+
+
+
+      (d)
+
+Figure A.3: Combined influence acetylene, set 1-3 and 5
+<PARSED TEXT FOR PAGE: 59 / 97>
+          Conversion and Selectivity plotted
+                                               B
+         against changing parameter Pd0Ag
+B.1. Conversion + Selectivity against 𝑝C2 H2
+
+
+
+
+                                 53
+<PARSED TEXT FOR PAGE: 60 / 97>
+54                                  B. Conversion and Selectivity plotted against changing parameter Pd0 Ag
+
+
+
+
+            (a)
+
+
+
+
+            (b)
+
+Figure B.1: Conversion and selectivity, plotted against influence acetylene, set 1 and 2
+<PARSED TEXT FOR PAGE: 61 / 97>
+B.1. Conversion + Selectivity against 𝑝C2 H2                                               55
+
+
+
+
+            (a)
+
+
+
+
+            (b)
+
+Figure B.2: Conversion and selectivity, plotted against influence acetylene, set 3 and 5
+<PARSED TEXT FOR PAGE: 62 / 97>
+56                                  B. Conversion and Selectivity plotted against changing parameter Pd0 Ag
+
+
+B.2. Conversion + Selectivity against 𝑝C2 H4
+
+
+
+
+Figure B.3: Conversion and selectivity plotted against the ethylene partial pressure, set 1
+
+
+
+B.3. Conversion + Selectivity against 𝑝H2
+
+
+
+
+Figure B.4: Conversion and selectivity plotted against the hydrogen partial pressure, set 1
+<PARSED TEXT FOR PAGE: 63 / 97>
+          Conversion and Selectivity plotted
+                                               C
+         against changing parameter Pd2Ag
+C.1. Conversion + Selectivity against 𝑝C2 H2
+
+
+
+
+                                 57
+<PARSED TEXT FOR PAGE: 64 / 97>
+58                                  C. Conversion and Selectivity plotted against changing parameter Pd2 Ag
+
+
+
+
+            (a)
+
+
+
+
+            (b)
+
+Figure C.1: Conversion and selectivity, plotted against influence acetylene, set 1 and 2
+<PARSED TEXT FOR PAGE: 65 / 97>
+C.1. Conversion + Selectivity against 𝑝C2 H2                                               59
+
+
+
+
+            (a)
+
+
+
+
+            (b)
+
+Figure C.2: Conversion and selectivity, plotted against influence acetylene, set 3 and 5
+<PARSED TEXT FOR PAGE: 66 / 97>
+60                                  C. Conversion and Selectivity plotted against changing parameter Pd2 Ag
+
+
+C.2. Conversion + Selectivity against 𝑝C2 H4
+
+
+
+
+Figure C.3: Conversion and selectivity plotted against the ethylene partial pressure, set 1
+
+
+
+C.3. Conversion + Selectivity against 𝑝H2
+
+
+
+
+Figure C.4: Conversion and selectivity plotted against the hydrogen partial pressure, set 1
+<PARSED TEXT FOR PAGE: 67 / 97>
+          Conversion and selectivity plotted
+                                               D
+         against changing parameter Pd3Ag
+D.1. Conversion + selectivity against 𝑝C2 H2
+
+
+
+
+                                 61
+<PARSED TEXT FOR PAGE: 68 / 97>
+62                                  D. Conversion and selectivity plotted against changing parameter Pd3 Ag
+
+
+
+
+              (a) Set 1
+
+
+
+
+              (b) Set 2
+
+Figure D.1: Conversion and selectivity plotted against the acetylene partial pressure for Pd3 Ag, sets 1 and 2.
+<PARSED TEXT FOR PAGE: 69 / 97>
+D.1. Conversion + selectivity against 𝑝C2 H2                                                               63
+
+
+
+
+              (a) Set 3
+
+Figure D.2: Conversion and selectivity plotted against the acetylene partial pressure for Pd3 Ag, set 3.
+<PARSED TEXT FOR PAGE: 70 / 97>
+64                                  D. Conversion and selectivity plotted against changing parameter Pd3 Ag
+
+
+D.2. Conversion + Selectivity against 𝑝C2 H4
+
+
+
+
+Figure D.3: Conversion and selectivity plotted against the ethylene partial pressure, set 1
+
+
+
+D.3. Conversion + Selectivity against 𝑝H2
+
+
+
+
+Figure D.4: Conversion and selectivity plotted against the hydrogen partial pressure, set 1
+<PARSED TEXT FOR PAGE: 71 / 97>
+           E
+     Table tests
+
+
+
+
+65
+<PARSED TEXT FOR PAGE: 72 / 97>
+66   E. Table tests
+<PARSED TEXT FOR PAGE: 73 / 97>
+E.1. Table per cat. with every LHHW model variance
+E.1.1. Pd0 Ag
+Table E.1: Overview of the tested kinetic model variants for Pd0 Ag, if 3it is a variable in the LHHW model and if 7the term is let out of the LHHW model
+
+       Variant            H2 -term        C2 H4 -term        Inhibition term          𝐾H2       Power Law           Overall RMSE             RMSE𝑐𝑜𝑛𝑣𝑒𝑟𝑠𝑖𝑜𝑛   RMSE𝑠𝑒𝑙𝑒𝑐𝑡𝑖𝑣𝑖𝑡𝑦
+          1                   3               3                     3                  3           7                  42.3166                   66.51             4.31
+          2                   3               3                      7                 7           7                  15.2241                   27.12             3.52
+         2a                   7               3                      7                 7           7                  17.2401                   28.02             3.21
+         2b                   3               7                      7                 7           7                  28.6856                   49.81             3.21
+         2c                   7               7                      7                 7           7                  29.5322                   49.81             5.78
+          3                   3               3                     3                  7           7                  13.8472                   24.88             3.71
+         3a                   7               3                     3                  7           7                  17.4908                   28.53             4.10
+         3b                   3               7                     3                  7           7                  10.7848                   18.38             3.67
+         3c                   7               7                     3                  7           7                 2338.0896                  49.81           3987.61
+          4                   3               3                      7                 3           7                  17.5358                   30.36             3.46
+ 4smaller bounds              3               3                      7                 3           7                  11.4083                   18.45             6.56
+       4a                     7               3                      7                 7           7                  32.7246                   35.62             3.45
+       4b                     3               7                      7                 3           7                      –                        –                –
+       4c                     7               7                      7                 7           7                  29.5322                   49.81             5.78
+        5                     3               3                     3                  3           7                   6.4395                    9.73             4.55
+ 5smaller bounds              3               3                     3                  3           7                   8.7065                   13.89             5.81
+       5a                     7               3                     3                  7           7                  17.4908                   28.53             4.10
+       5b                     3               7                     3                  3           7                  28.6857                   49.81             3.21
+       5c                     7               7                     3                  7           7                 2338.0896                  49.81           3987.61
+       5d                     3               3                     3                  3           7                  18.0673                   30.75             5.51
+        6                     3               3                      7                 7           3                   8.4021                   13.95             3.53
+ 6smaller bounds              3               3                      7                 7           3                   7.0357                   12.64             3.34
+        7                     3               3                     3                  7           3                   7.6719                   12.63             5.59
+        8                     3               3                      7                 3           3                  15.1870                   24.02             3.54
+        9                     3               3                     3                  3           3                  14.5374                   23.22             2.73
+ 9smaller bounds              3               3                     3                  3           3                   7.0172                   12.64             3.16
+
+
+
+
+                                                                                                                                                                                67
+       10                     3               3                     3                  3           3                   8.2459                   11.39             6.63
+<PARSED TEXT FOR PAGE: 74 / 97>
+                                                                                                                                                                                68
+E.1.2. Pd2 Ag
+Table E.2: Overview of the tested kinetic model variants for Pd2 Ag, if 3it is a variable in the LHHW model and if 7the term is let out of the LHHW model
+
+       Variant            H2 -term        C2 H4 -term        Inhibition term          𝐾H2       Power Law           Overall RMSE             RMSE𝑐𝑜𝑛𝑣𝑒𝑟𝑠𝑖𝑜𝑛   RMSE𝑠𝑒𝑙𝑒𝑐𝑡𝑖𝑣𝑖𝑡𝑦
+          1                   3               3                     3                  3           7                  73.2983                   94.85            46.38
+          2                   3               3                      7                 7           7                  12.8855                   13.46            18.36
+         2a                   7               3                      7                 7           7                  14.5874                   13.97            20.47
+         2b                   3               7                      7                 7           7                   9.4210                    9.36            15.66
+         2c                   7               7                      7                 7           7                 2361.6036                  13.46           4014.28
+          3                   3               3                     3                  7           7                  12.7469                   13.46            18.26
+         3a                   7               3                     3                  7           7                  14.3602                   13.46            20.97
+         3b                   3               7                     3                  7           7                  10.3796                   11.39            15.88
+         3c                   7               7                     3                  7           7                  54.1860                   75.43            22.03
+          4                   3               3                      7                 3           7                  11.9816                   13.46            16.81
+ 4smaller bounds              3               3                      7                 3           7                  12.7543                   13.44            18.30
+       4a                     7               3                      7                 7           7                  14.5874                   13.97            20.47
+       4b                     3               7                      7                 3           7                   9.4182                    9.38            15.65
+       4c                     7               7                      7                 7           7                 2361.6036                  13.46           4014.28
+        5                     3               3                     3                  3           7                  12.0874                   13.46            16.97
+ 5smaller bounds              3               3                     3                  3           7                  14.1928                   13.46            20.77
+       5a                     7               3                     3                  7           7                  14.3602                   13.46            20.97
+       5b                     3               7                     3                  3           7                  12.7298                   13.46            18.23
+       5c                     7               7                     3                  7           7                  54.1860                   75.43            22.03
+       5d                     3               3                     3                  3           7                  12.1767                   13.46            17.15
+        6                     3               3                      7                 7           3                   9.8769                    4.38            19.15
+ 6smaller bounds              3               3                      7                 7           3                   9.4047                    3.97            18.98
+        7                     3               3                     3                  7           3                  10.4806                    5.62            19.62
+        8                     3               3                      7                 3           3                  12.7709                   10.71            19.37
+
+
+
+
+                                                                                                                                                                                E. Table tests
+        9                     3               3                     3                  3           3                  13.1385                   11.55            21.30
+ 9smaller bounds              3               3                     3                  3           3                  10.9095                    7.61            18.91
+       10                     3               3                     3                  3           3                  25.2860                   13.46            41.70
+<PARSED TEXT FOR PAGE: 75 / 97>
+E.1.3. Pd3 Ag
+Table E.3: Overview of the tested kinetic model variants for Pd3 Ag, if 3it is a variable in the LHHW model and if 7the term is let out of the LHHW model
+
+          Variant              H2 -term       C2 H4 -term        Inhibition term         𝐾H2       Power Law          Overall RMSE             RMSE𝑐𝑜𝑛𝑣𝑒𝑟𝑠𝑖𝑜𝑛   RMSE𝑠𝑒𝑙𝑒𝑐𝑡𝑖𝑣𝑖𝑡𝑦
+             2                     3              3                      7                7           7                  42.6540                  13.65            73.31
+            2a                     7              3                      7                7           7                  42.7758                  13.65            76.29
+            2b                     3              7                      7                7           7                  42.4521                  13.65            72.90
+            2c                     7              7                      7                7           7                2392.2863                  13.65           4070.10
+             3                     3              3                     3                 7           7                  42.6557                  13.65            73.31
+            3a                     7              3                     3                 7           7                  42.7382                  13.65            74.90
+            3b                     3              7                     3                 7           7                  42.6281                  13.65            73.27
+            3c                     7              7                     3                 7           7                2392.2830                  13.65           4070.09
+             4                     3              3                      7                3           7                  43.0763                  13.65            81.82
+     4smaller bounds               3              3                      7                3           7                  46.9826                  13.96            92.28
+           4a                      7              3                      7                7           7                  42.7758                  13.65            76.29
+           4b                      3              7                      7                3           7                 808.4597                  13.65           1276.75
+           4c                      7              7                      7                7           7                2392.2870                  13.65           4070.10
+            5                      3              3                     3                 3           7                  42.1434                  12.76            72.67
+ 5regular LHHW model               3              3                     3                 3           7                  46.9933                  13.93            92.32
+          5a                       7              3                     3                 7           7                  42.7382                  13.65            74.90
+          5b                       3              7                     3                 3           7                  42.6548                  13.65            73.31
+          5c                       7              7                     3                 7           7                2392.2830                  13.65           4070.09
+          5d                       3              3                     3                 3           7                  42.2333                  12.95            73.09
+           6                       3              3                      7                7           3                  41.8279                  11.96            73.49
+   6smaller bounds                 3              3                      7                7           3                  41.8141                  11.70            73.48
+           7                       3              3                     3                 7           3                  41.7086                  11.81            72.75
+           8                       3              3                      7                3           3                  41.9421                  11.70            73.57
+           9                       3              3                     3                 3           3                  42.1767                  13.46            74.86
+   9smaller bounds                 3              3                     3                 3           3                  41.7004                  11.84            72.80
+          10                       3              3                     3                 3           3                  55.2482                  13.65            111.18
+
+
+
+
+                                                                                                                                                                                  69
+<PARSED TEXT FOR PAGE: 77 / 97>
+                                                                                         F
+                             Standard LHHW model code
+This is the base code used for every created kinetic model. The only difference between the models is
+the formula for each (variant) of the LHHW model.
+
+
+
+
+                                                 71
+<PARSED TEXT FOR PAGE: 78 / 97>
+72   F. Standard LHHW model code
+<PARSED TEXT FOR PAGE: 79 / 97>
+73
+<PARSED TEXT FOR PAGE: 80 / 97>
+74   F. Standard LHHW model code
+<PARSED TEXT FOR PAGE: 81 / 97>
+75
+<PARSED TEXT FOR PAGE: 82 / 97>
+76   F. Standard LHHW model code
+<PARSED TEXT FOR PAGE: 83 / 97>
+77
+<PARSED TEXT FOR PAGE: 84 / 97>
+78   F. Standard LHHW model code
+<PARSED TEXT FOR PAGE: 85 / 97>
+79
+<PARSED TEXT FOR PAGE: 86 / 97>
+80   F. Standard LHHW model code
+<PARSED TEXT FOR PAGE: 87 / 97>
+81
+<PARSED TEXT FOR PAGE: 88 / 97>
+82   F. Standard LHHW model code
+<PARSED TEXT FOR PAGE: 89 / 97>
+                          G
+Plots simplified LHHW model, v4a
+
+
+
+
+            83
+<PARSED TEXT FOR PAGE: 90 / 97>
+84                                                                           G. Plots simplified LHHW model, v4a
+
+
+
+
+(a)
+
+
+
+
+(b)
+
+
+
+
+(c)
+
+Figure G.1: Removal of hydrogen term in LHHW model: (a) Pd0 Ag, (b) Pd2 Ag, (c) Pd3 Ag
+<PARSED TEXT FOR PAGE: 91 / 97>
+                                H
+Plots with inhibition term LHHW model,
+                                   v5
+
+
+
+
+                 85
+<PARSED TEXT FOR PAGE: 92 / 97>
+86                                                                     H. Plots with inhibition term LHHW model, v5
+
+
+
+
+(a)
+
+
+
+
+(b)
+
+
+
+
+(c)
+
+Figure H.1: Addition of acetylene inhibition term in LHHW model: (a) Pd0 Ag, (b) Pd2 Ag, (c) Pd3 Ag
+<PARSED TEXT FOR PAGE: 93 / 97>
+                                       I
+Result plots with inhibition term squared
+                       LHHW model, v5d
+
+
+
+
+                   87
+<PARSED TEXT FOR PAGE: 94 / 97>
+88                                                 I. Result plots with inhibition term squared LHHW model, v5d
+
+
+
+
+(a)
+
+
+
+
+(b)
+
+
+
+
+(c)
+
+Figure I.1: Addition of squared acetylene inhibition term in LHHW model: (a) Pd0 Ag, (b) Pd2 Ag, (c) Pd3 Ag
+<PARSED TEXT FOR PAGE: 95 / 97>
+                                                                                                 J
+                                                          Declaration of AI use
+J.1. Responsible use
+In this project, ChatGPT (GPT-5.5) was used as an AI assistant. The AI was used for tasks such as
+creating images, checking spelling, assisting with literature research, and helping to write Python code.
+Throughout the use of AI, no experimental data was uploaded. All calculations were performed by my-
+self, although AI assisted in creating and debugging parts of the code. When AI was used for rewriting
+paragraphs in the results chapter, fake results were used.
+
+    ChatGPT assisted throughout this BEP with the following functions:
+
+    • Checking spelling, improving flow, and reviewing specific claims. Small paragraphs were up-
+      loaded to receive feedback on these points.
+
+    • Literature-search assistance. AI helped identify possible sources for specific claims. When AI
+      suggested a source, the source was read and verified by me. AI was not cited as a source.
+
+    • Generating general images. AI assisted in creating specific figures, including the front page,
+      Figure 3.1, and Figure 3.3.
+
+    • Writing and debugging Python code. AI assisted in finding mistakes in my own code and in
+      improving code structure.
+
+Overview
+
+Table J.1: Overview of AI use in this project.
+
+ Tool                             Section                  Use
+ ChatGPT (GPT-5.5)                Introduction             Feedback on structure, spelling, and flow
+ ChatGPT (GPT-5.5)                Literature background    Feedback on structure, spelling, and flow
+ ChatGPT (GPT-5.5)                Literature background    Assistance in finding sources
+ ChatGPT (GPT-5.5)                Appendix C               Assistance with writing Python code
+ ChatGPT (GPT-5.5)                Literature background    Generation of images to support explanations
+ ChatGPT (GPT-5.5)                Appendix B               Generation of tables based on code-file names
+
+
+Acknowledging limitations
+Throughout the use of AI, its limitations became clear. Sometimes, when asked to review a paragraph,
+it suggested additions that were not relevant to the scope of the project. In addition, when writing
+code, the model did not always produce working code immediately. Therefore, the process remained
+a collaboration between my own understanding of the problem and the AI’s suggestions.
+
+                                                          89
+<PARSED TEXT FOR PAGE: 96 / 97>
+90                                                                            J. Declaration of AI use
+
+
+Responsible use
+Throughout the BEP, no specific previously unwritten claims were copied directly from AI output. Every
+new claim suggested by AI was checked by me and reviewed using my own understanding of the
+subject. The code written with AI assistance was checked by me, including unit checks on paper.
+
+Reflection
+The use of AI was helpful for improving scientific writing and sentence and paragraph structure. Every
+source suggested by AI was checked by me before it was added to the BEP. AI was also useful for
+creating specific images that could not be found online for the specific BEP case. Every AI-generated
+image was first sketched in Photoshop before being generated.
+
+   At some points, AI showed clear bias, mainly by strongly suggesting topics that were not within the
+scope of this research. These suggestions were filtered out before the remaining AI output was used.
+
+    For my next assignment, AI will probably be used again, mainly because of its assistance with
+writing. In specific cases where no clear images can be found, AI may also be used again to create
+images. Every image created with AI was first sketched in Photoshop before being put into the image
+generator.
+
+
+J.2. Transparent use
+Example 1
+Prompt:
+Update this code in such a way that per tested subject (GHSV, H2, C2H4 and C2H2) an extra p
+axis.
+     ChatGPT answer:
+Done -- I updated the notebook so every tested variable now gets an extra combined plot wi
+- conversion (X_C2H2) and selectivity (S) on the same y-axis
+- red line for conversion
+- blue dashed line for selectivity
+- log x-axis for GHSV, H2, and C2H2
+- linear x-axis for C2H4
+- multiple sets shown with different markers/labels where needed
+
+You can download the updated notebook here:
+[Download updated notebook](sandbox:/mnt/data/plot_data_AgPd0_with_combined_X_S_plots.
+
+I did not execute the notebook because it still loads the Excel file from your local path:
+/Users/Victor/Desktop/Uni/MST 4e jaar/BEP/Acetylene_Data.xlsx
+
+So just run it on your own laptop where that file exists.
+
+Example 2
+Prompt:
+Is this a good source:
+https://www.sciencedirect.com/science/article/pii/S0926337324003655?casa_token=0HcR_Q
+kqLOyW7yfzHzYizHOSID3-JlzjekSFKZXvLrbExI88AlDPa54D_021sDVUc3irWZ
+
+for defending this claim?
+”These oxide supports prevent this phenomenon by separating the metal atoms and anchoring
+     ChatGPT answer:
+Yes, but only partly.
+<PARSED TEXT FOR PAGE: 97 / 97>
+J.2. Transparent use                                                        91
+
+
+The article is useful because it is about zeolite-encapsulated PdAg alloy catalysts, so it can
+
+A safer sentence would be:
+”Oxide and zeolitic supports can reduce sintering by dispersing the metal species and strength
+dispersed metal particles under reaction conditions.”
+
+That wording is better than ”prevent”, because supports usually reduce or inhibit sintering ra

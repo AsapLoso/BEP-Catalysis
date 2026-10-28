@@ -1,0 +1,31 @@
+flow_case,r2_variant,catalyst,n_selected,selected_paired_rmse_pct_points,mean_conversion_pct,mean_selectivity_pct
+"source code: actual at 100C, 100kPa",printed Eq. 6.11 (implicit first power),Pd0Ag,15,13.445027028782212,62.2186170007892,75.62650616887886
+"source code: actual at 100C, 100kPa",printed Eq. 6.11 (implicit first power),Pd2Ag,15,15.488563250067655,96.82054235982943,39.51155108878536
+"source code: actual at 100C, 100kPa",printed Eq. 6.11 (implicit first power),Pd3Ag,15,21.288118683799738,99.99956022013676,-49.622520051703674
+"source code: actual at 100C, 100kPa",historical/Appendix F squared variant,Pd0Ag,15,5.268026172741461,62.25979489522412,89.78756565564706
+"source code: actual at 100C, 100kPa",historical/Appendix F squared variant,Pd2Ag,15,5.470034425164122,96.83510965760826,58.39369533528941
+"source code: actual at 100C, 100kPa",historical/Appendix F squared variant,Pd3Ag,15,21.081481887303788,99.99956076973507,-48.95255956177441
+"methods narrative: actual at 80C, 100kPa",printed Eq. 6.11 (implicit first power),Pd0Ag,15,13.052940403165726,59.804668268211714,76.2249134827118
+"methods narrative: actual at 80C, 100kPa",printed Eq. 6.11 (implicit first power),Pd2Ag,15,12.941431051906251,96.05109573220624,43.08150105936962
+"methods narrative: actual at 80C, 100kPa",printed Eq. 6.11 (implicit first power),Pd3Ag,15,20.40174290717198,99.9990930497829,-41.721295253316306
+"methods narrative: actual at 80C, 100kPa",historical/Appendix F squared variant,Pd0Ag,15,5.180858567433152,59.84397683521932,90.20068581955967
+"methods narrative: actual at 80C, 100kPa",historical/Appendix F squared variant,Pd2Ag,15,4.824900070437037,96.06705898391712,61.18924566981522
+"methods narrative: actual at 80C, 100kPa",historical/Appendix F squared variant,Pd3Ag,15,20.301314676014055,99.99909406654147,-41.068764256228214
+"example standard: 0C, 1atm",printed Eq. 6.11 (implicit first power),Pd0Ag,15,15.29537570674599,47.99914172317797,78.2977914559406
+"example standard: 0C, 1atm",printed Eq. 6.11 (implicit first power),Pd2Ag,15,5.867269100976011,91.37631875803602,57.74489765681338
+"example standard: 0C, 1atm",printed Eq. 6.11 (implicit first power),Pd3Ag,15,32.63556604400302,99.9810817046946,-8.273311182999313
+"example standard: 0C, 1atm",historical/Appendix F squared variant,Pd0Ag,15,10.44915221621601,48.02740549720366,91.6283900266795
+"example standard: 0C, 1atm",historical/Appendix F squared variant,Pd2Ag,15,10.885546055556324,91.39981632305452,72.64998171453311
+"example standard: 0C, 1atm",historical/Appendix F squared variant,Pd3Ag,15,33.04272589606414,99.98109476601189,-7.696007651335552
+"example standard: 20C, 1atm",printed Eq. 6.11 (implicit first power),Pd0Ag,15,14.215600267040745,51.01157222212631,77.86458937876972
+"example standard: 20C, 1atm",printed Eq. 6.11 (implicit first power),Pd2Ag,15,6.278028432079545,92.83194476872542,54.34914763486247
+"example standard: 20C, 1atm",printed Eq. 6.11 (implicit first power),Pd3Ag,15,27.048924857359747,99.99077837837477,-16.23574530242302
+"example standard: 20C, 1atm",historical/Appendix F squared variant,Pd0Ag,15,8.712478688386813,51.042821224276146,91.33112071804516
+"example standard: 20C, 1atm",historical/Appendix F squared variant,Pd2Ag,15,8.261022365060288,92.85312854982932,69.9960539702436
+"example standard: 20C, 1atm",historical/Appendix F squared variant,Pd3Ag,15,27.457208183028538,99.99078564023127,-15.640327175285616
+"example standard: 25C, 1atm",printed Eq. 6.11 (implicit first power),Pd0Ag,15,13.992228453014837,51.745110427172094,77.75127553291568
+"example standard: 25C, 1atm",printed Eq. 6.11 (implicit first power),Pd2Ag,15,6.493551964483215,93.15022003077947,53.491171197906525
+"example standard: 25C, 1atm",printed Eq. 6.11 (implicit first power),Pd3Ag,15,25.72217703024628,99.99229481416138,-18.220382493338434
+"example standard: 25C, 1atm",historical/Appendix F squared variant,Pd0Ag,15,8.308761101637792,51.77707995426216,91.25322329165284
+"example standard: 25C, 1atm",historical/Appendix F squared variant,Pd2Ag,15,7.636103759609269,93.17067367414373,69.325604880159
+"example standard: 25C, 1atm",historical/Appendix F squared variant,Pd3Ag,15,26.108693141598057,99.99230105153022,-17.62046878615198

@@ -147,7 +147,7 @@ is documentation, **not** an operational writeback claim.
 
 - **English by default:** All code, docstrings, mathematical derivations, commit messages, agent documentation, and scientific thesis text are strictly in **English**.
 - **Dutch strictly for Dutch institutional correspondence:** Dutch is permitted exclusively when drafting formal correspondence directed to Dutch university contacts (e.g., Board of Examiners / Examencommissie, TU Delft departmental coordinators) as appropriate.
-### Proactive close-the-loop rule for BEP implementation
+## 8. Proactive close-the-loop rule for BEP implementation
 
 When asked to *make the guided science workflow usable*, the agent
 must keep moving beyond documentation. Read

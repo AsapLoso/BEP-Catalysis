@@ -53,6 +53,20 @@ When authoring scientific prose, proposals, documentation, or commit messages:
 
 ---
 
+## 2a. Guided science, map, and notebook routing
+
+For multi-turn owner-led scientific theory discussions, read
+[`bep-guided-science-loop`](.agents/skills/bep-guided-science-loop/SKILL.md).
+Use `bep-map-edit-review` for exact node approval and scientific stages,
+`reversible-change-review` for scoped persistence, and `session-handoff`
+for recovery. The personal map evolves **during** the discussion; code
+in `notebooks/unified_dynamic_reactor.ipynb` follows only a chosen
+implementation decision. Do not force frontend/backlog cleanup first.
+[Backend acceptance contract](research/workflows/bep_conversational_map_backend.md)
+is documentation, **not** an operational writeback claim.
+
+---
+
 ## 3. Python Execution & Environment (Rule 19)
 
 - **Environment-aware, not Conda-only:** Identify the actual OS, working directory, available `python`/`python3` and `conda`, and project dependency files *before* choosing an interpreter. The owner's **local Windows** default is the existing global Conda base **when installed and usable**; a remote Linux/cloud agent is **not required** to have Conda or access to OneDrive. Missing `conda` alone is **not** a reason to mark numerical work BLOCKED.

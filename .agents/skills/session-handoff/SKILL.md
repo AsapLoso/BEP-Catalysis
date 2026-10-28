@@ -293,6 +293,23 @@ file available to it. Anything reportable under `NOT CAPTURED` should have been 
 line first. Reserve `NOT CAPTURED` for: things you cannot identify as residue at all, and
 facts you never established (write those to quarantine as `UNVERIFIED` if they came up at all).
 
+## BEP scientific conversation handoff, including plain ChatGPT
+
+Apply [`bep-guided-science-loop`](../bep-guided-science-loop/SKILL.md)
+and [`bep-map-edit-review`](../bep-map-edit-review/SKILL.md).
+A session may produce several approved map edits and no Python. Scientific
+meaning belongs in the approved owner map and decision receipts; tentative
+AI research goes to bridges/reference material, and owner-selected
+implementations go to the working notebook. `state.md` should link to
+these, naming one next scientific question, not duplicate the science.
+
+For plain ChatGPT or cloud environments without the local OpenCode log,
+**do not** guess a `ses_...` identifier or run the Windows log recipe.
+Record `session-id: UNKNOWN`, exact known refs, what is merely proposed
+versus approved, and inaccessible local-only commits/unsaved buffers.
+Verify actual writes; if persistence is unavailable, provide a portable
+**NOT SAVED** handoff rather than claiming completion.
+
 ## Rate Limiting
 
 None. Two read-only log queries, two git queries, then local file writes.

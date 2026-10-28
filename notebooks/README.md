@@ -20,3 +20,13 @@ This folder separates the notebook you are actively developing from archived imp
 - Audit reports, source transcriptions, and derived tables are indexed under [research/evidence/](../research/evidence/README.md) and [research/reports/](../research/reports/README.md).
 
 See [research/](../research/README.md) for literature, model specifications, audit records, meeting notes, prompts, and planning maps.
+
+## Owner-led science workflow
+
+[`bep-guided-science-loop`](../.agents/skills/bep-guided-science-loop/SKILL.md)
+governs discussion, *incremental approved map updates*, and eventual
+implementation in this personal notebook. Reference output and passing
+tests are not proof of experimental validity or owner understanding.
+The owner map may be on another approved branch: verify before editing.
+[Backend requirements](../research/workflows/bep_conversational_map_backend.md)
+are specified, **not yet tested as a live editor**.

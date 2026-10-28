@@ -82,4 +82,26 @@ When directed to produce an independent AI reference map, **do not seed or imita
 - Claim citations may follow `owner node → AI reference node/claim_ref → AI source record → locator`. Show unresolved links, missing excerpts, and unrecorded verification as such. AI `supports` summaries are not quotations; do not invent a passage or transfer the AI map's source-access status into owner human verification.
 - Owner/reference snapshots read only explicitly selected local paths or already-fetched local refs. The app does not perform a live GitHub fetch; refresh reads the selected snapshot again. A changed remote branch is not visible until an explicit fetch and selection/restart.
 
+## G. Continuous owner-led science discussions
+
+Also use [`bep-guided-science-loop`](../bep-guided-science-loop/SKILL.md)
+when theory discussions are shaping the map over many turns. The graph is a
+**living record during dialogue**, not a final notebook afterword.
+
+- Preview **each** new personal node (including Idea) with ID, title,
+  direct parent/siblings, brief summary and stage; get specific approval.
+  Vague permission to explore theory never approves invisible descendants.
+- Revisit approved nodes through multiple small corrections; preserve
+  the owner's concise meaning apart from longer AI-only research.
+  Only create owner `index.md` after approval of the exact writing.
+- A past map handoff records a **dated** correction from 57 to 50
+  approved nodes and withdrawal of seven unpreviewed PDE/model nodes;
+  this is not a claim about today's count. Read the latest approved graph,
+  SHA and node receipts. No silent reparenting or personal promotion.
+- Patch only approved node fields; preserve other writers, relationships,
+  source ledgers and unknown schema fields. If the active branch lacks
+  the owner graph, **do not invent a second canonical graph**.
+- No notebook edit is necessary for a useful map discussion, and successful
+  notebook tests do not automatically promote understanding or citations.
+
 **This is an authoring protocol. Git diffs are handled by the general reusable skill, not the reason this skill exists.**

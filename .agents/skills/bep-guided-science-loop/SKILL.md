@@ -122,7 +122,7 @@ conversation was committed.
 action queue with a functioning learning workflow.** For engineering work
 on the map backend/agent integration, the outcome is an actual
 reviewable implementation and test receipt. Read
-[`BEP execution handoff`](../../research/workflows/BEP_EXECUTION_HANDOFF_2026_10_29.md)
+[`BEP execution handoff`](../../../research/workflows/BEP_EXECUTION_HANDOFF_2026_10_29.md)
 and the existing backend contract. After identifying an executable next
 action, **do it** (within tool access and authorization), then test and
 read back before announcing progress.

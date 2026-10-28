@@ -3,6 +3,8 @@
 **Checkpoint:** 2026-10-24 · **Development branch:** `v3/bep-vertical-slice-20261023` · **PR branch:** `feat/unified-reactor-v3-public` → `unified-reactor-model`
 **Current frontier:** V3 implementation is complete and PR [#5](https://github.com/AsapLoso/BEP-Catalysis/pull/5) is open as an additive change to the Unified Reactor Model branch. GitHub reports the PR mergeable; no merge, personal-map edit or Damian message is authorized. The mixed benchmark and physical assumptions still need owner review before supervisor-facing use.
 
+The V3 implementation is now stored at `notebooks/reference/v3/`. The execution commands and branch file paths recorded below describe the original V3 development layout and are retained as historical receipts.
+
 ## Gate status
 
 | Gate | Status | Evidence / next action |

@@ -1,11 +1,6 @@
-# AI analysis and proposed model interpretations
+# Analysis
 
-This directory is **not** source text. Put agents' derivations, formula comparisons, uncertainty registers, error investigations, counterhypotheses and suggested study explanations here. It may link to already-existing `research/reports/` rather than copying reports.
+This folder contains independent analysis notes. The consolidated reports under [research/reports/](../../reports/README.md) record the full scope and verification gates.
 
-For each claim, identify which original document and exact location supports it, whether the reading was verified in the source/transcription, whether units are published or inferred, and whether a proposed extrapolation is speculative.
-
-Scientific method/repository tests can be recorded here without suggesting the user has read or approved them. Do not create or edit personal-map nodes or owner `index.md` pages.
-
-## Current Schbib audit
-
-- [Schbib parameter and benchmark audit report](../../reports/schbib_parameter_and_benchmark_audit.md): independent source comparison, model interpretation, Table 6 failure diagnosis, figure gates, and open uncertainty register.
+- [Schbib reaction-extent cross-check](./schbib_reaction_extent_state_space_crosscheck_2026_10_26.md): independent two-extent integration and comparison with the six-flow audit results. This is an internal numerical cross-check, not experimental validation.
+- [Larsen preliminary source audit](./larsen_2024_assistant_preliminary_source_audit.md): initial source notes; use the later [equation and baseline audit report](../../reports/larsen_2024_equation_and_baseline_audit.md) for the consolidated findings and corrections.

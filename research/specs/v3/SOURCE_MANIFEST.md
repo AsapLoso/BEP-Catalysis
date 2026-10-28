@@ -37,7 +37,7 @@ The current `project-management-agents/devcontainer` tip reported by `git ls-rem
 
 ## V2 engine and rerun provenance
 
-V2 support code and tests were read from the exact S4 commit. The V2 `pbr/` package has no install metadata; its upstream `pixi.toml` imports the repository-root package by `PYTHONPATH="."`. V3 does not depend on an external checkout or that private path. The exact V2 `pbr/` package is vendored under `notebooks/v3/vendor/pbr/`; all 11 copied Python files were re-hashed and match their S4 commit blobs. No vendor source file was edited. V3 selects the Uniform radial closure, so the builder receives zero diffusivity sentinels that the RHS does not read; these are not physical parameter estimates. `vendor/README.md` documents this closure and the upstream `K₁` comment that V3 does not treat as resolving the primary-source discrepancy.
+V2 support code and tests were read from the exact S4 commit. The V2 `pbr/` package has no install metadata; its upstream `pixi.toml` imports the repository-root package by `PYTHONPATH="."`. V3 does not depend on an external checkout or that private path. The exact V2 `pbr/` package is vendored under `notebooks/reference/v3/vendor/pbr/`; all 11 copied Python files were re-hashed and match their S4 commit blobs. No vendor source file was edited. V3 selects the Uniform radial closure, so the builder receives zero diffusivity sentinels that the RHS does not read; these are not physical parameter estimates. `vendor/README.md` documents this closure and the upstream `K₁` comment that V3 does not treat as resolving the primary-source discrepancy.
 
 | V2 file | Source blob SHA |
 |---|---|
@@ -71,8 +71,8 @@ This receipt verifies the V2 code's existing unit/integration checks under that 
 `pyproject.toml` pins direct dependencies and `uv.lock` pins the resolved environment. It requires Python `>=3.12,<3.13`; the verified worker used Python 3.12.14, NumPy 2.5.3, SciPy 1.18.0, Pydantic 2.13.5, Matplotlib 3.10.8, ipykernel 6.30.1 and nbconvert 7.16.6.
 
 ```text
-uv sync --project notebooks/v3 --locked
-uv run --project notebooks/v3 python -m nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=600 notebooks/v3/bep_v3_vertical_slice.ipynb
+uv sync --project notebooks/reference/v3 --locked
+uv run --project notebooks/reference/v3 python -m nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=600 notebooks/reference/v3/bep_v3_vertical_slice.ipynb
 ```
 
 The executed V3 notebook is the receipt for the run. First execution exposed a setup error (an array was passed where the V2 engine expects an inlet callable); the notebook was corrected to use `make_inlet()` and then executed successfully. Numerical outputs and solver diagnostics are preserved in the notebook and summarized in `PROGRESS.md` and `DAMIAN_HANDOFF.md`.

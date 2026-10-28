@@ -44,3 +44,14 @@ Codespaces, OneDrive and Git do not synchronize unsaved notebook cells.
 Do not assume local-only commits, ignored literature or external files are
 available remotely. This contract does not install or validate live
 backend writeback.
+## Owner-facing finish line and active handoff
+
+**This contract alone is NOT DONE.** The active implementation mission
+is [BEP_EXECUTION_HANDOFF_2026_10_29.md](BEP_EXECUTION_HANDOFF_2026_10_29.md).
+Drive to an agent-callable, lossless, approved map change with durable
+readback and a tested saved-file notebook loop. The agent must perform
+the next safe coding/testing step without seeking open-ended task
+selection from the owner, while preserving scientific approval gates.
+Use real fixtures and executable tests; do not promote a documentation
+review into an implementation PASS.
+

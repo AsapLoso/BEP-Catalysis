@@ -14,18 +14,19 @@ Working material for understanding the user's situation and the previous chatbot
 ## Current state
 
 - **DONE:** Source archive, continuation record, combined plan, and first-pass interpretive audit written.
-- **OPEN:** The user may correct the audit's interpretation. It has not been endorsed as their account.
-- **DEFERRED — next goal:** Bounded scientific grounding of selected material, with actual source/code evidence and a discussion of what the user understands.
+- **IN PROGRESS:** Check and revise the first-pass audit against the source exchange, your latest correction, and relevant GitHub records.
+- **OPEN:** The interpretation remains yours to correct; the audit has not been endorsed as your account.
+- **DEFERRED:** Scientific grounding and discussion of what you understand. The Larsen/CO remark is an example you already know, not the immediate task.
 - **DEFERRED:** README, optional simple visual walkthrough, and any later correspondence to Damian.
 
 The supplied conversation contains personal reflections and unverified claims from an earlier chatbot. Preserve that distinction when reusing it. This folder is an assistant-authored working record, not a supervisor handover or evidence that models, literature findings, or personal understanding have been validated.
 
 ## Continuation
 
-Read the audit and the user's source corrections before offering an explanation or a new workflow. Keep the honest account and the AI collaboration in view together. Discuss the unexplained difficulty only lightly; its cause is unresolved. Use the plan's scientific phase when that next goal begins, without requiring a complete review of every notebook first.
+Use [PLAN.md](PLAN.md) as the checklist, [INITIAL_CONVERSATION.md](INITIAL_CONVERSATION.md) as the source, and [FOLLOW_UP_CONTEXT.md](FOLLOW_UP_CONTEXT.md) for the user's corrections. Use GitHub's source map for provenance and only follow relevant records. Revise the audit against those sources; preserve the unexplained difficulty as unresolved. Do not switch this pass into scientific verification or the wider planning-archive consolidation.
 
 ## Publication receipt
 
-Destination: private `AsapLoso/BEP-Catalysis` repository. Documentation branch: `docs/supervision-conversation-audit-20261029`, based on `main` at `0cf25e8f055d056070b80663c188d44aa088a65b`. The planned PR targets `main` and remains draft. Verify the actual PR status on GitHub; this paragraph records the intended destination, not a claim that publication already succeeded.
+Destination: private `AsapLoso/BEP-Catalysis` repository. Documentation branch: `docs/supervision-conversation-audit-20261029`. The existing [draft PR #27](https://github.com/AsapLoso/BEP-Catalysis/pull/27) targets `main`; keep revisions on this branch and PR.
 
-Only this dated folder is added. No scientific assets or personal-map stages are changed. Directly retrieved contextual records are linked in the audit at the inspected commits. Local validation checks Markdown targets and source quotations; remote readback and PR-diff inspection are performed before reporting delivery.
+Only this dated folder is in scope. No scientific assets or personal-map stages are changed. Directly retrieved contextual records are linked in the audit at their inspected refs. Check source quotations and links, read back updated files, and confirm the PR diff contains only intended Markdown revisions.

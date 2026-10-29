@@ -43,3 +43,15 @@ Immediately followed by:
 - No message to Damian is drafted or sent by this documentation task.
 
 The completed first-pass analysis is in [AUDIT.md](AUDIT.md). Its interpretations remain open to correction by the user.
+
+## User — correction to the proposed immediate next step
+
+> con bruh. Larsen co doesn't contain is very simple. it's true. I already know. out of scope. end of day. 2 in verification. but we're still at the old plan. basically copycat it
+
+The user then clarified:
+
+> 2 min* soz. anyhow. just look at the map. Che k the files. tell yourself: plan: work out these files. use this one as checklist. this one as source material. look in gh for more stuff. etc
+
+Interpretation for the current pass: the immediate work stays with the existing conversation-audit plan. The Larsen/CO remark was an example of the previous chatbot's framing and is already settled for the user; do not make it the next scientific exercise. Use the audit folder's `PLAN.md` as the checklist, `INITIAL_CONVERSATION.md` as source material, `FOLLOW_UP_CONTEXT.md` for corrections, and GitHub's source map to locate relevant context. “2 min” corrects the apparent “2 in verification”; it does not name a phase.
+
+This correction supersedes the earlier assistant suggestion in commentary to choose a first scientific exercise. Scientific grounding remains later work. The broader `planning/INTEGRATION_PLAN.md` on the GitHub archive branch concerns a separate, not-started consolidation of 119 selected planning files; it is not the checklist for this conversation audit.

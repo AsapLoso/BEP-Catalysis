@@ -1,54 +1,41 @@
 # Combined plan: reconstruct the aim and audit the response
 
-Recorded: 2026-10-29. This combines both prior plans, preserved below. It follows the user's [scope corrections](FOLLOW_UP_CONTEXT.md) and uses the [supplied exchange](INITIAL_CONVERSATION.md) as primary evidence.
+Recorded: 2026-10-29; updated after the user's latest scope correction. This plan combines both earlier proposals, preserved below. The [current correction](FOLLOW_UP_CONTEXT.md) controls the immediate scope.
 
-## Purpose and working interpretation
+## Aim
 
-The user wants help making the actual situation intelligible before deciding how to explain it to Damian. The chatbot's interpretation is part of what needs examination. Reconstruct the user's aim from the original account and corrections, then audit how well the responses served that aim. Keep the honest account and the AI collaboration central; the cause of the difficulty remains substantially unresolved.
+Work out what the user wanted from the original exchange and assess whether the chatbot helped with it. Use the user's words and corrections as the main evidence; use GitHub's source map to find relevant dated context. Revise the existing audit on the current PR branch. The user has clarified that this remains the earlier conversation-audit task: Larsen/CO is an already-known example, not the next scientific exercise.
 
-This is an assistant interpretation, not a statement the user has approved for use in correspondence.
+The resulting account is working material for the user. It is not an endorsed explanation, supervisor handover, or communication draft.
 
-## Phase 1 — Preserve and ground the record
+## Checklist for this pass
 
-- Archive the initial supplied exchange, including both chatbot replies and the user's corrections. Retain mixed language, awkward transcription, and original links. Label speaker headings as editorial additions.
-- Record the current user's steering separately. Preserve both earlier plans and explain the combined scope.
-- Inspect only the project records needed to understand the intended learning process and assistants' responsibilities. Identify what was directly retrieved, what is an agent-authored report, and what remains unavailable.
-- Deliverable: navigable Markdown source files and an evidence register in the audit. Completion means saved source and provenance, not verified science.
+1. Read this plan as the checklist; read `INITIAL_CONVERSATION.md` as the primary source; use `FOLLOW_UP_CONTEXT.md` for corrections; review `AUDIT.md` as the draft under revision.
+2. Use GitHub's [BEP and AaPM source map](https://github.com/AsapLoso/BEP-Catalysis/blob/codex/bep-source-map-archive-20261029/planning/SOURCE_MAP.md) to locate only relevant records. Prioritize the current 29 October execution handoff and guided-science workflow; consult older captures and Damian check-in material as dated context.
+3. For each important statement in the audit, mark whether it comes from the user's current words, a dated user capture, a live repository fact, an earlier assistant's assertion, or an open interpretation. Attribute assistant-authored records as such.
+4. Revise the audit around the user's corrections: generated material is not automatically theirs to claim; the map was already present before the extra week; modest conclusions can count; infrastructure was meant to accelerate work; the assistant workflow may have added burden; communication was postponed while the user believed the work could be done. Keep the cause of the difficulty open.
+5. Correct the audit's next-step framing: do not turn the Larsen/CO example into a lesson, do not switch to scientific verification, and do not follow stale archive items as today's tasks.
+6. Update the README's current state and the existing draft PR #27. Keep the original transcript and the two archived plans intact.
 
-## Phase 2 — Reconstruct the aim and perform the audit
+## GitHub map and scope boundary
 
-- Distinguish private frustration, tentative causal explanations, practical notes, possible wording for Damian, and explicit requests. Do not turn a spoken, exploratory account into a settled confession.
-- Use each correction to recover the concern it reveals: ownership, the map timeline, the scale of legitimate progress, infrastructure's intended purpose, promises, and visual documents.
-- Evaluate reassurance and criticism equally. Distinguish generated output, effort, personal understanding, source verification, and completed deliverables.
-- Examine assistants' contribution without assuming that all infrastructure was unnecessary or that every agent failed. Keep personal responsibility and collaboration failures independently assessable.
-- Cover the unexplained difficulty briefly. Leave causes open; do not propose a diagnosis or a productivity system.
-- Deliverable: a readable audit with quotations, more faithful interpretations, useful parts of the earlier responses, and concrete implications for subsequent help. Include the current assistant's own scope drift.
-- Completion means a source-supported first-pass reading. It does not mean the user endorses every interpretation.
+`planning/SOURCE_MAP.md` is the navigation/provenance map for 119 selected files archived from the separate AaPM repository. Its `planning/INTEGRATION_PLAN.md` is a distinct, not-started proposal to consolidate that archive; it is not the checklist for this conversation audit. Its October 23 recommendation to prioritize Damian is dated context, not current authorization to draft or send a message. Check live PR status where cited and do not treat merged documentation as a working backend or scientific approval.
 
-## Phase 3 — Scientific grounding, deferred next goal
+## Acceptance criteria
 
-- Start with one bounded item selected for its usefulness to explaining the current state; do not audit every notebook as a prerequisite to communication.
-- Distinguish source statements, AI interpretations, runnable code, physical validity, and what the user can explain. Retrieve the actual paper passages or code before making technical claims.
-- Establish what can honestly be demonstrated, what is reference material, and which questions remain open. Keep source verification independent from the user's understanding.
-- Deliverable: a bounded evidence note and, if useful, a small learning interaction. This phase is not executed by publishing the present documentation.
+- The audit preserves your original aim and latest correction without asking you to restate either.
+- It distinguishes your accountability for delayed communication from unverified explanations of why the delay occurred, and examines AI workflow responsibility alongside yours.
+- Every contextual claim has a date and provenance; old handoffs, map snapshots, and previous chatbot claims are not presented as current fact.
+- The Larsen/CO result is mentioned only as your example of a modest conclusion; scientific verification remains deferred.
+- The result remains a reviewable draft on PR #27, with only the intended Markdown files changed.
 
-## Phase 4 — Communication materials, deferred
+## Deferred work
 
-- Use the reconstructed account and whatever evidence is actually established to prepare the README and optional simple visual walkthrough.
-- Respect the user's intended format: a few words and an image over roughly twenty slides, where that remains useful. Do not substitute a polished results deck or a mandatory three-slide format.
-- Distinguish achievements, unreviewed material, limitations, and questions. Do not invent future performance promises or explanations for the difficulty.
-- Draft correspondence only when that work is requested. Sending requires an explicit instruction.
+Scientific-source learning and verification come after this audit pass and require a separately chosen question. A README, simple visual walkthrough, and any communication to Damian are also later tasks. No message is drafted or sent here.
 
-## Delivery and validation
+## Evidence limits
 
-- Put the source, follow-up context, combined plan, and first-pass audit in one dated folder with a short README.
-- Create an isolated documentation branch from the current `main` and open a draft PR against `main`. Do not merge this task's PR or other model/map branches.
-- Check relative links, quoted evidence, source/analysis separation, and remote file readback. Check the PR diff contains only the intended Markdown additions.
-- Leave a clear continuation point: scientific grounding is next, while the interpretation can be corrected without rewriting the archived source.
-
-## Assumptions and limits
-
-The user authorized GitHub persistence and a PR. The existing private `AsapLoso/BEP-Catalysis` repository is the destination. This folder is working material, not a supervisor handover. Underlying emails, original chatbot tool calls, and unpublished local work were not available in the inspected evidence. Relative dates in the supplied conversation remain historical context, not new deadlines calculated by this task.
+The original emails, full prior chatbot session, tool-call payloads, and unpublished local work are not available in the inspected GitHub sources. Some archived notes are agent-written summaries or transcript-near reconstructions, not complete conversation exports. Preserve those limits when drawing conclusions.
 
 ---
 

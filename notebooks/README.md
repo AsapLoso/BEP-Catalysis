@@ -1,6 +1,6 @@
 # BEP notebook routing
 
-The BEP-Catalysis `main` branch contains the workflow index. The owner-editable
+This page documents BEP-Catalysis notebook routing. The owner-editable
 notebook and its reference implementations are maintained separately on
 `unified-reactor-model`.
 

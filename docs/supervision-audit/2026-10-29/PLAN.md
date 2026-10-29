@@ -2,6 +2,10 @@
 
 Recorded: 2026-10-29; updated after the user's latest scope correction. This plan combines both earlier proposals, preserved below. The [current correction](FOLLOW_UP_CONTEXT.md) controls the immediate scope.
 
+## Current implementation
+
+The original archive and two earlier plans remain preserved. After the user questioned the earlier result, the audit was replaced with a substantive reassessment: it examines both the chatbot's misses and the reasonable accountability points, corrects our own defensive overcorrection, and uses selected GitHub records as context. This audit pass is written; its interpretation remains open to the user's correction. The checklist below records the work rather than commissioning another planning loop.
+
 ## Aim
 
 Work out what the user wanted from the original exchange and assess whether the chatbot helped with it. Use the user's words and corrections as the main evidence; use GitHub's source map to find relevant dated context. Revise the existing audit on the current PR branch. The user has clarified that this remains the earlier conversation-audit task: Larsen/CO is an already-known example, not the next scientific exercise.

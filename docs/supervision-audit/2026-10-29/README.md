@@ -6,15 +6,14 @@ Working material for understanding the user's situation and the previous chatbot
 
 | Document | Purpose |
 | --- | --- |
-| [AUDIT.md](AUDIT.md) | First-pass reconstruction and audit, including helpful points, missed meanings, unsupported interpretations, and evidence limits. |
+| [AUDIT.md](AUDIT.md) | Replacement assessment: what the chatbot missed, what it reasonably confronted, where our previous audit overcorrected, and the account best supported by the exchange. |
 | [PLAN.md](PLAN.md) | Combined phased plan, with both earlier proposed plans preserved in full. |
 | [INITIAL_CONVERSATION.md](INITIAL_CONVERSATION.md) | Supplied original exchange, with speaker headings added and source wording retained. |
 | [FOLLOW_UP_CONTEXT.md](FOLLOW_UP_CONTEXT.md) | Subsequent user corrections, scope decisions, and selected planning context. |
 
 ## Current state
 
-- **DONE:** Source archive, continuation record, combined plan, and first-pass interpretive audit written.
-- **IN PROGRESS:** Check and revise the first-pass audit against the source exchange, your latest correction, and relevant GitHub records.
+- **DONE:** Source archive, continuation record, preserved plans, and a replacement substantive assessment following the user's rejection of the earlier result.
 - **OPEN:** The interpretation remains yours to correct; the audit has not been endorsed as your account.
 - **DEFERRED:** Scientific grounding and discussion of what you understand. The Larsen/CO remark is an example you already know, not the immediate task.
 - **DEFERRED:** README, optional simple visual walkthrough, and any later correspondence to Damian.
@@ -23,7 +22,7 @@ The supplied conversation contains personal reflections and unverified claims fr
 
 ## Continuation
 
-Use [PLAN.md](PLAN.md) as the checklist, [INITIAL_CONVERSATION.md](INITIAL_CONVERSATION.md) as the source, and [FOLLOW_UP_CONTEXT.md](FOLLOW_UP_CONTEXT.md) for the user's corrections. Use GitHub's source map for provenance and only follow relevant records. Revise the audit against those sources; preserve the unexplained difficulty as unresolved. Do not switch this pass into scientific verification or the wider planning-archive consolidation.
+Read [AUDIT.md](AUDIT.md) for the actual assessment. The source exchange and follow-up record let the user challenge that reading. The plan remains a record of this task's scope; completing another planning cycle is not a prerequisite to discussing the assessment. Scientific verification and communication materials remain later work.
 
 ## Publication receipt
 

@@ -6,6 +6,7 @@ This directory preserves the **existing decision maps, work maps, checklists, re
 
 - [Full source file catalogue](CATALOGUE.md) — 119 files with original snapshot links
 - [Machine-readable file manifest](SOURCE_MANIFEST.json) — pinned commits and copied blob hashes
+- [Cross-repository source map](SOURCE_MAP.md) — branch ownership, navigation, and coverage limits
 - [Suggested later consolidation procedure](INTEGRATION_PLAN.md) — *not executed by this PR*
 
 ## Important starting points

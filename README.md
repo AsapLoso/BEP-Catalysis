@@ -14,7 +14,7 @@ This is a **research workspace**, not a validated, ready-to-run final thesis mod
 | **Schbib (1996) benchmark** | [notebooks/benchmarks/](notebooks/benchmarks/README.md) and [audit](research/reports/schbib_parameter_and_benchmark_audit.md) | Reproduction remains unresolved for the reported species; do not cite it as validated PFR performance. |
 | **Larsen (2024) benchmark** | [notebooks/benchmarks/](notebooks/benchmarks/README.md) and [audit](research/reports/larsen_2024_equation_and_baseline_audit.md) | Restricted benchmark audit, unresolved data conventions; **does not model CO**. |
 
-**Immediate scientific gap:** there is currently no demonstrated, experimentally matched, fixed-temperature CO-sensitive PFR benchmark ready to serve as the thesis foundation. The [source-selection branch](../../tree/feat/isothermal-co-kinetics-source-selection) records an evidence-screened **NO SOURCE READY** result. Bos (1993) supplies a CO-sensitive rate-law candidate but its measurements use a Berty reactor; applying that law in a PFR is a model transfer, not reproduction of Bos's reactor.
+**Immediate scientific gap:** there is currently no demonstrated, experimentally matched, fixed-temperature CO-sensitive PFR benchmark ready to serve as the thesis foundation. The [source-selection branch](https://github.com/AsapLoso/BEP-Catalysis/tree/feat/isothermal-co-kinetics-source-selection) records an evidence-screened **NO SOURCE READY** result. Bos (1993) supplies a CO-sensitive rate-law candidate but its measurements use a Berty reactor; applying that law in a PFR is a model transfer, not reproduction of Bos's reactor.
 
 ## A short route for supervisor review
 

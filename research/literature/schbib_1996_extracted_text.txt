@@ -1,0 +1,1104 @@
+--- PAGE 1 ---
+Kinetics of Front-End Acetylene Hydrogenation in Ethylene
+Production
+Noemı´ S. Schbib, Miguel A. Garcı´a, Carlos E. Gı´gola, and Alberto F. Errazu*
+Planta Piloto de Ingenierı´a Quı´mica, UNS-CONICET, 12 de octubre 1842, 8000 Bahı´a Blanca, Argentina
+Thekineticsofacetylenehydrogenationinthepresenceofalargeexcessofethylenewasstudied
+in a laboratory flow reactor. Experiments were carried out using a Pd/R-Al2O3 commercial
+catalyst and a simulated cracker gas mixture (H2/C2H2 ) 50; 60% C2H4; 30% H2, and traces of
+CO), at varying temperature (293-393 K) and pressure (2-35 atm). Competing mechanisms
+for acetylene and ethylene hydrogenation were formulated and the corresponding kinetic
+equationsderivedbyrate-determiningstepmethods. Acriterionbaseduponstatisticalanalysis
+was used to discriminate between rival kinetic models. The selected equations are consistent
+withtheadsorptionofC 2H2 andC2H4 inthesameactivesitesfollowedbyreactionwithadsorbed
+hydrogenatomstoformC 2H4 andC2H6 inaone-stepprocess. Goodagreementbetweencomputed
+and experimental results was obtained using a nonisothermal reactor model that takes into
+accounttheexistenceofexternaltemperatureandconcentrationgradients. Thederivedkinetic
+equationstogetherwithapseudohomogeneousmodelofanintegraladiabaticflowreactorwere
+employedtosimulatetheconversionandthetemperatureprofilesforacommercialhydrogenation
+unit.
+Introduction
+Theselectivehydrogenationofacetyleneinthepres-
+ence of large amounts of ethylene is a process of
+considerableimportanceinthemanufactureofpolymer-
+gradeethylene. Smallamountsofalkyne,intheparts
+per million range, affect the polymerization catalyst.
+Thustheacetyleneconcentrationintheproductstream
+must be reduced to 5 ppm or less.
+This hydrogenation process could be located at dif-
+ferent points in the purification section of an ethylene
+plant (Lam and Lloyd, 1972; Derrien, 1986). In one
+scheme the converter is placed after the conversion
+section, following a caustic scrubbing treatment to
+eliminate CO2. Another alternative involves the hy-
+drogenationofC 2H2 intheC 2H4-richstreamtakenfrom
+the top of the de-ethanizer. The first alternative is
+known as front-end hydrogenation and the second one
+as tail-end hydrogenation.
+Quitedifferentoperatingconditionsareusedineach
+case. The front-end configuration involves the hydro-
+genationofC 2H2 intherawcracked-gasmixturesothat
+thestreamhasahighH 2/C2H2 (≈100)ratioandseveral
+acetylenic,olefinic,anddiolefiniccomponents. Carbon
+monoxide also appears in the feed due to the inverse
+water-gasshiftreactioninthecrackingfurnaces. They
+allactasinhibitorsofC 2H4 hydrogenation. PureC2H2
+in the tail-end converter is dosed with H2 to obtain a
+stoichiometric H2/C2H2 ratio.
+Supportedpalladiumcatalystswithlowmetalcontent
+areusedforbothprocessesduetotheirexceptionalhigh
+activityandselectivity. Itisimportanttopointoutthat
+Pd is unique, among other metals, for the preferential
+hydrogenation of alkynes and diolefins in the presence
+ofolefins. HowevertheC 2H4 fC2H6 reactionbecomes
+significantwhentheC 2H2 concentrationislow,thatis,
+at high levels of conversion.
+DespitethecommercialimportanceofC 2H4 purifica-
+tion processes, there is limited kinetic information on
+the hydrogenation of C2H2 in the presence of C2H4.
+Most studies have been performed with pure C2H2
+under conditions far removed from industrial opera-
+tions. Some papers deal with the hydrogenation of
+C2H2-C2H4 mixtures (McGown et al., 1978; Moses et
+al.,1984;Adu´rizetal.,1990). OrdersinH 2 liebetween
+1 and 1.6, and that for C2H2 has been found to be zero
+or negative. Activation energy values between 9 and
+16kcal/molhavebeenquoted. ForC 2H4 hydrogenation
+on Pd the information is more scarce. Schuit and Van
+Reijen(1958)reportedanactivationenergyof8.4kcal/
+mol,aH 2 orderof0.6,andanC 2H4 orderof0,forPdon
+SiO2.Weissetal.(1984)haveinvestigatedtheeffectof
+CO on C2H2 and C2H4 conversion. The former was
+found to be 50-60 times lower in the presence of CO
+(800ppm)thaninitsabsence,buttheeffectwassmall
+at low H2 concentration. On the other hand, the
+hydrogenation of C2H4 was almost suppressed by the
+addition of CO.
+Thetail-endhydrogenationprocess,underconditions
+similartothoseofindustrialreactors,hasbeenstudied
+in a pilot plant by Battiston et al. (1982). The experi-
+mental results were correlated by an empirical model
+totakeintoaccounttheinfluenceoftheseveralreaction
+variables on C2H2. Increasing the H2/C2H2 ratio, at
+constantCOconcentration,increasestheconversionof
+both C2H2 and C2H4. A more standard approach was
+used by Men’shchikov et al. (1975). A commercial Pd
+catalyst was tested in a flow reactor at 20 atm, in the
+353-430Ktemperaturerangeusingatail-endmixture.
+RateequationsforC 2H2 andC2H4 hydrogenation,which
+were written under the assumption that the reactions
+occuronseparatesites,gavegoodcorrelationofexperi-
+mental data.
+Studiesofthiskindforfront-endC 2H2 hydrogenation
+havenotbeenreported. Inthispaper,laboratorydata
+obtainedonawiderangeofpressure,temperature,and
+conversion values were fitted to several kinetic equa-
+tions for C2H2 and C2H4 hydrogenation. The selected
+models were used to simulate the operation of an
+industrial acetylene converter. Predicted conversion
+and temperature profiles were compared with plant
+data.
+*Author to whom correspondence should be addressed.
+E-mail: reschbib@criba.edu.ar. FAX: 54-91-883764.
+1496 Ind. Eng. Chem. Res.1996, 35, 1496-1505
+S0888-5885(95)00600-2 CCC: $1200 © 1996 American Chemical Society
++ +Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​35/​5/​1496/​11753014/​ie950600k.​pdf by TU DELFT user on 24 October 2026
+
+
+--- PAGE 2 ---
+Methods
+Inthepresentstudytheexperimentalandtheoretical
+work has been organized as follows:
+1. Several reaction schemes were written for C2H2
+andC2H4 hydrogenationonPdusinginformationfrom
+fundamental kinetic studies.
+2. Therate-determiningstepmethodwasappliedto
+the proposed mechanisms in order to derive the corre-
+sponding kinetic equations.
+3. Conversion versus temperature curves for C2H2
+and C2H4 hydrogenation were obtained in a laboratory
+reactor, in the 1-30 atm pressure range, using a
+commercial Pd/R-Al2O3 catalyst.
+4. The rate equations were coupled to three reactor
+models of increasing complexity. The algebraic and
+differentialequations,whicharenotlinearinthekinetic
+parameters, define a set of regression models.
+5. A nonlinear regression routine that selects the
+conversionasaresponsevariablewasusedtoestimate
+the unknown parameters.
+6. The discrimination between rival models was
+based upon the requirement of positive parameters
+supplemented with a variance analysis performed on
+the conversion residuals.
+Kinetic Models
+The first task of the present study was to derive
+kinetic equations that could be compared with experi-
+mental data for parameter estimation and discrimina-
+tion. Several sequences of elementary steps were
+written on the basis of information available from
+previous studies. It is well-known that H2 is dissocia-
+tively adsorbed on Pd to form H-Pd surface entities.
+On the other hand, it is accepted that C2H2 and C2H4
+adsorptionoccursbyanassociativemechanisminvolv-
+ingoneortwoPdsurfaceatoms( π-bondedor σ-bonded
+structures). Consequentlyitwasconsideredthatsimi-
+lar or different types of sites may exist for H2 and
+hydrocarbonadsorption. FortheinteractionofCOwith
+the metal surface, an associative mechanism involving
+hydrogen adsorption sites has been postulated.
+Regardingthesurfacereactions,threedifferentreac-
+tion paths were assumed: a stepwise addition of ad-
+sorbed hydrogen atoms, the simultaneous addition of
+two atoms, or the reaction of gaseous hydrogen with
+adsorbed hydrocarbons. It has already been shown
+(Adu´riz et al., 1990; Sarkany et al., 1986) that C2H6
+formationduringhydrogenationofC 2H2-C2H4 mixtures
+ismainlyduetoC 2H4 hydrogenation. Consequentlywe
+have excluded the direct formation of C2H6 from C2H2.
+Reactionschemes1 -5,showninTable1,werewritten
+on the basis of these considerations. In principle all
+steps were assumed to be reversible. If the stepwise
+addition of adsorbed hydrogen and the Eley-Rideal
+mechanism operate simultaneously (schemes 1 and 3,
+respectively),scheme6isobtained. Ontheotherhand,,
+the combination of schemes 2 and 3 leads to scheme 7.
+Inordertoobtainthesteady-statekineticmodelsthe
+rate-determining-step method was used. In principle
+anystepcanberatelimiting,butitispossibletoreduce
+the number of equations on the basis of information
+available from surface chemistry studies. Hydrogen
+adsorptionisafast,nonactivatedprocess,andtherefore
+this step could be assumed to be at equilibrium. The
+desorption of ethane cannot be the rate-limiting step,
+for ethylene hydrogenation, because it is readily dis-
+placed from the surface by the strongly bound hydro-
+Table 1. Reaction Mechanism for the Selective Hydrogenation of C2H2 and C2H4
+scheme1 scheme2 scheme3 scheme4 scheme5 scheme6 scheme7
+(1)A +S fAS (1)A +S fAS (1)A +S fAS (1)A +S fAS (1)A +S fAS (1)A +S fAS (1)A +S fAS
+(2)H2 +2S f2HS (2)H 2 +2S f2HS (2)H 2(g) +AS fES (2)H 2 +2Z f2HZ (2)H 2 +2Z f2HZ (2)H 2 +2S f2HS (2)H 2 +2S f2HS
+(3)AS +HS fAHS +S (3)AS +2HS fES +2S (3)E +S fES (3)AS +2HZ fES +2Z (3)AS +HZ fAHS +Z (3)AS +HS fAHS +S (3)AS +2HS fES +2S
+(4)AHS +HS fES +S (4)E +S fES (4)H 2(g) +ES fEtS (4)E +S fES (4)AHS +HZ fES +Z (4)AHS +HS fES +S (4)AS +H2(g) fES
+(5)E +S fES (5)ES +2HS fEtS +2S (5)Et +S fEtS (5)ES +2HZ fEtS +2Z (5)E +S fES (5)AS +H2(g) fES (5)E +S fES
+(6)ES +HS fEHS +S (6)Et +S fEtS (6)CO +S fCOS (6)Et +S fEtS (6)ES +HZ fEHS +Z (6)E +S fES (6)ES +2HS fEtS +2S
+(7)EHS +HS fEtS +S (7)CO +S fCOS (7)CO +S fCOS (7)EHS +HZ fEtS +Z (7)ES +HS fEHS +S (7)ES +H2(g) fEtS
+(8)Et +S fEtS (8)Et +S fEtS (8)EHS +HS fEtS +S (8)Et +S fEtS
+(9)CO +S fCOS (9)CO +S fCOS (9)ES +H2(g) fEtS (9)CO +S fCOS
+(10)Et +S fEtS
+(11)CO +S fCOS
+Ind. Eng. Chem. Res., Vol. 35, No. 5, 19961497
++ +Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​35/​5/​1496/​11753014/​ie950600k.​pdf by TU DELFT user on 24 October 2026
+
+
+--- PAGE 3 ---
+carbons (ethylene and acetylene). In addition it has
+been shown recently (Park and Price, 1991) that CO
+enhancesthedesorptionofC 2H4. Consequentlyonlythe
+adsorption of C2H2 and C2H4 and the surface interac-
+tionswerechosenasrate-controllingstepstoderivethe
+kineticmodels. Tofurtherreducethenumberofequa-
+tions,thesamedeterminingstepwasselectedforC 2H2
+and C2H4 hydrogenation. By use of this approach 14
+kinetic models were derived, as shown in Table 2.
+As an example let us consider scheme 2 when the
+adsorption of C2H2 and C2H4, steps 1 and 4, are rate-
+controlling. The corresponding kinetic equations are
+where k1 and k4 are the rate constants and [S] is the
+concentration of free surface sites. Considering the
+irreversible nature of the overall hydrogenation reac-
+tions, the reverse reactions of steps 1 and 4 have been
+neglected. The remaining steps, 2, 3, 5, 6, and 7 are
+considered to be in a quasiequilibrium state. We use
+letterstoidentifytheadsorption -desorptionprocesses
+at equilibrium: KH for H2, KEt for C2H6 , KE for C2H4,
+and KCO for CO, while the constantsKAS and KES take
+intoaccountthesurfacereactionsofadsorbedC 2H2 and
+C2H4 at equilibrium. In order to simplify the rate
+equations the following constants were introduced
+Using these constants, [S] may be written in terms
+of the gas phase concentrations
+where
+and [St] is the concentration of free and occupied sites.
+Combiningthepreviousequations,theratesofdisap-
+pearance of C2H2 and C2H4 are
+where
+Experimental Section
+Alaboratoryscalereactorwasusedtoobtainconver-
+sion vs temperature curves in the 1-30 atm pressure
+range. Catalyst charges of 1-3 g were packed in a
+Table 2. Kinetic Equations Derived from the Reaction Schemes Presented in Table 1a
+r2,14 )r7,15 rA )kACA/D
+rE )kECE/D
+D )1 +(KHCH)1/2 +CEt ∑i)1
+2 KiCH-i +KEtCEt +KCOCCO
+r1,36 rA )kACACH1/2/D2
+rE )kECECH1/2/D2
+D )1 +KACA +KECE +(KHCH)1/2 +(K1CE +K2CEt)CH-1/2 +KEtCEt +KCOCCO
+r1,47 rA )kACACH/D2
+rE )kECECH/D2
+D )1 +KACA +KECE +(KH +K1CA +K2CE)CH1/2 +KEtCEt +KCOCCO
+r2,35 rA )kACACH/D3
+rE )kECECH/D3
+D )1 +KACA +KECE +(KHCH)1/2 +KEtCEt +KCOCCO
+r3,13 )r4,14 rA )kACA/D
+rE )kECE/D
+D )1 +(KEt +K1CH-1 +K2CH-2)CEt +KCOCCO
+r3,24 rA )kACACH/D
+rE )kECECH/D
+D )1 +KACA +KECE +KEtCEt +KCOCCO
+r4,35 rA )kACACH/D
+rE )kECECH/D
+D )(1 +KACA +KECE +KEtCEt +KCOCCO)(1 +KH1/2CH1/2)2
+r5,15 rA )kACA/D
+rE )kECE/D
+D )1 +(KEt +K1CH-1/2 +K2CH +K3CH-3/2 +K4CH-2)CEt +KCOCCO
+r5,36 rA )kACACH1/2/D
+rE )kECECH1/2/D
+D )(1 +KACA +KECE +(K1CE +K2CEt)CH-1/2 +KEtCEt +KCOCCO)(1 +KH1/2CH1/2)
+r5,47 rA )kACACH/D
+rE )kECECH/D
+D )(1 +KACA +KECE +(K1CA +K2CE)CH1/2 +KEtCEt +KCOCCO)(1 +KH1/2CH1/2)
+r6,16 )r1,15 rA )kACA/D
+rE )kECE/D
+D )1 +(KHCH)1/2 +(K1CH-1/2 +K2CH-1 +K3CH-3/2 +K4CH-2)CEt +KEtCEt +KCOCCO
+r6,35/79b rA )kACACH1/2/D2 +k*ACACH/D
+rE )kECECH1/2/D2 +k*ECECH/D
+D )1 +KACA +(KHCH)1/2 +KECE +(K1CE +K2CEt)CH-1/2 +KEtCEt +KCOCCO
+r6,45/89b rA )kACACH/D2 +k*ACACH/D
+rE )kECECH/D2 +k*ECECH/D
+D )1 +KACA +KECE +(KH1/2 +K1CA +K2CE)CH-1/2 +KETCET +KCOCCO
+r7,34/67b rA )kACACH/D3 +k*ACACH/D
+rE )kECECH/D3 +k*ECECH/D
+D )1 +KACA +(KHCH)1/2 +KECE +KEtCEt +KCOCCO
+a ThefirstdigitidentifiesthesequenceofstepsandtheothersthecontrollingstepsforC 2H2 andC2H4 hydrogenation. b Simultaneous
+mechanisms with two different controlling steps for acetylene and ethylene hydrogenation are considered.
+r2,1 )-rA )k1CA[S]
+r2,4 )-rE )k4CE[S] (1)
+K1 )
+KEt
+KHKES
+K2 )
+KEt
+KH
+2KESKAS
+(2)
+[S] )[ST]/D
+D )1 +(KHCH)1/2 +CET ∑
+i)1
+2
+KiCH
+-i +
+KETCET +KCOCCO (3)
+-rA )kACA/D and -rE )kECE/D (4)
+kA )k1[St] and kE )k4[St]
+1498 Ind. Eng. Chem. Res., Vol. 35, No. 5, 1996
++ +Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​35/​5/​1496/​11753014/​ie950600k.​pdf by TU DELFT user on 24 October 2026
+
+
+--- PAGE 4 ---
+stainless-steel tube (10 mm i.d.) immersed in a dieth-
+ylene glycol bath. The total pressure was adjusted by
+meansofaback-pressureregulator. Experimentswere
+performed in the 288-393 K temperature range while
+the gas flow rate was held constant at 100 cm3 STP
+min-1 usingamassflowcontroller. Athermocouplein
+contact with the catalyst particles was located in an
+axial position to monitor the reaction temperature. In
+addition the wall temperature was measured.
+Theanalysisofreactantsandproductswasperformed
+byon-linegaschromatographyusingaCarbosieveS-II
+column(1/8in. ×80cm)heldat393K. Freshcatalyst
+samples were pretreated in N2 at 433 K for 8 h before
+feeding the hydrocarbon mixture.
+The reaction mixture was prepared by mixing CP-
+gradehydrocarbonswithhigh-purityhydrogenandCO.
+Table 3 summarizes the gas composition and the main
+operating conditions.
+A commercial catalyst, ICI 38-1, containing 0.04%
+Pd, was used in this study. The main catalyst proper-
+ties are shown in Table 4.
+The effect of increasing temperature on C2H2 and
+C2H4 conversion was investigated in the presence of
+varyingamountsofCOandatotalpressureof1,9,16,
+and 32 atm. In these runs the space velocity was held
+constant. When the conversion of C2H2 was almost
+100%,theheatofreactionproducedasmalltemperature
+differencebetweenthecatalystbedandthereactorwall.
+The maximum C2H4 conversion was about 10-15%. A
+large experimental error was present in this measure-
+mentascomparedwithC 2H2 conversion,duetothehigh
+concentrationofC 2H4 andC2H6 inthefeedmixture.At
+high C2H4 conversion isothermal conditions could not
+be maintained and a large temperature gradient was
+detected by the thermocouples. In some experiments
+the temperature was held constant and the conversion
+was measured as a function of the total pressure.
+The effect of temperature on C2H2 and C2H4 conver-
+sion, at 1 and 9 atm and 800 ppm CO, is shown in
+Figure 1. The initial trend is a large increase in C2H2
+conversionwithinanarrowtemperaturerange,followed
+byamarkeddecreaseintherateofreactionabove90%
+conversion. Inthiscasetheconversionofethylenewas
+observed after the complete elimination of C2H2, with
+atemperaturespanofabout15Kfrom łA )100%to łE
+)1%. ConsequentlythePd/ R-Al2O3 catalyst,underthe
+presentexperimentalconditions,isveryselectiveinthe
+sense that it allows the total elimination of C2H2 with
+minimum C2H4 losses. Increasing the total pressure
+acceleratesbothreactions,andthereforesimilarconver-
+sions are obtained at lower temperatures. However a
+more detailed testing, in the region of high C 2H2
+conversion,indicatesthattheeffectofpressureismore
+marked on the rate of C2H4 hydrogenation. Table 5
+showsthattheconversionofC 2H2,atconstanttemper-
+ature, increases with pressure in the 1-9 atm range
+but remains constant afterward. On the other hand,
+thehydrogenationofC 2H4 reflectsasteadyincreasein
+conversion from 1 to 32 atm. Consequently the tem-
+perature span between complete elimination of C2H2
+andtheonsetofC 2H4 hydrogenationisreducedandthe
+catalyst becomes less selective.
+The effect of CO on activity and selectivity, for
+experimentsperformedat16atm,isshowninTable6.
+Increasing the concentration of CO, from 150 to 1400
+ppm,loweredtheC 2H2 hydrogenationrate,andahigher
+temperature was needed to obtain nearly the same
+conversion. Despitethelargeincreaseintemperature,
+18K,theconversionofC 2H4 decreasedfrom10.85%to
+6.70%. WhentheCOconcentrationwasraisedto5000
+ppm, a further increase in temperature was required
+tomaintainthesameconversionofC 2H2. Howeverthe
+conversionofC 2H4 wasalmostthesame: 6.08%. These
+results indicate that the concentration of CO at>150
+ppm affects the rate of C2H2 and C2H4 hydrogenation
+to the same extent.
+Table 3. Feed Mixture and Operating Conditions for the
+Laboratory Reactor
+components composition(mol% (0.02)
+CH4 6.53
+C2H2 0.52
+C2H4 43.99
+C2H6 26.72
+H2 22.1
+CO 150 -5000ppm
+flowrate 100cm 3 (STP)/min
+massofcatalyst 1 -3g
+pressure 1 -35atm
+temperature 288 -393K
+Table 4. Catalyst Characterization
+support R-Al2O3
+palladiumcontent(wt%) 0.04
+BETsurfacearea(m 2/g) 21
+metaldispersion(H/Pd) 0.15
+apparentdensity(g/cm 3) 1.61
+realdensity(g/cm 3) 3.61
+averageporediameter(Å) 1000
+porevolume(cm 3/g) 0.338
+porosity(%) 54.5
+Figure 1. Acetylene and ethylene conversion as a function of
+temperature.FeedmixtureasgiveninTable3.SV )33cm3 gcat-1
+min-1. CCO ) 800 ppm. Pressure:0, 1 atm;O, 9 atm.
+Table 5. Effect of Pressure on C2H2 and C2H4 Conversion
+(CO Content) 1400 ppm; SV) 100 cm3 STP gcat-1 min-1)
+conversion(%)
+temp(K) 1atm 8atm 16.50atm 32atm
+348 C 2H2 85.54 95.86 95.39 94.13
+C2H4 0.00 0.00 0.00 0.00
+359 C 2H2 94.44 97.75 97.75 96.64
+C2H4 0.00 1.02 1.67 4.50
+368 C 2H2 96.13 98.16 98.02 96.97
+C2H4 0.00 3.12 6.07 14.50
+Table 6. Effect of CO on C2H2 and C2H4 Conversion at
+Constant Pressure (Pressure) 16 atm; SV) 100 cm3 STP
+gcat-1 min-1)
+conversion(%)
+COcontent(ppm) temp(K) C 2H2 C2H4
+150 341 98.31 10.45
+1400 359 98.99 6.70
+5000 393 98.62 6.08
+Ind. Eng. Chem. Res., Vol. 35, No. 5, 19961499
++ +Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​35/​5/​1496/​11753014/​ie950600k.​pdf by TU DELFT user on 24 October 2026
+
+
+--- PAGE 5 ---
+Reactor Models
+Inordertoprocesstheexperimentaldata,asuitable
+reactor model must be used. As a first approximation,
+a perfectly mixed flow reactor was considered (model
+I). Although this model is not appropriate to describe
+our laboratory setup, it has been chosen in an attempt
+toevaluatealargenumberofkineticequationswithout
+considerablecomputingeffort. Thebasicmassbalance
+equations were written as
+where i refers to C2H2 and C2H4. They can be readily
+coupled to the rate models given in Table 2 to relate
+the fractional conversionłi to the kinetic parameters.
+Therefore a set of nonlinear algebraic equations was
+obtained. Using experimental w/Fi and T values as
+independent variables and assuming tentative kinetic
+constants, the conversion ( 〈łi〉) was estimated and
+compared with the measured values (łi).
+The second reactor model (model II) was assumed to
+benonisothermal,isobaricwithaplugflowpattern,and
+pseudohomogeneous. Inthiscasethemassandenergy
+balancedefinedasetofnonlinearordinarydifferential
+equations coupled through the rate modelri:
+The overall heat transfer coefficientU was defined
+as follows:
+In this equation the heat transfer coefficienthtakes
+into account the total resistance to heat flow in the
+radial direction and it is given by the Crider and Foss
+equations (Crider and Foss, 1965).
+wherehw istheheattransfercoefficientatthetubewall.
+The radial effective thermal conductivitykref was ob-
+tainedfromtheDixonandCresswellcorrelation(Dixon
+and Cresswell, 1979)
+wherekrf andkrs aretheradialconductivitiesofthefluid
+and the solid, respectively. The effective conductivity
+depends also on the fluid/wall (hwf) and the fluid/solid
+(hfs)heattransfercoefficients. Suitablecorrelationsfor
+these coefficients are found in the previous reference.
+The previous equations constitute an initial value
+problem that has been solved by means of a Runge-
+Kuttamethod. Inthisway,theC 2H2 andC2H4 conver-
+sions (〈łi〉) at the reactor outlet are obtained.
+Amorecomplexreactormodel(modelIII)emergesif
+one assumes the existence of temperature and concen-
+tration gradients in the gas phase region adjacent to
+the catalyst particles. ThereforeT * Ts and Ci * Csi.
+Thissituationislikelytooccurinthelaboratoryreactor
+due to the low gas velocity over the catalyst particles.
+Understeady-stateconditionstherateofmasstrans-
+portofareactant( i)throughthegasphasefilmisequal
+to the observable surface reaction rate (rsi):
+Introducing the external effectiveness factorηi,
+where rio is the maximum rate or reaction obtained
+whenCsi )Ci. In addition the Damkohler numberDio
+is defined as the ratio of the maximum surface rate to
+the maximum mass transport rate:
+Following the treatment of Carberry (Carberry, 1976)
+eqs 13 and 14 can be related to define a dimensionless
+observable quantity:
+Combiningeqs12and15,adimensionlessconcentra-
+tionintermsofanobservablequantitymaybeobtained:
+For C2H2,
+Taking into account that ethylene is a product and
+also a reactant, the concentration on the gas-solid
+interphase is given by
+Ontheotherhand,theH 2 concentrationisrelatedto
+the consumption of both C2H2 and C2H4:
+Under steady-state, nonisothermal conditions, the
+surface temperature could be related to the bulk gas
+phase temperature through an energy balance on the
+catalyst particles.
+Dividing this equation by (kmHamT) and recalling the
+jD ) jH heat and mass transfer analogy,
+rsi )kmiam(Ci -Csi) (12)
+rsi ) ηirio (13)
+Dio )rio/(kmiamCi) (14)
+ηiDio )rsi/(kmiamCi) (15)
+C*i )Csi/Ci )1 - ηiDio
+C*A )CsA/CA )1 - ηADAo (16)
+C*E )1 - ηEDEo + ηADAokmACA/(kmECE) (17)
+C*H )1 - ηADAokmACA/(kmHCH) -
+ηEDEokmECE/(kmHCH) (18)
+hfsam(Ts -T) )(-∆HA)(-rA) +(-∆HE)(-rE) (19)
+Fcp(Sc/Pr)2/3(T* -1) )(-∆HA)(-rA)/(kmHamT) +
+(-∆HE)(-rE)/(kmHamT)
+T* )1 +[(-∆HA)(-rA)/(kmHamTFcp)](Pr/Sc)2/3 +
+[(-∆HE)(-rE)/(kmHamTFcp)](Pr/Sc)2/3 (20)
+w
+Fi
+)
+łi
+ri
+(5)
+d(vCi)
+dz )(-ri)Fcat (6)
+cp
+dT
+dz
+)Fcat ∑
+i
+(-∆Hi)(-ri) -4U(T -Tw) (7)
+U ) (
+1
+hA +
+ln(dto/dt)
+2FkwA )
+-1
+(8)
+1/h )1/hw +dt/6kref (9)
+hw )3krefRe-0.25/dt (10)
+kref )krf +krs
+[
+1 +(8krf/hwfdt)
+1 +
+(16/3krs)(
+1
+hfsdp
++0.1
+kp )
+(1 -ϵ)(dt/dp)2 ]
+(11)
+1500 Ind. Eng. Chem. Res., Vol. 35, No. 5, 1996
++ +Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​35/​5/​1496/​11753014/​ie950600k.​pdf by TU DELFT user on 24 October 2026
+
+
+--- PAGE 6 ---
+Using eq 15 the dimensionless temperature may be
+written
+where
+Thetemperaturedependenceoftherateconstant ki and
+the adsorption equilibrium constantKi may also be
+written in a dimensionless form:
+where:
+Tointegrateeqs6and7foragivenaxialcoordinate,
+eqs16 -22mustbesolvedtofindtheconcentrationsand
+temperature at the catalyst surface. Consequently, a
+system of coupled nonlinear differential and algebraic
+equations has to be solved. In this work, the ordinary
+differentialequationswereintegratedwiththeRunge -
+Kutta-Gill method and the algebraic equations were
+solvedusingaquasi-Newtonalgorithm,wherethefirst
+Jacobianwasnumericallyevaluatedandthenupdated
+by means of Broyden’s method (Paloschi and Perkins,
+1988)ateachiterationstep. Thustheoverallcomputing
+time was greatly reduced.
+A nonlinear regression routine based on the Mar-
+quardtalgorithmwasusedforthethreereactormodels
+described above to adjust the kinetic parameters cor-
+responding to the rate models given in Table 2. The
+objective function to be minimized was defined as
+Inthemodelsdiscussedabovewehaveneglectedthe
+presenceofinternaldiffusionlimitations. Thissimpli-
+fyingassumptionwasbasedonthefactthattheaverage
+pore diameter of the catalyst pellets was quite large,
+1000 Å. However, due to the high hydrogenation rate
+and the homogeneous distribution of Pd in the pellet,
+internal concentration gradients may be present. In
+order to check for the absence of intrapellet diffusion
+limitations,weselectedthecriterionofWeiszandPrater
+(Froment and Bischoff, 1990) which in turn requires a
+measured value of the rate of reaction. Consequently
+application of this criterion was performed after ad-
+equatekineticequationswereavailabletocalculatethe
+rates of C2H2 and C2H4 hydrogenation at different
+conversion levels.
+Results and Discussion
+Determination of Kinetic Constants and Model
+Discrimination. The process parameters were con-
+sidered as independent or input variables to be intro-
+duced as data in the mathematical models. On the
+other hand, the measured conversion values were the
+dependentvariablestobecomparedwiththetheoretical
+predictions. From this comparison the regression rou-
+tine estimates the kinetic parameters. The rate equa-
+tions of Table 2 were first included in model I. The
+calculationstartswithaninitialguessforeachparam-
+eter, and it continues until the variance analysis
+indicatesthatareasonableagreementbetweenexperi-
+mental and calculated conversions has been found. A
+set of 163 experimental points was used for these
+estimations.
+For the more complex reactor models, the procedure
+describedaboveusesalargecomputingtimeduetothe
+fact that the calculated conversion is obtained by
+numerical integration of differential equations. In
+addition each step of the regression routine requires
+about2600 -3200simulationstoevaluatetheJacobian.
+In order to reduce computing time, a shortcut method
+wasadopted,basedonsequentialdiscrimination,sothat
+manyratemodelswereeliminatedearlyintheprocess
+usingmodelI,whereonlyonealgebraicequationneeds
+tobesolved. Asetofparameterswasestimatedforeach
+rate equation. The variance of the experimental and
+calculated conversion values provided a convenient
+methodtoanalyzethequalityofthisfittingprocedure.
+Inadditionthediscriminationbetweenthedifferentrate
+equationswasdoneonthebasisofnegativeparameters
+or unexpected trends in the conversion versus temper-
+ature curves. In this way 11 rate models were elimi-
+nated, as shown in Table 7.
+Inthefollowingstagetheremainingkineticequations
+were processed with the same regression routine but
+usingmodelII. Theparametersderivedintheprevious
+stage were now used as initial values. One kinetic
+modelwaseliminatedwhenthediscriminationcriterion
+was applied. Finally the parameters determined with
+model II were adopted as initial values to fit the
+experimentaldatawithmodelIII. Thereforetheadopted
+procedureusesasimplereactormodelwhenthesolution
+is a long way off, and the more realistic but time-
+consuming models were applied when few iterations
+were needed.
+The Kinetic Equations. The best fit with the
+experimentaldatawasprovidedbytheratemodel r2,35
+that assumes the adsorption of C2H2,C 2H4, and H2 on
+thesametypeofsitesandthesimultaneousadditionof
+two hydrogen atoms to the absorbed hydrocarbons as
+determiningsteps. Table8presentstheselectedkinetic
+expressions and the parameter values obtained by
+minimization of the sum of residual squares. Upon
+examination these equations reveal some interesting
+features. First it is observed that the hydrocarbon
+adsorptionconstants KE,KET,and KA haveanegligible
+effect on the rates and consequently the kinetic equa-
+tions can be simplified to
+It is observed that the rate of C2H4 hydrogenation
+does not depend on the concentration of C 2H2 as
+previously reported by Margitfalvy et al. (1981). The
+explanation may be found in the presence of CO. As
+pointed out by Bos and Westerterp (1993a), CO may
+suppress the influence of C2H2 in C2H4 hydrogenation.
+Another surprising feature is the positive values for
+the adsorption energy on the CO and H2 constants
+which indicates that they will increase with tempera-
+ture. It is reasonable to expect that the adsorption
+termsdecreasewithtemperatureduetotheexothermic
+characteroftheadsorptionprocesses. Thisanomalous
+T* )1 + âAηADAo + âEηEDEo (21)
+âi )[(-∆Hi)(kmiCi)/(kmHTFcp)](Pr/Sc)2/3 i )A,E
+k*i )ksi/ki (orK*i )Ksi/Ki) )exp(-E*i (1/T* -1))
+(22)
+E*i )Ei/RT
+φ ) ∑
+i
+[łi - 〈łi〉]2 (23)
+-rA )
+kACACH
+[1 +(KHCH)1/2 +KCOCCO]3 (24)
+-rE )
+kECECH
+[1 +(KHCH)1/2 +KCOCCO]3 (25)
+Ind. Eng. Chem. Res., Vol. 35, No. 5, 19961501
++ +Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​35/​5/​1496/​11753014/​ie950600k.​pdf by TU DELFT user on 24 October 2026
+
+
+--- PAGE 7 ---
+result may be due to data error, inadequate selection
+ofexperimentalconditions,ordataanalysis. Problems
+of this kind are often encountered on rate modeling as
+discussedbyDoraiswamyandSharma(1984). Inspite
+of this difficulty the hydrogenation rates predicted by
+ourmodelsexhibitanormalArrheniusbehaviorbecause
+theeffectoftemperatureontheadsorptionparameters
+is overcompensated by the large activation energy on
+the rate constantskA and kE.
+Equations24and25andthoseofmodelIIIwereused
+inthesimulationofanadiabaticreactortoobservethe
+predictedrateversustemperatureprofiles,asshownin
+Figure 2. The rate of C2H2 hydrogenation is initially
+larger than that of C2H4, as expected. As the reaction
+proceeds, the decrease in C2H2 concentration is com-
+pensatedbytheincreaseintemperature,sotherateis
+nearly constant in the 325-340 K temperature range.
+EventuallythedecreaseinC 2H2 becomessoimportant
+that the rate falls below that of C2H4, so at high
+conversion values there is a marked decrease in selec-
+tivity.
+It should be noted that our kinetic equations do not
+predict a change in selectivity with the CO content
+because therA/rE ratio depends only on the concentra-
+tionofC 2H2 andC2H4. Inotherwords,thepresenceof
+CO seems to affect the rate of C2H2 and C2H4 hydroge-
+nationtothesameextent,inaccordancewiththeresults
+of Table 6. As the concentration of CO increases, a
+highertemperatureisrequiredtoobtainagivenconver-
+sion of C2H2, but the conversion of C2H4 remains the
+same. TheeffectofCOmaybeexplainedbyassuming
+that it limits the amount of adsorbed H2 in accordance
+with kinetic models based on the adsorption of H2 and
+CO on the same type of sites. However it is important
+tostressthatthepresenceofaminimumlevelofCOis
+essential to avoid the uncontrolled hydrogenation of
+C2H4.
+As mentioned by one reviewer, there is evidence of
+adsorptionofacetyleneandethyleneonseparatesites,
+which may suggest additional hydrogenation mecha-
+nisms. Weareawareofseveralstudiesthatpostulated
+different sites for acetylene and ethylene hydrogena-
+tiona(All-AmmarandWebb,1978;McGownetal.,1978;
+Leviness et al., 1984). Therefore a reaction scheme
+basedonatwo-sitemechanismcouldhavebeenincluded
+in Table 1. However this model would lead to more
+complex kinetic equations as shown by Gva and Kuo
+(1988),increasingthenumberofadjustableparameters.
+In addition, our experimental results indicate that the
+presenceofCOpreventsthehydrogenationofethylene
+up to a very high level of acetylene conversion, as
+observed in Figure 1. Consequently, a two-site mech-
+anismthatmayberelevantunderdifferentexperimen-
+tal conditions was not used here to obtain additional
+kinetic equations.
+Quite recently Bos et al. (1993b) used rate models
+from previous studies (Men’shchikov et al., 1975; Gva
+and Kuo, 1988) to correlate kinetic data obtained with
+atypicaltail-endhydrogenationmixture. Theoriginal
+equations were based on the assumption that the
+hydrogenation of C2H2 and C2H4 proceeds on different
+types of sites, and they were properly modified to take
+into account the effect of CO. In this case the temper-
+aturedependenceoftheadsorptiontermswasaccording
+to expectations; that is they decrease with an increase
+Table 7. Discrimination Sequence for the Kinetic Models of Table 2
+modelI modelII modelIII
+rii
+selection
+procedure variance
+selection
+procedure variance
+selection
+procedure variance
+r2,14 )r7,15 a 0.366E-1
+r1,36 b 0.481E-2 c 0.307E-2
+r1,47 a 0.402E-2
+r2,35 b 0.487E-2 b 0.270E-2 b 0.229E-2
+r3,13 )r4,14 c 0.319
+r3,24 a 0.127E-1
+r4,35 a 0.426E-1
+r5,15 c 0.838E-2
+r5,36 a 0.662E-2
+r5,47 a 0.211E-1
+r6,16 )r1,15 a 0.592E-2
+r6,35/79 a 0.779E-2
+r6,45/89 a 0.340E-2
+r7,34/67 b 0.273E-2 b 0.239E-2 c 0.819E-2
+aAdjusted by regression.b Rejected becauseEact < 0.bc Rejected because of high variance.
+Table 8. Selected Rate Equation and Kinetic
+Parameters for C2H2 and C2H4 Hydrogenation
+kineticparameters log Ai E(kcal/gmol)
+kA (m6/(sgcat kmol)) 31.1 45.51
+kE (m6/(sgcat kmol)) 26.6 42.94
+KH (m3/kmol) 20.2 21.22
+KCO (m3/kmol) 13.6 9.95
+KE (m3/kmol) 0.26 0.005
+KEt (m3/kmol) -0.012 0.001
+KA (m3/kmol) -16 0.001
+-rA )
+kACACH
+[1 +(KHCH)1/2 +KACA +KECE +KEtCEt +KCOCCO]3
+-rE )
+kECECH
+[1 +(KHCH)1/2 +KACA +KECE +KEtCEt +KCOCCO]3
+wherekA )k3St3KAKH andkE )k5St3KAKH
+Figure 2. Acetylene and ethylene hydrogenation rate vs tem-
+perature for an adiabatic reactor. Kinetic equations of Table 8.
+Feed mixture as given in Table 3.T0 )325 K,P )16.3 atm;CCO
+) 1400 ppm.
+1502 Ind. Eng. Chem. Res., Vol. 35, No. 5, 1996
++ +Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​35/​5/​1496/​11753014/​ie950600k.​pdf by TU DELFT user on 24 October 2026
+
+
+--- PAGE 8 ---
+in temperature. The equations of Bos et al. predict a
+larger difference between acetylene and ethylene hy-
+drogenation rates due to the reduced partial pressure
+of hydrogen. They also found that the addition of CO
+in the 0-60 ppm range does not have the same effect
+on C2H2 and C2H4 hydrogenation. The experimental
+conditions were certainly different from those of the
+present study, and this situation precludes a better
+comparison of results. Most of the kinetic studies
+publishedtodatearerelatedtotail-endhydrogenation
+processes where low concentrations of CO and H2 are
+used.
+Finally we need to mention that the absence of pore
+diffusionlimitationsinthelaboratoryexperimentswas
+verified using the Weisz-Prater criterion:
+where the observable rate (-rA)obs was calculated from
+eq 24 at different conversion levels. Only atłA > 90%
+does theΦ module become greater than 1, due mainly
+to the low value ofCsA. For C2H4 hydrogenation the
+criterionisalwayssatisfiedbecause -rE <-rA andthe
+conversion is less than 10-15%.
+Comparison of Reactor Model III with Experi-
+mentalData. Computersimulationsofthelaboratory
+reactor, using model III and the kinetic equations of
+Table 8, are presented in Figures 3 and 4 where the
+conversion and the axial temperature are plotted as a
+function of the bed length. The predicted C2H2 and
+C2H4 conversions at the reactor end are in good agree-
+mentwiththeexperimentalresults. Ontheotherhand,
+thetemperatureprofilesshowthepresenceofahotspot
+nearthereactorentrance. Asharpriseintemperature
+profiles is followed by a slow decrease along the axial
+coordinate. Thetemperatureovershootdependsonthe
+feed-reactorwalltemperature: at325K,withaconver-
+sion of 70.7% it is about 1.5 K. Increasing the inlet
+temperature to 345 K, the C2H2 conversion was close
+to 98% and the temperature overshoot exceeded 3 K.
+Thesimulationsalsoindicatethatatemperaturegradi-
+entofabout0.5K,betweentheexitgasandthereactor
+wall, should be expected. As mentioned in the Experi-
+mentalSection,temperaturedifferencesofthismagni-
+tude were observed in our runs, which shows the
+convenience of using a nonisothermal model to fit the
+experimental data.
+As described above, reactor model III takes into
+accountthepresenceoftemperatureandconcentration
+differences between the catalyst particle and the gas
+phase. The calculated concentration gradients were
+found to be negligible for all runs. On the other hand,
+the ∆T ) Ts - T values were found to depend on the
+gas phase temperature which in turn is related to the
+rate of reaction. At the reactor entrance, in the hot-
+spot region, large temperature gradients between the
+gasphaseandthecatalystparticleswerecalculated.In
+Figure 3, at 326 K the∆T value was about 8 K. It
+increased to nearly 20 K when the gas phase temper-
+ature overshot to 348 K, as was the case in Figure 4.
+These results confirm the suitability of reactor model
+III to treat the laboratory data in order to obtain the
+kinetic parameters.
+IndustrialReactorSimulation. Inordertocheck
+the validity of our kinetic equations to predict conver-
+sionandtemperatureprofiles,anattemptwasmadeto
+simulate the operation of an industrial acetylene hy-
+drogenationreactor. Theprocessschemeconsistsofan
+ethane cracker followed by three adiabatic reactors in
+series in a typical front-end hydrogenation configura-
+tion. The simulation was restricted to the first unit.
+The reactor has a diameter of 170 cm and a length of
+180cm,withacatalystmassof4290kg. Atypicalfeed
+mixtureconsistsof4.30wt%H 2,32.94wt%C 2H6,51.96
+w t%C2H4, 0.48 wt % C2H2, 5.33 wt % CH4, 0.08 wt %
+C3H4, 1.37 wt % C3H6, 1.67 wt % C4H6, and 0.04 wt %
+CO as main components. The flow rate was about
+57900kg/h,thetotalpressurewas35atm,andtheinlet
+temperaturewas342.5K. Thepressuredropwasquite
+negligible. These conditions allow us to simulate the
+reactorwithaplugflow,pseudohomogeneous,isobaric,
+andadiabaticmodel. Thehighflowvelocityeliminates
+theneedforexternalmasstransportconsiderations,and
+the absence of internal concentration gradients was
+alreadydemonstratedusingthelaboratoryreactordata.
+Consequentlytheindustrialreactorcanbedescribedby
+eq 6 and a simplified form of eq 7:
+ThesimulationresultsarepresentedinFigures5and
+6. The predicted conversion of C2H2 is close to 100%,
+butthemeasuredvalueintheplantreactorwasaround
+77%. In addition the actual C2H4 loss was lower than
+expected. On the other hand, an exit temperature of
+364.5Kwascalculated,whichisclosetothemeasured
+value of 363.2 K. The pronounced disagreement be-
+Figure3. Calculatedconversionandtemperatureprofilesforthe
+laboratoryreactorusingreactormodelIIIandtherateequations
+ofTable8.FeedmixtureasgiveninTable3 T0 )325K; P )16.3
+atm; CCO ) 1400 ppm.9, Experimental data.
+Figure4. Calculatedconversionandtemperatureprofileforthe
+laboratoryreactorusingreactormodelIIIandtherateequations
+of Table 8. Feed mixture as given in Table 3,T0 ) 345 K;P )
+16.3 atm.;CCO ) 1400 ppm.9, Experimental data.
+Φ )
+(-rA)obsFcatdp
+2
+DeACsA
+<1 (26)
+d(vCi)
+dz )(-ri)Fcat (6)
+cp
+dT
+dz
+)Fcat ∑
+i
+(-∆Hi)(-ri)( 7 ′)
+Ind. Eng. Chem. Res., Vol. 35, No. 5, 19961503
++ +Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​35/​5/​1496/​11753014/​ie950600k.​pdf by TU DELFT user on 24 October 2026
+
+
+--- PAGE 9 ---
+tween the estimated and measured conversion values
+and the approximate temperature profile is due to the
+large concentration of 1,3-C4H6 in the feed mixture.
+Industrial practice indicates that the hydrogenation of
+1,3-C4H6 takes place simultaneously with C2H2 hydro-
+genation. Theconversionof1,3-C 4H6 fortheoperating
+conditions mentioned above was around 44%, and this
+reaction limits the activity for C2H2 hydrogenation.
+The good agreement between the predicted and
+measured temperature profiles is due to compensation
+of the heat of reaction of unconverted C2H2 by that
+produced in the hydrogenation of 1,3-C4H6. A certain
+degree of catalyst deactivation, due to green oil forma-
+tion, may also have altered the results. A suitable
+equation for the rate of 1,3-C4H6 hydrogenation must
+bedevelopedinordertopredicttheobservedconversion
+values in the industrial reactor. As an alternative, we
+have developed an empirical model for butadiene and
+propylene + methylacetylene hydrogenation, based on
+industrial data. By including these equations in the
+mathematical model of the industrial reactor and also
+addingadeactivationparameter,agoodcorrespondence
+between the steady state experimental data and simu-
+lation results was obtained (Schbib et al., 1994).
+Conclusions
+Rate equations for C2H2 and C2H4 hydrogenation on
+a commercial Pd/R-Al2O3 catalyst have been obtained
+for reaction conditions similar to those of a front-end
+hydrogenationprocess. Experimentaldataasafunction
+oftemperature,pressure,andCOcontentwereobtained
+inalaboratoryreactorcoveringawideC 2H2 conversion
+range. To our knowledge, kinetic studies of this kind
+havenotbeenreportedintheopenliterature. Therate
+equationsreflect(i)thattherateofC 2H2 hydrogenation
+exceeds that of C2H4 hydrogenation up to a high level
+of conversion and (ii) that the presence of CO is a
+necessary condition to avoid a runaway situation but
+theselectivityisnotdependentontheCOconcentration.
+Computer simulation of the laboratory reactor using
+a nonisothermal model that accounts for interfacial
+gradients provides a good correlation of experimental
+data and indicates the existence of a temperature
+overshootnearthereactorentrance. Wewerenotable
+to reproduce the conversion profile of an industrial
+adiabatic converter due to the presence of a large
+amount of 1,3-C4H6 in the cracked gas mixture.
+Nomenclature
+A ) heat transfer area per unit length of the reactor, m2
+Ai ) preexponential factor in Arrhenius expression,
+moln-1/(m3(n-1) s)
+am ) specific interfacial surface area
+Ci )concentrationof ithcomponentinthegasphase,mol/
+m3
+C*i ) dimensionless concentration,Csi/Ci
+Csi ) surface concentration of componenti, mol/m3
+cp ) average heat capacity, J/(mol K)
+De ) effective diffusivity
+Dio ) Damkohler number
+dp ) pellet diameter, m
+dt ) inside diameter of tube, m
+dto ) outside diameter of tube, m
+Ei ) activation energy of the componenti, J/mol
+Fi ) molar flow rate of componenti, mol/s
+(-∆H)i ) heat of reaction, J/mol
+h ) heat transfer coefficient, J/(m2 Ks )
+hw ) wall heat transfer coefficient, J/(m2 Ks )
+hwf ) wall/fluid heat transfer coefficient, J/(m2 Ks )
+hfs ) fluid/solid heat transfer coefficient, J/(m2 Ks )
+ki ) Arrhenius type rate constant of componenti
+Ki ) equilibrium constant of componenti
+kmi ) mass transfer coefficient, m/s
+kp ) pellet conductivity, J/(m K s)
+kref ) radial effective conductivity, J/(m K s)
+krf ) radial conductivity of the fluid, J/(m K s)
+krs ) radial conductivity of the solid, J/(m K s)
+ksi ) Arrhenius type rate constant of componenti at the
+surface
+KSi ) equilibrium constant of componenti at the surface
+kw ) wall conductivity, J/(m K s)
+Pr ) Prandt number
+Re ) Reynolds number
+ri ) rate of reaction of componenti, mol/(kgcat s)
+[S] ) concentration of unoccupied sites
+Sc ) Schmidt number
+[St] ) concentration of free and occupied sities
+SV ) space velocity, cm3 STP gcat-1 min-1
+T ) temperature in the gas phase, K
+T* ) dimensionless temperature of the fluid,TS/T
+Ts ) surface temperature, K
+Tw ) wall temperature
+U ) overall heat transfer coefficient, J/(m2 Ks )
+v ) average velocity of the fluid through the bed, m/s
+w ) mass of catalyst, kg
+yi ) molar fraction of componenti
+z ) reactor length coordinate, m
+Greek Letters
+ϵ ) void fraction of packed bed
+F) fluid density, kg/m3
+Fcat ) apparent catalyst density
+łi ) experimental conversion of componenti
+〈łi〉) calculated conversion of componenti
+ηi ) effectiveness factor of componenti
+Figure 5. Simulation of an industrial reactor. Acetylene and
+ethyleneconversionaxialprofilesforamodelIIadiabaticreactor.
+9,C 2H2 conversion; O,C 2H4 conversion.
+Figure 6. Simulation of an industrial reactor. Computed and
+measured temperature profiles.9, Plant data.
+1504 Ind. Eng. Chem. Res., Vol. 35, No. 5, 1996
++ +Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​35/​5/​1496/​11753014/​ie950600k.​pdf by TU DELFT user on 24 October 2026
+
+
+--- PAGE 10 ---
+Subscripts
+A ) acetylene
+CO ) carbon monoxide
+E ) ethylene
+Et ) ethane
+H ) hydrogen
+Literature Cited
+Adu´riz, H. R.; Bodnariuk, P.; Dennehy, M.; Gı´gola, C. E. Activity
+and Selectivity of Pd/R Al2O3 for Ethyne Hydrogenation in a
+Large Excess of Ethene and Hydrogen.Appl. Catal.1990, 58,
+227.
+All-Ammar Asad S.; Webb, G. Hydrogenation of Acetylene over
+Supported Metal Catalysts, Part 1.J. Chem. Soc., Faraday
+Trans. 1978, 74, 195.
+Battiston,G.C.;Dallaro,L.;Tauszik,G.R.PerformanceandAging
+of Catalysts for the Selective Hydrogenation of Acetylene: A
+Micro pilot-plant study.Appl. Catal. 1982, 2,1 .
+Bos, A. N. R.; Westerterp, K. R. Mechanism and kinetics of the
+selective hydrogenation of ethyne and ethene. Chem. Eng.
+Process. 1993a, 32,1 .
+Bos, A. N. R.; Bootsma, E. S.; Foeth, F.; Sleyster, H. W. J.;
+Westerterp,K.R.Akineticstudyofthehydrogenationofethyne
+and ethene on a commercial Pd/Al2O3 catalyst. Chem. Eng.
+Process. 1993b, 32, 53.
+Carberry, J. J. Chemical and Catalytic Reaction Engineering;
+McGraw-Hill: New York, 1976.
+Crider,J.E.;Foss,A.S.EffectiveWallHeatTransferCoefficients
+and Thermal Resistances in Mathematical Models of packed
+Beds. AIChE J.1965, 11 (6), 1012.
+Derrien,M.L.In CatalyticHydrogenation; Cerveny,Ed.;Studies
+in Surface Science and Catalysis, 27; Elsevier: Amsterdam,
+1986.
+Dixon, A. G.; Cresswell, D. L. Theoretical Prediction of Effective
+HeatTransferParametersinPackedBeds. AIChEJ.1979,25
+(4), 663.
+Doraiswamy, L. K.; Sharma, M. M. Heterogeneous Reactions:
+Analysis, Examples and Reactor Design; John Wiley & Sons:
+New York, 1984.
+Froment, G. F.; Bischoff, K. B.Chemical Reactor Analysis and
+Design; Wiley & Sons, Inc.: New York, 1990.
+Gva, L. Z.; Kho, K. E. Kinetics of acetylene hydrogenation on
+palladiumdepositedonalumina. Kinet.Catal.1988,29(2),381.
+Lam, W. L; Lloyd, L.; Catalyst aids Selective Hydrogenation of
+Acetylene. Oil Gas J. 1972, March 27, 66.
+Leviness, S.; Nair, V.; Weiss, A. H. Acetylene Hydrogenation
+Selectivity Control on PdCu/Al2O3 Catalysts. J. Mol. Catal.
+1984, 25, 131.
+Margitfalvi,J.;GucziL.;Weiss,A.H.ReactionofAcetyleneduring
+Hydrogenation on Pd Black Catalyst.J. Catal.1981, 72, 185.
+McGown, W. T.; Kemball, C.; Whan, D. A. Hydrogenation of
+Acetylene in Excess of Ethylene on an Alumina-Supported
+Palladium Catalyst at Atmospheric Pressure in a Spinning
+Basket Reactor.J. Catal. 1978, 51, 173.
+Men’shchikov,V.A.;Fal’kovich,Yu.G.;Ae´rov,M.E.Hydrogenation
+Kinetics of Acetylene on a Palladium Catalyst in the Presence
+of Ethylene.Kinet. Catal. 1975, 16, 1335.
+Moses, J. M.; Weiss, A. H.; Matusek, K.; Guczi, L. The effect of
+CatalystTreatmentontheSelectiveHydrogenationofAcetylene
+over Palladium/Alumina.J. Catal. 1984, 86, 417.
+Paloschi, J. R.; Perkins, J. D. An Implementation of Quasi
+Newtonian Methods for Solving Sets of Nonlinear Equations.
+Comp. Chem. Eng. 1988, 12 (8), 767.
+Park,Y.H.;Price,G.L.DeuteriumTracerStudyontheEffectof
+CO on the Selective Hydrogenation of Acetylene on Pd/Al2O3.
+Ind. Eng. Chem. Res. 1991, 30, 1693.
+Sarkany, A., Weiss, A. H.; Guczi, L. Structure Sensitivity of
+Acetylene-EthyleneHydrogenationoverPdCatalysts. J.Catal.
+1986, 98, 550.
+Schbib, N. S.; Errazu, A. F.; Romagnoli, J. A.; Porras, J. A.
+Dynamics and Control of an Industrial Front-End Acetylene
+Converter. Comput. Chem. Eng. 1994, 18, S355.
+Schuit,G.A.;VanReijen,L.L.TheStructureandactivityofmetal-
+on-silica Catalysts.Adv. Catal.1958, 10, 242.
+Weiss,A.H.;LeViness,S.;Nair,V.;Guczi,L.;Sarkany,A.;Schay,
+A. The Effect of Pd Dispersion in Acetylene Selective Hydro-
+genation. Proc. Int. Congr. Catal. Dechema1984, 8th, 591.
+Received for reviewSeptember 27, 1995
+Accepted January 19, 1996X
+IE950600K
+X Abstractpublishedin AdvanceACSAbstracts, March15,
+1996.
+Ind. Eng. Chem. Res., Vol. 35, No. 5, 19961505
++ +Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​35/​5/​1496/​11753014/​ie950600k.​pdf by TU DELFT user on 24 October 2026

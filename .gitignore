@@ -1,0 +1,24 @@
+# Python & Jupyter
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.ipynb_checkpoints/
+
+# Environments & virtualenvs
+.venv/
+env/
+venv/
+ENV/
+
+# Scratch & throwaway artifacts
+scratch/
+*.tmp
+*.log
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+

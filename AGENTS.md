@@ -53,6 +53,20 @@ When authoring scientific prose, proposals, documentation, or commit messages:
 
 ---
 
+## 2a. Guided science, map, and notebook routing
+
+For multi-turn owner-led scientific theory discussions, read
+[`bep-guided-science-loop`](.agents/skills/bep-guided-science-loop/SKILL.md).
+Use `bep-map-edit-review` for exact node approval and scientific stages,
+`reversible-change-review` for scoped persistence, and `session-handoff`
+for recovery. The personal map evolves **during** the discussion; code
+in `notebooks/unified_dynamic_reactor.ipynb` follows only a chosen
+implementation decision. Do not force frontend/backlog cleanup first.
+[Backend acceptance contract](research/workflows/bep_conversational_map_backend.md)
+is documentation, **not** an operational writeback claim.
+
+---
+
 ## 3. Python Execution & Environment (Rule 19)
 
 - **Environment-aware, not Conda-only:** Identify the actual OS, working directory, available `python`/`python3` and `conda`, and project dependency files *before* choosing an interpreter. The owner's **local Windows** default is the existing global Conda base **when installed and usable**; a remote Linux/cloud agent is **not required** to have Conda or access to OneDrive. Missing `conda` alone is **not** a reason to mark numerical work BLOCKED.
@@ -133,4 +147,17 @@ When authoring scientific prose, proposals, documentation, or commit messages:
 
 - **English by default:** All code, docstrings, mathematical derivations, commit messages, agent documentation, and scientific thesis text are strictly in **English**.
 - **Dutch strictly for Dutch institutional correspondence:** Dutch is permitted exclusively when drafting formal correspondence directed to Dutch university contacts (e.g., Board of Examiners / Examencommissie, TU Delft departmental coordinators) as appropriate.
+## 8. Proactive close-the-loop rule for BEP implementation
+
+When asked to *make the guided science workflow usable*, the agent
+must keep moving beyond documentation. Read
+[`BEP execution handoff`](research/workflows/BEP_EXECUTION_HANDOFF_2026_10_29.md),
+pick the smallest authorized engineering step, implement it, run
+acceptance tests, inspect changes, and repeat or report a real blocker.
+A new skill, issue, plan or PR description is **not** a tested backend.
+
+Ask the owner only for a specific scientific/model/approval decision or
+a protected external/destructive action. Do not turn ordinary
+engineering prioritization back into a question, and do not alter
+personal scientific meaning without exact approval.
 

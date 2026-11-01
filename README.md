@@ -26,3 +26,8 @@ This is a **research workspace**, not a validated, ready-to-run final thesis mod
 The [V3 Damian handoff](research/specs/v3/DAMIAN_HANDOFF.md) is a historical **draft for owner review**, not a sent communication or a statement of approval. No fresh model execution or scientific verification is claimed by this README update.
 
 For deeper project navigation use the [research index](research/README.md) and [model structure notes](Structure.md). Agent/mapping workflows live under `.agents/` and are not prerequisite reading for reviewing a scientific notebook.
+
+
+## Optional branches and personal knowledge map
+
+The [branch guide](research/SUPERVISOR_BRANCH_GUIDE.md) explains what is in this curated \`main\` workspace and links to the **separate personal knowledge tree and read-only local viewer**, optional AI reference maps, source-specific benchmark branches and historical archives. These branches are available for inspection, **not** merged wholesale or claimed as validated scientific progress. Start with the notebooks and limitations above; explore a separate branch only if a specific question requires it.

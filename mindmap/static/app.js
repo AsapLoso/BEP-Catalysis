@@ -1047,7 +1047,10 @@
     if (nodeTarget) {
       const nodeId = nodeTarget.getAttribute("data-id");
       const node = rawNodes.find((n) => n.id === nodeId);
-      if (node) showDrawer(node);
+      if (node) {
+        if (collapsedNodes.has(node.id)) collapsedNodes.delete(node.id);
+        showDrawer(node);
+      }
       return;
     }
 

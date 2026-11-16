@@ -189,6 +189,17 @@ class MindMapRequestHandler(BaseHTTPRequestHandler):
                     )
                     return
                 res = load_owner_map_snapshot(**OWNER_SNAPSHOT_OPTIONS)
+            elif mode == "ai":
+                import yaml
+                ref_path = OWNER_SNAPSHOT_OPTIONS.get("reference_path")
+                if ref_path and Path(ref_path).exists():
+                    ref_data = yaml.safe_load(Path(ref_path).read_text(encoding="utf-8")) or {}
+                else:
+                    ref_data = {"nodes": []}
+                res = {
+                    "nodes": ref_data.get("nodes", []) if isinstance(ref_data, dict) else [],
+                    "dataset": ref_data.get("dataset", {}) if isinstance(ref_data, dict) else {},
+                }
             elif mode == "canonical":
                 m = load_map(CANONICAL_PATH)
                 res = m.model_dump(mode="json")
@@ -214,6 +225,7 @@ class MindMapRequestHandler(BaseHTTPRequestHandler):
                     "authoritative": False,
                     "read_only": True,
                     "label": {
+                        "ai": "AI reference · live local",
                         "canonical": "AI reference map · canonical file in this checkout",
                         "draft": "AI reference map · draft overlay in this checkout",
                     }.get(mode, "AI reference map · combined local checkout files"),
@@ -224,9 +236,7 @@ class MindMapRequestHandler(BaseHTTPRequestHandler):
             self._send_json({"error": str(e)}, status=500, cors=mode != "owner")
 
     def _handle_api_config(self) -> None:
-        modes = ["merged", "canonical", "draft"]
-        if OWNER_SNAPSHOT_ENABLED:
-            modes.append("owner")
+        modes = ["owner", "ai"] if OWNER_SNAPSHOT_ENABLED else ["merged", "canonical", "draft"]
         self._send_json({
             "available_modes": modes,
             "default_mode": "owner" if OWNER_SNAPSHOT_ENABLED else "merged",

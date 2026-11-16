@@ -135,6 +135,24 @@
 
   let defaultMode = "merged";
 
+  function syncModeToggle(mode) {
+    document.querySelectorAll(".mode-toggle-btn").forEach((btn) => {
+      const isActive = btn.dataset.mode === mode;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-pressed", String(isActive));
+    });
+  }
+
+  document.querySelectorAll(".mode-toggle-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetMode = btn.dataset.mode;
+      if (!targetMode || targetMode === layerSelect.value) return;
+      layerSelect.value = targetMode;
+      syncModeToggle(targetMode);
+      fetchGraph(targetMode);
+    });
+  });
+
   async function configureModes() {
     try {
       const response = await fetch("/api/config");
@@ -147,6 +165,11 @@
         if (available.includes("owner")) ownerOption.textContent = "Personal map · live local";
       }
       defaultMode = config.default_mode || (available.includes("owner") ? "owner" : "merged");
+      document.querySelectorAll(".mode-toggle-btn").forEach((btn) => {
+        const enabled = available.includes(btn.dataset.mode);
+        btn.disabled = !enabled;
+        btn.classList.toggle("hidden", !enabled);
+      });
     } catch (error) {
       console.warn("Could not load map-view configuration:", error);
     }
@@ -185,6 +208,7 @@
       graphSource = data.source || null;
       referenceMap = data.reference_map || {};
       activeMode = selectedMode;
+      syncModeToggle(selectedMode);
       referencePanel.classList.add("hidden");
       renderSearchResults();
       if (!initializedModes.has(selectedMode) && !collapsedByMode.has(selectedMode)) initializeCollapsedNodes(rawNodes);
@@ -198,7 +222,9 @@
       }
       updateSourceStatus(missingSelection
         ? `Selected node “${priorSelection}” is absent from this snapshot. Its selection is retained for when it returns.`
-        : "");
+        : (selectedMode === "ai" && rawNodes.length === 0
+          ? "AI reference · 0 nodes (add nodes via bep-mindmap MCP)"
+          : ""));
     } catch (err) {
       console.error("Failed to load mind map graph:", err);
       updateSourceStatus(`Could not load this map snapshot: ${err.message}`);

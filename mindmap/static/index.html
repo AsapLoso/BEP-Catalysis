@@ -15,35 +15,37 @@
       </div>
     </div>
     <div class="header-right">
-      <div class="view-selector">
-        <label for="graph-mode">Map shown:</label>
-        <select id="graph-mode">
-          <option value="merged" selected>AI reference · combined</option>
-          <option value="canonical">AI reference · canonical</option>
-          <option value="draft">AI reference · draft overlay</option>
-          <option value="owner" disabled>Personal map · live local</option>
-        </select>
+      <div class="mode-toggle" id="mode-toggle" role="group" aria-label="Map view">
+        <button type="button" class="mode-toggle-btn active" data-mode="owner" aria-pressed="true">Personal map</button>
+        <button type="button" class="mode-toggle-btn" data-mode="ai" aria-pressed="false">AI reference</button>
       </div>
+      <select id="graph-mode" class="hidden" aria-hidden="true">
+        <option value="owner" selected>Personal map · live local</option>
+        <option value="ai">AI reference · live local</option>
+        <option value="merged">AI reference · combined</option>
+      </select>
       <label class="search-control" for="graph-search">
         <span>Find</span>
         <input id="graph-search" type="search" placeholder="Title, note, source, or ID" autocomplete="off">
       </label>
-      <button id="btn-refresh" class="btn" title="Reload the selected local map snapshot">Refresh map</button>
-        <button id="btn-fit" class="btn" title="Center the visible graph and fit it to view">Fit View</button>
-        <button id="btn-zoom-out" class="btn zoom-control" aria-label="Zoom out" title="Zoom out around the center of the map">−</button>
-        <button id="btn-zoom-in" class="btn zoom-control" aria-label="Zoom in" title="Zoom in around the center of the map">+</button>
-        <button id="btn-focus-toggle" class="btn" title="Show the selected node's path from the root, sibling context, and immediate children" aria-pressed="false" disabled>Focus Selected</button>
-      <button id="btn-expand-all" class="btn" title="Expand all branches">Expand All</button>
-      <button id="btn-collapse-all" class="btn" title="Collapse branches">Collapse</button>
+      <button id="btn-focus-toggle" class="btn" title="Show the selected node's path from the root, sibling context, and immediate children" aria-pressed="false" disabled>Focus Selected</button>
       <button id="btn-tour" class="btn btn-tour" title="Start Guided Review Tour">Guided Tour</button>
       <span id="sync-status" class="sync-indicator connected" title="Live reload connected">● Live</span>
     </div>
   </header>
 
-  <div id="map-source-status" class="map-source-status" role="status" aria-live="polite"></div>
   <div id="search-results" class="search-results hidden" role="listbox" aria-label="Matching map nodes"></div>
 
   <main class="canvas-container">
+    <div id="map-source-status" class="map-source-status" role="status" aria-live="polite"></div>
+    <div class="canvas-controls" aria-label="Canvas controls">
+      <button id="btn-fit" class="btn" title="Center the visible graph and fit it to view">Fit</button>
+      <button id="btn-zoom-out" class="btn zoom-control" aria-label="Zoom out" title="Zoom out around the center of the map">−</button>
+      <button id="btn-zoom-in" class="btn zoom-control" aria-label="Zoom in" title="Zoom in around the center of the map">+</button>
+      <button id="btn-expand-all" class="btn" title="Expand all branches">Expand</button>
+      <button id="btn-collapse-all" class="btn" title="Collapse branches">Collapse</button>
+      <button id="btn-refresh" class="btn hidden" title="Reload the selected local map">Refresh</button>
+    </div>
     <svg id="mindmap-svg" width="100%" height="100%">
       <defs>
         <!-- Soft ambient paper drop shadow -->

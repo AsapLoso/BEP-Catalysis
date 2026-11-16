@@ -134,6 +134,8 @@
     sourceStatus.textContent = parts.join(" · ");
   }
 
+  let defaultMode = "merged";
+
   async function configureModes() {
     try {
       const response = await fetch("/api/config");
@@ -145,12 +147,13 @@
         ownerOption.hidden = !available.includes("owner");
         if (available.includes("owner")) ownerOption.textContent = "Personal map snapshot · read-only";
       }
+      defaultMode = config.default_mode || (available.includes("owner") ? "owner" : "merged");
     } catch (error) {
       console.warn("Could not load map-view configuration:", error);
     }
   }
 
-  async function fetchGraph(mode = null) {
+  async function fetchGraph(mode = null, { preserveViewport = false } = {}) {
     const selectedMode = mode || layerSelect.value;
     const modeChanged = selectedMode !== activeMode;
     const priorSelection = selectedNodeId;
@@ -179,7 +182,7 @@
           .map((node) => ({ ...node, context_only: true }));
         rawNodes = [...contextNodes, ...rawNodes];
       }
-      shouldFitAfterLayout = true;
+      shouldFitAfterLayout = !preserveViewport || modeChanged;
       graphSource = data.source || null;
       referenceMap = data.reference_map || {};
       activeMode = selectedMode;
@@ -960,7 +963,7 @@
       relatedSection.classList.add("hidden");
       referencePanel.classList.remove("hidden");
       if (panelWasHidden) {
-        shouldFitAfterLayout = true;
+        shouldFitAfterLayout = !preserveViewport || modeChanged;
         renderTree();
       }
       return;
@@ -1017,7 +1020,7 @@
     ).join("");
     referencePanel.classList.remove("hidden");
     if (panelWasHidden) {
-      shouldFitAfterLayout = true;
+      shouldFitAfterLayout = !preserveViewport || modeChanged;
       renderTree();
     }
   }
@@ -1323,12 +1326,12 @@
       const sse = new EventSource("/events");
       sse.onopen = () => {
         document.getElementById("sync-status").className = "sync-indicator connected";
-        document.getElementById("sync-status").textContent = "● Local watch";
+        document.getElementById("sync-status").textContent = "● Live";
       };
       sse.onmessage = (e) => {
         if (e.data === "reload") {
           console.log("[SSE] Reload event received from server.");
-          fetchGraph();
+          fetchGraph(null, { preserveViewport: true });
         }
       };
       sse.onerror = () => {
@@ -1501,9 +1504,9 @@
   window.addEventListener("resize", () => fitView());
   drawerCloseBtn.addEventListener("click", closeDrawer);
 
-  // Initial Boot: the one-click launcher can open the explicitly selected owner snapshot.
+  // Initial Boot: default to the configured owner snapshot when available.
   configureModes().then(() => {
-    const requestedMode = new URLSearchParams(window.location.search).get("mode");
+    const requestedMode = new URLSearchParams(window.location.search).get("mode") || defaultMode;
     const requestedOption = Array.from(layerSelect.options).find((option) => option.value === requestedMode);
     if (requestedOption && !requestedOption.disabled) layerSelect.value = requestedMode;
     return fetchGraph();

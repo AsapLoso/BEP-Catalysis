@@ -270,3 +270,24 @@ def test_reader_and_linked_figure_endpoints_are_opt_in_and_read_only(
         urllib.request.urlopen(f"{preview_server}/api/figure?{unlinked_query}")
     assert error.value.code == 404
     assert hashlib.sha256(owner_map.read_bytes()).hexdigest() == before
+
+
+def test_api_config_default_mode_and_watch_dirs(preview_server, monkeypatch, tmp_path):
+    monkeypatch.setattr(preview_module, "OWNER_SNAPSHOT_ENABLED", False)
+    with urllib.request.urlopen(f"{preview_server}/api/config") as response:
+        config_no_owner = json.loads(response.read().decode("utf-8"))
+    assert config_no_owner["default_mode"] == "merged"
+
+    monkeypatch.setattr(preview_module, "OWNER_SNAPSHOT_ENABLED", True)
+    with urllib.request.urlopen(f"{preview_server}/api/config") as response:
+        config_with_owner = json.loads(response.read().decode("utf-8"))
+    assert config_with_owner["default_mode"] == "owner"
+
+    notes_dir = tmp_path / "notes"
+    notes_dir.mkdir()
+    md_file = notes_dir / "page.md"
+    md_file.write_text("# v1\n", encoding="utf-8")
+    broadcaster = preview_module.EventBroadcaster(data_dir=tmp_path / "empty_data")
+    broadcaster.watch_dirs({tmp_path})
+    mtimes = broadcaster._get_mtimes()
+    assert md_file in mtimes

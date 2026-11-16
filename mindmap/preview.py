@@ -42,9 +42,15 @@ OWNER_SNAPSHOT_ENABLED = False
 class EventBroadcaster:
     """Manages active SSE client connections and file watching."""
 
-    def __init__(self, data_dir: Path = DATA_DIR, extra_paths: Optional[Set[Path]] = None):
+    def __init__(
+        self,
+        data_dir: Path = DATA_DIR,
+        extra_paths: Optional[Set[Path]] = None,
+        extra_dirs: Optional[Set[Path]] = None,
+    ):
         self.data_dir = data_dir
         self.extra_paths = set(extra_paths or set())
+        self.extra_dirs = set(extra_dirs or set())
         self.clients: Set[BaseHTTPRequestHandler] = set()
         self.lock = threading.Lock()
         self._running = True
@@ -76,6 +82,10 @@ class EventBroadcaster:
         mtimes = {}
         paths = set(self.data_dir.glob("*.yaml")) if self.data_dir.exists() else set()
         paths.update(self.extra_paths)
+        for directory in self.extra_dirs:
+            if directory.exists() and directory.is_dir():
+                paths.update(directory.rglob("*.yaml"))
+                paths.update(directory.rglob("*.md"))
         for p in paths:
             try:
                 if p.is_file():
@@ -86,6 +96,9 @@ class EventBroadcaster:
 
     def watch_paths(self, paths: Set[Path]) -> None:
         self.extra_paths.update(Path(path) for path in paths)
+
+    def watch_dirs(self, dirs: Set[Path]) -> None:
+        self.extra_dirs.update(Path(directory) for directory in dirs)
 
     def _watch_loop(self) -> None:
         self._last_mtimes = self._get_mtimes()
@@ -216,6 +229,7 @@ class MindMapRequestHandler(BaseHTTPRequestHandler):
             modes.append("owner")
         self._send_json({
             "available_modes": modes,
+            "default_mode": "owner" if OWNER_SNAPSHOT_ENABLED else "merged",
             "owner_snapshot_enabled": OWNER_SNAPSHOT_ENABLED,
             "owner_snapshot_read_only": True,
         })
@@ -389,11 +403,15 @@ def run_server(
         # presenting an empty/partial owner map in the browser.
         load_owner_map_snapshot(**OWNER_SNAPSHOT_OPTIONS)
     watched_paths: Set[Path] = set()
+    watched_dirs: Set[Path] = set()
     if owner_map_path is not None:
-        watched_paths.add(Path(owner_map_path))
+        owner_path = Path(owner_map_path)
+        watched_paths.add(owner_path)
+        watched_dirs.add(owner_path.parent)
     if reference_map_path is not None:
         watched_paths.add(Path(reference_map_path))
     BROADCASTER.watch_paths(watched_paths)
+    BROADCASTER.watch_dirs(watched_dirs)
     BROADCASTER.start()
     server = ThreadingHTTPServer((host, port), MindMapRequestHandler)
     url = f"http://{host}:{port}/"

@@ -50,6 +50,7 @@ assert.ok(app.includes("BepMindMapGraph.renderMarkdownSafe(data.content"), "read
 assert.ok(css.includes(".reference-panel") && css.includes(".audit-details"), "reference and audit surfaces have separate presentation");
 assert.ok(html.includes('id="tab-btn-thesis"') && html.includes('id="tab-btn-audit"'), "details drawer has Thesis and Sources & Audit tabs");
 assert.ok(app.includes("node-accent") && css.includes(".node-accent"), "node cards carry a stage accent bar");
+assert.ok(app.includes("config.default_mode") && app.includes("preserveViewport: true"), "defaults to configured mode and preserves viewport on live reload");
 const readerHtml = graph.renderMarkdownSafe('<script>alert("x")</script> ![vector](assets/path.svg) ![plot](assets/plot.png)', { allowFigures: true });
 assert.ok(readerHtml.includes("&lt;script&gt;"), "reader Markdown escapes raw HTML");
 assert.doesNotMatch(readerHtml, /<script>/, "reader Markdown cannot inject script elements");

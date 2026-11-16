@@ -967,9 +967,15 @@ body { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Robo
 
 /* Subtle floating status pill instead of full-width top banner */
 .canvas-container > .map-source-status {
-  position: absolute; top: 12px; left: 16px; z-index: 4;
-  width: auto; padding: 4px 12px; border-radius: 9999px;
+  position: absolute; top: 12px; bottom: auto; left: 16px; right: auto; z-index: 4;
+  width: auto; height: auto; padding: 4px 12px; border-radius: 9999px;
   font-size: 12px; font-weight: 600; border: 1px solid var(--surface-border);
   background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 1px 6px rgba(15, 23, 42, 0.06);
+}
+
+@media (min-width: 960px) {
+  .app-header { height: 52px; min-height: 52px; flex-wrap: nowrap; padding: 0 16px; }
+  .header-left { flex: 0 0 auto; }
+  .header-right { flex: 0 1 auto; order: 0; flex-wrap: nowrap; justify-content: flex-end; }
 }

@@ -9,20 +9,9 @@
 <body>
   <header class="app-header">
     <div class="header-left">
-      <div class="logo-icon">🌿</div>
+      <div class="logo-icon">◈</div>
       <div class="title-group">
         <h1>BEP Ownership Mind Map</h1>
-        <span class="subtitle">Dual BEP: Acetylene Semi-Hydrogenation Reactor Modeling</span>
-      </div>
-    </div>
-    <div class="header-center">
-      <div class="tier-legend" aria-label="Five progress stages">
-        <span class="legend-item"><span class="badge tier-0"></span> Idea</span>
-        <span class="legend-item"><span class="badge tier-1"></span> AI worked out</span>
-        <span class="legend-item"><span class="badge tier-2"></span> Human worked out</span>
-        <span class="legend-item"><span class="badge tier-3"></span> Informal writing</span>
-        <span class="legend-item"><span class="badge tier-4"></span> Formal writing</span>
-        <span class="legacy-stage-note">Legacy integer tiers are read-only.</span>
       </div>
     </div>
     <div class="header-right">
@@ -79,6 +68,15 @@
       </g>
     </svg>
 
+  <div class="tier-legend" aria-label="Five progress stages">
+    <span class="legend-item"><span class="badge tier-0"></span> Idea</span>
+    <span class="legend-item"><span class="badge tier-1"></span> AI worked out</span>
+    <span class="legend-item"><span class="badge tier-2"></span> Human worked out</span>
+    <span class="legend-item"><span class="badge tier-3"></span> Informal writing</span>
+    <span class="legend-item"><span class="badge tier-4"></span> Formal writing</span>
+    <span class="legacy-stage-note">Legacy integer tiers are read-only.</span>
+  </div>
+
     <div id="layout-error" class="layout-error hidden" role="alert" aria-live="assertive"></div>
 
     <!-- Details Drawer -->
@@ -103,6 +101,11 @@
         </div>
         <nav id="drawer-breadcrumb" class="drawer-breadcrumb" aria-label="Node ancestry"></nav>
 
+        <div class="drawer-tabs" role="tablist">
+          <button id="tab-btn-thesis" class="drawer-tab active" role="tab" aria-selected="true" data-tab="thesis">Thesis</button>
+          <button id="tab-btn-audit" class="drawer-tab" role="tab" aria-selected="false" data-tab="audit">Sources &amp; Audit</button>
+        </div>
+        <div id="tab-thesis" class="tab-panel" role="tabpanel">
         <section class="drawer-section drawer-primary">
           <p id="drawer-question" class="section-content rich-text hidden"></p>
           <p id="drawer-summary" class="section-content rich-text">Select a node to read its summary.</p>
@@ -121,18 +124,31 @@
           <button id="open-linked-references" class="btn reference-launch">Explore AI references</button>
         </section>
 
-        <details id="drawer-audit-details" class="audit-details">
+        <section class="drawer-section">
+          <h3>Open questions</h3>
+          <ul id="drawer-questions" class="questions-list"></ul>
+        </section>
+        <section class="drawer-section hidden" id="drawer-equations-section">
+          <h3>Equations</h3>
+          <ul id="drawer-equations" class="rich-list"></ul>
+        </section>
+        <section class="drawer-section hidden" id="drawer-assumptions-section">
+          <h3>Assumptions</h3>
+          <ul id="drawer-assumptions" class="rich-list"></ul>
+        </section>
+        <section class="drawer-section hidden" id="drawer-limitations-section">
+          <h3>Limitations</h3>
+          <ul id="drawer-limitations" class="rich-list"></ul>
+        </section>
+        </div>
+        <div id="tab-audit" class="tab-panel hidden" role="tabpanel">
+        <details id="drawer-audit-details" class="audit-details" open>
           <summary>Technical details and source audit</summary>
           <div class="audit-content">
             <section class="drawer-section">
               <h3>Progress and review</h3>
               <p id="drawer-progress" class="progress-summary"></p>
               <dl id="drawer-review-status" class="review-status-list"></dl>
-            </section>
-
-            <section class="drawer-section hidden" id="drawer-equations-section">
-              <h3>Equations</h3>
-              <ul id="drawer-equations" class="rich-list"></ul>
             </section>
 
             <section class="drawer-section hidden" id="drawer-claims-section">
@@ -150,16 +166,6 @@
               <div id="drawer-notes" class="section-content markdown-body">Notes...</div>
             </section>
 
-            <section class="drawer-section hidden" id="drawer-assumptions-section">
-              <h3>Assumptions</h3>
-              <ul id="drawer-assumptions" class="rich-list"></ul>
-            </section>
-
-            <section class="drawer-section hidden" id="drawer-limitations-section">
-              <h3>Limitations</h3>
-              <ul id="drawer-limitations" class="rich-list"></ul>
-            </section>
-
             <section class="drawer-section hidden" id="drawer-file-audit-section">
               <h3>Reader and background file metadata</h3>
               <dl id="drawer-file-audit" class="review-status-list"></dl>
@@ -168,11 +174,6 @@
             <section class="drawer-section">
               <h3>Sources and citation records</h3>
               <ul id="drawer-sources" class="sources-list"></ul>
-            </section>
-
-            <section class="drawer-section">
-              <h3>Open questions</h3>
-              <ul id="drawer-questions" class="questions-list"></ul>
             </section>
 
             <section class="drawer-section" id="drawer-related-section">
@@ -194,6 +195,7 @@
             </div>
           </div>
         </details>
+        </div>
       </div>
     </aside>
 

@@ -909,3 +909,33 @@ body {
   .search-results { top: 150px; left: 10px; right: 10px; width: auto; }
   .tour-panel { top: 12px; left: 12px; bottom: auto; width: calc(100% - 24px); max-height: calc(100% - 24px); }
 }
+
+/* ---- Academic notebook restyle ---- */
+:root { --bg-color: #f8fafc; }
+body { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.app-header { height: 52px; padding: 0 16px; box-shadow: none; }
+.logo-icon { font-size: 18px; color: var(--accent-blue); }
+.app-header .btn { padding: 5px 10px; font-size: 12px; }
+.canvas-container { background-color: #f8fafc; position: relative; }
+.canvas-container > .tier-legend {
+  position: absolute; left: 16px; bottom: 16px; z-index: 5;
+  flex-wrap: wrap; gap: 10px; padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.94); box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+}
+.canvas-container > .tier-legend .legend-item { font-size: 12px; font-weight: 600; }
+.node-square.stage-idea { fill: #f1f5f9; }
+.node-square.stage-ai_worked_out { fill: #fffbeb; }
+.node-square.stage-human_worked_out { fill: #f0f9ff; }
+.node-square.stage-informal_writing { fill: #f0fdfa; }
+.node-square.stage-formal_writing { fill: #f0fdf4; }
+.node-square.stage-unspecified, .node-square.legacy-tier { fill: #f8fafc; }
+.node-square:not(.root-square) { rx: 12px; ry: 12px; stroke-width: 1px !important; stroke-opacity: 0.45; }
+.node-accent { pointer-events: none; }
+.node-child-count { font-size: 11px; font-weight: 700; fill: #475569; user-select: none; }
+.drawer-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--surface-border); margin: 4px 0 12px; }
+.drawer-tab {
+  background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer;
+  padding: 8px 12px; font-size: 13px; font-weight: 600; color: var(--text-muted);
+}
+.drawer-tab.active { color: var(--accent-blue); border-bottom-color: var(--accent-blue); }
+.tab-panel.hidden { display: none; }

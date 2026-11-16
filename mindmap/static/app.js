@@ -560,9 +560,18 @@
 
         const filterAttr = isRoot ? 'filter="url(#root-shadow)"' : 'filter="url(#card-shadow)"';
 
+        const accentElem = isRoot
+          ? ""
+          : `<rect class="node-accent" x="0" y="14" width="6" height="${Math.max(node.h - 28, 8)}" rx="3" fill="${node.is_draft ? "#b45309" : stageConfig.color}" />`;
+        const childCountElem = hasChildren && isCollapsed
+          ? `<text x="${node.w - 16}" y="${bottomY}" class="node-child-count" text-anchor="end">${node.children.length} ▸</text>`
+          : "";
+
         return `
           <g class="tree-node" data-id="${escapeHtml(node.id)}" transform="translate(${node.x.toFixed(1)}, ${node.y.toFixed(1)})">
             <rect class="${boxClass}" width="${node.w}" height="${node.h}" ${filterAttr} />
+            ${accentElem}
+            ${childCountElem}
             <text class="node-title ${isRoot ? 'root-title' : ''}" x="${(node.w / 2).toFixed(1)}" y="${startY}" text-anchor="middle">${titleElements}</text>
             ${badgeElem}
             ${starsElem}
@@ -799,6 +808,20 @@
       selectedButton.disabled = false;
     }
   }
+
+  function setDrawerTab(name) {
+    ["thesis", "audit"].forEach((tab) => {
+      const panel = document.getElementById(`tab-${tab}`);
+      const button = document.getElementById(`tab-btn-${tab}`);
+      if (!panel || !button) return;
+      panel.classList.toggle("hidden", tab !== name);
+      button.classList.toggle("active", tab === name);
+      button.setAttribute("aria-selected", String(tab === name));
+    });
+  }
+  document.querySelectorAll(".drawer-tab").forEach((button) => {
+    button.addEventListener("click", () => setDrawerTab(button.dataset.tab));
+  });
 
   function showDrawer(node) {
     selectedNodeId = node.id;

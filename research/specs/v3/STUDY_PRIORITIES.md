@@ -1,9 +1,0 @@
-# Proposed owner study priorities
-
-These are questions for future discussion, not approved map nodes or assumptions. No personal-map edits are made here.
-
-1. **Derive the Urmès single-site denominator and rate expressions.** How do the quasi-equilibrated steps and omitted vinyl/ethyl coverages lead to the two squared-denominator rates? Related personal IDs: `own_ma_lh_surface_rate_forms` and `own_ma_surface_kinetic_equations` (both Idea / structure or summary scope).
-2. **Resolve what can and cannot be inferred from the published K₁ values.** Why does p. 5 calculate 611 Pa⁻¹ while Table 5 fixes 13 Pa⁻¹, and what evidence would distinguish a transcription error from a modelling choice? Related IDs: `own_ma_h2_dissociative_equilibrium` (Idea) and `own_ph_h2_adsorption_equilibrium` (AI worked out, not owner-understood). The primary paper itself remains unresolved.
-3. **Work through the gas balance basis and inert/flow closure.** How do superficial velocity, void fraction, catalyst-mass source and interstitial velocity combine dimensionally, and when does holding total flow fixed fail? Related ID: `own_ma_mathematical_modeling` (Idea / structure-only).
-4. **Interpret the no-film/no-pellet-gradient criteria.** What do Carberry and Weisz–Prater establish for the Urmès crushed Pd catalyst, and what target-specific measurements would be needed before applying them to PdAg/BEP? This is a proposed topic; no live personal transport/closure node is present.
-5. **Separate PSSA gas transients from dynamic surface memory.** What measurements and elementary rate constants would identify actual coverage time scales, and why does an algebraic coverage changing with gas composition not itself provide that memory? Related ID: `own_ma_surface_kinetic_equations` (Idea / structural scope); `c2_dynamic_theta_model_calibration_gap` is AI-reference context only.

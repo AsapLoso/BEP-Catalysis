@@ -11,7 +11,7 @@
 - [Integrated AI scientific reference map](research/integrated_reference_map_2026_10_22/README.md) — includes source and passage-level citation records
 - [Independent AI reference map v2](research/independent_reference_map_2026_10_21/WORK_GOAL.md) and [preserved v1 snapshot](history/independent-reference-map-v1/)
 - [Scientific map reconciliation v3](research/map_comparison_reconciliation_v3_2026_10_23/)
-- [PR #199 competing owner-map/frontend snapshot](incoming/pr-199/) — *not silently merged into PR #207*
+- [PR #199](https://github.com/AsapLoso/project-management-agents/pull/199) competing owner-map/frontend snapshot — *reconciled into `mindmap/`; parked `incoming/pr-199/` copy removed*
 - [Source migration boundaries](MIGRATION_STATUS.md) and [69 original BEP-related PR links](migration/SOURCE_PRS.md)
 
 ## Critical scientific/ownership boundary

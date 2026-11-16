@@ -123,14 +123,13 @@
       sourceStatus.textContent = "No map snapshot loaded.";
       return;
     }
-    const snapshot = graphSource.status === "snapshot" || graphSource.status === "local_checkout_snapshot";
     const count = activeMode === "draft"
-      ? `${rawNodes.filter((node) => node.is_draft).length} draft nodes + ${rawNodes.filter((node) => node.context_only).length} canonical context nodes`
+      ? `${rawNodes.filter((node) => node.is_draft).length} draft + ${rawNodes.filter((node) => node.context_only).length} context`
       : rawNodes.length + " nodes";
+    const ownerSourceTag = graphSource.status === "git_ref" ? "git ref" : "live local";
     const parts = activeMode === "owner"
-      ? ["Your personal map", count, graphSource.label || "local snapshot", "read-only", "not live from GitHub"]
+      ? ["Personal map", count, ownerSourceTag]
       : [graphSource.label || "AI reference map", count];
-    if (activeMode !== "owner" && snapshot) parts.push("local snapshot");
     sourceStatus.textContent = parts.join(" · ");
   }
 
@@ -145,7 +144,7 @@
       if (ownerOption) {
         ownerOption.disabled = !available.includes("owner");
         ownerOption.hidden = !available.includes("owner");
-        if (available.includes("owner")) ownerOption.textContent = "Personal map snapshot · read-only";
+        if (available.includes("owner")) ownerOption.textContent = "Personal map · live local";
       }
       defaultMode = config.default_mode || (available.includes("owner") ? "owner" : "merged");
     } catch (error) {

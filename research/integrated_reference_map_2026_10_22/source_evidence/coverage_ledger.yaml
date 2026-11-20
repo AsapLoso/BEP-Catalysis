@@ -1,0 +1,904 @@
+dataset:
+  name: Source and claim evidence coverage ledger
+  edition: citation-provenance-2026-10-22
+  status: B0–B6 and B8–B12 first/second passes complete; B7 local gap; B13–B17 first and separate second passes complete; B18 Waldron first pass complete, second pass pending
+  source_record_count: 66
+  source_records_unopened: 48
+  current_claim_source_link_count: 349
+  historical_attachment_count: 96
+  passage_record_count: 167
+  claim_links_passage_checked: 146
+  claim_links_without_passage_ids: 203
+  claim_links_with_derivation: 9
+  claim_links_without_passage_or_derivation: 203
+  derivation_record_count: 9
+  derivation_claim_association_count: 10
+  claim_links_no_passage_yet: 203
+  historical_attachments_no_passage_yet: 89
+  human_verified_link_count: 0
+  base_commit: 1cd680f95902a0a79b17afb084fa29ab49c6b25f
+  sources_reopened_this_mission: 18
+  second_pass_audit_entry_count: 16
+  second_pass_passage_results: 154
+  corrected_second_pass_results: 5
+by_source:
+- source_id: proposal_main
+  title: 'Dynamic Control of Acetylene Semi-Hydrogenation: A Spatiotemporal Modeling Framework for Intermediary
+    Yield Optimization'
+  recorded_access_status_before_mission: full_text_read
+  local_path: Academics/BEP/Catalysis/0_Project_Management/main.tex
+  local_path_exists_at_inventory: true
+  current_claim_source_link_count: 78
+  historical_attachment_count: 0
+  mission_access_status: "github_repository_source_text_lines_95_310_reopened"
+  passage_record_count: 11
+  claim_links_passage_checked: 31
+  claim_links_no_passage_yet: 47
+  ai_recheck_count: 31
+  human_verification_status: not_verified
+- source_id: proposal_bib
+  title: BEP proposal bibliography
+  recorded_access_status_before_mission: full_text_read
+  local_path: Academics/BEP/Catalysis/0_Project_Management/references.bib
+  local_path_exists_at_inventory: true
+  current_claim_source_link_count: 0
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: proposal_intro
+  title: Standalone proposal introduction draft
+  recorded_access_status_before_mission: full_text_read
+  local_path: Academics/BEP/Catalysis/0_Project_Management/section1_intro.tex
+  local_path_exists_at_inventory: true
+  current_claim_source_link_count: 0
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: proposal_lit
+  title: Standalone proposal literature review draft
+  recorded_access_status_before_mission: full_text_read
+  local_path: Academics/BEP/Catalysis/0_Project_Management/section2_lit.tex
+  local_path_exists_at_inventory: true
+  current_claim_source_link_count: 0
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: proposal_method
+  title: Standalone methodology draft
+  recorded_access_status_before_mission: full_text_read
+  local_path: Academics/BEP/Catalysis/0_Project_Management/section3_method.tex
+  local_path_exists_at_inventory: true
+  current_claim_source_link_count: 1
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: proposal_roadmap
+  title: BEP proposal roadmap
+  recorded_access_status_before_mission: full_text_read
+  local_path: Academics/BEP/Catalysis/0_Project_Management/bep_proposal_roadmap.md
+  local_path_exists_at_inventory: true
+  current_claim_source_link_count: 2
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 2
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: urmes2022
+  title: Microkinetic Modeling of Acetylene Hydrogenation Under Periodic Reactor Operation
+  recorded_access_status_before_mission: abstract_and_preview
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 16
+  historical_attachment_count: 0
+  mission_access_status: "publisher_abstract_only_reopened"
+  passage_record_count: 4
+  claim_links_passage_checked: 14
+  claim_links_no_passage_yet: 2
+  ai_recheck_count: 16
+  human_verification_status: not_verified
+- source_id: urmes2019
+  title: Kinetic Study of the Selective Hydrogenation of Acetylene over Supported Palladium under Tail-End Conditions
+  recorded_access_status_before_mission: full_text_read
+  local_path: Academics/BEP/Catalysis/Articles/acquired_pdfs/urmesKineticStudySelective2019.pdf
+  local_path_exists_at_inventory: true
+  current_claim_source_link_count: 33
+  historical_attachment_count: 19
+  mission_access_status: full_original_pdf_selected_pages_reopened
+  passage_record_count: 13
+  claim_links_passage_checked: 15
+  claim_links_no_passage_yet: 18
+  ai_recheck_count: 15
+  human_verification_status: not_verified
+- source_id: pachulski2012
+  title: Kinetics and reactor modeling of a Pd-Ag/Al₂O₃ catalyst during selective hydrogenation of ethyne
+  recorded_access_status_before_mission: abstract_only
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 13
+  historical_attachment_count: 0
+  mission_access_status: publisher_abstract_and_selected_indexed_excerpts
+  passage_record_count: 6
+  claim_links_passage_checked: 13
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 13
+  human_verification_status: not_verified
+- source_id: borodzinski2000
+  title: The Kinetic Model of Hydrogenation of Acetylene–Ethylene Mixtures over Palladium Surface Covered by Carbonaceous
+    Deposits
+  recorded_access_status_before_mission: full_text_read
+  local_path: Academics/BEP/Catalysis/Articles/acquired_pdfs/borodzinskiKineticModelHydrogenation2000.pdf
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 9
+  historical_attachment_count: 0
+  mission_access_status: full_original_pdf_selected_pages_reopened
+  passage_record_count: 11
+  claim_links_passage_checked: 9
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 9
+  human_verification_status: not_verified
+- source_id: borodzinski2006
+  title: Selective Hydrogenation of Ethyne in Ethene-Rich Streams on Palladium Catalysts. Part 1. Effect of Changes
+    to the Catalyst During Reaction
+  recorded_access_status_before_mission: abstract_only
+  local_path: Academics/BEP/Catalysis/Articles/Zotero Backup/Borodziński en Bond - 2006 - Selective Hydrogenation of Ethyne in Ethene‐Rich Streams on Palladium Catalysts. .pdf
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 5
+  historical_attachment_count: 2
+  mission_access_status: full_original_pdf_selected_pages_reopened
+  passage_record_count: 5
+  claim_links_passage_checked: 5
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 5
+  human_verification_status: not_verified
+- source_id: urakawa2008
+  title: 'Sensitivity Enhancement and Dynamic Behavior Analysis by Modulation Excitation Spectroscopy: Principle
+    and Application in Heterogeneous Catalysis'
+  recorded_access_status_before_mission: full_text_read
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 10
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 10
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: danckwerts1953
+  title: 'Continuous Flow Systems: Distribution of Residence Times'
+  recorded_access_status_before_mission: abstract_only
+  local_path: Academics/BEP/Catalysis/Articles/Zotero Backup/Danckwerts - 1953 - Continuous flow systems Distribution
+    of residence times.pdf
+  local_path_exists_at_inventory: true
+  current_claim_source_link_count: 8
+  historical_attachment_count: 0
+  mission_access_status: full_original_pdf_selected_pages_reopened
+  passage_record_count: 12
+  claim_links_passage_checked: 8
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 8
+  human_verification_status: not_verified
+- source_id: silveston1995
+  title: Periodic Operation of Catalytic Reactors—Introduction and Overview
+  recorded_access_status_before_mission: abstract_only
+  local_path: Academics/BEP/Catalysis/Articles/Zotero Backup/Silveston e.a. - 1995 - Periodic operation of catalytic reactors—introduction and overview.pdf
+  local_path_exists_at_inventory: true
+  current_claim_source_link_count: 4
+  historical_attachment_count: 0
+  mission_access_status: full_original_pdf_selected_pages_reopened
+  passage_record_count: 11
+  claim_links_passage_checked: 4
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 4
+  human_verification_status: not_verified
+- source_id: zhu2021
+  title: Novel Microreactor and Generic Model Catalyst Platform for the Study of Fast Temperature Pulsed Operation
+    – CO Oxidation Rate Enhancement on Pt
+  recorded_access_status_before_mission: abstract_only
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 3
+  historical_attachment_count: 0
+  mission_access_status: author_institution_hosted_abstract_only_reopened; publisher_full_text_returned_403
+  passage_record_count: 5
+  claim_links_passage_checked: 3
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 3
+  human_verification_status: not_verified
+- source_id: shi2024
+  title: Insights into reaction–diffusion behaviors of acetylene selective hydrogenation on pellet catalysts
+  recorded_access_status_before_mission: abstract_only
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 4
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 4
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: lan2025
+  title: Recent Advances in Thermocatalytic Acetylene Selective Hydrogenation
+  recorded_access_status_before_mission: abstract_only
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 6
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 6
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: froment2011
+  title: Chemical Reactor Analysis and Design
+  recorded_access_status_before_mission: citation_only_unverified
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 5
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 5
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: larsen2024
+  title: Semihydrogenation of Acetylene to Ethylene with a PdAg Catalyst
+  recorded_access_status_before_mission: legacy_bibliographic_claim_not_verified_against_local_pdf
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 0
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: poto2022
+  title: 'Kinetic Modelling of the Methanol Synthesis from CO₂ and H₂ over a CuO/CeO₂/ZrO₂ Catalyst: The Role of
+    CO₂ and CO Hydrogenation'
+  recorded_access_status_before_mission: abstract_only
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 0
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: mei2009
+  title: 'Hydrogenation of acetylene–ethylene mixtures over Pd and Pd–Ag alloys: First-principles-based kinetic
+    Monte Carlo simulations'
+  recorded_access_status_before_mission: abstract_and_preview
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 8
+  historical_attachment_count: 3
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 8
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: li2021
+  title: In Situ Surface Structures of PdAg Catalyst and Their Influence on Acetylene Semihydrogenation Revealed
+    by Machine Learning and Experiment
+  recorded_access_status_before_mission: abstract_and_preview
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 4
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 4
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: feimer1982
+  title: Modelling forced periodic operation of catalytic reactors
+  recorded_access_status_before_mission: abstract_only
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 3
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 3
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: horn_bailey1971
+  title: Comparison between two sufficient conditions for improvement of an optimal steady-state process by periodic
+    operation
+  recorded_access_status_before_mission: abstract_only
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 3
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 3
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: ziegelhoeffer1972
+  title: 'Cyclic operation of reaction systems: the influence of diffusion on catalyst selectivity'
+  recorded_access_status_before_mission: abstract_only
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 5
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 5
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: berger2008
+  title: Dynamic methods for catalytic kinetics
+  recorded_access_status_before_mission: full_text_read
+  local_path: Academics/BEP/Catalysis/Articles/Zotero Backup/Berger e.a. - 2008 - Dynamic methods for catalytic kinetics.pdf
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 9
+  historical_attachment_count: 4
+  mission_access_status: full_original_pdf_selected_pages_reopened
+  passage_record_count: 10
+  claim_links_passage_checked: 9
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 9
+  human_verification_status: not_verified
+- source_id: kaps2026
+  title: Forced Periodic Reactor Operation Applied to Methanol Synthesis
+  recorded_access_status_before_mission: full_text_read
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 7
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 7
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: espinoza2022
+  title: Catalytic Profile Reactor for Multimodal Operando Measurements during Periodic Operation
+  recorded_access_status_before_mission: full_text_read
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 10
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 10
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: berger_wrong_doi_metadata
+  title: Nanofluidization as affected by vibration and electrostatic fields
+  recorded_access_status_before_mission: Crossref metadata verified 2026-10-21
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 0
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: larsen_bep_pdf
+  title: Semihydrogenation of acetylene to ethylene with a PdAg catalyst
+  recorded_access_status_before_mission: Local PDF available; targeted extraction and visual equation inspection
+    performed 2026-10-21
+  local_path: Academics/BEP/Catalysis/Articles/Zotero Backup/Larsen - 2024 - Semihydrogenation of acetylene to ethylene with a PdAg catalyst.pdf
+  local_path_exists_at_inventory: true
+  current_claim_source_link_count: 3
+  historical_attachment_count: 3
+  mission_access_status: full_original_pdf_selected_pages_reopened
+  passage_record_count: 11
+  claim_links_passage_checked: 3
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 3
+  human_verification_status: not_verified
+- source_id: bos_westerterp_1993
+  title: Mechanism and kinetics of the selective hydrogenation of ethyne and ethene
+  recorded_access_status_before_mission: Crossref bibliographic metadata verified; full text not inspected in this
+    pass
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 2
+  historical_attachment_count: 2
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 2
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_f10a073a9c
+  title: BEP Catalysis Project Conventions §12.1
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 0
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_ee9395ff76
+  title: Model Architecture Decisions §11.5
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 0
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_36d88bc20b
+  title: Catalysis Conventions §12.1
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_fd9889c943
+  title: Transport Phenomena Notes
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_f34894d0e5
+  title: Process Dynamics & Control (PDC Course Track)
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_e5a6eed08b
+  title: 'Agent B Reactor Simulation PR #2'
+  recorded_access_status_before_mission: legacy_reference_not_resolved_to_local_file
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_ed26241632
+  title: Urakawa Group Modulated Excitation Catalysis Reviews
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_d3c052653b
+  title: 'PR #84 Mind Map Specification §Core Principles'
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_8374a1af33
+  title: PDC Course Reactor Dynamics & State-Space Control
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_4768412947
+  title: Conventions §5 Candidate Methods Framing
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_f989d86407
+  title: PDC course overview (archive analysis)
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_4a6757f9a5
+  title: BEP C mechanism and implementation source audit
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 30
+  historical_attachment_count: 30
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 30
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_8f8e730bea
+  title: BEP D kinetic parameter and identifiability audit
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 3
+  historical_attachment_count: 4
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 3
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_c18a3997ca
+  title: BEP kinetic and identifiability scientific deep dive (D)
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 4
+  historical_attachment_count: 4
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 4
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_5bd9ec7f38
+  title: BEP reaction mechanism and site-state audit (C)
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 4
+  historical_attachment_count: 4
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 4
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_3818df05bd
+  title: Transient Model Framework Audit §2
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_4afbb01246
+  title: Conventions §11 Model Architecture Decisions
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_aab581e49f
+  title: Transient Model Framework Audit §3
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_159cf51de0
+  title: Transient Model Framework Audit §1
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_0a6e6d4503
+  title: Model Architecture Decisions §11.7
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 2
+  historical_attachment_count: 2
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 2
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_9edbae751c
+  title: Transient PBR Model Prototype
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_9d42116bdc
+  title: Gemini Numerics Transcript 2026-09-29
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_56dd02bda5
+  title: 'Issue #58 Scientific Coordination Dossier'
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: legacy_ref_98b65fe6ba
+  title: BEP presentation deep dive C — reaction mechanism and surface physics
+  recorded_access_status_before_mission: repository_file_present
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 1
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: stytsenko2022
+  title: Kinetic regularities and mechanism of acetylene hydrogenation over PdMn catalyst
+  recorded_access_status_before_mission: full_text_read
+  local_path: Academics/BEP/Catalysis/Articles/acquired_pdfs/stytsenkoKineticRegularitiesMechanism2022.pdf
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 4
+  historical_attachment_count: 0
+  mission_access_status: Full original PDF selected pages re-opened in B9; a separate post-commit second pass rechecked all ten passages, seven quotations and four claim links, enriching the Eq. (18) passage; prior inventory existence flag retained as historical, and exact existence at that inventory moment was not reconstructed.
+  passage_record_count: 10
+  claim_links_passage_checked: 4
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 4
+  human_verification_status: not_verified
+  source_hash: 69a82035fc75eb7b9c433f264ff7cfc67fe97df57c5d9aba411d74d0b7fca454
+- source_id: wang2023_pdag_descriptors
+  title: Rational Design of PdAg Catalysts for Acetylene Selective Hydrogenation via Structural Descriptor-based
+    Screening Strategy
+  recorded_access_status_before_mission: full_text_read
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 3
+  historical_attachment_count: 0
+  mission_access_status: Local full-text article SHA-256 matched at acquired_pdfs/ref_17.pdf and the identical Zotero-backup copy; selected pp. 434–441 reopened. No matching local Supporting Information file was found.
+  mission_local_path: Academics/BEP/Catalysis/Articles/acquired_pdfs/ref_17.pdf
+  source_hash: 7ee1e7c61f17007905fc4243ec4963759bae1affa8c2ae1fc49a1278195019a5
+  passage_record_count: 12
+  claim_links_passage_checked: 3
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 3
+  human_verification_status: not_verified
+- source_id: dehghani2019_pdag_alphaal2o3
+  title: 'An Experimental Approach on Industrial Pd-Ag Supported α-Al2O3 Catalyst Used in Acetylene Hydrogenation
+    Process: Mechanism, Kinetic and Catalyst Decay'
+  recorded_access_status_before_mission: full_text_read
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 5
+  historical_attachment_count: 0
+  mission_access_status: full original PDF selected pages plus local S1 archive inspected
+  passage_record_count: 17
+  claim_links_passage_checked: 5
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 5
+  human_verification_status: not_verified
+  source_hash: dae34366635983d506f2a6cdee3cce09805c9363a64c2cf0f827e1b72ee6649e
+- source_id: di_giuliano_pellegrino2019
+  title: 'Numerical integration strategies of PFR dynamic models with axial dispersion and variable superficial
+    velocity: the case of CO2 capture by a solid sorbent'
+  recorded_access_status_before_mission: full_text_read
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 4
+  historical_attachment_count: 0
+  mission_access_status: "pmc_indexed_open_access_full_text_selected_excerpts; not sequentially read"
+  passage_record_count: 4
+  claim_links_passage_checked: 4
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 4
+  human_verification_status: not_verified
+- source_id: mott_green2015
+  title: On Danckwerts’ Boundary Conditions for the Plug-Flow with Dispersion/Reaction Model
+  recorded_access_status_before_mission: abstract_only
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: villaverde2016_structural_identifiability
+  title: Structural Identifiability of Dynamic Systems Biology Models
+  recorded_access_status_before_mission: full_text_read
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 2
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 2
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: villaverde2019_fispo
+  title: Full observability and estimation of unknown inputs, states and parameters of nonlinear biological models
+  recorded_access_status_before_mission: full_text_read
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 2
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 2
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+- source_id: urmes2020_ni_periodic_estimation
+  title: Periodic reactor operation for parameter estimation in catalytic heterogeneous kinetics. Case study for
+    ethylene adsorption on Ni/Al2O3
+  recorded_access_status_before_mission: abstract_only
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 4
+  historical_attachment_count: 0
+  mission_access_status: selected_indexed_article_excerpts
+  passage_record_count: 7
+  claim_links_passage_checked: 4
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 4
+  human_verification_status: not_verified
+- source_id: waldron2020_transient_flow_mbdoe
+  title: Model-based design of transient flow experiments for the identification of kinetic parameters
+  recorded_access_status_before_mission: full_text_read
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 3
+  historical_attachment_count: 0
+  mission_access_status: full_original_pdf_reopened
+  passage_record_count: 10
+  claim_links_passage_checked: 3
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 3
+  human_verification_status: not_verified
+- source_id: schoukens1994_periodic_excitation_identification
+  title: On the advantages of periodic excitation in system identification
+  recorded_access_status_before_mission: abstract_only
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 1
+  historical_attachment_count: 0
+  mission_access_status: not_reopened
+  passage_record_count: 0
+  claim_links_passage_checked: 0
+  claim_links_no_passage_yet: 1
+  ai_recheck_count: 0
+  human_verification_status: not_verified
+
+- source_id: rosa2025_pdbased_postplasma
+  title: A kinetic model for Pd-based hydrogenation of acetylene-rich streams typical of post-plasma applications
+  recorded_access_status_before_mission: not_in_starting_map
+  local_path: null
+  local_path_exists_at_inventory: false
+  current_claim_source_link_count: 9
+  historical_attachment_count: 0
+  mission_access_status: full_text_xml_via_europe_pmc
+  source_identity_hash: b953c19f28a2b1459471c601b3b10b61cf4d6efaeff2e59b94930706d1c933d4
+  passage_record_count: 8
+  claim_links_passage_checked: 9
+  claim_links_no_passage_yet: 0
+  ai_recheck_count: 9
+  human_verification_status: not_verified

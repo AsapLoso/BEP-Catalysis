@@ -1,0 +1,164 @@
+dataset:
+  name: Integrated BEP scientific coverage ledger
+  edition: integrated-v1-2026-10-22
+  interpretation: Coverage records describe what the AI reference graph contains and what remains unestablished;
+    they do not grade human understanding.
+coverage:
+- id: reaction_pathways_sites_coverages_kinetics
+  status: integrated_with_target_specific_gaps
+  description: Product stoichiometry, sequential and competing routes, Pd/PdAg site families, adsorption, site closure,
+    deposit-associated A/E and one-site PSSA models, source-specific rate bases, and explicit dynamic-coverage alternatives
+    are connected to packed-bed source terms.
+  node_ids:
+  - u_ph_reaction
+  - ph_reaction_network
+  - c1_microscopic_surface_path
+  - c1_horiuti_polanyi_family
+  - ph_surface_states
+  - ph_adsorbate_balance
+  - ph_dynamic_memory
+  - c1_borodzinski_ae_site_hypothesis
+  - c1_borodzinski_ae_effective_rates
+  - c1_pd_mn_adsorption_substitution
+  - c1_pdag_descriptor_mkm
+  - c1_pdag_industrial_lhhw_decay
+  - c2_urmes_2019_effective_rates
+  - c2_surface_kinetic_closure_choices
+  - ma_pde_ode_coupling
+  established_here: Source-scoped observations and model structures, equations and units with the Borodziński 2000
+    internal discrepancies preserved, assumptions, and alternative closures are mapped and compared.
+  not_established: The BEP catalyst's working surface, elementary route, target kinetic parameters, carbon balance,
+    or need for dynamic coverage states; a unique interpretation of the Borodziński 2000 A/E model or its discrepant
+    source values.
+  next_evidence: Identify catalyst batch/support/preparation and obtain matched steady and transient data; discriminate
+    PSSA and dynamic-coverage models after measuring input and analyzer dynamics.
+- id: packed_bed_pellet_and_thermal_transport
+  status: integrated_baseline_and_extensions
+  description: Conservative axial gas balances, variable-flow closure, dispersion, conventional and competing domain-specific
+    boundary interpretations, residence-time distributions, film and pellet diffusion, heat balance, and isothermal-model
+    limits are represented.
+  node_ids:
+  - u_ph_transport
+  - ph_axial_balance
+  - ph_variable_superficial_velocity
+  - ph_axial_dispersion
+  - ph_danckwerts
+  - ph_boundary_model_interpretations
+  - ph_residence_time_distribution
+  - ph_pellet_transport
+  - internal_diffusion_thiele
+  - external_film_transfer
+  - ph_isothermal
+  - ph_energy_balance
+  - reaction_thermodynamics
+  established_here: Variable bases and source-volume factors are stated for the proposed one-dimensional baseline;
+    variable-velocity flux divergence and an ideal-gas convective-flow closure are derived with explicit assumptions;
+    pellet and energy models are marked as extensions.
+  not_established: Target dispersion, total-flow/velocity change, external-domain boundary conditions, pressure
+    drop, effectiveness factor, heat transfer, temperature gradients, or relevance of pellet resistance.
+  next_evidence: Obtain geometry, particle size, flow and temperature data; evaluate transport criteria on the target
+    operating envelope.
+- id: conservation_and_model_class
+  status: integrated_equation_level
+  description: Gas stoichiometry, variable-flow gas PDE, surface ODE/algebraic closure, initial and competing boundary
+    conditions, conservative finite-volume reduction, and the PDE-to-ODE/DAE coupling are linked.
+  node_ids:
+  - u_ma_conservation
+  - ma_stoichiometry
+  - ma_gas_pde
+  - ma_surface_balance
+  - ma_initial_boundary
+  - ma_pde_ode_coupling
+  - ma_conservative_finite_volume
+  established_here: A candidate concentration, velocity, catalyst-density and rate basis is stated; the finite-volume
+    cell balance and telescoping global conservation identity are derived under shared-face-flux assumptions.
+  not_established: A unique target model, complete species mechanism, calibrated initial condition, or target parameter
+    set.
+  next_evidence: Fix reaction network, density/rate basis, pressure/flow closure and measurable boundary conditions
+    with the project team.
+- id: numerical_analysis_and_verification
+  status: concepts_integrated_no_simulator_run
+  description: Method of lines, conservative finite-volume fluxes, convection-dominated discretization, a scalar
+    explicit transport positivity bound, stiffness, discontinuous forcing, positivity, conservation and refinement
+    checks are mapped.
+  node_ids:
+  - u_ma_numerics
+  - ma_MOL
+  - ma_convection_scheme
+  - ma_stiff_solver
+  - ma_discontinuous_input
+  - ma_numerical_stability
+  - ma_numerical_checks
+  - ma_conservative_finite_volume
+  - ma_explicit_transport_step_bound
+  established_here: Candidate numerical methods, a derived scalar transport step condition, one source-specific
+    MOL/stability example, and verification obligations are distinguished from claims of target numerical success.
+  not_established: Target solver implementation, mesh/time-step selection, stiffness spectrum, convergence, positivity
+    or runtime for the BEP system.
+  next_evidence: Implement only after selecting model and data; verify limiting cases, balances, invariants, step
+    events, mesh and tolerance convergence.
+- id: inverse_problems_and_uncertainty
+  status: concepts_integrated_no_target_estimation
+  description: Structural/practical identifiability, sensitivity, parameter compensation, transient excitation,
+    and uncertainty propagation are connected to model alternatives; a local Fisher-information design layer now
+    distinguishes parameter precision from structural uniqueness and reactor performance.
+  node_ids:
+  - u_ma_inverse
+  - ma_identifiability
+  - ma_sensitivity
+  - c2_transient_parameter_identifiability
+  - sc_identification_vs_performance
+  - sc_co_design
+  - ma_fisher_information_model_based_design
+  - sc_persistent_excitation_condition
+  established_here: A good fit is separated from unique parameters, a true mechanism, and predictive performance;
+    local information formulas, criterion tradeoffs, and their fixed-noise/model assumptions are explicit.
+  not_established: BEP parameter estimates, covariance/posterior, sensitivity rank, model-selection result, or uncertainty
+    bound.
+  next_evidence: Calibrate bed-plane input and outlet measurements; collect informative steady and transient data;
+    compare models on held-out conditions.
+- id: periodic_dynamics_and_performance_comparison
+  status: theory_integrated_sign_unresolved
+  description: Periodic orbits, LTI and Jensen no-gain limits, nonlinear rectification, cycle metrics, feasible-set
+    nesting, and matched steady optimization are represented.
+  node_ids:
+  - u_ma_periodic
+  - ma_periodic_orbit
+  - ma_average_gain
+  - ma_lti_no_gain
+  - ma_concavity_bound
+  - ma_nonlinear_rectification
+  - sc_objective
+  - sc_baseline
+  - sc_benchmark_nesting
+  - sc_fair_steady_periodic_cycle_comparison
+  - sc_identification_vs_performance
+  established_here: Conditional mathematical limits and fair comparison requirements; periodic gains may be positive,
+    zero or negative depending on model and constraints.
+  not_established: Strict periodic gain, optimal waveform, best steady value, or benefit after cycling/safety/resource
+    costs for the BEP target; the target comparator is not operationally specified, and no target-optimal steady
+    or periodic policy has been solved.
+  next_evidence: Define a cycle-integrated objective and identical feasible set; fit/validate the target plant;
+    optimize steady and periodic controls; quantify uncertainty and replicate tests.
+- id: measurement_observability_and_hardware
+  status: conceptual_map_no_target_instrument_model
+  description: Command-to-bed actuation, analyzer dynamics, outlet measurements, operando signals, state observability,
+    estimation and feasibility constraints are separated.
+  node_ids:
+  - u_sc_plant
+  - sc_manipulated_input
+  - sc_bed_input_realization
+  - sc_output_model
+  - u_ph_measurement
+  - ph_operando_spectroscopy
+  - u_sc_observation
+  - sc_observability
+  - sc_ekf_ukf
+  - state_observer_mpc
+  - u_sc_feasibility
+  established_here: Instrumentation signals are not equated with latent states; cited laboratory operando techniques
+    do not prove whole-bed observability.
+  not_established: Actual actuator/analyzer transfer functions, sensor bandwidth/noise, state observability, safety
+    envelope, or validated observer/controller.
+  next_evidence: Measure command-to-bed and bed-to-analyzer responses with tracer/inert tests; inventory the actual
+    sensors and process constraints.

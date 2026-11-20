@@ -1,0 +1,2361 @@
+{
+  "dataset": {
+    "name": "BEP independent scientific reference",
+    "edition": "v1",
+    "role": "AI reference knowledge",
+    "scope_anchor": "Academics/BEP/Catalysis/0_Project_Management/main.tex",
+    "epistemic_ceiling": "ai_worked_out",
+    "snapshot_date": "2026-10-21",
+    "maturity_values": [
+      "idea",
+      "ai_worked_out"
+    ],
+    "evidence_types": [
+      "source_observation",
+      "proposal_hypothesis",
+      "derived_under_assumptions",
+      "interpretation",
+      "unverified"
+    ],
+    "notes": "No human-verified status, calibrated parameters, simulation results, optimized waveform, or experimental performance gain is claimed."
+  },
+  "nodes": [
+    {
+      "id": "bep",
+      "parent": null,
+      "title": "BEP scientific domain",
+      "kind": "root",
+      "maturity": "idea",
+      "relevance": "core",
+      "summary": "Dynamic operation and prediction of selective acetylene hydrogenation in a packed bed.",
+      "explanation": "The project asks whether time-varying inlet composition can change gas transport, adsorbed surface populations, and the cycle-averaged production of ethylene relative to a feasible steady operating point. This dataset treats the proposal as a research plan, then separates literature observations, mathematical consequences under stated conventions, and untested project hypotheses. The baseline scope is one-dimensional, open-loop, and isothermal; a catalyst-specific transient model and a performance gain have not been established here.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Abstract; Introduction §1; Research Questions; Methodology §§3.1–3.5 (lines 107–284)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Project question, proposed packed-bed setting, planned model and validation phases; not experimental proof."
+        }
+      ],
+      "related_ids": [
+        "physics",
+        "mathematics",
+        "systems_control"
+      ],
+      "open_questions": [
+        "Can periodic composition forcing improve cycle-integrated net ethylene production under matched feed, conversion, and equipment constraints?",
+        "What model complexity is supported by the available catalyst-specific transient data?"
+      ]
+    },
+    {
+      "id": "physics",
+      "parent": "bep",
+      "title": "Physics",
+      "kind": "discipline",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Molecular reaction chemistry, catalyst surface states, packed-bed transport, heat and catalyst evolution, and what experiments can observe.",
+      "explanation": "This branch describes the physical plant underlying the proposal. Its central coupling is gas-phase composition transport with catalyst-specific surface kinetics. The simplest useful model is not a universal catalyst mechanism: rate laws, adsorption states, site families, and side pathways depend on catalyst composition, support, feed and condition.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Introduction §1.1–1.3; Methodology §3.1 (lines 116–192)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal's physical system and stated model scope."
+        }
+      ],
+      "related_ids": [
+        "mathematics",
+        "systems_control"
+      ],
+      "open_questions": [
+        "Which measured catalyst and feed conditions should define the first model's applicability domain?"
+      ]
+    },
+    {
+      "id": "ph_reaction_network",
+      "parent": "physics",
+      "title": "Reaction network and product accounting",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "The desired intermediate sits between reactant and over-hydrogenated product, with competing pathways that complicate selectivity.",
+      "explanation": "Acetylene semi-hydrogenation is commonly represented by C₂H₂ + H₂ → C₂H₄ followed by C₂H₄ + H₂ → C₂H₆. Ethylene is both desired product and reactant for the second step. The two-step chain is a minimal network for explaining an intermediate-yield optimum; real catalysts can also form oligomers, carbonaceous deposits, methane or other products. Product metrics must specify feed ethylene and a carbon/molar basis.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Abstract; Background & Industry Rationale §1.1 (lines 107–120)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Minimal sequential reaction framing."
+        },
+        {
+          "source_id": "lan2025",
+          "locator": "Review abstract: competing over-hydrogenation, C–C coupling and C–C cleavage/coke",
+          "evidence_type": "source_observation",
+          "supports": "Review summary of important competing product channels and catalyst-design context."
+        }
+      ],
+      "related_ids": [
+        "ph_surface_states",
+        "ph_metrics",
+        "ma_stoichiometry",
+        "sc_objective"
+      ],
+      "open_questions": [
+        "Which side products must be included at the first experimental feed and catalyst conditions?"
+      ]
+    },
+    {
+      "id": "ph_sequential_path",
+      "parent": "ph_reaction_network",
+      "title": "Sequential hydrogenation path",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Two consecutive hydrogen additions create a kinetic competition between ethylene desorption and further reaction.",
+      "explanation": "The minimal path is C₂H₂(g) + H₂(g) ⇌ C₂H₂* → C₂H₄* → C₂H₄(g), with further hydrogenation of adsorbed or gas-phase ethylene leading toward C₂H₆. The precise adsorbed intermediates and elementary steps are mechanism choices, not fixed by the net stoichiometry. In a dynamic reactor, ethylene production depends on how long acetylene-derived surface intermediates remain, their hydrogen availability, and their desorption versus onward reaction.",
+      "assumptions": [
+        "The two-step net stoichiometry is a bookkeeping reduction; it does not assert a unique elementary mechanism.",
+        "The first v1 does not assign numerical rate constants."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "urmes2019",
+          "locator": "Abstract: sequential hydrogen additions/Horiuti–Polanyi model on Pd/α-Al₂O₃ under tail-end conditions",
+          "evidence_type": "source_observation",
+          "supports": "A kinetic interpretation for one supported monometallic Pd system."
+        },
+        {
+          "source_id": "urmes2022",
+          "locator": "Publisher abstract: single-site microkinetic model; conversion controlled by H adsorption and hydrogenation of surface vinyl to adsorbed ethylene",
+          "evidence_type": "source_observation",
+          "supports": "Model-specific control-step interpretation under periodic Pd/α-Al₂O₃ experiments."
+        }
+      ],
+      "related_ids": [
+        "ph_competing_channels",
+        "ph_surface_states",
+        "ma_stoichiometry"
+      ],
+      "open_questions": [
+        "Does a given catalyst form and release gas-phase ethylene through the same adsorbed intermediate sequence?"
+      ]
+    },
+    {
+      "id": "ph_competing_channels",
+      "parent": "ph_reaction_network",
+      "title": "Competing products and catalyst deposits",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "supporting",
+      "summary": "Over-hydrogenation and carbon-forming routes alter both the desired-product balance and the catalyst state.",
+      "explanation": "Ethane formation consumes the desired ethylene-equivalent product; C–C coupling and carbon-forming chemistry can alter site populations and pore transport. Borodziński and Cybulski model Pd/α-Al₂O₃ with two populations of sites associated with carbonaceous deposits, while later work on other catalysts explores different active-site descriptions. These observations argue for catalyst-specific model selection and, where time-on-stream matters, a dynamic catalyst-state extension rather than a universal two-reaction law.",
+      "assumptions": [
+        "The first proposal baseline omits explicit coke/deactivation states.",
+        "The cited Pd deposit model does not establish the same site populations for PdAg."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "borodzinski2000",
+          "locator": "Abstract: gradientless-reactor kinetics on commercial Pd/α-Al₂O₃; two site types associated with carbonaceous deposits",
+          "evidence_type": "source_observation",
+          "supports": "Deposit-associated two-site kinetic model for the specified system."
+        },
+        {
+          "source_id": "lan2025",
+          "locator": "Review abstract: over-hydrogenation, oligomerization and C–C cleavage/coke",
+          "evidence_type": "source_observation",
+          "supports": "Broad catalyst literature recognizes these competing channels."
+        }
+      ],
+      "related_ids": [
+        "ph_sequential_path",
+        "ph_surface_states",
+        "ph_deposits",
+        "ma_stoichiometry"
+      ],
+      "open_questions": [
+        "Are deposits a reversible active/selective phase, a deactivating state, or both for the chosen catalyst?"
+      ]
+    },
+    {
+      "id": "ph_metrics",
+      "parent": "ph_reaction_network",
+      "title": "Conversion, selectivity and yield",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Performance statements require explicit denominators, net ethylene production, and cycle averaging.",
+      "explanation": "For a C₂ feed basis, acetylene conversion may be defined as X_A=(F_A,in−F_A,out)/F_A,in. Net ethylene selectivity among converted acetylene can be defined as S_E=(F_E,out−F_E,in)/(F_A,in−F_A,out), provided feed/product accounting and units are consistent. Then Y_E=X_A S_E on that basis. Under periodic operation, integrate molar flows over a full settled cycle; averaging instantaneous selectivity can differ from the ratio of cycle-integrated amounts. Ethylene-rich tail-end feed makes subtraction of inlet ethylene essential.",
+      "assumptions": [
+        "C₂ species have equal carbon count; other products or feed components require an explicit carbon balance.",
+        "Use cycle-periodic operation or report startup/transient windows separately."
+      ],
+      "equations": [
+        {
+          "name": "cycle-integrated net ethylene yield",
+          "expression": "Y_E = ∫_0^T (F_E,out(t) − F_E,in(t)) dt / ∫_0^T F_A,in(t) dt",
+          "variables": "F_E and F_A are molar flow rates; T is the forcing period.",
+          "conditions": "A declared feed basis; integrate after periodic operation is reached; include all relevant products in closure."
+        },
+        {
+          "name": "acetylene conversion",
+          "expression": "X_A = (F_A,in − F_A,out)/F_A,in",
+          "variables": "F_A,in and F_A,out are molar flow rates at a steady state or consistently time-integrated over a cycle.",
+          "conditions": "The selected averaging convention must be stated."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "lan2025",
+          "locator": "Review abstract: conversion/selectivity calculation benchmarks are critically discussed",
+          "evidence_type": "source_observation",
+          "supports": "Need to define metric basis explicitly."
+        },
+        {
+          "source_id": "proposal_main",
+          "locator": "Abstract; §3.4 and §3.5 (lines 257–279)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal proposes an ethylene-yield objective and empirical comparison; its metric definition still needs operational specification."
+        }
+      ],
+      "related_ids": [
+        "sc_objective",
+        "ma_periodic_orbit"
+      ],
+      "open_questions": [
+        "How will carbon balance, feed ethylene and cycle average be measured and reported?"
+      ]
+    },
+    {
+      "id": "ph_surface_states",
+      "parent": "physics",
+      "title": "Surface states and site inventory",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Coverage variables encode adsorbed populations and finite catalyst sites; their kinetics retain memory of past gas composition.",
+      "explanation": "A surface model augments gas concentrations with coverage fractions θ_l. For a chosen site family, the unoccupied fraction and adsorbate occupancies must obey a site balance. Coverage dynamics follow elementary adsorption, desorption and surface-reaction rates; algebraic pseudo-steady-state elimination is a model reduction that can discard transient memory when adsorption/desorption times are not fast relative to forcing and transport. Coverage states must remain physically feasible, and site occupancy factors matter for multidentate species.",
+      "assumptions": [
+        "Coverage is not directly measured by a boundary gas analyzer.",
+        "The adsorption state list and site balance are mechanism-specific; no universal state list is asserted."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.1, Microscopic Surface Dynamics (lines 187–192)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal plans explicit non-PSSA coverages and a site-conservation constraint."
+        },
+        {
+          "source_id": "urmes2022",
+          "locator": "Publisher abstract: single-site microkinetic model calibrated to periodic acetylene data on Pd/α-Al₂O₃",
+          "evidence_type": "source_observation",
+          "supports": "One published catalyst-specific dynamic surface model."
+        }
+      ],
+      "related_ids": [
+        "ph_adsorbate_balance",
+        "ph_mechanism_choice",
+        "ph_dynamic_memory",
+        "ma_surface_balance",
+        "sc_observability"
+      ],
+      "open_questions": [
+        "Which adsorbed species and site families are justified by data for the actual PdAg catalyst?"
+      ]
+    },
+    {
+      "id": "ph_adsorbate_balance",
+      "parent": "ph_surface_states",
+      "title": "Coverage balance and site conservation",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Surface-state equations must conserve sites while accounting for adsorption, desorption and reaction stoichiometry.",
+      "explanation": "For elementary step j, let ν^s_lj be the signed stoichiometric coefficient of adsorbed species l. With rates normalized per site, dθ_l/dt=Σ_j ν^s_lj r^s_j. If r is instead per catalyst mass or external area, a site-density conversion is needed before it can be added to a fractional coverage rate. A simple monodentate lattice has θ_*+Σ_l θ_l=1; for species occupying s_l sites, θ_*+Σ_l s_l θ_l=1. This is a closure constraint, not a kinetic law.",
+      "assumptions": [
+        "Rate basis, site density and occupancy convention must match.",
+        "Numerical integration should preserve nonnegative coverages and site closure, or quantify violations."
+      ],
+      "equations": [
+        {
+          "name": "coverage dynamics",
+          "expression": "dθ_l/dt = Σ_j ν^s_lj r^s_j( p, θ, T )",
+          "variables": "θ_l dimensionless; p partial pressures; normalized r^s_j in s⁻¹ per site.",
+          "conditions": "Only if the kinetic rate is expressed per site; otherwise convert using the stated active-site density."
+        },
+        {
+          "name": "site balance",
+          "expression": "θ_* + Σ_l s_l θ_l = 1",
+          "variables": "θ_* vacancy fraction; s_l number of sites occupied by adsorbate l.",
+          "conditions": "One site family and a declared adsorption lattice; multiple site families need separate balances."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Eq. at lines 189–192",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal's generic dynamic coverage balance and unit-occupancy site constraint; reaction-specific terms are not supplied."
+        },
+        {
+          "source_id": "pachulski2012",
+          "locator": "Abstract: selected Langmuir–Hinshelwood model uses two site types for Pd–Ag/Al₂O₃",
+          "evidence_type": "source_observation",
+          "supports": "A PdAg model need not reduce to the proposal's single undifferentiated lattice."
+        }
+      ],
+      "related_ids": [
+        "ph_surface_states",
+        "ma_surface_balance",
+        "ma_stoichiometry"
+      ],
+      "open_questions": [
+        "Does a one-site coverage model close against the selected PdAg kinetic model and its site-density basis?"
+      ]
+    },
+    {
+      "id": "ph_mechanism_choice",
+      "parent": "ph_surface_states",
+      "title": "Mechanism choice and catalyst specificity",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Single-site and two-site mechanisms coexist in the acetylene literature; transfer between catalyst systems is not automatic.",
+      "explanation": "Published kinetic forms differ with metal, alloying, support, catalyst pretreatment and feed regime. A 2012 Pd–Ag/Al₂O₃ study reports a Langmuir–Hinshelwood model with separate site types for acetylene and ethylene hydrogenation. A 2019 study of 0.05 wt% Pd/α-Al₂O₃ describes both reactions on one active site. A 2022 periodic-operation study uses a single-site microkinetic description for Pd/α-Al₂O₃. These are not contradictions if each is treated as a model for its own catalyst and conditions.",
+      "assumptions": [
+        "Do not transfer elementary parameters or site assumptions across Pd, PdAg, supports or feed regimes without evidence.",
+        "Abstract-level evidence does not permit reconstruction of the full rate expressions."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "pachulski2012",
+          "locator": "Abstract: selected LH rate form and two site types for a Pd-Ag/Al₂O₃ industrial catalyst",
+          "evidence_type": "source_observation",
+          "supports": "Catalyst-specific two-site description."
+        },
+        {
+          "source_id": "urmes2019",
+          "locator": "Abstract: single active site for acetylene and ethylene conversion on 0.05 wt% Pd/α-Al₂O₃",
+          "evidence_type": "source_observation",
+          "supports": "Different single-site description in monometallic Pd under tail-end conditions."
+        },
+        {
+          "source_id": "urmes2022",
+          "locator": "Publisher abstract: single-site model under periodic reactor operation on Pd/α-Al₂O₃",
+          "evidence_type": "source_observation",
+          "supports": "One transient kinetic model, still not PdAg."
+        }
+      ],
+      "related_ids": [
+        "ph_adsorbate_balance",
+        "sc_experiment_design",
+        "sc_robustness"
+      ],
+      "open_questions": [
+        "Can a reduced PdAg kinetic model fit both steady and transient data without nonphysical parameter compensation?"
+      ]
+    },
+    {
+      "id": "ph_dynamic_memory",
+      "parent": "ph_surface_states",
+      "title": "Dynamic memory and surface timescales",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Whether coverage memory matters depends on measured kinetic times relative to the forcing and gas residence times.",
+      "explanation": "The governing comparison is between characteristic times of adsorption, desorption and surface reaction, the inlet period, and axial transport. If all surface relaxation modes are much faster than changes in local gas composition, a quasi-steady approximation may be defensible; if not, explicit coverages can materially alter transient selectivity. The proposal's τ_des≈T_pulse<τ_residence window is a testable design hypothesis, not a universal resonance condition. A single desorption time may be inadequate when the surface has several relaxation modes.",
+      "assumptions": [
+        "Timescales must be estimated for the chosen catalyst and operating point.",
+        "A dynamic coverage model does not by itself prove a yield advantage."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.1, Multi-Timescale Scaling & Dynamic Resonance Window (lines 194–197)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposed time-window hypothesis."
+        },
+        {
+          "source_id": "urmes2022",
+          "locator": "Publisher abstract: periodic flow amplitudes/frequencies and optimized transient microkinetic model; H adsorption and vinyl hydrogenation affect conversion",
+          "evidence_type": "source_observation",
+          "supports": "Transient sensitivity in a Pd catalyst system, not a universal resonance law."
+        }
+      ],
+      "related_ids": [
+        "ma_timescale",
+        "sc_periodic_forcing",
+        "sc_experiment_design"
+      ],
+      "open_questions": [
+        "What relaxation eigenmodes and forcing frequencies are supported by transient data?"
+      ]
+    },
+    {
+      "id": "ph_packed_bed",
+      "parent": "physics",
+      "title": "Gas–solid transport in a packed bed",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "The model couples axial gas transport with distributed catalytic consumption and product formation.",
+      "explanation": "A one-dimensional bed model averages over cross-section and pellet-scale structure. The primary proposal writes advection, axial dispersion and a heterogeneous source term. Its equation should be placed on a clear volumetric basis: gas concentration per void volume, superficial velocity per total bed area, bed void fraction, catalyst mass per pellet volume, and rates per catalyst mass. This accounting exposes where porosity factors belong and avoids mixing interstitial and superficial velocity conventions.",
+      "assumptions": [
+        "Cross-sectional averaging; no radial gradients.",
+        "Constant bed properties in the baseline.",
+        "Intraparticle diffusion is excluded from the main proposal baseline."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.1, macroscopic fluid transport and Eq. (lines 180–185)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposed 1D advection–dispersion model and bed variables."
+        },
+        {
+          "source_id": "shi2024",
+          "locator": "Publisher abstract: pellet-resolved CFD study reports geometry, packing, heat/mass transfer and diffusion-path effects on model-predicted selectivity",
+          "evidence_type": "source_observation",
+          "supports": "Model evidence that pellet geometry/transport can matter; does not validate the proposal PDE."
+        }
+      ],
+      "related_ids": [
+        "ph_axial_balance",
+        "ph_pellet_transport",
+        "ma_gas_pde",
+        "sc_plant"
+      ],
+      "open_questions": [
+        "What bed geometry, particle dimensions and measured dispersion justify the 1D closure?"
+      ]
+    },
+    {
+      "id": "ph_axial_balance",
+      "parent": "ph_packed_bed",
+      "title": "Axial convection–dispersion and reaction source",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "A species balance combines accumulation, axial flux divergence and a stoichiometric reaction source.",
+      "explanation": "With C_i in mol m⁻³ of gas void, u_s in m s⁻¹ superficial velocity, ε_b dimensionless bed void fraction, D_ax in m² s⁻¹ under the flux convention below, ρ_p in kg catalyst m⁻³ pellet, and r_j in mol reaction kg_cat⁻¹ s⁻¹, a conservative bed-volume balance is ε_b∂tC_i+∂z(u_s C_i)=∂z(ε_bD_ax∂zC_i)+(1−ε_b)ρ_pΣ_jν_ijr_j. Products have positive ν; reactants negative. For constant ε_b, u_s and D_ax, division by ε_b gives an interstitial-velocity form with u_i=u_s/ε_b. The proposal's r_i must therefore be interpreted as a signed species source or expanded through a stoichiometric matrix.",
+      "assumptions": [
+        "C_i is defined per gas void volume; u_s is superficial, not interstitial.",
+        "ρ_p is per catalyst-pellet volume; a bulk-bed catalyst density may be used instead if its definition replaces (1−ε_b)ρ_p.",
+        "No pellet effectiveness factor or radial variation is supplied in the core equation."
+      ],
+      "equations": [
+        {
+          "name": "conservative gas species balance",
+          "expression": "ε_b ∂C_i/∂t + ∂(u_s C_i)/∂z = ∂[ε_b D_ax,i ∂C_i/∂z]/∂z + (1−ε_b) ρ_p Σ_j ν_ij r_j",
+          "variables": "C_i [mol m⁻³ void]; ε_b [1]; u_s [m s⁻¹ bed area]; D_ax,i [m² s⁻¹]; ρ_p [kg_cat m⁻³ pellet]; r_j [mol kg_cat⁻¹ s⁻¹].",
+          "conditions": "1D cross-sectional averaging; consistent flux convention; constant bed properties only when simplified; ν_ij product-positive."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.1, Eq. at lines 180–185",
+          "evidence_type": "derived_under_assumptions",
+          "supports": "A dimensionally explicit conservative form derived from the proposal's intended advection–dispersion/source balance; this is a clarified formulation, not a verbatim proposal equation."
+        },
+        {
+          "source_id": "proposal_main",
+          "locator": "Eq. at lines 182–184",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal's original compact equation, whose rate/sign and velocity units need specification."
+        }
+      ],
+      "related_ids": [
+        "ma_gas_pde",
+        "ma_stoichiometry",
+        "ph_danckwerts",
+        "ph_surface_states"
+      ],
+      "open_questions": [
+        "Are D_ax and ρ_p available on compatible experimental bases?"
+      ]
+    },
+    {
+      "id": "ph_axial_dispersion",
+      "parent": "ph_axial_balance",
+      "title": "Axial dispersion versus plug-flow limit",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Axial dispersion controls front spreading and residence-time distribution; plug flow is a limiting approximation.",
+      "explanation": "The Péclet number compares axial advective transport to dispersion. Large Pe may support a near-plug-flow approximation in a sufficiently long bed, but it does not alone establish negligible mixing, especially near inlet/outlet boundaries or under strongly coupled fast reactions. Dispersion can affect peak local composition and therefore nonlinear surface rates even if cycle-averaged outlet flow changes little.",
+      "assumptions": [
+        "Pe must use a declared length and velocity convention.",
+        "Large Pe is necessary context, not a substitute for measured residence-time or breakthrough validation."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Research Questions (lines 140–148); Methodology §3.1 (lines 194–197)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal contrasts high-Pe plug-flow and finite-dispersion regimes."
+        },
+        {
+          "source_id": "danckwerts1953",
+          "locator": "Abstract: residence-time distributions in open and packed tubes; departures from piston flow/perfect mixing matter",
+          "evidence_type": "source_observation",
+          "supports": "Importance of non-ideal flow and residence-time distributions, not a specific fitted D_ax."
+        }
+      ],
+      "related_ids": [
+        "ph_axial_balance",
+        "ma_Peclet",
+        "ph_danckwerts"
+      ],
+      "open_questions": [
+        "Can tracer data identify D_ax over the forcing bandwidth?"
+      ]
+    },
+    {
+      "id": "ph_pellet_transport",
+      "parent": "ph_packed_bed",
+      "title": "Film and intraparticle transport",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "supporting",
+      "summary": "External-film and pore diffusion can make observed rates differ from intrinsic surface kinetics.",
+      "explanation": "The main proposal's gas-phase PDE has a bed-scale catalyst source but no explicit particle concentration field. If internal diffusion matters, a pellet model adds intraparticle diffusion and reaction, often with effective diffusivity and pellet geometry; film resistance couples pellet-surface and bulk concentrations. Shi et al. report a numerical pellet-resolved study where geometry and diffusion path change predicted ethylene distribution/selectivity for their model. That motivates a transport check; it is not evidence that the particular BEP bed is diffusion-limited.",
+      "assumptions": [
+        "The v1 core model omits pellet equations; this is a scoped extension.",
+        "The cited 2024 result is model-based and condition-specific."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "shi2024",
+          "locator": "Publisher abstract: particle-resolved CFD, shape/packing and diffusion-path sensitivity; model selectivity range at a stated conversion",
+          "evidence_type": "source_observation",
+          "supports": "A numerical study finding geometry-dependent reaction–diffusion behavior."
+        },
+        {
+          "source_id": "proposal_roadmap",
+          "locator": "Particle-level transport extension section",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Future project-plan scope only, not independent validation."
+        }
+      ],
+      "related_ids": [
+        "ph_packed_bed",
+        "ma_Damkohler",
+        "ma_gas_pde"
+      ],
+      "open_questions": [
+        "Are Mears/Weisz–Prater checks or direct pellet data available for the target conditions?"
+      ]
+    },
+    {
+      "id": "ph_danckwerts",
+      "parent": "ph_packed_bed",
+      "title": "Inlet and outlet flux boundary conditions",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Boundary conditions must match the conservative axial flux and the physical entrance/exit assumptions.",
+      "explanation": "For positive axial superficial flow and total gas-phase flux J_i=u_s C_i−ε_bD_ax,i∂zC_i, a Danckwerts inlet matches the imposed upstream feed flux to the bed-face total flux: u_sC_i,in=J_i(0). A common outlet condition is zero dispersive gradient, ∂zC_i(L)=0. These are a model choice for a dispersed-flow tubular bed; they are not automatically the unique boundary model for every packed reactor or finite upstream/downstream volume.",
+      "assumptions": [
+        "Use the same velocity, dispersion and porosity convention as the PDE.",
+        "The outlet condition assumes negligible back-dispersion into an external downstream domain."
+      ],
+      "equations": [
+        {
+          "name": "Danckwerts inlet",
+          "expression": "u_s C_i,in = u_s C_i(0) − ε_b D_ax,i ∂C_i/∂z|_(0)",
+          "variables": "u_sC is convective flux; −ε_bD_ax∂zC is dispersive flux.",
+          "conditions": "Positive z flow; upstream feed specified; coefficient convention matches the conservative balance."
+        },
+        {
+          "name": "dispersive-flux outlet",
+          "expression": "∂C_i/∂z|_(L) = 0",
+          "variables": "C_i is gas-phase concentration.",
+          "conditions": "Common exit approximation for a downstream convective outlet."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.1 (line 185)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal selects Danckwerts-type boundary conditions but does not write their equations."
+        },
+        {
+          "source_id": "danckwerts1953",
+          "locator": "Paper abstract and pp. 1–13 bibliographic record; full text not read",
+          "evidence_type": "interpretation",
+          "supports": "Historical treatment of residence-time behavior in continuous packed/open tubes; the equations above are stated here from the chosen flux convention, not quoted from the article."
+        }
+      ],
+      "related_ids": [
+        "ph_axial_balance",
+        "ma_initial_boundary",
+        "ma_numerical_checks"
+      ],
+      "open_questions": [
+        "Does the apparatus require explicit upstream mixing volume and downstream analyzer dead volume?"
+      ]
+    },
+    {
+      "id": "ph_thermal_evolution",
+      "parent": "physics",
+      "title": "Thermal coupling and catalyst evolution",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "supporting",
+      "summary": "The isothermal baseline isolates composition forcing, while exothermic heat release and catalyst-state changes can alter selectivity and stability.",
+      "explanation": "Hydrogenation releases heat, and catalyst surface structure can evolve through hydride/carbide phases, carbon deposits or deactivation. A concentration-only isothermal model is a deliberate reduction. If temperature changes materially, energy balances and temperature-dependent kinetics may feed back into rates and local hot spots. Numerical difficulty is not a physical justification to assume isothermal behavior; it must be checked against measured temperature rise and operating regime.",
+      "assumptions": [
+        "The baseline is isothermal by proposal choice; this is not validated for all beds.",
+        "No thermal-stability result or numerical instability claim is adopted without an energy model."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.1 (lines 184–185); Scope Boundary §3.5",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal's isothermal baseline and future thermal extension."
+        },
+        {
+          "source_id": "borodzinski2006",
+          "locator": "Review abstract: Pd hydride/carbide phases and carbonaceous deposits during catalyst stabilization",
+          "evidence_type": "source_observation",
+          "supports": "Catalyst-state evolution discussed for Pd/ethyne–ethene systems."
+        }
+      ],
+      "related_ids": [
+        "ph_isothermal",
+        "ph_deposits",
+        "ma_gas_pde"
+      ],
+      "open_questions": [
+        "What temperature deviations or catalyst aging occur at the proposed bed and cycle conditions?"
+      ]
+    },
+    {
+      "id": "ph_isothermal",
+      "parent": "ph_thermal_evolution",
+      "title": "Isothermal baseline and energy-balance boundary",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "An isothermal model fixes T=T₀ and therefore excludes temperature as a dynamic state.",
+      "explanation": "The proposal's core isolates concentration-driven dynamics by taking temperature as constant. Under this assumption, kinetic rates use a fixed temperature and no heat accumulation, axial conduction, reaction enthalpy, wall heat transfer, or temperature-dependent adsorption is solved. The simplification is defensible only when measured or estimated temperature deviations are small enough that their kinetic impact is below the study's uncertainty; in an exothermic packed bed that condition must be tested.",
+      "assumptions": [
+        "Temperature control or negligible heat-release effects are required.",
+        "The proposal's microsecond temperature-pulse example concerns another catalyst/reaction and cannot calibrate this model."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.1 (line 185); §3.4 and §3.5 (lines 263–284)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Core isothermal scope and later extension."
+        },
+        {
+          "source_id": "zhu2021",
+          "locator": "Abstract: fast temperature changes in a Pt model-catalyst microreactor for CO oxidation",
+          "evidence_type": "source_observation",
+          "supports": "Demonstrates a different Pt/CO oxidation thermal-pulse platform; not acetylene concentration forcing."
+        }
+      ],
+      "related_ids": [
+        "ph_thermal_evolution",
+        "sc_validation"
+      ],
+      "open_questions": [
+        "Can thermocouples or calorimetry bound temperature variation during concentration cycles?"
+      ]
+    },
+    {
+      "id": "ph_deposits",
+      "parent": "ph_thermal_evolution",
+      "title": "Carbonaceous deposits and catalyst aging",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "supporting",
+      "summary": "Deposits can change active-site populations, ethylene hydrogenation, and pore accessibility.",
+      "explanation": "Pd acetylene–ethylene hydrogenation literature treats carbonaceous surface deposits as chemically consequential. The 2000 model attributes two active-site populations to deposits; the 2006 review discusses changes during catalyst stabilization and effects on activity/selectivity. This supports tracking deactivation or catalyst state as a possible extension, but not assigning the same mechanism or dynamics to every Pd alloy.",
+      "assumptions": [
+        "Aging is omitted from the baseline dynamic state vector.",
+        "A catalyst-history effect must be separated from periodic forcing in experiments."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "borodzinski2000",
+          "locator": "Abstract: deposit-associated site populations in Pd/α-Al₂O₃ mixture hydrogenation",
+          "evidence_type": "source_observation",
+          "supports": "Catalyst-specific deposit effect."
+        },
+        {
+          "source_id": "borodzinski2006",
+          "locator": "Review abstract: catalyst hydride/carbide/deposit evolution and effects on reaction/selectivity/diffusion",
+          "evidence_type": "source_observation",
+          "supports": "Review synthesis of catalyst transformation effects."
+        }
+      ],
+      "related_ids": [
+        "ph_competing_channels",
+        "ph_mechanism_choice",
+        "sc_robustness"
+      ],
+      "open_questions": [
+        "How will experiment duration and regeneration separate periodic response from deactivation?"
+      ]
+    },
+    {
+      "id": "ph_measurement",
+      "parent": "physics",
+      "title": "Measurements and physical observability",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "The modeled internal surface profiles are inferred states; experimental access depends on explicit sensors and measurement dynamics.",
+      "explanation": "The proposal plans to calibrate against gas chromatograph conversion/selectivity and later to modulate feed with mass flow controllers. Boundary gas composition is not a direct observation of all bed-local coverages. Modulation-excitation spectroscopy can resolve dynamic species in suitably instrumented lab systems, but that does not establish operando coverage measurements throughout an industrial packed bed. A model should distinguish physical sensors, their sampling/transport delays and noise from latent states.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §§3.4–3.5 (lines 270–284); Literature §2 (lines 160–162)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Planned GC calibration, MFC tests, and hidden-state framing."
+        },
+        {
+          "source_id": "urakawa2008",
+          "locator": "Abstract and pp. 4902–4909; full text read, especially discussion of in-situ MES and periodic perturbation",
+          "evidence_type": "source_observation",
+          "supports": "MES detects dynamic interfacial species under suitable in-situ spectroscopy, not industrial full-bed coverage."
+        }
+      ],
+      "related_ids": [
+        "ph_boundary_measurement",
+        "ph_operando_spectroscopy",
+        "sc_output_model",
+        "sc_observability"
+      ],
+      "open_questions": [
+        "Which sensors can operate at the planned cycle frequency with known delay and bandwidth?"
+      ]
+    },
+    {
+      "id": "ph_boundary_measurement",
+      "parent": "ph_measurement",
+      "title": "Boundary gas composition and analyzer dynamics",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Outlet GC is a boundary composition measurement with finite sampling and transport delay.",
+      "explanation": "A gas chromatograph can provide conversion/selectivity from sampled inlet and outlet compositions, but cycle-resolved control or identification needs adequate time resolution. Sampling valves, sample loops, transfer lines, detector response and total-flow variation can smooth or delay a signal. These dynamics should be represented in the observation model or corrected experimentally; a steady GC result alone cannot identify fast coverage trajectories.",
+      "assumptions": [
+        "Sensor transfer and sampling cadence are apparatus-specific.",
+        "GC may not resolve the forcing period; a fast analyzer may be required."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4, Phase 1 (lines 270–273); §3.4 Phase 3 (lines 278–279)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal relies on GC steady calibration and proposes outlet measurements under forcing."
+        }
+      ],
+      "related_ids": [
+        "ph_measurement",
+        "sc_output_model",
+        "sc_experiment_design"
+      ],
+      "open_questions": [
+        "What is the analyzer response time relative to the smallest candidate period?"
+      ]
+    },
+    {
+      "id": "ph_operando_spectroscopy",
+      "parent": "ph_measurement",
+      "title": "Modulation-excitation spectroscopy",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "supporting",
+      "summary": "Periodic perturbation plus phase-sensitive analysis can enhance dynamic interfacial signals in a suitable laboratory setup.",
+      "explanation": "Urakawa, Bürgi and Baiker describe MES as applying periodic concentration or temperature perturbations, then extracting response components by phase-sensitive processing. Their example is enantioselective hydrogenation at a solid–liquid interface. This is a methodological precedent for identifying surface dynamics, not direct evidence for acetylene/PdAg kinetics. The paper notes square-wave stimulation as a practical choice with on/off valves, so the BEP proposal's claim that square waves inherently cause severe numerical instability is not justified by this measurement literature.",
+      "assumptions": [
+        "Spectroscopic method, substrate and cell must match target chemistry to yield transferable kinetic evidence.",
+        "Signal assignment must distinguish active intermediates from spectators."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "urakawa2008",
+          "locator": "Abstract; pp. 4902–4909; full text read: periodic concentration/temperature perturbation and phase-sensitive analysis; full-text extracted lines 418–424 (printed page not preserved) notes square-wave stimulation with on/off valves",
+          "evidence_type": "source_observation",
+          "supports": "MES principle and practical waveform use in an unrelated catalytic example."
+        }
+      ],
+      "related_ids": [
+        "ph_measurement",
+        "sc_experiment_design",
+        "ma_discontinuous_input"
+      ],
+      "open_questions": [
+        "Can operando spectroscopy be adapted to the specific acetylene catalyst without perturbing the reaction regime?"
+      ]
+    },
+    {
+      "id": "mathematics",
+      "parent": "bep",
+      "title": "Mathematics",
+      "kind": "discipline",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Conservation balances, scaling, discretization, stiff integration, inverse problems and periodic dynamics.",
+      "explanation": "This branch turns the physical model into explicit equations with compatible units and conditions. It distinguishes the continuous model from its discretization, numerical stability from physical stability, parameter identifiability from state observability, and a numerical optimum from experimental performance.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Research Questions; Methodology §§3.1–3.4 (lines 140–279)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Mathematical scope proposed by the project."
+        }
+      ],
+      "related_ids": [
+        "physics",
+        "systems_control"
+      ],
+      "open_questions": [
+        "Which reduced model can be validated with the available measurements and computation?"
+      ]
+    },
+    {
+      "id": "ma_conservation",
+      "parent": "mathematics",
+      "title": "Conservation-law formulation",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Gas and surface balances need explicit state bases, stoichiometry, and rate units.",
+      "explanation": "The reactor equations are clearest when each source term is traced from reaction extent to species production and then from catalyst basis to bed-volume basis. The gas PDE and surface coverage ODE are coupled through partial pressures/concentrations, coverage-dependent rates, and consistent signs. Boundary/initial data complete the dynamical problem.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.1 (lines 178–192)",
+          "evidence_type": "derived_under_assumptions",
+          "supports": "A conservation-based reconstruction of the proposal's coupled equations."
+        }
+      ],
+      "related_ids": [
+        "ph_axial_balance",
+        "ma_stoichiometry",
+        "ma_gas_pde",
+        "ma_surface_balance",
+        "ma_initial_boundary"
+      ],
+      "open_questions": [
+        "Are the kinetic rates supplied on the same catalyst and volume basis as the reactor balance?"
+      ]
+    },
+    {
+      "id": "ma_stoichiometry",
+      "parent": "ma_conservation",
+      "title": "Stoichiometric matrix and rate basis",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "The stoichiometric matrix converts reaction rates into signed species sources and preserves elemental bookkeeping.",
+      "explanation": "For n gas species and m reactions, define ν_ij positive for products and negative for reactants. Gas source S_i=Σ_j ν_ij r_j. If r_j is mol reaction per catalyst mass per time, multiply by catalyst mass per bed volume. Elemental conservation requires the stoichiometric matrix to satisfy Aν=0 for the included species and reactions, where A maps species to atom counts. A truncated network that omits coke or oligomers cannot close the carbon balance.",
+      "assumptions": [
+        "Use a complete species/reaction set for any claimed elemental closure.",
+        "Do not use an unsigned scalar species rate r_i where reactant sinks and product sources are needed."
+      ],
+      "equations": [
+        {
+          "name": "gas source vector",
+          "expression": "S = ν r",
+          "variables": "ν_ij signed stoichiometric coefficient; r_j reaction extent rate.",
+          "conditions": "Reaction rates share a declared basis; species vector contains all products needed for closure."
+        },
+        {
+          "name": "elemental conservation",
+          "expression": "A ν = 0",
+          "variables": "A maps species amounts to elemental inventories.",
+          "conditions": "Only for a chemically balanced reaction set including all represented species."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Gas balance Eq. at lines 182–184; surface balance at lines 189–192",
+          "evidence_type": "derived_under_assumptions",
+          "supports": "Replacing the ambiguous species-rate term by signed reaction extents and stoichiometry."
+        }
+      ],
+      "related_ids": [
+        "ph_reaction_network",
+        "ph_axial_balance",
+        "ma_gas_pde"
+      ],
+      "open_questions": [
+        "What side-product species must be included to close carbon and hydrogen balances?"
+      ]
+    },
+    {
+      "id": "ma_gas_pde",
+      "parent": "ma_conservation",
+      "title": "Gas-phase packed-bed PDE",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "A conservative advection–dispersion–reaction PDE is the continuous baseline for distributed gas composition.",
+      "explanation": "Choose C_i as molar concentration per gas void volume, u_s as superficial velocity, ε_b as bed void fraction, and D_ax under the axial flux convention. The balance is ε_b∂tC_i+∂z(u_sC_i)=∂z(ε_bD_ax,i∂zC_i)+(1−ε_b)ρ_pΣν_ijr_j. If properties are constant, divide by ε_b and write the convective term with interstitial velocity u_i=u_s/ε_b. If the model instead uses a bulk-bed concentration or a rate per total bed volume, the porosity factors change; mixing conventions creates dimensional errors.",
+      "assumptions": [
+        "Cross-sectionally averaged 1D bed; no gas-phase radial gradients.",
+        "Coefficient/basis definitions are part of the model, not notation details."
+      ],
+      "equations": [
+        {
+          "name": "conservative bed-volume balance",
+          "expression": "ε_b ∂_t C_i + ∂_z(u_s C_i) = ∂_z(ε_b D_ax,i ∂_z C_i) + (1−ε_b)ρ_p Σ_j ν_ij r_j",
+          "variables": "C_i [mol m⁻³ void], u_s [m s⁻¹], D_ax [m² s⁻¹], ρ_p [kg_cat m⁻³ pellet], r_j [mol kg_cat⁻¹ s⁻¹].",
+          "conditions": "Fixed void fraction and density conventions; variable properties remain inside flux derivatives."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.1, macroscopic transport Eq. (lines 180–185)",
+          "evidence_type": "derived_under_assumptions",
+          "supports": "Dimensionally closed conservative interpretation of the proposed model."
+        },
+        {
+          "source_id": "froment2011",
+          "locator": "Bibliographic citation only in proposal; textbook itself was not consulted",
+          "evidence_type": "interpretation",
+          "supports": "Proposal's stated textbook foundation only; not treated here as direct verification."
+        }
+      ],
+      "related_ids": [
+        "ph_axial_balance",
+        "ph_danckwerts",
+        "ma_initial_boundary",
+        "ma_dimensionless"
+      ],
+      "open_questions": [
+        "Are pressure drop, gas expansion and variable total molar flow negligible during the proposed feed modulation?"
+      ]
+    },
+    {
+      "id": "ma_surface_balance",
+      "parent": "ma_conservation",
+      "title": "Surface-state ODE and algebraic closure",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Dynamic coverages add memory states; site balances and rate conventions close the surface subsystem.",
+      "explanation": "For surface species l, dθ_l/dt=Σ_jν^s_lj r^s_j when elementary rates are normalized per active site. A site balance constrains vacancies and adsorbates. A quasi-steady surface model instead sets dθ/dt=0 and solves algebraic equations; that reduction should be assessed against forcing frequencies, stiffness and identifiability. Algebraic constraints or quasi-steady variables can produce a DAE or nonlinear algebraic solve after spatial discretization.",
+      "assumptions": [
+        "Kinetic mechanism and active-site density must be explicit.",
+        "PSSA is a model assumption, not a universal property of catalytic kinetics."
+      ],
+      "equations": [
+        {
+          "name": "surface balance",
+          "expression": "dθ/dt = ν^s r^s(p, θ, T)",
+          "variables": "θ dimensionless coverages; ν^s signed surface stoichiometry; r^s normalized per-site rates [s⁻¹].",
+          "conditions": "Rates normalized to active-site basis; choose a separate inventory equation for each site family."
+        },
+        {
+          "name": "algebraic site constraint",
+          "expression": "θ_* + Σ_l s_l θ_l = 1",
+          "variables": "θ_* vacancy fraction; s_l occupancy count.",
+          "conditions": "One site family with a declared lattice model."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.1, microscopic surface dynamics (lines 187–192)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal's explicit dynamic coverage plan and site balance."
+        },
+        {
+          "source_id": "pachulski2012",
+          "locator": "Abstract: two site types in selected PdAg rate model",
+          "evidence_type": "source_observation",
+          "supports": "Potential need for multiple site-family closures in the targeted catalyst class."
+        }
+      ],
+      "related_ids": [
+        "ph_adsorbate_balance",
+        "ph_mechanism_choice",
+        "ma_identifiability",
+        "sc_observability"
+      ],
+      "open_questions": [
+        "Does the chosen surface mechanism create stiff differential states, algebraic constraints, or both?"
+      ]
+    },
+    {
+      "id": "ma_initial_boundary",
+      "parent": "ma_conservation",
+      "title": "Initial and boundary data",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "The PDE/ODE model is not fully specified until initial states and boundary fluxes are defined.",
+      "explanation": "The bed initial concentration profile and catalyst coverage profile determine startup behavior. A periodic steady cycle requires running the model until consecutive cycles converge; one-cycle output from an arbitrary initial state is not the periodic objective. Danckwerts-type inlet and zero-dispersive-gradient outlet conditions are one conventional dispersed-flow closure. Initial coverages must satisfy site constraints and any catalyst pretreatment history.",
+      "assumptions": [
+        "Initial gas and surface states should reflect the experiment or be treated as uncertain.",
+        "A cyclic solution is a separate boundary-value/fixed-point problem, not an initial condition."
+      ],
+      "equations": [
+        {
+          "name": "initial field",
+          "expression": "C_i(z,0)=C_i,0(z), θ_l(z,0)=θ_l,0(z)",
+          "variables": "Initial bed concentration and surface coverage fields.",
+          "conditions": "θ_l,0 obey site balances; profiles should be measured, prepared or included in uncertainty."
+        },
+        {
+          "name": "inlet flux matching",
+          "expression": "u_s C_i,in(t) = u_s C_i(0,t) − ε_b D_ax,i ∂_z C_i(0,t)",
+          "variables": "Feed and bed-face concentrations; axial flux convention.",
+          "conditions": "Positive flow and Danckwerts inlet choice."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.1 (lines 182–192)",
+          "evidence_type": "derived_under_assumptions",
+          "supports": "Completing the initial-boundary-value specification that the proposal leaves implicit."
+        },
+        {
+          "source_id": "danckwerts1953",
+          "locator": "Abstract and bibliographic record, pp. 1–13; full text not read",
+          "evidence_type": "interpretation",
+          "supports": "Context for non-ideal tube flow and residence-time distributions."
+        }
+      ],
+      "related_ids": [
+        "ph_danckwerts",
+        "ma_gas_pde",
+        "ma_periodic_orbit"
+      ],
+      "open_questions": [
+        "What startup conditioning yields repeatable initial surface states?"
+      ]
+    },
+    {
+      "id": "ma_dimensionless",
+      "parent": "mathematics",
+      "title": "Dimensionless transport and timescale groups",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Dimensionless groups organize transport, reaction, and forcing regimes once their velocity, length and rate bases are fixed.",
+      "explanation": "The proposal emphasizes Pe, Da and St. Their definitions depend on whether velocity is superficial or interstitial, on the characteristic bed length, and on conversion of catalyst-specific kinetics into an effective volumetric source. A group is useful only with its convention and operating point stated; it cannot by itself establish model validity or selectivity.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Abstract; Research Questions; Methodology §3.1 (lines 107–110, 140–148, 194–197)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal's scaling framework."
+        }
+      ],
+      "related_ids": [
+        "ph_axial_dispersion",
+        "ma_Peclet",
+        "ma_Damkohler",
+        "ma_Strouhal",
+        "ma_timescale"
+      ],
+      "open_questions": [
+        "What experimental values and uncertainty intervals are available for each group?"
+      ]
+    },
+    {
+      "id": "ma_Peclet",
+      "parent": "ma_dimensionless",
+      "title": "Axial Péclet number",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Pe compares axial convection and dispersion over a declared length scale.",
+      "explanation": "Using interstitial velocity u_i and bed length L, Pe=u_iL/D_ax. Large Pe means advection dominates over that length scale; small or order-one Pe means dispersion matters strongly. For time-dependent fronts, the relevant local length may be much shorter than L, so a bed-scale Pe alone may understate front smearing. The definition must match whether D_ax is based on interstitial or superficial flux.",
+      "assumptions": [
+        "u_i=u_s/ε_b for the balance convention in this dataset.",
+        "This group does not quantify pellet diffusion."
+      ],
+      "equations": [
+        {
+          "name": "Péclet number",
+          "expression": "Pe = u_i L / D_ax",
+          "variables": "u_i [m s⁻¹] interstitial velocity; L [m] bed length; D_ax [m² s⁻¹].",
+          "conditions": "Use consistent axial-dispersion convention and specified L."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Research Questions (lines 145–148); Methodology §3.1 (lines 194–197)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Use of Pe to distinguish plug-flow and dispersive regimes."
+        },
+        {
+          "source_id": "danckwerts1953",
+          "locator": "Abstract: packed/open tube residence-time distributions",
+          "evidence_type": "source_observation",
+          "supports": "Non-ideal flow motivates measuring rather than assuming ideal piston flow."
+        }
+      ],
+      "related_ids": [
+        "ph_axial_dispersion",
+        "ma_gas_pde"
+      ],
+      "open_questions": [
+        "Can Pe be independently estimated from tracer breakthrough at each operating flow?"
+      ]
+    },
+    {
+      "id": "ma_Damkohler",
+      "parent": "ma_dimensionless",
+      "title": "Damköhler numbers and source scaling",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Da compares chemical-source time to transport/residence time; its form changes with kinetic order and source basis.",
+      "explanation": "For a pseudo-first-order effective gas source κ in s⁻¹, Da=κL/u_i=κτ_res. For nonlinear rates, define a reference source S_ref in mol m⁻³ void s⁻¹ and concentration C_ref; then κ_ref=S_ref/C_ref. If the source originates per catalyst mass, convert it to void-volume basis before computing κ. Multiple reactions generally need multiple Da values or a local state-dependent source ratio.",
+      "assumptions": [
+        "A single scalar Da is only representative near its reference composition and temperature.",
+        "The rate law and catalyst-mass basis must be declared."
+      ],
+      "equations": [
+        {
+          "name": "reference Damköhler number",
+          "expression": "Da_ref = (S_ref/C_ref) L/u_i = κ_ref τ_res",
+          "variables": "S_ref [mol m⁻³ void s⁻¹]; C_ref [mol m⁻³ void]; τ_res=L/u_i.",
+          "conditions": "Reference state and source basis explicitly declared."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Abstract; Methodology §3.1 (lines 107–110, 194–197)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal uses Da to compare reaction and residence scales."
+        },
+        {
+          "source_id": "proposal_main",
+          "locator": "Gas balance Eq. at lines 182–184",
+          "evidence_type": "derived_under_assumptions",
+          "supports": "Source conversion needed for a dimensionless reaction-to-flow ratio."
+        }
+      ],
+      "related_ids": [
+        "ph_axial_balance",
+        "ma_gas_pde",
+        "ma_timescale"
+      ],
+      "open_questions": [
+        "Which local Da controls acetylene conversion and which controls ethylene over-hydrogenation?"
+      ]
+    },
+    {
+      "id": "ma_Strouhal",
+      "parent": "ma_dimensionless",
+      "title": "Forcing Strouhal number",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "A forcing-to-residence ratio describes how many temporal cycles occur over one reactor residence time.",
+      "explanation": "Following the proposal's verbal convention, St=τ_res/T_pulse=L/(u_iT_pulse). If angular frequency ω=2π/T_pulse is used, the alternative ωτ_res equals 2πSt; these should not be conflated. St≪1 means slow forcing relative to bed passage, while St≫1 means rapid forcing, but surface response also depends on adsorption/reaction times.",
+      "assumptions": [
+        "The proposal uses a ratio of residence time to pulse duration.",
+        "State whether period or angular frequency is the independent variable."
+      ],
+      "equations": [
+        {
+          "name": "period-based forcing group",
+          "expression": "St = τ_res/T_pulse = L/(u_i T_pulse)",
+          "variables": "τ_res [s]; T_pulse [s].",
+          "conditions": "Use this period-based definition; ωτ_res differs by 2π."
+        },
+        {
+          "name": "frequency form",
+          "expression": "Ω = ω τ_res = 2π St",
+          "variables": "ω [rad s⁻¹].",
+          "conditions": "For sinusoidal forcing with period T_pulse."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.1 (lines 194–197)",
+          "evidence_type": "derived_under_assumptions",
+          "supports": "Explicit convention for the proposal's residence-time/pulse-duration ratio."
+        }
+      ],
+      "related_ids": [
+        "ph_dynamic_memory",
+        "ma_timescale",
+        "sc_periodic_forcing"
+      ],
+      "open_questions": [
+        "What periods can the flow actuators and analyzer realize?"
+      ]
+    },
+    {
+      "id": "ma_timescale",
+      "parent": "ma_dimensionless",
+      "title": "Timescale hierarchy and stiffness diagnostics",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Stiffness and dynamic benefit must be diagnosed from actual model rates and Jacobians, not inherited from another system.",
+      "explanation": "Compare bed residence time L/u_i, forcing period, adsorption/desorption times, elementary reaction times, pellet diffusion times if present, and sensor response times. A wide spread can cause numerical stiffness, but a qualitative claim of microsecond surface kinetics versus second-scale transport requires calibrated rates. Numerical stiffness is evidenced by solver behavior or eigenvalue/time-scale diagnostics of the semi-discrete Jacobian; it is not equivalent to physical instability.",
+      "assumptions": [
+        "Kinetic constants and their temperature dependence are presently not calibrated.",
+        "A fast heater or instrument response in another reaction does not determine acetylene surface kinetics."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.1 (lines 194–197); §3.2 solver discussion (lines 202–208)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal's asserted timescale gap, which remains to be measured."
+        },
+        {
+          "source_id": "zhu2021",
+          "locator": "Abstract: 20–30 μs heater response in Pt/CO oxidation microreactor",
+          "evidence_type": "source_observation",
+          "supports": "Hardware temperature step response in a different system only."
+        }
+      ],
+      "related_ids": [
+        "ph_dynamic_memory",
+        "ma_Damkohler",
+        "ma_Strouhal",
+        "ma_stiff_solver"
+      ],
+      "open_questions": [
+        "Which calibrated model eigenvalues and solver diagnostics support an implicit solver choice?"
+      ]
+    },
+    {
+      "id": "ma_numerics",
+      "parent": "mathematics",
+      "title": "PDE discretization and numerical solution",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Spatial approximation, time integration and verification determine whether model predictions are trustworthy.",
+      "explanation": "The proposal proposes a method of lines, upwind differencing at high Pe, an orthogonal-collocation alternative, and BDF/Radau time integration. These are candidate methods, not a demonstrated performance result. The discretized system must preserve the coupling and physical constraints well enough for parameter estimation and optimization; convergence and balance checks matter more than a solver label.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.2 (lines 199–208)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Planned candidate spatial and temporal solvers."
+        }
+      ],
+      "related_ids": [
+        "ma_MOL",
+        "ma_convection_scheme",
+        "ma_stiff_solver",
+        "ma_discontinuous_input",
+        "ma_numerical_checks"
+      ],
+      "open_questions": [
+        "Which discretization resolves the measured front length at acceptable error?"
+      ]
+    },
+    {
+      "id": "ma_MOL",
+      "parent": "ma_numerics",
+      "title": "Method of lines",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Discretizing z converts the PDE into a coupled ODE system with bed-cell gas and surface states.",
+      "explanation": "Let C_i,k approximate concentrations at axial nodes. Spatial derivative matrices approximate convection and dispersion; reaction rates at each node couple local gas concentrations to local coverages. Time integration then advances the resulting ODE. If the model is a periodic-control problem, the forcing waveform and spatial nodes determine a large repeated dynamic system. Grid refinement should show stable integrated outlet metrics and not merely visually similar profiles.",
+      "assumptions": [
+        "Boundary rows implement the selected flux conditions.",
+        "State ordering and scaling should be explicit for conditioning."
+      ],
+      "equations": [
+        {
+          "name": "semi-discrete model",
+          "expression": "d x_h/dt = f_h(x_h, u(t), p)",
+          "variables": "x_h stacks nodal gas concentrations and surface coverages; p are kinetic/transport parameters.",
+          "conditions": "Spatial residuals are consistent with the PDE and boundary conditions."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.2, Spatial Discretization (lines 202–205)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "MOL is planned as the principal PDE-to-ODE method."
+        }
+      ],
+      "related_ids": [
+        "ma_gas_pde",
+        "ma_surface_balance",
+        "ma_convection_scheme",
+        "sc_plant"
+      ],
+      "open_questions": [
+        "How many axial nodes are needed for output and optimization convergence?"
+      ]
+    },
+    {
+      "id": "ma_convection_scheme",
+      "parent": "ma_numerics",
+      "title": "Convection-dominated spatial schemes",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Upwind schemes suppress nonphysical oscillation but introduce numerical diffusion; higher-order methods require stability and boundary care.",
+      "explanation": "For high Pe, a first-order upwind derivative is monotone under suitable conditions but smears sharp fronts. Centered differences may oscillate in convection-dominated regimes. Orthogonal collocation on finite elements may reduce degrees of freedom for smooth-enough solutions, but discontinuous inputs and steep fronts need adequate mesh refinement and numerical checks. Compare schemes on conservation, convergence, front location and cycle-integrated performance.",
+      "assumptions": [
+        "Pe is computed from actual bed transport data.",
+        "No scheme is universally most accurate for all fronts and kinetics."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.2 (lines 204–205)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal's upwind and OCFE candidates and rationale."
+        }
+      ],
+      "related_ids": [
+        "ma_MOL",
+        "ma_Peclet",
+        "ma_numerical_checks"
+      ],
+      "open_questions": [
+        "Does first-order upwind diffusion change the predicted optimum under mesh refinement?"
+      ]
+    },
+    {
+      "id": "ma_stiff_solver",
+      "parent": "ma_numerics",
+      "title": "Stiff ODE integration",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Implicit BDF or Radau methods are plausible for stiff semi-discrete models, but stiffness must be demonstrated.",
+      "explanation": "Implicit methods can take stable steps across fast decaying modes that would restrict explicit integration. They do not remove accuracy requirements, resolve discontinuities automatically, or guarantee a fast optimization loop. Solver tolerances, state scaling, Jacobian quality and positivity constraints affect predictions. Compare work counters and error against tighter tolerances on a representative calibrated problem before committing to a method.",
+      "assumptions": [
+        "Stiffness is not yet established by calibrated BEP kinetics.",
+        "Tolerance convergence is checked on quantities of interest as well as states."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.2, Temporal Integration (lines 207–208)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal's BDF/Radau candidates."
+        }
+      ],
+      "related_ids": [
+        "ma_timescale",
+        "ma_MOL",
+        "sc_optimization"
+      ],
+      "open_questions": [
+        "Do implicit solvers preserve nonnegative concentrations and coverage constraints at feasible tolerances?"
+      ]
+    },
+    {
+      "id": "ma_discontinuous_input",
+      "parent": "ma_numerics",
+      "title": "Discontinuous and smooth forcing representations",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "supporting",
+      "summary": "Input regularity affects solver events and representation error, but square waves are not inherently invalid.",
+      "explanation": "A square wave can be integrated with event-aware interval segmentation or a solver that handles input discontinuities; numerical difficulty depends on implementation. Urakawa et al. describe square-wave stimulation as convenient with on/off valves in MES experiments. A Fourier series can represent periodic signals, although truncated expansions of jumps exhibit Gibbs oscillations; this is a truncation property, not a blanket inability to represent nonlinear frequency mixing. B-splines offer smooth finite-dimensional controls but impose smoothness and basis-design choices.",
+      "assumptions": [
+        "The physical actuator determines achievable slew rate and composition trajectory.",
+        "Waveform comparisons should use equal hardware constraints and adequate temporal resolution."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4 (lines 257–263)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal selects B-splines and rejects square/Fourier alternatives."
+        },
+        {
+          "source_id": "urakawa2008",
+          "locator": "Full text, full-text extracted lines 418–424 (printed page not preserved), discussion of stimulus shape: square-wave perturbations practical with on/off valves",
+          "evidence_type": "source_observation",
+          "supports": "Square-wave excitation is used as an experimental stimulus; no claim that it is numerically optimal."
+        }
+      ],
+      "related_ids": [
+        "sc_waveform",
+        "ma_stiff_solver",
+        "sc_hardware_constraints"
+      ],
+      "open_questions": [
+        "Which representation best trades differentiability, bandwidth, actuator feasibility and optimization bias?"
+      ]
+    },
+    {
+      "id": "ma_numerical_checks",
+      "parent": "ma_numerics",
+      "title": "Numerical verification and conservation checks",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Verification tests the equations and discretization independently of whether they match the real catalyst.",
+      "explanation": "Check unit consistency, signed reaction stoichiometry, global species and elemental balances, boundary fluxes, site-balance drift, nonnegativity, mesh convergence, solver tolerance convergence and recovery of limiting cases. A no-reaction case should reduce to advection–dispersion; zero dispersion should recover the intended convection limit; constant input should recover a steady solution. These checks are necessary but do not validate kinetic parameters against experiments.",
+      "assumptions": [
+        "Use independent calculations where possible, not only internal residual checks.",
+        "Numerical verification does not equal experimental validation."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §§3.1–3.4 (lines 178–279)",
+          "evidence_type": "derived_under_assumptions",
+          "supports": "Verification cases implied by the proposed balance and solver architecture."
+        }
+      ],
+      "related_ids": [
+        "ma_gas_pde",
+        "ma_surface_balance",
+        "sc_validation"
+      ],
+      "open_questions": [
+        "Can independent code or analytic limits provide a mass-balance check for the chosen solver?"
+      ]
+    },
+    {
+      "id": "ma_inverse",
+      "parent": "mathematics",
+      "title": "Inverse problems and uncertainty",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Macroscopic outputs may not uniquely determine microscopic kinetic parameters or internal states.",
+      "explanation": "Parameter calibration fits model predictions to observations. If several parameters trade off while producing similar outlet conversion/selectivity, the inverse problem is poorly identifiable and uncertainty in hidden coverages may be large. Sensitivity, profile likelihood, posterior inference or structural identifiability analysis can reveal this. Adding transient or spectroscopic observations may improve identifiability but must be designed for the catalyst and time scale.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4, Phase 1 (lines 270–273)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal anticipates parameter compensation in multi-parameter calibration."
+        },
+        {
+          "source_id": "urmes2022",
+          "locator": "Publisher abstract: dynamic data and a model used to estimate elementary parameters in Pd/α-Al₂O₃",
+          "evidence_type": "source_observation",
+          "supports": "Transient data can be used in a catalyst-specific parameter-estimation study."
+        }
+      ],
+      "related_ids": [
+        "ma_identifiability",
+        "ma_sensitivity",
+        "sc_experiment_design",
+        "sc_observability"
+      ],
+      "open_questions": [
+        "Which combinations of adsorption and reaction parameters are practically distinguishable from available outputs?"
+      ]
+    },
+    {
+      "id": "ma_identifiability",
+      "parent": "ma_inverse",
+      "title": "Parameter identifiability and compensation",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Identifiability asks whether parameters can be uniquely inferred from the chosen input–output experiment.",
+      "explanation": "Structural identifiability is a property of an idealized model and observation setup; practical identifiability concerns finite noisy data and excitation. Correlated adsorption constants and rate constants can compensate, leaving predictions similar while latent microstates differ. The proposal reports predecessor-model compensation based on a cited thesis, but that thesis file was not present in the checked Articles directory and was not independently inspected here. This claim is therefore a proposal-reported lead, not a verified result.",
+      "assumptions": [
+        "Do not infer unique surface parameters from an outlet fit alone.",
+        "Identifiability must be tested for the specified parameterization and sensor model."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4, Phase 1 (lines 270–273), citation to Larsen 2024",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal's report of parameter compensation in prior BEP work; underlying thesis was not accessed."
+        },
+        {
+          "source_id": "larsen2024",
+          "locator": "Bibliography entry only; thesis PDF cited as 'BEP Example.pdf' not found in repository Articles listing and web search did not locate it",
+          "evidence_type": "unverified",
+          "supports": "Source locator and access gap, not independent confirmation."
+        }
+      ],
+      "related_ids": [
+        "ma_inverse",
+        "ma_sensitivity",
+        "sc_experiment_design"
+      ],
+      "open_questions": [
+        "Does an independent experiment distinguish adsorption constants from intrinsic rate constants?"
+      ]
+    },
+    {
+      "id": "ma_sensitivity",
+      "parent": "ma_inverse",
+      "title": "Sensitivity and uncertainty propagation",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Sensitivity quantifies how outputs and states change with uncertain parameters and model assumptions.",
+      "explanation": "For output y(p), a local sensitivity is ∂y/∂p_k; scaled sensitivities account for parameter/output units. Local gradients can be misleading near nonlinear, multimodal fits, so uncertainty propagation should explore parameter correlations and model alternatives. Compare uncertainty in integrated yield and safety constraints, not only pointwise coverage plots.",
+      "assumptions": [
+        "Parameter uncertainty distributions or bounds must be justified by evidence.",
+        "A local sensitivity ranking is not a global uncertainty result."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4, Phase 1 (lines 270–273)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal recognizes parameter compensation and uses constraints to address it."
+        }
+      ],
+      "related_ids": [
+        "ma_identifiability",
+        "sc_robustness",
+        "sc_objective"
+      ],
+      "open_questions": [
+        "How much does the predicted dynamic benefit persist across plausible kinetic and transport parameter sets?"
+      ]
+    },
+    {
+      "id": "ma_periodic_system",
+      "parent": "mathematics",
+      "title": "Periodic dynamics and stability",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Periodic forcing calls for analysis of cycle convergence and stability, beyond a steady-state Jacobian.",
+      "explanation": "A periodically forced model may approach a periodic orbit rather than a time-independent state. Numerical optimization should evaluate performance only after transients decay or should explicitly include finite startup cost. Cycle convergence, periodic-orbit stability and parameter sensitivity are distinct from a local stability analysis about a steady solution.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Abstract; Methodology §§3.1 and 3.4 (lines 107–110, 194–197, 257–279)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Project's periodic forcing and cycle optimization premise."
+        },
+        {
+          "source_id": "urmes2022",
+          "locator": "Publisher abstract: model reproduces output composition for modulation amplitudes and frequencies",
+          "evidence_type": "source_observation",
+          "supports": "A published transient acetylene model was evaluated under periodic reactor operation."
+        }
+      ],
+      "related_ids": [
+        "ma_periodic_orbit",
+        "ma_stability",
+        "sc_periodic_forcing",
+        "sc_objective"
+      ],
+      "open_questions": [
+        "How many cycles are needed to reach a stable periodic regime for plausible parameters?"
+      ]
+    },
+    {
+      "id": "ma_periodic_orbit",
+      "parent": "ma_periodic_system",
+      "title": "Periodic orbit and Poincaré map",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "A settled periodic reactor state is a fixed point of the one-period flow map.",
+      "explanation": "For a time-periodic input u(t+T)=u(t), define P(x₀)=Φ_T(x₀), the state after one cycle. A periodic solution satisfies P(x*)=x*. Iterating P provides a direct convergence test; alternatively, solve the periodic boundary-value problem with x(0)=x(T). The outlet objective should be integrated over that periodic orbit and distinguished from startup performance.",
+      "assumptions": [
+        "Model parameters and the input repeat exactly each cycle.",
+        "A fixed point may be unstable or multiple periodic orbits may exist."
+      ],
+      "equations": [
+        {
+          "name": "Poincaré map",
+          "expression": "x_{n+1}=P(x_n)=Φ_T(x_n); periodic orbit satisfies P(x*)=x*",
+          "variables": "x is the full semi-discrete bed/surface state; T is input period.",
+          "conditions": "The same periodic input and parameters apply each cycle."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4 (lines 257–263, 275–279)",
+          "evidence_type": "derived_under_assumptions",
+          "supports": "Mathematical formulation of the proposal's cycle-based waveform objective."
+        }
+      ],
+      "related_ids": [
+        "ma_periodic_system",
+        "ma_stability",
+        "sc_objective"
+      ],
+      "open_questions": [
+        "Is the relevant performance metric a settled cycle, startup campaign, or both?"
+      ]
+    },
+    {
+      "id": "ma_stability",
+      "parent": "ma_periodic_system",
+      "title": "Steady-state and periodic stability",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "A steady-state Jacobian and a periodic orbit's Floquet multipliers answer different stability questions.",
+      "explanation": "For a steady solution x*, eigenvalues of ∂f/∂x locally characterize perturbation evolution in an autonomous model. For a period-T solution, linearize the one-cycle map DP(x*) or compute Floquet multipliers; magnitudes below one indicate local cycle-to-cycle decay in a discrete-time representation. A concentration-forced reactor is not adequately described by only a steady-state Jacobian. Stability also does not imply optimality or robustness to model mismatch.",
+      "assumptions": [
+        "Linear stability is local.",
+        "The chosen discretization and periodic orbit must be converged before interpreting multipliers."
+      ],
+      "equations": [
+        {
+          "name": "steady local linearization",
+          "expression": "δẋ = J(x*) δx,  J=∂f/∂x|_(x*)",
+          "variables": "J is the state Jacobian.",
+          "conditions": "Autonomous steady operating point."
+        },
+        {
+          "name": "periodic stability",
+          "expression": "μ_k ∈ eig(DP(x*))",
+          "variables": "μ_k are Floquet multipliers of the one-period map.",
+          "conditions": "Periodic orbit is a fixed point of P; local asymptotic cycle stability requires |μ_k|<1 for all modes."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4 and §3.5 (lines 262–284)",
+          "evidence_type": "derived_under_assumptions",
+          "supports": "Analysis needed to distinguish the proposed periodic optimum from a steady operating point."
+        }
+      ],
+      "related_ids": [
+        "ma_periodic_orbit",
+        "sc_robustness",
+        "sc_optimization"
+      ],
+      "open_questions": [
+        "Does the optimized orbit remain stable under parameter uncertainty and input perturbations?"
+      ]
+    },
+    {
+      "id": "systems_control",
+      "parent": "bep",
+      "title": "Systems & Control",
+      "kind": "discipline",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Inputs, outputs, excitation, optimization, estimation and experimental decisions around the reactor model.",
+      "explanation": "This branch treats the reactor as a dynamical plant. The proposal's deliverable is an open-loop predictive model and waveform optimization; state observers and model-predictive control are explicitly future work. Control language should not imply physical closed-loop performance when only simulation is proposed.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Abstract; Methodology §§3.3–3.5 (lines 254–284)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal's planned input optimization and explicit future-control boundary."
+        }
+      ],
+      "related_ids": [
+        "physics",
+        "mathematics"
+      ],
+      "open_questions": [
+        "What experimental capabilities and evidence would justify a later closed-loop controller?"
+      ]
+    },
+    {
+      "id": "sc_plant",
+      "parent": "systems_control",
+      "title": "Input–state–output plant model",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "A plant description declares manipulated variables, internal states, measured outputs, disturbances and constraints.",
+      "explanation": "For this BEP, inlet composition is a candidate manipulated input; gas concentrations and surface coverages are internal dynamic states; outlet composition/flow are measured outputs. Total flow, pressure, temperature, actuator response and analyzer dynamics can all affect the plant. Treating each inlet species concentration as an independently selectable input may violate mole-fraction, flow or equipment constraints.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Abstract; Introduction §1.3; Methodology §§3.1, 3.4–3.5 (lines 107–110, 126–132, 178–192, 257–284)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposed inlet forcing, hidden states, outlet calibration and planned MFC experiment."
+        }
+      ],
+      "related_ids": [
+        "sc_manipulated_input",
+        "sc_output_model",
+        "ph_measurement",
+        "ma_gas_pde"
+      ],
+      "open_questions": [
+        "Can the proposed actuator independently vary reactant ratios while holding total flow, pressure and temperature fixed?"
+      ]
+    },
+    {
+      "id": "sc_manipulated_input",
+      "parent": "sc_plant",
+      "title": "Manipulated inlet composition and actuators",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "The commanded feed waveform is filtered by mixers, valves, and mass flow controllers before reaching the bed.",
+      "explanation": "A control variable may be a feed mole fraction, partial pressure or molar flow; these are not interchangeable if total flow changes. MFC setpoint dynamics, mixing dead volume, valve bandwidth and gas transport create amplitude attenuation and phase delay. Feasible controls must keep mole fractions nonnegative and sum to one, respect H₂/C₂H₂ ratio and safety envelope, and use hardware-achievable slew rates. A square or spline command is not the same as the realized bed-inlet waveform.",
+      "assumptions": [
+        "Hardware data and gas safety limits are not yet available.",
+        "The inlet to the PDE should be measured or identified downstream of the mixer when possible."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4, waveform parameterization and Phase 3 MFC implementation (lines 257–260, 278–279)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal plans inlet-concentration controls implemented through MFC modulation."
+        }
+      ],
+      "related_ids": [
+        "sc_plant",
+        "ma_discontinuous_input",
+        "sc_hardware_constraints",
+        "sc_experiment_design"
+      ],
+      "open_questions": [
+        "What actuator bandwidth and composition constraints bound the feasible forcing set?"
+      ]
+    },
+    {
+      "id": "sc_output_model",
+      "parent": "sc_plant",
+      "title": "Outputs and measurement model",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "The measured signal is a transformation of plant states, not the internal state itself.",
+      "explanation": "A model output may include outlet molar flow and composition, with analyzer sampling and transport dynamics. If data are measured as mole fractions, total-flow variation must be included when computing molar productivity. Sensor noise, time stamps, sample-line dispersion and dead time influence state inference and cycle-integrated metrics. Define the observation map y=h(x,u,p) and any sensor dynamics explicitly.",
+      "assumptions": [
+        "The analyzer and sampling system are characterized over the forcing bandwidth.",
+        "Unmeasured output components require uncertainty bounds or balance residuals."
+      ],
+      "equations": [
+        {
+          "name": "observation model",
+          "expression": "y(t) = h(x(t), u(t), p) + η(t)",
+          "variables": "x states; u realized input; p parameters; η measurement error.",
+          "conditions": "Extend with analyzer dynamics and time delay when data show they are material."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Literature §2 lines 160–162; Methodology §3.4 lines 270–279",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Boundary observables and planned GC measurements."
+        },
+        {
+          "source_id": "urakawa2008",
+          "locator": "Full text, pp. 4902–4909, MES response measurement and phase-sensitive signal processing",
+          "evidence_type": "source_observation",
+          "supports": "Measurement dynamics and signal extraction matter in transient spectroscopy."
+        }
+      ],
+      "related_ids": [
+        "ph_boundary_measurement",
+        "sc_plant",
+        "sc_observability",
+        "sc_objective"
+      ],
+      "open_questions": [
+        "Can the analyzer recover cycle-resolved molar flow and composition at the intended frequency?"
+      ]
+    },
+    {
+      "id": "sc_periodic_forcing",
+      "parent": "systems_control",
+      "title": "Periodic forcing and excitation design",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Periodic operation is a candidate experiment/control strategy whose value must be measured against a matched baseline.",
+      "explanation": "Periodic composition forcing can be used to probe catalyst dynamics and may alter conversion or selectivity, but benefit is system-specific. A 1995 review discusses broad objectives for composition-forced catalytic reactors; the 2022 acetylene study directly reports periodic flow modulation and a fitted transient model for Pd/α-Al₂O₃. Neither establishes the proposal's predicted advantage for the intended PdAg bed. Forcing must be designed to identify kinetics and respect operating constraints.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "silveston1995",
+          "locator": "Review abstract: composition forcing objectives and variables (frequency, wave shape, amplitude, phase)",
+          "evidence_type": "source_observation",
+          "supports": "General periodic-operation framework, not acetylene-specific performance."
+        },
+        {
+          "source_id": "urmes2022",
+          "locator": "Publisher abstract: acetylene hydrogenation over Pd/α-Al₂O₃ with small-amplitude periodic flow oscillations",
+          "evidence_type": "source_observation",
+          "supports": "Direct precedent for periodic acetylene operation on a different catalyst."
+        }
+      ],
+      "related_ids": [
+        "sc_excitation",
+        "sc_waveform",
+        "sc_baseline",
+        "sc_experiment_design",
+        "ph_dynamic_memory"
+      ],
+      "open_questions": [
+        "What amplitude/frequency domain is both safely feasible and informative for PdAg?"
+      ]
+    },
+    {
+      "id": "sc_excitation",
+      "parent": "sc_periodic_forcing",
+      "title": "Dynamic excitation and kinetic discrimination",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "A useful transient input separates plausible kinetic models and excites relevant surface timescales.",
+      "explanation": "Input amplitude and frequency should be chosen to vary local gas composition enough to expose adsorption/reaction lag without changing catalyst state or entering a different thermal or transport regime. Periodic measurements can estimate phase and amplitude response; transient data from Urmès et al. (2022) were used in a catalyst-specific kinetic model. Excitation design must consider parameter sensitivity and noise, rather than relying on an assumed universal resonance window.",
+      "assumptions": [
+        "Small-amplitude linear response and large-amplitude nonlinear excitation are different regimes.",
+        "The study's Pd/α-Al₂O₃ frequency response cannot be transferred quantitatively to PdAg."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "urmes2022",
+          "locator": "Publisher abstract: periodic-flow data used to estimate elementary kinetic parameters; model reproduces outlet composition across amplitudes/frequencies",
+          "evidence_type": "source_observation",
+          "supports": "Use of dynamic excitation in a specific acetylene/Pd study."
+        },
+        {
+          "source_id": "urakawa2008",
+          "locator": "Full text, pp. 4904–4907, frequency-dependent MES response and phase lag",
+          "evidence_type": "source_observation",
+          "supports": "Periodic stimulation can reveal dynamic response in spectroscopy."
+        }
+      ],
+      "related_ids": [
+        "sc_periodic_forcing",
+        "sc_experiment_design",
+        "ma_identifiability",
+        "ph_dynamic_memory"
+      ],
+      "open_questions": [
+        "Which modulation frequencies maximize distinguishability without violating linearity or catalyst stability?"
+      ]
+    },
+    {
+      "id": "sc_waveform",
+      "parent": "sc_periodic_forcing",
+      "title": "Waveform parameterization",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "A finite-dimensional waveform basis makes optimization tractable but shapes what solutions can be found.",
+      "explanation": "B-splines provide smooth controls with adjustable knots and continuity. Fourier coefficients naturally represent periodic signals but truncated expansions near jumps have Gibbs behavior; square waves can be treated as piecewise inputs with event-aware integration. Compare waveform families under identical actuator bandwidth, amplitude and cycle-average constraints. Basis flexibility is a modeling choice and can bias the best achievable objective.",
+      "assumptions": [
+        "The control horizon is periodic or finite and stated explicitly.",
+        "Numerical parameterization respects realizable actuator slew and mixing."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4, B-splines vs. baseline methods (lines 257–260)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal chooses B-splines and reports concerns about alternatives."
+        },
+        {
+          "source_id": "urakawa2008",
+          "locator": "Full text full-text extracted lines 418–424 (printed page not preserved): square-wave stimuli can be convenient with on/off valves in MES",
+          "evidence_type": "source_observation",
+          "supports": "Square waves are practical experimental inputs; not a blanket solver recommendation."
+        }
+      ],
+      "related_ids": [
+        "ma_discontinuous_input",
+        "sc_manipulated_input",
+        "sc_hardware_constraints"
+      ],
+      "open_questions": [
+        "Does the selected spline degree and knot density alter the predicted optimum materially?"
+      ]
+    },
+    {
+      "id": "sc_hardware_constraints",
+      "parent": "sc_periodic_forcing",
+      "title": "Hardware and process feasibility constraints",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "A mathematically optimal control is relevant only if the apparatus can realize it safely.",
+      "explanation": "Constraints may include composition simplex, fixed or bounded total flow, minimum H₂/acetylene ratio, pressure and temperature ranges, valve/MFC bandwidth, pulse slew, mixing volume, catalyst limits, analyzer range and emergency shutdown interlocks. Periodic switching can also create thermal or pressure transients. The proposal's statement that dynamic operation requires zero reactor redesign overlooks that modulation hardware, mixing and controls may need qualification.",
+      "assumptions": [
+        "Actual safety and equipment constraints must be set by the laboratory apparatus and operating procedures.",
+        "No feasible envelope is supplied in the proposal materials read."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Introduction §1.1–1.2 (lines 118–124); Methodology §3.4 (lines 257–263, 278–279)",
+          "evidence_type": "interpretation",
+          "supports": "Proposal's inlet-valve/MFC implementation claims; feasibility and hardware requirements remain unspecified."
+        },
+        {
+          "source_id": "silveston1995",
+          "locator": "Review abstract: laboratory periodic forcing uses control of reactant/diluent flows",
+          "evidence_type": "source_observation",
+          "supports": "Flow control equipment is part of periodic-operation implementation."
+        }
+      ],
+      "related_ids": [
+        "sc_manipulated_input",
+        "sc_waveform",
+        "sc_robustness"
+      ],
+      "open_questions": [
+        "Which feed, pressure and thermal limits define the admissible control set?"
+      ]
+    },
+    {
+      "id": "sc_baseline",
+      "parent": "sc_periodic_forcing",
+      "title": "Matched steady-state comparison",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "A dynamic gain is meaningful only against an optimized steady baseline under equivalent constraints.",
+      "explanation": "The comparison should maximize steady ethylene productivity/selectivity over the same admissible catalyst temperature, total flow, feed ratios, conversion requirements and safety limits as the periodic case. Compare cycle-integrated net ethylene production and, where relevant, catalyst stability and energy use. An arbitrary steady point is not a fair baseline; a predicted improvement is not a verified result until experiments confirm it.",
+      "assumptions": [
+        "Steady and periodic metrics use consistent feed and output bases.",
+        "If a conversion floor is imposed, apply it to both modes."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4, optimization objective and Phase 1/2/3 plan (lines 262–279)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal intends to exceed a steady-state baseline and compare simulation with experiment."
+        }
+      ],
+      "related_ids": [
+        "ph_metrics",
+        "sc_objective",
+        "sc_validation"
+      ],
+      "open_questions": [
+        "What is the optimal steady operating point after uncertainty and feasibility constraints are included?"
+      ]
+    },
+    {
+      "id": "sc_optimization",
+      "parent": "systems_control",
+      "title": "Waveform optimization and robustness",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Optimization searches a model-defined feasible set; it does not prove global optimality or real-plant benefit.",
+      "explanation": "The proposal plans gradient-based optimization over B-spline controls and period after calibration. The result depends on objective, constraints, periodic-orbit solver, initial guess, gradients and model uncertainty. Local methods may find local stationary solutions; for maximization the outcome is a local maximum or another stationary/boundary point, not a “local minimum” by default. Multi-start, continuation and uncertainty-aware comparisons can quantify sensitivity without claiming a global solution.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4, Optimization Architecture (lines 262–263, 275–276)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposed gradient optimization and local-search scope."
+        }
+      ],
+      "related_ids": [
+        "sc_objective",
+        "sc_local_search",
+        "sc_robustness",
+        "ma_periodic_orbit"
+      ],
+      "open_questions": [
+        "Does the predicted dynamic advantage survive independent initializations and parameter uncertainty?"
+      ]
+    },
+    {
+      "id": "sc_objective",
+      "parent": "sc_optimization",
+      "title": "Cycle-integrated objective",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Optimize a clearly defined net product rate or yield over a settled cycle, with explicit constraints.",
+      "explanation": "A candidate productivity objective is cycle-integrated net ethylene molar flow divided by the cycle-integrated acetylene feed. A distinct selectivity objective divides net ethylene formed by acetylene converted. Maximizing time-averaged selectivity alone can favor negligible throughput, so consider productivity or a conversion constraint. Include startup/cycle cost if operation does not reach a periodic orbit quickly.",
+      "assumptions": [
+        "Product and feed flow rates use the same molar basis.",
+        "The outlet analyzer and feed waveform are represented at the bed boundaries."
+      ],
+      "equations": [
+        {
+          "name": "net cycle yield",
+          "expression": "Y_E = ∫_0^T [F_E,out(t)−F_E,in(t)] dt / ∫_0^T F_A,in(t) dt",
+          "variables": "F_E and F_A are molar flow rates; T is one cycle.",
+          "conditions": "Evaluate after periodic convergence unless the startup campaign is the target."
+        },
+        {
+          "name": "constrained productivity",
+          "expression": "maximize (1/T)∫_0^T F_E,net,out(t) dt subject to X_A≥X_min and u(t)∈U",
+          "variables": "F_E,net,out=F_E,out−F_E,in; U is the feasible actuator/feed set.",
+          "conditions": "Choose matched constraints and include all relevant products."
+        }
+      ],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4 (lines 262–263, 275–279)",
+          "evidence_type": "derived_under_assumptions",
+          "supports": "Operationalizing the proposed ethylene-yield objective and steady comparison."
+        },
+        {
+          "source_id": "lan2025",
+          "locator": "Review abstract: metric benchmarks critically discussed",
+          "evidence_type": "source_observation",
+          "supports": "Need to state conversion/selectivity definitions."
+        }
+      ],
+      "related_ids": [
+        "ph_metrics",
+        "sc_baseline",
+        "ma_periodic_orbit"
+      ],
+      "open_questions": [
+        "Should the project optimize net productivity, selectivity at a conversion floor, or a multi-objective tradeoff?"
+      ]
+    },
+    {
+      "id": "sc_local_search",
+      "parent": "sc_optimization",
+      "title": "Local optimization and solution claims",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Gradient-based search is local and algorithm-dependent; convergence to a global optimum is not assured.",
+      "explanation": "A descent method applied to a minimization objective can converge to a local minimum under suitable conditions; for a yield maximization, signs are reversed and bound-constrained stationary solutions may occur. Nonconvex kinetic dynamics, periodic-orbit constraints and control bounds can create multiple solutions. Use multiple starts and report termination, feasibility, sensitivities and objective variation. Do not call a stationary point a global optimum without a bound or exhaustive argument.",
+      "assumptions": [
+        "Gradients and periodic simulations are sufficiently accurate.",
+        "Parameterization and constraints are fixed for each comparison."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4 (line 263)",
+          "evidence_type": "interpretation",
+          "supports": "Proposal's claim that local search inevitably reaches a local minimum is too categorical and has the wrong default sense for its maximization problem."
+        }
+      ],
+      "related_ids": [
+        "sc_optimization",
+        "ma_numerical_checks",
+        "sc_robustness"
+      ],
+      "open_questions": [
+        "How sensitive is the solution to initial controls, optimizer tolerances and model mesh?"
+      ]
+    },
+    {
+      "id": "sc_robustness",
+      "parent": "sc_optimization",
+      "title": "Robustness to uncertainty and mismatch",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "A control that exploits one fitted parameter set may fail when kinetics, transport or hardware differ from the model.",
+      "explanation": "Evaluate candidate waveforms over plausible distributions or bounded sets for kinetic parameters, axial dispersion, actuator delay, analyzer dynamics and catalyst aging. Report expected and worst-case performance with constraints. A positive model prediction can be an artifact of uncertain kinetics or unmodeled heat/mass transfer; robustness is not established by a single best-fit trajectory.",
+      "assumptions": [
+        "Uncertainty ranges must be grounded in data or stated as exploratory.",
+        "Safety constraints apply over uncertainty, not only nominal simulation."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4–3.5 (lines 270–284)",
+          "evidence_type": "derived_under_assumptions",
+          "supports": "Need to test proposal's ideal-state/zero-disturbance assumption and fitted-parameter compensation."
+        },
+        {
+          "source_id": "pachulski2012",
+          "locator": "Abstract: transport limitation checks on a specific PdAg catalyst system",
+          "evidence_type": "source_observation",
+          "supports": "Transport tests are catalyst/condition-specific and should be repeated for the target bed."
+        }
+      ],
+      "related_ids": [
+        "ma_sensitivity",
+        "ph_thermal_evolution",
+        "sc_hardware_constraints"
+      ],
+      "open_questions": [
+        "What uncertainty bounds are supported for kinetics, flow, heat and actuator response?"
+      ]
+    },
+    {
+      "id": "sc_state_estimation",
+      "parent": "systems_control",
+      "title": "State estimation and observer boundary",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "supporting",
+      "summary": "Estimating surface coverage from outlet measurements requires an observable model and calibrated sensor map.",
+      "explanation": "The proposal's immediate deliverable is open-loop and assumes perfect state knowledge; its EKF/UKF and MPC ideas are future work. A nonlinear observer requires a state-space model, sensor equation, noise model, sufficiently informative inputs and observability/identifiability. Surface states that do not influence measured outputs over the available horizon cannot be reliably reconstructed simply by selecting an EKF or UKF.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Literature §2 (lines 160–164); Scope Boundary §3.5 (lines 281–284)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal places state observers and MPC after the open-loop BEP scope."
+        }
+      ],
+      "related_ids": [
+        "sc_observability",
+        "sc_ekf_ukf",
+        "sc_output_model",
+        "ma_identifiability"
+      ],
+      "open_questions": [
+        "Can outlet-only signals distinguish individual coverages or only aggregate kinetic effects?"
+      ]
+    },
+    {
+      "id": "sc_observability",
+      "parent": "sc_state_estimation",
+      "title": "Observability of latent bed and surface states",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "supporting",
+      "summary": "Observability is a property of the dynamics, input and measurement model, not a consequence of calling states hidden.",
+      "explanation": "For a nonlinear model, local observability can be assessed through output sensitivities and Lie derivatives or through linearized observability along a trajectory; practical observability also depends on noise, bandwidth and sampling. A distributed PDE discretization can have many weakly observable modes. Boundary data may constrain integrated behavior while leaving internal profiles non-unique. A state observer cannot repair structural non-observability.",
+      "assumptions": [
+        "The measurement model and dynamic inputs are specified.",
+        "Local observability does not guarantee robust estimation in noise."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Literature §2 (lines 160–162); Scope Boundary §3.5 (lines 281–284)",
+          "evidence_type": "interpretation",
+          "supports": "Proposal frames coverages as hidden and suggests nonlinear observers; actual observability is not demonstrated."
+        }
+      ],
+      "related_ids": [
+        "sc_state_estimation",
+        "sc_output_model",
+        "ma_identifiability",
+        "ph_boundary_measurement"
+      ],
+      "open_questions": [
+        "Which spatial modes remain observable from outlet sampling at realistic noise and delay?"
+      ]
+    },
+    {
+      "id": "sc_ekf_ukf",
+      "parent": "sc_state_estimation",
+      "title": "EKF/UKF as possible future estimators",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "future_or_exploratory",
+      "summary": "Extended and unscented Kalman filters are candidate estimators, not current validated project deliverables.",
+      "explanation": "An EKF linearizes the nonlinear state and measurement maps around the estimate; a UKF propagates a sigma-point approximation. Both need a credible process model, initial covariance, process/measurement noise assumptions and sufficient observability. Fast coverage dynamics plus analyzer delay may make estimates biased or poorly conditioned. Their implementation is beyond the proposed open-loop baseline and should follow an observability and sensor-design study.",
+      "assumptions": [
+        "No estimator is developed or validated in this v1.",
+        "The chosen model dimension and noise distributions must be justified."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Literature §2 line 162; Scope Boundary §3.5 lines 281–284",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Proposal names EKF/UKF as a later state-estimation direction."
+        }
+      ],
+      "related_ids": [
+        "sc_state_estimation",
+        "sc_observability",
+        "sc_output_model"
+      ],
+      "open_questions": [
+        "Would a reduced lumped observer be more observable than a full axial coverage profile?"
+      ]
+    },
+    {
+      "id": "sc_experiment_design",
+      "parent": "systems_control",
+      "title": "Experiment design and model discrimination",
+      "kind": "theme",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "The best experiment balances parameter information, performance evaluation, instrument limits and safety.",
+      "explanation": "Steady-state measurements constrain macroscopic rates but can leave correlated microkinetic parameters unresolved. Transient inputs can expose dynamic time scales; operando spectroscopy may add surface-sensitive observations in a lab cell. Use design criteria based on parameter sensitivity, Fisher information or expected uncertainty reduction, while preserving a separate validation dataset. Calibration, model selection and performance validation should not reuse the same observations without accounting for overfit.",
+      "assumptions": [],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4, Phase 1–3 (lines 270–279)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Three-phase calibration, simulation and reactor implementation plan."
+        },
+        {
+          "source_id": "urmes2022",
+          "locator": "Publisher abstract: periodic dynamic data used to estimate elementary parameters",
+          "evidence_type": "source_observation",
+          "supports": "Transient excitation can support parameter estimation on Pd/α-Al₂O₃."
+        },
+        {
+          "source_id": "urakawa2008",
+          "locator": "Full text pp. 4902–4909",
+          "evidence_type": "source_observation",
+          "supports": "Periodic perturbation and phase-sensitive spectroscopy as a dynamic measurement approach."
+        }
+      ],
+      "related_ids": [
+        "sc_co_design",
+        "sc_validation",
+        "ma_identifiability",
+        "ph_operando_spectroscopy"
+      ],
+      "open_questions": [
+        "Which inputs and measurements make the target PdAg mechanism distinguishable before optimization?"
+      ]
+    },
+    {
+      "id": "sc_co_design",
+      "parent": "sc_experiment_design",
+      "title": "Excitation, measurement and control co-design",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "Input waveforms should be chosen jointly with sensor bandwidth and experimental objectives.",
+      "explanation": "A waveform that excites surface dynamics beyond the GC bandwidth may be uninformative for state estimation even if a fast spectrometer could resolve it. Conversely, small periodic perturbations suitable for MES may not maximize reactor productivity. Separate identification campaigns from performance trials where needed; select a shared campaign only if its excitation is both persistently informative and operationally feasible.",
+      "assumptions": [
+        "Instrumentation availability is not yet known.",
+        "Model discrimination and production optimization can have different optimal inputs."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "urakawa2008",
+          "locator": "Full text pp. 4904–4907, frequency-dependent amplitude/phase response in MES",
+          "evidence_type": "source_observation",
+          "supports": "Excitation frequency interacts with measurement response."
+        },
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §§3.4–3.5 (lines 257–284)",
+          "evidence_type": "interpretation",
+          "supports": "Proposal separates simulation optimization from later physical implementation and places observers out of scope."
+        }
+      ],
+      "related_ids": [
+        "sc_experiment_design",
+        "sc_output_model",
+        "sc_state_estimation"
+      ],
+      "open_questions": [
+        "Can one apparatus support both high-frequency identification and cycle-integrated productivity measurement?"
+      ]
+    },
+    {
+      "id": "sc_validation",
+      "parent": "sc_experiment_design",
+      "title": "Validation ladder and evidence boundary",
+      "kind": "concept",
+      "maturity": "ai_worked_out",
+      "relevance": "core",
+      "summary": "A credible progression separates code verification, parameter calibration, predictive validation and experimental benefit.",
+      "explanation": "First verify discretization and balances; then fit a catalyst-specific model to independent steady/transient data; then validate predictions on held-out conditions and quantify uncertainty; finally test periodic performance against a matched optimized steady baseline. The proposal's Phase 3 is planned, not performed. A simulation that reproduces calibration data is not independent validation, and a transient model fit is not evidence that a PdAg industrial bed gains yield.",
+      "assumptions": [
+        "No experimental results or calibrated parameters were delivered in this v1.",
+        "Report failed predictions and uncertainty, not only successful fit."
+      ],
+      "equations": [],
+      "claim_refs": [
+        {
+          "source_id": "proposal_main",
+          "locator": "Methodology §3.4, Phase 1–3 (lines 270–279)",
+          "evidence_type": "proposal_hypothesis",
+          "supports": "Planned validation sequence."
+        },
+        {
+          "source_id": "pachulski2012",
+          "locator": "Abstract: industrial PdAg steady-state model and transport-limitation checks",
+          "evidence_type": "source_observation",
+          "supports": "Prior catalyst-specific steady kinetic/reactor model, not validation of dynamic forcing."
+        },
+        {
+          "source_id": "urmes2022",
+          "locator": "Publisher abstract: dynamic Pd/α-Al₂O₃ model reproduces output for periodic experiments",
+          "evidence_type": "source_observation",
+          "supports": "Existing dynamic-model precedent, different catalyst."
+        }
+      ],
+      "related_ids": [
+        "ma_numerical_checks",
+        "sc_baseline",
+        "sc_robustness"
+      ],
+      "open_questions": [
+        "What held-out periodic experiments and matched baseline are feasible for v1 validation?"
+      ]
+    }
+  ]
+}

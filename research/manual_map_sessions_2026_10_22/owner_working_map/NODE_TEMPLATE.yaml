@@ -1,0 +1,117 @@
+# Semantic template only. Do NOT ingest into the live parser or treat as an approved map node.
+# Based on research/notes/bep_mindmap_node_contract_2026_10_20.md, extended for explicit claim/evidence data.
+template:
+  revision: "1"
+  purpose: "One node = one independently understandable scientific concept"
+  structural_policy: "Insert only after owner approves placement at the active branch frontier"
+  reference_policy: "AI may add citations and explanatory material without claiming human understanding"
+  source_review_policy: "AI-attached evidence vs human-verified claim/link are distinct"
+  runtime_warning: "Legacy mindmap/schema.py extra=ignore drops unrecognized fields; use this isolated working format until migrated/tested"
+  user_read_policy: "Owner must see the complete default-visible summary/content and expressly authorize personal-map placement. AI background may be attached but cannot be represented as owner-understood or owner-authored unless separately reviewed."
+  required_content_for_scientific_nodes:
+    - id
+    - parent
+    - title
+    - kind
+    - approval
+    - maturity
+    - rationale
+    - notes
+    - sources
+    - open_questions
+  reader_document_policy: "Every node retains summary and notes; Idea can link concise question/overview, AI worked out links coherent AI research, Human worked out links scoped owner understanding, Informal Writing links approved showable prose, Formal Writing links thesis-oriented copy. Hidden AI references are not evidence of owner review. Show live maturity dynamically."
+  viewer_warning: "No frontend/parser changes have been made; new fields may be ignored or dropped by legacy extra=ignore adapters. Render support requires a separate schema/front-end implementation."
+  reader_file_kinds: ["informal_writing", "working_explanation", "question"]
+  background_visibility: "hidden_in_default_graph; discoverable for audit/AI only"
+  other_valid_states:
+    source_access:
+      - full_text_checked
+      - publisher_abstract_checked
+      - institutional_abstract_checked
+      - bibliographic_metadata_only
+      - local_project_document_checked
+      - unverified_historical_attachment
+    claim_evidence:
+      - source_observation
+      - source_model_result
+      - review_synthesis
+      - proposal_hypothesis
+      - derived_under_assumptions
+      - owner_reported_familiarity
+      - hypothesis_unverified
+  separate_decisions:
+    structural_approval: "proposed | accepted | rejected; exact node and parent"
+    owner_read_status: "unread | read, distinct from approval and understanding"
+    maturity: "idea | ai_worked_out | human_worked_out | informal_writing | formal_writing"
+    claim_review: "ai_attached | human_verified; separately for each source-to-claim link"
+    citation_truth: "Evidence supports the precise claim under cited scope, not all possible interpretations"
+    human_understanding: "Do not infer blue from structure selection, agreement, source access, or familiarity"
+node:
+  id: "example_stable_id"
+  parent: "parent_id"
+  title: "One specific scientific concept"
+  kind: concept
+  approval: proposed
+  structure_status: pending_owner_placement
+  maturity: idea
+  owner_read_status: unread
+  owner_content_approval: unapproved
+  human_understanding_review: not_assessed
+  importance: null
+  rationale: "Why this specific node belongs under this parent."
+  summary: "One-sentence scientific summary."
+  notes: |-
+    A substantive explanation, not a topic list. Explain definitions,
+    assumptions, physical/mathematical mechanism, consequences, relevance
+    to the BEP and alternative interpretations. Include equations in the
+    corresponding structured field, not only here.
+  reader_file:
+    path: "owner_working_map/pages/.../index.md"
+    kind: "question"
+    visibility: "node_detail"
+    status: "owner_visible"
+    human_review: "not_assessed"
+  background_files:
+    - path: "owner_working_map/bridges/.../source_note.md"
+      visibility: "hidden"
+      purpose: "AI evidence and source notes, not directly displayed in graph"
+  equations:
+    - id: "E1"
+      expression: "Illustrative mathematical expression"
+      meaning: "What it states or represents"
+      quantities_and_units: []
+      assumptions: []
+      scope: "model_specific"
+  claims:
+    - id: "CL1"
+      statement: "One precisely bounded scientific claim, not a global conclusion."
+      evidence_type: source_observation
+      source_ids: ["SRC1"]
+      confidence_comment: "What the inspected passage can/cannot establish."
+  sources:
+    - id: "SRC1"
+      title: "Exact publication or project source title"
+      authors: []
+      year: null
+      doi: null
+      url: null
+      path: null
+      citation: null
+      locator: "Exact page/section/equation/abstract (do not invent)"
+      supports: ["CL1"]
+      source_access: bibliographic_metadata_only
+      review: ai_attached
+      human_verified: false
+      catalyst_and_model_scope: "Specific conditions and limits"
+  assumptions: []
+  limitations: []
+  open_questions: []
+  related_ids: []
+  research_letters: []
+  origin: ai_synthesis
+  decision_receipt:
+    structural_decision: pending
+    authority: null
+    date: null
+    exact_scope: null
+  change_history: []

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "bep-mindmap": {
+      "command": ".venv/bin/python",
+      "args": [
+        "-m",
+        "mindmap.mcp_server",
+        "--workspace-root",
+        "."
+      ]
+    }
+  }
+}

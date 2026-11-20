@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "validated_at_utc": "2026-10-22T22:28:03+00:00",
+  "validation_scope": "YAML structure, graph integrity, evidence references, provenance lineage, crosswalk, relation edges, uncertainty links and second-pass audit references; not scientific truth or model validation.",
+  "counts": {
+    "nodes": 143,
+    "unique_node_ids": 143,
+    "sources": 65,
+    "unique_source_ids": 65,
+    "claim_references": 340,
+    "historical_attachments": 96,
+    "concept_records": 171,
+    "research_addition_source_records": 7,
+    "prior_crosswalk_rows": 144,
+    "scientific_relation_edges": 59,
+    "cross_disciplinary_edges": 35,
+    "claim_reconciliations": 21,
+    "uncertainties": 31,
+    "coverage_areas": 7,
+    "second_pass_evidence_audit_entries": 10
+  },
+  "maturity_counts": {
+    "idea": 4,
+    "ai_worked_out": 139
+  },
+  "source_access_status_counts": {
+    "full_text_read": 19,
+    "abstract_and_preview": 3,
+    "abstract_only": 11,
+    "full_text_selected_sections_read": 1,
+    "full_original_pdf_selected_pages_reopened": 2,
+    "citation_only_unverified": 1,
+    "legacy_bibliographic_claim_not_verified_against_local_pdf": 1,
+    "Crossref metadata verified 2026-10-21": 1,
+    "Local 97-page PDF reopened; selected passages extracted and page-rendered 2026-10-22; Appendix F code pages remain OCR-limited": 1,
+    "Crossref bibliographic metadata verified; full text not inspected in this pass": 1,
+    "repository_file_present": 23,
+    "legacy_reference_not_resolved_to_local_file": 1
+  },
+  "concept_dispositions": {
+    "retained": 111,
+    "merged": 36,
+    "refined": 15,
+    "unresolved": 3,
+    "corrected": 5,
+    "split": 1
+  },
+  "errors": []
+}

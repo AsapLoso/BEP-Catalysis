@@ -1,0 +1,426 @@
+{
+  "metadata": {
+    "name": "Critical audit of central scientific and methodological claims in the BEP proposal",
+    "edition": "proposal-claim-audit-v1-2026-10-23",
+    "status": "AI-authored provisional audit; no personal understanding, source verification or approval asserted",
+    "proposal_snapshot": {
+      "branch": "work/bep-integrated-reference-map-v1-20261022",
+      "commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+      "path": "Academics/BEP/Catalysis/0_Project_Management/main.tex"
+    },
+    "evidence_policy": "Each entry separates proposal text, primary-source observations or model results, derivation, interpretation, access boundary and unresolved target evidence. A citation in the proposal is not treated as proof.",
+    "maturity_ceiling": "ai_worked_out",
+    "audit_scope": "Selected high-consequence premise, mechanism, model, numerical, objective, optimization and novelty claims; not a line-by-line audit of the full proposal."
+  },
+  "claims": [
+    {
+      "id": "PA01_steady_equilibrium",
+      "locator": "§1.1 lines 117 and 158",
+      "proposal_claim": "Steady surface coverages remain locked at fixed thermodynamic equilibrium.",
+      "classification": "category_error_and_overstatement",
+      "status": "corrected_general_principle",
+      "analysis": "A kinetic steady state satisfies zero net accumulation of modeled inventories; it can sustain finite adsorption, reaction and product fluxes under continuous feed. Thermodynamic equilibrium is a stricter closed-system/detailed-balance condition. PSSA is an approximation that sets selected coverage derivatives to zero; it does not assert equilibrium or instantaneous microscopic equilibration.",
+      "evidence_class": "mathematical_definition_with_source_model_context",
+      "source_ids": [
+        "urmes2019",
+        "proposal_main"
+      ],
+      "does_not_establish": [
+        "Exact working-surface coverages.",
+        "Whether the target needs a dynamic coverage state."
+      ],
+      "unresolved": "Write the chosen kinetic site's balances and distinguish stationary coverages from equilibrium in project prose."
+    },
+    {
+      "id": "PA02_steady_state_yield_cap",
+      "locator": "§1.1 lines 117–122; literature review lines 158–160",
+      "proposal_claim": "Steady operation inherently caps intermediate ethylene yield, and periodic concentration forcing breaks the cap.",
+      "classification": "universal_gain_claim_not_established",
+      "status": "conditional_target_question",
+      "analysis": "Sequential A→B→C chemistry can create a selectivity/conversion trade-off for a specified kinetic network and feasible operating region, but no universal cap or cycling gain follows from reaction sequence alone. The sign depends on dynamics, transport, constraints, objective and comparator. A diffusion-limited pellet model gives a source-specific example of increased selectivity at a frequency window; a different adsorption/desorption model family predicts no rate improvement. Both demonstrate model dependence rather than a target answer.",
+      "evidence_class": "source_theoretical_examples_plus_mathematical_limits",
+      "source_ids": [
+        "ziegelhoeffer1972",
+        "feimer1982",
+        "horn_bailey1971",
+        "proposal_main"
+      ],
+      "does_not_establish": [
+        "A gain for the BEP catalyst or apparatus.",
+        "That the best steady feasible benchmark is exceeded.",
+        "That every sequential reaction has a cycling-improvable steady cap."
+      ],
+      "unresolved": "Evaluate target periodic and optimized steady performance under the identical objective and constraints."
+    },
+    {
+      "id": "PA03_thermal_40x_transfer",
+      "locator": "§1.1 lines 119 and literature review line 158",
+      "proposal_claim": "Fast temperature pulsing produced up to a 40-fold rate enhancement, supporting an analogous acetylene feed-concentration mechanism.",
+      "classification": "true_for_other_system_transfer_error",
+      "status": "scope_corrected",
+      "analysis": "Zhu et al. study fast temperature pulsing for CO oxidation on Pt model catalysts. Their primary accessible abstract confirms the apparatus and significant rate increase but does not state the exact 40-fold number. A 2026 review reports that quantitative comparison for pulsed Joule heating against continuous heating at the same power. Neither is acetylene semi-hydrogenation or inlet-composition forcing; the stimulus, catalyst, reaction, scale and comparison all differ.",
+      "evidence_class": "primary_abstract_plus_review_quantification",
+      "source_ids": [
+        "zhu2021",
+        "dynamic_catalysis_review2026"
+      ],
+      "does_not_establish": [
+        "A PdAg response or feed-cycling gain.",
+        "A target pulse period or surface relaxation time."
+      ],
+      "unresolved": "If the exact 40-fold figure is retained, verify the primary paper's relevant figure/table and state its system and comparator."
+    },
+    {
+      "id": "PA04_ethylene_desorption_mechanism",
+      "locator": "§1.1 lines 119 and literature review line 158",
+      "proposal_claim": "Concentration waves induce ethylene desorption before it is further hydrogenated.",
+      "classification": "plausible_mechanistic_hypothesis_but_unverified",
+      "status": "target_mechanism_open",
+      "analysis": "A Pd/PdAg ideal-surface KMC study reports that Ag can enhance ethylene desorption and limit subsequent reactions for its model surface; this is a static catalyst/pathway result. Urmès et al. use small-amplitude periodic flow oscillations on Pd/α-Al2O3 for parameter estimation and fitted outlet histories, but the accessible abstract does not report that periodic forcing causes a pulse-triggered ethylene desorption flux or a productivity gain. The proposal's sentence is a testable mechanism, not an established causal result.",
+      "evidence_class": "source_model_result_and_primary_dynamic_study_abstract",
+      "source_ids": [
+        "mei2009",
+        "urmes2022"
+      ],
+      "does_not_establish": [
+        "Transient ethylene desorption on the target catalyst.",
+        "The relative rates of ethylene desorption and secondary hydrogenation under target forcing."
+      ],
+      "unresolved": "Identify a measurement or discriminating transient prediction that separates this pathway from transport, inhibition and flow-composition effects."
+    },
+    {
+      "id": "PA05_PSSA_rapid_forcing",
+      "locator": "§1.1 line 124; hypotheses line 134; literature review lines 160 and 187–189",
+      "proposal_claim": "Rapid concentration cycling necessarily breaks the PSSA, so non-PSSA surface dynamics are required.",
+      "classification": "timescale_condition_missing",
+      "status": "conditional_not_automatic",
+      "analysis": "PSSA adequacy depends on the stable surface-kinetic relaxation spectrum relative to the local gas composition and temperature history at the catalyst. A frequency ratio Ω/|λ_slow| or τ_s/τ_g,local is a screening concept; apparatus and bed filtering can attenuate a nominally fast command. If surface relaxation remains much faster than the actual local forcing, a quasi-steady coverage can remain adequate. Dynamic states may be needed when the time scales overlap and the output data discriminate them.",
+      "evidence_class": "singular_perturbation_screen_derived_under_assumptions",
+      "source_ids": [
+        "urmes2019",
+        "urmes2022",
+        "berger2008"
+      ],
+      "does_not_establish": [
+        "Target surface relaxation eigenvalues.",
+        "That every fast inlet command reaches the catalyst with its commanded amplitude."
+      ],
+      "unresolved": "Compare target PSSA and dynamic-coverage predictions on transient data with uncertainty and parameter identifiability."
+    },
+    {
+      "id": "PA06_surface_coverages_unmeasurable",
+      "locator": "§1.2 lines 127 and 162",
+      "proposal_claim": "Surface coverages are physically unmeasurable and industrial-bed internal states are impossible to observe.",
+      "classification": "absolute_wording_not_supported",
+      "status": "qualified",
+      "analysis": "Modulation-excitation spectroscopy with phase-sensitive detection has measured selected surface species in suitable laboratory catalyst systems. This does not imply all coverage components throughout a full packed bed are directly measured. Direct measurement, practical observability and model-based estimation are distinct; feasibility depends on the probe, spatial resolution, catalyst, pressure, time resolution and observation map.",
+      "evidence_class": "source_observation_and_scope_boundary",
+      "source_ids": [
+        "urakawa2008",
+        "villaverde2016_structural_identifiability"
+      ],
+      "does_not_establish": [
+        "Full axial state visibility in the target apparatus.",
+        "Impossibility of any internal measurement."
+      ],
+      "unresolved": "List target observables, detection limits and spatial/time resolution before describing unmeasurability."
+    },
+    {
+      "id": "PA07_EKF_UKF_reconstruction",
+      "locator": "§1.2 line 162 and future scope line 284",
+      "proposal_claim": "EKF/UKF can reconstruct hidden nonlinear surface states from boundary measurements.",
+      "classification": "algorithm_capability_overgeneralized",
+      "status": "conditional",
+      "analysis": "An EKF or UKF can produce estimates for a specified finite-dimensional model and observation scheme, but it does not guarantee that states are observable, parameters are identifiable or model mismatch is small. Local observability, practical information, initialization and uncertainty are separate conditions. The proposal also places observers outside the immediate BEP scope, so this should not be presented as a necessary current deliverable.",
+      "evidence_class": "control_theory_condition_and_scope_audit",
+      "source_ids": [
+        "villaverde2016_structural_identifiability",
+        "proposal_main"
+      ],
+      "does_not_establish": [
+        "Rank/observability of the target discretized PDE model.",
+        "A sensor set, observer design or reconstruction performance."
+      ],
+      "unresolved": "Keep state-estimation architecture as future research unless target sensors and a testable observability result are specified."
+    },
+    {
+      "id": "PA08_Peclet_plug_flow",
+      "locator": "§1.2 lines 129 and hypotheses line 134",
+      "proposal_claim": "Pe≫1 justifies ideal plug flow with negligible axial dispersion.",
+      "classification": "conditional_scaling_claim",
+      "status": "requires_target_screen",
+      "analysis": "A large axial Péclet number can make axial dispersion small relative to advection on a stated length/velocity/diffusivity convention; it does not alone rule out radial gradients, intraparticle diffusion, film resistance, heat gradients, nonideal residence-time distributions or velocity changes. The measured RTD and the definitions of superficial/interstitial velocity, bed porosity and dispersion basis matter.",
+      "evidence_class": "transport_scaling_and_measurement_requirement",
+      "source_ids": [
+        "danckwerts1953",
+        "di_giuliano_pellegrino2019"
+      ],
+      "does_not_establish": [
+        "A numerical target Pe.",
+        "Negligible pellet/film or thermal resistance.",
+        "A unique boundary condition."
+      ],
+      "unresolved": "Calculate declared groups from target geometry/properties and compare predicted RTD with tracer/step-response evidence."
+    },
+    {
+      "id": "PA09_isothermal_numeric_stability",
+      "locator": "§2 methodology line 185",
+      "proposal_claim": "An isothermal baseline avoids numerical instability because non-isothermal simulations are highly prone to it.",
+      "classification": "physical_and_numerical_rationale_conflated",
+      "status": "baseline_may_be_hypothesis",
+      "analysis": "An isothermal baseline can be a useful simplifying model, but it is supported by heat balance/measurement evidence, not by the fact that an energy balance is numerically challenging. Hydrogenation heat release, heat capacity, wall exchange and catalyst scale determine temperature rise and time response. Numerical stiffness or instability is a solver/model implementation issue and should be analyzed separately from whether temperature gradients are physically negligible.",
+      "evidence_class": "model_scope_and_physical_balance",
+      "source_ids": [
+        "dehghani2019_pdag_alphaal2o3",
+        "proposal_main"
+      ],
+      "does_not_establish": [
+        "A target temperature profile or heat-transfer coefficient.",
+        "Numerical stability properties of a coupled energy model."
+      ],
+      "unresolved": "Bound heat generation/removal or measure temperature before treating isothermal behavior as target physics."
+    },
+    {
+      "id": "PA10_universal_frequency_window",
+      "locator": "§2 methodology line 197",
+      "proposal_claim": "The pulse period must satisfy approximately τ_desorption ∼ T_pulse < τ_residence.",
+      "classification": "universal_window_not_source_verified",
+      "status": "hypothesis_not_rule",
+      "analysis": "The source-specific diffusion-coupled pellet example balances penetration with adsorption disequilibrium; it does not establish this same inequality for acetylene/PdAg. Target response can involve surface relaxation, gas residence/dispersion, pellet diffusion, actuator and detector bandwidth, pulse shape/amplitude, and local temperature. A favorable frequency window is possible but neither necessary nor sufficient from one timescale match.",
+      "evidence_class": "comparison_of_source_specific_theory_and_derived_timescales",
+      "source_ids": [
+        "ziegelhoeffer1972",
+        "urmes2022",
+        "silveston1995"
+      ],
+      "does_not_establish": [
+        "Target τ_desorption or τ_residence.",
+        "A universal lower/upper period bound."
+      ],
+      "unresolved": "Measure/estimate relevant time scales and test across an actual bed-inlet frequency band."
+    },
+    {
+      "id": "PA11_upwind_accuracy",
+      "locator": "§2 numerical discretization line 205",
+      "proposal_claim": "Upwind finite differences prevent unphysical oscillations for Pe≫1, so they are the selected pulse-response method.",
+      "classification": "stability_accuracy_conflated",
+      "status": "partly_correct_with_missing_error",
+      "analysis": "First-order upwind is a robust monotone choice for advection-dominated transport, but modified-equation analysis gives artificial diffusion of leading order uΔz/2 in its semidiscrete constant-velocity form. A stable waveform prediction may still have biased pulse amplitude and phase. Physical and numerical dispersion must be separated with mesh/time convergence and comparisons to the chosen dispersive model.",
+      "evidence_class": "mathematical_derivation",
+      "source_ids": [
+        "di_giuliano_pellegrino2019",
+        "proposal_main"
+      ],
+      "does_not_establish": [
+        "That first-order upwind is accurate at an unspecified grid.",
+        "That a higher-order method is automatically better or more stable."
+      ],
+      "unresolved": "Report D_num relative to D_ax and demonstrate output convergence in the forcing band."
+    },
+    {
+      "id": "PA12_square_and_fourier_instability",
+      "locator": "§2 waveform parameterization line 260",
+      "proposal_claim": "Square waves cause severe numerical instability, while Fourier series struggle with nonlinear frequency mixing/Gibbs effects; B-splines are therefore the appropriate control basis.",
+      "classification": "method_choice_presented_as_general_fact",
+      "status": "not_general",
+      "analysis": "Discontinuities can challenge a time integrator if not resolved, but a piecewise-constant control can be integrated with solver restarts at switch times; it is not inherently physically or numerically unstable. Fourier approximations of a jump exhibit Gibbs behavior, while smooth periodic profiles do not have that same discontinuity issue. B-splines provide useful local support but impose their own basis, knot and constraint choices; control-basis convergence should be checked independently.",
+      "evidence_class": "numerical_analysis_and_control_parameterization",
+      "source_ids": [
+        "proposal_main"
+      ],
+      "does_not_establish": [
+        "That B-splines find a better physical optimum.",
+        "That a square-wave intervention is impossible with hardware or numerics."
+      ],
+      "unresolved": "Choose and refine a control basis against actuator limits and objective sensitivity."
+    },
+    {
+      "id": "PA13_metric_inconsistency",
+      "locator": "Title/abstract lines 92–112; central question line 142; optimization lines 263, 276 and 301",
+      "proposal_claim": "The proposal alternates among intermediary yield, selectivity, production rate and a yield-maximizing cycle as if they were the same objective.",
+      "classification": "objective_definition_inconsistent",
+      "status": "must_define_before_comparison",
+      "analysis": "Yield, selectivity, conversion and net productivity have different numerators, denominators and response to feed. For cycle data, ratios of integrated molar flows differ from time-averages of instantaneous ratios. If ethylene is already in the inlet, gross outlet ethylene is not net formation. A selectivity-only metric can reward low conversion without a guardrail. A cycle objective must be written explicitly before it can be optimized or compared.",
+      "evidence_class": "definition_and_measurement_accounting",
+      "source_ids": [
+        "proposal_main",
+        "kaps2026"
+      ],
+      "does_not_establish": [
+        "The owner-selected success metric.",
+        "A product ranking from incompatible denominators."
+      ],
+      "unresolved": "Specify cycle-integral formula, inlet-product handling, conversion/throughput constraints and resource basis."
+    },
+    {
+      "id": "PA14_steady_benchmark",
+      "locator": "Abstract line 111; optimization line 263; experimental phase line 279",
+      "proposal_claim": "A locally optimized periodic trajectory that outperforms a steady baseline demonstrates periodic-operation improvement.",
+      "classification": "benchmark_and_optimality_incomplete",
+      "status": "conditional",
+      "analysis": "The steady comparator must be optimized over its own feasible constant-input set under the same objective, resource accounting and constraints. Comparing with a nominal literature point can exaggerate gain. A local optimizer's candidate demonstrates at most a feasible model result; it does not certify the global periodic optimum. If every steady control is admissible as a constant periodic control under the same constraints, global periodic optimum is weakly no worse by set inclusion, but strict gain remains empirical/model-specific. The set-inclusion inequality in this audit is a direct mathematical derivation; Horn & Bailey is relevant historical sufficient-condition theory, not the premise of that inequality.",
+      "evidence_class": "optimization_set_inclusion_and_evidence_class",
+      "source_ids": [
+        "proposal_main",
+        "kaps2026"
+      ],
+      "does_not_establish": [
+        "Global optimality from one gradient-based run.",
+        "A robust or measured gain from a model-only comparison."
+      ],
+      "unresolved": "State shared feasibility constraints and distinguish candidate improvement, globally bounded optimum and experimental result."
+    },
+    {
+      "id": "PA15_novelty_gap",
+      "locator": "Literature review lines 164–165",
+      "proposal_claim": "No framework couples 1D PDE transport, transient surface kinetics and dynamic concentration-waveform optimization for acetylene.",
+      "classification": "literature_gap_unverified",
+      "status": "narrowed_not_confirmed",
+      "analysis": "Urmès et al. 2022 already report periodic flow oscillations for acetylene hydrogenation on Pd/α-Al2O3, fitting a transient model to outlet composition for parameter estimation. The accessible abstract does not settle whether its model is a fully distributed axial PDE or whether it optimizes performance. Therefore the broad 'no framework' statement requires a systematic search and precise novelty dimensions; the defensible gap is narrower and target-dependent.",
+      "evidence_class": "primary_periodic_acetylene_study_abstract_and_scope_limit",
+      "source_ids": [
+        "urmes2022"
+      ],
+      "does_not_establish": [
+        "That the earlier model is a 1D PDE.",
+        "That no other dynamic packed-bed or optimization work exists."
+      ],
+      "unresolved": "Compare model domain, kinetics, control parameterization, optimization objective and experimental validation in a documented search."
+    },
+    {
+      "id": "PA16_zero_redesign",
+      "locator": "§1.1 lines 119 and 122",
+      "proposal_claim": "Periodic concentration modulation requires zero physical reactor redesign because it only modulates an inlet feed valve.",
+      "classification": "apparatus_capability_assumed",
+      "status": "target_hardware_unknown",
+      "analysis": "An existing system may permit a new setpoint waveform, but the actual intervention depends on whether its MFC/valve, mixing, pressure-control and analyzer bandwidth can deliver and measure it safely. Feed concentration, component molar flow and total flow are distinct controls. Hardware modifications, control-system programming or added fast sensors may be needed; no universal zero-redesign inference follows.",
+      "evidence_class": "plant-boundary_and-apparatus-definition",
+      "source_ids": [
+        "silveston1995",
+        "proposal_main"
+      ],
+      "does_not_establish": [
+        "Actual MFC bandwidth, safety envelope or modulated inlet waveform.",
+        "No cost or hardware change for the target setup."
+      ],
+      "unresolved": "Inventory the installed flow/mixing/sensing path and identify command-to-bed transfer before making a no-redesign claim."
+    }
+  ],
+  "decision_independent_information": [
+    {
+      "topic": "Catalyst and working state",
+      "options": [
+        "Pd/α-Al2O3 used in steady and periodic kinetic studies",
+        "supported PdAg materials with variable composition/support/preparation",
+        "PdMn or other promoted catalysts",
+        "ideal Pd/PdAg surfaces for atomistic mechanism"
+      ],
+      "implication": "Catalyst identity selects which kinetic pathway and constants can be considered; surface restructuring and deposits can make nominal composition incomplete.",
+      "source_ids": [
+        "urmes2019",
+        "urmes2022",
+        "mei2009",
+        "li2021",
+        "dehghani2019_pdag_alphaal2o3"
+      ],
+      "decision_status": "defer project choice; map the scientific alternatives now"
+    },
+    {
+      "topic": "Performance objective",
+      "options": [
+        "cycle-average net ethylene production",
+        "net yield per acetylene feed",
+        "selectivity at a minimum conversion",
+        "energy/resource-penalized or multiobjective performance"
+      ],
+      "implication": "Different definitions can rank waveforms differently; feed ethylene, side products, conversion floors and energy/hydrogen costs alter the result.",
+      "source_ids": [
+        "proposal_main",
+        "kaps2026"
+      ],
+      "decision_status": "defer project choice; write candidate formulas now"
+    },
+    {
+      "topic": "Manipulated inputs",
+      "options": [
+        "composition modulation at fixed total flow",
+        "total-flow modulation at fixed composition",
+        "independent/in-phase/anti-phase H2 and acetylene modulation",
+        "temperature forcing as a distinct intervention"
+      ],
+      "implication": "Partial pressure, residence time, hydrogen ratio, heat transfer and actuator requirements change together or independently depending on implementation.",
+      "source_ids": [
+        "silveston1995",
+        "kaps2026",
+        "zhu2021"
+      ],
+      "decision_status": "defer project choice; characterize feasible hardware now"
+    },
+    {
+      "topic": "Model fidelity",
+      "options": [
+        "PSSA versus dynamic coverages",
+        "plug-flow versus axial dispersion",
+        "variable versus constant velocity",
+        "pellet/film/thermal states"
+      ],
+      "implication": "Each addition adds states, parameters, boundary requirements and data requirements; choose with dimensionless screening, residual structure and held-out prediction.",
+      "source_ids": [
+        "urmes2019",
+        "urmes2022",
+        "danckwerts1953",
+        "di_giuliano_pellegrino2019"
+      ],
+      "decision_status": "defer model selection; gather discriminator evidence first"
+    },
+    {
+      "topic": "Evidence threshold",
+      "options": [
+        "mechanistic plausibility",
+        "fitted model result",
+        "held-out prediction",
+        "robust model-optimal result",
+        "repeatable experimental gain against optimized steady benchmark"
+      ],
+      "implication": "Each statement is a different evidence class. Better parameter information is useful but does not by itself demonstrate improved process performance.",
+      "source_ids": [
+        "urmes2022",
+        "waldron2020_transient_flow_mbdoe",
+        "kaps2026"
+      ],
+      "decision_status": "defer standard-setting; distinguish claims now"
+    }
+  ],
+  "open_issues": [
+    {
+      "id": "OI1",
+      "issue": "Exact primary-text source for the 40-fold thermal pulse figure.",
+      "why_open": "Accessible primary abstract confirms a significant increase but the numerical ratio was obtained from a 2026 review summary.",
+      "needed": "Inspect primary article figure/table and reproduce the comparison basis."
+    },
+    {
+      "id": "OI2",
+      "issue": "Whether any catalyst-data file named in the proposal identifies the same working PdAg material and run conditions.",
+      "why_open": "Proposal citation lineage is unresolved in the integrated source inventory.",
+      "needed": "Trace the local thesis/dataset bibliography, file identity, catalyst label and experimental records."
+    },
+    {
+      "id": "OI3",
+      "issue": "Whether periodic operation beats the optimized steady comparator for the target.",
+      "why_open": "No target model fit, waveform optimization or validation was performed in this scientific map pass.",
+      "needed": "Future separate execution with matched objective/constraints and calibrated evidence."
+    },
+    {
+      "id": "OI4",
+      "issue": "Which input and output variables can be realized and measured at the required time scale.",
+      "why_open": "No apparatus transfer, calibration, safety envelope or sampling record is in the compared map snapshots.",
+      "needed": "Future project-specific apparatus inventory and measurements."
+    },
+    {
+      "id": "OI5",
+      "issue": "Which product network, kinetic closure and transport fidelity are justified.",
+      "why_open": "Published mechanisms and models differ in catalyst, support, operation and evidence.",
+      "needed": "Target material characterization and discriminating data."
+    }
+  ]
+}

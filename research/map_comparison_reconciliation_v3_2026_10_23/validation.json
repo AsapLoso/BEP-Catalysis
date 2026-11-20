@@ -1,0 +1,128 @@
+{
+  "status": "passed",
+  "validated_at": "2026-10-23",
+  "scope": "Machine-readable map structure, parent/cross-link/source references, maturity ceiling, and proposal-audit reference integrity. This does not certify scientific truth, source entailment for every claim, target model validity, or personal understanding.",
+  "input_map": {
+    "branch": "work/bep-map-reconciliation-v2-20261023",
+    "base_head": "e7cc9bf6da4ee7988eb00429ebd241de3995caa7",
+    "nodes_preserved_from_v2": 21,
+    "source_snapshots_preserved": true,
+    "integrated_node_crosswalk_preserved_rows": 143,
+    "prior_map_crosswalk_preserved_rows": 144,
+    "new_branch": "work/bep-map-reconciliation-v3-20261023"
+  },
+  "counts": {
+    "proposed_nodes": 37,
+    "scientific_subnodes": 15,
+    "depth_two_themes": 17,
+    "cross_links": 29,
+    "source_evidence_records": 24,
+    "proposal_claim_audit_entries": 16,
+    "decision_information_topics": 5,
+    "v2_node_ids_preserved": 21
+  },
+  "checks": [
+    {
+      "check": "node_id_unique",
+      "passed": true,
+      "detail": "All proposed node IDs unique."
+    },
+    {
+      "check": "one_root_three_disciplines",
+      "passed": true,
+      "detail": "root=1, discipline_children=3."
+    },
+    {
+      "check": "parent_references_and_acyclic_ancestry",
+      "passed": true,
+      "detail": "All parent IDs resolve and ancestry is acyclic."
+    },
+    {
+      "check": "depth_two_theme_count",
+      "passed": true,
+      "detail": "The original 17 depth-two themes are preserved; additions are descendants."
+    },
+    {
+      "check": "cross_link_endpoints",
+      "passed": true,
+      "detail": "Every cross-link endpoint resolves."
+    },
+    {
+      "check": "all_node_and_crosslink_sources",
+      "passed": true,
+      "detail": "Source evidence records=24; unresolved=0."
+    },
+    {
+      "check": "AI_only_maturity",
+      "passed": true,
+      "detail": "No human verification, personal understanding or approval was asserted."
+    },
+    {
+      "check": "proposal_audit_claim_ids_unique",
+      "passed": true,
+      "detail": "entries=16, duplicate IDs=0"
+    },
+    {
+      "check": "proposal_audit_sources_resolve",
+      "passed": true,
+      "detail": "unresolved claim-source references=0"
+    },
+    {
+      "check": "proposal_snapshot_pinned",
+      "passed": true,
+      "detail": "Critical audit is pinned to the proposal snapshot on the integrated reference branch."
+    },
+    {
+      "check": "decision_options_are_not_selections",
+      "passed": true,
+      "detail": "Five project choice domains are represented as information, with no selection recorded."
+    },
+    {
+      "check": "no_simulation_or_optimization_executed",
+      "passed": true,
+      "detail": "Research/map work only; no reactor simulation, fitting, or waveform optimization."
+    },
+    {
+      "check": "full_map_source_id_sweep",
+      "passed": true,
+      "detail": "Recursively checked source_ids across map and audit; unresolved=0."
+    },
+    {
+      "check": "v2_source_snapshots_and_crosswalks_preserved",
+      "passed": true,
+      "detail": "{\"source_snapshots\":true,\"prior_source_map_crosswalk\":true,\"integrated_node_crosswalk\":true,\"claim_reconciliations\":true,\"unresolved_questions\":true,\"v2_node_ids_preserved\":true}"
+    },
+    {
+      "check": "source_access_scope_recorded",
+      "passed": true,
+      "detail": "All four additions record access level; total source-evidence count reconciles."
+    },
+    {
+      "check": "published_file_readback",
+      "passed": true,
+      "detail": "Fetched all three published artifacts from the v3 branch and byte-for-byte compared their returned UTF-8 content to the validated payloads."
+    }
+  ],
+  "unresolved_source_refs": [],
+  "output_branch": "work/bep-map-reconciliation-v3-20261023",
+  "pull_request_target": "work/bep-map-reconciliation-v2-20261023",
+  "baseline_parent_sha": "e7cc9bf6da4ee7988eb00429ebd241de3995caa7",
+  "branch_revision_before_receipt": "772f00200b01660b4e7cffffe84a615995c441b7",
+  "files_read_back": [
+    {
+      "path": "Academics/BEP/Catalysis/research/map_comparison_reconciliation_v3_2026_10_23/proposed_unified_map_v3.json",
+      "blob": "9ce6754645962eb206f5bebe5aef0782cea8faca",
+      "exact_content_match": true
+    },
+    {
+      "path": "Academics/BEP/Catalysis/research/map_comparison_reconciliation_v3_2026_10_23/proposal_claim_audit_v1.json",
+      "blob": "f82e02e5d44572f92fc0438acbf1d8dec515d454",
+      "exact_content_match": true
+    },
+    {
+      "path": "Academics/BEP/Catalysis/research/map_comparison_reconciliation_v3_2026_10_23/decision_science_and_claim_audit.md",
+      "blob": "9ff10199e95dd37ff0a23698202d6ac4aad2180d",
+      "exact_content_match": true
+    }
+  ]
+}

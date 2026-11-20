@@ -1,0 +1,1082 @@
+dataset:
+  name: Typed scientific relation edges and interdisciplinary connectors
+  edition: integrated-v1-2026-10-22
+  edge_count: 59
+  cross_disciplinary_edge_count: 35
+links:
+- id: ix_001
+  from: c1_horiuti_polanyi_family
+  to: ma_stoichiometry
+  relation: microkinetic_path_maps_to_gas_stoichiometry
+  meaning: Elementary surface steps imply a net gas stoichiometric vector only after adsorbed intermediates and
+    desorbing products are accounted for; the route remains catalyst-specific.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: c1_horiuti_polanyi_family
+    source_ids:
+    - legacy_ref_4a6757f9a5
+    - urmes2019
+  - node_id: ma_stoichiometry
+    source_ids:
+    - proposal_main
+- id: ix_002
+  from: c1_dissociative_h2_adsorption
+  to: ma_surface_balance
+  relation: supplies_surface_flux_terms
+  meaning: Dissociative H₂ adsorption consumes/creates vacancies and must appear in the coverage balance with two-site
+    stoichiometry.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: c1_dissociative_h2_adsorption
+    source_ids:
+    - legacy_ref_4a6757f9a5
+    - urmes2019
+  - node_id: ma_surface_balance
+    source_ids:
+    - proposal_main
+    - pachulski2012
+- id: ix_003
+  from: c1_full_site_balance
+  to: ma_surface_balance
+  relation: specializes_site_closure
+  meaning: The six-term Urmès source balance is one catalyst/model-specific reduction of a general occupancy constraint.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: c1_full_site_balance
+    source_ids:
+    - legacy_ref_4a6757f9a5
+    - urmes2019
+  - node_id: ma_surface_balance
+    source_ids:
+    - proposal_main
+    - pachulski2012
+- id: ix_004
+  from: c2_surface_kinetic_closure_choices
+  to: ma_pde_ode_coupling
+  relation: selects_model_class
+  meaning: PSSA rates couple algebraically to a transient bed; explicit coverages add surface ODE states.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: c2_surface_kinetic_closure_choices
+    source_ids:
+    - legacy_ref_c18a3997ca
+    - legacy_ref_5bd9ec7f38
+  - node_id: ma_pde_ode_coupling
+    source_ids:
+    - proposal_main
+- id: ix_005
+  from: c2_urmes_2019_effective_rates
+  to: ma_gas_pde
+  relation: provides_source_term_example
+  meaning: Source-specific net rates can populate a gas source vector only with matching units, signs and catalyst
+    basis.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: c2_urmes_2019_effective_rates
+    source_ids:
+    - legacy_ref_8f8e730bea
+    - urmes2019
+  - node_id: ma_gas_pde
+    source_ids:
+    - proposal_main
+    - froment2011
+    - larsen_bep_pdf
+    - legacy_ref_159cf51de0
+- id: ix_006
+  from: c2_dynamic_theta_model_calibration_gap
+  to: ma_surface_balance
+  relation: requires_consistent_inventory
+  meaning: Dynamic surface states require adsorption/desorption fluxes and gas-plus-surface elemental conservation.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: c2_dynamic_theta_model_calibration_gap
+    source_ids:
+    - legacy_ref_c18a3997ca
+    - legacy_ref_5bd9ec7f38
+  - node_id: ma_surface_balance
+    source_ids:
+    - proposal_main
+    - pachulski2012
+- id: ix_007
+  from: c2_transient_parameter_identifiability
+  to: ma_identifiability
+  relation: shares_inverse_problem
+  meaning: Transient forcing may add information, but uniqueness depends on sensitivity, noise and input realization.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: c2_transient_parameter_identifiability
+    source_ids:
+    - legacy_ref_c18a3997ca
+    - legacy_ref_5bd9ec7f38
+  - node_id: ma_identifiability
+    source_ids:
+    - berger2008
+    - urmes2022
+- id: ix_008
+  from: ph_axial_balance
+  to: ma_gas_pde
+  relation: physical_to_mathematical_representation
+  meaning: The physical packed-bed flux and reaction inventories are written as a conservative PDE under declared
+    bases.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: ph_axial_balance
+    source_ids:
+    - proposal_main
+  - node_id: ma_gas_pde
+    source_ids:
+    - proposal_main
+    - froment2011
+    - larsen_bep_pdf
+    - legacy_ref_159cf51de0
+- id: ix_009
+  from: ma_stoichiometry
+  to: ma_gas_pde
+  relation: defines_reaction_source
+  meaning: The stoichiometric matrix maps reaction extents to each gas species source term.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: ma_stoichiometry
+    source_ids:
+    - proposal_main
+  - node_id: ma_gas_pde
+    source_ids:
+    - proposal_main
+    - froment2011
+    - larsen_bep_pdf
+    - legacy_ref_159cf51de0
+- id: ix_010
+  from: ma_pde_ode_coupling
+  to: ma_MOL
+  relation: discretized_by
+  meaning: Spatial method of lines converts distributed gas states into a finite ODE/DAE system.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: ma_pde_ode_coupling
+    source_ids:
+    - proposal_main
+  - node_id: ma_MOL
+    source_ids:
+    - proposal_main
+    - legacy_ref_0a6e6d4503
+    - legacy_ref_9edbae751c
+- id: ix_011
+  from: ma_MOL
+  to: ma_stiff_solver
+  relation: integrated_by_candidate
+  meaning: The semidiscrete reactor may be stiff; BDF/Radau are candidate solvers requiring convergence checks.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: ma_MOL
+    source_ids:
+    - proposal_main
+    - legacy_ref_0a6e6d4503
+    - legacy_ref_9edbae751c
+  - node_id: ma_stiff_solver
+    source_ids:
+    - proposal_main
+    - legacy_ref_0a6e6d4503
+    - legacy_ref_9d42116bdc
+- id: ix_012
+  from: ma_numerical_stability
+  to: ma_numerical_checks
+  relation: verified_by
+  meaning: Positivity, conservation, site closure and mesh/time convergence are numerical verification targets.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: ma_numerical_stability
+    source_ids:
+    - proposal_main
+  - node_id: ma_numerical_checks
+    source_ids:
+    - proposal_main
+- id: ix_013
+  from: ma_numerical_checks
+  to: sc_validation
+  relation: precedes_physical_validation
+  meaning: Code/solution verification precedes calibration, held-out prediction and performance experiments.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: ma_numerical_checks
+    source_ids:
+    - proposal_main
+  - node_id: sc_validation
+    source_ids:
+    - proposal_main
+    - pachulski2012
+    - urmes2022
+- id: ix_014
+  from: u_ma_scaling
+  to: sc_excitation
+  relation: constrains_excitation_design
+  meaning: Dimensionless timescale and transport groups inform candidate periods but do not define a universal resonance
+    band.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: u_ma_scaling
+    source_ids:
+    - proposal_main
+    - shi2024
+    - ziegelhoeffer1972
+    - froment2011
+  - node_id: sc_excitation
+    source_ids:
+    - urmes2022
+    - berger2008
+- id: ix_015
+  from: ma_Strouhal
+  to: sc_waveform
+  relation: parameterizes_frequency_relation
+  meaning: The declared Strouhal convention links forcing period to bed residence time; frequency conventions must
+    be explicit.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: ma_Strouhal
+    source_ids:
+    - proposal_main
+  - node_id: sc_waveform
+    source_ids:
+    - proposal_main
+    - urakawa2008
+- id: ix_016
+  from: ph_residence_time_distribution
+  to: sc_bed_input_realization
+  relation: filters_realized_input
+  meaning: Bed residence-time response reshapes a commanded concentration cycle before it reaches/propagates through
+    the reactive zone.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: ph_residence_time_distribution
+    source_ids:
+    - danckwerts1953
+  - node_id: sc_bed_input_realization
+    source_ids:
+    - proposal_main
+    - kaps2026
+    - espinoza2022
+- id: ix_017
+  from: sc_manipulated_input
+  to: sc_bed_input_realization
+  relation: command_is_filtered
+  meaning: Flow controllers, mixer and lines map a command to realized component flows at the bed plane.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: sc_manipulated_input
+    source_ids:
+    - proposal_main
+  - node_id: sc_bed_input_realization
+    source_ids:
+    - proposal_main
+    - kaps2026
+    - espinoza2022
+- id: ix_018
+  from: sc_bed_input_realization
+  to: ph_boundary_measurement
+  relation: must_be_measured_with
+  meaning: A bed-plane input or calibrated tracer is needed to distinguish actuator/mixer lag from kinetic lag.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: sc_bed_input_realization
+    source_ids:
+    - proposal_main
+    - kaps2026
+    - espinoza2022
+  - node_id: ph_boundary_measurement
+    source_ids:
+    - proposal_main
+- id: ix_019
+  from: ph_boundary_measurement
+  to: sc_output_model
+  relation: defines_observation_operator
+  meaning: Analyzer/line dynamics connect outlet gas states to measured samples.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: ph_boundary_measurement
+    source_ids:
+    - proposal_main
+  - node_id: sc_output_model
+    source_ids:
+    - proposal_main
+    - urakawa2008
+- id: ix_020
+  from: ph_operando_spectroscopy
+  to: sc_observability
+  relation: adds_surface_sensitive_outputs
+  meaning: Operando signals can add selected surface information but do not guarantee full distributed-state observability.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: ph_operando_spectroscopy
+    source_ids:
+    - urakawa2008
+  - node_id: sc_observability
+    source_ids:
+    - proposal_main
+- id: ix_021
+  from: sc_output_model
+  to: sc_observability
+  relation: required_for_analysis
+  meaning: Observability depends on the measurement map, sampling, inputs and the state dynamics.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: sc_output_model
+    source_ids:
+    - proposal_main
+    - urakawa2008
+  - node_id: sc_observability
+    source_ids:
+    - proposal_main
+- id: ix_022
+  from: sc_co_design
+  to: ma_identifiability
+  relation: chooses_informative_inputs
+  meaning: Identification experiments target parameter sensitivity and distinguish mechanism/transport alternatives.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: sc_co_design
+    source_ids:
+    - urakawa2008
+    - proposal_main
+  - node_id: ma_identifiability
+    source_ids:
+    - berger2008
+    - urmes2022
+- id: ix_023
+  from: sc_identification_vs_performance
+  to: sc_objective
+  relation: different_evidence_question
+  meaning: Parameter estimation/prediction does not establish improvement against an optimized steady operation.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: sc_identification_vs_performance
+    source_ids:
+    - urmes2022
+    - kaps2026
+    - espinoza2022
+  - node_id: sc_objective
+    source_ids:
+    - proposal_main
+    - lan2025
+- id: ix_024
+  from: sc_objective
+  to: sc_baseline
+  relation: defines_matched_comparison
+  meaning: The cycle-integrated objective must be identical for periodic and steady alternatives.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: sc_objective
+    source_ids:
+    - proposal_main
+    - lan2025
+  - node_id: sc_baseline
+    source_ids:
+    - proposal_main
+- id: ix_025
+  from: sc_benchmark_nesting
+  to: ma_average_gain
+  relation: separate_mathematical_limits
+  meaning: Feasible-set nesting gives weak no-worse ordering; LTI/Jensen results are separate no-gain limits.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: sc_benchmark_nesting
+    source_ids:
+    - proposal_main
+  - node_id: ma_average_gain
+    source_ids:
+    - feimer1982
+    - horn_bailey1971
+    - ziegelhoeffer1972
+    - espinoza2022
+- id: ix_026
+  from: ph_energy_balance
+  to: sc_hardware_constraints
+  relation: creates_thermal_constraints
+  meaning: Thermal state and heat-removal measurements determine part of a safe feasible envelope.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: ph_energy_balance
+    source_ids:
+    - proposal_main
+  - node_id: sc_hardware_constraints
+    source_ids:
+    - proposal_main
+    - silveston1995
+    - espinoza2022
+- id: ix_027
+  from: ph_deposits
+  to: sc_robustness
+  relation: creates_campaign_drift
+  meaning: Slow deposit/deactivation changes can confound within-cycle effects and require matched run-order controls.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: ph_deposits
+    source_ids:
+    - borodzinski2000
+    - borodzinski2006
+  - node_id: sc_robustness
+    source_ids:
+    - proposal_main
+    - pachulski2012
+- id: ix_028
+  from: ph_site_ensembles
+  to: ma_identifiability
+  relation: structural_model_uncertainty
+  meaning: Alternative site families can be structurally confounded with fitted adsorption and reaction parameters.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: ph_site_ensembles
+    source_ids:
+    - urmes2019
+    - pachulski2012
+    - li2021
+  - node_id: ma_identifiability
+    source_ids:
+    - berger2008
+    - urmes2022
+- id: ix_029
+  from: sc_validation
+  to: sc_baseline
+  relation: tests_claim_against_comparator
+  meaning: A performance claim requires held-out dynamic data and an optimized feasible steady comparator.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: sc_validation
+    source_ids:
+    - proposal_main
+    - pachulski2012
+    - urmes2022
+  - node_id: sc_baseline
+    source_ids:
+    - proposal_main
+- id: ix_030
+  from: u_ph_measurement
+  to: u_sc_observation
+  relation: physical_signal_vs_property
+  meaning: Instrumentation produces signals; observability is a property of a specified model/input/output system.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: u_ph_measurement
+    source_ids:
+    - urakawa2008
+    - espinoza2022
+  - node_id: u_sc_observation
+    source_ids:
+    - proposal_main
+    - urakawa2008
+    - espinoza2022
+    - urmes2022
+- id: ix_031
+  from: u_ma_optimization
+  to: u_sc_objective
+  relation: mathematical_method_to_process_goal
+  meaning: The optimization formulation handles a process objective only after the metric and feasible set are declared.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; endpoint claim references provide source context, but the edge
+    is not a separate source observation.
+  evidence_basis: linked_node_claims_and_model_structure
+  endpoint_source_context:
+  - node_id: u_ma_optimization
+    source_ids:
+    - proposal_main
+    - horn_bailey1971
+  - node_id: u_sc_objective
+    source_ids:
+    - proposal_main
+    - lan2025
+    - urmes2022
+- id: ix_032
+  from: c1_borodzinski_ae_effective_rates
+  to: ma_pde_ode_coupling
+  relation: catalyst_specific_rate_to_conservative_bed_source
+  meaning: The A/E literature rates are normalized per mol Pd and must be converted on a documented Pd inventory
+    and catalyst basis before entering a kg-catalyst or bed-volume source term; their PSSA surface closure remains
+    distinct from the bed's transient gas balance.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored conceptual relation; source rate and basis claims are attached to the endpoint nodes,
+    while the edge states their model-coupling implication.
+  evidence_basis: source_model_structure_and_declared_units
+  endpoint_source_context:
+  - node_id: c1_borodzinski_ae_effective_rates
+    source_ids:
+    - borodzinski2000
+    - urmes2019
+  - node_id: ma_pde_ode_coupling
+    source_ids:
+    - proposal_main
+    - froment2011
+- id: ix_033
+  from: c1_pd_mn_adsorption_substitution
+  to: c2_surface_kinetic_closure_choices
+  relation: strong_chemisorption_alternative_to_reversible_lhhw
+  meaning: The Pd–Mn source reports hydrocarbon retention and acetylene-associated ethylene displacement, motivating
+    an adsorption-substitution model; this is a catalyst-conditioned alternative to quasi-equilibrium Langmuir closures
+    and does not decide the BEP catalyst model.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: AI-authored relation grounded in attached source-specific observation and model claims.
+  evidence_basis: stytsenko2022_tpd_qms_and_kinetic_model
+  endpoint_source_context:
+  - node_id: c1_pd_mn_adsorption_substitution
+    source_ids:
+    - stytsenko2022
+  - node_id: c2_surface_kinetic_closure_choices
+    source_ids:
+    - urmes2019
+    - urmes2022
+    - proposal_main
+- id: ix_034
+  from: c1_pd_mn_adsorption_substitution
+  to: ma_pde_ode_coupling
+  relation: apparent_contact_time_kinetics_to_bed_model_boundary
+  meaning: The source’s fitted contact-time conversion/selectivity equations require catalyst inventory, rate basis,
+    hydrodynamics and input/output boundary mapping before they can define a spatial packed-bed source; they are
+    not a resolved transient bed model.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored modeling boundary derived from the source equations and their stated basis.
+  evidence_basis: source_model_structure_and_basis_boundary
+  endpoint_source_context:
+  - node_id: c1_pd_mn_adsorption_substitution
+    source_ids:
+    - stytsenko2022
+  - node_id: ma_pde_ode_coupling
+    source_ids:
+    - proposal_main
+- id: ix_035
+  from: c1_pdag_descriptor_mkm
+  to: c2_surface_kinetic_closure_choices
+  relation: steady_microkinetic_closure_is_not_dynamic_coverage
+  meaning: The PdAg DFT/microkinetic source imposes equilibrated C2H2/H2 adsorption and dθ/dt=0; it provides a catalyst-specific
+    steady closure, not the finite-time coverage model proposed for dynamic reactor analysis.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: Source model assumptions explicitly inspected; relation states model-class distinction.
+  evidence_basis: wang2023_pdag_descriptors_section_2_2
+  endpoint_source_context:
+  - node_id: c1_pdag_descriptor_mkm
+    source_ids:
+    - wang2023_pdag_descriptors
+  - node_id: c2_surface_kinetic_closure_choices
+    source_ids:
+    - urmes2019
+    - urmes2022
+    - proposal_main
+- id: ix_036
+  from: c1_pdag_descriptor_mkm
+  to: ma_pde_ode_coupling
+  relation: surface_rate_to_spatial_bed_normalization_boundary
+  meaning: DFT/microkinetic surface rankings and per-site rate quantities need catalyst inventory, active-site normalization,
+    support distribution, and declared bed-volume conversion before defining a packed-bed reaction source.
+  relationship_scope: cross_disciplinary
+  evidence_status: AI-authored modeling boundary grounded in the source’s slab/microkinetic representation and the
+    conservative bed basis.
+  evidence_basis: source_model_basis_and_bed_balance_basis
+  endpoint_source_context:
+  - node_id: c1_pdag_descriptor_mkm
+    source_ids:
+    - wang2023_pdag_descriptors
+  - node_id: ma_pde_ode_coupling
+    source_ids:
+    - proposal_main
+- id: ix_037
+  from: c1_pdag_industrial_lhhw_decay
+  to: ma_pde_ode_coupling
+  relation: quasi_steady_axial_profile_with_campaign_activity_state
+  meaning: The industrial Pd–Ag source couples pseudo-steady axial gas/energy profiles to a slow scalar activity
+    ODE; it is a different state-space model from a transient axial PDE with finite surface coverages and dispersion.
+  relationship_scope: cross_disciplinary
+  evidence_status: Source balance assumptions and activity equation read; relation summarizes the model boundary.
+  evidence_basis: dehghani2019_sections_3_4_and_4
+  endpoint_source_context:
+  - node_id: c1_pdag_industrial_lhhw_decay
+    source_ids:
+    - dehghani2019_pdag_alphaal2o3
+  - node_id: ma_pde_ode_coupling
+    source_ids:
+    - proposal_main
+- id: ix_038
+  from: c1_pdag_industrial_lhhw_decay
+  to: sc_identification_vs_performance
+  relation: campaign_deactivation_identification_is_not_periodic_gain
+  meaning: Fitting long-horizon plant acetylene breakthrough with an activity state identifies campaign decay under
+    a selected model; it does not identify within-cycle surface relaxation or prove that periodic inlet forcing
+    outperforms an optimized steady policy.
+  relationship_scope: cross_disciplinary
+  evidence_status: Source model result plus explicit objective distinction in the endpoint nodes.
+  evidence_basis: dehghani2019_activity_fit_and_campaign_data
+  endpoint_source_context:
+  - node_id: c1_pdag_industrial_lhhw_decay
+    source_ids:
+    - dehghani2019_pdag_alphaal2o3
+  - node_id: sc_identification_vs_performance
+    source_ids:
+    - proposal_main
+    - urmes2022
+- id: ix_039
+  from: ph_axial_balance
+  to: ph_variable_superficial_velocity
+  relation: variable_velocity_stays_inside_conservative_flux
+  meaning: The conservative component balance is valid for variable superficial velocity only when the advective
+    flux divergence is retained; expanding it exposes the concentration times velocity-gradient term.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: Derived under the stated flux and velocity conventions.
+  evidence_basis: proposal_balance_and_di_giuliano_variable_velocity_model
+  endpoint_source_context:
+  - node_id: ph_axial_balance
+    source_ids:
+    - proposal_main
+  - node_id: ph_variable_superficial_velocity
+    source_ids:
+    - proposal_main
+    - di_giuliano_pellegrino2019
+- id: ix_040
+  from: ph_variable_superficial_velocity
+  to: ma_stoichiometry
+  relation: net_gas_stoichiometry_can_change_convective_flow
+  meaning: The sum of gas-phase stoichiometric coefficients and the declared rate basis determine the reaction contribution
+    to total gas molar flow; the target magnitude depends on the complete pathway and feed.
+  relationship_scope: cross_disciplinary
+  evidence_status: Stoichiometric derivation under the selected gas-phase reaction network; target rate and flow
+    changes are unknown.
+  evidence_basis: net_stoichiometric_source_sum
+  endpoint_source_context:
+  - node_id: ph_variable_superficial_velocity
+    source_ids:
+    - proposal_main
+    - di_giuliano_pellegrino2019
+  - node_id: ma_stoichiometry
+    source_ids:
+    - proposal_main
+- id: ix_041
+  from: ma_gas_pde
+  to: ma_conservative_finite_volume
+  relation: integrate_pde_as_shared_face_fluxes
+  meaning: Integrating the conservative bed PDE over cells yields an ODE in face-flux differences; using each interior
+    face flux once makes internal fluxes cancel in the global balance.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: Derived from the stated bed-volume conservation law; the cited MOL article is a separate finite-difference
+    implementation.
+  evidence_basis: cell_integral_of_conservative_balance
+  endpoint_source_context:
+  - node_id: ma_gas_pde
+    source_ids:
+    - proposal_main
+  - node_id: ma_conservative_finite_volume
+    source_ids:
+    - proposal_main
+    - di_giuliano_pellegrino2019
+- id: ix_042
+  from: ma_conservative_finite_volume
+  to: ma_numerical_checks
+  relation: telescoping_fluxes_define_global_balance_check
+  meaning: The discrete global species balance is a direct conservation check for a shared-face finite-volume implementation,
+    though it does not validate the physical rate law.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: Algebraic consequence of summing the cell balances.
+  evidence_basis: finite_volume_telescoping_identity
+  endpoint_source_context:
+  - node_id: ma_conservative_finite_volume
+    source_ids:
+    - proposal_main
+  - node_id: ma_numerical_checks
+    source_ids:
+    - proposal_main
+- id: ix_043
+  from: ph_boundary_model_interpretations
+  to: ma_initial_boundary
+  relation: external_domain_choice_closes_pde_initial_boundary_problem
+  meaning: Inlet and outlet conditions encode how the modeled reactor exchanges component flux with upstream and
+    downstream domains; they are part of mathematical well-posedness and physical system definition.
+  relationship_scope: cross_disciplinary
+  evidence_status: Source-supported competing interpretation plus conservation derivation; target apparatus remains
+    unspecified.
+  evidence_basis: proposal_boundary_choice_and_mott_green_abstract
+  endpoint_source_context:
+  - node_id: ph_boundary_model_interpretations
+    source_ids:
+    - proposal_main
+    - mott_green2015
+  - node_id: ma_initial_boundary
+    source_ids:
+    - proposal_main
+    - danckwerts1953
+- id: ix_044
+  from: ma_explicit_transport_step_bound
+  to: ma_stiff_solver
+  relation: spatial_refinement_tightens_explicit_time_step
+  meaning: Finer cells reduce spatial truncation error but make explicit transport updates more restrictive; implicit
+    stiffness handling still requires accuracy, positivity and convergence checks.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: Derived scalar-scheme condition and source-specific numerical-method observation.
+  evidence_basis: explicit_transport_update_and_source_solver_report
+  endpoint_source_context:
+  - node_id: ma_explicit_transport_step_bound
+    source_ids:
+    - proposal_main
+    - di_giuliano_pellegrino2019
+  - node_id: ma_stiff_solver
+    source_ids:
+    - proposal_main
+- id: ix_045
+  from: sc_nonlinear_observability_identifiability
+  to: ma_identifiability
+  relation: structural_parameter_identifiability_is_augmented_observability
+  meaning: Constant kinetic and transport parameters can be appended as zero-dynamics states for a local structural
+    rank test; the result is separate from practical uncertainty in finite noisy reactor data.
+  relationship_scope: cross_disciplinary
+  evidence_status: Method-source result under analytic ODE assumptions; no target rank test is performed.
+  evidence_basis: villaverde2016_augmented_observability_method
+  endpoint_source_context:
+  - node_id: sc_nonlinear_observability_identifiability
+    source_ids:
+    - villaverde2016_structural_identifiability
+    - villaverde2019_fispo
+  - node_id: ma_identifiability
+    source_ids:
+    - berger2008
+    - urmes2022
+    - villaverde2016_structural_identifiability
+- id: ix_046
+  from: sc_unknown_input_reconstructibility
+  to: sc_bed_input_realization
+  relation: unmeasured_bed_input_can_confounds_states_and_parameters
+  meaning: If the actual bed-plane composition is not measured or calibrated, its distortion is an unknown time-varying
+    input that can be confused with latent reactor memory or kinetic parameters.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: General FISPO method plus the project-specific command-to-bed input model; target transfer remains
+    unknown.
+  evidence_basis: unknown_input_state_parameter_distinction
+  endpoint_source_context:
+  - node_id: sc_unknown_input_reconstructibility
+    source_ids:
+    - villaverde2019_fispo
+    - proposal_main
+  - node_id: sc_bed_input_realization
+    source_ids:
+    - proposal_main
+    - urmes2020_ni_periodic_estimation
+- id: ix_047
+  from: ph_boundary_measurement
+  to: sc_periodic_frequency_response_identification
+  relation: measured_phase_contains_bed_and_analyzer_dynamics
+  meaning: A gain/phase estimate based on the outlet signal is an end-to-end response unless the bed-plane input
+    and downstream analyzer/line transfer are measured or calibrated separately.
+  relationship_scope: cross_disciplinary
+  evidence_status: Derived signal-chain interpretation with source-specific periodic adsorption measurement precedent.
+  evidence_basis: input_output_boundary_and_urmes2020_setup
+  endpoint_source_context:
+  - node_id: ph_boundary_measurement
+    source_ids:
+    - proposal_main
+    - urmes2020_ni_periodic_estimation
+  - node_id: sc_periodic_frequency_response_identification
+    source_ids:
+    - urmes2020_ni_periodic_estimation
+    - urmes2022
+- id: ix_048
+  from: sc_bed_input_realization
+  to: sc_periodic_frequency_response_identification
+  relation: frequency_response_requires_realized_input_reference
+  meaning: The input phasor must refer to the realized catalyst-plane waveform, not an actuator setpoint, if reactor
+    dynamics are to be separated from actuation and mixing.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: Derived from the measurement boundary and source-specific periodic-flow methods.
+  evidence_basis: bed_plane_transfer_function_definition
+  endpoint_source_context:
+  - node_id: sc_bed_input_realization
+    source_ids:
+    - proposal_main
+    - urmes2020_ni_periodic_estimation
+  - node_id: sc_periodic_frequency_response_identification
+    source_ids:
+    - urmes2020_ni_periodic_estimation
+    - urmes2022
+- id: ix_049
+  from: sc_periodic_frequency_response_identification
+  to: sc_nonlinear_observability_identifiability
+  relation: excitation_trajectory_conditions_local_rank_information
+  meaning: Local identifiability depends on the selected known input and observed outputs; measuring gain and phase
+    at one frequency does not establish full state/parameter rank.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: System-theory relation under the stated input/output model.
+  evidence_basis: known_input_rank_condition_and_harmonic_measurement
+  endpoint_source_context:
+  - node_id: sc_periodic_frequency_response_identification
+    source_ids:
+    - urmes2020_ni_periodic_estimation
+    - urmes2022
+  - node_id: sc_nonlinear_observability_identifiability
+    source_ids:
+    - villaverde2016_structural_identifiability
+    - villaverde2019_fispo
+- id: ix_050
+  from: sc_periodic_frequency_response_identification
+  to: ma_identifiability
+  relation: periodic_harmonics_probe_parameter_sensitivities
+  meaning: Frequency and phase information can constrain selected parameter combinations, but one harmonic and one
+    input direction may leave other parameters confounded.
+  relationship_scope: cross_disciplinary
+  evidence_status: Source-specific periodic identification precedent plus local response derivation.
+  evidence_basis: urmes2020_periodic_adsorption_parameter_estimation
+  endpoint_source_context:
+  - node_id: sc_periodic_frequency_response_identification
+    source_ids:
+    - urmes2020_ni_periodic_estimation
+    - urmes2022
+  - node_id: ma_identifiability
+    source_ids:
+    - urmes2020_ni_periodic_estimation
+    - berger2008
+- id: ix_051
+  from: ma_periodic_orbit
+  to: sc_fair_steady_periodic_cycle_comparison
+  relation: periodic_state_closure_defines_settled_cycle_objective
+  meaning: A cycle-average periodic optimum is defined on a closed settled orbit when the states included in the
+    objective are periodic; an aging state that drifts calls for a matched finite-horizon comparison.
+  relationship_scope: cross_disciplinary
+  evidence_status: Mathematical objective definition under explicit periodic-orbit assumptions.
+  evidence_basis: poincare_fixed_point_and_cycle_average
+  endpoint_source_context:
+  - node_id: ma_periodic_orbit
+    source_ids:
+    - proposal_main
+  - node_id: sc_fair_steady_periodic_cycle_comparison
+    source_ids:
+    - proposal_main
+    - dehghani2019_pdag_alphaal2o3
+- id: ix_052
+  from: sc_fair_steady_periodic_cycle_comparison
+  to: sc_objective
+  relation: matched_optima_require_identical_cycle_score
+  meaning: The weak no-worse feasible-set argument is valid only when the periodic and steady policies are evaluated
+    using the same net-product objective, catalyst-state convention and constraints.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: Derived under the common-objective and constant-policy-embedding conditions.
+  evidence_basis: matched_objective_feasible_set_nesting
+  endpoint_source_context:
+  - node_id: sc_fair_steady_periodic_cycle_comparison
+    source_ids:
+    - proposal_main
+  - node_id: sc_objective
+    source_ids:
+    - proposal_main
+    - lan2025
+- id: ix_053
+  from: sc_identification_vs_performance
+  to: sc_fair_steady_periodic_cycle_comparison
+  relation: identified_dynamics_do_not_prove_optimal_performance_gain
+  meaning: Fitting frequency response or reproducing transient outlet traces addresses a model/data question; an
+    improvement claim requires a separate matched periodic-versus-steady optimization or experiment.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: Source-class correction plus common-feasible-set derivation.
+  evidence_basis: urmes2022_model_result_and_matched_comparator
+  endpoint_source_context:
+  - node_id: sc_identification_vs_performance
+    source_ids:
+    - urmes2022
+    - urmes2020_ni_periodic_estimation
+    - kaps2026
+    - espinoza2022
+  - node_id: sc_fair_steady_periodic_cycle_comparison
+    source_ids:
+    - proposal_main
+    - dehghani2019_pdag_alphaal2o3
+- id: ix_054
+  from: ma_fisher_information_model_based_design
+  to: ma_identifiability
+  relation: local_information_refines_practical_identifiability
+  meaning: The weighted output-sensitivity information matrix quantifies local precision for a chosen experiment;
+    it is different from structural uniqueness of the model.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: Statistical derivation under fixed-noise assumptions and a full-text transient-flow MBDoE example.
+  evidence_basis: waldron2020_fim_and_villaverde_structural_practical_distinction
+  endpoint_source_context:
+  - node_id: ma_fisher_information_model_based_design
+    source_ids:
+    - waldron2020_transient_flow_mbdoe
+    - villaverde2016_structural_identifiability
+  - node_id: ma_identifiability
+    source_ids:
+    - villaverde2016_structural_identifiability
+    - urmes2022
+- id: ix_055
+  from: ma_fisher_information_model_based_design
+  to: sc_co_design
+  relation: measurement_and_excitation_define_information_design
+  meaning: A waveform is informative only through sensitivities of the measured output at the actual sensor locations
+    and bandwidth; experiment design must include actuator and measurement constraints.
+  relationship_scope: cross_disciplinary
+  evidence_status: Source-supported MBDoE framework plus project-specific command/bed/analyzer boundary distinction.
+  evidence_basis: waldron2020_mbdoe_and_target_input_measurement_chain
+  endpoint_source_context:
+  - node_id: ma_fisher_information_model_based_design
+    source_ids:
+    - waldron2020_transient_flow_mbdoe
+    - urmes2020_ni_periodic_estimation
+  - node_id: sc_co_design
+    source_ids:
+    - proposal_main
+    - urakawa2008
+    - urmes2020_ni_periodic_estimation
+- id: ix_056
+  from: sc_persistent_excitation_condition
+  to: sc_periodic_frequency_response_identification
+  relation: frequency_response_samples_are_not_full_parameter_excitation
+  meaning: A sinusoid can identify a local first-harmonic response at its frequency, while identification of a parameterized
+    plant needs sufficient independent sensitivity directions across the informative input and measurement record.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: General identification-method evidence and local sensitivity interpretation; target rank is uncomputed.
+  evidence_basis: schoukens_periodic_identification_and_waldron_information_matrix
+  endpoint_source_context:
+  - node_id: sc_persistent_excitation_condition
+    source_ids:
+    - schoukens1994_periodic_excitation_identification
+    - waldron2020_transient_flow_mbdoe
+  - node_id: sc_periodic_frequency_response_identification
+    source_ids:
+    - urmes2020_ni_periodic_estimation
+    - urmes2022
+- id: ix_057
+  from: sc_persistent_excitation_condition
+  to: ma_fisher_information_model_based_design
+  relation: persistent_excitation_is_local_information_rank_condition
+  meaning: In the specified regression or local Gaussian sensitivity setting, a positive information matrix rules
+    out a completely unexcited parameter direction, but rank alone does not imply good conditioning or nonlinear
+    target identifiability.
+  relationship_scope: cross_disciplinary
+  evidence_status: Derived local relation under the equations declared in each endpoint; no BEP FIM is computed.
+  evidence_basis: weighted_sensitivity_gram_and_regressor_excitation
+  endpoint_source_context:
+  - node_id: sc_persistent_excitation_condition
+    source_ids:
+    - waldron2020_transient_flow_mbdoe
+    - villaverde2016_structural_identifiability
+  - node_id: ma_fisher_information_model_based_design
+    source_ids:
+    - waldron2020_transient_flow_mbdoe
+- id: ix_058
+  from: ma_periodic_orbit
+  to: sc_fair_steady_periodic_cycle_comparison
+  relation: cycle_objective_requires_periodic_state_definition
+  meaning: A settled-cycle performance score presumes a defined repeatable state orbit; slow catalyst drift instead
+    requires an explicitly matched finite-horizon or lifecycle comparison.
+  relationship_scope: cross_disciplinary
+  evidence_status: Period-map derivation plus a CSTR paper that distinguishes cyclic response assessment from slow
+    campaign deactivation.
+  evidence_basis: periodic_fixed_point_and_kaps2026_campaign_deactivation
+  endpoint_source_context:
+  - node_id: ma_periodic_orbit
+    source_ids:
+    - proposal_main
+    - kaps2026
+  - node_id: sc_fair_steady_periodic_cycle_comparison
+    source_ids:
+    - proposal_main
+    - kaps2026
+    - dehghani2019_pdag_alphaal2o3
+- id: ix_059
+  from: sc_fair_steady_periodic_cycle_comparison
+  to: sc_identification_vs_performance
+  relation: matched_benchmark_is_separate_from_identification_result
+  meaning: A transient model fit, a periodic measurement method, a matched-feed reference experiment and a model-optimized
+    steady comparator answer different questions and cannot substitute for one another.
+  relationship_scope: within_discipline_scientific_relation
+  evidence_status: Reconciled from the direct acetylene identification abstract and full-text cross-system FPO comparator
+    study.
+  evidence_basis: urmes2022_vs_kaps2026_evidence_classes
+  endpoint_source_context:
+  - node_id: sc_fair_steady_periodic_cycle_comparison
+    source_ids:
+    - kaps2026
+    - proposal_main
+  - node_id: sc_identification_vs_performance
+    source_ids:
+    - urmes2022
+    - kaps2026
+    - espinoza2022

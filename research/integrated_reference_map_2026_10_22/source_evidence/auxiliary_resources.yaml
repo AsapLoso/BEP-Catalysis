@@ -1,0 +1,19 @@
+dataset:
+  name: Auxiliary source resources used by the citation audit
+  resource_count: 1
+  scope: Resources supplement the graph source register without changing the scientific taxonomy.
+resources:
+- resource_id: AUX-dehghani2019-s1
+  parent_source_id: dehghani2019_pdag_alphaal2o3
+  title: Supplementary Materials for Dehghani et al. (2019), Processes 7, 136
+  resource_type: publisher_supplementary_workbooks_zip
+  article_listed_supplementary_url: http://www.mdpi.com/2227-9717/7/3/136/s1
+  direct_archive_url_this_mission: not_re-fetched; article-listed S1 page is the source locator
+  path: Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/source_evidence/source_snapshots/dehghani2019_supplementary_data.zip
+  bytes: 75071
+  sha256: 86474052b52ca459b760e84ba35fd45c46a746f3a4b3ef4702b727a32d991406
+  access_this_mission: Existing local archive reopened; ZIP SHA-256 checked; all three workbooks read. The original
+    retrieval was prior to this mission; byte identity with the publisher endpoint was not rechecked during this
+    mission.
+  license_note: The parent article states a CC BY 4.0 license; the inspected ZIP has no separate license file. Retain
+    the article citation and source URL with this snapshot.

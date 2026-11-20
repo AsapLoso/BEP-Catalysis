@@ -1,0 +1,1354 @@
+dataset:
+  name: Systematic second-pass citation re-audit
+  status: B1_Dehghani_B2_Urmes2019_B3_Borodzinski_B4_Berger_B5_Silveston_B6_Danckwerts_B8_Larsen_B9_Stytsenko_B10_Wang_and_B11_Urmes2022_B12_proposal_B13_Zhu_B14_DiGiuliano_Pellegrino_B15_Pachulski2012_B16_Rosa2025_B17_Urmes2020_second_passes_complete; other sources remain queued
+  auditor_class: same-agent AI second pass; no independent human review claimed
+  entry_count: 16
+entries:
+- audit_id: SP-B1-20261022-DEHGHANI
+  pass_number: 2
+  performed_after_commit: d4da958
+  source_id: dehghani2019_pdag_alphaal2o3
+  source_sha256: dae34366635983d506f2a6cdee3cce09805c9363a64c2cf0f827e1b72ee6649e
+  independently_reopened_resources:
+  - resource_type: original_journal_article_pdf
+    path: Academics/BEP/Catalysis/Articles/acquired_pdfs/dehghaniExperimentalApproachIndustrial2019.pdf
+    method: Fresh pdftotext -raw extraction and fresh page renders; manually re-read source pages against every B1 passage record.
+    pages: [3, 4, 5, 6, 8, 11, 17, 18, 20, 21]
+  - resource_type: article_supplementary_workbooks
+    path: Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22/source_evidence/source_snapshots/dehghani2019_supplementary_data.zip
+    sha256: 86474052b52ca459b760e84ba35fd45c46a746f3a4b3ef4702b727a32d991406
+    method: Independently reopened the three XLSX members from the existing local archive with openpyxl 3.1.5 and recomputed row counts, ranges and decimal sum.
+    remote_endpoint_re_fetched: false
+  counts:
+    passage_records_rechecked: 17
+    records_confirmed_without_change: 16
+    records_corrected: 1
+    verbatim_quotes_rechecked: 9
+    supplementary_workbooks_rechecked: 3
+    current_claim_links_reaudited: 5
+    human_verified: 0
+  passage_results:
+  - passage_id: DGH19-P03-CATALYST
+    outcome: confirmed
+    note: Table 1 descriptors match; Ag:Pd ratio basis remains unstated.
+  - passage_id: DGH19-P04-PRETREATMENT
+    outcome: confirmed
+    note: N2 drying and 150 °C reduction sequence matches; reduction duration and H2 fraction remain unstated.
+  - passage_id: DGH19-P05-DESIGN
+    outcome: confirmed
+    note: Table 3 factor levels multiply to 216 planned conditions; this is not a completion count.
+  - passage_id: DGH19-P06-VINYL-DFT-ATTRIBUTION
+    outcome: confirmed
+    note: Quote and attribution to reference [24] match; the cited DFT source itself remains unopened.
+  - passage_id: DGH19-P08-PSEUDOSTEADY-ACTIVITY
+    outcome: confirmed
+    note: The source separates pseudo-steady gas/energy profiles from campaign-time activity dynamics.
+  - passage_id: DGH19-P08-EQ25-PRESSURE
+    outcome: confirmed
+    note: Printed positive-sum sign matches; coordinate, V and phi conventions remain unresolved.
+  - passage_id: DGH19-P08-EQ26-AMRE
+    outcome: confirmed
+    note: Visual bars confirm an absolute residual divided pointwise by y_exp; metric is relative, not unnormalized MAE.
+  - passage_id: DGH19-P08-ACTIVITY-DATA-COUNT
+    outcome: confirmed
+    note: Article states 48; its correspondence to workbook rows remains unresolved.
+  - passage_id: DGH19-P17-TABLE5-RATE-LAWS
+    outcome: corrected
+    correction_id: CORR-SP-B1-001
+    note: Row 2 prints p_C2H2^1.4 in the numerator and K_C2H4 p_C2H4 in the denominator despite an ethylene-hydrogenation reaction label; first-pass transcription had silently changed the numerator.
+  - passage_id: DGH19-P17-EQ29-ACTIVITY
+    outcome: confirmed
+    note: Eq. (29) sign, exponents and C^0.13 factor match the printed equation; dimensions and C meaning remain unresolved.
+  - passage_id: DGH19-P20-21-NOMENCLATURE-UNITS
+    outcome: confirmed
+    note: Inspected nomenclature does not state rate or pressure units and omits V and phi definitions.
+  - passage_id: DGH19-P11-TEM-SIZE
+    outcome: confirmed
+    note: Reported mean size change 6.2 to 11.5 nm matches; active-site loss remains author interpretation.
+  - passage_id: DGH19-P18-PLANT-COMPARISON
+    outcome: confirmed
+    note: Model-to-plant comparison wording matches; no independent holdout is identified in the inspected passage.
+  - passage_id: DGH19-P18-ERROR-3PCT
+    outcome: confirmed
+    note: Authors report below 3.0% for their plotted comparison; this is not periodic-gain evidence.
+  - passage_id: DGH19-S1-SET1-RUNS
+    outcome: confirmed
+    note: 158 numeric RUN labels 1–158; recorded T and P ranges are 25–70 °C and 12–20 bar.
+  - passage_id: DGH19-S1-SET2-ACTIVITY-ROWS
+    outcome: confirmed
+    note: 46 phase-coded numeric-day rows (13 SOR, 14 MOR, 19 EOR), plus three later date-text rows with no numeric day or composition columns T:AT.
+  - passage_id: DGH19-S1-SET3-PIONA-SUM
+    outcome: confirmed
+    note: Exact decimal sum 100.021 differs from displayed total 100; analytical basis and cause remain unresolved.
+  claim_links_reaudited:
+  - claim_id: CLM-c1_pdag_industrial_lhhw_decay-001
+    outcome: partially_supported
+  - claim_id: CLM-c1_pdag_industrial_lhhw_decay-002
+    outcome: partially_supported
+  - claim_id: CLM-c1_pdag_industrial_lhhw_decay-003
+    outcome: partially_supported_with_source_equation_correction
+  - claim_id: CLM-c1_pdag_industrial_lhhw_decay-004
+    outcome: partially_supported
+  - claim_id: CLM-sc_fair_steady_periodic_cycle_comparison-002
+    outcome: partially_supported
+  re_audit_findings:
+  - The quoted PDF passages and three workbook arithmetic/row checks remain supported after a fresh source reread.
+  - Table 5 row 2 was transcribed incorrectly in first pass because its printed acetylene exponent was normalized to the reaction label; the literal source has been restored and flagged.
+  - The positive Ergun-like sign, 48-versus-46 data-count mismatch, 216-versus-158 run/design distinction, and 100.021 workbook sum remain unresolved rather than explained by assumption.
+  human_verification_status: not_verified
+  limitations:
+  - Same-agent AI re-audit is not independent human verification.
+  - The publisher S1 endpoint was not re-fetched, so the local archive hash establishes only identity to the existing snapshot.
+  - The audit covers only the five linked claims and 17 B1 records; it does not satisfy passage coverage for the other 335 links or 96 historical attachments.
+- audit_id: SP-B2-20261022-URMES
+  pass_number: 2
+  performed_after_commit: 8070e41
+  source_id: urmes2019
+  source_sha256: 8ad818fd2cc3c386457855b558c29af737d2b7b12bdaf3f399d551b6f5d10c01
+  independently_reopened_resources:
+  - resource_type: original_journal_article_pdf
+    path: Academics/BEP/Catalysis/Articles/acquired_pdfs/urmesKineticStudySelective2019.pdf
+    method: Fresh full-document pdftotext -raw extraction and newly rendered page images; manually compared each B2 passage with the source after commit 8070e41.
+    pages: [1, 2, 3, 4, 5, 6, 10, 11]
+  counts:
+    passage_records_rechecked: 13
+    records_confirmed_without_change: 13
+    records_corrected: 0
+    verbatim_quotes_rechecked: 8
+    current_claim_links_reaudited: 15
+    human_verified: 0
+  passage_results:
+  - passage_id: URM19-P01-CATALYST-IDENTITY
+    outcome: confirmed
+    note: Abstract specifies 0.05 wt% Pd/alpha-Al2O3; catalyst scope remains distinct from PdAg and the BEP target.
+  - passage_id: URM19-P02-ORDERS-AND-NO-C4
+    outcome: confirmed
+    note: Table 2 reaction orders and the authors' no-observed-C4 statement match; C4 detection limits remain unstated.
+  - passage_id: URM19-P03-ELEMENTARY-STEPS
+    outcome: confirmed
+    note: Table 3 has dissociative H2 adsorption with two sites and steps 1–7 through ethyl to ethane.
+  - passage_id: URM19-P04-FULL-REDUCED-SITE-BALANCE
+    outcome: confirmed
+    note: Printed full six-term and reduced four-term balances, quasi-equilibrium assumption and rate-determining steps match.
+  - passage_id: URM19-P04-RATE-CLOSURES
+    outcome: confirmed
+    note: The intermediate r7 formula visibly uses P_C2H2 while the final r_C2H6 rate uses P_C2H4; the filed source-inconsistency assessment stands.
+  - passage_id: URM19-P05-COVERAGES-FROM-ORDERS
+    outcome: confirmed
+    note: The order-derived mean coverage ranges match printed p. 5 and remain model/order inferences.
+  - passage_id: URM19-P05-K1-611-ESTIMATE
+    outcome: confirmed
+    note: The text gives 611 Pa^-1 from the listed adsorption/desorption assumptions.
+  - passage_id: URM19-P06-TABLE5-PARAMETERS
+    outcome: confirmed
+    note: Table 5 lists K1=13 Pa^-1 fixed and the remaining transcribed values; the factor-47 K1 conflict is real in the source.
+  - passage_id: URM19-P05-K5-RECIPROCAL-BASIS
+    outcome: confirmed
+    note: Text 0.14 Pa^-1 and table K5=7.4 Pa are reciprocal-consistent to two significant figures in P_C2H4/K5.
+  - passage_id: URM19-P06-COVERAGES-FROM-FIT
+    outcome: confirmed
+    note: The fit-derived ranges differ from, but broadly overlap, the order-derived ranges; neither is direct measurement.
+  - passage_id: URM19-P06-SINGLE-VS-TWO-SITE
+    outcome: confirmed
+    note: The source reports non-significant second-site regression parameters and explicitly limits the single-site conclusion to its tested conditions.
+  - passage_id: URM19-P10-INTRINSIC-TEST-AND-PFR
+    outcome: confirmed
+    note: Experimental conditions, crushed-particle range, transfer criteria and one-dimensional ODEPACK PFR description match Tables 6–7 and §3.3.
+  - passage_id: URM19-P11-REGRESSION-OBJECTIVE
+    outcome: confirmed
+    note: The source specifies unweighted multi-response Levenberg–Marquardt regression and the recorded diagnostics.
+  claim_links_reaudited:
+  - claim_id: CLM-u_ph_reaction-004
+    outcome: partially_supported
+  - claim_id: CLM-u_ph_catalyst-002
+    outcome: partially_supported
+  - claim_id: CLM-u_ph_kinetics-001
+    outcome: partially_supported
+  - claim_id: CLM-u_ma_conservation-004
+    outcome: partially_supported
+  - claim_id: CLM-ph_site_ensembles-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_sequential_path-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_competing_channels-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_lh_rates-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_mechanism_choice-002
+    outcome: partially_supported
+  - claim_id: CLM-c2_urmes_2019_effective_rates-003
+    outcome: partially_supported
+  - claim_id: CLM-c2_urmes_2019_effective_rates-004
+    outcome: partially_supported
+  - claim_id: CLM-c2_urmes_2019_adsorption_denominator-003
+    outcome: partially_supported
+  - claim_id: CLM-c2_urmes_2019_net_rates-003
+    outcome: partially_supported
+  - claim_id: CLM-c2_urmes_2019_parameter_ledger-001
+    outcome: passage_checked
+  - claim_id: CLM-c1_borodzinski_ae_effective_rates-003
+    outcome: partially_supported
+  re_audit_findings:
+  - All 13 source records and eight PDF quotations remain supported after the post-commit reread; no additional transcription correction was found.
+  - The K1 conflict and the elementary-r7 versus final-net-rate pressure mismatch remain source-internal unresolved issues, not AI disagreements about the literal printed text.
+  - K5 is reciprocal-consistent with the independently stated ethylene adsorption strength to reported precision.
+  human_verification_status: not_verified
+  limitations:
+  - Same-agent AI re-audit is not independent human verification.
+  - This pass covers 13 selected records and 15 substantive current claim links, not the 18 generic/historical links for this source or the 96 historical attachment queue.
+  - Reference [13], raw regression files/code and author implementation details were not reopened or verified.
+- audit_id: SP-B3-20261022-BORODZINSKI
+  pass_number: 2
+  performed_after_commit: bfd7f46
+  source_ids: [borodzinski2000, borodzinski2006]
+  source_sha256_by_id:
+    borodzinski2000: 1a18bd894485c1e4f457c2db6b54dc37befff703183c20b5b11332abe7e5b3e0
+    borodzinski2006: e6f0bb52ac6d41b90f22ddfecb2746c684372a6a6e29d850ad4d6a2d31974853
+  independently_reopened_resources:
+  - resource_type: original_journal_article_pdf
+    source_id: borodzinski2000
+    path: Academics/BEP/Catalysis/Articles/acquired_pdfs/borodzinskiKineticModelHydrogenation2000.pdf
+    method: Fresh full-document pdftotext -raw extraction and new page renders; re-read each existing B3 record and compared the model-5 Table 1 equation with Appendix A Eq. (A.45).
+    pdf_pages: [2, 3, 4, 5, 6, 8, 9, 10, 13, 15]
+    printed_pages: [52, 53, 54, 55, 56, 58, 59, 60, 63, 65]
+  - resource_type: review_article_pdf
+    source_id: borodzinski2006
+    path: Academics/BEP/Catalysis/Articles/Zotero Backup/Borodziński en Bond - 2006 - Selective Hydrogenation of Ethyne in Ethene‐Rich Streams on Palladium Catalysts. .pdf
+    method: Fresh full-document pdftotext -raw extraction and new page renders; re-read each B3 review passage and checked continuation pages for the phase-evolution summary.
+    pdf_pages: [32, 33, 35, 38, 39, 40]
+    printed_pages: [121, 122, 124, 127, 128, 129]
+  counts:
+    passage_records_rechecked: 15
+    records_confirmed_without_change: 14
+    records_corrected: 1
+    new_passage_records_added: 1
+    verbatim_quotes_rechecked: 11
+    current_claim_links_reaudited: 14
+    borodzinski2000_links_reaudited: 9
+    borodzinski2006_links_reaudited: 5
+    new_source_conflicts_recorded: 1
+    human_verified: 0
+  passage_results:
+  - passage_id: BC00-P52-AE-SITE-FAMILIES
+    outcome: confirmed
+    note: The prior A1/A2/E hypothesis and its stated deposit-associated interpretation match; the physical geometry is not direct imaging in this study.
+  - passage_id: BC00-P53-TABLE1-RATE-BASIS
+    outcome: corrected
+    correction_id: CORR-B3-002
+    note: Table 1 model 5's k2-prime ethylene term has denominator power 2; the first-pass record had attributed Appendix A Eq. (A.45)'s power-3 formula to Table 1 and did not preserve the source conflict.
+  - passage_id: BC00-P54-EXPERIMENTAL-CONDITIONS
+    outcome: confirmed
+    note: Catalyst identity, 343 K condition, gradientless setup and ±0.2 °C control transcription match the fresh page render.
+  - passage_id: BC00-P54-ETHANE-RATE-OBSERVATION
+    outcome: confirmed
+    note: The qualitative ethane-rate decrease with increasing acetylene pressure matches the source text and plotted context.
+  - passage_id: BC00-P55-ACETYLENE-C4-OBSERVATIONS
+    outcome: confirmed
+    note: The source-specific maxima near 0.02 kPa and the restricted plotted-condition interpretation match.
+  - passage_id: BC00-P56-AE-MODEL-INTERPRETATION
+    outcome: confirmed
+    note: The proposed A/E classes and model aggregation of A1/A2 match; the paper's schematic is not a direct surface image.
+  - passage_id: BC00-P58-QUASI-STEADY-ASSUMPTIONS
+    outcome: confirmed
+    note: The five listed rate-limiting steps, equilibrium assumptions, low-coverage terms and stationary smaller E-site population match.
+  - passage_id: BC00-P60-MODEL-COMPARISON
+    outcome: confirmed
+    note: Model 5 has the highest reported Fc among the four comparator models on this dataset; the authors say this is not decisive proof and report correlations above 0.8.
+  - passage_id: BC00-P63-A-SITE-BALANCE
+    outcome: confirmed
+    note: The full A-site occupancy balance and conditional tail-end reduction match Appendix A Eqs. (A.1)–(A.3).
+  - passage_id: BC00-P65-TOTAL-RATES
+    outcome: confirmed
+    note: Appendix A Eqs. (A.47)–(A.49) total-rate identities match; they remain specific to the source reaction network.
+  - passage_id: BC06-P121-OVERLAYER-REVIEW-SYNTHESIS
+    outcome: confirmed
+    note: The review attributes the overlayer/selectivity evidence to a cited Pd/SiO2 pulse-flow study rather than presenting a new experiment.
+  - passage_id: BC06-P122-OLIGOMER-C4-COKE
+    outcome: confirmed
+    note: The slow hydro-oligomerization statement and separate cited-regime percentages match the review text.
+  - passage_id: BC06-P124-WEISZ-PRATER-AND-COKE-DIFFUSION
+    outcome: confirmed
+    note: The review's Eq. (7), variable definitions, threshold and near-order-of-magnitude diffusivity statement match the rendered page; BEP pellet inputs remain unavailable.
+  - passage_id: BC06-P127-129-PHASE-EVOLUTION
+    outcome: confirmed
+    note: The selected pages support the bounded hydride and carbon-in-palladium summaries; these are review-level syntheses across studied Pd systems.
+  - passage_id: BC06-P129-REVIEW-LIMITS
+    outcome: confirmed
+    note: Support/condition dependence, the review's caveat on contradictory hydride conclusions and its unresolved-question list match.
+  new_passage_records_added:
+  - passage_id: BC00-P65-R2-RATE
+    reason: Record Appendix A Eq. (A.45) separately so the power-3 expression and its disagreement with Table 1 are directly source-linked.
+  claim_links_reaudited:
+  - claim_id: CLM-u_ph_catalyst-005
+    outcome: partially_supported
+  - claim_id: CLM-u_ph_catalyst-006
+    outcome: partially_supported
+  - claim_id: CLM-u_ph_thermal-003
+    outcome: partially_supported
+  - claim_id: CLM-u_ph_thermal-004
+    outcome: partially_supported
+  - claim_id: CLM-ph_catalyst_memory-003
+    outcome: passage_checked
+  - claim_id: CLM-ph_competing_channels-002
+    outcome: partially_supported
+  - claim_id: CLM-ph_deposits-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_deposits-002
+    outcome: partially_supported
+  - claim_id: CLM-c1_c4_coke_deactivation-002
+    outcome: partially_supported
+  - claim_id: CLM-c1_multisite_hydride_carbide-002
+    outcome: partially_supported
+  - claim_id: CLM-c1_borodzinski_ae_site_hypothesis-001
+    outcome: passage_checked
+  - claim_id: CLM-c1_borodzinski_ae_site_hypothesis-002
+    outcome: partially_supported
+  - claim_id: CLM-c1_borodzinski_ae_effective_rates-001
+    outcome: partially_supported
+  - claim_id: CLM-c1_borodzinski_ae_effective_rates-002
+    outcome: disputed
+  re_audit_findings:
+  - All 11 existing B3 quotations still match the specified printed pages; the source identity hashes remain unchanged.
+  - The first-pass Table 1 transcription conflated the Table 1 model-5 ethylene term with Appendix A Eq. (A.45). The table prints a squared denominator; Eq. (A.45) prints a cubed denominator. Both are preserved in distinct records and a correction entry.
+  - The k2-prime dimensional result remains kPa^-2 under the printed kPa pressure basis and dimensionless adsorption terms; the Table 1 footnote says kPa^-3 while Table 3 says kPa^-2. The exponent conflict does not alter that dimensional result.
+  - The 2006 article remains secondary evidence. Its cited deposit, hydride, carbide and diffusion primary studies were not reopened in this batch.
+  human_verification_status: not_verified
+  limitations:
+  - This same-agent AI pass is not independent human review.
+  - It rechecks 15 existing passage records and 14 current source links; the 96 historical attachment queue remains without passage records, including two review-paper attachments.
+  - The cited primary studies underlying the 2006 review, the original 2000 regression implementation and target PdAg catalyst data were not verified.
+- audit_id: SP-B4-20261022-BERGER
+  pass_number: 2
+  performed_after_commit: cf6c0dd
+  source_id: berger2008
+  source_sha256: 70587ffe7d4713a9abe008c3b5b503a19a6f59135f9a81fd46c83b63548bb851
+  independently_reopened_resources:
+  - resource_type: review_article_pdf
+    path: Academics/BEP/Catalysis/Articles/Zotero Backup/Berger e.a. - 2008 - Dynamic methods for catalytic kinetics.pdf
+    method: Fresh pdftotext -raw extraction and new page renders; manually re-read all ten B4 passages and their nine claim links after commit cf6c0dd. The first page, nomenclature, equations, table and relevant model/fit passages were compared visually with the PDF.
+    pdf_pages: [1, 3, 4, 8, 9, 10, 16, 17]
+    printed_pages: [3, 5, 6, 10, 11, 12, 18, 19]
+  counts:
+    passage_records_rechecked: 10
+    records_confirmed_without_change: 9
+    records_corrected: 1
+    verbatim_quotes_rechecked: 8
+    current_claim_links_reaudited: 9
+    berger_historical_attachments_reaudited: 4
+    human_verified: 0
+  passage_results:
+  - passage_id: BERGER08-P03-BIBLIOGRAPHIC-IDENTITY
+    outcome: confirmed
+    note: First-page title, author list, journal, volume, page range and correct DOI match the fresh extraction and render.
+  - passage_id: BERGER08-P06-PERIODIC-STIMULI
+    outcome: confirmed
+    note: Exact quotation and classification of periodic programmed functions as a stimulus match §2.1; the passage makes no acetylene performance claim.
+  - passage_id: BERGER08-P06-ANALYSIS-BANDWIDTH
+    outcome: confirmed
+    note: Exact quotation and measurement-technique response-rate guidance match §2.2; the examples remain general instrumentation guidance.
+  - passage_id: BERGER08-P06-SSITKA-OBSERVABLES
+    outcome: confirmed
+    note: Exact quotation and isotope-only perturbation scope match §2.3; this is not a general observability theorem.
+  - passage_id: BERGER08-P10-DYNAMIC-VS-ALGEBRAIC-SURFACE
+    outcome: confirmed
+    note: Exact quotation and distinction between dynamic surface ODEs, instantaneous-following algebraic closure and bed-time PDE balances match §4 and Fig. 5.
+  - passage_id: BERGER08-P11-TRANSPORT-CRITERIA
+    outcome: corrected
+    correction_id: CORR-B4-003
+    note: The fresh p. 11 table and p. 5 nomenclature show a' (prime), not a_0 (subscript zero). The rate basis is listed as m^3_cat, so the dimensional check is conditional on matching it to the particle-volume area basis.
+  - passage_id: BERGER08-P18-MOL-SO2-NOX-EXAMPLE
+    outcome: confirmed
+    note: Gas and sorbent-surface balances, pseudo-homogeneous PFR assumption, omitted axial dispersion, method of lines and implicit time integration match the example on printed p. 18.
+  - passage_id: BERGER08-P19-SURFACE-COVERAGES
+    outcome: confirmed
+    note: The fractional-coverage normalization and fitted source-specific real-surface model match printed p. 19.
+  - passage_id: BERGER08-P19-REGRESSION-LIMITS
+    outcome: confirmed
+    note: Seven experiments, four responses, 420 scalar observations, finite-difference t-value sensitivity, local-minimum check and 0.71 maximum binary correlation match printed pp. 18–19.
+  - passage_id: BERGER08-P19-CENTERED-ARRHENIUS
+    outcome: confirmed
+    note: Eq. (17) is centered at a reference temperature and remains a source-specific parameterization example.
+  claim_links_reaudited:
+  - claim_id: CLM-u_ph_kinetics-003
+    outcome: partially_supported
+  - claim_id: CLM-u_ma_inverse-003
+    outcome: partially_supported
+  - claim_id: CLM-u_sc_excitation-002
+    outcome: partially_supported
+  - claim_id: CLM-ph_dynamic_memory-003
+    outcome: partially_supported
+  - claim_id: CLM-ph_dynamic_memory-005
+    outcome: partially_supported
+  - claim_id: CLM-ma_identifiability-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_excitation-002
+    outcome: partially_supported
+  - claim_id: CLM-internal_diffusion_thiele-001
+    outcome: partially_supported
+  - claim_id: CLM-external_film_transfer-001
+    outcome: partially_supported
+  re_audit_findings:
+  - All eight quotations remain verbatim and all nine claim/source links remain partially supported within their recorded scope after fresh source rereading.
+  - The Carberry notation and derivation were corrected from a_0 to the printed a' and now explicitly condition the dimensional argument on compatible catalyst-volume and particle-volume bases.
+  - Berger still supports general transport-screen context but does not cite Mears or derive the inherited Mears form, Thiele modulus or pellet effectiveness factor.
+  - No source-level equation conflict was found in the inspected Berger passages; the article remains review-level evidence and its detailed bed model is for SO2–NOx adsorption on Na/gamma-Al2O3.
+  human_verification_status: not_verified
+  limitations:
+  - This same-agent AI second pass is not independent human review.
+  - The retained Crossref record for the unrelated legacy DOI was not re-fetched; the local PDF identity and existing correction receipt were checked.
+  - The 96 historical attachment queue remains partially unreviewed; the four Berger attachments were rechecked only for their passage mapping and bounded source scope.
+  - Primary sources cited by Berger, target catalyst data and a target transport calculation remain unverified.
+- audit_id: SP-B5-20261022-SILVESTON
+  pass_number: 2
+  performed_after_commit: 9d33ffd
+  source_id: silveston1995
+  source_sha256: c3e72721b84b1f528108b1452450bd964d74e181c9c104613ebb18212e540714
+  independently_reopened_resources:
+  - resource_type: review_article_pdf
+    path: Academics/BEP/Catalysis/Articles/Zotero Backup/Silveston e.a. - 1995 - Periodic operation of catalytic reactors—introduction and overview.pdf
+    method: Fresh pdftotext -raw extraction and new page renders after commit 9d33ffd; manually re-read all eleven B5 passage records and four linked claim interpretations against the specified original PDF pages.
+    pdf_pages: [1, 3, 4, 5, 13, 18]
+    printed_pages: [91, 93, 94, 95, 103, 108]
+  counts:
+    passage_records_rechecked: 11
+    records_confirmed_without_change: 10
+    records_corrected: 1
+    verbatim_quotes_rechecked: 11
+    current_claim_links_reaudited: 4
+    human_verified: 0
+  passage_results:
+  - passage_id: SIL95-P01-ABSTRACT-SCOPE
+    outcome: confirmed
+    note: First-page title, authors, journal, volume and page range match; the abstract objectives, strategies, cycle variables and laboratory/industrial distinction match the structured summary.
+  - passage_id: SIL95-P03-RATE-RATIOS
+    outcome: confirmed
+    note: Eqs. (1)–(2) define the mean-composition and maximum-steady rate ratios as recorded. The authors also report prior same-mean-feed rate increases; this is a review statement, not the global-best comparator or a target result.
+  - passage_id: SIL95-P03-CYCLE-VARIABLES
+    outcome: corrected
+    correction_id: CORR-SP-B5-001
+    note: Period, split, amplitude, mean composition and phase lag match. The second pass added the source's convention that split measures the fraction of the cycle when the selected reactant is at its highest concentration.
+  - passage_id: SIL95-P04-SLOW-CYCLING-QSS
+    outcome: confirmed
+    note: The long-period condition relative to t_c, transient interval of roughly 2 t_c, and quasi-steady time-average interpretation match printed p. 94.
+  - passage_id: SIL95-P04-RESPONSE-TIME-SCALES
+    outcome: confirmed
+    note: Printed p. 94 distinguishes seconds/minutes reaction response from hours/days/months deactivation cycles and associates the latter with regeneration/replacement process life cycles.
+  - passage_id: SIL95-P04-FAST-CYCLING-LIMITS
+    outcome: confirmed
+    note: Large-mixing input smoothing is distinct from the near-plug-flow relaxed steady state at t_c >> tau; the latter may differ from continuous mean-feed operation and is reported as rarely observed experimentally.
+  - passage_id: SIL95-P05-PULSE-MECHANISTIC-INSIGHT
+    outcome: confirmed
+    note: Pulse-mode mechanistic insight is framed as transient observation before cycle-invariant response; the review does not claim formal parameter identifiability.
+  - passage_id: SIL95-P05-OPERATION-COST
+    outcome: confirmed
+    note: The review calls periodic operation more complex and probably more costly, then gives conditional rationales. Its illustrative activity discussion is not a universal threshold or target economics result.
+  - passage_id: SIL95-P13-INPUT-DISTORTION-HARDWARE
+    outcome: confirmed
+    note: The approximately 60 s internal-recirculation example, Luu's half-second low-distortion setup, similar monolith performance, and pressure-surge precaution match printed p. 103; none is a universal BEP hardware limit.
+  - passage_id: SIL95-P18-COMPARISON-BASES
+    outcome: confirmed
+    note: Printed p. 108 reports mean-manipulated-input steady performance and maximum steady performance across manipulated values as comparator bases summarized from Renken's reviews.
+  - passage_id: SIL95-P18-HISTORICAL-EVIDENCE-GAP
+    outcome: confirmed
+    note: The source attributes the theory/experiment gap to Renken's reviews. Its statement is bounded to the historical literature account in 1995.
+  claim_links_reaudited:
+  - claim_id: CLM-u_ma_periodic-005
+    outcome: partially_supported
+  - claim_id: CLM-u_sc_excitation-003
+    outcome: partially_supported
+  - claim_id: CLM-u_sc_feasibility-003
+    outcome: partially_supported
+  - claim_id: CLM-sc_hardware_constraints-002
+    outcome: partially_supported
+  re_audit_findings:
+  - The first-pass scientific interpretations remain bounded to this review; no target PdAg mechanism, gain, feasible steady optimum or apparatus limit is established.
+  - The duty-fraction definition was refined to include the selected reactant's high-concentration segment; this is a clarification, not a source conflict.
+  - A first-page inspection confirms article identity and printed SSDI but does not display a DOI. The DOI in existing metadata was not independently queried in B5; CORR-SP-B5-002 corrects the earlier verification-scope wording.
+  - All eleven verbatim quotations match a fresh extraction from the hashed local PDF.
+  human_verification_status: not_verified
+  limitations:
+  - This same-agent AI second pass is not independent human review.
+  - Only selected pages were inspected; other portions of the review and its cited primary studies were not re-audited.
+  - The 1995 review does not update the present-day evidence base or validate the target reactor, catalyst, or operating comparison.
+- audit_id: SP-B6-20261022-DANCKWERTS
+  pass_number: 2
+  performed_after_commit: 11b06ea
+  source_id: danckwerts1953
+  source_sha256: 40786c9d5b5cb6c6f00ded4a99363e7895dc4ced18930edffc332519e2ecf67e
+  independently_reopened_resources:
+  - resource_type: original_journal_article_pdf
+    path: Academics/BEP/Catalysis/Articles/Zotero Backup/Danckwerts - 1953 - Continuous flow systems Distribution
+      of residence times.pdf
+    method: Fresh full-text extraction and new 1500-pixel page renders after commit 11b06ea; manually reread all
+      eleven first-pass records, six verbatim quotations, structured equations, figures, source corrections and
+      eight linked claim interpretations. Page 12 was separately inspected to recheck the blender autocorrelation
+      derivation and add one new source passage.
+    pdf_pages:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 9
+    - 10
+    - 11
+    - 12
+    printed_pages:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 9
+    - 10
+    - 11
+    - 12
+  counts:
+    passage_records_rechecked: 11
+    records_confirmed_without_change: 11
+    records_corrected: 0
+    verbatim_quotes_rechecked: 6
+    current_claim_links_reaudited: 8
+    new_passage_records_added: 1
+    human_verified: 0
+  passage_results:
+  - passage_id: DAN53-P01-NONIDEAL-FLOW
+    outcome: confirmed
+    note: Article identity and non-ideal-flow motivation match the inspected first page and the quote matches a
+      fresh extraction.
+  - passage_id: DAN53-P02-EXIT-AGE-DISTRIBUTION
+    outcome: confirmed
+    note: F, E and I definitions and the exit-age normalization agree with Eqs. (3)–(9); the short quotation matches
+      the fresh page extraction.
+  - passage_id: DAN53-P03-TRACER-IMPULSE
+    outcome: confirmed
+    note: Impulse-tracer relation C=(Q/v)E and C-diagram normalization agree with Eqs. (6)–(7).
+  - passage_id: DAN53-P04-HOLDBACK
+    outcome: confirmed
+    note: Hold-back definition, limits and the warning that H alone does not calculate reactor performance match
+      Eq. (14) and the discussion.
+  - passage_id: DAN53-P05-SEGREGATION
+    outcome: confirmed
+    note: S is the signed F-diagram area relative to perfect mixing; the source explicitly distinguishes age-distribution
+      segregation from spatial homogeneity.
+  - passage_id: DAN53-P06-PACKED-BED-DISPERSION
+    outcome: confirmed
+    note: Moving-frame equation, empirical-D qualification, Eq. (16) step conditions and 4D/(Lu) condition match
+      printed p. 6.
+  - passage_id: DAN53-P07-PACKED-BED-CHECK
+    outcome: confirmed
+    note: Packed-column dimensions, D/(Lu)=0.018, agreement statement and sensitivity caveat match printed p. 7
+      and Fig. 9.
+  - passage_id: DAN53-P09-FIRST-ORDER-RTD
+    outcome: confirmed
+    note: The conversion integral and uniform first-order/pseudo-first-order, spatially constant-k restriction match
+      Eqs. (27)–(29).
+  - passage_id: DAN53-P10-STEADY-REACTOR-BOUNDARIES
+    outcome: confirmed
+    note: Eqs. (30)–(32) directly print the steady balance, inlet feed-flux match and zero-gradient outlet; no source
+      unit is assigned to concentration.
+  - passage_id: DAN53-P11-RTD-NONLINEAR-LIMIT
+    outcome: confirmed
+    note: The source limits F-only prediction for higher-order reaction and explains path-dependent rate under spatial
+      temperature variation.
+  - passage_id: DAN53-P11-BLENDER-CONVOLUTION
+    outcome: confirmed
+    note: The fixed-RTD passive-blender convolution agrees with Eq. (39); this does not describe nonlinear catalytic
+      reaction.
+  claim_links_reaudited:
+  - claim_id: CLM-u_ph_transport-002
+    outcome: partially_supported
+  - claim_id: CLM-u_ma_conservation-003
+    outcome: partially_supported
+  - claim_id: CLM-u_sc_plant-003
+    outcome: partially_supported
+  - claim_id: CLM-ph_residence_time_distribution-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_axial_dispersion-002
+    outcome: partially_supported
+  - claim_id: CLM-ph_danckwerts-002
+    outcome: partially_supported
+  - claim_id: CLM-ma_initial_boundary-002
+    outcome: partially_supported
+  - claim_id: CLM-ma_Peclet-002
+    outcome: partially_supported
+  re_audit_findings:
+  - All six first-pass verbatim quotations still match the specified PDF pages; all 11 first-pass passage interpretations
+    and eight source links remain appropriately bounded.
+  - The source itself supplies the steady first-order boundary equations, but the article-specific mean velocity/apparent-D
+    convention is not automatically identical to the generalized porous-bed map equation.
+  - 'A new page-12 passage captures Eqs. (46)–(49): stationary outlet variance depends on input autocorrelation
+    weighted by overlap of shifted E(θ) kernels. The source reuses I for this overlap after using I for internal
+    age density; these are distinct definitions.'
+  - The first-page scan shows article identity and printed PII/SSDI, not a DOI. Existing DOI metadata was not independently
+    re-queried.
+  - No target catalyst periodic-gain claim, apparatus parameter or human-reviewed status is established.
+  human_verification_status: not_verified
+  limitations:
+  - Same-agent AI second pass, not independent human review.
+  - Historical article; no modern target PdAg, BEP transport measurement, nonlinear catalyst response or periodic-versus-best-steady
+    comparison.
+  - DOI retained from inherited metadata and not independently verified in this pass.
+- audit_id: SP-B8-20261022-LARSEN
+  pass_number: 2
+  performed_after_commit: 84775a31ee5511c48f2a67413161b4316933b1b9
+  source_id: larsen_bep_pdf
+  source_sha256: b5aaa2300ff9b64aca70e58cc5e4d8be30b3c12ee264e69af89e01c86f5120c9
+  independently_reopened_resources:
+  - resource_type: original_local_bep_thesis_pdf
+    path: Academics/BEP/Catalysis/Articles/Zotero Backup/Larsen - 2024 - Semihydrogenation of acetylene to ethylene with a PdAg catalyst.pdf
+    sha256: b5aaa2300ff9b64aca70e58cc5e4d8be30b3c12ee264e69af89e01c86f5120c9
+    method: Fresh pdftotext extraction of every physical page containing a passage; compared all stored quotations,
+      structured equations, table fields and source interpretations. SHA-256 rechecked after the first-pass commit.
+    pages: [7, 21, 22, 23, 29, 43]
+    remote_endpoint_re_fetched: false
+  - resource_type: rasterized_appendix_f_code_screenshots
+    path: Academics/BEP/Catalysis/Articles/Zotero Backup/Larsen - 2024 - Semihydrogenation of acetylene to ethylene with a PdAg catalyst.pdf
+    method: Fresh text extraction of physical PDF pages 77–88 yielded section headings and page numbers but not
+      notebook code. Rendered printed pp. 72–73 (PDF pp. 78–79) show embedded notebook screenshots. A 250 dpi OCR
+      attempt on printed p. 73 was terminated after over a minute without a reliable transcription; no model or unit
+      conclusion is drawn from that incomplete OCR attempt.
+    pages: [77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88]
+    remote_endpoint_re_fetched: false
+  counts:
+    passage_records_rechecked: 10
+    records_confirmed_without_change: 10
+    records_corrected: 0
+    verbatim_quotes_rechecked: 4
+    current_claim_links_reaudited: 3
+    historical_attachments_reaudited: 3
+    new_passage_records_added: 0
+    human_verified: 0
+  passage_results:
+  - passage_id: LARSEN-BEP-P01-ABSTRACT
+    outcome: confirmed
+    note: The abstract text matches the recorded Pd:Ag labels, 100 °C/1000 mbar statement, extended LHHW summary and three reported RMSE values; those remain abstract-level source claims.
+  - passage_id: LARSEN-BEP-P15-CATALYST-TABLE
+    outcome: confirmed
+    note: Table 4.1 prints 0.025, 0.05 and 0.1 wt% Pd at 5 wt% Ag and an Ag:Pd ratio column of 200, 100 and 50; “Pd0 Ag” is not Pd-free.
+  - passage_id: LARSEN-BEP-P15-METHOD-TEMPERATURE
+    outcome: confirmed
+    note: §4.2 says the reactor is maintained at 80 °C during testing; its half-hour feed-recipe switching is not an optimized reactive periodic-performance experiment.
+  - passage_id: LARSEN-BEP-P16-REACTION-ENTHALPY
+    outcome: confirmed
+    note: The two sequential reaction equations are paired with −172 and −136 kJ mol⁻¹; this is thesis-reported model input, not independently checked thermochemistry.
+  - passage_id: LARSEN-BEP-P16-STEADY-PFR-BALANCES
+    outcome: confirmed
+    note: Eqs. (4.6)–(4.9) use z-derivatives of molar flows and contain no time accumulation or axial dispersion; their rate/density/area basis is not defined on the inspected page.
+  - passage_id: LARSEN-BEP-P16-DISSOCIATIVE-H2-DESCRIPTION
+    outcome: confirmed
+    note: The phrase “dissociative H2 adsorption” appears in the prose on printed p. 16; the equation transcription is correctly kept in a separate p. 17 passage.
+  - passage_id: LARSEN-BEP-P17-H2-DENOMINATOR-FORM
+    outcome: confirmed
+    note: Eqs. (4.12)–(4.13) print the squared competitive denominator with a linear K_H2 p_H2 contribution; the site convention remains unspecified.
+  - passage_id: LARSEN-BEP-P17-RMSE-DE
+    outcome: confirmed
+    note: Eqs. (4.14)–(4.15) give an unweighted two-response experiment-level RMSE followed by an arithmetic mean across experiments; the text says differential evolution minimizes it without guaranteeing the optimum.
+  - passage_id: LARSEN-BEP-P23-RESULTS-CONDITIONS
+    outcome: confirmed
+    note: §6.1/Table 6.1 report 100 °C and 1000 mbar and masses 100, 75 and 100 mg; this conflicts with the methods page's 80 °C statement and the table remains text-extraction-only.
+  - passage_id: LARSEN-BEP-P37-EXTENDED-LHHW
+    outcome: confirmed
+    note: Eqs. (6.9)–(6.11) match the recorded raw LHHW expression, r1 cap and flexible acetylene-inhibition exponent; this is a catalyst-specific empirical fit, not dynamic coverage kinetics.
+  historical_attachments_reaudited:
+  - attachment_id: original_devcontainer_overlay:lhhw_kinetics:1
+    outcome: passage_scope_checked
+    note: The retained abstract and final-model passages support the local thesis attachment only; inherited MSc/year metadata are not verified.
+  - attachment_id: original_devcontainer_overlay:pbr_governing_pdes:1
+    outcome: passage_scope_disputed
+    note: The attached equations are steady axial ODEs, so the attachment does not support the integrated dynamic PDE node.
+  - attachment_id: original_devcontainer_overlay:reaction_thermodynamics:1
+    outcome: passage_scope_checked
+    note: The thesis reports enthalpies as model inputs; the attachment does not independently verify thermochemistry or target heat release.
+  claim_links_reaudited:
+  - claim_id: CLM-lhhw_kinetics-001
+    outcome: partially_supported
+  - claim_id: CLM-ma_gas_pde-003
+    outcome: disputed
+  - claim_id: CLM-reaction_thermodynamics-001
+    outcome: partially_supported
+  re_audit_findings:
+  - All ten passage records and four brief quotations were confirmed against the same hash-identified local PDF; no first-pass transcription correction was required.
+  - The source's 80 °C methods statement and 100 °C abstract/results statements remain in direct conflict. The thesis does not identify which temperature describes the analyzed runs in the inspected material.
+  - The steady axial balance citation, the empirical LHHW equations, and the RMSE fitting score remain bounded to their printed mathematical forms; no transient surface state or periodic gain is reported in these passages.
+  - Printed p. 72–73 notebook screenshots visibly contain code and experimental-data tables. The attempted OCR did not recover a reliable definition of rho_support, A, rate units or parameter normalization; most Appendix F images have not been manually transcribed.
+  - No experimental log, underlying workbook, readable complete model code, independent thermochemistry source, target catalyst match or best-steady comparator was accessed.
+  human_verification_status: not_verified
+  limitations:
+  - Same-agent AI second pass; this is not independent human review.
+  - Selected source pages were re-read. Appendix F is image-based and remains only partially inspected; its units/parameterization questions are still open.
+  - The thesis is not peer-reviewed target-catalyst evidence. Its test-temperature conflict, source/model basis, catalyst identity, bibliographic year/institution, dynamic coverage and periodic performance remain unresolved.
+- audit_id: SP-B9-20261022-STYTSENKO
+  pass_number: 2
+  performed_after_commit: 8616975042279c5b96f4ec3f2c71556da352ab5b
+  source_id: stytsenko2022
+  source_sha256: 69a82035fc75eb7b9c433f264ff7cfc67fe97df57c5d9aba411d74d0b7fca454
+  independently_reopened_resources:
+  - resource_type: original_local_primary_article_pdf
+    path: Academics/BEP/Catalysis/Articles/acquired_pdfs/stytsenkoKineticRegularitiesMechanism2022.pdf
+    sha256: 69a82035fc75eb7b9c433f264ff7cfc67fe97df57c5d9aba411d74d0b7fca454
+    method: Fresh page-specific text extraction for physical pp. 2, 4, 5 and 6; visually rendered pp. 5 and 6 to verify equations, coverages, extrapolation values and the composite-parameter orientation. Recompared every passage, quotation and four claim interpretations after the first-pass commit.
+    pages: [2, 4, 5, 6]
+    remote_endpoint_re_fetched: false
+  counts:
+    passage_records_rechecked: 10
+    records_confirmed_without_change: 9
+    records_enriched: 1
+    records_corrected: 0
+    verbatim_quotes_rechecked: 7
+    current_claim_links_reaudited: 4
+    historical_attachments_reaudited: 0
+    new_passage_records_added: 0
+    human_verified: 0
+  passage_results:
+  - passage_id: STYT22-B9-P02-CATALYST-FEEDS
+    outcome: confirmed
+    note: Fresh p. 2 read confirms atmospheric pressure, 303–323 K, both feed mixtures and the 0.068 wt% Pd/Al2O3 catalyst table. Table 1 selectivity is at 313 K and 70% conversion; catalyst composition/treatment varies across rows.
+  - passage_id: STYT22-B9-P02-ZERO-ORDER
+    outcome: confirmed
+    note: The exact Fig. 1 discussion quote is present; the inference is tied to linear X(t) and independence across the two source feed mixtures.
+  - passage_id: STYT22-B9-P02-TPD-BOUNDS
+    outcome: confirmed
+    note: The lower-case quotation matches the fresh p. 2 text; hydrocarbon/fragment nondetection is through 573 K and H2 partly desorbs near 523 K under this protocol.
+  - passage_id: STYT22-B9-P04-DRIFTS-ASSIGNMENT
+    outcome: confirmed
+    note: Fresh p. 4 confirms the band-to-semi-hydrogenated-acetylene language is an author assignment; the two candidate structures are not uniquely resolved by the text.
+  - passage_id: STYT22-B9-P04-QMS-DISPLACEMENT
+    outcome: confirmed
+    note: The exact displacement phrase and procedure match p. 4; QMS uptake/release supports the apparatus-specific response, not the full elementary mechanism.
+  - passage_id: STYT22-B9-P04-MECHANISM-ASSUMPTIONS
+    outcome: confirmed
+    note: Fresh p. 4 confirms the six proposed steps, their stated relative-rate assumptions, the approximate conversion boundary and the unknown nature of fast step 5.
+  - passage_id: STYT22-B9-P04-PARALLEL-RATES
+    outcome: confirmed
+    note: Eqs. (7)–(8) match the displayed parallel rates and gas-concentration/conversion definitions; theta is called the concentration of C2H4Z2 in the source.
+  - passage_id: STYT22-B9-P05-K2-ARRHENIUS
+    outcome: confirmed
+    note: Rendered p. 5 confirms Eqs. (11)–(12), the X < 0.8 validity statement, Fig. 6 range X = 0.06–0.75, k2 values 0.285/0.730/1.40 s^-1 and apparent activation energy 64.9 ± 3.1 kJ/mol. Eq. (12) is the constant-S form under the source parallel-path premise.
+  - passage_id: STYT22-B9-P05-HIGH-CONVERSION-CLOSURE
+    outcome: confirmed
+    note: Rendered p. 5 confirms Eq. (15), rates r2/r6, theta_H + theta = 1 and the square-root b C_H2 algebraic closure; it neglects selected coverages and supplies no dynamic coverage ODE.
+  - passage_id: STYT22-B9-P06-EXTRAPOLATED-SX
+    outcome: confirmed
+    note: Fresh rendered p. 6 confirms comparison over X = 0.70–0.98 and model estimates of about 62%/42% at X = 1. It visually confirms the composite as b^0.5 k6/k2 (not its reciprocal), reported values 1.07/2.1, and the authors' model inference that this term should be minimized. The record was enriched to retain that model implication; its units remain unstated.
+  claim_links_reaudited:
+  - claim_id: CLM-c1_pd_mn_adsorption_substitution-001
+    outcome: partially_supported
+  - claim_id: CLM-c1_pd_mn_adsorption_substitution-002
+    outcome: partially_supported
+  - claim_id: CLM-c1_pd_mn_adsorption_substitution-003
+    outcome: partially_supported
+  - claim_id: CLM-c1_pd_mn_adsorption_substitution-004
+    outcome: partially_supported
+  re_audit_findings:
+  - All seven quotations remain exact; the capitalization corrections made before the first-pass commit match the physical-page text.
+  - The low-conversion relation, high-conversion selectivity balance and algebraic hydrogen closure match the rendered equation page; none is a target PdAg dynamic-coverage model.
+  - The Eq. (18) X=1 selectivities are model extrapolations from the reported X=0.70–0.98 comparison. The correctly oriented b^0.5 k6/k2 term and recommendation to minimize it are model-derived; its concentration/parameter basis remains unresolved.
+  - All four claim links remain AI-partially-supported and source-specific. No target catalyst transfer, periodic gain, best-steady comparison or human source verification is established.
+  human_verification_status: not_verified
+  limitations:
+  - Same-agent AI second pass; not an independent human review.
+  - Only selected pages were re-opened. Raw supporting measurements/code and dimensional basis for b and the full rate normalization remain unavailable in this pass.
+  - No claim is made about transfer to PdAg, a packed-bed transient model, or periodic performance.
+- audit_id: SP-B10-20261022-WANG-PDAG
+  pass_number: 2
+  performed_after_commit: 5bbd945
+  source_id: wang2023_pdag_descriptors
+  source_sha256: 7ee1e7c61f17007905fc4243ec4963759bae1affa8c2ae1fc49a1278195019a5
+  independently_reopened_resources:
+  - resource_type: original_local_ACS_Catalysis_article_PDF
+    path: Academics/BEP/Catalysis/Articles/acquired_pdfs/ref_17.pdf
+    sha256: 7ee1e7c61f17007905fc4243ec4963759bae1affa8c2ae1fc49a1278195019a5
+    method: Fresh page-specific pdftotext extraction and new 1450-pixel page renders for PDF pp. 2–9. All 12 passage
+      records and three claim interpretations were re-read after commit 5bbd945; all nine brief quotations were
+      checked on their recorded physical pages after Unicode, soft-hyphen and line-wrap normalization. Equations,
+      DFT settings, the site balance/PSSA, reaction pathway, descriptor formulae, experimental recipe, yield definition,
+      rank and pressure conditions were visually inspected in the page renders.
+    pages: [2, 3, 4, 5, 6, 7, 8, 9]
+    remote_endpoint_re_fetched: false
+  counts:
+    passage_records_rechecked: 12
+    records_confirmed_without_change: 12
+    records_enriched: 0
+    records_corrected: 0
+    verbatim_quotes_rechecked: 9
+    current_claim_links_reaudited: 3
+    historical_attachments_reaudited: 0
+    new_passage_records_added: 0
+    human_verified: 0
+  passage_results:
+  - passage_id: WANG23-B10-P02-DFT-SLABS
+    outcome: confirmed
+    note: Rendered p. 434 confirms PBE/VASP, the four-layer 2×2(111) slab, 15 Å vacuum, top-two-layer relaxation, 450 eV cutoff, 5×5×1 mesh, spin polarization, CI-NEB/dimer and ZPE treatment. These remain ideal-slab choices.
+  - passage_id: WANG23-B10-P02-MKM-ADSORPTION
+    outcome: confirmed
+    note: Rendered p. 434 confirms the unit sum of modeled intermediates and vacant sites, equilibrated C2H2/H2 adsorption-desorption and transition-state-theory rate expression; detailed standard states and implementation remain in unavailable SI S2.
+  - passage_id: WANG23-B10-P02-MKM-PSSA
+    outcome: confirmed
+    note: Eq. (2) visually sets each modeled intermediate coverage balance to zero. This is an algebraic PSSA, not a finite-rate transient coverage ODE.
+  - passage_id: WANG23-B10-P02-STEADY-FIXED-BED
+    outcome: confirmed
+    note: Rendered p. 434 confirms the 0.2 MPa fixed-bed pressure, reported feed fractions, flow, temperatures and one-hour-on-stream steady data. Eq. (3) subtracts outlet ethane in the yield metric but does not alone close all product/carbon pathways.
+  - passage_id: WANG23-B10-P03-SURFACE-FAMILIES
+    outcome: confirmed
+    note: Rendered p. 435 confirms Agx@Pd and Pdy@Ag substitutions for x,y=1–8, three PdAg bulk ratios, coadsorbed C2H2/H segregation energies, positive/negative sign interpretation and the source-reported mixed-surface versus bulk-alloy trend. Supporting segregation figures remain in SI.
+  - passage_id: WANG23-B10-P05-RXN-BARRIERS
+    outcome: confirmed
+    note: Rendered p. 437 confirms the modeled vinyl-first pathway branches, further ethylene hydrogenation, first acetylene-addition rate-determining assignment for most sampled structures, and the listed 0.60/0.35/0.12 eV barrier values. These are calculated barriers for selected structures.
+  - passage_id: WANG23-B10-P05-COVERAGE-SENSITIVITY
+    outcome: confirmed
+    note: Rendered p. 437 confirms orders-of-magnitude sensitivity of absolute modeled rate to precoverage and little effect on qualitative rank for the tested subset; lateral interactions are omitted from the final trend comparison.
+  - passage_id: WANG23-B10-P06-DESCRIPTOR-FUNCTIONS
+    outcome: confirmed
+    note: Rendered pp. 437–438 confirm the activity/selectivity function definitions and G(CH3)/G(H) scaling construction. Numerical fit diagnostics and outlier details are referred to unavailable SI tables/figures.
+  - passage_id: WANG23-B10-P07-PHI-H
+    outcome: confirmed
+    note: Rendered p. 439 confirms phi_H=(V/E)(sum V1/sum E1), with occupied s–d valence-electron and electronegativity terms for the active site and first neighbors. It is a structural descriptor, not a coverage or dynamic state.
+  - passage_id: WANG23-B10-P08-PHI-CH3
+    outcome: confirmed
+    note: Rendered p. 440 confirms phi_CH3=(V/E)(sum V1/sum E1)(sum V2/sum E2)/R and its proposed ligand/strain role. The main text does not state the numerical unit convention for empirical R.
+  - passage_id: WANG23-B10-P09-EXPERIMENTAL-RANK
+    outcome: confirmed
+    note: Rendered p. 441 and Figure 5c confirm the source-reported Pd1Ag3 highest average plotted yield among Pd, 1:1, 1:3 and 1:5 supported samples; exact figure values and replicate/uncertainty details are not tabulated there.
+  - passage_id: WANG23-B10-P06-PRESSURE-CONDITIONS
+    outcome: confirmed
+    note: Rendered pp. 438 and 434 confirm distinct 333 K descriptor partial pressures (0.2/4/9 atm) and 0.2 MPa fixed-bed total pressure. This supports a condition-alignment caveat, not a claim that the qualitative ranking is invalid.
+  claim_links_reaudited:
+  - claim_id: CLM-c1_pdag_descriptor_mkm-001
+    outcome: partially_supported
+  - claim_id: CLM-c1_pdag_descriptor_mkm-002
+    outcome: partially_supported
+  - claim_id: CLM-c1_pdag_descriptor_mkm-003
+    outcome: partially_supported
+  re_audit_findings:
+  - All 12 passages and nine brief quotations were confirmed after the first-pass commit; no transcription correction or scientific-claim revision was needed.
+  - Reopened equations confirm that the L–H microkinetic calculation uses equilibrated C2H2/H2 adsorption and d(theta_i)/dt=0. Its PSSA closure contains no surface relaxation time or dynamic coverage memory.
+  - The barrier, descriptor and supported-catalyst results remain specific to the paper's selected ideal surfaces, model conditions and tested steady catalyst series. The main-text pressure mismatch, absent SI details, and incomplete carbon/product accounting limit quantitative transfer.
+  - The source does not establish target PdAg transient kinetics, matched-condition absolute-rate validation, a periodic response, or performance exceeding the best feasible steady comparator.
+  human_verification_status: not_verified
+  limitations:
+  - Same-agent AI second pass; this is not independent human review.
+  - No matching Supporting Information, raw rate table, replicate data, or independent microkinetic reproduction was available in the local repository.
+  - The BEP catalyst/support match and target pressure/feed basis remain unresolved; no dynamic or periodic experiment is reported in this source.
+
+- audit_id: SP-B11-20261023-URMES2022
+  pass_number: 2
+  performed_after_commit: cc08dee26004ecd50d3bc141422e39cf6fd48859
+  source_id: urmes2022
+  independently_reopened_resources:
+  - resource_type: publisher_article_abstract_html
+    url: https://chemistry-europe.onlinelibrary.wiley.com/doi/abs/10.1002/cctc.202101826
+    method: Fresh publisher retrieval after the B11 first-pass and formatting-repair commits; re-read abstract lines 159–161 and checked each recorded quotation and interpretation. The full-text click timed out on this recheck; the listed SI returned HTTP 403.
+    retrieved_at_utc: 2026-10-22T22:59:52Z
+    locators: [Abstract HTML lines 158–161]
+    remote_endpoint_re_fetched: true
+  counts:
+    passage_records_rechecked: 4
+    records_confirmed_without_change: 4
+    records_enriched: 0
+    records_corrected: 0
+    verbatim_quotes_rechecked: 4
+    current_claim_links_reaudited: 16
+    historical_attachments_reaudited: 0
+    human_verified: 0
+  passage_results:
+  - passage_id: URM22-B11-P01-DYNAMIC-ESTIMATION
+    outcome: confirmed
+    note: Exact brief quote and source-specific interpretation were confirmed against publisher abstract line 159; access limits remain explicit.
+  - passage_id: URM22-B11-P02-SINGLE-SITE-PARAMETERS
+    outcome: confirmed
+    note: Exact brief quote and source-specific interpretation were confirmed against publisher abstract line 160; access limits remain explicit.
+  - passage_id: URM22-B11-P03-OUTLET-TRANSIENT-FIT
+    outcome: confirmed
+    note: Exact brief quote and source-specific interpretation were confirmed against publisher abstract line 160; access limits remain explicit.
+  - passage_id: URM22-B11-P04-MODEL-CONTROLLING-STEPS
+    outcome: confirmed
+    note: Exact brief quote and source-specific interpretation were confirmed against publisher abstract line 161; access limits remain explicit.
+  claim_links_reaudited:
+  - claim_id: CLM-u_ph_kinetics-004
+    outcome: partially_supported
+  - claim_id: CLM-u_ma_inverse-002
+    outcome: partially_supported
+  - claim_id: CLM-u_sc_excitation-001
+    outcome: partially_supported
+  - claim_id: CLM-u_sc_objective-003
+    outcome: unsupported
+  - claim_id: CLM-u_sc_observation-004
+    outcome: partially_supported
+  - claim_id: CLM-u_sc_feasibility-005
+    outcome: unsupported
+  - claim_id: CLM-ph_surface_states-002
+    outcome: partially_supported
+  - claim_id: CLM-ph_mechanism_choice-003
+    outcome: partially_supported
+  - claim_id: CLM-ph_dynamic_memory-002
+    outcome: partially_supported
+  - claim_id: CLM-ma_identifiability-002
+    outcome: partially_supported
+  - claim_id: CLM-ma_periodic_orbit-003
+    outcome: partially_supported
+  - claim_id: CLM-sc_excitation-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_identification_vs_performance-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_validation-003
+    outcome: partially_supported
+  - claim_id: CLM-sc_periodic_frequency_response_identification-003
+    outcome: partially_supported
+  - claim_id: CLM-sc_persistent_excitation_condition-004
+    outcome: partially_supported
+  re_audit_findings:
+  - All four brief quotations were rechecked against the freshly reopened publisher abstract; no transcription change was needed.
+  - The abstract supports a Pd/alpha-Al2O3 dynamic kinetic-identification/model-reproduction precedent only. The model's single-site assumption and controlling-step interpretation remain author-model claims, not unique mechanistic proof.
+  - Outlet-model reproduction does not by itself demonstrate internal-state observability, a stable periodic orbit, independent holdout validation, cycle-mean performance or gain over an optimized steady comparator.
+  - The two unsupported link assessments correctly apply only to the accessible abstract; no article-wide absence is inferred because full text and SI remain inaccessible.
+  human_verification_status: not_verified
+  limitations:
+  - Same-agent AI second pass; no independent human review is claimed.
+  - Full article, SI, detailed conditions, model equations, fit diagnostics and source data were not inspected.
+  - This source reports no target PdAg performance comparison in the accessible abstract.
+- audit_id: SP-B12-20261023-PROPOSAL
+  pass_number: 2
+  performed_after_commit: f5181348339e8287ad8e40cabbdc09fd40f77214
+  source_id: proposal_main
+  independently_reopened_resources:
+  - resource_type: github_repository_proposal_source_text
+    path: Academics/BEP/Catalysis/0_Project_Management/main.tex
+    url: https://github.com/AsapLoso/project-management-agents/blob/work/bep-citation-provenance-audit-v2-20261023/Academics/BEP/Catalysis/0_Project_Management/main.tex
+    source_blob_sha: 759c86c068ec4dadaaa65f5a4f48878d4a11d54a
+    selected_line_range: [95, 310]
+    method: Fresh GitHub Contents API retrieval after first-pass commit; source blob SHA and selected 27,271-character text matched the first-pass capture exactly. Rechecked all ten passages, seven brief quotations, three structured transcriptions, four B12 correction records and 30 linked claim interpretations.
+    retrieved_at_utc: 2026-10-22T23:25:24Z
+  counts:
+    passage_records_rechecked: 10
+    records_confirmed_without_change: 10
+    records_enriched: 0
+    records_corrected: 0
+    verbatim_quotes_rechecked: 7
+    structured_transcriptions_rechecked: 3
+    current_claim_links_reaudited: 30
+    historical_attachments_reaudited: 0
+    corrections_reaudited: 4
+    corrections_confirmed: 4
+    human_verified: 0
+  passage_results:
+  - passage_id: BEP-PROP-B12-P01-QUESTION-SCOPE
+    outcome: confirmed
+    note: "The selected wording and central question match; the proposal does not define the best feasible steady comparator."
+  - passage_id: BEP-PROP-B12-P02-STEADY-YIELD-ASSERTION
+    outcome: confirmed
+    note: "The thermodynamic-equilibrium and unavoidable-cap wording is exact; the scientific correction appropriately treats it as a proposal rationale."
+  - passage_id: BEP-PROP-B12-P03-AXIAL-PDE
+    outcome: confirmed
+    note: "The transcribed advection–dispersion/source equation matches Eq. (1); the rate and volume bases remain unspecified."
+  - passage_id: BEP-PROP-B12-P04-SURFACE-BALANCE
+    outcome: confirmed
+    note: "The coverage-balance and site-closure transcription matches Eqs. (2)–(3); the elementary network remains unspecified."
+  - passage_id: BEP-PROP-B12-P05-FORCING-TIMESCALE
+    outcome: confirmed
+    note: "The timescale inequality matches the text; its status as an un-derived hypothesis remains appropriate."
+  - passage_id: BEP-PROP-B12-P06-ISOTHERMAL-BASELINE
+    outcome: confirmed
+    note: "The isothermal assumption is explicit; the numerical-instability rationale is not independently substantiated in the proposal."
+  - passage_id: BEP-PROP-B12-P07-BSPLINE-CHOICE
+    outcome: confirmed
+    note: "The proposed B-spline parameterization and its rationale match; comparative numerical superiority is not established."
+  - passage_id: BEP-PROP-B12-P08-OBJECTIVE-LOCAL-SEARCH
+    outcome: confirmed
+    note: "The steady baseline and time-averaged selectivity wording are confirmed; they do not define a matched optimized-steady comparison."
+  - passage_id: BEP-PROP-B12-P09-VALIDATION-MFC-PLAN
+    outcome: confirmed
+    note: "The calibration, optimization and later MFC experiment are plans; no run or realized bed-inlet waveform is reported."
+  - passage_id: BEP-PROP-B12-P10-HIDDEN-STATE-OBSERVER-SCOPE
+    outcome: confirmed
+    note: "The categorical full-bed observability wording and future observer scope match; the passage does not establish a general impossibility result."
+  claim_links_reaudited:
+  - claim_id: CLM-bep-001
+    outcome: partially_supported
+  - claim_id: CLM-physics-001
+    outcome: partially_supported
+  - claim_id: CLM-mathematics-001
+    outcome: partially_supported
+  - claim_id: CLM-systems_control-001
+    outcome: partially_supported
+  - claim_id: CLM-u_ma_optimization-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_reaction_network-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_metrics-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_surface_states-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_adsorbate_balance-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_dynamic_memory-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_axial_balance-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_axial_balance-002
+    outcome: partially_supported
+  - claim_id: CLM-ph_energy_balance-001
+    outcome: partially_supported
+  - claim_id: CLM-ph_isothermal-001
+    outcome: partially_supported
+  - claim_id: CLM-ma_gas_pde-001
+    outcome: partially_supported
+  - claim_id: CLM-ma_surface_balance-001
+    outcome: partially_supported
+  - claim_id: CLM-ma_timescale-001
+    outcome: partially_supported
+  - claim_id: CLM-ma_discontinuous_input-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_manipulated_input-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_waveform-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_hardware_constraints-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_baseline-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_objective-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_local_search-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_robustness-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_observability-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_ekf_ukf-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_co_design-002
+    outcome: partially_supported
+  - claim_id: CLM-sc_validation-001
+    outcome: partially_supported
+  - claim_id: CLM-sc_unknown_input_reconstructibility-002
+    outcome: partially_supported
+  re_audit_findings:
+  - Source SHA and selected-range text match the first-pass capture exactly; all seven excerpts remain exact substrings of the reopened proposal text.
+  - The PDE, coverage-balance and timescale transcriptions match the selected proposal lines. Their scientific limits remain explicit and no model or parameter validation is inferred.
+  - All 30 proposal links remain partially supported only as records of proposal intent, model form, assumptions or planned work; none is experimental evidence.
+  - All four first-pass corrections remain warranted: three scientific-scope corrections and one generated-count reconciliation. The corrected tally is 30 of 78 proposal links reviewed, leaving 48 queued.
+  - No further claim correction or passage edit was required.
+  human_verification_status: not_verified
+  limitations:
+  - Same-agent AI second pass; no independent human review is claimed.
+  - The proposal is not an independent source for its own scientific hypotheses or external-citation claims.
+  - Only selected lines 95–310 were rechecked; 48 proposal links and external cited works remain queued for source-level review.
+- audit_id: SP-B13-20261023-ZHU
+  pass_number: 2
+  performed_after_commit: 917f5a50b06c6ffa14c475e1c19f0eb4650ee572
+  source_ids_reopened: [zhu2021, proposal_main]
+  independently_reopened_resources:
+  - resource_type: author_institution_hosted_article_record
+    url: https://research.tue.nl/en/publications/novel-microreactor-and-generic-model-catalyst-platform-for-the-st/
+    doi: 10.1016/j.cej.2021.131559
+    selected_locator: Abstract lines 31–36 and bibliographic metadata lines 38–45
+    access: Fresh page retrieval after first-pass commit; abstract and DOI/article metadata accessible. Publisher article endpoint remained HTTP 403.
+    retrieved_at_utc: 2026-10-22T23:32:29Z
+  - resource_type: github_repository_proposal_source_text
+    path: Academics/BEP/Catalysis/0_Project_Management/main.tex
+    source_blob_sha: 759c86c068ec4dadaaa65f5a4f48878d4a11d54a
+    selected_line_range: [117, 121]
+    access: Fresh GitHub Contents API retrieval after first-pass commit; blob SHA matched and selected text includes the 40-fold statement and Zhu citation.
+    retrieved_at_utc: 2026-10-22T23:32:29Z
+  counts:
+    passage_records_rechecked: 6
+    records_confirmed_without_change: 6
+    records_enriched: 0
+    records_corrected: 0
+    verbatim_quotes_rechecked: 5
+    structured_data_extractions_rechecked: 1
+    current_claim_links_reaudited: 4
+    corrections_reaudited: 1
+    new_corrections: 0
+    human_verified: 0
+  passage_results:
+  - passage_id: ZHU21-B13-P01-HEATER-RESPONSE
+    outcome: confirmed
+    note: "The abstract again reports changes up to 230 °C within 20–30 μs and μs temperature-measurement resolution; this is the microheater response, not a bed-composition input response."
+  - passage_id: ZHU21-B13-P02-MODEL-CATALYST-REACTION
+    outcome: confirmed
+    note: "The abstract identifies Pt nanoparticles on Al2O3 and CO oxidation as the model-catalyst test system; the excerpt matches."
+  - passage_id: ZHU21-B13-P03-RATE-RESPONSE
+    outcome: confirmed
+    note: "The qualitative claim of controlled and significantly increased CO-oxidation rates under fast temperature pulses matches; the abstract gives no numerical rate ratio."
+  - passage_id: ZHU21-B13-P04-POWER-COMPARATOR
+    outcome: confirmed
+    note: "The reported lower power input than steady-state operation matches; exact comparator conditions and objective remain unavailable in the abstract."
+  - passage_id: ZHU21-B13-P05-COVERAGE-MEMORY
+    outcome: confirmed
+    note: "The desorption/repopulation account is explicitly attributed to kinetic simulations, not direct coverage observation."
+  - passage_id: BEP-PROP-B13-P01-ZHU-40FOLD-ATTRIBUTION
+    outcome: confirmed
+    note: "The proposal's quoted 40-fold attribution and Zhu citation match the freshly retrieved branch text; the number is absent from the accessible article abstract."
+  claim_links_reaudited:
+  - claim_id: CLM-u_ph_thermal-001
+    outcome: partially_supported
+  - claim_id: CLM-u_ph_thermal-002
+    outcome: partially_supported
+  - claim_id: CLM-ph_isothermal-002
+    outcome: partially_supported
+  - claim_id: CLM-ma_timescale-002
+    outcome: partially_supported
+  re_audit_findings:
+  - The freshly reopened abstract confirms the reported heater response, Pt/Al2O3 model-catalyst and CO-oxidation context, qualitative rate/power statements, and simulation-attributed desorption/repopulation interpretation.
+  - The abstract provides no 40-fold magnitude and no matched best-feasible steady comparator details; these remain access-bounded unknowns, not article-wide negative findings.
+  - The proposal line and its citation to Zhu et al. match the fresh repository retrieval. Recording the proposal text does not validate the external quantitative result.
+  - All five short quotations, the structured heater-response extraction, the six passage interpretations, four linked-claim assessments and one correction were confirmed without change.
+  - No target-catalyst transfer or benefit from acetylene feed-composition forcing is supported by this source.
+  human_verification_status: not_verified
+  limitations:
+  - Same-agent AI second pass; no independent human review is claimed.
+  - The full eight-page article was inaccessible; the author-institution page provides metadata and abstract only.
+  - Exact experimental conditions, rate normalization, energy comparator basis and the proposal's 40-fold figure remain unresolved.
+
+- audit_id: SP-B14-20261023-DG19
+  pass_number: 2
+  performed_after_commit: 9ea3568fc9ead5b67c5aeb8d8bd4aac98901ced2
+  source_id: di_giuliano_pellegrino2019
+  source_sha256: null
+  independently_reopened_resources:
+  - resource_type: pubmed_central_primary_article_full_text_index
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6734197/
+    method: >-
+      Fresh source-specific search queries reopened the PMC primary full-text index for Eqs. (43)–(45), the Results §4.3 Figs. 6–7 discussion and Conclusions. Direct PMC page opening still returned a browser CAPTCHA; no sequential PDF/page review or source-byte hash was possible.
+    locators:
+    - Introduction, Eqs. (1)–(3)
+    - Methods §3.1, Eqs. (37)–(42)
+    - Methods §3.1.2, Eqs. (43)–(45), ode23tb discussion
+    - Results §4.3, Figs. 6–7; Conclusions
+    retrieved_at_utc: 2026-10-23T00:00:12Z
+  counts:
+    passage_records_rechecked: 4
+    records_confirmed_without_change: 3
+    records_corrected: 1
+    verbatim_quotes_rechecked: 4
+    current_claim_links_reaudited: 4
+    corrections_reaudited: 1
+    new_corrections: 1
+    human_verified_links: 0
+  passage_results:
+  - passage_id: DG19-B14-P01-CONSERVATIVE-GAS-FLUX
+    outcome: confirmed
+    note: Eqs. (1)–(3) and the inert-dilution limitation remain accurately scoped to the ADPFR model form.
+  - passage_id: DG19-B14-P02-MOL-CENTRAL-DIFFERENCES
+    outcome: confirmed
+    note: Method-of-lines reduction, central spatial differences and false-boundary ghost-point treatment remain distinct from the mapped finite-volume derivation.
+  - passage_id: DG19-B14-P03-EXPLICIT-EULER-CFL
+    outcome: confirmed
+    note: Eq. (45), the paper-specific J scale, ode23tb reported simulation integrator and separate spatial forward difference are correctly distinguished.
+  - passage_id: DG19-B14-P04-VELOCITY-COMPARISON-RESULTS
+    outcome: corrected
+    correction_id: CORR-SP-B14-DG19-001
+    note: The source's outlet-profile and N2-flow differences grow at higher inlet y_CO2; its constant-u cumulative CO2-balance deviation instead grows at lower inlet y_CO2. First-pass wording was made metric-specific.
+  findings:
+  - Four short quotations and selected equation/method transcriptions were reopened; all quote excerpts match the primary PMC full-text index and the 23-word total remains below the source-quote limit.
+  - The source explicitly reports a forward spatial difference to compute u(z,t), separately tests explicit Euler for the semidiscrete time ODE, and uses ode23tb for reported simulations.
+  - Source text distinguishes feed-concentration trends by diagnostic: higher inlet y_CO2 gives larger outlet-profile differences and N2-flow artifact; lower inlet y_CO2 gives larger constant-u cumulative CO2-balance deviation.
+  - The stoichiometric derivation remains valid only with its stated fixed-P/T, common-basis and two-reaction assumptions; no target-reactor flow calculation follows.
+  - The first-pass batch statement was corrected and the correction is recorded separately; no human source verification is claimed.
+  new_corrections:
+  - CORR-SP-B14-DG19-001
+  human_verification_status: not_verified
+  validation: Focused record-level quote, locator, reciprocal-link, count, equation-scope and not_verified checks; PyYAML 6.0.3 parsed extracted B14 record fragments, but complete-file YAML, repository graph and PDF-page validation remain unrun.
+  next_batch: B15-unreviewed-primary-source
+
+- audit_id: SP-B15-20261023-PACHULSKI2012
+  pass_number: 2
+  performed_after_commit: 03b75c6293eac6f197922c27ba2af62d962b2ebc
+  source_id: pachulski2012
+  source_sha256: null
+  independently_reopened_resources:
+  - resource_type: publisher_article_abstract_and_indexed_text
+    url: https://www.sciencedirect.com/science/article/abs/pii/S0926860X12005406
+    method: >-
+      Fresh source-specific web searches reopened the official ScienceDirect author line and abstract, including the
+      measurement basis, model-selection statement, transfer criteria, and bypass-reactor sentence. A direct publisher
+      HTML open returned HTTP 403; full paper, supplementary information, and PDF pages were not reviewed sequentially.
+    locators:
+    - Publisher bibliographic author line
+    - Abstract: kinetic measurements, candidate model forms, selected two-site LH representation, transport checks, bypass calculation
+    - Introduction: indexed reaction-network equations used by PACH12-B15-P01-REACTION-NETWORK
+    retrieved_at_utc: 2026-10-23T00:14:29Z
+  counts:
+    passage_records_rechecked: 6
+    records_confirmed_without_change: 6
+    records_corrected: 0
+    verbatim_quotes_rechecked: 5
+    current_claim_links_reaudited: 13
+    corrections_reaudited: 1
+    new_corrections: 0
+    human_verified_links: 0
+  passage_results:
+  - passage_id: PACH12-B15-P01-REACTION-NETWORK
+    outcome: confirmed
+    note: The three overall routes remain supported by selected indexed article text only; no route-rate or BEP-importance inference was added.
+  - passage_id: PACH12-B15-P02-INTEGRAL-FIXED-BED
+    outcome: confirmed
+    note: Publisher abstract again reports Pd-Ag/Al2O3 kinetic measurements in an integral fixed bed under different process conditions.
+  - passage_id: PACH12-B15-P03-TWO-SITE-LH-SELECTED
+    outcome: confirmed
+    note: Abstract supports the selected two-site-type LH representation; this remains a model choice, not direct physical site-population proof.
+  - passage_id: PACH12-B15-P04-KINETIC-MODEL-COMPARISON
+    outcome: confirmed
+    note: Abstract again supports comparison across kinetic model families and statistical/thermodynamic evaluation; no formal identifiability result is inferred.
+  - passage_id: PACH12-B15-P05-TRANSPORT-CRITERIA
+    outcome: confirmed
+    note: Mears, Weisz-Prater, and third-/fourth-order Damkohler criteria are named; source-specific values and transfer limits remain explicit.
+  - passage_id: PACH12-B15-P06-BYPASS-REACTOR-CALCULATION
+    outcome: confirmed
+    note: Publisher abstract reports a successful bypass-reactor calculation; it does not report a periodic-policy comparison or matched optimized-steady benchmark.
+  findings:
+  - Publisher author metadata confirms correction CORR-B15-PACHULSKI-METADATA-001; no author discrepancy remains in the touched claim identities.
+  - The five abstract excerpts remain exact short substrings; their combined source-quote length is 15 words.
+  - The full source remains access-limited; no catalyst loadings, complete candidate equations, transport margins, or bypass-model residuals were verified.
+  - The source establishes no periodic operating benefit or comparison to an optimized feasible steady policy.
+  new_corrections: []
+  human_verification_status: not_verified
+  validation: Focused PyYAML excerpt parsing, claim/passage reciprocity, source identity, quote count, and not_verified checks; no full-file YAML, repository graph or PDF-page validator was run.
+  next_batch: B16-alternative-Pd-site-model-source
+
+- audit_id: SP-B16-20261023-ROSA2025
+  pass_number: 2
+  performed_after_commit: da0f41bbfc7a4e00becb44fa0d8d44a930d695d1
+  source_id: rosa2025_pdbased_postplasma
+  source_sha256: b953c19f28a2b1459471c601b3b10b61cf4d6efaeff2e59b94930706d1c933d4
+  independently_reopened_resources:
+  - resource_type: primary_article_jats_full_text_xml
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12442368/fullTextXML
+    method: >-
+      After the B16 first-pass commit, the primary article XML was fetched again from the Europe PMC fullTextXML
+      endpoint. The fresh 137258-byte response has the same SHA-256 as the first-pass capture. Normalized XML text
+      was checked for all recorded quotations and the claim-bearing sentences in §§1, 2.1.3, 2.1.6, 2.2, 3.2–3.3
+      and §4. The publisher PDF and cited SI were not retrieved.
+    locators:
+    - Abstract, §1 and Table 2: catalyst/feed regimes and performance scope
+    - §2.1.3: packed-bed and source-specific transport screening
+    - §2.1.6, Fig. 3, Eqs. (2)–(3): conditional single-site closure, reversible ethylene adsorption and carbon balance
+    - §2.2: steady PFR method, integration step count and selected parameter intervals
+    - §§3.2–3.3 and §4: parameter limitations and predictive-performance scope
+    retrieved_at_utc: 2026-10-23T00:34:24Z
+  counts:
+    passage_records_rechecked: 8
+    records_confirmed_without_change: 8
+    records_corrected: 0
+    verbatim_quotes_rechecked: 7
+    current_claim_links_reaudited: 9
+    corrections_reaudited: 0
+    new_corrections: 0
+    human_verified_links: 0
+  passage_results:
+  - passage_id: PDR25-B16-P01-FEED-CATALYST-REGIMES
+    outcome: confirmed
+    note: Table 2 and §§2.1.1–2.1.2 support distinct Pd loading, dispersion and feed regimes; causal attribution and BEP transfer remain open.
+  - passage_id: PDR25-B16-P02-CONDITIONAL-SINGLE-SITE
+    outcome: confirmed
+    note: §2.1.6 states the single-site hypothesis is considered adequate near 1–2 bar without CO; this is kinetic-model scope, not direct microscopic site proof.
+  - passage_id: PDR25-B16-P03-REVERSIBLE-ETHYLENE-ADSORPTION
+    outcome: confirmed
+    note: §2.1.6 describes step 5 as reversible and includes gas-ethylene adsorption plus vinyl hydrogenation in a steady surface balance; cited SI equations were not opened.
+  - passage_id: PDR25-B16-P04-CARBON-BALANCE-CLOSURE
+    outcome: confirmed
+    note: The article attributes omission of selected C4+ routes to >85–90% carbon balances and cites SI Tables S3–S4; the supplement was not independently inspected and carbon closure is incomplete.
+  - passage_id: PDR25-B16-P05-PARAMETER-UNCERTAINTY
+    outcome: confirmed
+    note: §§2.2 and 3.2 report selected 95% intervals, finite-difference Jacobian calculations and approximate validity under nonlinear multiresponse regression; no BEP identifiability is established.
+  - passage_id: PDR25-B16-P06-TRANSPORT-SCREENING
+    outcome: confirmed
+    note: §2.1.3 reports EUROKIN screening using particle, dilution, flow and reactor-geometry inputs; it does not validate BEP or forced-operation transport.
+  - passage_id: PDR25-B16-P07-NUMERICAL-IMPLEMENTATION
+    outcome: confirmed
+    note: §2.2 reports a stiff steady PFR integration with 100 axial steps as the authors' accuracy/speed compromise, not an independent convergence test for the BEP.
+  - passage_id: PDR25-B16-P08-PREDICTIVE-EFFICACY
+    outcome: confirmed
+    note: Abstract and §§3.1–3.2 report source-specific prediction; the article says Urmès data contribute to fitting, so these results are not a fully blind external validation or periodic-gain test.
+  findings:
+  - The fresh XML hash and byte count match the first-pass source capture; all seven short quotations are exact substrings of the reopened text.
+  - All eight passage interpretations and nine linked claim records remain supported at their stated source scope; no correction was warranted.
+  - A conditional 2025 Pd/α-Al2O3 single-site closure and the 2012 PdAg two-site closure are distinct catalyst-/feed-/model-dependent representations, not a universal contradiction.
+  - The article and cited SI boundary remain explicit. No periodic input policy, matched optimized-steady benchmark, or target-specific performance result is shown.
+  human_verification_status: not_verified
+  validation: Fresh XML hash, quote text, eight passage results, nine claim records, reciprocal links and not_verified status checked; full repository validators remain pending.
+
+- audit_id: SP-B17-20261023-URMES2020
+  pass_number: 2
+  performed_after_commit: e713656953a8bfa20d7e9b0498fbdcc5cf777d15
+  source_id: urmes2020_ni_periodic_estimation
+  source_sha256: null
+  independently_reopened_resources:
+  - resource_type: publisher_indexed_article_text
+    url: https://www.sciencedirect.com/science/article/pii/S0009250918307231
+    doi: 10.1016/j.ces.2018.10.012
+    method: >-
+      After B17 first-pass commit e713656953a8bfa20d7e9b0498fbdcc5cf777d15, reissued searches for the DOI and exact excerpt phrases on 2026-10-23.
+      Re-read the publisher-indexed abstract, highlights, and selected Introduction, Development of the numerical tools,
+      and Experimental results excerpts. A fresh direct open of the publisher abstract returned HTTP 403. No PDF, SI,
+      full sequential article, or source-byte hash was available.
+    locators:
+    - Abstract, first paragraph, final sentence
+    - Highlights, first bullet; selected Introduction paragraph describing method families
+    - Abstract, second paragraph, final sentence
+    - Abstract, third paragraph, sentences 1–2
+    - Publisher-indexed Experimental results, first paragraph
+    - Publisher-indexed Development of the numerical tools, first paragraph
+    retrieved_at_utc: 2026-10-23T13:57:40Z
+  counts:
+    passage_records_rechecked: 7
+    records_confirmed_without_change: 7
+    records_corrected: 0
+    verbatim_quotes_rechecked: 7
+    quote_words_rechecked: 25
+    current_claim_links_reaudited: 4
+    claim_links_partially_supported: 4
+    claim_links_disputed_or_unsupported: 0
+    data_quality_correction_records_rechecked: 4
+    new_corrections: 0
+    human_verified_links: 0
+  claim_links_reaudited:
+  - claim_id: CLM-sc_unknown_input_reconstructibility-003
+    outcome: partially_supported
+    note: Publisher excerpts confirm the Ni/Al2O3 bypass/inlet reference and 30 Hz acquisition details; no BEP input path or analyzer bandwidth is established.
+  - claim_id: CLM-sc_periodic_frequency_response_identification-001
+    outcome: partially_supported
+    note: Abstract supports periodic ethylene-adsorption signals used to estimate an equilibrium adsorption constant; it reports no BEP kinetic estimate or performance comparison.
+  - claim_id: CLM-sc_periodic_frequency_response_identification-002
+    outcome: partially_supported
+    note: Publisher abstract and selected Introduction/tools excerpts support modeled gain/phase methods, transfer effects and the small-signal linearization scope; equations and quantitative results remain inaccessible.
+  - claim_id: CLM-sc_persistent_excitation_condition-003
+    outcome: partially_supported
+    note: The Ni adsorption example informs parameter-estimation context; it is not a formal persistence-of-excitation or target identifiability result.
+  passage_results:
+  - passage_id: U20-B17-P01-ESTIMATION-MOTIVE
+    outcome: confirmed
+    note: Abstract distinguishes periodic laboratory kinetic-parameter estimation from reactor-performance framing; no claim of performance gain is inferred.
+  - passage_id: U20-B17-P02-METHOD-FAMILIES
+    outcome: confirmed
+    note: The highlight names three gain/phase approaches; selected Introduction text specifies time/frequency PDE solutions and steady-state-linearized analytical responses for simple adsorption/desorption.
+  - passage_id: U20-B17-P03-MASS-TRANSFER-PHASE-GAIN
+    outcome: confirmed
+    note: Abstract attributes phase lag and gain loss to modeled kinetic/transfer contributions; this is response attenuation, not lower cycle-average product performance.
+  - passage_id: U20-B17-P04-30HZ-ACQUISITION
+    outcome: confirmed
+    note: Abstract reports outlet-gas acquisition frequency up to 30 Hz; it does not report analyzer bandwidth or phase fidelity.
+  - passage_id: U20-B17-P05-EQUILIBRIUM-ADSORPTION-ESTIMATE
+    outcome: confirmed
+    note: Abstract describes fitting periodic Ni/Al2O3 ethylene-adsorption data to estimate an equilibrium adsorption constant.
+  - passage_id: U20-B17-P06-BYPASS-INLET-REFERENCE
+    outcome: confirmed
+    note: Selected Experimental results text says the bypass checks counter-phase CF4/C2H4 and is representative of the reactor inlet in that setup.
+  - passage_id: U20-B17-P07-SMALL-SIGNAL-LINEARIZATION
+    outcome: confirmed
+    note: Selected numerical-tools text conditions the linear-system assumption on modulation amplitude being small relative to the mean.
+  findings:
+  - A fresh post-commit publisher-index search confirms all seven short quotations and their section-level locators; no transcription or interpretation correction was warranted.
+  - The evidence remains limited to selected publisher-indexed text about molecular ethylene adsorption on Ni/Al2O3; it does not establish Pd/PdAg acetylene kinetics, BEP sensor/input calibration, periodic performance gain, or superiority to an optimized feasible steady policy.
+  - The four B17 data-quality correction records, comprising two coverage-count fixes and two audit-reference fixes, were rechecked against the committed ledgers; no additional data-quality issue was found.
+  - No full-text/PDF, SI, source hash, or independent human verification is claimed.
+  new_corrections: []
+  human_verification_status: not_verified
+  validation: Fresh post-commit publisher-index excerpts were compared with all seven passage records and four stable claim interpretations; all quotes match, all affected claim/passage links are reciprocal, and every status remains not_verified. Direct publisher-page opening returned HTTP 403; full repository YAML and graph validators remain pending.
+  next_batch: B18-Waldron2020-transient-flow-MBDoE

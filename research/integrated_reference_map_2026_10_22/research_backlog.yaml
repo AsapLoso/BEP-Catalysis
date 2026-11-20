@@ -1,0 +1,201 @@
+schema_version: 1
+campaign: bep_integrated_scientific_knowledge_campaign_2026_10_22
+dataset_path: Academics/BEP/Catalysis/research/integrated_reference_map_2026_10_22
+coordination_map: Academics/BEP/Catalysis/research/wayfinder/bep_integrated_scientific_campaign_2026_10_22.md
+purpose: >-
+  Separate, source-level scientific worklist for substantive expansion and
+  independent checking of the integrated AI reference map. This backlog is not
+  a taxonomy, not a personal understanding map, and not a substitute for
+  populated scientific nodes and evidence relationships.
+maturity_ceiling:
+  allowed: [idea, ai_worked_out]
+  human_understood_or_verified: false
+waves:
+  - id: SG-1
+    island: catalyst_and_kinetics
+    status: in_progress
+    map_ticket: C1
+    decision_question: >-
+      Which adsorption, site-ensemble, intermediate, coverage, and kinetic
+      claims are supported for each studied catalyst class, and which must
+      remain competing hypotheses for the unidentified BEP catalyst?
+    research_tasks:
+      - Inspect primary source full text for the proposal catalyst model and each accessible acetylene-hydrogenation catalyst/mechanism paper individually.
+      - Trace carbon and hydrogen stoichiometry through gas species, surface intermediates, vacancies, and site-occupancy constraints.
+      - Derive explicit coverage balances from the stated elementary steps where source data permit; label symbolic derivations separately from source-fitted rate laws.
+      - Compare PSSA/effective LHHW closures with explicit dynamic coverage models and state exactly which internal states each formulation retains.
+      - Check every kinetic parameter basis, pressure/concentration unit, catalyst mass/volume basis, catalyst identity, temperature/feed window, and locator.
+      - Add/refine nodes, cross-links, claim references, source records, source provenance, reconciliations, coverage, and uncertainty entries.
+    initial_sources:
+      - proposal and bibliography in Academics/BEP/Catalysis/0_Project_Management/
+      - Urmes 2019 full-text PDF and supporting information if available
+      - Borodzinski and Bond 2006
+      - Berger et al. 2008
+      - Larsen BEP PDF (metadata and transfer limits unresolved)
+      - catalyst-specific PdAg, PdMn, single-atom, and surface-structure primary studies in Articles/
+    exit_criteria:
+      - At least one explicit graph path connects elementary reaction alternatives to catalyst/site assumptions, adsorption/coverages, source-specific kinetic closures, and bed/pellet transport.
+      - Every added substantive scientific claim has a bounded evidence class and source locator or is explicitly marked as derivation/proposal/uncertain.
+      - Catalyst transfer limits and unresolved Urmes 2019 K1 discrepancy remain visible.
+      - Structural/evidence validator passes; no target-specific constants or gain are fabricated.
+    artifacts_to_update: [nodes.yaml, sources.yaml, source_provenance.yaml, interdisciplinary_links.yaml, claim_reconciliations.yaml, uncertainties.yaml, coverage.yaml, progress.md, validation.md, validation_results.json]
+    commit: null
+  - id: SG-2
+    island: conservation_transport_numerics
+    status: in_progress
+    map_ticket: M1
+    decision_question: >-
+      Which packed-bed, pellet, boundary, and thermal balance forms are
+      equivalent under explicit basis conversions, and which assumptions alter
+      the model or its numerical invariants?
+    research_tasks:
+      - Re-derive proposal gas-phase species balances from accumulation plus conservative axial flux plus stoichiometric reaction sources.
+      - Reconcile superficial/interstitial velocity and bed-, pellet-envelope-, catalyst-mass-, and active-site rate bases without double-counting void/solid fractions.
+      - Derive axial dispersion Danckwerts inlet/outlet flux conditions and state conditions for plug-flow and zero-dispersion limits.
+      - Connect pellet diffusion, surface flux, film transfer, effectiveness factor, and time-dependent concentration fields; identify when lumped factors fail under forcing.
+      - Add optional energy and pressure-drop balances as separate extensions with assumptions and applicability, not as silent baseline features.
+      - Map PDE-to-ODE/DAE discretization, consistency, stiffness, stability, conservation, positivity, mesh/time tolerance refinement, and independent numerical checks.
+    initial_sources:
+      - original BEP proposal equations and variable definitions
+      - Danckwerts 1953 boundary/residence-time source
+      - Berger et al. 2008 dynamic catalytic-kinetics review, with equation-level audit
+      - Froment et al. reactor analysis text where available
+      - accessible primary pellet-diffusion/effectiveness-factor studies in Articles/
+      - Hairer/Wanner or other primary numerical-analysis references already in the source inventory
+    exit_criteria:
+      - At least one balance derivation is dimensionally and stoichiometrically checked on declared bases.
+      - Model reductions and boundary conditions state their conditions and do not collapse distinct physical models.
+      - Numerical verification is separated from solver stability and physical validation.
+      - Data validator passes and all remaining equation/parameter gaps are recorded.
+    artifacts_to_update: [nodes.yaml, sources.yaml, source_provenance.yaml, interdisciplinary_links.yaml, claim_reconciliations.yaml, uncertainties.yaml, coverage.yaml, progress.md, validation.md, validation_results.json]
+    commit: null
+  - id: SG-3
+    island: identification_and_control
+    status: in_progress
+    map_ticket: S1
+    decision_question: >-
+      What can input/output measurements identify about reactor dynamics, and
+      which periodic-operation results actually establish performance against
+      an optimized steady comparator?
+    research_tasks:
+      - Trace command, actuator, mixer/transfer line, bed-inlet composition, reactor state, outlet composition, and analyzer dynamics as separate subsystems.
+      - Distinguish structural/practical identifiability, state observability/reconstructability, parameter sensitivity, and experimental excitation value.
+      - Examine persistent excitation, frequency response, phase/amplitude attenuation, nonlinear periodic steady state, startup transients, and cycle closure.
+      - Derive common-feed/product accounting for net ethylene production, conversion, selectivity, yield, and carbon balance; preserve distinct objectives.
+      - State the same-feasible-set comparator condition and its weak no-worse consequence only when constant controls are admissible periodic inputs under an identical objective and constraints.
+      - Separate identification benefit, transient catalytic observation, periodic-operation proposal, simulated performance, and demonstrated physical gain.
+    initial_sources:
+      - Berger et al. 2008 and Urakawa et al. 2008 source text
+      - Urmes et al. 2022 primary periodic acetylene study (full text or access limitation recorded)
+      - Silveston et al. 1995 periodic-reactor overview for historical context, not as sole evidence
+      - source-listed system identification, observability, persistence of excitation, and optimal-control literature
+    exit_criteria:
+      - The graph connects realizable inputs and measurements through dynamics to identification, observability, excitation and objective comparison.
+      - No claim confuses gain in identification information or transient selectivity with a periodic performance improvement.
+      - Comparator assumptions, objective boundary, constraints, catalyst state and target-specific unknowns are explicit.
+      - Data validator passes and the target gain sign remains unasserted absent evidence.
+    artifacts_to_update: [nodes.yaml, sources.yaml, source_provenance.yaml, interdisciplinary_links.yaml, claim_reconciliations.yaml, uncertainties.yaml, coverage.yaml, progress.md, validation.md, validation_results.json]
+    commit: 81efc74
+  - id: SG-4
+    island: independent_evidence_audit
+    status: in_progress
+    map_ticket: A1
+    decision_question: >-
+      Which substantive integrated claims and cross-discipline links survive a
+      claim-by-claim second pass through accessible primary source text, and
+      which remain unsupported or source-limited?
+    research_tasks:
+      - Select and independently audit a spread of claims from each scientific discipline and each required connected thread.
+      - Verify locator-to-claim support against source primary text, not metadata or prior AI summaries alone.
+      - Independently check stoichiometric, dimensional, sign, basis, and feasible-set derivations.
+      - Audit every newly added source identity, DOI/title/year, access status, and claimed source-specific catalyst/conditions.
+      - Amend/narrow unsupported text and add unresolved or inaccessible items to uncertainty/coverage ledgers without erasing contradictory evidence.
+    initial_sources:
+      - all primary source PDFs/records actually cited by substantive integrated claims
+      - original project proposal and bibliography
+      - prior independent map and reconciliation as provenance inputs only, not scientific authority
+    exit_criteria:
+      - Audit sample, claim locators, corrections, and residual unreviewed scope are machine-readable.
+      - No claim-source link is upgraded to human verified.
+      - All structural/evidence references pass, and remaining limitations state what was not inspected.
+    artifacts_to_update: [nodes.yaml, sources.yaml, source_provenance.yaml, interdisciplinary_links.yaml, claim_reconciliations.yaml, uncertainties.yaml, coverage.yaml, progress.md, validation.md, validation_results.json]
+    commit: null
+open_project_specific_decisions:
+  - id: target_catalyst
+    status: unknown
+    affects: catalyst transfer, kinetic parameter relevance, mechanism selection
+    blocking_scope: target-specific model selection and prediction only
+  - id: operating_objective_and_constraints
+    status: unknown
+    affects: net-product objective and best-feasible-steady comparator
+    blocking_scope: target-specific optimization and periodic-gain determination only
+  - id: input_and_measurement_transfer
+    status: unknown
+    affects: realizable excitation and dynamic interpretation
+    blocking_scope: target-specific experiment design and dynamic parameter inference only
+scientific_exit_statement: >-
+  Completion of these waves advances a literature-grounded AI reference map;
+  it does not complete project-specific model selection, parameter estimation,
+  simulation, optimization, or experimental validation.
+checkpoints:
+  - id: SG-1-pass-1
+    status: partial_research_recorded
+    sources_inspected_full_text: [urmes2019, borodzinski2000, dehghani2019_pdag_alphaal2o3, stytsenko2022, wang2023_pdag_descriptors]
+    sources_inspected_at_publisher_abstract_scope: [shi2024]
+    scientific_outcomes:
+      - Compared one-site Pd PSSA, deposit-associated Pd A/E rate closure, industrial Pd-Ag LHHW with campaign-time deactivation, Pd-Mn adsorption substitution, and PdAg DFT plus steady-state L-H microkinetics without selecting a universal model.
+      - Separated slow scalar catalyst aging from within-cycle surface coverage dynamics; recorded Dehghani equation sign and unit ambiguities.
+      - Recorded source-specific assay conditions, evidence classes, model assumptions, applicability boundaries, and links to the conservative bed source.
+      - Preserved Borodzinski 2000 internal acetylene-pressure and k-prime-2 dimensional discrepancies; added Pd-Mn unknown-step uncertainty.
+      - Corrected the Shi 2024 citation class from observation to particle-resolved CFD model result.
+    remaining_scope: Catalyst primary-source coverage and target-catalyst identification remain open; this pass does not close SG-1.
+    validation: Structural/evidence-reference validator passed with 133 nodes, 58 sources, 307 claims, 38 edges, 17 reconciliations, and 20 uncertainties.
+  - id: SG-2-pass-1
+    status: partial_research_recorded
+    sources_inspected_full_text:
+    - di_giuliano_pellegrino2019
+    sources_inspected_at_publisher_abstract_scope:
+    - mott_green2015
+    scientific_outcomes:
+    - Added variable-superficial-velocity conservation and linked an ideal-gas flow closure to gas stoichiometry,
+      while leaving target flow-change magnitude unknown.
+    - Derived a cell-integrated finite-volume balance from the proposal bed PDE and recorded the telescoping
+      global inventory identity under shared face fluxes.
+    - Added a scalar upwind/central/forward-Euler nonnegative-update condition with its assumptions and
+      separated this sufficient transport bound from the coupled reactor stability problem.
+    - Compared the proposal's Danckwerts-type wording with Mott and Green's abstract-only revised-boundary
+      proposal; preserved the unresolved domain and apparatus choice.
+    - Recorded the Di Giuliano and Pellegrino source-specific MOL, central-difference, boundary-ghost-point
+      and explicit-step findings without transferring its CO2 sorbent conclusions to acetylene catalysis.
+    remaining_scope: Target flow closure, apparatus boundary domains, source-specific boundary derivation,
+      pellet-bed exchange integration, and target discretization/solver convergence remain open; SG-2 is
+      not closed.
+    validation: Structural/evidence validator passed after additions; source-access statuses and IDs, claim
+      references, edge endpoints/scopes, reconciliation sources, uncertainty node links, and count declarations
+      were checked.
+  - id: SG-3-pass-1
+    status: partial_research_recorded
+    sources_inspected_full_text: [waldron2020_transient_flow_mbdoe, kaps2026, villaverde2016_structural_identifiability, villaverde2019_fispo]
+    sources_inspected_at_publisher_abstract_scope: [urmes2022, urmes2020_ni_periodic_estimation, schoukens1994_periodic_excitation_identification]
+    scientific_outcomes:
+      - Added local Fisher-information equations and bounded D/A/E criterion meanings; separated information precision, structural identifiability, model discrimination, and reactor-performance objectives.
+      - Added a scoped persistent-excitation condition for finite-dimensional regressors and explicitly limited its transfer to nonlinear packed-bed models.
+      - Added periodic-orbit local stability and distinguished settled-cycle closure from slow catalyst campaign drift.
+      - Refined Kaps et al. (2026): measured FPO gains are against a selected same-mean-inlet steady reference; model-based best-steady/periodic Pareto fronts are a separate claim under the source model and constraints.
+      - Preserved Urmès et al. (2022) as direct acetylene periodic-identification precedent at publisher abstract/preview scope; no productivity gain follows from that fitting result.
+    remaining_scope: Target bed-plane input transfer, sensor/noise model, structural rank and practical FIM, nonlinear identification, target objective/feasible steady set, global/robust optimization and any target performance result remain open; SG-3 is not closed.
+    validation: "Structural/evidence validator passed: 143 nodes, 65 sources, 340 claim references, 59 relations (35 cross-disciplinary), 20 reconciliations and 23 uncertainties; all required references resolve."
+  - id: SG-4-pass-1
+    status: partial_research_recorded
+    sources_inspected_full_text: [urmes2019, stytsenko2022, di_giuliano_pellegrino2019, waldron2020_transient_flow_mbdoe, villaverde2016_structural_identifiability, kaps2026]
+    sources_inspected_at_publisher_abstract_scope: [urmes2022, mott_green2015]
+    derivations_independently_rechecked: [two_step_gas_stoichiometry_and_source_signs, conservative_bed_balance_dimensions_and_variable_velocity_flux, finite_volume_telescoping_inventory, scalar_explicit_transport_update_weights, periodic_comparator_set_inclusion]
+    scientific_outcomes:
+      - Added a machine-readable ten-entry second-pass audit spanning source observations, model-result classifications, bounded catalytic interpretations, conservation/numerical derivations and cross-discipline relations.
+      - Confirmed Urmes 2019 full/reduced single-site balances while preserving the printed K1 conflict and distinguishing K5 pressure units from adsorption-equilibrium units.
+      - Confirmed Stytsenko TPD/QMS observations separately from its proposed substitution mechanism, unknown fast step and catalyst-specific conversion regime.
+      - Reclassified the Waldron MBDoE precision comparison as a model/design result rather than a direct observation, with a correction receipt.
+      - Rechecked Kaps et al. measured same-mean-feed comparison against the separate model-based Pareto analysis.
+      - Extended the graph validator to check source, node, edge, locator and evidence-class references in the audit ledger.
+    remaining_scope: This same-agent second pass is not independent human review and covers only a representative sample; inherited claim attachments, most literature links, inaccessible full texts, target derivations, solver convergence and target performance remain unreviewed or unresolved.
+    validation: "Structural and audit-reference validator passed: ten audit entries; source, node and edge references resolve; map has 143 nodes, 65 sources, 340 claim references, 59 relations (35 cross-disciplinary), 21 reconciliations and 23 uncertainties."

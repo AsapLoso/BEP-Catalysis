@@ -1,0 +1,1351 @@
+nodes:
+- id: lhhw_kinetics
+  parent: physics_reaction_kinetics
+  title: Extended LHHW Reaction Kinetics
+  tier: 1
+  importance: 3
+  rationale: Captures competitive adsorption between C2H2, C2H4, and H2 on active
+    catalyst sites with non-ideal inhibition.
+  notes: Extended Langmuir-Hinshelwood-Hougen-Watson formulation. Rate r1 (acetylene
+    to ethylene) features squared denominator; rate r2 features non-integer fitted
+    exponent n_inh.
+  sources:
+  - title: Larsen MSc Thesis (2024)
+    doi: null
+    path: Academics/BEP/Catalysis/Articles/2 meeting Damian + Zoë/extracted/Ch6_Results_and_Discussion.txt
+    citation: null
+    section: Equations 6.9–6.11 (Final Extended LHHW Rate Law)
+  - title: BEP Catalysis Project Conventions §12.1
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: §12.1 Verified against primary text
+  open_questions:
+  - Confirm whether hydrogen adsorption is non-dissociative or dissociative on Ag-promoted
+    Pd surface.
+  - Resolve unmeasured cross-sectional area A and support density rho_support from
+    Appendix F before quantitative conversion calibration.
+  is_draft: true
+- id: centered_arrhenius
+  parent: lhhw_kinetics
+  title: Centered Arrhenius Temperature Dependence
+  tier: 1
+  importance: 2
+  rationale: "Centered Arrhenius parameterization uses k(T_ref) and can improve numerical conditioning of a chosen fit, but does not guarantee eliminating parameter correlations or a universal correlation threshold."
+  notes: "AI SCIENCE CORRECTION (D5.A): k(T) = k(T_ref)*exp[-Ea/R*(1/T - 1/T_ref)] with T and T_ref in kelvin and Ea in J/mol. This is equivalent to k(T)=k0*exp[-Ea/(R*T)] ONLY if k(T_ref)=k0*exp[-Ea/(R*T_ref)]; do not substitute the raw k0 directly into the centered equation. Centering often improves practical parameter scaling/interpretability, but numerical correlation and identifiability still depend on measurement range, model, data and noise; the previous blanket claim 'eliminates correlation below 0.71' is retracted. This is a mathematical representation, NOT independent validation of a catalyst's kinetic constants. Source: BEP D_kinetic_parameters_identifiability_2026-10-14.md §D5.A, AI attached; no human source approval."
+  sources:
+  - title: Berger et al. (2008) Chemical Engineering Science 63
+    doi: 10.1016/j.ces.2008.08.012
+    path: Academics/BEP/Catalysis/Articles/analyses/dynamic_kinetics_berger2008.md
+    citation: null
+    section: Equation 17 - Centered Arrhenius formulation
+  - title: Model Architecture Decisions §11.5
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: '§11 Item 5: Centered Arrhenius for kp(T)'
+  open_questions:
+  - 'Select optimal reference temperature T0 (candidate: 313 K / 40 °C matching Larsen
+    benchmark).'
+  is_draft: true
+- id: surface_coverage_dynamics
+  parent: lhhw_kinetics
+  title: Dynamic Surface Coverage State θ(z,r)
+  tier: 1
+  importance: 3
+  rationale: Tracks time-dependent fraction of vacant and occupied catalyst active
+    sites under transient/forcing conditions.
+  notes: 'Conservation: theta_vacant + theta_C2H2 + theta_C2H4 + theta_H = 1. Coupled
+    directly into instantaneous reaction rates rather than pseudo-steady-state assumption.'
+  sources:
+  - title: Transient Model Framework Audit §2
+    doi: null
+    path: Academics/BEP/Catalysis/3_Model/transient_model_framework_audit.md
+    citation: null
+    section: §2 State Vector [Cb, cp, theta] Architecture
+  - title: Berger et al. (2008)
+    doi: 10.1016/j.ces.2008.08.012
+    path: Academics/BEP/Catalysis/Articles/analyses/dynamic_kinetics_berger2008.md
+    citation: null
+    section: Section 2.1 Dynamic Surface Balances
+  open_questions:
+  - Validate adsorption/desorption rate constants under non-steady gas feeds.
+  is_draft: true
+- id: reaction_thermodynamics
+  parent: physics_reactor_thermodynamics
+  title: Reaction Exothermicity & Heats of Hydrogenation
+  tier: 1
+  importance: 3
+  rationale: Accounts for large heats of reaction that drive temperature hotspots
+    and potential thermal runaway.
+  notes: 'Hydrogenation 1: C2H2 + H2 -> C2H4 (dH = -172 kJ/mol). Hydrogenation 2:
+    C2H4 + H2 -> C2H6 (dH = -136 kJ/mol). High exothermicity requires coupled bed
+    energy balance.'
+  sources:
+  - title: Larsen Thesis Chapter 4 Materials & Methods
+    doi: null
+    path: Academics/BEP/Catalysis/Articles/2 meeting Damian + Zoë/extracted/Ch4_Materials_and_Methods.txt
+    citation: null
+    section: 'Lines 68–69: Enthalpy values Delta H'
+  - title: Catalysis Conventions §12.1
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: 'Verified thermodynamic parameters: Delta H = -172 and -136 kJ/mol'
+  open_questions:
+  - Confirm heat capacity Cp temperature-dependence in carrier gas stream (ethylene/argon
+    mixture).
+  is_draft: true
+- id: transport_phenomena
+  parent: physics_transport_phenomena
+  title: Coupled Interphase & Intraparticle Transport
+  tier: 1
+  importance: 3
+  rationale: Models multi-scale concentration and temperature gradients from bulk
+    gas to pellet interior.
+  notes: 'Three-level coupled transport: Bulk gas Cb(z) -> Film boundary Cs(z) ->
+    Intraparticle pore cp(z,r). Explicit transient intraparticle diffusion rather
+    than instant equilibrium.'
+  sources:
+  - title: Conventions §11 Model Architecture Decisions
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: '§11 Item 1-3: Three coupled levels Cb(z) -> Cs(z) -> cp(z,r)'
+  - title: Transient Model Framework Audit §3
+    doi: null
+    path: Academics/BEP/Catalysis/3_Model/transient_model_framework_audit.md
+    citation: null
+    section: 'Defects 1-3: Explicit particle diffusion vs instant film assumption'
+  open_questions:
+  - Determine catalyst pellet geometry (spherical vs egg-shell impregnated layer).
+  is_draft: true
+- id: internal_diffusion_thiele
+  parent: transport_phenomena
+  title: Intraparticle Diffusion & Thiele Modulus
+  tier: 1
+  importance: 2
+  rationale: Quantifies pore diffusion limitations and computes effectiveness factor
+    eta across varying pellet radii.
+  notes: 'Governed by radial Fickian diffusion: dcp/dt = Deff / r^2 * d/dr(r^2 * dcp/dr)
+    + rho_cat * r_gen. High Thiele modulus (Phi > 1) lowers selectivity by starving
+    interior of acetylene.'
+  sources:
+  - title: Berger et al. (2008)
+    doi: 10.1016/j.ces.2008.08.012
+    path: Academics/BEP/Catalysis/Articles/analyses/dynamic_kinetics_berger2008.md
+    citation: null
+    section: 'Section 5: Criteria for internal mass transport limitations'
+  - title: Transport Phenomena Notes
+    doi: null
+    path: Academics/BEP/Catalysis/1_Transport_Phenomena/
+    citation: null
+    section: Thiele modulus scaling and Weisz-Prater criterion
+  open_questions:
+  - Measure or estimate effective Knudsen/molecular diffusivity Deff in mesoporous
+    alpha/gamma-Al2O3 support.
+  is_draft: true
+- id: external_film_transfer
+  parent: transport_phenomena
+  title: External Fluid-Solid Film Transport (Mears Criterion)
+  tier: 1
+  importance: 2
+  rationale: Checks whether boundary layer gradients exist between bulk gas flow and
+    outer catalyst surface.
+  notes: 'Flux J = k_g * a_v * (C_b - C_s). Evaluated via Mears criterion: if (r_obs
+    * rho_b * R_p * n) / (k_c * C_b) < 0.15, external mass transport resistance is
+    negligible.'
+  sources:
+  - title: Berger et al. (2008)
+    doi: 10.1016/j.ces.2008.08.012
+    path: Academics/BEP/Catalysis/Articles/analyses/dynamic_kinetics_berger2008.md
+    citation: null
+    section: Section 5.1 External transport diagnostics
+  open_questions:
+  - Confirm superficial gas velocity u_s vs interstitial velocity u_s / epsilon_b
+    to correctly evaluate Sherwood (Sh) and Reynolds (Re) numbers.
+  is_draft: true
+- id: pbr_governing_pdes
+  parent: math_mathematical_modelling
+  title: 1D Dynamic Packed-Bed Reactor PDEs
+  tier: 1
+  importance: 3
+  rationale: Formulates non-linear hyperbolic-parabolic partial differential equations
+    governing axial advection, dispersion, and reaction.
+  notes: 'Mass: dCb_i/dt = -u_s * dCb_i/dz + D_ax * d^2Cb_i/dz^2 - k_g*a_v*(Cb_i -
+    Cs_i). Energy: rho_g*Cp_g * dT/dt = -u_s*rho_g*Cp_g * dT/dz + lambda_ax * d^2T/dz^2
+    + 4*U/D_t*(T_w - T) + sum(r_j * (-dH_j)).'
+  sources:
+  - title: Larsen Thesis Chapter 4 Materials & Methods
+    doi: null
+    path: Academics/BEP/Catalysis/Articles/2 meeting Damian + Zoë/extracted/Ch4_Materials_and_Methods.txt
+    citation: null
+    section: Equations 4.6–4.9 1D Plug-Flow Differential Equations
+  - title: Transient Model Framework Audit §1
+    doi: null
+    path: Academics/BEP/Catalysis/3_Model/transient_model_framework_audit.md
+    citation: null
+    section: Berger Eq. 1 recovery and axial balance formulation
+  open_questions:
+  - Confirm whether axial dispersion D_ax can be neglected (Peclet number Pe > 100).
+  is_draft: true
+- id: method_of_lines_mol
+  parent: math_numerical_analysis
+  title: Method of Lines (MOL) Semi-Discretization
+  tier: 1
+  importance: 3
+  rationale: Transforms spatial differential operators into a coupled system of stiff
+    initial-value ordinary differential equations.
+  notes: Spatial axial grid Nz points; radial particle grid Nr points. Convective
+    terms discretised via 1st-order upwind (backward difference) for monotonicity;
+    diffusion discretised via central difference.
+  sources:
+  - title: Model Architecture Decisions §11.7
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: '§11 Item 7: MOL with upwind difference and central difference'
+  - title: Transient PBR Model Prototype
+    doi: null
+    path: Academics/BEP/Catalysis/3_Model/c2h2_hydrogenation_transient_model.py
+    citation: null
+    section: Spatial discretization and RHS function structure
+  open_questions:
+  - Evaluate higher-order flux limiters (e.g. Superbee or Minmod) to suppress numerical
+    diffusion during steep concentration fronts.
+  is_draft: true
+- id: stiff_ode_solvers
+  parent: math_numerical_analysis
+  title: Stiff DAE/ODE Time Integrators (BDF & Radau)
+  tier: 1
+  importance: 3
+  rationale: Resolves orders-of-magnitude separation between fast chemical surface
+    adsorption and slow thermal/advective bed dynamics.
+  notes: Utilizes variable-order, variable-step Backward Differentiation Formula (BDF
+    via scipy.integrate.solve_ivp) or Radau IIA (5th-order implicit Runge-Kutta) with
+    analytical/banded Jacobian sparsity.
+  sources:
+  - title: Model Architecture Decisions §11.7
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: '§11 Item 7: solve_ivp(method=''BDF'')'
+  - title: Gemini Numerics Transcript 2026-09-29
+    doi: null
+    path: Academics/BEP/Catalysis/3_Model/gemini_transcript_2026-09-29.md
+    citation: null
+    section: Stiffness analysis and BDF/Radau solver selection
+  open_questions:
+  - Construct banded Jacobian pattern (collocated diagonal blocks) to accelerate LU
+    decomposition in large spatial grids.
+  is_draft: true
+- id: parameter_sensitivity_jacobian
+  parent: math_inverse_problems
+  title: Local & Global Sensitivity Analysis
+  tier: 1
+  importance: 2
+  rationale: Identifies which kinetic and transport parameters dictate selectivity
+    towards ethylene vs over-hydrogenation to ethane.
+  notes: Computes first-order sensitivity coefficients s_ij = d(y_i)/d(theta_j). Validates
+    parametric conditioning and reveals non-identifiable parameter combinations.
+  sources:
+  - title: 'Issue #58 Scientific Coordination Dossier'
+    doi: null
+    path: Academics/BEP/Catalysis/research/notes/bep_ai_mindmap_spec_2026_10_19.md
+    citation: null
+    section: Mathematical modeling deliverables and parameter identifiability
+  open_questions:
+  - Compare local forward sensitivity equations with global Sobol variance decomposition.
+  is_draft: true
+- id: reactor_operating_window
+  parent: system_control_optimization
+  title: Operating Window & Thermal Runaway Boundaries
+  tier: 1
+  importance: 3
+  rationale: Defines stable feed temperature and space velocity domains avoiding catastrophic
+    thermal runaway into total hydrogenation.
+  notes: Exothermic runaway criteria (van Heerden boundary). Over-hydrogenation to
+    ethane releases additional heat, leading to positive feedback and reactor burnout.
+  sources:
+  - title: Process Dynamics & Control (PDC Course Track)
+    doi: null
+    path: Academics/BEP/Catalysis/2_Courses/PDC/
+    citation: null
+    section: Exothermic CSTR/PBR runaway analysis and van Heerden diagram
+  - title: 'Agent B Reactor Simulation PR #2'
+    doi: null
+    path: Methanol-Catalysis/pbr/
+    citation: null
+    section: Thermal stability and hotspot trajectory modeling
+  open_questions:
+  - Map 2D stability boundary in (T_feed, GHSV) space for varying Pd/Ag ratio catalysts.
+  is_draft: true
+- id: periodic_feed_forcing
+  parent: system_input_experiment_design
+  title: Periodic Concentration & Flow Modulation
+  tier: 1
+  importance: 3
+  rationale: Explores dynamic forcing (oscillating H2/C2H2 feed ratio) to selectively
+    decouple surface coverage and maximize ethylene yield.
+  notes: Forced periodic operation breaks steady-state trade-offs. Alternating lean/rich
+    hydrogen feeds prevents over-hydrogenation by periodically stripping surface hydrides.
+  sources:
+  - title: Urakawa Group Modulated Excitation Catalysis Reviews
+    doi: null
+    path: Academics/BEP/Catalysis/Articles/analyses/literature_categorization_and_action_plan.md
+    citation: null
+    section: Modulated feed excitation and transient kinetic enhancement
+  - title: 'PR #84 Mind Map Specification §Core Principles'
+    doi: null
+    path: Academics/BEP/Catalysis/research/notes/bep_ai_mindmap_spec_2026_10_19.md
+    citation: null
+    section: 'Systems & Control arm: periodic forcing and reactor dynamics'
+  open_questions:
+  - Determine optimal modulation frequency omega relative to surface reaction relaxation
+    time tau_rxn.
+  is_draft: true
+- id: cooling_jacket_control
+  parent: system_control_optimization
+  title: Multi-Zone Temperature Control & Heat Exchange
+  tier: 1
+  importance: 2
+  rationale: Maintains axial temperature uniformity in wall-cooled tubular packed-bed
+    reactors.
+  notes: 'Wall heat exchange: Q = 4*U/D_t * (T_coolant - T_bed). Investigates segmented
+    multi-zone jackets with individual coolant temperature regulation.'
+  sources:
+  - title: PDC Course Reactor Dynamics & State-Space Control
+    doi: null
+    path: Academics/BEP/Catalysis/2_Courses/PDC/
+    citation: null
+    section: Jacketed tubular reactor control and feedback stabilization
+  open_questions:
+  - Assess controllability with discrete axial thermocouple measurements vs distributed
+    observers.
+  is_draft: true
+- id: state_observer_mpc
+  parent: system_filtering_estimation
+  title: State Estimation & Nonlinear MPC Formulations
+  tier: 1
+  importance: 2
+  rationale: Candidate advanced control architecture to maintain maximum selectivity
+    under feed gas composition disturbances.
+  notes: Extended Kalman Filter (EKF) or Moving Horizon Estimation (MHE) to reconstruct
+    unmeasurable internal state distributions [Cb(z), cp(z,r), theta(z,r)] from effluent
+    gas chromatography.
+  sources:
+  - title: Conventions §5 Candidate Methods Framing
+    doi: null
+    path: Academics/BEP/Catalysis/conventions.md
+    citation: null
+    section: §5 Always frame advanced control techniques as candidate frameworks to
+      evaluate
+  open_questions:
+  - Evaluate computational feasibility of real-time nonlinear MPC given stiff semi-discretized
+    state dimension (Nx * N_species > 500).
+  is_draft: true
+- id: physics_catalytic_chemistry
+  parent: physics
+  title: "Catalytic Chemistry"
+  tier: 1
+  importance: null
+  rationale: "C1 broad chemistry theme: chemical identities, catalyst-site chemistry and competing product pathways; AI interpretation only, proposed parent/boundary still awaiting user approval."
+  notes: |-
+    KNOWLEDGE STATUS: AI worked out (amber), not human reviewed. This is a proposal
+    for the scientific Level-2 taxonomy, NOT an approved placement or an experimental result.
+
+    Scope within C1: (1) net reaction network, (2) physical catalyst surface and
+    active-site chemistry, (3) desired/undesired products and selectivity, (4) optional
+    reaction paths and catalyst-specific alternatives.
+
+    Net stoichiometry (C deep dive §C.1):
+      desired: C2H2 + H2 -> C2H4  (r1)
+      competing: C2H4 + H2 -> C2H6  (r2)
+    Feed ethylene itself can enter the second reaction, not merely ethylene first
+    formed from acetylene. The two-step net scheme does not specify whether the
+    ethylene intermediate desorbs before further hydrogenation.
+
+    Candidate chemical mechanism topics for later Level-3 / letter C review:
+      * adsorption/desorption of hydrogen, acetylene and ethylene
+      * dissociative H2 adsorption, surface site availability and competition
+      * vinyl (C2H3*) and ethyl (C2H5*) intermediates
+      * possible continuous adsorbed path versus gas-ethylene readsorption
+      * omitted/alternative chemistry: C4+, coke/deactivation, distinct site
+        families or Pd/PdAg-support effects, candidate minor parallel pathways.
+    These are candidate concepts, not verified universal mechanisms or automatic
+    authorisation to add every descendant now.
+
+    Boundary: C2 Reaction Kinetics & Surface Dynamics owns mathematical
+    elementary-step rates, fitted LHHW/PSSA laws, rate constants, temporal
+    theta(t) equations and kinetic identifiability (also linked to S&C).
+    Physics Transport/Reactor Physics owns external/intraparticle access,
+    pressure, temperature, scale and experimental applicability. Experiments
+    & Measurements owns how site chemistry and product streams are observed.
+
+    Evidence limits: Existing C research compares three different implementations;
+    legacy has three dynamic occupied-site states but zero default source-fit rates;
+    the newer 2019-based reacting path uses algebraic steady/PSSA kinetics;
+    the non-PSSA experiment has illustrative five coverage states without
+    verified source parameters. Urmès 2022 full mechanism remains unresolved in
+    that audit. Do NOT claim experimental kinetics, periodic yield gain, or
+    direct catalyst transfer has been demonstrated by this map entry.
+
+    STRUCTURAL DECISION (owner, 2026-10-20): C1 has TWO substantial children:
+      (a) Reaction Chemistry & Pathways, and
+      (b) Catalyst Chemistry & Active Sites.
+    The children are concept nodes with their own notes and expandable
+    descendants. User prioritised both, but did NOT verify their scientific
+    explanations. The graph has NO DEPTH CAP: seven, eight or more levels
+    are welcome when the concept structure warrants them. Example paths
+    below the two children remain IDEAS, not approved/verified leaf nodes.
+
+    CITATION REVIEW: sources below are AI-attached; none is recorded here as
+    specifically human-verified to support its mapped claim.
+  sources:
+  - title: "BEP presentation deep dive C — reaction mechanism and surface physics"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.0–C.5 (source/code comparisons and chemistry); AI-attached, owner review pending"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism and Table 3 as discussed in C deep dive; owner verification pending"
+  open_questions:
+  - "Review the scope of the two accepted C1 sub-branches and their eventual deeper concept hierarchy; do not infer scientific ownership."
+  - "Which alternative pathways/site types deserve concept nodes, and which remain scope ideas?"
+  - "Which parts of the microscopic adsorption mechanism belong in C1 versus C2 kinetics, without duplication?"
+  is_draft: true
+- id: physics_reaction_kinetics
+  parent: physics
+  title: "Reaction Kinetics & Surface Dynamics"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C2) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: Rate laws, kinetic constants, surface coverages, transient kinetics and pseudo-steady-state closures. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C2 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: physics_transport_phenomena
+  parent: physics
+  title: "Transport Phenomena"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C3) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: Axial advection/dispersion, external film exchange, intraparticle diffusion and scale analysis. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C3 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: physics_reactor_thermodynamics
+  parent: physics
+  title: "Reactor Physics & Thermodynamics"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C4) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: Packed-bed geometry, feed/pressure/temperature conditions, energy balance and physical timescales. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C4 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: physics_experiments_measurements
+  parent: physics
+  title: "Experiments & Measurements"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C5) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: Experimental apparatus, catalysts, gas chromatography, spectroscopy, instrumentation and measurement uncertainty. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C5 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: math_mathematical_modelling
+  parent: mathematics
+  title: "Mathematical Modelling"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C6) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: Governing PDEs/ODEs/DAEs, initial and boundary conditions, state representations and balances. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C6 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: math_numerical_analysis
+  parent: mathematics
+  title: "Numerical Analysis & Simulation"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C7) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: Spatial discretization, stiff integration, solver verification, numerical dispersion and convergence. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C7 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: math_dynamical_systems
+  parent: mathematics
+  title: "Dynamical Systems & Stability"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C8) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: Equilibria, linearization, eigenvalues, transient and periodic trajectories. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C8 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: math_inverse_problems
+  parent: mathematics
+  title: "Inverse Problems & Uncertainty"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C9) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: Identifiability, sensitivity, statistical error, parameter reconstruction and regularization. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C9 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: math_optimization_theory
+  parent: mathematics
+  title: "Optimization Theory"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C10) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: Objective functions, constraints, numerical optimization and optimality conditions. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C10 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: system_modelling_reduction
+  parent: systems_control
+  title: "System Modelling & Reduction"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C11) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: State-space, grey-box and control-oriented reactor models, approximation and reduction. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C11 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: system_identification
+  parent: systems_control
+  title: "System Identification"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C12) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: Input-output response, fitted parameters, parameter identifiability and evidence from measured dynamics. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C12 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: system_filtering_estimation
+  parent: systems_control
+  title: "Signal Processing, Filtering & State Estimation"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C13) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: Signal noise, filtering, state observers, EKF/UKF and offline smoothers. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C13 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: system_input_experiment_design
+  parent: systems_control
+  title: "Input & Experiment Design"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C14) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: Dynamic excitation, periodic feed modulation, observability and information-rich experiments. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C14 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: system_control_optimization
+  parent: systems_control
+  title: "Control & Performance Optimization"
+  tier: 0
+  importance: null
+  rationale: "Candidate Level-2 scientific theme (C15) for owner review; placement and boundaries remain unapproved."
+  notes: "AI-suggested scope: Open-loop forcing and optimization, feedback/MPC, conversion/selectivity/yield criteria. This is a taxonomy proposal (Idea), not a completed research finding. Review under checkpoint C15 in the canonical taxonomy checklist."
+  sources: []
+  open_questions: []
+  is_draft: true
+- id: pdc_process_dynamics_foundations
+  parent: system_modelling_reduction
+  title: "PDC — Process Dynamics foundations"
+  tier: 1
+  importance: null
+  rationale: "AI-proposed lower-level link to archived Process Dynamics & Control course concepts; not proof of reactor results."
+  notes: "Educational background only: dynamic process models, linearisation, transfer functions and time delay; separate PDC SISO control materials cover PID, FOPTD/step responses, feedforward, IMC and Smith predictor. The eleven archived notebooks cover SISO Module 5, not the MIMO/optimization modules. Source attached by AI; human scientific review pending. Proposed Level-3 subject, not a sixth Systems & Control theme."
+  sources:
+  - title: "PDC course overview (archive analysis)"
+    doi: null
+    path: "Academics/BEP/Catalysis/2_Courses/PDC/course_overview.md"
+    citation: null
+    section: "Sections 1–4 (course modules, notebooks, BEP relevance)"
+  open_questions:
+  - "Which PDC concepts warrant dedicated scientific nodes in the BEP map?"
+  is_draft: true
+- id: c1_reaction_chemistry_pathways
+  parent: physics_catalytic_chemistry
+  title: "Reaction Chemistry & Pathways"
+  tier: 0
+  importance: null
+  rationale: "Owner-requested first child of C1: distinguish net reaction chemistry, surface pathways and competing product formation; scientific content remains an idea for detailed review."
+  notes: |-
+    STRUCTURE: first major C1 branch; user says this is very important.
+    Scope to develop: overall acetylene-to-ethylene and ethylene-to-ethane
+    reaction networks, adsorbed intermediates, alternative routes, selectivity
+    and omitted chemistry. Distinguish net stoichiometry from elementary paths.
+    Illustrative possible deeper path (not yet populated or approved):
+    Acetylene semi-hydrogenation -> Horiuti-Polanyi mechanism -> sequential
+    hydrogen addition -> vinyl/ethyl intermediates.
+    Do not conflate this chemical narrative with numerical fitted rates (C2).
+    All mechanistic detail requires source/assumption-level review.
+    No maximum child depth: descendants can extend to level 7, 8, 9, ...
+    Scientific maturity is IDEA (not personally human worked out).
+  sources: []
+  open_questions:
+  - "Which overall vs microscopic routes are essential to C1?"
+  is_draft: true
+- id: c1_catalyst_active_site_chemistry
+  parent: physics_catalytic_chemistry
+  title: "Catalyst Chemistry & Active Sites"
+  tier: 0
+  importance: null
+  rationale: "Owner-requested second child of C1: active-site composition and adsorption chemistry as major concept distinct from reaction pathways; scientific detail is an idea."
+  notes: |-
+    STRUCTURE: second major C1 branch; user says this is very important.
+    Scope to develop: palladium-based catalyst surfaces, active sites,
+    adsorption/desorption, dissociative hydrogen adsorption, competition for
+    sites, catalyst supports and PdAg-specific alternatives when grounded.
+    Illustrative possible deeper path (not yet populated or approved):
+    Pd-based catalysts -> adsorption mechanisms -> dissociative H2 adsorption
+    -> neighboring-site availability -> hydrocarbon/site competition.
+    C2 covers quantitative adsorption rates, site dynamics and parameter laws;
+    C1 covers chemical interpretation of surface sites and pathways.
+    Do not assume all proposed mechanisms apply to the BEP catalyst.
+    No maximum child depth: descendants can extend to level 7, 8, 9, ...
+    Scientific maturity is IDEA (not personally human worked out).
+  sources: []
+  open_questions:
+  - "Which catalyst-specific features have evidence in the BEP sources?"
+  is_draft: true
+- id: c1_net_reaction_network
+  parent: c1_reaction_chemistry_pathways
+  title: "Net stoichiometric reaction network"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. The starting point is TWO net reactions: acetylene + hydrogen produces ethylene (desired), and ethylene + hydrogen produces ethane (competing). This net scheme identifies gas species and stoichiometry but does not specify the detailed sequence of occupied Pd sites.\n\nA net two-rate closure is a conditional first model. It must not be interpreted as proof that all ethane arose from free gas ethylene or that other routes are chemically impossible.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.1: net gas-phase chemistry (AI-attached, not owner-verified)"
+  open_questions:
+  - "How much parallel chemistry is relevant under the intended operating conditions?"
+  is_draft: true
+- id: c1_acetylene_semihydrogenation
+  parent: c1_net_reaction_network
+  title: "Desired acetylene semi-hydrogenation"
+  tier: 1
+  importance: 2
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. Net relation: C2H2 + H2 -> C2H4 (label r1). Ethylene is the desired product of removing acetylene from an ethylene-rich stream while preserving ethylene selectivity.\n\nThis stoichiometric relation is not a rate law. Mechanism and site occupancies are handled deeper in the graph; conversion/yield metrics belong with the scientific objective.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.1: net gas-phase chemistry (AI-attached, not owner-verified)"
+  open_questions:
+  - "What is the exact source-specific definition of conversion and selectivity?"
+  is_draft: true
+- id: c1_ethylene_overhydrogenation
+  parent: c1_net_reaction_network
+  title: "Competing ethylene hydrogenation"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. Net relation: C2H4 + H2 -> C2H6 (label r2). It consumes valuable ethylene, so lowering acetylene concentration alone does not guarantee desirable product selectivity.\n\nBoth ethylene entering with the feed and ethylene formed along the bed can be reactants. Do not confuse this net reaction with a microscopic requirement that ethylene desorbs and readsorbs before forming ethane.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.1: net gas-phase chemistry (AI-attached, not owner-verified)"
+  open_questions:
+  - "How should the competing ethane-production channel be measured/calibrated?"
+  is_draft: true
+- id: c1_ethylene_rich_inlet
+  parent: c1_ethylene_overhydrogenation
+  title: "Pre-existing ethylene in tail-end feed"
+  tier: 1
+  importance: 2
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. The C research audit emphasizes that tail-end feed already contains substantial C2H4. Consequently inlet ethylene cannot be treated as an inert diluent in the selectivity calculation.\n\nIn the 2019 quasi-steady rate expression, ethane production depends on P_C2H4, but the origin of each carbon atom in observed ethane cannot be assigned from outlet gas totals alone.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.1: net gas-phase chemistry (AI-attached, not owner-verified)"
+  open_questions:
+  - "Which inlet mole fractions correspond to the chosen experiment, rather than another paper's benchmark?"
+  is_draft: true
+- id: c1_net_gas_source_vector
+  parent: c1_net_reaction_network
+  title: "Gas-phase net stoichiometric source vector"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. With gas species order (H2, C2H2, C2H4, C2H6), the two net rates yield source vector (-r1-r2, -r1, r1-r2, r2), where both rates are per catalyst mass per time.\n\nThis source vector applies directly to the fitted instantaneous gas-rate closure. When dynamic adsorption/desorption stores H and C2Hx on the surface, gas sources must instead be computed from adsorption/desorption fluxes, and conservation checked on gas PLUS surface inventory.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.1: net gas-phase chemistry (AI-attached, not owner-verified)"
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.4: PSSA vs time-dependent coverage interpretation (AI-attached, not owner-verified)"
+  open_questions:
+  - "How is mass-normalized rate converted to the chosen reactor-volume and site inventory units?"
+  is_draft: true
+- id: c1_microscopic_surface_path
+  parent: c1_reaction_chemistry_pathways
+  title: "Microscopic surface reaction pathways"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. A chemical reaction network on a solid includes adsorption, hydrogen addition, intermediate coverages and desorption. Multiple elementary paths can project onto the same gas-phase net equation.\n\nThe C mechanism audit distinguishes the published 2019 single-site Horiuti–Polanyi-inspired hypothesis from the simplified legacy site ODE and the experimental, uncalibrated non-PSSA bridge. The pathways drawn here are model-specific, not established universal Pd chemistry.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "Which elementary steps and directionality are in Table 3 of the original 2019 source?"
+  is_draft: true
+- id: c1_horiuti_polanyi_family
+  parent: c1_microscopic_surface_path
+  title: "Horiuti–Polanyi sequential-H mechanism family"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. The Urmès 2019 model is based on a single-site variant of the Horiuti–Polanyi family: adsorbed hydrogen adds in sequence to adsorbed C2 intermediates. It provides a chemical explanation for paths to both ethylene and ethane.\n\nThe seven schematic steps in the C dossier are explanatory, NOT a step-by-step independently verified reproduction of the published arrow directions and equilibrium assumptions. The 2019 fitted PSSA law eliminates fast intermediates rather than measuring all their dynamic rates.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "Verify the exact Table 3 reversibility, rate-determining assumptions and numbering against the article."
+  is_draft: true
+- id: c1_vinyl_intermediate
+  parent: c1_horiuti_polanyi_family
+  title: "First H addition: adsorbed vinyl (C2H3*)"
+  tier: 1
+  importance: 2
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. A hydrogen addition to adsorbed acetylene can form vinyl: C2H2* + H* -> C2H3* + vacant site (schematic). Vinyl is chemically distinct from adsorbed acetylene, and helps distinguish the first from the second addition.\n\n2019's simplified site balance neglects vinyl occupancy as small in the chosen regime; this DOES NOT mean vinyl is absent as an intermediate. A time-resolved vinyl coverage would require a separate, sourced kinetic closure.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "Which source step and kinetic parameter describe vinyl formation under our catalyst?"
+  is_draft: true
+- id: c1_adsorbed_ethylene_fork
+  parent: c1_vinyl_intermediate
+  title: "Second H addition and adsorbed-ethylene fork"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. Schematic second addition C2H3* + H* -> C2H4* + vacancy produces an adsorbed-ethylene intermediate. Its fate branches: it may desorb as ethylene or continue toward ethane via further H addition.\n\nIn the 2019 mechanism the second H-addition is taken as rate-determining/irreversible for the corresponding effective pathway. This branch is why gas-phase 'direct ethane' versus 'sequential ethylene' language can be misleading.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "What fraction of surface C2H4* desorbs versus undergoes further reaction at the target conditions?"
+  is_draft: true
+- id: c1_adsorbed_ethylene_desorption
+  parent: c1_adsorbed_ethylene_fork
+  title: "Ethylene desorption from the catalyst surface"
+  tier: 1
+  importance: 2
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. Schematic event: C2H4* <-> C2H4(g) + vacant site. Desorption makes desired ethylene accessible to the gas stream; reversibility allows ethylene already in the feed to readsorb.\n\nThis is a possible microscopic origin of the same ethylene pool that appears in the net chemistry. Distinguish chemical reversibility from transport of product out of the catalyst pellet (Physics transport branch).\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "How are adsorption/desorption constants constrained independently of the fitted PSSA combination?"
+  is_draft: true
+- id: c1_ethyl_intermediate
+  parent: c1_adsorbed_ethylene_fork
+  title: "Continued H addition: adsorbed ethyl (C2H5*)"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. Rather than desorb, C2H4* can add H* to form C2H5*. A subsequent hydrogenation/desorption event yields ethane and frees surface sites; schematic form C2H5* + H* -> C2H6(g) + 2 vacancies.\n\nThis continuing adsorbed sequence does not require C2H4(g) to exist between acetylene and ethane. In the 2019 effective formula, the source of C2H4* is not independently tracked.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "Is the continuation rate distinguishable from gas-ethylene readsorption using available measurements?"
+  is_draft: true
+- id: c1_parallel_ethane_paths
+  parent: c1_reaction_chemistry_pathways
+  title: "Alternative paths to ethane"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. Do not conflate three descriptions: (1) the overall acetylene + 2H2 -> ethane stoichiometry; (2) a continuous adsorbed route through C2H4* without desorption; (3) a genuinely independent parallel route bypassing that intermediate.\n\nWhether a separate direct pathway deserves a fitted r_direct term is a modelling and identification question, not a consequence of writing the overall reaction equation.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)"
+  - title: "Bos & Westerterp (1993), selective hydrogenation review"
+    doi: "10.1016/0255-2701(93)87001-B"
+    path: null
+    citation: null
+    section: "Abstract on potentially minor direct route, as reviewed in C.5.1; AI-attached"
+  open_questions:
+  - "When is an independently parameterised third ethane pathway justified?"
+  is_draft: true
+- id: c1_no_independent_direct_rate
+  parent: c1_parallel_ethane_paths
+  title: "Conditional omission of a third fitted ethane rate"
+  tier: 1
+  importance: 2
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. For the current preliminary model the C audit recommends retaining the two published net rate laws and omitting an extra, unconstrained 'direct' ethane rate. The omission has CONDITIONAL support: a literature description of the route as minor in one Pd context, a 2019 two-rate fit, and PdAg suppression indications.\n\nNo quantitative upper bound for r_direct/r_total has been established for our specific catalyst, periodic input or conversion window. Never label this a universally negligible reaction.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)"
+  - title: "Bos & Westerterp (1993), selective hydrogenation review"
+    doi: "10.1016/0255-2701(93)87001-B"
+    path: null
+    citation: null
+    section: "Abstract on potentially minor direct route, as reviewed in C.5.1; AI-attached"
+  - title: "Mei, Neurock & Smith (2009), Pd and PdAg kinetic Monte Carlo"
+    doi: "10.1016/j.jcat.2009.09.004"
+    path: null
+    citation: null
+    section: "Vinyl/ethylidene branch in abstract summarized in C.5.1; AI-attached"
+  open_questions:
+  - "Could ethylene-feed variation or isotope tracing distinguish ethane carbon origin?"
+  is_draft: true
+- id: c1_vinyl_ethylidene_alternative
+  parent: c1_no_independent_direct_rate
+  title: "Vinyl-to-ethylidene bypass hypothesis"
+  tier: 0
+  importance: 2
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — IDEA / open mechanism. Mei, Neurock & Smith (2009) discuss a competing route from vinyl toward ethylidene and ultimately ethane in first-principles kinetic Monte Carlo descriptions of Pd and Pd–Ag surfaces. The dossier reports that adding Ag suppresses this route within their investigated surface models.\n\nThis is a candidate omitted chemical branch, not a confirmed pathway or quantitative rate for the BEP's PdAg/SiO2 powder. No extra species or third fitted rate should be introduced without dedicated source/parameter work.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)"
+  - title: "Mei, Neurock & Smith (2009), Pd and PdAg kinetic Monte Carlo"
+    doi: "10.1016/j.jcat.2009.09.004"
+    path: null
+    citation: null
+    section: "Vinyl/ethylidene branch in abstract summarized in C.5.1; AI-attached"
+  open_questions:
+  - "Can experimental observables discriminate ethylidene chemistry from ethylene overhydrogenation?"
+  is_draft: true
+- id: c1_c4_coke_deactivation
+  parent: c1_reaction_chemistry_pathways
+  title: "C4+ products, coke and catalyst deactivation"
+  tier: 0
+  importance: 2
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — IDEA / open mechanism. The C audit notes C4+ oligomers, green oil/coke and loss or modification of accessible catalytic sites as possible unmodelled processes. Urmès 2019 reported no detected C4 in its tested conditions, which is narrower than claiming oligomerization or deactivation never occur.\n\nThe two-rate gas model contains neither additional C4 gas species nor a deposition/aging state. Their exclusion is an explicit scope limitation and potential falsification point if experiments reveal drifting activity.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)"
+  - title: "Borodziński & Bond (2006), Pd selective hydrogenation review"
+    doi: "10.1080/01614940500364909"
+    path: null
+    citation: null
+    section: "Pd site-state changes summarized in C.5; AI-attached"
+  open_questions:
+  - "What operating duration and catalyst evidence justify neglecting activity loss?"
+  is_draft: true
+- id: c1_catalyst_identity
+  parent: c1_catalyst_active_site_chemistry
+  title: "Catalyst identity and transferable mechanism limits"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. Chemical mechanisms and fitted effective rates are conditioned on catalyst material, support, active-site structure, Pd loading and operating regime. The C dossier warns particularly against treating Pd/alpha-alumina and PdAg/silica as interchangeable.\n\nThe source-catalyst identity belongs here; transfer calculations and physical operating conditions need links to E and the experiments branch, not duplicate child trees under C1.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)"
+  open_questions:
+  - "Which exact catalyst batch/loading and support apply to our actual experiment?"
+  is_draft: true
+- id: c1_urmes_source_catalyst
+  parent: c1_catalyst_identity
+  title: "2019 single-site Pd/alpha-Al2O3 source catalyst"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. Urmès 2019 adopts a single effective active-site family for a 0.05 wt% Pd/alpha-Al2O3 catalyst tested in a tail-end-type regime. The published steady kinetics and quasi-equilibrium constants are tied to these source conditions.\n\nA good fit for those data is evidence of practical adequacy in that regime, not proof that microscopic catalytic surface sites all are identical or that this calibration transfers unchanged elsewhere.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "Which source figures and table entries establish applicable pressure and temperature ranges?"
+  is_draft: true
+- id: c1_pdag_support_transfer
+  parent: c1_catalyst_identity
+  title: "Pd–Ag alloy and support transfer questions"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. The BEP's cited Larsen context concerns PdAg/SiO2, while Urmès 2019 uses Pd/alpha-Al2O3. Adding silver or changing a support can alter site geometry, coverage, adsorption strength or hydrogen access and thereby selectivity.\n\nThis is a reason to assess parameter transfer against experiments, NOT a source-backed numerical prediction for a particular alloy. Link to E for the operating regime and to D for parameter identifiability.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)"
+  - title: "Mei, Neurock & Smith (2009), Pd and PdAg kinetic Monte Carlo"
+    doi: "10.1016/j.jcat.2009.09.004"
+    path: null
+    citation: null
+    section: "Vinyl/ethylidene branch in abstract summarized in C.5.1; AI-attached"
+  open_questions:
+  - "Is a chemically and physically comparable parameter fit available for the PdAg/SiO2 sample?"
+  is_draft: true
+- id: c1_multisite_hydride_carbide
+  parent: c1_pdag_support_transfer
+  title: "Multiple sites, hydrides and carbonaceous surface states"
+  tier: 0
+  importance: 2
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — IDEA / open mechanism. The C source audit notes literature alternatives involving distinct Pd-site families, Pd hydrides/carbides and adsorbed carbonaceous deposits. Such surface states could modify the effective sites and selectivity when conditions vary.\n\nThese effects are NOT states or validated predictions of the current single-site two-rate model. Keep them as explicit possible mechanisms and research questions until catalyst-specific observations support inclusion.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.5 and C.5.1: alternatives, exclusions and evidence limits (AI-attached, not owner-verified)"
+  - title: "Borodziński & Bond (2006), Pd selective hydrogenation review"
+    doi: "10.1080/01614940500364909"
+    path: null
+    citation: null
+    section: "Pd site-state changes summarized in C.5; AI-attached"
+  open_questions:
+  - "Which of these species are experimentally detected under the target catalyst and feed?"
+  is_draft: true
+- id: c1_surface_sites
+  parent: c1_catalyst_active_site_chemistry
+  title: "Adsorption sites and fractional occupancy"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. A microscopic site mechanism labels a vacant catalytic site with * and covered fractions with theta_i. Adsorbates may block or provide sites for further steps, and available vacancy fraction constrains their simultaneous occupancy.\n\nThese are material inventory concepts, not by themselves a claim that the actual reactor has measured coverages; numerical coverage ODEs and inferred parameters are treated under Physics C2 and mathematical balances F.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  open_questions:
+  - "Does the effective catalyst need multiple site families or a single occupied-site pool?"
+  is_draft: true
+- id: c1_full_site_balance
+  parent: c1_surface_sites
+  title: "Full six-term single-site occupancy balance"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. For the 2019 schematic mechanism the complete site accounting can be written theta_* + theta_H + theta_C2H2 + theta_C2H3 + theta_C2H4 + theta_C2H5 = 1. The six terms describe vacancy plus five occupied states, assuming a normalized single-site inventory.\n\nThe expression is the chemical bookkeeping behind the site model. It is not a statement that the 2019 effective LHHW solver integrates six independent coverage variables in time.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "How is multi-site occupation for dissociative hydrogen adsorption represented at this level?"
+  is_draft: true
+- id: c1_reduced_site_balance
+  parent: c1_surface_sites
+  title: "Reduced occupancy approximation in the 2019 fit"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. In the 2019 fitted rate-law derivation vinyl and ethyl occupancy are treated as comparatively small for the measured regime. This leaves approximate site balance theta_* + theta_H + theta_C2H2 + theta_C2H4 ≈ 1.\n\nThe omission of their coverage contributions in this approximation does not remove their chemical steps from the mechanism. Applicability outside the measured conditions is a separate modelling hypothesis.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "When would intermediate accumulation invalidate this approximation?"
+  is_draft: true
+- id: c1_adsorption_desorption
+  parent: c1_surface_sites
+  title: "Adsorption, desorption and competition for sites"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. Hydrogen, acetylene and ethylene adsorb and/or desorb, thus changing vacancy availability. This couples the chemical routes: an excess of one adsorbate can suppress another through site blocking, even without an explicit direct elementary reaction between those molecules.\n\nThe 2019 steady vacancy expression includes pressure-dependent adsorption terms. Chemical site competition belongs to C1; the PSSA formulas, parameter units and theta(t) differential dynamics belong to C2.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "Which individual adsorption processes can be measured separately rather than only as fitted combinations?"
+  is_draft: true
+- id: c1_dissociative_h2_adsorption
+  parent: c1_adsorption_desorption
+  title: "Dissociative hydrogen adsorption on Pd sites"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. Schematic elementary step H2(g) + 2* <-> 2H* consumes two neighboring vacancies to dissociate a molecule and supplies adsorbed hydrogen for subsequent additions.\n\nThe 2019 quasi-equilibrium single-site model encodes this mechanism through a sqrt(K1 P_H2) term, but this does NOT supply independently calibrated dynamic forward and reverse rate constants.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "Could site geometry or Ag content change the availability of two adjacent sites?"
+  is_draft: true
+- id: c1_adjacent_site_requirement
+  parent: c1_dissociative_h2_adsorption
+  title: "Neighboring-vacancy requirement for H2 dissociation"
+  tier: 1
+  importance: 2
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. Under a two-site dissociation scheme, two vacant neighboring catalyst sites must be simultaneously available for H2 adsorption. A surface densely occupied by hydrocarbons may therefore hinder dissociation.\n\nThis is a mechanistic implication of that schematic step, not direct evidence that a given PdAg surface has a specified ensemble distribution or a measured site-pair probability.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "Do we need a geometric pair-site model instead of mean-field vacancy fractions?"
+  is_draft: true
+- id: c1_hydrocarbon_site_competition
+  parent: c1_adsorption_desorption
+  title: "Competitive acetylene/ethylene adsorption"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. Adsorbed C2H2 and C2H4 compete with H-related coverage for finite active-site inventory. In the 2019 effective vacancy term the relative terms are K2*P_C2H2 and P_C2H4/K5, alongside the H contribution.\n\nThis explains chemical inhibition and competition rather than two independent first-order gas reactions. Exact pressure units and parameter identifiability belong under C2/D, and the formula must not be generalized to other catalysts without assessment.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "What concentration regime shifts the dominant adsorbate among H, C2H2 and C2H4?"
+  is_draft: true
+- id: c1_ethylene_readsorption
+  parent: c1_hydrocarbon_site_competition
+  title: "Ethylene readsorption and secondary hydrogenation"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. Ethylene that already exists in the gas stream can adsorb as C2H4* and participate in further hydrogenation. In the 2019 rate law, ethane production is proportional to P_C2H4, while ethylene also occupies sites in the competition denominator.\n\nThe same adsorbed species C2H4* can result from acetylene hydrogenation or gas-phase readsorption; an effective steady rate formula does not label which origin produced an individual ethane molecule.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.2: Urmès 2019 microscopic mechanism and balances (AI-attached, not owner-verified)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Reaction mechanism/Table 3 as summarized in C.2; requires owner verification"
+  open_questions:
+  - "Would isotope-labelled carbon or appropriately varied inlet ethylene discriminate the routes?"
+  is_draft: true
+- id: c1_kinetic_closure_boundary
+  parent: c1_catalyst_active_site_chemistry
+  title: "Boundary between chemical mechanism and kinetic closure"
+  tier: 1
+  importance: 3
+  rationale: "Specific C1 chemistry sub-concept, proposed by AI for scientific review; the parent taxonomy and user-approved C1 branch split do not imply validation of this node."
+  notes: "AI SCIENTIFIC SYNTHESIS — AI worked out; not human-reviewed. A chemistry diagram lists possible adsorbed states and transformations; a kinetic closure assigns quantitative rates and decides whether coverages are instantaneous algebraic functions or independent dynamical states.\n\nPSSA assumes instant local response of coverages to pressure/temperature in the rate law, though the gas/pellet can still have memory. A dynamic theta model could show history dependence at identical instantaneous gas conditions, but no source-calibrated non-PSSA model for this BEP is confirmed. Details belong under C2.\n\nEpistemic status: AI-attached repository/source references; specific claims have not been human-verified. Chemical mechanism is not experimental validation or a calibrated kinetic parameter set."
+  sources:
+  - title: "BEP C mechanism and implementation source audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.4: PSSA vs time-dependent coverage interpretation (AI-attached, not owner-verified)"
+  open_questions:
+  - "What matched experiment and source-parameterized model would distinguish surface memory from transport memory?"
+  is_draft: true
+- id: c2_urmes_2019_effective_rates
+  parent: physics_reaction_kinetics
+  title: "Urmès 2019 effective single-site PSSA kinetics"
+  tier: 1
+  importance: 3
+  rationale: "AI-developed physical kinetic concept supporting the dynamic packed-bed reactor proposal, distinct from human validation or alternate literature-fit models."
+  notes: "AI WORKED OUT (yellow), NOT human verified. These are experimentally fitted effective NET rates for acetylene semi-hydrogenation and ethylene over-hydrogenation on 0.05 wt% Pd/alpha-Al2O3 at source-specific temperatures and ethylene-rich feed conditions. They share a competitive adsorption denominator and combine quasi-equilibrium assumptions with rate-determining elementary steps.\n\nThis model has algebraic, instantaneous surface-pressure dependence (PSSA). It does NOT integrate independent theta(t), although a reactor coupling the rates to time-dependent gas transport is itself dynamic.\n\nKeep this branch DISTINCT from legacy node lhhw_kinetics, which describes a different Larsen extended LHHW context including a non-integer inhibition exponent. Do not mix the papers' parameters, source catalysts or kinetics.\n\nSources are AI-attached. The present map does not certify transferable kinetics, experimentally calibrated transient surface coverages or personally verified citation claims."
+  sources:
+  - title: "BEP D kinetic parameter and identifiability audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md"
+    citation: null
+    section: "D1, D2, D3 (AI-attached; review primary source)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Table 5 and rate-law derivation; source applicability not owner reviewed"
+  open_questions:
+  - "Which exact source catalyst/feed regime is transferable to the BEP apparatus, and where would refitting be mandatory?"
+  is_draft: true
+- id: c2_urmes_2019_adsorption_denominator
+  parent: c2_urmes_2019_effective_rates
+  title: "Competitive adsorption denominator and vacant-site closure"
+  tier: 1
+  importance: 3
+  rationale: "AI-developed physical kinetic concept supporting the dynamic packed-bed reactor proposal, distinct from human validation or alternate literature-fit models."
+  notes: "AI WORKED OUT (yellow), NOT human verified. For source partial pressures P_i in Pa, define D = 1 + sqrt(K1*P_H2) + K2*P_C2H2 + P_C2H4/K5. The fitted net rates each contain D^2, reflecting competition for the shared effective site inventory.\n\nHere K1 and K2 have dimensions Pa^-1; K5 has dimensions Pa. Replacing P_C2H4/K5 by K5*P_C2H4, or assuming all adsorption constants have Pa^-1, is a unit/model error. In the source's effective model theta_vacant can be represented as 1/D.\n\nThis is a single-site mean-field approximation under selected source conditions; it is not evidence that all PdAg catalysts have exactly one site family or that transient site blocking always equilibrates instantly.\n\nSources are AI-attached. The present map does not certify transferable kinetics, experimentally calibrated transient surface coverages or personally verified citation claims."
+  sources:
+  - title: "BEP D kinetic parameter and identifiability audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md"
+    citation: null
+    section: "D1, D5.B (AI-attached; review primary source)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Table 5 and rate-law derivation; source applicability not owner reviewed"
+  open_questions:
+  - "When do hydrogen or hydrocarbon coverages dominate the denominator within the actual chosen inlet composition and catalyst?"
+  is_draft: true
+- id: c2_urmes_2019_net_rates
+  parent: c2_urmes_2019_effective_rates
+  title: "Two hydrogenation rate expressions and gas sources"
+  tier: 1
+  importance: 3
+  rationale: "AI-developed physical kinetic concept supporting the dynamic packed-bed reactor proposal, distinct from human validation or alternate literature-fit models."
+  notes: "AI WORKED OUT (yellow), NOT human verified. With k4(T) = k4^0*exp[-E4/(R*T)] and k7(T) = k7^0*exp[-E7/(R*T)]: r1 = Ns*k4(T)*K1*K2*P_C2H2*P_H2/(D^2) and r2 = Ns*k7(T)*(K1/K5)*P_C2H4*P_H2/(D^2), giving mol/(kg_catalyst*s) under the published normalizations.\n\nWith gas order (H2, C2H2, C2H4, C2H6), net source vector = (-r1-r2, -r1, r1-r2, r2). This gas-only net closure assumes no independently accumulating surface inventory.\n\nFor positive relevant partial pressures, r2/r1 = [k7(T)/k4(T)]*[P_C2H4/P_C2H2]/(K2*K5). Shared D^-2 and K1*P_H2 terms cancel algebraically in this ratio, but the ratio alone does NOT establish that full model parameters are structurally unidentifiable.\n\nSources are AI-attached. The present map does not certify transferable kinetics, experimentally calibrated transient surface coverages or personally verified citation claims."
+  sources:
+  - title: "BEP D kinetic parameter and identifiability audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md"
+    citation: null
+    section: "D1, D4 (AI-attached; review primary source)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Table 5 and rate-law derivation; source applicability not owner reviewed"
+  open_questions:
+  - "How do reported selectivity definitions relate to these net reaction rates and the ethylene-rich inlet?"
+  is_draft: true
+- id: c2_urmes_2019_parameter_ledger
+  parent: c2_urmes_2019_effective_rates
+  title: "Published Table 5 values: fixed versus fitted parameters"
+  tier: 1
+  importance: 3
+  rationale: "AI-developed physical kinetic concept supporting the dynamic packed-bed reactor proposal, distinct from human validation or alternate literature-fit models."
+  notes: "AI WORKED OUT (yellow), NOT human verified. Urmès 2019 Table 5 at source conditions: FIXED K1 = 13 Pa^-1 (not earlier narrative estimate 611 Pa^-1), K5 = 7.4 Pa, and Ns = 2e-3 mol sites/kg catalyst. FITTED K2 = 107 +/- 7 Pa^-1, k4^0 = (1.4 +/- 0.1)e8 mol/(mol Pd_surface*s), k7^0 = (3.6 +/- 0.6)e9 in same units, E4 = 48.5 +/- 4.2 kJ/mol, E7 = 54.8 +/- 11 kJ/mol.\n\nThose +/- ranges reflect reported 95% intervals under the source fitting assumptions, NOT calibration transfer uncertainty. k4^0/k7^0 are apparent/composite temperature prefactors in an effective fitted rate law, not the full set of independent forward/reverse microscopic constants.\n\nR*T in Arrhenius uses T in kelvin, E in J/mol; evaluate raw pre-exponential at temperature before using a centered Arrhenius parametrization. The source receipt 24/24 passes refer to transcription of selected original statements, NOT end-to-end reactor validation.\n\nSources are AI-attached. The present map does not certify transferable kinetics, experimentally calibrated transient surface coverages or personally verified citation claims."
+  sources:
+  - title: "BEP D kinetic parameter and identifiability audit"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md"
+    citation: null
+    section: "D2; Table 5 transcription (AI-attached; review primary source)"
+  - title: "Urmès et al. (2019), Catalysts 9, 180"
+    doi: "10.3390/catal9020180"
+    path: null
+    citation: null
+    section: "Table 5 and rate-law derivation; source applicability not owner reviewed"
+  open_questions:
+  - "Which constants would need refitting for a different support or for dynamic non-PSSA site ODEs?"
+  is_draft: true
+- id: c2_surface_kinetic_closure_choices
+  parent: physics_reaction_kinetics
+  title: "Surface-kinetic closure: algebraic PSSA or dynamic coverages"
+  tier: 1
+  importance: 3
+  rationale: "Source-scoped AI-developed distinction for surface kinetics in the initial transient reactor proposal; scientific validation remains open."
+  notes: "AI WORKED OUT (yellow), not human understood. A surface kinetic model needs a closure relating reactor gas state, active sites and reaction rates. The 2019 Urmès effective rate law uses algebraic pseudo-steady-state assumptions, whereas a non-PSSA microkinetic model independently evolves fractional adsorbate coverages theta_i(t).\n\nBoth can feed a transient reactor mass-transport model; the difference is whether the catalyst surface itself stores chemical state/memory at the chosen timescale. The chemical possibilities are separately captured under C1; this C2 branch concerns quantitative temporal equations and parameter identification.\n\nThe branch is not an endorsement of a specific dynamic surface network, since source-calibrated elementary coefficients for our project have not been established.\n\nSources below are AI-attached; no human-verified kinetic parameter transfer or proven periodic-yield enhancement is asserted."
+  sources:
+  - title: "BEP kinetic and identifiability scientific deep dive (D)"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md"
+    citation: null
+    section: "D1, D3, D4; compare C.3-C.4 — AI-attached; source scope bounded"
+  - title: "BEP reaction mechanism and site-state audit (C)"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.3-C.4 model comparison; AI attached"
+  open_questions:
+  - "Which experimentally observable transient response requires dynamic theta rather than steady algebraic surface closure?"
+  is_draft: true
+- id: c2_pssa_not_steady_reactor
+  parent: c2_surface_kinetic_closure_choices
+  title: "Pseudo-steady surface kinetics can feed a dynamic reactor"
+  tier: 1
+  importance: 3
+  rationale: "Source-scoped AI-developed distinction for surface kinetics in the initial transient reactor proposal; scientific validation remains open."
+  notes: "AI WORKED OUT (yellow), not human understood. Under a 2019-style PSSA closure at each instant, surface coverages and r1/r2 depend algebraically on local gas partial pressures and temperature, without an independent theta(t) ODE.\n\nEven so, the reactor can exhibit substantial dynamics through gas convection, dispersion, pellet diffusion and inlet forcing. A delayed or periodic outlet trace alone is not proof of adsorbate memory. Distinguish 'surface PSSA' from 'reactor steady state'.\n\nTo test chemical memory, compare appropriate model closures under matched gas transport and inlet conditions rather than attributing all measured lags to the catalyst.\n\nSources below are AI-attached; no human-verified kinetic parameter transfer or proven periodic-yield enhancement is asserted."
+  sources:
+  - title: "BEP kinetic and identifiability scientific deep dive (D)"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md"
+    citation: null
+    section: "D1, D3, D5.C; C.4 — AI-attached; source scope bounded"
+  - title: "BEP reaction mechanism and site-state audit (C)"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.3-C.4 model comparison; AI attached"
+  open_questions:
+  - "What experiment or asymptotic limit can discriminate site relaxation from film/pore transport lag?"
+  is_draft: true
+- id: c2_dynamic_theta_model_calibration_gap
+  parent: c2_surface_kinetic_closure_choices
+  title: "Explicit surface-coverage ODEs need independent elementary parameters"
+  tier: 1
+  importance: 3
+  rationale: "Source-scoped AI-developed distinction for surface kinetics in the initial transient reactor proposal; scientific validation remains open."
+  notes: "AI WORKED OUT (yellow), not human understood. A non-PSSA mechanism may track d(theta_i)/dt from adsorption, desorption and elementary hydrogen-addition fluxes with total occupied + vacant site balance equal to one. Surface occupancy dynamics store H and C2Hx and may create memory at fixed instantaneous gas conditions.\n\nThe legacy project scaffold evolves three occupied states but had zero default kinetic constants; the experimental five-coverage, seven-step bridge is an uncalibrated illustrative model. Neither can be made predictive by simply inserting Urmès 2019 steady effective composite constants as microscopic forward/reverse coefficients.\n\nUnder explicit site storage, the correct gas-phase source terms use adsorption/desorption fluxes and combined gas+site elemental conservation, rather than applying only the PSSA net two-rate stoichiometric source vector at arbitrary transient coverage. Details are shared with the mathematics/balance branches.\n\nSources below are AI-attached; no human-verified kinetic parameter transfer or proven periodic-yield enhancement is asserted."
+  sources:
+  - title: "BEP kinetic and identifiability scientific deep dive (D)"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md"
+    citation: null
+    section: "D3, D4; C.3-C.4 — AI-attached; source scope bounded"
+  - title: "BEP reaction mechanism and site-state audit (C)"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.3-C.4 model comparison; AI attached"
+  open_questions:
+  - "Which independent adsorption and hydrogen-addition constants can be supported by primary-source measurements or a defensible inverse calibration?"
+  is_draft: true
+- id: c2_transient_parameter_identifiability
+  parent: c2_dynamic_theta_model_calibration_gap
+  title: "Transient excitation and kinetic identifiability questions"
+  tier: 1
+  importance: 3
+  rationale: "Source-scoped AI-developed distinction for surface kinetics in the initial transient reactor proposal; scientific validation remains open."
+  notes: "AI WORKED OUT (yellow), not human understood. Steady outlet rates identify only combinations of kinetic parameters under the chosen closure; the 2019 fit fixed several adsorption/site quantities after observing strong parameter correlations. More transient gas data may constrain additional combinations but do not guarantee uniqueness of a full microkinetic parameter set.\n\nUrmès 2022 publisher abstract reports recovering several elementary kinetic parameters using small-amplitude FLOW oscillations, not evidence that the BEP's proposed inlet-CONCENTRATION modulation must identify the same quantities or increase ethylene yield. Complete source steps, numerical coefficients and supplemental information are not verified here.\n\nPotential scientific tests include sensitivities d(y_i)/d(theta_j), singular directions of output sensitivity/Jacobian matrices, independent input and outlet channels, measurement noise and confidence intervals; FIM and multisine strategies remain candidate methods. Connect these to Mathematics inverse problems and S&C input design rather than duplicating their full theory under Physics.\n\nSources below are AI-attached; no human-verified kinetic parameter transfer or proven periodic-yield enhancement is asserted."
+  sources:
+  - title: "BEP kinetic and identifiability scientific deep dive (D)"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/D_kinetic_parameters_identifiability_2026-10-14.md"
+    citation: null
+    section: "D4, D8; Urmès 2022 abstract evidence limit — AI-attached; source scope bounded"
+  - title: "BEP reaction mechanism and site-state audit (C)"
+    doi: null
+    path: "Academics/BEP/Catalysis/presentation/deep-dives/C_reaction_mechanism_2026-10-14.md"
+    citation: null
+    section: "C.3-C.4 model comparison; AI attached"
+  open_questions:
+  - "Are there enough independently excited inputs and measured output channels to separate surface kinetics from transport and instrument response?"
+  is_draft: true

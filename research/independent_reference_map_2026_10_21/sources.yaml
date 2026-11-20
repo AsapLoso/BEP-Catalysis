@@ -1,0 +1,715 @@
+{
+  "dataset": {
+    "name": "BEP independent scientific reference",
+    "edition": "v1",
+    "scope_anchor": "Academics/BEP/Catalysis/0_Project_Management/main.tex",
+    "provenance_note": "Source access is described per record; citation or abstract-only access is not full-text review."
+  },
+  "sources": [
+    {
+      "id": "proposal_main",
+      "type": "project_proposal",
+      "path": "Academics/BEP/Catalysis/0_Project_Management/main.tex",
+      "title": "Dynamic Control of Acetylene Semi-Hydrogenation: A Spatiotemporal Modeling Framework for Intermediary Yield Optimization",
+      "authors": "Lucas van Dekken",
+      "year": 2026,
+      "locator": "Abstract; §§1.1–1.5; §2; §§3.1–3.5; line ranges are in repository source",
+      "access_status": "full_text_read",
+      "verification": "ai_checked_text",
+      "applicability": "Primary source for project intent, chosen model scope and hypotheses. Not experimental evidence.",
+      "claims": [
+        {
+          "locator": "Abstract; Introduction §§1.1–1.3 (lines 107–132)",
+          "supports": "Packed-bed, concentration-forcing research question, desired sequential product, claimed dynamic opportunity; proposal hypotheses only."
+        },
+        {
+          "locator": "Literature §2 (lines 155–164)",
+          "supports": "Proposal's literature synthesis and novelty/observability claims, which require correction/qualification."
+        },
+        {
+          "locator": "Methodology §3.1 (lines 175–197)",
+          "supports": "Proposed 1D transport, coverages, isothermal assumption, dimensionless groups and resonance-window hypothesis."
+        },
+        {
+          "locator": "Methodology §§3.2–3.5 (lines 199–284)",
+          "supports": "Planned numerical methods, spline optimization, three-phase calibration/validation and future observer scope."
+        }
+      ],
+      "does_not_support": "No measured kinetics, calibrated parameters, periodic yield gain, universal dynamic-window law, PdAg transient validation, or successful experiment is reported.",
+      "citations": [
+        "proposal_bib"
+      ]
+    },
+    {
+      "id": "proposal_bib",
+      "type": "bibliography",
+      "path": "Academics/BEP/Catalysis/0_Project_Management/references.bib",
+      "title": "BEP proposal bibliography",
+      "locator": "Full bibliography; citekeys noted in individual source records",
+      "access_status": "full_text_read",
+      "verification": "ai_checked_metadata",
+      "applicability": "Bibliographic locator index. BibTeX abstracts/attachments are leads, not substitutes for original sources.",
+      "claims": [
+        {
+          "locator": "Entries borodzinskiKineticModelHydrogenation2000, borodzinskiSelectiveHydrogenationEthyne2006, danckwertsContinuousFlowSystems1953, silvestonPeriodicOperationCatalytic1995, urakawaSensitivityEnhancementDynamic2008, urmesKineticStudySelective2019, zhuNovelMicroreactorGeneric2021, larsenSemihydrogenationAcetyleneEthylene2024, lanRecentAdvancesThermocatalytic2025",
+          "supports": "Project's citations and original bibliographic metadata."
+        }
+      ],
+      "does_not_support": "It does not validate the claims in the proposal's prose or confirm that referenced full texts were read.",
+      "citations": []
+    },
+    {
+      "id": "proposal_intro",
+      "type": "project_proposal_revision",
+      "path": "Academics/BEP/Catalysis/0_Project_Management/section1_intro.tex",
+      "title": "Standalone proposal introduction draft",
+      "locator": "Sections on background, problem statement, hypotheses and research questions",
+      "access_status": "full_text_read",
+      "verification": "ai_checked_text",
+      "applicability": "Alternative proposal revision; compared against main.tex, not selected as the model baseline.",
+      "claims": [
+        {
+          "locator": "Introduction and problem statement",
+          "supports": "Alternative phrasing and scope claims; differences are documented in method.md."
+        }
+      ],
+      "does_not_support": "No experimental evidence.",
+      "citations": [
+        "proposal_main"
+      ]
+    },
+    {
+      "id": "proposal_lit",
+      "type": "project_proposal_revision",
+      "path": "Academics/BEP/Catalysis/0_Project_Management/section2_lit.tex",
+      "title": "Standalone proposal literature review draft",
+      "locator": "Full standalone literature section",
+      "access_status": "full_text_read",
+      "verification": "ai_checked_text",
+      "applicability": "Alternative revision with PSSA, MES and literature-gap assertions; treated as claims to audit, not evidence.",
+      "claims": [
+        {
+          "locator": "Literature-gap and transient-measurement discussion",
+          "supports": "Alternative wording and citations; source-level claims are separately audited."
+        }
+      ],
+      "does_not_support": "No independent validation of a universal PSSA or novelty statement.",
+      "citations": [
+        "proposal_main"
+      ]
+    },
+    {
+      "id": "proposal_method",
+      "type": "project_proposal_revision",
+      "path": "Academics/BEP/Catalysis/0_Project_Management/section3_method.tex",
+      "title": "Standalone methodology draft",
+      "locator": "Full standalone methods section",
+      "access_status": "full_text_read",
+      "verification": "ai_checked_text",
+      "applicability": "Alternative methodology revision; main.tex chosen as v1 baseline. Differences recorded in method.md.",
+      "claims": [
+        {
+          "locator": "Transport equations, scaling, identification and waveform optimization",
+          "supports": "Alternative methods and assumptions; not silently merged with main.tex."
+        }
+      ],
+      "does_not_support": "No experiment or simulation results.",
+      "citations": [
+        "proposal_main"
+      ]
+    },
+    {
+      "id": "proposal_roadmap",
+      "type": "project_planning_document",
+      "path": "Academics/BEP/Catalysis/0_Project_Management/bep_proposal_roadmap.md",
+      "title": "BEP proposal roadmap",
+      "locator": "Model extensions and project stages",
+      "access_status": "full_text_read",
+      "verification": "ai_checked_text",
+      "applicability": "Context and future scope only; not independent scientific evidence.",
+      "claims": [
+        {
+          "locator": "Particle-scale transport and future estimation/control ideas",
+          "supports": "Planned extension context only."
+        }
+      ],
+      "does_not_support": "No empirical or literature proof.",
+      "citations": [
+        "proposal_main"
+      ]
+    },
+    {
+      "id": "urmes2022",
+      "type": "primary_research_article",
+      "authors": "Caroline Urmès et al.",
+      "year": 2022,
+      "title": "Microkinetic Modeling of Acetylene Hydrogenation Under Periodic Reactor Operation",
+      "journal": "ChemCatChem",
+      "volume": "14",
+      "issue": "8",
+      "article_number": "e202101826",
+      "doi": "10.1002/cctc.202101826",
+      "url": "https://doi.org/10.1002/cctc.202101826",
+      "locator": "Publisher abstract and first-page preview; publisher full-text link resolves to abstract-level content in the available access session; Supporting Information is listed but the file was not accessible.",
+      "access_status": "abstract_and_preview",
+      "verification": "ai_checked_metadata_publisher_abstract_and_preview",
+      "applicability": "Direct periodic acetylene-hydrogenation precedent on Pd/α-Al₂O₃ using small-amplitude flow oscillations for parameter estimation and outlet-composition prediction. Does not establish a performance gain. Whether its transient model uses spatially resolved axial transport remains unresolved from accessible text.",
+      "claims": [
+        {
+          "locator": "Publisher abstract",
+          "supports": "Periodic flow oscillations on Pd/α-Al₂O₃; a single-site microkinetic model fitted to dynamic data; output molar fractions reproduced for tested amplitudes/frequencies; model-specific kinetic interpretation involving H adsorption and vinyl hydrogenation."
+        },
+        {
+          "locator": "Preview introduction",
+          "supports": "Context of periodic excitation and kinetic estimation; not the complete methods or SI."
+        }
+      ],
+      "does_not_support": "Does not, from the accessible abstract/preview, establish a distributed axial PDE, PdAg applicability, a universal resonance window, or BEP yield improvement.",
+      "citations": []
+    },
+    {
+      "id": "urmes2019",
+      "type": "primary_research_article",
+      "authors": "Caroline Urmès, Jean-Marc Schweitzer, Amandine Cabiac, Yves Schuurman",
+      "year": 2019,
+      "title": "Kinetic Study of the Selective Hydrogenation of Acetylene over Supported Palladium under Tail-End Conditions",
+      "journal": "Catalysts",
+      "volume": "9",
+      "issue": "2",
+      "article_number": "180",
+      "doi": "10.3390/catal9020180",
+      "url": "https://doi.org/10.3390/catal9020180",
+      "locator": "Full article PDF reviewed; printed pp. 2–6 and 9–11, including Tables 2–5 and mechanistic discussion.",
+      "access_status": "full_text_read",
+      "verification": "ai_checked_metadata_and_full_text",
+      "applicability": "Full-text 0.05 wt% Pd/α-Al₂O₃ tail-end steady-kinetics study. Its selected single-site model and exclusion of C4 products are conditional on the catalyst, detection limits and tested conditions; not a PdAg transient model.",
+      "claims": [
+        {
+          "locator": "Printed p. 2, §2",
+          "supports": "No C4 products were observed in the reported experiments, so the fitted analysis was restricted to acetylene-to-ethylene and ethylene-to-ethane rates under those conditions."
+        },
+        {
+          "locator": "Printed pp. 3–6, Table 3 and rate-equation discussion",
+          "supports": "The selected Pd/α-Al₂O₃ model uses one site family and a Horiuti–Polanyi-derived sequence; hydrogen dissociation in the elementary scheme uses two neighboring vacancies."
+        },
+        {
+          "locator": "Printed pp. 9–11, discussion/conclusions",
+          "supports": "The selected model describes that study's steady tail-end data; parameter constraints and catalyst-specific scope limit transfer."
+        }
+      ],
+      "does_not_support": "Does not establish a universal reaction network, PdAg mechanism, transient coverage times, or dynamic performance gain.",
+      "citations": []
+    },
+    {
+      "id": "pachulski2012",
+      "type": "primary_research_article",
+      "authors": "Andreas Pachulski, Sven Schödel, Peter Claus",
+      "year": 2012,
+      "title": "Kinetics and reactor modeling of a Pd-Ag/Al₂O₃ catalyst during selective hydrogenation of ethyne",
+      "journal": "Applied Catalysis A: General",
+      "volume": "445–446",
+      "pages": "107–120",
+      "doi": "10.1016/j.apcata.2012.08.018",
+      "url": "https://doi.org/10.1016/j.apcata.2012.08.018",
+      "locator": "Publisher abstract and indexed metadata; full article not accessed.",
+      "access_status": "abstract_only",
+      "verification": "ai_checked_metadata_and_abstract",
+      "applicability": "Direct Pd–Ag/Al₂O₃ steady-state kinetics/reactor-model precedent. Abstract reports a Langmuir–Hinshelwood model with two site types and checks against transport limitations. Does not study periodic forcing.",
+      "claims": [
+        {
+          "locator": "Abstract",
+          "supports": "Industrial catalyst composition, kinetic data across operating conditions, selected two-site LH description, transport-limitation checks and reactor prediction."
+        }
+      ],
+      "does_not_support": "Does not validate a dynamic PdAg model or dynamic yield gain.",
+      "citations": []
+    },
+    {
+      "id": "borodzinski2000",
+      "type": "primary_research_article",
+      "authors": "Andrzej Borodziński and Andrzej Cybulski",
+      "year": 2000,
+      "title": "The Kinetic Model of Hydrogenation of Acetylene–Ethylene Mixtures over Palladium Surface Covered by Carbonaceous Deposits",
+      "journal": "Applied Catalysis A: General",
+      "volume": "198",
+      "issue": "1",
+      "pages": "51–66",
+      "doi": "10.1016/S0926-860X(99)00498-6",
+      "url": "https://doi.org/10.1016/S0926-860X(99)00498-6",
+      "locator": "Publisher abstract and bibliography abstract; full article not accessed.",
+      "access_status": "abstract_only",
+      "verification": "ai_checked_metadata_and_abstract",
+      "applicability": "Commercial Pd/α-Al₂O₃ acetylene–ethylene-mixture kinetics in a gradientless reactor; deposit-associated active-site model. Catalyst- and history-specific.",
+      "claims": [
+        {
+          "locator": "Abstract",
+          "supports": "Reported kinetic study and two active-site populations associated with carbonaceous deposits."
+        }
+      ],
+      "does_not_support": "Does not establish the same site model for PdAg or transient forcing.",
+      "citations": []
+    },
+    {
+      "id": "borodzinski2006",
+      "type": "review_article",
+      "authors": "Andrzej Borodziński and Geoffrey C. Bond",
+      "year": 2006,
+      "title": "Selective Hydrogenation of Ethyne in Ethene-Rich Streams on Palladium Catalysts. Part 1. Effect of Changes to the Catalyst During Reaction",
+      "journal": "Catalysis Reviews",
+      "volume": "48",
+      "issue": "2",
+      "pages": "91–144",
+      "doi": "10.1080/01614940500364909",
+      "url": "https://doi.org/10.1080/01614940500364909",
+      "locator": "Review abstract and bibliography metadata; full review not accessed.",
+      "access_status": "abstract_only",
+      "verification": "ai_checked_metadata_and_abstract",
+      "applicability": "Review of Pd catalyst evolution during ethyne/ethene hydrogenation, including hydride/carbide/deposit effects; useful context, not a primary experiment for the target BEP system.",
+      "claims": [
+        {
+          "locator": "Abstract",
+          "supports": "Review's summary of Pd phase/deposit changes and their possible reaction/selectivity/diffusion effects."
+        }
+      ],
+      "does_not_support": "Does not supply target PdAg transient parameters.",
+      "citations": []
+    },
+    {
+      "id": "urakawa2008",
+      "type": "primary_methods_article",
+      "authors": "Atsushi Urakawa, Thomas Bürgi, Alfons Baiker",
+      "year": 2008,
+      "title": "Sensitivity Enhancement and Dynamic Behavior Analysis by Modulation Excitation Spectroscopy: Principle and Application in Heterogeneous Catalysis",
+      "journal": "Chemical Engineering Science",
+      "volume": "63",
+      "issue": "20",
+      "pages": "4902–4909",
+      "doi": "10.1016/j.ces.2007.06.009",
+      "url": "https://doi.org/10.1016/j.ces.2007.06.009",
+      "locator": "Full text read; article pp. 4902–4909. Accessible text extraction lines 418–424 contain the square-wave point; the printed PDF page locator was not preserved.",
+      "access_status": "full_text_read",
+      "verification": "ai_checked_full_text",
+      "applicability": "Primary methods paper for MES on catalytic interfaces; illustrative hydrogenation example is not acetylene/PdAg and does not measure industrial-bed internal coverage.",
+      "claims": [
+        {
+          "locator": "Abstract and pp. 4902–4905",
+          "supports": "MES principle, periodic concentration/temperature perturbation and dynamic interfacial species detection."
+        },
+        {
+          "locator": "pp. 4904–4907",
+          "supports": "Frequency-dependent response and phase-sensitive signal analysis."
+        },
+        {
+          "locator": "Full-text extracted lines 418–424 (printed PDF page not preserved)",
+          "supports": "Square-wave stimuli may be practical with on/off valves; does not establish they are numerically optimal."
+        }
+      ],
+      "does_not_support": "Does not prove coverages throughout a packed industrial bed are observable or that any inferred species is an active intermediate without additional assignment.",
+      "citations": []
+    },
+    {
+      "id": "danckwerts1953",
+      "type": "primary_theoretical_article",
+      "authors": "P. V. Danckwerts",
+      "year": 1953,
+      "title": "Continuous Flow Systems: Distribution of Residence Times",
+      "journal": "Chemical Engineering Science",
+      "volume": "2",
+      "issue": "1",
+      "pages": "1–13",
+      "doi": "10.1016/0009-2509(53)80001-1",
+      "url": "https://doi.org/10.1016/0009-2509(53)80001-1",
+      "locator": "Abstract and bibliographic record; full text not read.",
+      "access_status": "abstract_only",
+      "verification": "ai_checked_metadata_and_abstract",
+      "applicability": "Classical residence-time-distribution treatment for continuous/open/packed tubes. Used as historical context; flux equations in this dataset are explicitly derived under a declared PDE convention.",
+      "claims": [
+        {
+          "locator": "Abstract",
+          "supports": "Non-ideal departures from piston flow/mixing and residence-time distributions in open and packed tubes."
+        }
+      ],
+      "does_not_support": "The accessible abstract does not verify the particular variable/porosity convention or boundary equations written in this dataset.",
+      "citations": []
+    },
+    {
+      "id": "silveston1995",
+      "type": "review_article",
+      "authors": "P. Silveston, Robert Ross Hudgins, Albert Renken",
+      "year": 1995,
+      "title": "Periodic Operation of Catalytic Reactors—Introduction and Overview",
+      "journal": "Catalysis Today",
+      "volume": "25",
+      "issue": "2",
+      "pages": "91–112",
+      "doi": "10.1016/0920-5861(95)00101-K",
+      "url": "https://doi.org/10.1016/0920-5861(95)00101-K",
+      "locator": "Review abstract and bibliography record; full review not read.",
+      "access_status": "abstract_only",
+      "verification": "ai_checked_metadata_and_abstract",
+      "applicability": "General review of composition-forced catalytic operation and laboratory/industrial strategies. Not evidence of acetylene/PdAg benefit.",
+      "claims": [
+        {
+          "locator": "Abstract",
+          "supports": "Broad periodic-operation objectives and variables such as frequency, waveform, amplitude and phase."
+        }
+      ],
+      "does_not_support": "Does not establish a specific acetylene yield gain or the proposal's desorption/residence-time window.",
+      "citations": []
+    },
+    {
+      "id": "zhu2021",
+      "type": "primary_research_article",
+      "authors": "Zhenghang Zhu et al.",
+      "year": 2021,
+      "title": "Novel Microreactor and Generic Model Catalyst Platform for the Study of Fast Temperature Pulsed Operation – CO Oxidation Rate Enhancement on Pt",
+      "journal": "Chemical Engineering Journal",
+      "volume": "425",
+      "article_number": "131559",
+      "doi": "10.1016/j.cej.2021.131559",
+      "url": "https://doi.org/10.1016/j.cej.2021.131559",
+      "locator": "Publisher/bibliography abstract; full article not accessed.",
+      "access_status": "abstract_only",
+      "verification": "ai_checked_metadata_and_abstract",
+      "applicability": "Fast temperature step-response platform and CO oxidation on Pt. Its microsecond heater response and rate enhancement do not transfer to acetylene feed-composition modulation or PdAg.",
+      "claims": [
+        {
+          "locator": "Abstract",
+          "supports": "The platform can change temperature by up to 230 °C in 20–30 μs and tests temperature-pulsed CO oxidation on Pt."
+        }
+      ],
+      "does_not_support": "Does not establish microsecond acetylene surface kinetics, concentration-pulse benefit, PdAg performance, or a numerical stiffness ratio for BEP.",
+      "citations": []
+    },
+    {
+      "id": "shi2024",
+      "type": "primary_research_article",
+      "authors": "Shi et al.",
+      "year": 2024,
+      "title": "Insights into reaction–diffusion behaviors of acetylene selective hydrogenation on pellet catalysts",
+      "journal": "AIChE Journal",
+      "volume": "70",
+      "issue": "8",
+      "article_number": "e18454",
+      "doi": "10.1002/aic.18454",
+      "url": "https://doi.org/10.1002/aic.18454",
+      "locator": "Publisher abstract; full article not accessed.",
+      "access_status": "abstract_only",
+      "verification": "ai_checked_metadata_and_abstract",
+      "applicability": "Numerical particle-resolved reaction–diffusion study for acetylene hydrogenation; useful to motivate pellet/geometry checks, but not evidence for dynamic PdAg operation or measured universal selectivity values.",
+      "claims": [
+        {
+          "locator": "Abstract",
+          "supports": "Modelled sensitivity of reaction/diffusion behavior to particle shape, packing and diffusion path under reported conditions."
+        }
+      ],
+      "does_not_support": "Does not validate the proposal's one-dimensional isothermal transient bed model.",
+      "citations": []
+    },
+    {
+      "id": "lan2025",
+      "type": "review_article",
+      "authors": "Xiaocheng Lan, Jingguang G. Chen, Tiefeng Wang",
+      "year": 2025,
+      "title": "Recent Advances in Thermocatalytic Acetylene Selective Hydrogenation",
+      "journal": "Chemical Society Reviews",
+      "volume": "54",
+      "issue": "16",
+      "pages": "7654–7705",
+      "doi": "10.1039/d4cs01237b",
+      "url": "https://doi.org/10.1039/d4cs01237b",
+      "locator": "Publisher abstract and bibliography metadata; full review not accessed.",
+      "access_status": "abstract_only",
+      "verification": "ai_checked_metadata_and_abstract",
+      "applicability": "Recent catalyst/mechanism review; abstract identifies over-hydrogenation, C–C coupling, C–C cleavage/coke and metric benchmarking. Not a primary experiment.",
+      "claims": [
+        {
+          "locator": "Publisher abstract",
+          "supports": "Broad current catalyst-design landscape and competing product channels; conversion/selectivity metrics need care."
+        }
+      ],
+      "does_not_support": "Does not prove dynamic-operation outcomes or a selected BEP kinetic mechanism.",
+      "citations": []
+    },
+    {
+      "id": "froment2011",
+      "type": "textbook",
+      "authors": "Gilbert F. Froment, Kenneth B. Bischoff, Juray De Wilde",
+      "year": 2011,
+      "title": "Chemical Reactor Analysis and Design",
+      "edition": "3rd edition",
+      "publisher": "Wiley",
+      "isbn": "978-0-470-56541-4",
+      "locator": "Cited by proposal; full textbook not accessed in this research pass.",
+      "access_status": "citation_only_unverified",
+      "verification": "bibliography_metadata_checked",
+      "applicability": "Proposal's general reactor-engineering reference; not used here as an independently read source for a particular equation or acetylene claim.",
+      "claims": [
+        {
+          "locator": "Bibliography entry only",
+          "supports": "Bibliographic identity and proposal's reliance on a reactor-analysis text."
+        }
+      ],
+      "does_not_support": "No specific textbook statement was independently checked.",
+      "citations": []
+    },
+    {
+      "id": "larsen2024",
+      "type": "project_thesis",
+      "authors": "Victor Larsen",
+      "year": 2024,
+      "title": "Semihydrogenation of Acetylene to Ethylene with a PdAg Catalyst",
+      "institution": "Delft University of Technology",
+      "locator": "Proposal bibliography entry cites a local Zotero file 'BEP Example.pdf'; file not found among 11 repository Articles entries and not located in web search during this pass.",
+      "access_status": "citation_only_unverified",
+      "verification": "bibliography_metadata_checked",
+      "applicability": "Potentially relevant predecessor work and data/parameterization lead. The proposal's account of parameter compensation has not been independently checked against the thesis.",
+      "claims": [
+        {
+          "locator": "BEP bibliography entry only; Methodology §3.4 lines 270–273 reports a result",
+          "supports": "Existence of a thesis citation and the proposal's characterization of it only."
+        }
+      ],
+      "does_not_support": "No independently verified result, dataset or kinetic parameter.",
+      "citations": []
+    },
+    {
+      "id": "poto2022",
+      "type": "primary_research_article",
+      "authors": "Serena Poto et al.",
+      "year": 2022,
+      "title": "Kinetic Modelling of the Methanol Synthesis from CO₂ and H₂ over a CuO/CeO₂/ZrO₂ Catalyst: The Role of CO₂ and CO Hydrogenation",
+      "journal": "Chemical Engineering Journal",
+      "volume": "435",
+      "article_number": "134946",
+      "doi": "10.1016/j.cej.2022.134946",
+      "url": "https://doi.org/10.1016/j.cej.2022.134946",
+      "locator": "Bibliography abstract/metadata; full article not accessed.",
+      "access_status": "abstract_only",
+      "verification": "ai_checked_metadata_and_abstract",
+      "applicability": "Different reaction and Cu/CeO₂/ZrO₂ catalyst. It cannot establish acetylene/Pd hydrogenation PSSA practice or its failure under forcing.",
+      "claims": [
+        {
+          "locator": "Abstract in bibliography metadata",
+          "supports": "A methanol-synthesis model-discrimination example only."
+        }
+      ],
+      "does_not_support": "No direct acetylene mechanism, catalyst or dynamic-operation claim.",
+      "citations": []
+    },
+    {
+      "id": "mei2009",
+      "type": "primary_research_article",
+      "authors": "Dawei Mei, Manos Neurock, Christopher M. Smith",
+      "year": 2009,
+      "title": "Hydrogenation of acetylene–ethylene mixtures over Pd and Pd–Ag alloys: First-principles-based kinetic Monte Carlo simulations",
+      "journal": "Journal of Catalysis",
+      "volume": "268",
+      "issue": "2",
+      "pages": "181–195",
+      "doi": "10.1016/j.jcat.2009.09.004",
+      "url": "https://doi.org/10.1016/j.jcat.2009.09.004",
+      "locator": "Publisher abstract and article preview; full article/SI not retrieved.",
+      "access_status": "abstract_and_preview",
+      "verification": "ai_checked_metadata_abstract_and_preview",
+      "applicability": "Atomistic KMC comparison for model Pd(111) and Pd–Ag/Pd(111) under acetylene/ethylene mixtures; not an experimentally validated dynamic packed-bed model.",
+      "claims": [
+        {
+          "locator": "Abstract and article preview",
+          "supports": "Modeled Pd/PdAg surface composition and reaction conditions influence acetylene/ethylene hydrogenation activity and selectivity."
+        }
+      ],
+      "does_not_support": "Does not establish a unique pathway, transferable rates for supported BEP PdAg, or periodic yield gain.",
+      "citations": []
+    },
+    {
+      "id": "li2021",
+      "type": "primary_research_article",
+      "authors": "Xiao-Tian Li, Lin Chen, Cheng Shang, Zhi-Pan Liu",
+      "year": 2021,
+      "title": "In Situ Surface Structures of PdAg Catalyst and Their Influence on Acetylene Semihydrogenation Revealed by Machine Learning and Experiment",
+      "journal": "Journal of the American Chemical Society",
+      "volume": "143",
+      "issue": "16",
+      "pages": "6281–6292",
+      "doi": "10.1021/jacs.1c02471",
+      "url": "https://doi.org/10.1021/jacs.1c02471",
+      "locator": "Publisher abstract; SI was listed but not inspected.",
+      "access_status": "abstract_and_preview",
+      "verification": "ai_checked_metadata_abstract_and_preview",
+      "applicability": "Direct PdAg acetylene evidence for Pd₁Ag₃/rutile-TiO₂. Support/composition and facet-specific results differ from the BEP target.",
+      "claims": [
+        {
+          "locator": "Publisher abstract",
+          "supports": "The studied PdAg working surface is condition-dependent; authors relate different facet patterns to activity/selectivity and report a specific Pd₁Ag₃/TiO₂ performance result."
+        }
+      ],
+      "does_not_support": "Does not test periodic feed forcing or establish a universal PdAg site model or PdAg/Al₂O₃ performance.",
+      "citations": []
+    },
+    {
+      "id": "feimer1982",
+      "type": "primary_theoretical_article",
+      "authors": "J. L. Feimer, A. K. Jain, R. R. Hudgins, P. L. Silveston",
+      "year": 1982,
+      "title": "Modelling forced periodic operation of catalytic reactors",
+      "journal": "Chemical Engineering Science",
+      "volume": "37",
+      "issue": "12",
+      "pages": "1797–1805",
+      "doi": "10.1016/0009-2509(82)80051-1",
+      "url": "https://doi.org/10.1016/0009-2509(82)80051-1",
+      "locator": "Publisher abstract.",
+      "access_status": "abstract_only",
+      "verification": "ai_checked_metadata_and_abstract",
+      "applicability": "General model-specific counterexample for forced feed-composition cycling, not acetylene/PdAg.",
+      "claims": [
+        {
+          "locator": "Publisher abstract",
+          "supports": "Selectivity improvement depends on model structure/nonlinear rates; the adsorption/desorption models examined predict no rate improvement and fail to reproduce then-available cycling observations."
+        }
+      ],
+      "does_not_support": "Does not imply every adsorption/desorption model or catalytic periodic process has zero benefit.",
+      "citations": []
+    },
+    {
+      "id": "horn_bailey1971",
+      "type": "primary_theoretical_article",
+      "authors": "James E. Bailey, F. J. M. Horn",
+      "year": 1971,
+      "title": "Comparison between two sufficient conditions for improvement of an optimal steady-state process by periodic operation",
+      "journal": "Journal of Optimization Theory and Applications",
+      "volume": "7",
+      "issue": "5",
+      "pages": "378–384",
+      "doi": "10.1007/BF00934000",
+      "url": "https://doi.org/10.1007/BF00934000",
+      "locator": "DOI metadata and indexed abstract/summary; full article not inspected.",
+      "access_status": "abstract_only",
+      "verification": "ai_checked_metadata_and_indexed_summary",
+      "applicability": "Classical optimal-control theory with sufficient conditions for cycling gains; not a ready-made PdAg criterion.",
+      "claims": [
+        {
+          "locator": "Indexed abstract/summary",
+          "supports": "Compares two sufficient tests; one can certify an improvement where the other does not."
+        }
+      ],
+      "does_not_support": "Does not prove gain for BEP or give necessary-and-sufficient conditions for its reactor.",
+      "citations": []
+    },
+    {
+      "id": "ziegelhoeffer1972",
+      "type": "primary_theoretical_article",
+      "authors": "A. Ziegelhoeffer, J. W. de Jong, R. Ferrari, L. Turi Nagy",
+      "year": 1972,
+      "title": "Cyclic operation of reaction systems: the influence of diffusion on catalyst selectivity",
+      "journal": "Chemical Engineering Science",
+      "volume": "27",
+      "issue": "1",
+      "pages": "109–119",
+      "doi": "10.1016/0009-2509(72)80144-1",
+      "url": "https://doi.org/10.1016/0009-2509(72)80144-1",
+      "locator": "Publisher abstract.",
+      "access_status": "abstract_only",
+      "verification": "ai_checked_metadata_and_abstract",
+      "applicability": "Theoretical pellet example linking internal diffusion and switching frequency; not a PdAg acetylene prediction.",
+      "claims": [
+        {
+          "locator": "Publisher abstract",
+          "supports": "For its model example, a frequency window can improve selectivity by balancing penetration and adsorption disequilibrium."
+        }
+      ],
+      "does_not_support": "Does not establish universal frequency rules or BEP pellet limitations.",
+      "citations": []
+    },
+    {
+      "id": "berger2008",
+      "type": "review_article",
+      "authors": "Rob J. Berger, Freek Kapteijn, Jacob A. Moulijn, Guy B. Marin, Juray De Wilde, Maria Olea, De Chen, Anders Holmen, Luca Lietti, Enrico Tronconi, Yves Schuurman",
+      "year": 2008,
+      "title": "Dynamic methods for catalytic kinetics",
+      "journal": "Applied Catalysis A: General",
+      "volume": "342",
+      "issue": "1–2",
+      "pages": "3–28",
+      "doi": "10.1016/j.apcata.2008.03.020",
+      "url": "https://doi.org/10.1016/j.apcata.2008.03.020",
+      "locator": "Full repository PDF reviewed; transient-method and model-testing sections.",
+      "access_status": "full_text_read",
+      "verification": "ai_checked_metadata_and_full_text",
+      "applicability": "Review of transient kinetic identification methods across multiple reactions; not evidence of PdAg gain.",
+      "claims": [
+        {
+          "locator": "Abstract and transient-method sections",
+          "supports": "Transient excitation can help estimate and discriminate kinetic models when reactor balances and surface-state assumptions are explicit."
+        }
+      ],
+      "does_not_support": "Does not establish target-catalyst timescales, BEP coverage observability, or ethylene gain.",
+      "citations": []
+    },
+    {
+      "id": "kaps2026",
+      "type": "primary_research_article",
+      "authors": "Lukas Kaps, Wieland Kortuz, Johannes Leipold, Carsten Seidel, Matthias Felischak, Tanya Wolff, Menka Petkovska, Dalibor Marinković, Daliborka Nikolić, Achim Kienle, Andreas Seidel-Morgenstern",
+      "year": 2026,
+      "title": "Forced Periodic Reactor Operation Applied to Methanol Synthesis",
+      "journal": "ChemCatChem",
+      "volume": "18",
+      "issue": "2",
+      "article_number": "e01403",
+      "doi": "10.1002/cctc.202501403",
+      "url": "https://doi.org/10.1002/cctc.202501403",
+      "locator": "Publisher HTML full text reviewed; abstract, §§2–5 and conclusions; first published 2025-12-14, accessed 2026-10-21.",
+      "access_status": "full_text_read",
+      "verification": "ai_checked_metadata_and_full_text",
+      "applicability": "Recent cross-system FPO analysis/optimization/CSTR experiment for methanol on Cu/ZnO/Al₂O₃; use for method comparison only.",
+      "claims": [
+        {
+          "locator": "§3 theoretical analysis; §5 conclusions",
+          "supports": "The paper reports forcing-dependent predictions and an experimental productivity/yield improvement against its selected comparator; catalyst deactivation complicates quantitative agreement."
+        },
+        {
+          "locator": "§3 forcing comparison",
+          "supports": "Input phase, shape, composition and total-flow interactions matter in the studied system; waveform ranking is setup-specific."
+        }
+      ],
+      "does_not_support": "Does not establish acetylene/PdAg gain, a BEP-matched benchmark, or a universally optimal waveform.",
+      "citations": []
+    },
+    {
+      "id": "espinoza2022",
+      "type": "primary_research_article",
+      "authors": "Diego Espinoza, Birte Wollak, Thomas L. Sheppard, Ann-Christin Dippel, Marina Sturm, Olof Gutowski, Michael Schmidt, Oliver Korup, Raimund Horn",
+      "year": 2022,
+      "title": "Catalytic Profile Reactor for Multimodal Operando Measurements during Periodic Operation",
+      "journal": "ChemCatChem",
+      "volume": "14",
+      "issue": "24",
+      "article_number": "e202200337",
+      "doi": "10.1002/cctc.202200337",
+      "url": "https://doi.org/10.1002/cctc.202200337",
+      "locator": "Full published-version PDF in TU Hamburg repository, pp. 2–10 and Experimental Section; publisher abstract cross-checked.",
+      "access_status": "full_text_read",
+      "verification": "ai_checked_metadata_and_full_text",
+      "applicability": "Cross-system fixed-bed methodology study: automated sinusoidal periodic operation, validated inlet control, spatial/temporal gas and temperature profiles, operando XRD for ethane ODH over MoO₃/γ-Al₂O₃. Its stable average conversion/selectivity and model results are not acetylene/PdAg evidence.",
+      "claims": [
+        {
+          "locator": "Printed pp. 2–3",
+          "supports": "For the specific ODH kinetic model, a wide sweep of periodic amplitude, period and phase showed no difference in predicted catalytic performance; the authors explain this with an effectively linear response in the tested range."
+        },
+        {
+          "locator": "Printed pp. 4–5; Experimental Section",
+          "supports": "The group validated periodic MFC/control response in an empty tube, compensated total-flow changes with inert, and measured spatial-temporal concentration and temperature profiles under periodic operation."
+        },
+        {
+          "locator": "Printed pp. 7–10; Conclusion",
+          "supports": "In its catalyst/test conditions the experiment reports stable average conversion/selectivity versus steady operation, and shows catalyst structural changes by position and over longer time scales."
+        }
+      ],
+      "does_not_support": "Does not establish acetylene/PdAg performance, universal no-gain conditions, a universal MFC transfer model, or negligible thermal/structural dynamics in the BEP.",
+      "citations": [],
+      "full_text_url": "https://tore.tuhh.de/dspace-cris-server/api/core/bitstreams/f799684e-7542-4f50-9e06-7fff498b4919/content",
+      "repository_record_url": "https://tore.tuhh.de/entities/publication/e6b69b95-887e-40e0-bb2b-c71aa8e7471d"
+    }
+  ]
+}

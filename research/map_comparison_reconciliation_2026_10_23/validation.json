@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "validated_at": "2026-10-23",
+  "validation_scope": "Structural, taxonomy, provenance-reference, crosswalk, and maturity checks only.",
+  "input_snapshot": {
+    "branch": "work/bep-integrated-reference-map-v1-20261022",
+    "commit": "1cd680f95902a0a79b17afb084fa29ab49c6b25f",
+    "nodes_blob": "d3969fea87c9abc49c20b0ad28af282c7560a910"
+  },
+  "counts": {
+    "input_integrated_nodes": 143,
+    "input_integrated_themes": 17,
+    "proposed_nodes": 21,
+    "proposed_themes": 17,
+    "proposed_cross_links": 13,
+    "integrated_crosswalk_rows": 143,
+    "prior_source_map_crosswalk_rows": 144,
+    "referenced_source_ids": 21
+  },
+  "checks": [
+    {
+      "check": "exact_input_snapshot",
+      "passed": true,
+      "detail": "143 integrated nodes, unique IDs, resolved parents, acyclic ancestry."
+    },
+    {
+      "check": "integrated_taxonomy",
+      "passed": true,
+      "detail": "One root, three disciplines, seventeen depth-two themes."
+    },
+    {
+      "check": "proposal_node_schema",
+      "passed": true,
+      "detail": "Twenty-one unique nodes, valid parent references, AI-only maturity values."
+    },
+    {
+      "check": "cross_links",
+      "passed": true,
+      "detail": "Thirteen links; every endpoint resolves to a proposed node."
+    },
+    {
+      "check": "integrated_node_crosswalk",
+      "passed": true,
+      "detail": "One row per integrated node, mapped to a proposed root/discipline/theme."
+    },
+    {
+      "check": "source_reference_integrity",
+      "passed": true,
+      "detail": "All 21 referenced source IDs resolve in the 65-record integrated source catalog."
+    },
+    {
+      "check": "prior_crosswalk_provenance",
+      "passed": true,
+      "detail": "Prior source-map crosswalk preserved by exact blob reference; 69 + 75 = 144."
+    },
+    {
+      "check": "no_human_promotion",
+      "passed": true,
+      "detail": "No human verification, personal understanding, or approval status was added."
+    }
+  ],
+  "limitations": [
+    "Does not validate every scientific claim or source entailment.",
+    "Does not validate the empirical target model, simulator, optimizer, fitted parameters, or experiment.",
+    "Human scientific review and understanding remain unverified."
+  ]
+}

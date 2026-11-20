@@ -1,0 +1,448 @@
+dataset:
+  name: Scientific uncertainty ledger
+  edition: integrated-v1-2026-10-22
+  count: 31
+uncertainties:
+- id: target_catalyst_identity
+  priority: critical
+  status: open
+  question: What exact Pd:Ag ratio, support, particle/egg-shell geometry, preparation, pretreatment and working
+    surface define the target catalyst?
+  why_open: One-site Pd/α-Al2O3, two-site PdAg/Al2O3, ideal PdAg and PdAg/TiO2 studies are different systems.
+  evidence_needed:
+  - Verify the actual catalyst batch and source dataset.
+  - Characterize the working surface and pretreatment under feed.
+  linked_nodes:
+  - c1_catalyst_identity
+  - c1_pdag_support_transfer
+  - ph_mechanism_choice
+- id: target_feed_and_operating_window
+  priority: critical
+  status: open
+  question: What inlet composition, total flow, pressure, temperature and conversion range define the BEP experiment?
+  why_open: Kinetic model applicability and safety constraints are regime-specific.
+  evidence_needed:
+  - Target apparatus records and calibrated feed conditions.
+  - Steady baseline data with uncertainty.
+  linked_nodes:
+  - sc_manipulated_input
+  - sc_hardware_constraints
+  - reactor_operating_window
+- id: urmes2019_k1_conflict
+  priority: high
+  status: unresolved_source_conflict
+  question: 'Which K1 value did Urmès et al. (2019) use in final computations: 611 Pa−1 from printed p. 5 or 13
+    Pa−1 in Table 5 on p. 6?'
+  why_open: The same primary article states both; no correction, code or SI was inspected.
+  evidence_needed:
+  - Check article errata/supplement/code or ask authors.
+  - Reproduce the original rate curves under both values if source data become available.
+  linked_nodes:
+  - c2_urmes_2019_parameter_ledger
+  - c2_urmes_2019_adsorption_denominator
+- id: larsen_thesis_date_and_catalyst_match
+  priority: high
+  status: bibliographic_and_scientific_open
+  question: What is the date/institution of the local Larsen BEP PDF and does its PdAg/SiO2 batch match the current
+    BEP target?
+  why_open: The title page lacks a date/institution; repository filename says 2024 and PDF metadata creation is
+    2026.
+  evidence_needed:
+  - Find repository record or title-page metadata.
+  - Verify current catalyst support, loading and batch against the thesis.
+  linked_nodes:
+  - lhhw_kinetics
+  - c1_catalyst_identity
+- id: dynamic_vs_pssa_closure
+  priority: high
+  status: open
+  question: Do target transients require explicit surface coverage ODEs, or does a PSSA kinetic closure adequately
+    predict the relevant gas/output response?
+  why_open: No target transient constants or matched held-out data are supplied.
+  evidence_needed:
+  - Measure actuator/bed input transfer, RTD and analyzer dynamics.
+  - Fit and compare PSSA and dynamic coverage models using held-out excitation frequencies.
+  linked_nodes:
+  - c2_surface_kinetic_closure_choices
+  - c2_dynamic_theta_model_calibration_gap
+  - sc_identification_vs_performance
+- id: elementary_pathway_and_site_families
+  priority: high
+  status: open_alternatives
+  question: Which elementary pathways, site families and intermediates are supported on the working catalyst?
+  why_open: Surface mechanisms differ across studies and several alternatives are abstract/ideal-model level.
+  evidence_needed:
+  - Target-specific operando or transient data.
+  - Mechanism discrimination against multiple candidate site/pathway models.
+  linked_nodes:
+  - c1_microscopic_surface_path
+  - c1_vinyl_ethylidene_alternative
+  - c1_multisite_hydride_carbide
+  - ph_site_ensembles
+- id: product_closure_and_carbon_balance
+  priority: high
+  status: open
+  question: Which gas products, C4+ species and retained carbon must be included, and what are their detection limits?
+  why_open: Non-detection of C4 products in one Pd study does not bound another catalyst or feed.
+  evidence_needed:
+  - Product-resolved analysis and carbon closure at target conditions.
+  - Detection-limit and sampling documentation.
+  linked_nodes:
+  - ph_competing_channels
+  - c1_c4_coke_deactivation
+  - ph_metrics
+- id: transport_and_residence_time
+  priority: high
+  status: open
+  question: What bed dispersion, residence-time distribution, film resistance and pellet diffusion affect the realized
+    forcing?
+  why_open: No target bed tracer, particle or transport coefficients are present.
+  evidence_needed:
+  - Tracer/empty-tube tests and bed-level response characterization.
+  - Target particle size and transport-criterion assessment.
+  linked_nodes:
+  - ph_residence_time_distribution
+  - ph_axial_dispersion
+  - ph_pellet_transport
+  - internal_diffusion_thiele
+  - external_film_transfer
+- id: thermal_adequacy
+  priority: medium
+  status: open
+  question: Is an isothermal bed adequate over the proposed operating envelope and campaign?
+  why_open: Reaction exothermicity alone does not quantify local temperature dynamics.
+  evidence_needed:
+  - Temperature measurements and local rate sensitivity.
+  - Heat transfer and catalyst thermal-response characterization.
+  linked_nodes:
+  - ph_isothermal
+  - ph_energy_balance
+  - reaction_thermodynamics
+  - reactor_operating_window
+- id: actuator_and_analyzer_transfer
+  priority: high
+  status: open
+  question: What command-to-bed waveform and outlet analyzer response are achievable at candidate frequencies?
+  why_open: MFC, mixer, line, reactor and sensor dynamics can create apparent phase lag.
+  evidence_needed:
+  - Calibrated step/frequency response and inert compensation tests.
+  - Independent outlet sampling and time synchronization.
+  linked_nodes:
+  - sc_bed_input_realization
+  - ph_boundary_measurement
+  - sc_output_model
+- id: performance_objective
+  priority: critical
+  status: project_decision_open
+  question: Should success be net ethylene productivity/yield, selectivity above a conversion floor, campaign performance,
+    or a multiobjective score?
+  why_open: Different denominators and resource accounting can rank operating modes differently.
+  evidence_needed:
+  - Explicit feed/product basis and cycle/campaign horizon.
+  - Declared carbon closure, conversion floor, catalyst-mass/energy normalization.
+  linked_nodes:
+  - ph_metrics
+  - sc_objective
+  - sc_baseline
+- id: fair_steady_feasible_set
+  priority: critical
+  status: project_decision_open
+  question: What steady input/temperature/flow controls and constraints define the best feasible steady comparator?
+  why_open: A nominal point does not establish superiority to the optimum steady value.
+  evidence_needed:
+  - Same catalyst state, plant, actuator limits, safety, objective and resource accounting for both modes.
+  linked_nodes:
+  - sc_baseline
+  - sc_benchmark_nesting
+  - u_sc_feasibility
+- id: periodic_gain_sign_and_magnitude
+  priority: critical
+  status: unresolved_target_science
+  question: Does a strict periodic gain exist for the target catalyst/plant under the declared metric, and does
+    it survive uncertainty and held-out validation?
+  why_open: No target parameter fit, simulation, optimizer, experiment or matched comparison is supplied.
+  evidence_needed:
+  - Verified target model and uncertainty.
+  - Optimized steady and periodic comparison under the same feasible set.
+  - Replicated physical tests and uncertainty intervals.
+  linked_nodes:
+  - ma_average_gain
+  - sc_identification_vs_performance
+  - sc_validation
+- id: urmes2022_fulltext_and_supplementary_model_details
+  priority: high
+  status: source_access_gap
+  question: What reactor model, retained states, kinetic equations, excitation conditions, estimation procedure, and validation evidence are documented in the full Urmès et al. (2022) article and Supporting Information?
+  why_open: The available record is limited to publisher abstract/preview claims. A local filename inventory did not identify the article or its source-specific supplement, so the abstract cannot establish spatial-model structure, detailed equations or parameters, identifiability, or performance benefit.
+  evidence_needed:
+  - Obtain accessible full text and Supporting Information; record stable source identity, file hashes, and exact page/equation/table locators.
+  - Re-audit all 16 graph claim/source links, separating abstract-level statements from model and data details.
+  - Determine the actual manipulated and measured variables, retained coverage states, reactor spatial assumptions, tested frequency/amplitude range, and model-validation basis from the primary source.
+  linked_nodes:
+  - c2_transient_parameter_identifiability
+  - sc_periodic_frequency_response_identification
+  - sc_identification_vs_performance
+  - ma_surface_balance
+  - ma_gas_pde
+- id: observable_state_modes
+  priority: medium
+  status: open
+  question: Which distributed gas, temperature and coverage states are observable from realistic sensors and excitation?
+  why_open: No BEP measurement map, sampling/noise model or observability analysis is available.
+  evidence_needed:
+  - Instrument model, sampling and noise characterization.
+  - Linearized/nonlinear observability and practical-estimation diagnostics.
+  linked_nodes:
+  - u_ph_measurement
+  - sc_observability
+  - state_observer_mpc
+- id: numerical_verification_after_model_definition
+  priority: high
+  status: open
+  question: What mesh, time-step, tolerance and balance checks make the eventual simulator numerically reliable?
+  why_open: No solver or target parameter set was run.
+  evidence_needed:
+  - Mesh/tolerance refinement and independent limiting-case checks.
+  - Species/element/site balances, positivity and periodic closure residuals.
+  linked_nodes:
+  - ma_numerical_checks
+  - ma_numerical_stability
+  - ma_stiff_solver
+- id: optimization_and_robustness
+  priority: medium
+  status: open
+  question: Which dynamic-control transcription finds feasible candidates robust to initialization and model mismatch?
+  why_open: No optimizer, initial-condition sweep, sensitivity study or uncertainty set was evaluated.
+  evidence_needed:
+  - Multiple starts, termination/feasibility reports and mesh refinement.
+  - Robustness assessment over data-grounded parameter and model uncertainty.
+  linked_nodes:
+  - u_ma_optimization
+  - sc_local_search
+  - sc_robustness
+- id: borodzinski2000_acetylene_pressure_range
+  priority: medium
+  status: unresolved_primary_source_internal_discrepancy
+  question: "Which acetylene partial-pressure upper bound belongs to the fitted 2000 Borodziński–Cybulski dataset: 0.078 or 0.78 kPa?"
+  why_open: The full-text results paragraph on printed p. 54 reports 0.0035–0.078 kPa, while the Table 3 footnote on printed p. 60 and Fig. 6 caption report 0.0035–0.78 kPa. The Fig. 2 axis only reaches 0.15 kPa. This may be a source typographical error or reflect distinct subsets; it cannot be silently harmonized.
+  evidence_needed:
+  - Compare the article's figure points, underlying data, and any published correction/supporting file.
+  - If exact reproduction matters, obtain an author clarification rather than selecting a range from context alone.
+  linked_nodes:
+  - c1_borodzinski_ae_site_hypothesis
+  - c1_borodzinski_ae_effective_rates
+- id: borodzinski2000_k2_rate_constant_units
+  priority: high
+  status: unresolved_primary_source_dimensional_discrepancy
+  question: Is the k'₂ unit in the 2000 paper's ethylene-to-ethane rate footnote misprinted, or is a pressure normalization absent from the displayed equation?
+  why_open: Table 1 model 5 and Appendix A Eq. (A.45) each give the k'₂ ethylene-hydrogenation term a p_C₂H₄p_H₂ pressure product and dimensionless adsorption denominator, requiring k'₂ in kPa⁻² under the stated mol-C₂H₆ mol-Pd⁻¹ s⁻¹ rate basis. The Table 1 notation footnote prints kPa⁻³, but Table 3's k'₂ row prints kPa⁻². The paper does not explain the footnote discrepancy; a separate uncertainty records the different denominator powers printed in Table 1 and Eq. (A.45).
+  evidence_needed:
+  - Check the article correction, original regression code/data, or author clarification.
+  - Preserve both the printed unit and equation-derived unit until resolved; do not use the parameter numerically as an absolute target constant.
+  linked_nodes:
+  - c1_borodzinski_ae_effective_rates
+- id: borodzinski2000_r2_denominator_exponent_conflict
+  priority: high
+  status: unresolved_primary_source_equation_discrepancy
+  question: >-
+    Which competitive-denominator power is intended for the k'₂ ethylene-hydrogenation term in the Borodziński–Cybulski (2000) model: power 2 in Table 1 model 5 or power 3 in Appendix A Eq. (A.45)?
+  why_open: Both expressions use the same k'₂ pressure product and dimensionless competitive adsorption terms, but the primary source prints different denominator powers. The paper does not reconcile the table and derivation or state which form was used in the regression implementation.
+  evidence_needed:
+  - Check an article correction, original regression code/data, or author clarification.
+  - Re-derive Eq. (A.45) from the stated elementary steps and compare that derivation with the fitted Table 1 expression without silently replacing either source form.
+  linked_nodes:
+  - c1_borodzinski_ae_effective_rates
+- id: pdmn_substitution_intermediate_and_step5
+  priority: high
+  status: source_mechanism_not_uniquely_discriminated
+  question: Are the proposed C2H4Z2 substitution intermediate and unknown fast step 5 chemically unique explanations
+    of the Pd–Mn source observations?
+  why_open: TPD/QMS establish source-protocol retention/displacement signatures and DRIFTS observes bands assigned
+    by the authors to candidate species, but the kinetic model explicitly leaves step 5 unknown and does not
+    independently measure all surface coverages or active-site stoichiometry.
+  evidence_needed:
+  - Access and inspect the supporting raw TPD/QMS/DRIFTS data and detection limits.
+  - Seek isotope-switch or time-resolved operando experiments that distinguish candidate adsorbate structures
+    and substitution routes.
+  - Keep alternatives as model candidates until matched kinetic and spectroscopic evidence discriminates them.
+  linked_nodes:
+  - c1_pd_mn_adsorption_substitution
+  - ph_dynamic_memory
+  - c2_surface_kinetic_closure_choices
+- id: dehghani2019_rate_and_decay_equation_basis
+  priority: high
+  status: source_internal_units_and_sign_unresolved
+  question: What are the dimensional rate/pressure basis and the intended decay-state equation in Dehghani
+    et al. (2019)?
+  why_open: The article’s Table 5 and Eq. (21) do not provide a fully portable reaction-rate/catalyst normalization
+    basis; the catalyst table reports Ag:Pd=6 without a clear ratio basis. The general Eq. (22) prints a positive
+    activity derivative while fitted Eq. (29) prints a negative one; Eq. (29) uses C without a clear definition
+    in the nomenclature, and parameter units are not fully specified.
+  evidence_needed:
+  - Inspect Supporting Data Sets 2–3 and any code or erratum to establish the definition/units of C and fitted
+    rate basis.
+  - Check the publisher PDF images and supplementary files to resolve possible transcription/printing errors.
+  - Retain source equations as reported and do not transfer constants until the ambiguities are resolved.
+  linked_nodes:
+  - c1_pdag_industrial_lhhw_decay
+  - c2_surface_kinetic_closure_choices
+  - ma_pde_ode_coupling
+- id: target_boundary_domain_and_flux_closure
+  priority: high
+  status: unresolved_apparatus_and_model_choice
+  question: Which upstream and downstream domains and flux boundary conditions represent the target packed
+    bed and measurement apparatus?
+  why_open: The proposal says Danckwerts-type but omits the actual equations and apparatus boundary volumes.
+    A common zero-gradient outlet encodes a convective external domain; Mott and Green's abstract proposes
+    a competing continuity/flux formulation, but their full derivation was not checked. Mixer, line, bed
+    and analyzer dynamics can otherwise be misassigned.
+  evidence_needed:
+  - Inspect the full Mott and Green derivation and evaluate its assumptions against the target flow geometry.
+  - Measure inlet and outlet tracer/inert responses and identify tubing, mixer, valve and analyzer volumes.
+  - Compare isolated-bed and explicitly coupled-domain formulations on the same measured boundary data.
+  linked_nodes:
+  - ph_danckwerts
+  - ph_boundary_model_interpretations
+  - ma_initial_boundary
+  - sc_bed_input_realization
+  - ph_boundary_measurement
+- id: target_total_flow_velocity_closure
+  priority: high
+  status: target_feed_and_pressure_data_missing
+  question: Does reaction and forcing change total molar flow enough that superficial velocity must vary
+    in the BEP balance?
+  why_open: The reaction network can have nonzero net gas stoichiometry, while the total-flow trajectory
+    also depends on inlet dilution, conversion, adsorption storage, pressure, temperature and possible
+    pressure drop. The proposal baseline does not provide enough target data to assess a constant-velocity
+    approximation. A CO2-capture source illustrates method consequences but does not quantify this reactor.
+  evidence_needed:
+  - Measure or reconstruct component inlet/outlet molar flows, pressure and temperature over the operating
+    range.
+  - Use the selected gas stoichiometric matrix and rate basis to calculate total gas production/consumption
+    with adsorbed inventory accounted for.
+  - Compare constant-u_s and coupled total-flow closures against target tracer and flow data.
+  linked_nodes:
+  - ph_variable_superficial_velocity
+  - ph_axial_balance
+  - ma_gas_pde
+  - ma_stoichiometry
+- id: target_joint_input_state_parameter_reconstructibility
+  priority: high
+  status: model_and_sensor_structure_unassessed
+  question: Can the BEP's realized bed-plane inputs, internal states and kinetic parameters be separately
+    reconstructed from the available periodic output measurements?
+  why_open: Structural observability/identifiability requires the target dynamics, known/unknown input
+    partition and output map. Practical estimation further depends on excitation, sampling, noise, transfer-line
+    response and parameter correlations. No target rank test, sensitivity matrix or measured input/analyzer
+    transfer model exists.
+  evidence_needed:
+  - Specify which commanded and bed-plane flow/composition signals are measured, which states/parameters
+    are unknown, and which output channels are sampled.
+  - Apply a structural observability-identifiability analysis to the selected nonlinear model, with the
+    periodic input trajectory and known initial-condition assumptions stated.
+  - Quantify practical parameter/state/input uncertainty using actual bandwidth, sampling, noise and input
+    calibration; examine parameter compensation and held-out trajectories.
+  linked_nodes:
+  - sc_observability
+  - sc_nonlinear_observability_identifiability
+  - sc_unknown_input_reconstructibility
+  - sc_periodic_frequency_response_identification
+  - sc_bed_input_realization
+  - sc_output_model
+  - ma_identifiability
+  - ma_sensitivity
+- id: transport_criterion_primary_sources_and_basis
+  priority: high
+  status: source_gap
+  question: Which primary sources and exact rate, density, length and geometry conventions support the inherited Thiele, Weisz–Prater and Mears transport formulae and thresholds, and which are applicable to the BEP catalyst?
+  why_open: Berger et al. (2008) reviews Carberry, Wheeler–Weisz and Prater criteria but does not derive the inherited Thiele modulus/effectiveness factor or Mears expression. Its Carberry nomenclature gives a' per particle volume while r_obs is reported per m^3_cat, so the dimensional check requires a matched volume-basis convention. The legacy Mears candidate uses a catalyst-density basis that has not been traced to its original definition; no target particle data are available.
+  evidence_needed:
+  - Reopen the original sources for each named transport criterion and transcribe variable definitions, units, basis and limiting assumptions.
+  - Check dimensions and reconcile catalyst-mass, particle-volume, bed-volume and external-area bases before comparing threshold numbers.
+  - Obtain target particle radius/geometry, porosity/tortuosity, species diffusivities, gas properties and flow regime; evaluate both internal and external transfer limits at the target rate.
+  linked_nodes:
+  - internal_diffusion_thiele
+  - external_film_transfer
+  - ph_pellet_transport
+  - ph_boundary_measurement
+- id: larsen_experimental_temperature_discrepancy
+  priority: high
+  status: source_internal_conflict
+  question: 'Which temperature was actually used for the Larsen thesis'' PdAg catalytic tests: 80 °C or 100 °C?'
+  why_open: Section 4.2 printed p. 15 states that the reactor was maintained at 80 °C during the experiment, while
+    the abstract and §6.1/Table 6.1 printed pp. 1 and 23 report test conditions of 100 °C and 1000 mbar. The thesis
+    does not reconcile the discrepancy, so its fitted kinetic parameters cannot be assigned to one temperature from
+    this PDF alone.
+  evidence_needed:
+  - Check experiment logs, controller records or the author's original data/code for the test temperature.
+  - Keep the 80 °C and 100 °C statements separately labelled until the run conditions are confirmed.
+  linked_nodes:
+  - lhhw_kinetics
+  - reactor_operating_window
+- id: larsen_balance_basis_and_parameter_units
+  priority: high
+  status: source_basis_unresolved
+  question: What rate units/material basis, support-density definition, cross-sectional area, and pressure units are used in the Larsen thesis kinetic model?
+  why_open: Equations (4.6)–(4.9) multiply rates by ρ_support A but the inspected equations do not state the units or
+    whether ρ_support is a bed, support or catalyst density. Appendix F is a code appendix whose implementation is
+    embedded as raster images; the available OCR did not establish these values. Parameter transfer and quantitative
+    conversion reconstruction therefore remain unsupported.
+  evidence_needed:
+  - Inspect the original model code or higher-quality source images for definitions of ρ_support, A, catalyst mass and rate basis.
+  - Recover units for partial pressures, adsorption constants, fitted rates and r1,max from the implementation or author documentation.
+  - Check dimensional consistency of each molar balance and compare the code's catalyst/support mass basis with Table 4.1.
+  linked_nodes:
+  - ma_gas_pde
+  - ma_pde_ode_coupling
+  - lhhw_kinetics
+- id: larsen_hydrogen_adsorption_form
+  priority: medium
+  status: source_model_form_unresolved
+  question: What adsorption/site convention reconciles the thesis' description of dissociative H2 adsorption with its linear K_H2 p_H2 denominator term?
+  why_open: Under simple quasi-equilibrium dissociative adsorption on equivalent sites, hydrogen coverage is proportional
+    to the square root of hydrogen partial pressure. The thesis calls H2 adsorption dissociative but prints a linear
+    K_H2 p_H2 contribution; alternative site conventions or empirical lumping are possible and the equations do not
+    determine which interpretation was intended.
+  evidence_needed:
+  - Inspect the original derivation or code for the hydrogen adsorption expression and rate normalization.
+  - Compare an explicitly dissociative site-balance model, a molecular-adsorption closure and empirical power-law alternatives against source data.
+  - Keep the functional form source-specific until the site inventory and model equations are documented.
+  linked_nodes:
+  - lhhw_kinetics
+  - c2_surface_kinetic_closure_choices
+- id: pdmn_high_conversion_parameter_basis
+  priority: high
+  status: source_parameter_basis_unresolved
+  question: What concentration convention and numerical basis define the Stytsenko et al. hydrogen concentration C_H2, adsorption parameter b, and reported b^0.5 k6/k2 term?
+  why_open: The source prints the algebraic hydrogen-coverage closure and composite parameter values but does not state the concentration units or b basis in the inspected text; this prevents dimensional reproduction and quantitative transfer.
+  evidence_needed:
+  - Inspect the original calculation/code, supplementary material, or author documentation for the concentration basis and units of b and the fitted rates.
+  - Reproduce Eq. (18) on the source data with the recovered basis and check the dimensions of b^0.5 k6/k2.
+  - Keep the source-specific apparent values separate from any per-catalyst-mass or packed-bed source term until normalization is explicit.
+  linked_nodes:
+  - c1_pd_mn_adsorption_substitution
+  - c2_surface_kinetic_closure_choices
+- id: wang2023_model_experiment_condition_alignment
+  priority: high
+  status: source_details_and_transfer_open
+  question: Can the Wang et al. (2023) PdAg microkinetic/descriptor ranking be reproduced and evaluated at its fixed-bed test conditions using the exact Supporting Information model?
+  why_open: The main text states DFT/descriptor conditions of T = 333 K and partial pressures p_C2H2 = 0.2 atm,
+    p_H2 = 4 atm, p_C2H4 = 9 atm, while the supported fixed-bed experiment reports a total pressure of 0.2 MPa
+    (about 2 atm). These are not matched absolute pressure conditions. The paper points to Supporting Information
+    Section S2 for the detailed microkinetic equations and to SI tables for descriptor fits, outliers and numerical
+    comparisons; no matching SI file was present in the local article inventory. The main text also does not state the
+    empirical radius unit convention used in phi_CH3. Thus, its qualitative within-set rank agreement cannot by itself
+    establish quantitative rate/coverage validity at the test pressure or reproducibility of the descriptor fit.
+  evidence_needed:
+  - Inspect the article's SI and reconstruct the exact elementary rate laws, standard states, fit coefficients,
+    numerical errors and atomic-radius conventions.
+  - Confirm whether the stated 0.2 MPa test pressure is absolute or gauge and recover the unreported balance-gas,
+    catalyst-mass and bed-normalization details.
+  - Recompute the microkinetic predictions at both the article's listed descriptor conditions and the measured feed
+    conditions, then assess which rank statements remain robust without conflating model outputs and measured yields.
+  linked_nodes:
+  - c1_pdag_descriptor_mkm
+  - c1_catalyst_identity
+  - c2_surface_kinetic_closure_choices
+  - ph_metrics
+  - reactor_operating_window
